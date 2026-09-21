@@ -1,0 +1,32 @@
+cache root : /var/folders/73/kmh6t_p53fvg95dxl50x8gw80000gn/T/bcache-demo-w4vxn6cg/cache
+node       : compile-core (core 2.4.1)
+cache key  : 33938d33b4219cdd…
+outputs    : core.o, core.map
+
+=== 1. first build: both outputs present -> PUBLISHED ===
+result     : published
+verify     : True
+
+=== 2. rebuild, identical artifacts -> DEDUPLICATED (nothing written) ===
+result     : deduplicated
+
+=== 3. one output missing -> publish nothing ===
+refused    : refusing to publish 33938d33b421: missing outputs: core.map
+entries    : ['33938d33b4219cdd5bc623e6ae8042b4420eb5b37ed17d41b4f92fc3a689340e'] (existing entry untouched)
+tmp leftover: []
+
+=== 4. same key, different artifacts -> conflict, first writer wins ===
+conflict   : non-deterministic build for key 33938d33b421 (core.o: existing 753e1ec700f9 != new 5b539d0d208a); keeping existing entry, overwrite rejected
+kept       : 'OBJECT-CODE-v1' (no overwrite)
+
+=== 5. six concurrent duplicate builds -> coalesced into one execution ===
+executions : 1
+outcomes   : ['coalesced', 'coalesced', 'coalesced', 'coalesced', 'coalesced', 'published']
+
+=== 6. failed build cleans up; waiters fail too; retry succeeds ===
+leader saw : 'compiler crashed'
+entry exists: False
+tmp leftover: []
+retry      : published, verified=True
+
+all scenarios completed.

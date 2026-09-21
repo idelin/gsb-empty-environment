@@ -1,0 +1,43 @@
+{
+  "packages": [
+    {
+      "name": "core",
+      "version": "2.4.1"
+    },
+    {
+      "name": "beta-lib",
+      "version": "3.0.0-rc.1",
+      "prerelease": true
+    }
+  ],
+  "nodes": [
+    {
+      "name": "compile-core",
+      "package": "core",
+      "version": "2.4.1",
+      "inputs": {
+        "optimize": "O2",
+        "deps": {
+          "beta-lib": "3.0.0-rc.1"
+        }
+      },
+      "outputs": [
+        "core.o",
+        "core.map"
+      ]
+    },
+    {
+      "name": "assemble-beta",
+      "package": "beta-lib",
+      "version": "3.0.0-rc.1",
+      "inputs": {
+        "flags": [
+          "--debug"
+        ]
+      },
+      "outputs": [
+        "libbeta.a"
+      ]
+    }
+  ]
+}

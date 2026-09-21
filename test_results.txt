@@ -1,0 +1,33 @@
+test_concurrent_divergent_builds_conflict_no_overwrite (test_cache.ConcurrentTests.test_concurrent_divergent_builds_conflict_no_overwrite) ... ok
+test_concurrent_same_content_one_publish (test_cache.ConcurrentTests.test_concurrent_same_content_one_publish) ... ok
+test_different_content_raises_conflict_and_keeps_first (test_cache.PublishTests.test_different_content_raises_conflict_and_keeps_first) ... ok
+test_duplicate_same_content_is_deduplicated (test_cache.PublishTests.test_duplicate_same_content_is_deduplicated) ... ok
+test_missing_one_output_publishes_nothing (test_cache.PublishTests.test_missing_one_output_publishes_nothing) ... ok
+test_no_tmp_left_after_success_or_failure (test_cache.PublishTests.test_no_tmp_left_after_success_or_failure) ... ok
+test_path_traversal_rejected (test_cache.PublishTests.test_path_traversal_rejected) ... ok
+test_publish_all_or_nothing (test_cache.PublishTests.test_publish_all_or_nothing) ... ok
+test_reload_from_disk (test_cache.PublishTests.test_reload_from_disk) ... ok
+test_tampered_stage_between_stage_and_commit (test_cache.PublishTests.test_tampered_stage_between_stage_and_commit) ... ok
+test_cache_hit_skips_build (test_coordinator.CoordinatorTests.test_cache_hit_skips_build) ... ok
+test_concurrent_duplicate_builds_coalesce (test_coordinator.CoordinatorTests.test_concurrent_duplicate_builds_coalesce) ... ok
+test_failure_cleans_up_and_all_waiters_fail (test_coordinator.CoordinatorTests.test_failure_cleans_up_and_all_waiters_fail) ... ok
+test_partial_outputs_fail_and_retriable (test_coordinator.CoordinatorTests.test_partial_outputs_fail_and_retriable) ... ok
+test_no_network_modules_imported (test_coordinator.OfflineTests.test_no_network_modules_imported) ... ok
+test_bad_json (test_manifest.ManifestTests.test_bad_json) ... ok
+test_duplicate_outputs_rejected (test_manifest.ManifestTests.test_duplicate_outputs_rejected) ... ok
+test_load_from_local_file_only (test_manifest.ManifestTests.test_load_from_local_file_only) ... ok
+test_parse (test_manifest.ManifestTests.test_parse) ... ok
+test_prerelease_bool (test_manifest.ManifestTests.test_prerelease_bool) ... ok
+test_prerelease_mismatch (test_manifest.ManifestTests.test_prerelease_mismatch) ... ok
+test_unknown_package (test_manifest.ManifestTests.test_unknown_package) ... ok
+test_version_mismatch (test_manifest.ManifestTests.test_version_mismatch) ... ok
+test_core_ordering (test_version.VersionTests.test_core_ordering) ... ok
+test_invalid (test_version.VersionTests.test_invalid) ... ok
+test_parse_shapes (test_version.VersionTests.test_parse_shapes) ... ok
+test_prerelease (test_version.VersionTests.test_prerelease) ... ok
+test_prerelease_orders_below_release (test_version.VersionTests.test_prerelease_orders_below_release) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.204s
+
+OK
