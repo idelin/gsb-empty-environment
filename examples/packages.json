@@ -1,0 +1,38 @@
+{
+  "packages": [
+    {
+      "name": "app",
+      "version": "1.0.0",
+      "deps": [
+        {"name": "codegen", "constraint": ">=2.0.0 <3.0.0", "kind": "host"},
+        {"name": "guilib", "constraint": ">=1.2.0"},
+        {"name": "posixsock", "constraint": "==3.1.0", "when": {"os": ["linux"]}},
+        {"name": "win32sock", "constraint": "==3.1.0", "when": {"os": ["windows"]}},
+        {"name": "testharness", "constraint": ">=1.0.0", "when": {"stage": ["test"]}},
+        {"name": "legacy", "constraint": "==0.0.1", "when": {"os": ["plan9"]}}
+      ]
+    },
+    {"name": "codegen", "version": "2.0.0", "deps": []},
+    {
+      "name": "codegen",
+      "version": "2.1.0",
+      "deps": [
+        {"name": "libtempl", "constraint": ">=1.0.0 <2.0.0"}
+      ]
+    },
+    {"name": "libtempl", "version": "1.4.2", "deps": []},
+    {
+      "name": "guilib",
+      "version": "1.5.0",
+      "deps": [
+        {"name": "fontlib", "constraint": ">=0.9.0", "when": {"arch": ["x86_64", "arm64"]}},
+        {"name": "fontstub", "constraint": "==0.1.0", "when": {"arch": ["riscv64"]}}
+      ]
+    },
+    {"name": "fontlib", "version": "1.0.0", "deps": []},
+    {"name": "fontstub", "version": "0.1.0", "deps": []},
+    {"name": "posixsock", "version": "3.1.0", "deps": []},
+    {"name": "win32sock", "version": "3.1.0", "deps": []},
+    {"name": "testharness", "version": "1.2.0", "deps": []}
+  ]
+}

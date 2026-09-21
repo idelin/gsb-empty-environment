@@ -1,0 +1,8 @@
+{
+  "target": {"os": "linux", "arch": "x86_64"},
+  "stage": "test",
+  "host": {"os": "macos", "arch": "arm64"},
+  "roots": [
+    {"name": "app", "constraint": "==1.0.0"}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "target": {"os": "linux", "arch": "x86_64"},
+  "stage": "build",
+  "host": {"os": "macos", "arch": "arm64"},
+  "roots": [
+    {"name": "app", "constraint": "==1.0.0"},
+    {"name": "guilib", "constraint": "==9.9.9"}
+  ]
+}
