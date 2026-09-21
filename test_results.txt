@@ -1,0 +1,32 @@
+test_blackhole_cached_on_second_force (test_lazygraph.BlackHoleTests.test_blackhole_cached_on_second_force) ... ok
+test_blackhole_chain_locations_are_spans (test_lazygraph.BlackHoleTests.test_blackhole_chain_locations_are_spans) ... ok
+test_direct_self_reference (test_lazygraph.BlackHoleTests.test_direct_self_reference) ... ok
+test_indirect_self_reference_three_nodes (test_lazygraph.BlackHoleTests.test_indirect_self_reference_three_nodes) ... ok
+test_indirect_self_reference_two_nodes (test_lazygraph.BlackHoleTests.test_indirect_self_reference_two_nodes) ... ok
+test_exception_is_cached_and_rethrown_identical (test_lazygraph.CachedExceptionTests.test_exception_is_cached_and_rethrown_identical) ... ok
+test_unbound_variable_cached_like_other_errors (test_lazygraph.CachedExceptionTests.test_unbound_variable_cached_like_other_errors) ... ok
+test_wrappers_share_same_blackhole_error (test_lazygraph.CachedExceptionTests.test_wrappers_share_same_blackhole_error) ... ok
+test_arithmetic_and_division (test_lazygraph.EvaluatorSemanticsTests.test_arithmetic_and_division) ... ok
+test_comparisons_and_booleans (test_lazygraph.EvaluatorSemanticsTests.test_comparisons_and_booleans) ... ok
+test_if_selects_branch (test_lazygraph.EvaluatorSemanticsTests.test_if_selects_branch) ... ok
+test_division_by_zero_raises_when_used (test_lazygraph.LazinessTests.test_division_by_zero_raises_when_used) ... ok
+test_lazy_recursion_produces_value (test_lazygraph.LazinessTests.test_lazy_recursion_produces_value) ... ok
+test_short_circuit_avoids_error (test_lazygraph.LazinessTests.test_short_circuit_avoids_error) ... ok
+test_unused_division_by_zero_in_let_in (test_lazygraph.LazinessTests.test_unused_division_by_zero_in_let_in) ... ok
+test_unused_division_by_zero_top_level (test_lazygraph.LazinessTests.test_unused_division_by_zero_top_level) ... ok
+test_non_recursive_let_cannot_reference_self (test_lazygraph.ScopingTests.test_non_recursive_let_cannot_reference_self) ... ok
+test_sequential_bindings_see_earlier_not_later (test_lazygraph.ScopingTests.test_sequential_bindings_see_earlier_not_later) ... ok
+test_shadowing (test_lazygraph.ScopingTests.test_shadowing) ... ok
+test_lex_error_has_byte_span (test_lazygraph.SourceMapTests.test_lex_error_has_byte_span) ... ok
+test_multibyte_in_comment_does_not_shift_code (test_lazygraph.SourceMapTests.test_multibyte_in_comment_does_not_shift_code) ... ok
+test_parse_error_has_span (test_lazygraph.SourceMapTests.test_parse_error_has_span) ... ok
+test_spans_are_utf8_byte_offsets (test_lazygraph.SourceMapTests.test_spans_are_utf8_byte_offsets) ... ok
+test_cached_value_reused (test_lazygraph.ThunkSharingTests.test_cached_value_reused) ... ok
+test_thunk_evaluated_once_across_ten_references (test_lazygraph.ThunkSharingTests.test_thunk_evaluated_once_across_ten_references) ... ok
+test_trace_records_nested_force_chain (test_lazygraph.ThunkSharingTests.test_trace_records_nested_force_chain) ... ok
+test_render_trace_contains_chain (test_lazygraph.TracerRenderTests.test_render_trace_contains_chain) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.003s
+
+OK
