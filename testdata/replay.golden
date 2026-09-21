@@ -1,0 +1,31 @@
+== negotiate v1 <-> v2 ==
+epoch=0 digest=5a1f2d524d93d0b4
+plan v1 v1 -> v2 v2:
+  field 1: lossless
+  field 2: lossless (renamed "name" -> "fullname")
+  field 3: extension (preserved in extension blob)
+  field 4: lossless (optional, omitted when absent)
+  field 6: lossless (defaulted by migration rule)
+plan v2 v2 -> v1 v1:
+  field 1: lossless
+  field 2: lossless (renamed "fullname" -> "name")
+  field 3: lossless (optional, omitted when absent)
+  field 4: extension (preserved in extension blob)
+  field 6: extension (preserved in extension blob)
+== chunked frame v1 -> v2 ==
+fed 18 bytes in 3 chunks -> 1 frame(s)
+field 2 direct=true value="ann"
+field 6 defaulted=1
+field 3 in extension=true
+== hot update mid-frame ==
+epoch=1 digest=bdbae63bb8e05ef9
+in-flight frame: field 2 direct=true (old plan)
+new epoch frame: field 2 direct=false (new plan)
+== round-trip difference report ==
+INFO field 3: carried in extension blob
+INFO field 3: restored from extension blob
+EXTRA field 6: carried in extension blob
+INFO field 6: default injected by migration rule
+INFO field 6: carried in extension blob
+clean=true
+REPLAY OK
