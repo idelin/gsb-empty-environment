@@ -1,0 +1,9 @@
+[project]
+name = "session-windows"
+version = "0.1.0"
+description = "Incremental session-window index with retract/upsert changelog"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"
