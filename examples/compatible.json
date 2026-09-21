@@ -1,0 +1,34 @@
+{
+  "package": "textkit",
+  "old_version": "1.4.2",
+  "new_version": "1.5.0",
+  "type_hierarchy": {
+    "int": ["num"],
+    "num": ["object"],
+    "str": ["object"],
+    "list": ["object"],
+    "dict": ["object"]
+  },
+  "old": {
+    "symbols": [
+      {"name": "textkit.parse", "params": [{"name": "text", "type": "str"}], "returns": "dict", "behaviors": ["pure"]},
+      {"name": "textkit.slugify", "params": [{"name": "text", "type": "str"}], "returns": "str"},
+      {"name": "textkit.tokenize", "params": [{"name": "text", "type": "str"}], "returns": "list", "behaviors": ["pure", "thread-safe"]}
+    ]
+  },
+  "new": {
+    "symbols": [
+      {"name": "textkit.parse", "params": [{"name": "text", "type": "str"}, {"name": "strict", "type": "int", "optional": true}], "returns": "dict", "behaviors": ["pure", "deterministic"]},
+      {"name": "textkit.slugify", "params": [{"name": "text", "type": "object"}], "returns": "str"},
+      {"name": "textkit.tokenize", "params": [{"name": "text", "type": "str"}], "returns": "list", "behaviors": ["pure", "thread-safe"]},
+      {"name": "textkit.word_count", "params": [{"name": "text", "type": "str"}], "returns": "int"}
+    ]
+  },
+  "callgraph": {
+    "roots": ["app.main"],
+    "edges": [
+      {"caller": "app.main", "callee": "textkit.parse", "site": "app/main.py:12"},
+      {"caller": "app.main", "callee": "textkit.slugify", "site": "app/main.py:25"}
+    ]
+  }
+}

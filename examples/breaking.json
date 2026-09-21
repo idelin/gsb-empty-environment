@@ -1,0 +1,44 @@
+{
+  "package": "textkit",
+  "old_version": "1.4.2",
+  "new_version": "2.0.0-rc.1",
+  "type_hierarchy": {
+    "int": ["num"],
+    "float": ["num"],
+    "num": ["object"],
+    "str": ["object"],
+    "bytes": ["object"],
+    "list": ["object"],
+    "dict": ["object"]
+  },
+  "old": {
+    "symbols": [
+      {"name": "textkit.parse", "params": [{"name": "text", "type": "str"}], "returns": "dict", "behaviors": ["pure"]},
+      {"name": "textkit.slugify", "params": [{"name": "text", "type": "str"}, {"name": "sep", "type": "str"}], "returns": "str", "behaviors": ["pure"]},
+      {"name": "textkit.tokenize", "params": [{"name": "text", "type": "str"}], "returns": "list", "behaviors": ["pure", "thread-safe"]},
+      {"name": "textkit.trim", "params": [{"name": "text", "type": "str"}], "returns": "str"},
+      {"name": "textkit.legacy_format", "params": [{"name": "text", "type": "str"}], "returns": "str"},
+      {"name": "textkit._cache_clear", "visibility": "private", "params": []}
+    ]
+  },
+  "new": {
+    "symbols": [
+      {"name": "textkit.parse", "params": [{"name": "text", "type": "str"}], "returns": "object", "behaviors": ["pure"]},
+      {"name": "textkit.slugify", "params": [{"name": "text", "type": "object"}, {"name": "sep", "type": "str"}], "returns": "str", "behaviors": ["pure"]},
+      {"name": "textkit.tokenize", "params": [{"name": "text", "type": "str"}], "returns": "list", "behaviors": ["pure"]},
+      {"name": "textkit.trim", "params": [{"name": "text", "type": "bytes"}], "returns": "str"},
+      {"name": "textkit.word_count", "params": [{"name": "text", "type": "str"}], "returns": "int"},
+      {"name": "textkit._cache_clear", "visibility": "private", "params": [{"name": "force", "type": "int"}]}
+    ]
+  },
+  "callgraph": {
+    "roots": ["app.main"],
+    "edges": [
+      {"caller": "app.main", "callee": "app.service.handle", "site": "app/main.py:12"},
+      {"caller": "app.service.handle", "callee": "textkit.parse", "site": "app/service.py:34"},
+      {"caller": "app.main", "callee": "app.worker.run", "site": "app/main.py:20"},
+      {"caller": "app.worker.run", "callee": "textkit.tokenize", "site": "app/worker.py:8"},
+      {"caller": "app.main", "callee": "textkit.slugify", "site": "app/main.py:25"}
+    ]
+  }
+}
