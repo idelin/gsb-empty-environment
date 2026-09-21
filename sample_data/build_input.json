@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "name": "lib",
+      "packages": {
+        "libcore": ">=1.2.0 <2.0.0"
+      },
+      "required_artifacts": [
+        "dist/lib.tar.gz"
+      ],
+      "depends_on": []
+    },
+    {
+      "name": "api",
+      "packages": {
+        "libcore": "1.3.0-rc.1",
+        "netkit": "latest"
+      },
+      "required_artifacts": [
+        "dist/api.tar.gz",
+        "dist/api.sha256"
+      ],
+      "depends_on": [
+        "lib"
+      ]
+    },
+    {
+      "name": "worker",
+      "packages": {
+        "netkit": "*"
+      },
+      "required_artifacts": [
+        "dist/worker.tar.gz"
+      ],
+      "depends_on": [
+        "lib"
+      ]
+    },
+    {
+      "name": "gateway",
+      "packages": {
+        "libcore": "^1.2.0"
+      },
+      "required_artifacts": [
+        "dist/gateway.tar.gz"
+      ],
+      "depends_on": [
+        "api"
+      ]
+    },
+    {
+      "name": "scheduler",
+      "packages": {},
+      "required_artifacts": [
+        "dist/scheduler.tar.gz"
+      ],
+      "depends_on": [
+        "worker"
+      ]
+    },
+    {
+      "name": "docs",
+      "packages": {},
+      "required_artifacts": [
+        "dist/docs.zip"
+      ],
+      "depends_on": []
+    },
+    {
+      "name": "nightly",
+      "packages": {
+        "netkit": "~0.9.0"
+      },
+      "required_artifacts": [
+        "dist/nightly.tar.gz"
+      ],
+      "depends_on": []
+    }
+  ]
+}

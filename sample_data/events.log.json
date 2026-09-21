@@ -1,0 +1,222 @@
+[
+  {
+    "id": "e25",
+    "kind": "node.succeeded",
+    "node": "api",
+    "attempt": 2,
+    "ts": 305
+  },
+  {
+    "id": "e42",
+    "kind": "artifact.committed",
+    "node": "gateway",
+    "attempt": 1,
+    "ts": 602,
+    "artifact": "dist/gateway.tar.gz"
+  },
+  {
+    "id": "e04",
+    "kind": "node.succeeded",
+    "node": "lib",
+    "attempt": 1,
+    "ts": 103
+  },
+  {
+    "id": "e20",
+    "kind": "node.started",
+    "node": "api",
+    "attempt": 2,
+    "ts": 300
+  },
+  {
+    "id": "e52",
+    "kind": "node.started",
+    "node": "scheduler",
+    "attempt": 2,
+    "ts": 800
+  },
+  {
+    "id": "e12",
+    "kind": "node.failed",
+    "node": "api",
+    "attempt": 1,
+    "ts": 202,
+    "reason": "compile error"
+  },
+  {
+    "id": "e32",
+    "kind": "node.succeeded",
+    "node": "worker",
+    "attempt": 1,
+    "ts": 502
+  },
+  {
+    "id": "e01",
+    "kind": "node.started",
+    "node": "lib",
+    "attempt": 1,
+    "ts": 100
+  },
+  {
+    "id": "e24",
+    "kind": "artifact.committed",
+    "node": "api",
+    "attempt": 2,
+    "ts": 304,
+    "artifact": "dist/api.sha256"
+  },
+  {
+    "id": "e31",
+    "kind": "artifact.written",
+    "node": "worker",
+    "attempt": 1,
+    "ts": 501,
+    "artifact": "dist/worker.tar.gz"
+  },
+  {
+    "id": "e10",
+    "kind": "node.started",
+    "node": "api",
+    "attempt": 1,
+    "ts": 200
+  },
+  {
+    "id": "e21",
+    "kind": "artifact.written",
+    "node": "api",
+    "attempt": 2,
+    "ts": 301,
+    "artifact": "dist/api.tar.gz"
+  },
+  {
+    "id": "e13",
+    "kind": "node.failed",
+    "node": "api",
+    "attempt": 1,
+    "ts": 400,
+    "reason": "late failure replay from old attempt"
+  },
+  {
+    "id": "e02",
+    "kind": "artifact.written",
+    "node": "lib",
+    "attempt": 1,
+    "ts": 101,
+    "artifact": "dist/lib.tar.gz"
+  },
+  {
+    "id": "e40",
+    "kind": "node.started",
+    "node": "gateway",
+    "attempt": 1,
+    "ts": 600
+  },
+  {
+    "id": "e22",
+    "kind": "artifact.committed",
+    "node": "api",
+    "attempt": 2,
+    "ts": 302,
+    "artifact": "dist/api.tar.gz"
+  },
+  {
+    "id": "e03",
+    "kind": "artifact.committed",
+    "node": "lib",
+    "attempt": 1,
+    "ts": 102,
+    "artifact": "dist/lib.tar.gz"
+  },
+  {
+    "id": "e03",
+    "kind": "artifact.committed",
+    "node": "lib",
+    "attempt": 1,
+    "ts": 102,
+    "artifact": "dist/lib.tar.gz"
+  },
+  {
+    "id": "e31",
+    "kind": "artifact.written",
+    "node": "worker",
+    "attempt": 1,
+    "ts": 501,
+    "artifact": "dist/worker.tar.gz"
+  },
+  {
+    "id": "e50",
+    "kind": "node.started",
+    "node": "scheduler",
+    "attempt": 1,
+    "ts": 700
+  },
+  {
+    "id": "e30",
+    "kind": "node.started",
+    "node": "worker",
+    "attempt": 1,
+    "ts": 500
+  },
+  {
+    "id": "e23",
+    "kind": "artifact.written",
+    "node": "api",
+    "attempt": 2,
+    "ts": 303,
+    "artifact": "dist/api.sha256"
+  },
+  {
+    "id": "e43",
+    "kind": "node.succeeded",
+    "node": "gateway",
+    "attempt": 1,
+    "ts": 603
+  },
+  {
+    "id": "e11",
+    "kind": "artifact.written",
+    "node": "api",
+    "attempt": 1,
+    "ts": 201,
+    "artifact": "dist/api.tar.gz"
+  },
+  {
+    "id": "e51",
+    "kind": "node.failed",
+    "node": "scheduler",
+    "attempt": 1,
+    "ts": 701,
+    "reason": "flaky test"
+  },
+  {
+    "id": "e41",
+    "kind": "artifact.written",
+    "node": "gateway",
+    "attempt": 1,
+    "ts": 601,
+    "artifact": "dist/gateway.tar.gz"
+  },
+  {
+    "id": "e60",
+    "kind": "node.started",
+    "node": "nightly",
+    "attempt": 1,
+    "ts": 900
+  },
+  {
+    "id": "e61",
+    "kind": "artifact.written",
+    "node": "nightly",
+    "attempt": 1,
+    "ts": 901,
+    "artifact": "dist/nightly.tar.gz"
+  },
+  {
+    "id": "e62",
+    "kind": "node.failed",
+    "node": "nightly",
+    "attempt": 1,
+    "ts": 902,
+    "reason": "integration test red"
+  }
+]
