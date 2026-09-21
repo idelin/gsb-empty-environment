@@ -1,0 +1,58 @@
+{
+  "confirmed_position": 20,
+  "consumer_totals": {
+    "A": {
+      "missing": "2",
+      "result_id": "A:r4",
+      "value": "49"
+    },
+    "B": {
+      "missing": "2",
+      "result_id": "B:r3",
+      "value": "17"
+    }
+  },
+  "dedup": {
+    "applied_delta_ids": [
+      "A:r1:publish",
+      "A:r1:revoke",
+      "A:r2:publish",
+      "A:r2:revoke",
+      "A:r3:publish",
+      "A:r3:revoke",
+      "A:r4:publish",
+      "B:r1:publish",
+      "B:r1:revoke",
+      "B:r2:publish",
+      "B:r2:revoke",
+      "B:r3:publish"
+    ],
+    "last_position": 20
+  },
+  "query_index": {
+    "A": {
+      "calibration_version": 1,
+      "end": "12",
+      "missing": "2",
+      "result_id": "A:r4",
+      "sample_version": 3,
+      "start": "0",
+      "value": "49"
+    },
+    "B": {
+      "calibration_version": 1,
+      "end": "9",
+      "missing": "2",
+      "result_id": "B:r3",
+      "sample_version": 3,
+      "start": "3",
+      "value": "17"
+    }
+  },
+  "type": "checkpoint",
+  "unclosed_segment": {
+    "mode": "step",
+    "start": "10",
+    "value": "5"
+  }
+}

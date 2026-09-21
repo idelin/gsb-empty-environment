@@ -1,0 +1,20 @@
+{"pos": 1, "seq": 1, "t": "0", "type": "sample", "v": "2"}
+{"pos": 2, "seq": 2, "t": "10", "type": "sample", "v": "5"}
+{"end": "12", "pos": 3, "query_id": "A", "start": "0", "type": "query"}
+{"calibration_version": 0, "delta_id": "A:r1:publish", "kind": "publish", "missing": "0", "pos": 4, "query_id": "A", "result_id": "A:r1", "sample_version": 2, "type": "delta", "value": "30"}
+{"pos": 5, "seq": 3, "t": "4", "type": "sample", "v": "3"}
+{"calibration_version": 0, "delta_id": "A:r1:revoke", "kind": "revoke", "missing": "0", "pos": 6, "query_id": "A", "result_id": "A:r1", "sample_version": 2, "type": "delta", "value": "30"}
+{"calibration_version": 0, "delta_id": "A:r2:publish", "kind": "publish", "missing": "0", "pos": 7, "query_id": "A", "result_id": "A:r2", "sample_version": 3, "type": "delta", "value": "36"}
+{"end": "9", "pos": 8, "query_id": "B", "start": "3", "type": "query"}
+{"calibration_version": 0, "delta_id": "B:r1:publish", "kind": "publish", "missing": "0", "pos": 9, "query_id": "B", "result_id": "B:r1", "sample_version": 3, "type": "delta", "value": "17"}
+{"end": "8", "pos": 10, "seq": 1, "start": "6", "type": "gap"}
+{"calibration_version": 0, "delta_id": "A:r2:revoke", "kind": "revoke", "missing": "0", "pos": 11, "query_id": "A", "result_id": "A:r2", "sample_version": 3, "type": "delta", "value": "36"}
+{"calibration_version": 0, "delta_id": "A:r3:publish", "kind": "publish", "missing": "2", "pos": 12, "query_id": "A", "result_id": "A:r3", "sample_version": 3, "type": "delta", "value": "30"}
+{"calibration_version": 0, "delta_id": "B:r1:revoke", "kind": "revoke", "missing": "0", "pos": 13, "query_id": "B", "result_id": "B:r1", "sample_version": 3, "type": "delta", "value": "17"}
+{"calibration_version": 0, "delta_id": "B:r2:publish", "kind": "publish", "missing": "2", "pos": 14, "query_id": "B", "result_id": "B:r2", "sample_version": 3, "type": "delta", "value": "11"}
+{"effective_from": "5", "offset": "0", "pos": 15, "scale": "2", "type": "calibration", "version": 1}
+{"calibration_version": 0, "delta_id": "A:r3:revoke", "kind": "revoke", "missing": "2", "pos": 16, "query_id": "A", "result_id": "A:r3", "sample_version": 3, "type": "delta", "value": "30"}
+{"calibration_version": 0, "delta_id": "A:r3:revoke", "kind": "revoke", "missing": "2", "pos": 17, "query_id": "A", "result_id": "A:r3", "sample_version": 3, "type": "delta", "value": "30"}
+{"calibration_version": 1, "delta_id": "A:r4:publish", "kind": "publish", "missing": "2", "pos": 18, "query_id": "A", "result_id": "A:r4", "sample_version": 3, "type": "delta", "value": "49"}
+{"calibration_version": 0, "delta_id": "B:r2:revoke", "kind": "revoke", "missing": "2", "pos": 19, "query_id": "B", "result_id": "B:r2", "sample_version": 3, "type": "delta", "value": "11"}
+{"calibration_version": 1, "delta_id": "B:r3:publish", "kind": "publish", "missing": "2", "pos": 20, "query_id": "B", "result_id": "B:r3", "sample_version": 3, "type": "delta", "value": "17"}
