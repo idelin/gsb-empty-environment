@@ -1,0 +1,36 @@
+{
+  "features": ["ssl", "legacy"],
+  "packages": [
+    {"id": "root", "version": "1.0",
+     "symbols": ["main"],
+     "exports": {"cli": "main", "old": null}},
+
+    {"id": "logger", "version": "3.0",
+     "symbols": ["log", "debug"]},
+
+    {"id": "net", "version": "1.4",
+     "symbols": ["connect"],
+     "exports": {"dial": "connect"}},
+
+    {"id": "net-legacy", "version": "0.9",
+     "symbols": ["connect"]},
+
+    {"id": "codec", "version": "2.0",
+     "symbols": ["encode"]},
+
+    {"id": "internal-tool", "version": "0.1",
+     "symbols": ["tweak"]},
+
+    {"id": "gen-tool", "version": "0.2",
+     "symbols": ["gencode"]}
+  ],
+  "edges": [
+    {"from": "root", "to": "logger", "kind": "public"},
+    {"from": "root", "to": "net", "kind": "public", "when": "ssl"},
+    {"from": "root", "to": "net-legacy", "kind": "public", "when": "legacy"},
+    {"from": "logger", "to": "codec", "kind": "public"},
+    {"from": "root", "to": "internal-tool", "kind": "private"},
+    {"from": "codec", "to": "logger", "kind": "public"},
+    {"from": "root", "to": "gen-tool", "kind": "build"}
+  ]
+}

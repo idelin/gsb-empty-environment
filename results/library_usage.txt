@@ -1,0 +1,7 @@
+run fast condition-node: 2 model: {'opt': True}
+run slow condition-node: 3 model: {'opt': False}
+conflicts: []
+witness config: {'opt': True}
+witness hops: [('own', 'fast', 'run'), ('edge', 0, 'root', 'run')]
+after modify, conflicts: [('run', {'opt': False})]
+incremental facts touched: 4

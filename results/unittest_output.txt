@@ -1,0 +1,18 @@
+test_node_count_growth (condexpose.tests.test_analyzer.BDDSharingScale.test_node_count_growth) ... ok
+test_conditional_build_chain (condexpose.tests.test_analyzer.ConditionalPrivateAndBuild.test_conditional_build_chain) ... ok
+test_conditional_private (condexpose.tests.test_analyzer.ConditionalPrivateAndBuild.test_conditional_private) ... ok
+test_alias_merges_same_source (condexpose.tests.test_analyzer.ExhaustiveComparison.test_alias_merges_same_source) ... ok
+test_conflict_and_mutex (condexpose.tests.test_analyzer.ExhaustiveComparison.test_conflict_and_mutex) ... ok
+test_demo_graph (condexpose.tests.test_analyzer.ExhaustiveComparison.test_demo_graph) ... ok
+test_deletion_sequence (condexpose.tests.test_analyzer.IncrementalEquivalence.test_deletion_sequence) ... ok
+test_random_graphs (condexpose.tests.test_analyzer.RandomizedExhaustive.test_random_graphs) ... ok
+test_build_closure_not_runtime (condexpose.tests.test_analyzer.SemanticScenarios.test_build_closure_not_runtime) ... ok
+test_cycle_entry_deletion (condexpose.tests.test_analyzer.SemanticScenarios.test_cycle_entry_deletion) ... ok
+test_diamond_remove_one_path (condexpose.tests.test_analyzer.SemanticScenarios.test_diamond_remove_one_path) ... ok
+test_edge_condition_modification (condexpose.tests.test_analyzer.SemanticScenarios.test_edge_condition_modification) ... ok
+test_private_blocks_transitivity (condexpose.tests.test_analyzer.SemanticScenarios.test_private_blocks_transitivity) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.131s
+
+OK

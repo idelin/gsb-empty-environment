@@ -1,0 +1,31 @@
+== 包图: /Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/caef7e7eebe14c4b9c0edbc55ba51f66/run/A/attempt-003/workspace/condexpose/demo/demo_graph.json
+特性: ['ssl', 'legacy']
+
+-- 运行暴露符号 --
+  'cli' <- root@1.0:main  样例配置={'ssl': False, 'legacy': False}
+  'connect' <- net@1.4:connect  样例配置={'ssl': True, 'legacy': False}
+  'connect' <- net-legacy@0.9:connect  样例配置={'legacy': True, 'ssl': False}
+  'debug' <- logger@3.0:debug  样例配置={'ssl': False, 'legacy': False}
+  'encode' <- codec@2.0:encode  样例配置={'ssl': False, 'legacy': False}
+  'log' <- logger@3.0:log  样例配置={'ssl': False, 'legacy': False}
+  'tweak' <- internal-tool@0.1:tweak  样例配置={'ssl': False, 'legacy': False}
+
+-- 构建闭包（不进入运行暴露）--
+  gen-tool::gencode  <- gen-tool
+  root::cli  <- root
+  root::gencode  <- gen-tool
+
+-- 检测到 1 个同名冲突 --
+
+[冲突 1] 符号 'connect'
+  来源 A: net@1.4:connect
+  来源 B: net-legacy@0.9:connect
+  共同可行配置: {'ssl': True, 'legacy': True}
+  供应路径 A:
+    起源: 包 net 自有导出符号 'connect'
+    沿 public 边 root <- net (边#1)，root 处可见名 'connect'
+    => root 暴露 'connect'
+  供应路径 B:
+    起源: 包 net-legacy 自有导出符号 'connect'
+    沿 public 边 root <- net-legacy (边#2)，root 处可见名 'connect'
+    => root 暴露 'connect'
