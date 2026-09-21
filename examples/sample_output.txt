@@ -1,0 +1,17 @@
+NODE             STATE    ATTEMPT  DETAIL
+compile-core     SUCCESS       1  all required artifacts evidenced
+package-net      PENDING       2  missing artifact evidence: net.tar.gz.sha256
+test-flaky       SUCCESS       2  all required artifacts evidenced
+ship-bridge      PENDING       -  no events received for node
+
+UNRESOLVED NODES (reported as pending, not guessed):
+  - package-net (attempt 2)
+      * missing artifact evidence: net.tar.gz.sha256
+  - ship-bridge (attempt -)
+      * no events received for node
+
+WARNINGS:
+  - event 'evt-18' references unknown node 'ghost-node'; ignored
+
+SUMMARY: 2 succeeded, 0 failed, 2 pending
+exit=2

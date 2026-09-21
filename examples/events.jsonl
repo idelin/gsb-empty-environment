@@ -1,0 +1,17 @@
+{"event_id": "evt-01", "timestamp": "2026-09-21T10:02:00Z", "node": "compile-core", "attempt": 1, "kind": "artifacts_written", "artifacts": [{"name": "core.a", "sha256": "0b2bb0af650430c800a6d0cef744c7b37ff4bc3bae0aeff944e53028c434af84"}]}
+{"event_id": "evt-02", "timestamp": "2026-09-21T10:00:00Z", "node": "compile-core", "attempt": 1, "kind": "started"}
+{"event_id": "evt-03", "timestamp": "2026-09-21T10:01:00Z", "node": "compile-core", "attempt": 1, "kind": "artifacts_written", "artifacts": [{"name": "core.o", "sha256": "49486d0145b051a1598db42769077ae85312652943eb73e4d8a7c92bddc7b287"}]}
+{"event_id": "evt-04", "timestamp": "2026-09-21T10:03:00Z", "node": "compile-core", "attempt": 1, "kind": "submitted"}
+{"event_id": "evt-05", "timestamp": "2026-09-21T11:00:00Z", "node": "package-net", "attempt": 1, "kind": "started"}
+{"event_id": "evt-06", "timestamp": "2026-09-21T11:01:00Z", "node": "package-net", "attempt": 1, "kind": "artifacts_written", "artifacts": [{"name": "net.tar.gz", "sha256": "82d7dc748d8d2f6c56c9f739298dbe4b3bc6c32f2d3a4c8a8de98f98536e7d4f"}]}
+{"event_id": "evt-12", "timestamp": "2026-09-21T11:05:00Z", "node": "package-net", "attempt": 1, "kind": "failed", "reason": "worker lost before retry"}
+{"event_id": "evt-07", "timestamp": "2026-09-21T11:10:00Z", "node": "package-net", "attempt": 2, "kind": "started"}
+{"event_id": "evt-08", "timestamp": "2026-09-21T11:11:00Z", "node": "package-net", "attempt": 2, "kind": "artifacts_written", "artifacts": [{"name": "net.tar.gz", "sha256": "4ddf0c24554b5183d097fa68adcdd5010c680816660a80271c31cfb3fc369005"}]}
+{"event_id": "evt-09", "timestamp": "2026-09-21T11:12:00Z", "node": "package-net", "attempt": 2, "kind": "submitted"}
+{"event_id": "evt-09", "timestamp": "2026-09-21T11:12:00Z", "node": "package-net", "attempt": 2, "kind": "submitted"}
+{"event_id": "evt-13", "timestamp": "2026-09-21T12:00:00Z", "node": "test-flaky", "attempt": 1, "kind": "started"}
+{"event_id": "evt-14", "timestamp": "2026-09-21T12:01:00Z", "node": "test-flaky", "attempt": 1, "kind": "failed", "reason": "flaky test timeout"}
+{"event_id": "evt-15", "timestamp": "2026-09-21T12:10:00Z", "node": "test-flaky", "attempt": 2, "kind": "started"}
+{"event_id": "evt-16", "timestamp": "2026-09-21T12:11:00Z", "node": "test-flaky", "attempt": 2, "kind": "artifacts_written", "artifacts": [{"name": "report.xml", "sha256": "845e91831319e89c4d656bdb80c278ac09a7230d61e5dfd2e1b1fbb436ac8917"}]}
+{"event_id": "evt-17", "timestamp": "2026-09-21T12:12:00Z", "node": "test-flaky", "attempt": 2, "kind": "submitted"}
+{"event_id": "evt-18", "timestamp": "2026-09-21T13:00:00Z", "node": "ghost-node", "attempt": 1, "kind": "started"}
