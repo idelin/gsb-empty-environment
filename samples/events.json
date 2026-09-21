@@ -1,0 +1,36 @@
+{
+  "events": [
+    {"event_id": "e010", "type": "build_succeeded", "node": "alpha@1.2.0", "attempt": 1},
+    {"event_id": "e001", "type": "node_started", "node": "alpha@1.2.0", "attempt": 1},
+    {"event_id": "e004", "type": "artifact_written", "node": "alpha@1.2.0", "attempt": 1,
+     "payload": {"artifact": "dist/alpha-1.2.0-py3-none-any.whl", "sha256": "a1b2c3"}},
+    {"event_id": "e003", "type": "artifact_written", "node": "alpha@1.2.0", "attempt": 1,
+     "payload": {"artifact": "dist/alpha-1.2.0.tar.gz", "sha256": "d4e5f6"}},
+    {"event_id": "e007", "type": "committed", "node": "alpha@1.2.0", "attempt": 1,
+     "payload": {"commit": "9fceb02"}},
+    {"event_id": "e007", "type": "committed", "node": "alpha@1.2.0", "attempt": 1,
+     "payload": {"commit": "9fceb02"}},
+
+    {"event_id": "e101", "type": "node_started", "node": "beta@0.9.0-rc.1", "attempt": 1},
+    {"event_id": "e110", "type": "build_succeeded", "node": "beta@0.9.0-rc.1", "attempt": 1},
+    {"event_id": "e103", "type": "artifact_written", "node": "beta@0.9.0-rc.1", "attempt": 1,
+     "payload": {"artifact": "dist/beta-0.9.0rc1.tar.gz", "sha256": "b0b1b2"}},
+    {"event_id": "e107", "type": "committed", "node": "beta@0.9.0-rc.1", "attempt": 1,
+     "payload": {"commit": "0badc0de"}},
+
+    {"event_id": "e220", "type": "build_succeeded", "node": "gamma@2.0.0", "attempt": 2},
+    {"event_id": "e209", "type": "build_failed", "node": "gamma@2.0.0", "attempt": 1,
+     "payload": {"reason": "compiler crash"}},
+    {"event_id": "e211", "type": "node_started", "node": "gamma@2.0.0", "attempt": 2},
+    {"event_id": "e213", "type": "artifact_written", "node": "gamma@2.0.0", "attempt": 2,
+     "payload": {"artifact": "dist/gamma-2.0.0.tar.gz", "sha256": "c3c3c3"}},
+    {"event_id": "e217", "type": "committed", "node": "gamma@2.0.0", "attempt": 2,
+     "payload": {"commit": "feedface"}},
+
+    {"event_id": "e301", "type": "node_started", "node": "delta@1.0.1", "attempt": 1},
+    {"event_id": "e309", "type": "build_failed", "node": "delta@1.0.1", "attempt": 1,
+     "payload": {"reason": "unit tests failed"}},
+
+    {"event_id": "e401", "type": "node_started", "node": "epsilon@3.1.4", "attempt": 1}
+  ]
+}
