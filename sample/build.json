@@ -1,0 +1,20 @@
+{
+  "version": "1.4.0-rc.1",
+  "capacity": {"cpu": 4, "memory": 8},
+  "packages": [
+    {"name": "zlib", "version": "1.2.13"},
+    {"name": "openssl", "version": "3.0.0-beta2"},
+    {"name": "cmake", "version": "3.27.0"}
+  ],
+  "tasks": [
+    {"id": "fetch",            "cpu": 1, "memory": 1, "duration": 1, "deps": []},
+    {"id": "parse",            "cpu": 1, "memory": 2, "duration": 2, "deps": ["fetch"]},
+    {"id": "compile_core",     "cpu": 2, "memory": 4, "duration": 4, "deps": ["parse"]},
+    {"id": "compile_ui",       "cpu": 2, "memory": 3, "duration": 3, "deps": ["parse"]},
+    {"id": "compile_net",      "cpu": 1, "memory": 2, "duration": 2, "deps": ["parse"]},
+    {"id": "link",             "cpu": 2, "memory": 4, "duration": 2, "deps": ["compile_core", "compile_ui", "compile_net"]},
+    {"id": "test_unit",        "cpu": 2, "memory": 2, "duration": 3, "deps": ["link"]},
+    {"id": "test_integration", "cpu": 4, "memory": 6, "duration": 3, "deps": ["link"]},
+    {"id": "package",          "cpu": 1, "memory": 1, "duration": 1, "deps": ["test_unit", "test_integration"]}
+  ]
+}
