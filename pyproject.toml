@@ -1,0 +1,9 @@
+[project]
+name = "rle-history"
+version = "0.1.0"
+description = "带来源索引的设备状态历史运行长度编码（增量补丁 + 证据回溯）"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"
