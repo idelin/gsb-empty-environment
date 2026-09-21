@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "occupancy-peak"
+version = "0.1.0"
+description = "从乱序 start/end 记录重建半开占用区间并查询峰值并发（无外部依赖）"
+requires-python = ">=3.8"
+
+[tool.setuptools]
+packages = ["occupancy_peak"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
