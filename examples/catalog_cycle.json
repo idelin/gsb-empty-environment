@@ -1,0 +1,7 @@
+{
+  "packages": [
+    {"name": "P", "version": "1.0.0", "provides": ["R"], "replaced_by": "Q"},
+    {"name": "Q", "version": "1.0.0", "provides": [], "replaced_by": "R"},
+    {"name": "R", "version": "1.0.0", "provides": [], "replaced_by": "P"}
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "requirements": ["X", "Y", "Z", "W", "Q", "TIE"],
+  "target": {"os": "linux", "arch": "amd64"}
+}

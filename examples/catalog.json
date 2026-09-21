@@ -1,0 +1,18 @@
+{
+  "packages": [
+    {"name": "A", "version": "2.0.0", "provides": ["X"], "conflicts_with": ["C"]},
+    {"name": "A", "version": "1.5.0", "provides": ["X"], "conflicts_with": ["C"]},
+    {"name": "A", "version": "2.0.0-rc.1", "provides": ["X"], "conflicts_with": ["C"]},
+    {"name": "B", "version": "1.1.0", "provides": ["X"]},
+    {"name": "C", "version": "1.0.0", "provides": ["Y"]},
+    {"name": "D", "version": "1.0.0", "provides": ["Z"]},
+    {"name": "D", "version": "0.9.0", "provides": ["Z"]},
+    {"name": "E", "version": "3.0.0", "provides": ["W"], "conflicts_with": ["B"]},
+    {"name": "F", "version": "1.0.0", "provides": ["W"]},
+    {"name": "G", "version": "1.0.0", "provides": ["Q"], "replaced_by": "G2"},
+    {"name": "G2", "version": "2.0.0", "provides": [], "requires_target": [{"os": "linux"}]},
+    {"name": "G2", "version": "1.9.0", "provides": [], "excludes_target": [{"os": "linux"}]},
+    {"name": "H", "version": "1.0.0", "provides": ["TIE"]},
+    {"name": "I", "version": "1.0.0", "provides": ["TIE"]}
+  ]
+}
