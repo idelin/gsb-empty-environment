@@ -1,0 +1,15 @@
+scenario 1: saturated tenants, weights tier-a:b:c = 1:2:3
+  served: tier-a=3333 tier-b=6666 tier-c=10000
+  shares: tier-a=0.17 tier-b=0.33 tier-c=0.50 (want 0.17 / 0.33 / 0.50)
+  peak concurrent running tasks=4 (limit=4)
+
+scenario 2: same scheduler, weights tier-a:b change 1:1 -> 1:2
+>>> tier-b weight changed 1 -> 2 after window 1 drained
+  window 1 (weights 1:1): tier-a=3000 tier-b=3000
+  window 2 (weights 1:2): tier-a=3000 tier-b=6000, shares 0.33 / 0.67 (want 0.33 / 0.67)
+
+scenario 3: cancelling a waiting task consumes no slot
+>>> all slots busy; cancelled a waiting tier-a task
+>>> freed slot went to the queued tier-b task, not the cancelled one
+  stats: submitted=6 succeeded=5 failed=0 cancelled=1 peak=4
+scheduler shut down cleanly; no new tasks accepted after Close

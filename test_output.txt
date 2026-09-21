@@ -1,0 +1,26 @@
+=== RUN   TestWeightedShareSaturated
+    scheduler_test.go:110: saturated share: a=2000 b=4000 ratio=0.500
+--- PASS: TestWeightedShareSaturated (2.13s)
+=== RUN   TestFIFOOrderPerTenant
+--- PASS: TestFIFOOrderPerTenant (0.00s)
+=== RUN   TestGlobalConcurrencyLimit
+--- PASS: TestGlobalConcurrencyLimit (0.00s)
+=== RUN   TestIdleTenantDoesNotWasteSlots
+--- PASS: TestIdleTenantDoesNotWasteSlots (0.00s)
+=== RUN   TestCancelWaitingConsumesNoQuota
+--- PASS: TestCancelWaitingConsumesNoQuota (0.00s)
+=== RUN   TestCancelRunningCooperative
+--- PASS: TestCancelRunningCooperative (0.00s)
+=== RUN   TestFailureAndPanic
+--- PASS: TestFailureAndPanic (0.00s)
+=== RUN   TestDynamicWeightOnlyAffectsFuture
+    scheduler_test.go:488: phase2 share a=0.333 (a=300 b=600), adjacent-a=0
+--- PASS: TestDynamicWeightOnlyAffectsFuture (0.01s)
+=== RUN   TestCloseStopsNewAndDrains
+--- PASS: TestCloseStopsNewAndDrains (0.00s)
+=== RUN   TestConfigValidation
+--- PASS: TestConfigValidation (0.00s)
+=== RUN   TestConcurrentStress
+--- PASS: TestConcurrentStress (0.51s)
+PASS
+ok  	wfq	3.793s
