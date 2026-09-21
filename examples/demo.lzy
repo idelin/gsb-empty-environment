@@ -1,0 +1,7 @@
+# call-by-need demo: sharing, laziness, tracing
+let
+  a = 20 + 22,
+  b = a * 2,
+  unused = 1 / 0,   # never forced: no error
+  c = b + a
+in c + c

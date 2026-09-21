@@ -1,0 +1,2 @@
+# 'bad' is forced once; the exception is cached for later forces
+let bad = 1 / 0 in bad + bad

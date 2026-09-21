@@ -1,0 +1,2 @@
+# indirect self-reference: x needs y, y needs x
+let x = y + 1, y = x + 1 in x
