@@ -1,0 +1,2 @@
+# 自应用 x x 会产生无限类型 a = a -> b，occurs check 拒绝
+fun x -> x x

@@ -1,0 +1,3 @@
+# 恒等函数通过 let 泛化，在 Bool 与 Int 两种类型上复用
+let id = fun x -> x in
+if id true then id 1 else id 2

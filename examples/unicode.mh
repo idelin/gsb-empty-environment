@@ -1,0 +1,2 @@
+# 标识符可以是 Unicode；位置仍按 UTF-8 字节区间报告
+let λ = fun x -> x in λ 5

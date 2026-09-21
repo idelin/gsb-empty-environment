@@ -1,0 +1,2 @@
+# 跨越多条约束的错误：true 经应用传给 y，而 y 被 `+` 约束为 Int
+let x = 1 in (fun y -> y + x) true

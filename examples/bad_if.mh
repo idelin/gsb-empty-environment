@@ -1,0 +1,2 @@
+# if 条件不是 Bool
+if 1 then 2 else 3

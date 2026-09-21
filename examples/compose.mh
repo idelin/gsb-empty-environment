@@ -1,0 +1,5 @@
+# 高阶函数：compose 的类型被推断为 (a -> b) -> (c -> a) -> c -> b
+let compose = fun f -> fun g -> fun x -> f (g x) in
+let inc = fun n -> n + 1 in
+let double = fun n -> n * 2 in
+compose inc double 3
