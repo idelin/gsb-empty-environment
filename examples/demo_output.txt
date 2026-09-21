@@ -1,0 +1,62 @@
+
+=== 0. 版本号 major.minor.patch 与预发布（本地解析，不联网） ===
+  2.4.1-rc.1 预发布=True  < 2.4.1: True
+  排序: [Version(major=0, minor=3, patch=0, prerelease=('beta', '2')), Version(major=2, minor=4, patch=1, prerelease=('rc', '1')), Version(major=2, minor=4, patch=1, prerelease=())]
+
+=== 1. 本地 JSON 中的包与多输出构建节点 ===
+  package core-lib   version=2.4.1-rc.1 (预发布)
+  package data-tool  version=1.0.0
+  package flaky      version=0.3.0-beta.2 (预发布)
+  node //core:release             behavior=deterministic   outputs=[config/version.conf, lib/core.dat]
+  node //tools:digests-pinned     behavior=deterministic   outputs=[data/meta.txt, data/index.bin]
+  node //tools:missing-output     behavior=missing_output  outputs=[out/a.txt, out/b.txt]
+  node //tools:bad-digest         behavior=bad_digest      outputs=[out/checked.txt]
+  node //flaky:image              behavior=nondeterministic outputs=[image/manifest.txt, image/checksum.txt]
+
+=== 2. 首次构建 //core:release（多输出全部校验后一次性发布） ===
+  [first] status=published attempt=de65f856
+      config/version.conf    sha256=8a5f6ac0e2626668...
+      lib/core.dat           sha256=630dcd2966c43366...
+
+=== 3. 再次构建 //core:release（同键同内容 -> 去重/命中） ===
+  [again] status=deduped attempt=de65f856
+      config/version.conf    sha256=8a5f6ac0e2626668...
+      lib/core.dat           sha256=630dcd2966c43366...
+  同一 attempt_id => True（没有重复执行）
+
+=== 4. 并发 5 个相同构建（同键同内容 -> 单飞去重，只执行一次） ===
+  5 个并发请求的 attempt_id 唯一数 = 1（应为 1）
+
+=== 5. 缺失一个输出：//tools:missing-output ===
+  捕获 MissingOutputError: missing declared output: 'out/b.txt'
+  条目是否发布 = False（一个输出缺失，其余也不发布）
+
+=== 6. 摘要校验失败：//tools:bad-digest ===
+  捕获 DigestMismatchError: digest mismatch for 'out/checked.txt': expected 0000000000000000000000000000000000000000000000000000000000000000, got ef3a229b5e08a76a48c59658ca1b4d62f538e964a15a058a53fdf6223a63fd1f
+  条目是否发布 = False（校验失败即放弃并清理）
+
+=== 7. 非确定性：同键不同内容不能后写覆盖前写 ===
+  [build #1] status=published attempt=a75868ea
+      image/checksum.txt     sha256=a23747428e388345...
+      image/manifest.txt     sha256=f7b7f28fa2d85a26...
+  捕获 NonDeterministicConflictError
+    已发布摘要 = 9c0dbb6cf5516d39b891c5a1...
+    后构建摘要 = d11b536327102cba71196ba1...
+  保留的是首次结果 => True（先写者胜出）
+
+=== 8. 并发不同键互不阻塞，各自独立发布 ===
+  //core:release             -> deduped
+  //tools:digests-pinned     -> published
+
+=== 9. 声明摘要的节点走快速命中路径 ===
+  [declared-sha256] status=cached attempt=1dd15cce
+      data/index.bin         sha256=29ab3345f93579e4...
+      data/meta.txt          sha256=6a077666e17b2a3a...
+  status=cached => True（摘要匹配，直接命中）
+
+=== 10. 最终缓存状态 ===
+  //core:release             -> 2 个输出 attempt=de65f856
+  //tools:digests-pinned     -> 2 个输出 attempt=1dd15cce
+  //tools:missing-output     -> 未发布
+  //tools:bad-digest         -> 未发布
+  //flaky:image              -> 2 个输出 attempt=a75868ea

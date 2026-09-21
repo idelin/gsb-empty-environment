@@ -1,0 +1,38 @@
+test_blob_dedup_and_readback (test_store_engine.ContentStoreTest.test_blob_dedup_and_readback) ... ok
+test_publish_different_content_conflicts_and_keeps_first (test_store_engine.ContentStoreTest.test_publish_different_content_conflicts_and_keeps_first) ... ok
+test_publish_same_content_dedups (test_store_engine.ContentStoreTest.test_publish_same_content_dedups) ... ok
+test_blobs_contain_output_bytes (test_store_engine.EngineTest.test_blobs_contain_output_bytes) ... ok
+test_concurrent_different_keys_independent (test_store_engine.EngineTest.test_concurrent_different_keys_independent) ... ok
+test_concurrent_same_build_single_flight (test_store_engine.EngineTest.test_concurrent_same_build_single_flight) ... ok
+test_declared_digest_fast_hit (test_store_engine.EngineTest.test_declared_digest_fast_hit) ... ok
+test_declared_digest_mismatch_publishes_nothing (test_store_engine.EngineTest.test_declared_digest_mismatch_publishes_nothing) ... ok
+test_empty_output_rejected (test_store_engine.EngineTest.test_empty_output_rejected) ... ok
+test_example_manifest_core_release (test_store_engine.EngineTest.test_example_manifest_core_release) ... ok
+test_missing_one_output_publishes_nothing (test_store_engine.EngineTest.test_missing_one_output_publishes_nothing) ... ok
+test_multi_output_publishes_together (test_store_engine.EngineTest.test_multi_output_publishes_together) ... ok
+test_prerelease_version_rendered_into_output (test_store_engine.EngineTest.test_prerelease_version_rendered_into_output) ... ok
+test_same_key_different_content_conflicts_first_wins (test_store_engine.EngineTest.test_same_key_different_content_conflicts_first_wins) ... ok
+test_same_key_same_content_dedups (test_store_engine.EngineTest.test_same_key_same_content_dedups) ... ok
+test_staging_cleaned_after_success_and_failure (test_store_engine.EngineTest.test_staging_cleaned_after_success_and_failure) ... ok
+test_waiter_retries_after_leader_failure (test_store_engine.EngineTest.test_waiter_retries_after_leader_failure) ... ok
+test_bad_sha256_rejected (test_version_manifest.ManifestTest.test_bad_sha256_rejected) ... ok
+test_duplicate_output_path_rejected (test_version_manifest.ManifestTest.test_duplicate_output_path_rejected) ... ok
+test_empty_outputs_rejected (test_version_manifest.ManifestTest.test_empty_outputs_rejected) ... ok
+test_invalid_json_raises (test_version_manifest.ManifestTest.test_invalid_json_raises) ... ok
+test_loads_local_json_file (test_version_manifest.ManifestTest.test_loads_local_json_file) ... ok
+test_missing_file_raises (test_version_manifest.ManifestTest.test_missing_file_raises) ... ok
+test_parses_packages_and_nodes (test_version_manifest.ManifestTest.test_parses_packages_and_nodes) ... ok
+test_unknown_package_rejected (test_version_manifest.ManifestTest.test_unknown_package_rejected) ... ok
+test_unsafe_path_rejected (test_version_manifest.ManifestTest.test_unsafe_path_rejected) ... ok
+test_version_object_form (test_version_manifest.ManifestTest.test_version_object_form) ... ok
+test_core_release (test_version_manifest.VersionTest.test_core_release) ... ok
+test_invalid_versions (test_version_manifest.VersionTest.test_invalid_versions) ... ok
+test_numeric_identifiers_compare_numerically (test_version_manifest.VersionTest.test_numeric_identifiers_compare_numerically) ... ok
+test_prerelease_flag (test_version_manifest.VersionTest.test_prerelease_flag) ... ok
+test_prerelease_lower_than_release (test_version_manifest.VersionTest.test_prerelease_lower_than_release) ... ok
+test_prerelease_ordering (test_version_manifest.VersionTest.test_prerelease_ordering) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.415s
+
+OK

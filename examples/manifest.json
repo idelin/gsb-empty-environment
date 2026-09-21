@@ -1,0 +1,106 @@
+{
+  "packages": [
+    {
+      "name": "core-lib",
+      "version": {
+        "core": "2.4.1",
+        "prerelease": "rc.1"
+      }
+    },
+    {
+      "name": "data-tool",
+      "version": "1.0.0"
+    },
+    {
+      "name": "flaky",
+      "version": "0.3.0-beta.2"
+    }
+  ],
+  "nodes": [
+    {
+      "key": "//core:release",
+      "package": "core-lib",
+      "inputs": {
+        "BUILD_PROFILE": "release",
+        "TARGET": "x86_64-apple-darwin"
+      },
+      "outputs": [
+        {
+          "path": "config/version.conf",
+          "template": "name={NAME}\nversion={VERSION}\nprofile={BUILD_PROFILE}\ntarget={TARGET}\n"
+        },
+        {
+          "path": "lib/core.dat",
+          "encoding": "base64",
+          "template": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8="
+        }
+      ]
+    },
+    {
+      "key": "//tools:digests-pinned",
+      "package": "data-tool",
+      "inputs": {
+        "BUILD_PROFILE": "release"
+      },
+      "outputs": [
+        {
+          "path": "data/meta.txt",
+          "template": "data-tool 1.0.0 (release)\n"
+        },
+        {
+          "path": "data/index.bin",
+          "encoding": "base64",
+          "template": "r0G3/q9Bt/6vQbf+r0G3/q9Bt/6vQbf+r0G3/q9Bt/4="
+        }
+      ]
+    },
+    {
+      "key": "//tools:missing-output",
+      "package": "data-tool",
+      "behavior": "missing_output",
+      "inputs": {
+        "BUILD_PROFILE": "ci"
+      },
+      "outputs": [
+        {
+          "path": "out/a.txt",
+          "template": "artifact A for {NAME} {VERSION}\n"
+        },
+        {
+          "path": "out/b.txt",
+          "template": "artifact B for {NAME} {VERSION}\n"
+        }
+      ]
+    },
+    {
+      "key": "//tools:bad-digest",
+      "package": "data-tool",
+      "behavior": "bad_digest",
+      "outputs": [
+        {
+          "path": "out/checked.txt",
+          "template": "this content does not match the declared digest\n",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "key": "//flaky:image",
+      "package": "flaky",
+      "behavior": "nondeterministic",
+      "inputs": {
+        "BUILD_PROFILE": "nightly"
+      },
+      "outputs": [
+        {
+          "path": "image/manifest.txt",
+          "template": "flaky {VERSION} profile={BUILD_PROFILE} nonce={BUILD_NONCE}\n"
+        },
+        {
+          "path": "image/checksum.txt",
+          "template": "generated at attempt {BUILD_NONCE}\n"
+        }
+      ]
+    }
+  ]
+}
