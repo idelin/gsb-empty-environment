@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wrapcounter"
+version = "0.1.0"
+description = "Out-of-order wrap-around counter analysis with resets and incremental revisions"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+[tool.setuptools]
+packages = ["wrapcounter"]
