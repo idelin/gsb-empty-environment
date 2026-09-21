@@ -1,0 +1,21 @@
+{
+  "name": "demo-build",
+  "capacity": {"cpu": 4, "memory": 8},
+  "packages": [
+    {"name": "zlib", "version": "1.2.13"},
+    {"name": "openssl", "version": "3.1.0-rc1"},
+    {"name": "cmake", "version": "3.26.4+build.2"}
+  ],
+  "tasks": [
+    {"id": "fetch",        "cpu": 1, "memory": 1, "duration": 2, "deps": []},
+    {"id": "unpack",       "cpu": 1, "memory": 2, "duration": 1, "deps": ["fetch"]},
+    {"id": "configure",    "cpu": 2, "memory": 2, "duration": 2, "deps": ["unpack"]},
+    {"id": "compile_core", "cpu": 3, "memory": 4, "duration": 5, "deps": ["configure"]},
+    {"id": "compile_io",   "cpu": 2, "memory": 3, "duration": 4, "deps": ["configure"]},
+    {"id": "compile_ui",   "cpu": 1, "memory": 2, "duration": 3, "deps": ["configure"]},
+    {"id": "test_core",    "cpu": 2, "memory": 3, "duration": 2, "deps": ["compile_core"]},
+    {"id": "test_io",      "cpu": 1, "memory": 2, "duration": 2, "deps": ["compile_io"]},
+    {"id": "package",      "cpu": 1, "memory": 1, "duration": 1,
+     "deps": ["test_core", "test_io", "compile_ui"]}
+  ]
+}

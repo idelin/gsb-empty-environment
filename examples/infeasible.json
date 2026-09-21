@@ -1,0 +1,9 @@
+{
+  "name": "infeasible-demo",
+  "capacity": {"cpu": 4, "memory": 8},
+  "packages": [],
+  "tasks": [
+    {"id": "ok_task",   "cpu": 2, "memory": 4,  "duration": 3, "deps": []},
+    {"id": "huge_task", "cpu": 2, "memory": 16, "duration": 2, "deps": ["ok_task"]}
+  ]
+}
