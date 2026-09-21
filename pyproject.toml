@@ -1,0 +1,8 @@
+[project]
+name = "counter-analysis"
+version = "0.1.0"
+description = "Out-of-order counter increment analysis: wraps, resets, and uncertain gaps"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
