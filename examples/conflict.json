@@ -1,0 +1,18 @@
+{
+  "packages": [
+    {
+      "name": "app",
+      "version": "1.4.0",
+      "default_features": ["std"],
+      "features": {
+        "std":   { "enables": ["alloc"] },
+        "alloc": {}
+      }
+    }
+  ],
+  "build": {
+    "roots": [
+      { "package": "app", "version": "^1.0.0", "disable": ["alloc"] }
+    ]
+  }
+}

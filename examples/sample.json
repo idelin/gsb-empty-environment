@@ -1,0 +1,58 @@
+{
+  "packages": [
+    {
+      "name": "app",
+      "version": "1.4.0",
+      "default_features": ["std"],
+      "features": {
+        "std":     { "enables": ["alloc"] },
+        "alloc":   {},
+        "net":     { "deps": [ { "package": "netcore", "version": "^2.0.0", "features": ["tcp"] } ] },
+        "tls":     { "enables": ["net"],
+                     "deps": [ { "package": "tlslib", "version": "3.1.2",
+                                 "features": ["x509"], "default_features": false } ] },
+        "metrics": { "conditional": [ { "when": "std && !minimal", "enables": ["prom"] } ] },
+        "prom":    {},
+        "minimal": {},
+        "cycle_a": { "enables": ["cycle_b"] },
+        "cycle_b": { "enables": ["cycle_a"] },
+        "loop_a":  { "enables": ["loop_b"] },
+        "loop_b":  { "enables": ["loop_a"] }
+      }
+    },
+    {
+      "name": "netcore",
+      "version": "2.0.0",
+      "default_features": ["tcp"],
+      "features": { "tcp": {}, "udp": {} }
+    },
+    {
+      "name": "netcore",
+      "version": "2.3.1",
+      "default_features": ["tcp"],
+      "features": { "tcp": {}, "udp": {} }
+    },
+    {
+      "name": "tlslib",
+      "version": "3.1.2-rc.1",
+      "default_features": ["x509"],
+      "features": { "x509": {}, "ocsp": {} }
+    },
+    {
+      "name": "tlslib",
+      "version": "3.1.2",
+      "default_features": ["x509"],
+      "features": { "x509": {}, "ocsp": {} }
+    }
+  ],
+  "build": {
+    "roots": [
+      {
+        "package": "app",
+        "version": "^1.0.0",
+        "enable": ["tls", "metrics", "cycle_a"],
+        "disable": ["minimal"]
+      }
+    ]
+  }
+}
