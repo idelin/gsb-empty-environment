@@ -1,0 +1,19 @@
+{
+  "packages": [
+    {
+      "name": "libwidget",
+      "version": "0.9.0",
+      "inputs": {"src": ["widget_v0.c"]}
+    },
+    {
+      "name": "libwidget",
+      "version": "1.0.0-rc.1",
+      "inputs": {"src": ["widget_rc.c"]}
+    },
+    {
+      "name": "libwidget",
+      "version": "1.0.0",
+      "inputs": {"src": ["widget.c", "widget.h"]}
+    }
+  ]
+}
