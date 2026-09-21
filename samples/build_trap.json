@@ -1,0 +1,16 @@
+{
+  "target": "app",
+  "link": "static",
+  "attributes": {"proprietary": true, "independent_modules": false},
+  "roots": {"left": "*", "right": "*"},
+  "rules": {
+    "propagation": [
+      {"tag": "copyleft-strong", "links": ["static", "dynamic"], "obligations": ["disclose"]},
+      {"tag": "copyleft-weak", "links": ["static"], "obligations": ["disclose"]}
+    ],
+    "incompatible": [["GPL-2.0-only", "Apache-2.0"]],
+    "exception_required": [
+      {"tag": "copyleft-strong", "when": {"proprietary": true}}
+    ]
+  }
+}

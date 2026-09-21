@@ -1,0 +1,46 @@
+{
+  "comment": "Repair demo, v3: shared 1.1.0 relicensed to GPL-2.0-only; no permissive alternatives exist.",
+  "licenses": {
+    "MIT":          {"obligations": ["notice"], "tags": ["permissive"]},
+    "BSD-2-Clause": {"obligations": ["notice"], "tags": ["permissive"]},
+    "Apache-2.0":   {"obligations": ["notice"], "tags": ["permissive"]},
+    "GPL-2.0-only": {"obligations": ["notice", "disclose", "same-license"], "tags": ["copyleft-strong"]}
+  },
+  "exceptions": {},
+  "packages": {
+    "app": {
+      "versions": [
+        {"version": "1.0.0", "license": "MIT",
+         "deps": {"ui": "1.0.0", "netlib": "*", "utils": "1.0.0", "plugin": "*"}}
+      ]
+    },
+    "ui": {
+      "versions": [
+        {"version": "1.0.0", "license": "MIT",
+         "deps": {"shared": ">=1.0.0 <2.0.0"}}
+      ]
+    },
+    "netlib": {
+      "versions": [
+        {"version": "1.0.0", "license": "Apache-2.0",
+         "deps": {"shared": ">=1.0.0"}}
+      ]
+    },
+    "utils": {
+      "versions": [
+        {"version": "1.0.0", "license": "BSD-2-Clause"}
+      ]
+    },
+    "plugin": {
+      "versions": [
+        {"version": "1.0.0", "license": "Apache-2.0"}
+      ]
+    },
+    "shared": {
+      "versions": [
+        {"version": "1.0.0", "license": "MIT"},
+        {"version": "1.1.0", "license": "GPL-2.0-only"}
+      ]
+    }
+  }
+}

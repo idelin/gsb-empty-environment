@@ -1,0 +1,61 @@
+{
+  "comment": "Synthetic license data for demos. Modeling rules only, not legal advice.",
+  "licenses": {
+    "MIT":          {"obligations": ["notice"], "tags": ["permissive"]},
+    "BSD-2-Clause": {"obligations": ["notice"], "tags": ["permissive"]},
+    "Apache-2.0":   {"obligations": ["notice"], "tags": ["permissive"]},
+    "LGPL-2.1-only": {"obligations": ["notice", "disclose"], "tags": ["copyleft-weak"]},
+    "GPL-2.0-only": {"obligations": ["notice", "disclose", "same-license"], "tags": ["copyleft-strong"]}
+  },
+  "exceptions": {
+    "Classpath-Exception-2.0": {
+      "condition": "independent_modules",
+      "removes_obligations": ["disclose", "same-license"],
+      "removes_tags": ["copyleft-strong"]
+    }
+  },
+  "packages": {
+    "left": {
+      "versions": [
+        {"version": "1.0.0", "license": "MIT OR GPL-2.0-only",
+         "deps": {"shared": ">=1.0.0 <2.0.0"}},
+        {"version": "2.0.0", "license": "MIT",
+         "deps": {"shared": ">=2.0.0"}}
+      ]
+    },
+    "right": {
+      "versions": [
+        {"version": "1.0.0", "license": "Apache-2.0",
+         "deps": {"shared": ">=1.0.0 <2.0.0"}}
+      ]
+    },
+    "shared": {
+      "versions": [
+        {"version": "1.0.0", "license": "MIT"},
+        {"version": "2.0.0", "license": "GPL-2.0-only"}
+      ]
+    },
+    "ui": {
+      "versions": [
+        {"version": "1.0.0", "license": "MIT",
+         "deps": {"jsonlib": {"range": ">=1.0.0", "link": "dynamic"}}}
+      ]
+    },
+    "net": {
+      "versions": [
+        {"version": "1.0.0", "license": "Apache-2.0",
+         "deps": {"jsonlib": {"range": ">=1.0.0", "link": "dynamic"}}}
+      ]
+    },
+    "jsonlib": {
+      "versions": [
+        {"version": "1.0.0", "license": "LGPL-2.1-only"}
+      ]
+    },
+    "guilib": {
+      "versions": [
+        {"version": "1.0.0", "license": "GPL-2.0-only WITH Classpath-Exception-2.0"}
+      ]
+    }
+  }
+}
