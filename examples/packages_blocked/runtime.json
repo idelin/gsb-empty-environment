@@ -1,0 +1,6 @@
+{
+  "name": "runtime",
+  "version": "2.0.0",
+  "dependencies": ["schema"],
+  "consumes": ["generated.api"]
+}

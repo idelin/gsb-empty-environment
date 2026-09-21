@@ -1,0 +1,7 @@
+{
+  "name": "core",
+  "version": "2.1.0-alpha.3",
+  "dependencies": ["base"],
+  "consumes": ["base.ir"],
+  "generates": ["core.ir"]
+}

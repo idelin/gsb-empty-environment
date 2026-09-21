@@ -1,0 +1,6 @@
+{
+  "name": "codegen",
+  "version": "2.0.0-rc.1",
+  "dependencies": ["runtime"],
+  "generates": ["generated.api"]
+}
