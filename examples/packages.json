@@ -1,0 +1,149 @@
+{
+  "packages": {
+    "libcore": {
+      "releases": {
+        "1.4.2": {
+          "symbols": {
+            "parse": {
+              "kind": "function",
+              "params": [
+                {"name": "text", "type": "str", "required": true},
+                {"name": "strict", "type": "bool", "required": false}
+              ],
+              "return_type": "int",
+              "markers": ["pure", "thread-safe"]
+            },
+            "encode": {
+              "kind": "function",
+              "params": [
+                {"name": "value", "type": "int", "required": true}
+              ],
+              "return_type": "str",
+              "markers": ["thread-safe"]
+            },
+            "format": {
+              "kind": "function",
+              "params": [
+                {"name": "value", "type": "object", "required": true}
+              ],
+              "return_type": "object"
+            },
+            "STATUS": {"kind": "constant", "value_type": "int"},
+            "uncalled_legacy": {"kind": "function", "params": [], "return_type": "int"},
+            "_secret": {"kind": "function", "params": [], "return_type": "str"}
+          }
+        },
+        "2.0.0": {
+          "symbols": {
+            "parse": {
+              "kind": "function",
+              "params": [
+                {"name": "text", "type": "object", "required": true},
+                {"name": "strict", "type": "bool", "required": true},
+                {"name": "encoding", "type": "str", "required": false}
+              ],
+              "return_type": "object",
+              "markers": ["pure"]
+            },
+            "encode": {
+              "kind": "function",
+              "params": [
+                {"name": "value", "type": "bool", "required": true}
+              ],
+              "return_type": "str"
+            },
+            "format": {
+              "kind": "function",
+              "params": [
+                {"name": "value", "type": "object", "required": true},
+                {"name": "pretty", "type": "bool", "required": false}
+              ],
+              "return_type": "str"
+            },
+            "STATUS": {"kind": "constant", "value_type": "str"},
+            "_secret": {"kind": "constant", "value_type": "str"}
+          }
+        }
+      }
+    },
+    "libhttp": {
+      "releases": {
+        "3.0.1": {
+          "symbols": {
+            "fetch": {
+              "kind": "function",
+              "params": [{"name": "url", "type": "str", "required": true}],
+              "return_type": "bytes",
+              "markers": ["io"]
+            },
+            "decode_body": {
+              "kind": "function",
+              "params": [{"name": "data", "type": "bytes", "required": true}],
+              "return_type": "str"
+            }
+          }
+        },
+        "3.1.0": {
+          "symbols": {
+            "fetch": {
+              "kind": "function",
+              "params": [{"name": "url", "type": "str", "required": true}],
+              "return_type": "bytes",
+              "markers": ["io"]
+            },
+            "decode_body": {
+              "kind": "function",
+              "params": [{"name": "data", "type": "bytes", "required": true}],
+              "return_type": "str"
+            }
+          }
+        }
+      }
+    },
+    "libmath": {
+      "releases": {
+        "1.9.0-rc.1": {
+          "symbols": {
+            "calculate": {
+              "kind": "function",
+              "params": [{"name": "x", "type": "float", "required": true}],
+              "return_type": "float"
+            }
+          }
+        },
+        "2.0.0": {
+          "symbols": {
+            "calculate": {
+              "kind": "function",
+              "params": [{"name": "x", "type": "int", "required": true}],
+              "return_type": "float"
+            }
+          }
+        }
+      }
+    },
+    "app": {
+      "releases": {
+        "4.5.0": {
+          "symbols": {
+            "main": {"kind": "function", "params": [], "return_type": "int"},
+            "handle_body": {
+              "kind": "function",
+              "params": [{"name": "payload", "type": "bytes", "required": true}],
+              "return_type": "str"
+            }
+          }
+        }
+      }
+    },
+    "cli": {
+      "releases": {
+        "0.9.3": {
+          "symbols": {
+            "run": {"kind": "function", "params": [], "return_type": "int"}
+          }
+        }
+      }
+    }
+  }
+}

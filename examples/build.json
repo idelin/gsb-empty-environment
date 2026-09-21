@@ -1,0 +1,54 @@
+{
+  "nodes": {
+    "app": {"old": "4.5.0", "new": "4.5.0"},
+    "cli": {"old": "0.9.3", "new": "0.9.3"},
+    "libhttp": {"old": "3.0.1", "new": "3.1.0"},
+    "libcore": {"old": "1.4.2", "new": "2.0.0"},
+    "libmath": {"old": "1.9.0-rc.1", "new": "2.0.0"}
+  },
+  "edges": [
+    {
+      "from": "app.main",
+      "to": "libhttp.fetch",
+      "callsites": [
+        {"file": "src/app/main.py", "line": 21, "note": "GET config URL"},
+        {"file": "src/app/main.py", "line": 48}
+      ]
+    },
+    {
+      "from": "app.handle_body",
+      "to": "libhttp.decode_body",
+      "callsites": [
+        {"file": "src/app/handlers.py", "line": 12}
+      ]
+    },
+    {
+      "from": "libhttp.fetch",
+      "to": "libcore.parse",
+      "callsites": [
+        {"file": "libhttp/src/client.py", "line": 88, "note": "parse response headers"}
+      ]
+    },
+    {
+      "from": "libhttp.decode_body",
+      "to": "libcore.parse",
+      "callsites": [
+        {"file": "libhttp/src/body.py", "line": 34}
+      ]
+    },
+    {
+      "from": "libhttp.fetch",
+      "to": "libcore.format",
+      "callsites": [
+        {"file": "libhttp/src/client.py", "line": 140}
+      ]
+    },
+    {
+      "from": "cli.run",
+      "to": "libmath.calculate",
+      "callsites": [
+        {"file": "src/cli/run.py", "line": 17}
+      ]
+    }
+  ]
+}
