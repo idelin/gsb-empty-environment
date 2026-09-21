@@ -1,0 +1,17 @@
+{
+  "name": "nested",
+  "bitOrder": "lsb",
+  "byteOrder": "little",
+  "fields": [
+    { "kind": "int", "name": "rows", "bits": 3 },
+    { "kind": "array", "name": "matrix", "lengthFrom": "rows",
+      "element": { "kind": "struct", "name": "row", "fields": [
+        { "kind": "int", "name": "cols", "bits": 3 },
+        { "kind": "array", "name": "cells", "lengthFrom": "cols",
+          "element": { "kind": "int", "bits": 5, "signed": true } }
+      ]}
+    },
+    { "kind": "pad", "align": 8 },
+    { "kind": "checksum", "name": "sum", "bits": 8, "algo": "sum", "from": "rows", "to": "matrix" }
+  ]
+}

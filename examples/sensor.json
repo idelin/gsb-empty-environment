@@ -1,0 +1,24 @@
+{
+  "name": "sensor",
+  "bitOrder": "msb",
+  "byteOrder": "big",
+  "fields": [
+    { "kind": "int", "name": "tag", "bits": 3 },
+    { "kind": "int", "name": "level", "bits": 10, "signed": true },
+    {
+      "kind": "union", "name": "body", "tagFrom": "tag",
+      "cases": {
+        "0": { "fields": [
+          { "kind": "int", "name": "code", "bits": 4 }
+        ]},
+        "1": { "fields": [
+          { "kind": "int", "name": "count", "bits": 4 },
+          { "kind": "array", "name": "samples", "lengthFrom": "count",
+            "element": { "kind": "int", "bits": 12 } }
+        ]}
+      }
+    },
+    { "kind": "pad", "align": 8 },
+    { "kind": "checksum", "name": "crc", "bits": 8, "algo": "crc8", "from": "tag", "to": "body" }
+  ]
+}
