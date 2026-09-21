@@ -1,0 +1,27 @@
+; 样例：卫生参数化宏 swap / when
+; 注释里可以放中文，源码位置仍按 UTF-8 字节区间计算
+
+(def tmp 100)   ; 调用方的 tmp，不应被宏内 tmp 覆盖
+(def x 1)
+(def y 2)
+
+(defmacro swap (a b)
+  (let tmp a
+    (seq (set a b) (set b tmp))))
+
+(defmacro when (cond body)
+  (if cond body 0))
+
+(swap x y)
+(print "after (swap x y): x=" x "y=" y "tmp=" tmp)
+
+(swap tmp y)    ; 实参 tmp 是调用方变量，不能被宏内重命名波及
+(print "after (swap tmp y): tmp=" tmp "y=" y)
+
+(when (= x 2) (print "when: x is 2"))
+
+(def i 0)
+(def acc 0)
+(while (< i 5)
+  (seq (set acc (+ acc i)) (set i (+ i 1))))
+(print "sum 0..4 =" acc)
