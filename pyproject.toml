@@ -1,0 +1,8 @@
+[project]
+name = "bitemp-index"
+version = "0.1.0"
+description = "双时态（业务时间 × 录入时间）版本索引与参考实现"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
