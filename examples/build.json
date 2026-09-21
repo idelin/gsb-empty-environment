@@ -1,0 +1,12 @@
+{
+  "target": {"os": "linux", "arch": "x86_64"},
+  "allow_prereleases": false,
+  "requires": [
+    "X",
+    {"capability": "Y", "priority": 5},
+    {"capability": "net", "version": ">=2.0.0"},
+    "json",
+    "K",
+    {"capability": "Z", "optional": true}
+  ]
+}

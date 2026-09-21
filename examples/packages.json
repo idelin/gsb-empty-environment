@@ -1,0 +1,81 @@
+{
+  "packages": [
+    {
+      "name": "impl-a",
+      "version": "1.2.0",
+      "priority": 10,
+      "provides": [{"capability": "X", "version": "1.2.0", "priority": 10}],
+      "alternatives": ["impl-b"],
+      "conflicts": ["legacy-core"],
+      "requires": [{"capability": "net", "version": ">=2.0.0"}]
+    },
+    {
+      "name": "impl-a",
+      "version": "1.3.0-beta.1",
+      "priority": 10,
+      "provides": [{"capability": "X", "version": "1.3.0-beta.1", "priority": 10}],
+      "alternatives": ["impl-b"],
+      "conflicts": ["legacy-core"],
+      "requires": [{"capability": "net", "version": ">=2.0.0"}]
+    },
+    {
+      "name": "impl-b",
+      "version": "2.0.0",
+      "provides": [{"capability": "X", "version": "2.0.0"}],
+      "alternatives": ["impl-a"]
+    },
+    {
+      "name": "legacy-core",
+      "version": "1.0.0",
+      "provides": [{"capability": "Y", "version": "3.0.0"}],
+      "conflicts": ["impl-a"],
+      "os": ["linux"],
+      "arch": ["x86_64"]
+    },
+    {
+      "name": "modern-core",
+      "version": "2.4.0",
+      "provides": [{"capability": "Y", "version": "2.4.0"}],
+      "os": ["linux", "darwin"],
+      "arch": ["x86_64", "arm64"]
+    },
+    {
+      "name": "json-rapid",
+      "version": "1.4.2",
+      "provides": [{"capability": "json", "version": "1.4.2"}]
+    },
+    {
+      "name": "json-safe",
+      "version": "1.4.2",
+      "provides": [{"capability": "json", "version": "1.4.2"}]
+    },
+    {
+      "name": "netstack",
+      "version": "1.9.9",
+      "provides": [{"capability": "net", "version": "1.9.9"}]
+    },
+    {
+      "name": "netstack",
+      "version": "2.1.0",
+      "provides": [{"capability": "net", "version": "2.1.0"}]
+    },
+    {
+      "name": "kv-lmdb",
+      "version": "0.9.0",
+      "provides": [{"capability": "K", "version": "0.9.0"}],
+      "alternatives": ["kv-rocks"]
+    },
+    {
+      "name": "kv-rocks",
+      "version": "1.0.0",
+      "provides": [{"capability": "K", "version": "1.0.0"}],
+      "alternatives": ["kv-lmdb"]
+    },
+    {
+      "name": "zimpl",
+      "version": "0.1.0",
+      "provides": [{"capability": "Z", "version": "0.1.0"}],
+      "requires": [{"capability": "net", "version": "<2.0.0"}]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "target": {"os": "darwin", "arch": "arm64"},
+  "allow_prereleases": true,
+  "requires": ["X"]
+}

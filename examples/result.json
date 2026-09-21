@@ -1,0 +1,108 @@
+{
+  "target": {
+    "os": [
+      "linux"
+    ],
+    "arch": [
+      "x86_64"
+    ]
+  },
+  "allow_prereleases": false,
+  "mapping": {
+    "K": {
+      "package": "kv-rocks",
+      "version": "1.0.0",
+      "root_requested": true
+    },
+    "X": {
+      "package": "impl-b",
+      "version": "2.0.0",
+      "root_requested": true
+    },
+    "Y": {
+      "package": "legacy-core",
+      "version": "1.0.0",
+      "root_requested": true
+    },
+    "json": {
+      "package": "json-rapid",
+      "version": "1.4.2",
+      "root_requested": true
+    },
+    "net": {
+      "package": "netstack",
+      "version": "2.1.0",
+      "root_requested": true
+    }
+  },
+  "selected_packages": [
+    "impl-b@2.0.0",
+    "json-rapid@1.4.2",
+    "kv-rocks@1.0.0",
+    "legacy-core@1.0.0",
+    "netstack@2.1.0"
+  ],
+  "decisions": [
+    {
+      "capability": "Y",
+      "action": "select",
+      "package": "legacy-core@1.0.0",
+      "satisfies": [
+        "Y"
+      ]
+    },
+    {
+      "capability": "K",
+      "action": "select",
+      "package": "kv-rocks@1.0.0",
+      "satisfies": [
+        "K"
+      ]
+    },
+    {
+      "capability": "X",
+      "action": "reject",
+      "package": "impl-a@1.2.0",
+      "reason": "与已选包 legacy-core@1.0.0 互斥"
+    },
+    {
+      "capability": "X",
+      "action": "select",
+      "package": "impl-b@2.0.0",
+      "satisfies": [
+        "X"
+      ]
+    },
+    {
+      "capability": "Z",
+      "action": "skip-optional"
+    },
+    {
+      "capability": "json",
+      "action": "select",
+      "package": "json-rapid@1.4.2",
+      "satisfies": [
+        "json"
+      ]
+    },
+    {
+      "capability": "net",
+      "action": "select",
+      "package": "netstack@2.1.0",
+      "satisfies": [
+        "net"
+      ]
+    }
+  ],
+  "stable_rules": [
+    "同一能力在最终方案中只能由一个包提供（single provider）。",
+    "候选仅保留满足目标 os/arch、且在 allow_prereleases=false 时非预发布的包。",
+    "同一能力内先比较 provide.priority（大者优先），再比较能力版本（semver 高者优先）。",
+    "上一项相同时比较包级 priority，再比较包版本。",
+    "仍相同时按 name@version 字典序决胜，保证跨进程结果稳定。",
+    "alternatives 是显式替代偏好：无入边的直接提供者优先；成环时取剩余集合中排序最高者破环，绝不无限递归。",
+    "顶级要求按 (priority 降序, capability 升序) 处理；选择包时其所有传递要求一并加入。",
+    "首选包若违反版本约束、单提供者或 conflicts 互斥，则回溯尝试候选链中的下一个实现。",
+    "无可选实现时回退到可选要求的空实现；所有候选失败时给出包含原因的错误。"
+  ]
+}

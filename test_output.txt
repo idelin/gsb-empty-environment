@@ -1,0 +1,31 @@
+test_basic_operators (test_resolve.TestConstraint.test_basic_operators) ... ok
+test_caret (test_resolve.TestConstraint.test_caret) ... ok
+test_prerelease_allowed_by_constraint (test_resolve.TestConstraint.test_prerelease_allowed_by_constraint) ... ok
+test_tilde (test_resolve.TestConstraint.test_tilde) ... ok
+test_bad_constraint (test_resolve.TestInputValidation.test_bad_constraint) ... ok
+test_duplicate_package (test_resolve.TestInputValidation.test_duplicate_package) ... ok
+test_unknown_alternative (test_resolve.TestInputValidation.test_unknown_alternative) ... ok
+test_unknown_capability (test_resolve.TestInputValidation.test_unknown_capability) ... ok
+test_alternative_cycle_terminates (test_resolve.TestResolution.test_alternative_cycle_terminates) ... ok
+test_backtracking_on_transitive_conflict (test_resolve.TestResolution.test_backtracking_on_transitive_conflict) ... ok
+test_choose_higher_version (test_resolve.TestResolution.test_choose_higher_version) ... ok
+test_conflict_falls_back_to_alternative (test_resolve.TestResolution.test_conflict_falls_back_to_alternative) ... ok
+test_conflict_without_alternative_fails (test_resolve.TestResolution.test_conflict_without_alternative_fails) ... ok
+test_cycle_starts_from_highest_ranked_member (test_resolve.TestResolution.test_cycle_starts_from_highest_ranked_member) ... ok
+test_deterministic_across_runs (test_resolve.TestResolution.test_deterministic_across_runs) ... ok
+test_name_breaks_exact_tie (test_resolve.TestResolution.test_name_breaks_exact_tie) ... ok
+test_optional_requirement_skipped_when_impossible (test_resolve.TestResolution.test_optional_requirement_skipped_when_impossible) ... ok
+test_overlap_backtracks_to_package_satisfying_all_caps (test_resolve.TestResolution.test_overlap_backtracks_to_package_satisfying_all_caps) ... ok
+test_prerelease_filtered_by_default (test_resolve.TestResolution.test_prerelease_filtered_by_default) ... ok
+test_provide_priority_beats_version (test_resolve.TestResolution.test_provide_priority_beats_version) ... ok
+test_single_provider_for_two_packages (test_resolve.TestResolution.test_single_provider_for_two_packages) ... ok
+test_target_constraint_filters (test_resolve.TestResolution.test_target_constraint_filters) ... ok
+test_transitive_requirement (test_resolve.TestResolution.test_transitive_requirement) ... ok
+test_version_constraint_filters (test_resolve.TestResolution.test_version_constraint_filters) ... ok
+test_invalid (test_resolve.TestVersion.test_invalid) ... ok
+test_order_and_prerelease (test_resolve.TestVersion.test_order_and_prerelease) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.002s
+
+OK
