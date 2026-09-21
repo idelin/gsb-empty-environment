@@ -1,0 +1,81 @@
+{
+  "nodes": [
+    {
+      "id": "util-140",
+      "package": "libutil",
+      "version": "1.4.0",
+      "cost": 100,
+      "digest": "sha256:util-140-aaaa",
+      "dependencies": []
+    },
+    {
+      "id": "json-010",
+      "package": "libjson",
+      "version": "0.1.0",
+      "cost": 10,
+      "digest": "sha256:json-010-cccc",
+      "dependencies": [],
+      "available": true
+    },
+    {
+      "id": "core-231",
+      "package": "libcore",
+      "version": "2.3.1",
+      "cost": 250,
+      "digest": "sha256:core-231-v231",
+      "dependencies": ["util-140"]
+    },
+    {
+      "id": "app-300",
+      "package": "app",
+      "version": "3.0.0",
+      "cost": 80,
+      "digest": "sha256:app-300-ffff",
+      "dependencies": ["core-231", "util-140"]
+    },
+    {
+      "id": "service-120",
+      "package": "service",
+      "version": "1.2.0",
+      "cost": 60,
+      "digest": "sha256:service-120-7777",
+      "dependencies": ["core-231"]
+    },
+    {
+      "id": "web-2rc2",
+      "package": "web",
+      "version": "2.0.0-rc.2",
+      "cost": 40,
+      "digest": "sha256:web-2rc2-eeee",
+      "dependencies": ["util-140", "json-010"]
+    },
+    {
+      "id": "web-190",
+      "package": "web",
+      "version": "1.9.0",
+      "cost": 40,
+      "digest": "sha256:web-190-dddd",
+      "dependencies": ["util-140"],
+      "available": true
+    },
+    {
+      "id": "legacy-090",
+      "package": "legacy",
+      "version": "0.9.0",
+      "cost": 999,
+      "digest": "sha256:legacy-090-bbbb",
+      "dependencies": []
+    }
+  ],
+  "cache": {
+    "util-140": "sha256:util-140-aaaa",
+    "core-231": "sha256:core-231-STALE",
+    "service-120": "sha256:service-120-7777"
+  },
+  "failed": ["util-140", "core-231", "app-300", "service-120", "web-2rc2"],
+  "targets": [
+    "app@^3.0.0",
+    "service@~1.2.0",
+    {"package": "web", "constraint": ">=2.0.0-rc.1", "allow_prerelease": true}
+  ]
+}
