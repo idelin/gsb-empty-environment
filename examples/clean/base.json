@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "roots": {
+    "app": "^1.0.0",
+    "tool": "^2.0.0"
+  },
+  "packages": {
+    "app":  {"version": "1.0.0", "dependencies": {"lib": "^1.0.0"}},
+    "lib":  {"version": "1.2.0", "dependencies": {}},
+    "tool": {"version": "2.1.0", "dependencies": {}}
+  },
+  "build_inputs": {
+    "cflags": "-O2",
+    "target": "x86_64"
+  }
+}
