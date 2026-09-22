@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rdl-reliable-delivery"
+version = "0.1.0"
+description = "Reliable at-least-once delivery layer for cyclic-sequence multi-partition event sources"
+requires-python = ">=3.11"
+
+[tool.setuptools]
+packages = ["rdl"]
+
+[project.scripts]
+rdl-scenario = "scripts.run_scenario:main"
