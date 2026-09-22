@@ -1,0 +1,8 @@
+[project]
+name = "occupancy-peak"
+version = "0.1.0"
+description = "Reconstruct half-open occupancy intervals from out-of-order records and query peak concurrency"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
