@@ -1,0 +1,35 @@
+{
+  "comment": "WITH is not an unconditional allowance: libZ offers 'GPL-2.0 WITH Classpath-2.0 OR GPL-2.0'. The dynamic-link rule is waived ONLY on the branch that actually carries the Classpath-2.0 exception (cost: 1 exception). The plain GPL-2.0 branch is infeasible here. Synthetic rules, not legal conclusions.",
+  "rules": {
+    "license_tags": {
+      "MIT": ["permissive"],
+      "GPL-2.0": ["strong-copyleft"]
+    },
+    "disclosure_tags": ["strong-copyleft"],
+    "propagation": [
+      {
+        "id": "dynamic-strong-copyleft-dependents",
+        "trigger": {"link": "dynamic", "tag": "strong-copyleft"},
+        "scope": "direct_dependents",
+        "require_tag_in": ["strong-copyleft", "weak-copyleft"],
+        "unless_exception": "Classpath-2.0",
+        "target_conditions": {"distribution": "binary"},
+        "message": "dynamic dependents of strong-copyleft must be copyleft unless Classpath-2.0 exception applies"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "name": "app-image",
+      "conditions": {"distribution": "binary"},
+      "roots": [{"name": "app", "constraint": "1.0.0"}]
+    }
+  ],
+  "packages": [
+    {
+      "name": "app", "version": "1.0.0", "license": "MIT",
+      "dependencies": [{"name": "libZ", "constraint": "1.0.0", "link": "dynamic"}]
+    },
+    {"name": "libZ", "version": "1.0.0", "license": "GPL-2.0 WITH Classpath-2.0 OR GPL-2.0"}
+  ]
+}

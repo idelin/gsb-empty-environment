@@ -1,0 +1,37 @@
+{
+  "comment": "Infeasible: libP is GPL-3.0-only and statically linked into app (MIT), violating the synthetic static-dependents rule. libQ is an unrelated decoy; the conflict core must mention only app + libP.",
+  "rules": {
+    "license_tags": {
+      "MIT": ["permissive"],
+      "GPL-3.0": ["strong-copyleft"]
+    },
+    "disclosure_tags": ["strong-copyleft"],
+    "propagation": [
+      {
+        "id": "static-strong-copyleft-dependents",
+        "trigger": {"link": "static", "tag": "strong-copyleft"},
+        "scope": "static_dependents",
+        "require_tag_in": ["strong-copyleft", "weak-copyleft"],
+        "message": "static dependents of a strong-copyleft package must be copyleft"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "name": "app-image",
+      "conditions": {},
+      "roots": [{"name": "app", "constraint": "1.0.0"}]
+    }
+  ],
+  "packages": [
+    {
+      "name": "app", "version": "1.0.0", "license": "MIT",
+      "dependencies": [
+        {"name": "libP", "constraint": "1.0.0", "link": "static"},
+        {"name": "libQ", "constraint": "1.0.0", "link": "static"}
+      ]
+    },
+    {"name": "libP", "version": "1.0.0", "license": "GPL-3.0"},
+    {"name": "libQ", "version": "1.0.0", "license": "MIT"}
+  ]
+}

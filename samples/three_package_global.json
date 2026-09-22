@@ -1,0 +1,38 @@
+{
+  "comment": "A OR B cannot be solved greedily per package: app -dynamic-> libX -static-> libY. Locally libX=BSD-2-Clause looks best (no disclosure), but libY is strong-copyleft and rule static-strong-copyleft-dependents forces every static dependent of libY to be copyleft too. The only feasible branch is libX=GPL-3.0. Synthetic rules, not legal conclusions.",
+  "rules": {
+    "license_tags": {
+      "MIT": ["permissive"],
+      "BSD-2-Clause": ["permissive"],
+      "GPL-3.0": ["strong-copyleft"]
+    },
+    "disclosure_tags": ["strong-copyleft"],
+    "propagation": [
+      {
+        "id": "static-strong-copyleft-dependents",
+        "trigger": {"link": "static", "tag": "strong-copyleft"},
+        "scope": "static_dependents",
+        "require_tag_in": ["strong-copyleft", "weak-copyleft"],
+        "message": "static dependents of a strong-copyleft package must be copyleft"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "name": "app-image",
+      "conditions": {"distribution": "binary"},
+      "roots": [{"name": "app", "constraint": "1.0.0"}]
+    }
+  ],
+  "packages": [
+    {
+      "name": "app", "version": "1.0.0", "license": "MIT",
+      "dependencies": [{"name": "libX", "constraint": ">=1.0.0 <2.0.0", "link": "dynamic"}]
+    },
+    {
+      "name": "libX", "version": "1.0.0", "license": "BSD-2-Clause OR GPL-3.0",
+      "dependencies": [{"name": "libY", "constraint": "1.0.0", "link": "static"}]
+    },
+    {"name": "libY", "version": "1.0.0", "license": "GPL-3.0"}
+  ]
+}

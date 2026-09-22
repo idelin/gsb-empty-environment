@@ -1,0 +1,36 @@
+{
+  "comment": "Diamond graph: libC is shared by libA and libB but is a single node, so its disclosure counts once. Expected optimum: 0 exceptions, 3 disclosure packages (libA, libB, libC).",
+  "rules": {
+    "license_tags": {
+      "MIT": ["permissive"],
+      "LGPL-2.1": ["weak-copyleft"]
+    },
+    "disclosure_tags": ["weak-copyleft"],
+    "propagation": []
+  },
+  "targets": [
+    {
+      "name": "app-image",
+      "conditions": {},
+      "roots": [{"name": "app", "constraint": "1.0.0"}]
+    }
+  ],
+  "packages": [
+    {
+      "name": "app", "version": "1.0.0", "license": "MIT",
+      "dependencies": [
+        {"name": "libA", "constraint": "1.0.0", "link": "static"},
+        {"name": "libB", "constraint": "1.0.0", "link": "static"}
+      ]
+    },
+    {
+      "name": "libA", "version": "1.0.0", "license": "MIT OR LGPL-2.1",
+      "dependencies": [{"name": "libC", "constraint": "1.0.0", "link": "static"}]
+    },
+    {
+      "name": "libB", "version": "1.0.0", "license": "LGPL-2.1",
+      "dependencies": [{"name": "libC", "constraint": "1.0.0", "link": "static"}]
+    },
+    {"name": "libC", "version": "1.0.0", "license": "LGPL-2.1"}
+  ]
+}

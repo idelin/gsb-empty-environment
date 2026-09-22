@@ -1,0 +1,34 @@
+{
+  "comment": "Base build. Solve this first, save the output, then run repair against repair_v2.json (libA 2.0.0 appears in the local index and is selected by the constraint).",
+  "rules": {
+    "license_tags": {
+      "MIT": ["permissive"],
+      "LGPL-2.1": ["weak-copyleft"],
+      "GPL-3.0": ["strong-copyleft"]
+    },
+    "disclosure_tags": ["weak-copyleft", "strong-copyleft"],
+    "propagation": [
+      {
+        "id": "static-strong-copyleft-dependents",
+        "trigger": {"link": "static", "tag": "strong-copyleft"},
+        "scope": "static_dependents",
+        "require_tag_in": ["strong-copyleft", "weak-copyleft"],
+        "message": "static dependents of a strong-copyleft package must be copyleft"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "name": "app-image",
+      "conditions": {},
+      "roots": [{"name": "app", "constraint": "1.0.0"}]
+    }
+  ],
+  "packages": [
+    {"name": "app", "version": "1.0.0", "license": "MIT",
+     "dependencies": [{"name": "libA", "constraint": ">=1.0.0 <3.0.0", "link": "static"}]},
+    {"name": "libA", "version": "1.0.0", "license": "MIT OR LGPL-2.1",
+     "dependencies": [{"name": "libB", "constraint": "1.0.0", "link": "static"}]},
+    {"name": "libB", "version": "1.0.0", "license": "MIT"}
+  ]
+}

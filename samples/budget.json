@@ -1,0 +1,35 @@
+{
+  "comment": "Chain of 8 dual-licensed packages (256 combinations). With a tiny --budget the solver returns the best feasible assignment as an upper bound with complete=false instead of claiming success.",
+  "rules": {
+    "license_tags": {
+      "MIT": ["permissive"],
+      "LGPL-2.1": ["weak-copyleft"]
+    },
+    "disclosure_tags": ["weak-copyleft"],
+    "propagation": []
+  },
+  "targets": [
+    {
+      "name": "app-image",
+      "conditions": {},
+      "roots": [{"name": "p0", "constraint": "1.0.0"}]
+    }
+  ],
+  "packages": [
+    {"name": "p0", "version": "1.0.0", "license": "MIT OR LGPL-2.1",
+     "dependencies": [{"name": "p1", "constraint": "1.0.0", "link": "static"}]},
+    {"name": "p1", "version": "1.0.0", "license": "MIT OR LGPL-2.1",
+     "dependencies": [{"name": "p2", "constraint": "1.0.0", "link": "static"}]},
+    {"name": "p2", "version": "1.0.0", "license": "MIT OR LGPL-2.1",
+     "dependencies": [{"name": "p3", "constraint": "1.0.0", "link": "static"}]},
+    {"name": "p3", "version": "1.0.0", "license": "MIT OR LGPL-2.1",
+     "dependencies": [{"name": "p4", "constraint": "1.0.0", "link": "static"}]},
+    {"name": "p4", "version": "1.0.0", "license": "MIT OR LGPL-2.1",
+     "dependencies": [{"name": "p5", "constraint": "1.0.0", "link": "static"}]},
+    {"name": "p5", "version": "1.0.0", "license": "MIT OR LGPL-2.1",
+     "dependencies": [{"name": "p6", "constraint": "1.0.0", "link": "static"}]},
+    {"name": "p6", "version": "1.0.0", "license": "MIT OR LGPL-2.1",
+     "dependencies": [{"name": "p7", "constraint": "1.0.0", "link": "static"}]},
+    {"name": "p7", "version": "1.0.0", "license": "MIT OR LGPL-2.1"}
+  ]
+}

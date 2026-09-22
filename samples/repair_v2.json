@@ -1,0 +1,37 @@
+{
+  "comment": "Same build after the local index gained libA 2.0.0 (GPL-3.0 OR LGPL-2.1, new dependency libC). The version constraint now resolves libA to 2.0.0; incremental repair should keep app and libB choices, switch libA to LGPL-2.1, and add libC.",
+  "rules": {
+    "license_tags": {
+      "MIT": ["permissive"],
+      "LGPL-2.1": ["weak-copyleft"],
+      "GPL-3.0": ["strong-copyleft"]
+    },
+    "disclosure_tags": ["weak-copyleft", "strong-copyleft"],
+    "propagation": [
+      {
+        "id": "static-strong-copyleft-dependents",
+        "trigger": {"link": "static", "tag": "strong-copyleft"},
+        "scope": "static_dependents",
+        "require_tag_in": ["strong-copyleft", "weak-copyleft"],
+        "message": "static dependents of a strong-copyleft package must be copyleft"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "name": "app-image",
+      "conditions": {},
+      "roots": [{"name": "app", "constraint": "1.0.0"}]
+    }
+  ],
+  "packages": [
+    {"name": "app", "version": "1.0.0", "license": "MIT",
+     "dependencies": [{"name": "libA", "constraint": ">=1.0.0 <3.0.0", "link": "static"}]},
+    {"name": "libA", "version": "1.0.0", "license": "MIT OR LGPL-2.1",
+     "dependencies": [{"name": "libB", "constraint": "1.0.0", "link": "static"}]},
+    {"name": "libA", "version": "2.0.0", "license": "GPL-3.0 OR LGPL-2.1",
+     "dependencies": [{"name": "libC", "constraint": "1.0.0", "link": "static"}]},
+    {"name": "libB", "version": "1.0.0", "license": "MIT"},
+    {"name": "libC", "version": "1.0.0", "license": "MIT"}
+  ]
+}
