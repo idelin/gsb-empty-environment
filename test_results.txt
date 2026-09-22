@@ -1,0 +1,35 @@
+test_bad_how_raises_eagerly (test_mergejoin.TestArguments.test_bad_how_raises_eagerly) ... ok
+test_bad_memory_limit (test_mergejoin.TestArguments.test_bad_memory_limit) ... ok
+test_non_tuple_row_raises (test_mergejoin.TestArguments.test_non_tuple_row_raises) ... ok
+test_cancel_cleans_spool_files (test_mergejoin.TestCancellation.test_cancel_cleans_spool_files) ... ok
+test_cancel_midway_from_thread (test_mergejoin.TestCancellation.test_cancel_midway_from_thread) ... ok
+test_precancelled_token_raises (test_mergejoin.TestCancellation.test_precancelled_token_raises) ... ok
+test_2x3_duplicate_group_yields_six (test_mergejoin.TestInnerJoin.test_2x3_duplicate_group_yields_six) ... ok
+test_basic_matches (test_mergejoin.TestInnerJoin.test_basic_matches) ... ok
+test_empty_either_side (test_mergejoin.TestInnerJoin.test_empty_either_side) ... ok
+test_multiset_keeps_identical_duplicates (test_mergejoin.TestInnerJoin.test_multiset_keeps_identical_duplicates) ... ok
+test_repeated_iteration_impossible_is_ok_with_lists (test_mergejoin.TestInnerJoin.test_repeated_iteration_impossible_is_ok_with_lists) ... ok
+test_synthetic_relation_inner_rowcount (test_mergejoin.TestInnerJoin.test_synthetic_relation_inner_rowcount) ... ok
+test_left_null_duplicate_group_all_padded (test_mergejoin.TestLeftOuterJoin.test_left_null_duplicate_group_all_padded) ... ok
+test_right_arity_inferred (test_mergejoin.TestLeftOuterJoin.test_right_arity_inferred) ... ok
+test_right_only_key_dropped_in_left_join (test_mergejoin.TestLeftOuterJoin.test_right_only_key_dropped_in_left_join) ... ok
+test_synthetic_relation_left_rowcount (test_mergejoin.TestLeftOuterJoin.test_synthetic_relation_left_rowcount) ... ok
+test_unmatched_left_padded_with_nulls (test_mergejoin.TestLeftOuterJoin.test_unmatched_left_padded_with_nulls) ... ok
+test_null_sorts_first_and_groups (test_mergejoin.TestNullSemantics.test_null_sorts_first_and_groups) ... ok
+test_nulls_never_match_inner (test_mergejoin.TestNullSemantics.test_nulls_never_match_inner) ... ok
+test_left_out_of_order_raises (test_mergejoin.TestOrderViolation.test_left_out_of_order_raises) ... ok
+test_nondecreasing_equal_and_increasing_ok (test_mergejoin.TestOrderViolation.test_nondecreasing_equal_and_increasing_ok) ... ok
+test_order_violation_before_any_output (test_mergejoin.TestOrderViolation.test_order_violation_before_any_output) ... ok
+test_order_violation_seen_during_drain (test_mergejoin.TestOrderViolation.test_order_violation_seen_during_drain) ... ok
+test_right_out_of_order_raises (test_mergejoin.TestOrderViolation.test_right_out_of_order_raises) ... ok
+test_both_groups_spill_still_completes (test_mergejoin.TestSpill.test_both_groups_spill_still_completes) ... ok
+test_group_over_memory_with_duplicates_multiset (test_mergejoin.TestSpill.test_group_over_memory_with_duplicates_multiset) ... ok
+test_one_sided_group_spill_left_join (test_mergejoin.TestSpill.test_one_sided_group_spill_left_join) ... ok
+test_spill_files_removed_after_consumption (test_mergejoin.TestSpill.test_spill_files_removed_after_consumption) ... ok
+test_spool_holds_in_memory_under_limit (test_mergejoin.TestSpill.test_spool_holds_in_memory_under_limit) ... ok
+test_spool_memory_and_disk_iteration (test_mergejoin.TestSpill.test_spool_memory_and_disk_iteration) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 6.278s
+
+OK
