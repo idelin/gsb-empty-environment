@@ -1,0 +1,67 @@
+== unittest ==
+test_incremental_touches_only_suffix (test_analyzer.DecisionDiagramSharing.test_incremental_touches_only_suffix) ... ok
+test_node_count_grows_linear_not_exponential (test_analyzer.DecisionDiagramSharing.test_node_count_grows_linear_not_exponential) ... ok
+test_handcrafted_all_configs (test_analyzer.ExhaustiveCrossCheck.test_handcrafted_all_configs) ... ok
+test_random_graphs_fuzz (test_analyzer.ExhaustiveCrossCheck.test_random_graphs_fuzz) ... ok
+test_add_then_matches_full (test_analyzer.IncrementalUpdates.test_add_then_matches_full) ... ok
+test_incremental_matches_full_fuzz (test_analyzer.IncrementalUpdates.test_incremental_matches_full_fuzz) ... ok
+test_modify_edge_condition (test_analyzer.IncrementalUpdates.test_modify_edge_condition) ... ok
+test_alias_confluence (test_analyzer.RequiredScenarios.test_alias_confluence) ... ok
+test_build_closure_excluded_from_runtime (test_analyzer.RequiredScenarios.test_build_closure_excluded_from_runtime) ... ok
+test_cycle_entry_removal (test_analyzer.RequiredScenarios.test_cycle_entry_removal) ... ok
+test_diamond_two_paths_delete_one (test_analyzer.RequiredScenarios.test_diamond_two_paths_delete_one) ... ok
+test_mutually_exclusive_conditions_no_false_conflict (test_analyzer.RequiredScenarios.test_mutually_exclusive_conditions_no_false_conflict) ... ok
+test_private_transitive_block (test_analyzer.RequiredScenarios.test_private_transitive_block) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.090s
+
+OK
+
+== demo: scale ==
+shared BDD representation: n independent feature-gated routes
+   n      configs  bdd_nodes
+   4          256         12
+   8        65536         24
+  16   4294967296         48
+  32 18446744073709551616         96
+  64 340282366920938463463374607431768211456        192
+
+incremental: delete the cycle-entry edge in a 50-node cycle
+  touched graph nodes: 0 (of 50); BDD node delta: 0
+  deleting cycle entry p0->p1:
+  touched nodes: 49; nodes still reachable besides root: 0
+  -> no stale reachability retained in the cycle (DRed), unlike plain reference counting
+
+== demo: query dual_route ==
+root app@1 | features: ['a', 'b']
+stats: {'packages': 4, 'edges': 4, 'features': 2, 'bdd_nodes': 3, 'exposed_names': 2, 'conflicts': 0}
+
+symbol 'main' reachable when: 1
+  source app@1::main  when: 1
+    one config : (no features needed)
+    supply path: <root itself>
+
+symbol 'util' reachable when: a | (!a & b)
+  source libx@2::util  when: a | (!a & b)
+    one config : a=off, b=on
+    supply path: app@1 --public[b]-->right@1 --public[1]-->libx@2
+
+build closure (never runtime-exposed):
+  app@1: 1
+  left@1: a
+  libx@2: a | (!a & b)
+  right@1: b
+
+== demo: conflicts ==
+CONFLICT on symbol 'json'
+  common feasible config: legacy=on, tls=on
+  supplier json-fast@5::json
+    own cond: tls
+    config  : legacy=on, tls=on
+    path    : app@1 --public[tls]-->net-tls@2.4 --public[tls]-->json-fast@5
+  supplier json-slow@6::json
+    own cond: legacy
+    config  : legacy=on, tls=on
+    path    : app@1 --public[legacy]-->net-legacy@1.9 --public[legacy]-->json-slow@6
+

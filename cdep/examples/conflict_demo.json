@@ -1,0 +1,107 @@
+{
+  "root": "app@1",
+  "features": [
+    "tls",
+    "legacy"
+  ],
+  "packages": [
+    {
+      "id": "app@1",
+      "provides": [
+        "bootstrap"
+      ],
+      "dependencies": {
+        "public": [
+          {
+            "to": "net-tls@2.4",
+            "when": "tls"
+          },
+          {
+            "to": "net-legacy@1.9",
+            "when": "legacy"
+          }
+        ]
+      },
+      "exports": {
+        "build": [
+          {
+            "to": "codegen@3",
+            "when": "tls | legacy"
+          }
+        ]
+      }
+    },
+    {
+      "id": "net-tls@2.4",
+      "provides": [
+        "socket_impl"
+      ],
+      "rename": {
+        "socket_impl": "socket"
+      },
+      "dependencies": {
+        "public": [
+          {
+            "to": "json-fast@5",
+            "when": "tls"
+          }
+        ]
+      },
+      "hide": [
+        "socket_impl"
+      ]
+    },
+    {
+      "id": "net-legacy@1.9",
+      "provides": [
+        "socket_impl"
+      ],
+      "rename": {
+        "socket_impl": "socket"
+      },
+      "dependencies": {
+        "public": [
+          {
+            "to": "json-slow@6",
+            "when": "legacy"
+          }
+        ]
+      },
+      "hide": [
+        "socket_impl"
+      ]
+    },
+    {
+      "id": "json-fast@5",
+      "provides": [
+        "json"
+      ]
+    },
+    {
+      "id": "json-slow@6",
+      "provides": [
+        "json"
+      ]
+    },
+    {
+      "id": "codegen@3",
+      "provides": [
+        "generate"
+      ],
+      "exports": {
+        "build": [
+          {
+            "to": "protoc@7",
+            "when": "1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "protoc@7",
+      "provides": [
+        "proto_runtime"
+      ]
+    }
+  ]
+}
