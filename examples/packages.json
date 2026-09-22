@@ -1,0 +1,79 @@
+{
+  "packages": [
+    {
+      "name": "core",
+      "version": "1.4.2",
+      "produces": [
+        "libcore.a"
+      ],
+      "depends_on": []
+    },
+    {
+      "name": "net",
+      "version": "2.0.0-rc.1",
+      "produces": [
+        "libnet.a"
+      ],
+      "needs_artifacts": [
+        "libcore.a"
+      ],
+      "depends_on": []
+    },
+    {
+      "name": "json",
+      "version": "0.9.7",
+      "produces": [
+        "libjson.a"
+      ],
+      "needs_artifacts": [
+        "libcore.a"
+      ],
+      "depends_on": []
+    },
+    {
+      "name": "app-util",
+      "version": "1.0.0",
+      "produces": [
+        "libutil.a"
+      ],
+      "depends_on": [
+        {
+          "name": "app-config",
+          "version": "^1.0.0"
+        }
+      ]
+    },
+    {
+      "name": "app-config",
+      "version": "1.2.0",
+      "produces": [
+        "libconfig.a"
+      ],
+      "depends_on": [
+        {
+          "name": "app-util",
+          "version": ">=1.0.0"
+        }
+      ]
+    },
+    {
+      "name": "server",
+      "version": "3.1.0",
+      "produces": [
+        "server.bin"
+      ],
+      "needs_artifacts": [
+        "libnet.a",
+        "libjson.a",
+        "libutil.a",
+        "libconfig.a"
+      ],
+      "depends_on": [
+        {
+          "name": "net",
+          "version": ">=2.0.0-rc.1 <2.0.0"
+        }
+      ]
+    }
+  ]
+}

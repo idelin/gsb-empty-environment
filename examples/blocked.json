@@ -1,0 +1,58 @@
+{
+  "packages": [
+    {
+      "name": "good-base",
+      "version": "1.0.0",
+      "produces": ["good-base.art"]
+    },
+    {
+      "name": "good-app",
+      "version": "1.0.0",
+      "needs_artifacts": ["good-base.art"]
+    },
+    {
+      "name": "gen-a",
+      "version": "1.0.0",
+      "produces": ["art-a"],
+      "needs_artifacts": ["art-b"]
+    },
+    {
+      "name": "gen-b",
+      "version": "1.0.0",
+      "produces": ["art-b"],
+      "needs_artifacts": ["art-c"]
+    },
+    {
+      "name": "gen-c",
+      "version": "1.0.0",
+      "produces": ["art-c"],
+      "needs_artifacts": ["art-a"]
+    },
+    {
+      "name": "consumer",
+      "version": "1.0.0",
+      "needs_artifacts": ["art-a"]
+    },
+    {
+      "name": "self-gen",
+      "version": "1.0.0",
+      "produces": ["art-self"],
+      "needs_artifacts": ["art-self"]
+    },
+    {
+      "name": "badver",
+      "version": "0.9.0",
+      "depends_on": [{"name": "good-base", "version": "^2.0.0"}]
+    },
+    {
+      "name": "ring-x",
+      "version": "1.0.0",
+      "depends_on": ["ring-y"]
+    },
+    {
+      "name": "ring-y",
+      "version": "1.0.0",
+      "depends_on": ["ring-x"]
+    }
+  ]
+}
