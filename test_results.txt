@@ -1,0 +1,17 @@
+test_cancellation_is_checked_between_output_rows (test_merge_join.MergeJoinTest.test_cancellation_is_checked_between_output_rows) ... ok
+test_composite_null_never_matches_but_is_preserved_on_left (test_merge_join.MergeJoinTest.test_composite_null_never_matches_but_is_preserved_on_left) ... ok
+test_duplicates_have_multiset_semantics (test_merge_join.MergeJoinTest.test_duplicates_have_multiset_semantics) ... ok
+test_group_larger_than_memory_bound_spills_and_completes (test_merge_join.MergeJoinTest.test_group_larger_than_memory_bound_spills_and_completes) ... ok
+test_left_outer_null_and_unmatched_semantics (test_merge_join.MergeJoinTest.test_left_outer_null_and_unmatched_semantics) ... ok
+test_multiple_null_rows_are_all_preserved_on_left (test_merge_join.MergeJoinTest.test_multiple_null_rows_are_all_preserved_on_left) ... ok
+test_spill_files_are_removed_after_iteration (test_merge_join.MergeJoinTest.test_spill_files_are_removed_after_iteration) ... ok
+test_two_by_three_duplicate_group_outputs_six_rows (test_merge_join.MergeJoinTest.test_two_by_three_duplicate_group_outputs_six_rows) ... ok
+test_unsorted_left_raises_instead_of_emitting_wrong_result (test_merge_join.MergeJoinTest.test_unsorted_left_raises_instead_of_emitting_wrong_result) ... ok
+test_unsorted_null_group_raises_before_left_outer_output (test_merge_join.MergeJoinTest.test_unsorted_null_group_raises_before_left_outer_output) ... ok
+test_unsorted_right_raises_within_duplicate_group (test_merge_join.MergeJoinTest.test_unsorted_right_raises_within_duplicate_group) ... ok
+test_unsorted_unmatched_left_group_raises_before_output (test_merge_join.MergeJoinTest.test_unsorted_unmatched_left_group_raises_before_output) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.005s
+
+OK

@@ -1,0 +1,18 @@
+small left outer join:
+  (None, 'unknown department') <- None
+  (1, 'Alice') <- (1, 'Platform')
+  (1, 'Alice') <- (1, 'Data')
+  (1, 'Alice') <- (1, 'Tools')
+  (1, 'Bob') <- (1, 'Platform')
+  (1, 'Bob') <- (1, 'Data')
+  (1, 'Bob') <- (1, 'Tools')
+  (2, 'Cara') <- None
+  (4, 'Dana') <- None
+
+large bounded group:
+  left rows: 150
+  right rows: 3
+  output rows: 450
+  memory bound per group: 50 rows
+  left spilled: True
+  spill file existed while processing group: True
