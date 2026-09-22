@@ -1,0 +1,81 @@
+{
+  "packages": [
+    {
+      "name": "shared-policy",
+      "version": "1.2.0",
+      "provides": ["policy"]
+    },
+    {
+      "name": "impl-a",
+      "version": "2.0.0",
+      "provides": [
+        {
+          "capability": "X",
+          "version": "3.0.0"
+        },
+        "logging"
+      ],
+      "requires": ["policy >=1.0.0"],
+      "conflicts": [
+        {
+          "package": "block-a"
+        }
+      ]
+    },
+    {
+      "name": "impl-b",
+      "version": "1.5.0",
+      "provides": [
+        {
+          "capability": "X",
+          "version": "2.9.0",
+          "targets": ["linux", "darwin"]
+        }
+      ],
+      "requires": ["policy ^1.0.0"]
+    },
+    {
+      "name": "impl-b",
+      "version": "1.6.0-rc.1",
+      "provides": [
+        {
+          "capability": "X",
+          "version": "2.10.0-beta.2",
+          "targets": ["linux", "darwin"]
+        }
+      ],
+      "requires": ["policy ^1.0.0"]
+    },
+    {
+      "name": "block-a",
+      "version": "1.0.0",
+      "provides": ["a-blocker"]
+    },
+    {
+      "name": "json-parser",
+      "version": "4.1.0",
+      "provides": ["json"],
+      "requires": [
+        {
+          "any_of": [
+            "X >=2.0.0",
+            "logging"
+          ]
+        }
+      ]
+    }
+  ],
+  "builds": [
+    {
+      "name": "linux-app",
+      "target": "linux",
+      "requirements": ["a-blocker", "json"]
+    },
+    {
+      "name": "prerelease-linux",
+      "target": "linux",
+      "allow_prereleases": ["X"],
+      "requirements": ["json"]
+    }
+  ]
+}
