@@ -1,0 +1,50 @@
+== classic Levenshtein: substitute + insert
+pattern='kitten' text='sitting' k=2 kwargs={}
+states: (('n', 0), ('n', 1), ('n', 2), ('n', 3), ('n', 4), ('n', 5), ('n', 6))
+ after 1 symbol(s): {('n', 1): 1, ('n', 0): 1, ('n', 2): 2}
+ after 2 symbol(s): {('n', 2): 1, ('n', 1): 2, ('n', 0): 2, ('n', 3): 2}
+ after 3 symbol(s): {('n', 3): 1, ('n', 2): 2, ('n', 4): 2}
+ after 4 symbol(s): {('n', 4): 1, ('n', 3): 2, ('n', 5): 2}
+ after 5 symbol(s): {('n', 5): 2, ('n', 4): 2}
+ after 6 symbol(s): {('n', 6): 2}
+ after 7 symbol(s): {}
+no match (distance > k)
+
+== deletion on the stream, explicit costs
+pattern='cat' text='ct' k=2 kwargs={'deletion_cost': 2}
+states: (('n', 0), ('n', 1), ('n', 2), ('n', 3))
+ after 1 symbol(s): {('n', 1): 0, ('n', 0): 1, ('n', 2): 2}
+ after 2 symbol(s): {('n', 2): 1, ('n', 1): 1, ('n', 0): 2, ('n', 3): 2}
+distance=2
+  text:    c-t
+  pattern: cat
+  path:    0:match 2:delete(a) 0:match
+
+== empty pattern accepts strings of length <= k
+pattern='' text='abc' k=3 kwargs={}
+states: (('n', 0),)
+ after 1 symbol(s): {('n', 0): 1}
+ after 2 symbol(s): {('n', 0): 2}
+ after 3 symbol(s): {('n', 0): 3}
+distance=3
+  text:    abc
+  pattern: ---
+  path:    1:insert(a) 1:insert(b) 1:insert(c)
+
+== adjacent swap is NOT one edit by default
+pattern='ab' text='ba' k=1 kwargs={}
+states: (('n', 0), ('n', 1), ('n', 2))
+ after 1 symbol(s): {('n', 1): 1, ('n', 0): 1, ('n', 2): 1}
+ after 2 symbol(s): {('n', 1): 1}
+no match (distance > k)
+
+== adjacent swap allowed when explicitly declared
+pattern='ab' text='ba' k=1 kwargs={'transposition_cost': 1}
+states: (('n', 0), ('n', 1), ('n', 2), ('t', 0))
+ after 1 symbol(s): {('n', 1): 1, ('n', 0): 1, ('t', 0): 1, ('n', 2): 1}
+ after 2 symbol(s): {('n', 1): 1, ('n', 2): 1}
+distance=1
+  text:    ba
+  pattern: ab
+  path:    1:transpose(ab->ba)
+

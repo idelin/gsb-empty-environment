@@ -1,0 +1,16 @@
+test_alphabet_is_checked (test_edit_machine.EditDistanceTests.test_alphabet_is_checked) ... ok
+test_classic_levenshtein (test_edit_machine.EditDistanceTests.test_classic_levenshtein) ... ok
+test_empty_pattern_length_bound (test_edit_machine.EditDistanceTests.test_empty_pattern_length_bound) ... ok
+test_explicit_costs (test_edit_machine.EditDistanceTests.test_explicit_costs) ... ok
+test_explicit_machine_construction (test_edit_machine.EditDistanceTests.test_explicit_machine_construction) ... ok
+test_incremental_matches_one_shot (test_edit_machine.EditDistanceTests.test_incremental_matches_one_shot) ... ok
+test_matches_dynamic_programming (test_edit_machine.EditDistanceTests.test_matches_dynamic_programming) ... ok
+test_path_reconstruction_roundtrip (test_edit_machine.EditDistanceTests.test_path_reconstruction_roundtrip) ... ok
+test_streaming_keeps_optimal_cost_per_state (test_edit_machine.EditDistanceTests.test_streaming_keeps_optimal_cost_per_state) ... ok
+test_transposition_off_by_default (test_edit_machine.EditDistanceTests.test_transposition_off_by_default) ... ok
+test_transposition_when_declared (test_edit_machine.EditDistanceTests.test_transposition_when_declared) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.008s
+
+OK

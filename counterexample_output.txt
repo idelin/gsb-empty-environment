@@ -1,0 +1,4 @@
+[PASS] swap costs 2 by default: 'ba' vs 'ab' accepted=False (distance 2 > k=1)
+[PASS] swap costs 1 only if declared: 'ba' vs 'ab' accepted=True distance=1
+[PASS] empty pattern: len <= k: 'abc' accepted=True, 'abcd' accepted=False
+all counterexamples hold
