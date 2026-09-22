@@ -1,0 +1,61 @@
+wmcoord test run: 2026-09-22 00:26:08
+python: 3.13.12
+
+test_all_orderings_of_gap_scenario (test_exploration.TestGapAckExploration.test_all_orderings_of_gap_scenario) ... ok
+test_epoch_and_late_orderings (test_exploration.TestGapAckExploration.test_epoch_and_late_orderings) ... ok
+test_join_and_idle_orderings (test_exploration.TestGapAckExploration.test_join_and_idle_orderings) ... ok
+test_all_orderings_of_handoff_scenario (test_exploration.TestHandoffExploration.test_all_orderings_of_handoff_scenario) ... ok
+test_crash_after_command_write_before_decision (test_faults.TestFaultEquivalence.test_crash_after_command_write_before_decision) ... ok
+test_crash_after_decision_write_before_publish (test_faults.TestFaultEquivalence.test_crash_after_decision_write_before_publish) ... ok
+test_crash_after_handoff_record (test_faults.TestFaultEquivalence.test_crash_after_handoff_record) ... ok
+test_crash_after_publish_before_confirm (test_faults.TestFaultEquivalence.test_crash_after_publish_before_confirm) ... ok
+test_crash_before_command_write_with_driver_retry (test_faults.TestFaultEquivalence.test_crash_before_command_write_with_driver_retry) ... ok
+test_crash_before_handoff_record (test_faults.TestFaultEquivalence.test_crash_before_handoff_record) ... ok
+test_crash_does_not_create_duplicate_decision_ids (test_faults.TestFaultEquivalence.test_crash_does_not_create_duplicate_decision_ids) ... ok
+test_crash_while_confirm_in_flight (test_faults.TestFaultEquivalence.test_crash_while_confirm_in_flight) ... ok
+test_repeated_crashes (test_faults.TestFaultEquivalence.test_repeated_crashes) ... ok
+test_checkpoint_roundtrip_with_gaps_and_acks (test_persistence.TestCheckpoints.test_checkpoint_roundtrip_with_gaps_and_acks) ... ok
+test_corrupt_checkpoint_falls_back_to_journal (test_persistence.TestCheckpoints.test_corrupt_checkpoint_falls_back_to_journal) ... ok
+test_file_log_end_to_end (test_persistence.TestCheckpoints.test_file_log_end_to_end) ... /opt/homebrew/Cellar/python@3.13/3.13.13/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/case.py:606: ResourceWarning: unclosed file <_io.FileIO name='/var/folders/73/kmh6t_p53fvg95dxl50x8gw80000gn/T/tmpeckvl168/journal.log' mode='ab+' closefd=True>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_file_log_torn_tail (test_persistence.TestCheckpoints.test_file_log_torn_tail) ... /opt/homebrew/Cellar/python@3.13/3.13.13/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/case.py:606: ResourceWarning: unclosed file <_io.FileIO name='/var/folders/73/kmh6t_p53fvg95dxl50x8gw80000gn/T/tmpmzlo1hkg/journal.log' mode='ab+' closefd=True>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_three_generations_of_handles (test_persistence.TestFreshHandleRecovery.test_three_generations_of_handles) ... /opt/homebrew/Cellar/python@3.13/3.13.13/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/case.py:606: ResourceWarning: unclosed file <_io.FileIO name='/var/folders/73/kmh6t_p53fvg95dxl50x8gw80000gn/T/tmp2e9wk8n1/journal.log' mode='ab+' closefd=True>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_bad_magic_refuses_to_open (test_persistence.TestJournalRecovery.test_bad_magic_refuses_to_open) ... ok
+test_crash_between_command_and_decision_is_repaired (test_persistence.TestJournalRecovery.test_crash_between_command_and_decision_is_repaired) ... ok
+test_decision_ids_stable_across_restart (test_persistence.TestJournalRecovery.test_decision_ids_stable_across_restart) ... ok
+test_middle_corruption_refuses_to_open (test_persistence.TestJournalRecovery.test_middle_corruption_refuses_to_open) ... ok
+test_publish_confirm_survive_restart (test_persistence.TestJournalRecovery.test_publish_confirm_survive_restart) ... ok
+test_torn_tail_is_truncated (test_persistence.TestJournalRecovery.test_torn_tail_is_truncated) ... ok
+test_torn_tail_zeros (test_persistence.TestJournalRecovery.test_torn_tail_zeros) ... ok
+test_all_idle_retains_last_boundary (test_scenarios.TestGapAndAck.test_all_idle_retains_last_boundary) ... ok
+test_conflicting_duplicate_rejected (test_scenarios.TestGapAndAck.test_conflicting_duplicate_rejected) ... ok
+test_duplicate_cannot_skip_gap (test_scenarios.TestGapAndAck.test_duplicate_cannot_skip_gap) ... ok
+test_epoch_no_reuse (test_scenarios.TestGapAndAck.test_epoch_no_reuse) ... ok
+test_idle_with_gap_still_blocks (test_scenarios.TestGapAndAck.test_idle_with_gap_still_blocks) ... ok
+test_late_data_goes_to_late_channel (test_scenarios.TestGapAndAck.test_late_data_goes_to_late_channel) ... ok
+test_new_source_must_accept_floor (test_scenarios.TestGapAndAck.test_new_source_must_accept_floor) ... ok
+test_progress_before_data (test_scenarios.TestGapAndAck.test_progress_before_data) ... ok
+test_scenario_1 (test_scenarios.TestGapAndAck.test_scenario_1) ... ok
+test_scenario_2_unacked_blocks_idle (test_scenarios.TestGapAndAck.test_scenario_2_unacked_blocks_idle)
+Unacked t=90 event blocks closure even after the source idles. ... ok
+test_cancel_pending_handoff (test_scenarios.TestHandoff.test_cancel_pending_handoff) ... ok
+test_child_first_frontier_below_H_rejected (test_scenarios.TestHandoff.test_child_first_frontier_below_H_rejected) ... ok
+test_completed_handoff_cannot_be_cancelled (test_scenarios.TestHandoff.test_completed_handoff_cannot_be_cancelled) ... ok
+test_handoff_boundary_below_global_rejected (test_scenarios.TestHandoff.test_handoff_boundary_below_global_rejected) ... ok
+test_handoff_requires_both_children (test_scenarios.TestHandoff.test_handoff_requires_both_children) ... ok
+test_handoff_retry_idempotent (test_scenarios.TestHandoff.test_handoff_retry_idempotent) ... ok
+test_handoff_waits_for_parent_cut (test_scenarios.TestHandoff.test_handoff_waits_for_parent_cut) ... ok
+test_recovered_idle_source_data_below_closed_boundary_is_late (test_scenarios.TestRecoveredSourceLateData.test_recovered_idle_source_data_below_closed_boundary_is_late) ... ok
+
+----------------------------------------------------------------------
+Ran 43 tests in 0.846s
+
+OK
