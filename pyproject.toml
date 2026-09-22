@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "session-windows"
+version = "0.1.0"
+description = "Incremental session-window tracker with a retract/upsert changelog"
+requires-python = ">=3.11"
+
+[tool.setuptools]
+packages = ["session_windows"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
