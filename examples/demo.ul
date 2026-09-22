@@ -1,0 +1,32 @@
+# 精确有理数四则运算
+1 / 3 + 1 / 6
+0.1 + 0.2
+
+# 变量与单位
+width = 3 m
+height = 250 cm
+width + height
+width * height
+
+# 单位换算（to 可接复合单位）
+1 km to m
+width + height to cm
+90 km / 1 h to m / s
+
+# 同量纲不同单位比较（先换算再比较）
+1 m == 100 cm
+1 h > 30 min
+
+# 仿射温度与温差
+morning = 8 °C
+noon = 21 °C
+noon - morning
+noon - morning to Δ°F
+noon + 5 Δ°C
+noon + 5 Δ°C to °F
+68 °F to °C
+20 °C < 21 °C
+
+# 派生单位
+force = 75 kg * 9.8 m / (1 s * 1 s)
+force to N
