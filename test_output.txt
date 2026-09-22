@@ -1,0 +1,22 @@
+test_batch_swap_yields_same_final_view (test_ivm.BatchOrderTest.test_batch_swap_yields_same_final_view) ... ok
+test_delete_unknown_row_id (test_ivm.ErrorTest.test_delete_unknown_row_id) ... ok
+test_double_delete_raises (test_ivm.ErrorTest.test_double_delete_raises) ... ok
+test_duplicate_row_id_insert (test_ivm.ErrorTest.test_duplicate_row_id_insert) ... ok
+test_negative_multiplicity_in_operator (test_ivm.ErrorTest.test_negative_multiplicity_in_operator) ... ok
+test_negative_multiplicity_raises (test_ivm.ErrorTest.test_negative_multiplicity_raises) ... ok
+test_filter_passes_matching_only (test_ivm.FilterProjectTest.test_filter_passes_matching_only) ... ok
+test_null_comparison_is_false (test_ivm.FilterProjectTest.test_null_comparison_is_false) ... ok
+test_projection_collapses_duplicates_into_multiplicity (test_ivm.FilterProjectTest.test_projection_collapses_duplicates_into_multiplicity) ... ok
+test_count_sum_and_update_deltas (test_ivm.GroupByTest.test_count_sum_and_update_deltas) ... ok
+test_group_retracted_when_count_hits_zero (test_ivm.GroupByTest.test_group_retracted_when_count_hits_zero) ... ok
+test_null_key_forms_own_group_and_null_value_ignored_in_sum (test_ivm.GroupByTest.test_null_key_forms_own_group_and_null_value_ignored_in_sum) ... ok
+test_delete_last_supporter_retracts_output (test_ivm.JoinTest.test_delete_last_supporter_retracts_output) ... ok
+test_insert_multiplied_by_other_side_duplicates (test_ivm.JoinTest.test_insert_multiplied_by_other_side_duplicates) ... ok
+test_null_key_never_matches (test_ivm.JoinTest.test_null_key_never_matches) ... ok
+test_right_side_delete_retracts (test_ivm.JoinTest.test_right_side_delete_retracts) ... ok
+test_filter_project_join_group_end_to_end (test_ivm.PipelineTest.test_filter_project_join_group_end_to_end) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.002s
+
+OK
