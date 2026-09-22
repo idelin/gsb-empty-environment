@@ -1,0 +1,86 @@
+scenario: no-fault
+event log:
+  t=1000 publish message=cmd-1 topic=commands
+  t=1005 deliver message=cmd-1 topic=commands attempt=1
+  t=1005 order-service committed order=order-1 and outbox=evt-cmd-1
+  t=1005 ack message=cmd-1 attempt=1
+  t=1005 publish message=evt-cmd-1 topic=order.events
+  t=1005 order-service marked outbox=evt-cmd-1 sent
+  t=1010 deliver message=evt-cmd-1 topic=order.events attempt=1
+  t=1010 shipment-service committed shipment order=order-1 event=evt-cmd-1
+  t=1010 ack message=evt-cmd-1 attempt=1
+final: order=true outbox-sent=true shipment=true event-publishes=1 event-attempts=1
+
+scenario: crash-before-order-commit
+event log:
+  t=1000 publish message=cmd-1 topic=commands
+  t=1005 deliver message=cmd-1 topic=commands attempt=1
+  t=1005 order-service crash before order commit=cmd-1
+  t=1005 order-service crash
+  t=1005 redelivery-scheduled message=cmd-1 after=10 error="simulated process crash"
+  t=1005 order-service restart
+  t=1015 deliver message=cmd-1 topic=commands attempt=2
+  t=1015 order-service committed order=order-1 and outbox=evt-cmd-1
+  t=1015 ack message=cmd-1 attempt=2
+  t=1015 publish message=evt-cmd-1 topic=order.events
+  t=1015 order-service marked outbox=evt-cmd-1 sent
+  t=1020 deliver message=evt-cmd-1 topic=order.events attempt=1
+  t=1020 shipment-service committed shipment order=order-1 event=evt-cmd-1
+  t=1020 ack message=evt-cmd-1 attempt=1
+final: order=true outbox-sent=true shipment=true event-publishes=1 event-attempts=1
+
+scenario: commit-then-response-lost
+event log:
+  t=1000 publish message=cmd-1 topic=commands
+  t=1005 deliver message=cmd-1 topic=commands attempt=1
+  t=1005 order-service committed order=order-1 and outbox=evt-cmd-1
+  t=1005 order-service response-lost after commit command=cmd-1
+  t=1005 redelivery-scheduled message=cmd-1 after=10 error="response was lost after durable commit"
+  t=1005 publish message=evt-cmd-1 topic=order.events
+  t=1005 order-service marked outbox=evt-cmd-1 sent
+  t=1010 deliver message=evt-cmd-1 topic=order.events attempt=1
+  t=1010 shipment-service committed shipment order=order-1 event=evt-cmd-1
+  t=1010 ack message=evt-cmd-1 attempt=1
+  t=1015 deliver message=cmd-1 topic=commands attempt=2
+  t=1015 order-service skip duplicate command=cmd-1
+  t=1015 ack message=cmd-1 attempt=2
+final: order=true outbox-sent=true shipment=true event-publishes=1 event-attempts=1
+
+scenario: outbox-send-before-mark
+event log:
+  t=1000 publish message=cmd-1 topic=commands
+  t=1005 deliver message=cmd-1 topic=commands attempt=1
+  t=1005 order-service committed order=order-1 and outbox=evt-cmd-1
+  t=1005 ack message=cmd-1 attempt=1
+  t=1005 publish message=evt-cmd-1 topic=order.events
+  t=1005 order-service crash before sent-mark outbox=evt-cmd-1
+  t=1005 order-service crash
+  t=1005 order-service restart
+  t=1005 publish message=evt-cmd-1 topic=order.events
+  t=1005 order-service marked outbox=evt-cmd-1 sent
+  t=1010 deliver message=evt-cmd-1 topic=order.events attempt=1
+  t=1010 shipment-service committed shipment order=order-1 event=evt-cmd-1
+  t=1010 ack message=evt-cmd-1 attempt=1
+  t=1010 deliver message=evt-cmd-1 topic=order.events attempt=1
+  t=1010 shipment-service skip duplicate event=evt-cmd-1
+  t=1010 ack message=evt-cmd-1 attempt=1
+final: order=true outbox-sent=true shipment=true event-publishes=2 event-attempts=2
+
+scenario: downstream-crash-before-commit
+event log:
+  t=1000 publish message=cmd-1 topic=commands
+  t=1005 deliver message=cmd-1 topic=commands attempt=1
+  t=1005 order-service committed order=order-1 and outbox=evt-cmd-1
+  t=1005 ack message=cmd-1 attempt=1
+  t=1005 publish message=evt-cmd-1 topic=order.events
+  t=1005 order-service marked outbox=evt-cmd-1 sent
+  t=1010 deliver message=evt-cmd-1 topic=order.events attempt=1
+  t=1010 shipment-service crash before event commit=evt-cmd-1
+  t=1010 shipment-service crash
+  t=1010 redelivery-scheduled message=evt-cmd-1 after=10 error="simulated process crash"
+  t=1010 shipment-service restart
+  t=1020 deliver message=evt-cmd-1 topic=order.events attempt=2
+  t=1020 shipment-service committed shipment order=order-1 event=evt-cmd-1
+  t=1020 ack message=evt-cmd-1 attempt=2
+final: order=true outbox-sent=true shipment=true event-publishes=1 event-attempts=2
+

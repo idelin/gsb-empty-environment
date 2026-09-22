@@ -1,0 +1,23 @@
+?   	atleastonce	[no test files]
+=== RUN   TestAtLeastOnceScenarios
+=== RUN   TestAtLeastOnceScenarios/no_fault_delivers_once
+=== RUN   TestAtLeastOnceScenarios/crash_before_order_commit_is_redelivered
+=== RUN   TestAtLeastOnceScenarios/lost_response_after_commit_does_not_rerun_business
+=== RUN   TestAtLeastOnceScenarios/outbox_sent_before_mark_is_resent_and_deduplicated
+=== RUN   TestAtLeastOnceScenarios/downstream_crash_before_commit_is_redelivered_once
+--- PASS: TestAtLeastOnceScenarios (0.00s)
+    --- PASS: TestAtLeastOnceScenarios/no_fault_delivers_once (0.00s)
+    --- PASS: TestAtLeastOnceScenarios/crash_before_order_commit_is_redelivered (0.00s)
+    --- PASS: TestAtLeastOnceScenarios/lost_response_after_commit_does_not_rerun_business (0.00s)
+    --- PASS: TestAtLeastOnceScenarios/outbox_sent_before_mark_is_resent_and_deduplicated (0.00s)
+    --- PASS: TestAtLeastOnceScenarios/downstream_crash_before_commit_is_redelivered_once (0.00s)
+=== RUN   TestUncommittedOrderTransactionHasNoLocalOrExternalEffect
+--- PASS: TestUncommittedOrderTransactionHasNoLocalOrExternalEffect (0.00s)
+=== RUN   TestUncommittedDownstreamTransactionHasNoPartialEffect
+--- PASS: TestUncommittedDownstreamTransactionHasNoPartialEffect (0.00s)
+=== RUN   TestReplayIsDeterministic
+--- PASS: TestReplayIsDeterministic (0.00s)
+=== RUN   TestStoreTransactionSnapshotIsolation
+--- PASS: TestStoreTransactionSnapshotIsolation (0.00s)
+PASS
+ok  	atleastonce/sim	0.726s
