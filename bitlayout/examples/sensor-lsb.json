@@ -1,0 +1,19 @@
+{
+  "name": "sensor",
+  "bitOrder": "lsb",
+  "byteOrder": "little",
+  "fields": [
+    {"name": "kind", "type": "uint", "bits": 2, "enum": [0, 1]},
+    {"name": "body", "type": "union", "tagFrom": "kind", "cases": {
+      "0": {"fields": [{"name": "short", "type": "uint", "bits": 4}]},
+      "1": {"fields": [
+        {"name": "count", "type": "uint", "bits": 3},
+        {"name": "readings", "type": "array", "lengthFrom": "count", "element": {
+          "fields": [{"name": "r", "type": "int", "bits": 9}]
+        }}
+      ]}
+    }},
+    {"name": "pad", "type": "align", "multiple": 8},
+    {"name": "crc", "type": "checksum", "bits": 8, "from": "kind", "to": "pad"}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "telemetry",
+  "bitOrder": "msb",
+  "byteOrder": "big",
+  "fields": [
+    {"name": "tag", "type": "uint", "bits": 3, "enum": [0, 1]},
+    {"name": "value", "type": "int", "bits": 10},
+    {"name": "body", "type": "union", "tagFrom": "tag", "cases": {
+      "0": {"fields": [{"name": "code", "type": "uint", "bits": 5}]},
+      "1": {"fields": [{"name": "reading", "type": "uint", "bits": 12}]}
+    }},
+    {"name": "n", "type": "uint", "bits": 4},
+    {"name": "samples", "type": "array", "lengthFrom": "n", "element": {
+      "fields": [{"name": "v", "type": "uint", "bits": 6}]
+    }},
+    {"name": "pad", "type": "align", "multiple": 8},
+    {"name": "crc", "type": "checksum", "bits": 8, "algo": "sum", "from": "tag", "to": "pad"}
+  ]
+}
