@@ -1,0 +1,7 @@
+{
+  "root": "app",
+  "req": ">=1.0.0",
+  "features": ["net", "loop", "net"],
+  "disable": [],
+  "default_features": true
+}

@@ -1,0 +1,7 @@
+{
+  "root": "app",
+  "req": ">=1.0.0",
+  "features": ["net"],
+  "disable": ["tls"],
+  "default_features": true
+}
