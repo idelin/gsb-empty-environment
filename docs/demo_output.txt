@@ -1,0 +1,149 @@
+local catalog: ['departments', 'employees'] (no SQL engine involved)
+
+========================================================================
+1. Serialize to a typed + versioned document
+========================================================================
+{
+  "format_version": "1.0",
+  "nodes": [
+    {
+      "id": "dept_scan",
+      "op": {
+        "@type": "scan",
+        "table": "departments"
+      },
+      "inputs": []
+    },
+    {
+      "id": "emp_scan",
+      "op": {
+        "@type": "scan",
+        "table": "employees"
+      },
+      "inputs": []
+    },
+    {
+      "id": "emp_dept",
+      "op": {
+        "@type": "join",
+        "join_type": "left_outer",
+        "left_keys": [
+          "dept"
+        ],
+        "right_keys": [
+          "dept"
+        ]
+      },
+      "inputs": [
+        "emp_scan",
+        "dept_scan"
+      ]
+    },
+    {
+      "id": "payroll_by_dept",
+      "op": {
+        "@type": "aggregate",
+        "group_keys": [
+          {
+            "@type": "column_ref",
+            "name": "dname"
+          }
+        ],
+        "aggs": [
+          {
+            "func": "count_star",
+            "alias": "headcount"
+          },
+          {
+            "func": "sum",
+            "alias": "total_salary",
+            "arg": {
+              "@type": "column_ref",
+              "name": "salary"
+            }
+          },
+          {
+            "func": "avg",
+            "alias": "avg_salary",
+            "arg": {
+              "@type": "column_ref",
+              "name": "salary"
+            }
+          }
+        ]
+      },
+      "inputs": [
+        "emp_dept"
+      ]
+    },
+    {
+      "id": "top2",
+      "op": {
+        "@type": "limit",
+        "count": 2
+      },
+      "inputs": [
+        "payroll_by_dept"
+      ]
+    }
+  ],
+  "roots": [
+    "payroll_by_dept",
+    "top2"
+  ]
+}
+
+========================================================================
+2. Round-trip deserialization (strict allow-list tags)
+========================================================================
+operators: ['scan', 'scan', 'join', 'aggregate', 'limit']
+roots: ('payroll_by_dept', 'top2')
+
+========================================================================
+3. Execute: bag semantics, NULL semantics, LEFT JOIN + aggregation
+========================================================================
+root 'payroll_by_dept' columns=['dname', 'headcount', 'total_salary', 'avg_salary']
+    ['Eng', 3, 220, 73.33333333333333]
+    ['Sales', 2, 260, 130.0]
+    [None, 2, 80, 80.0]
+root 'top2' columns=['dname', 'headcount', 'total_salary', 'avg_salary']
+    ['Eng', 3, 220, 73.33333333333333]
+    ['Sales', 2, 260, 130.0]
+base-table scans actually performed: 2 (two roots, one shared plan -> 2 scans)
+
+========================================================================
+4. Shared child stays shared after recovery (memoized once)
+========================================================================
+merged node count=6 (shared ids emitted once)
+consumers of shared nodes: {'emp_scan': ['emp_dept'], 'dept_scan': ['emp_dept'], 'emp_dept': ['eng_names', 'payroll_by_dept']}
+scan_count for both roots = 2 (shared base scans evaluated once)
+eng_names rows: 7
+
+========================================================================
+5. NULL / three-valued logic: salary > 60
+========================================================================
+root 's_proj' columns=['name', 'salary'] rows=3
+    ['Ann', 100]
+    ['Cy', 200]
+    ['Eli', 80]
+(Fay's NULL salary is not > 60 and is not false -> row removed; duplicate Bob is retained)
+
+========================================================================
+6. Wrong column types found BEFORE execution
+========================================================================
+BindingError: cannot compare TEXT with INTEGER in 'gt'
+
+========================================================================
+7. Invalid documents are rejected (no arbitrary code runs)
+========================================================================
+  unknown operator tag: UnknownOperatorError: unknown operator 'os.system'; known: ['aggregate', 'filter', 'join', 'limit', 'project', 'scan']
+  unknown expression tag: UnknownOperatorError: unknown expression '__import__'; known: ['and', 'arith', 'cmp', 'coalesce', 'column_ref', 'is_null', 'literal', 'not', 'or']
+  missing node: MissingNodeError: node 'f' references missing input node 'ghost'
+  cycle: CycleError: cycle detected: a -> b -> a
+  unsupported major version: FormatVersionError: unsupported format major version 9; this build supports 1.x
+
+========================================================================
+8. Same id with different node content conflicts
+========================================================================
+  node 'emp_scan': same id but different content (a={'@type': 'scan', 'table': 'employees'} vs b={'@type': 'scan', 'table': 'departments'})
+  merge rejected: cannot merge: node 'emp_scan' exists with different content

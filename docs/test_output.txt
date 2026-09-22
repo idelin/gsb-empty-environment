@@ -1,0 +1,48 @@
+test_count_ignores_null_count_star_counts_all (test_execution.AggregateTests.test_count_ignores_null_count_star_counts_all) ... ok
+test_group_preserves_first_seen_order_and_bags (test_execution.AggregateTests.test_group_preserves_first_seen_order_and_bags) ... ok
+test_join_multiplicity_product (test_execution.BagSemanticsTests.test_join_multiplicity_product) ... ok
+test_left_outer_keeps_unmatched_with_nulls (test_execution.BagSemanticsTests.test_left_outer_keeps_unmatched_with_nulls) ... ok
+test_scan_keeps_duplicate_rows (test_execution.BagSemanticsTests.test_scan_keeps_duplicate_rows) ... ok
+test_limit_and_shared_node_single_evaluation (test_execution.LimitTests.test_limit_and_shared_node_single_evaluation) ... ok
+test_arithmetic_null_and_div_zero (test_execution.NullSemanticsTests.test_arithmetic_null_and_div_zero) ... ok
+test_coalesce (test_execution.NullSemanticsTests.test_coalesce) ... ok
+test_comparison_null_yields_unknown (test_execution.NullSemanticsTests.test_comparison_null_yields_unknown) ... ok
+test_three_valued_and_or_not (test_execution.NullSemanticsTests.test_three_valued_and_or_not) ... ok
+test_inputs_must_be_strings (test_serde.LocalJsonOnlyTests.test_inputs_must_be_strings) ... ok
+test_node_must_be_object (test_serde.LocalJsonOnlyTests.test_node_must_be_object) ... ok
+test_same_arity_node_twice_is_allowed_but_id_duplicate_is_not (test_serde.LocalJsonOnlyTests.test_same_arity_node_twice_is_allowed_but_id_duplicate_is_not) ... ok
+test_arity_checked_on_load (test_serde.SerdeTests.test_arity_checked_on_load) ... ok
+test_bool_not_accepted_as_integer (test_serde.SerdeTests.test_bool_not_accepted_as_integer) ... ok
+test_count_star_takes_no_arg (test_serde.SerdeTests.test_count_star_takes_no_arg) ... ok
+test_duplicate_id_in_one_document (test_serde.SerdeTests.test_duplicate_id_in_one_document) ... ok
+test_id_conflict_detection_and_merge (test_serde.SerdeTests.test_id_conflict_detection_and_merge) ... ok
+test_invalid_json_rejected (test_serde.SerdeTests.test_invalid_json_rejected) ... ok
+test_merge_keeps_shared_child_once (test_serde.SerdeTests.test_merge_keeps_shared_child_once) ... ok
+test_roundtrip_binds_and_executes (test_serde.SerdeTests.test_roundtrip_binds_and_executes) ... ok
+test_roundtrip_preserves_document (test_serde.SerdeTests.test_roundtrip_preserves_document) ... ok
+test_tags_must_be_strings (test_serde.SerdeTests.test_tags_must_be_strings) ... ok
+test_unknown_expression_tag_rejected (test_serde.SerdeTests.test_unknown_expression_tag_rejected) ... ok
+test_unknown_keys_rejected (test_serde.SerdeTests.test_unknown_keys_rejected) ... ok
+test_unknown_operator_tag_rejected (test_serde.SerdeTests.test_unknown_operator_tag_rejected) ... ok
+test_versions (test_serde.SerdeTests.test_versions) ... ok
+test_ambiguous_column_resolver (test_validation.BindingTests.test_ambiguous_column_resolver) ... ok
+test_join_key_type_mismatch (test_validation.BindingTests.test_join_key_type_mismatch) ... ok
+test_join_output_collision (test_validation.BindingTests.test_join_output_collision) ... ok
+test_non_boolean_predicate (test_validation.BindingTests.test_non_boolean_predicate) ... ok
+test_sum_requires_numeric (test_validation.BindingTests.test_sum_requires_numeric) ... ok
+test_type_mismatch_detected_before_execution (test_validation.BindingTests.test_type_mismatch_detected_before_execution) ... ok
+test_unknown_column (test_validation.BindingTests.test_unknown_column) ... ok
+test_unknown_table (test_validation.BindingTests.test_unknown_table) ... ok
+test_count_star_output_is_integer (test_validation.ExtraBindingTests.test_count_star_output_is_integer) ... ok
+test_missing_field_inside_nested_expression (test_validation.ExtraBindingTests.test_missing_field_inside_nested_expression) ... ok
+test_project_arithmetic_on_text_rejected (test_validation.ExtraBindingTests.test_project_arithmetic_on_text_rejected) ... ok
+test_diamond_is_valid_and_shared (test_validation.StructureTests.test_diamond_is_valid_and_shared) ... ok
+test_missing_input_node (test_validation.StructureTests.test_missing_input_node) ... ok
+test_missing_root (test_validation.StructureTests.test_missing_root) ... ok
+test_self_cycle (test_validation.StructureTests.test_self_cycle) ... ok
+test_two_node_cycle (test_validation.StructureTests.test_two_node_cycle) ... ok
+
+----------------------------------------------------------------------
+Ran 43 tests in 0.009s
+
+OK
