@@ -1,0 +1,32 @@
+# 精确有理数运算
+1/3 + 1/6
+0.1 + 0.2
+
+# 单位、变量与复合单位
+let distance = 42 km
+let time = 1.5 h
+distance / time
+distance / time -> km/h
+let g = 9.8 m/s^2
+let t = 3 s
+g * t
+
+# 单位换算
+1 mi -> km
+1 in -> cm
+1 h -> min
+
+# 仿射温度与温差
+let morning = 8 °C
+let noon = 21 °C
+noon - morning
+morning + 5 Δ°C
+noon -> °F
+100 °C -> K
+32 °F -> °C
+9 Δ°F -> Δ°C
+
+# 比较前自动换算
+1 km > 999 m
+20 °C == 68 °F
+1 mi >= 1.6 km
