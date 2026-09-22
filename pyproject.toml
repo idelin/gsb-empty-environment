@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reproduce-compare"
+version = "0.1.0"
+description = "Reproducibility comparison for directory trees and nested ZIP archives with independently verifiable evidence."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+reproduce-compare = "reproduce_compare.__main__:main"
+
+[tool.setuptools]
+packages = ["reproduce_compare"]
