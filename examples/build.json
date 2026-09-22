@@ -1,0 +1,43 @@
+{
+  "nodes": [
+    {
+      "id": "util-1.0.0", "package": "util", "version": "1.0.0",
+      "digest": "sha256:util-good", "rebuild_cost": 10, "deps": []
+    },
+    {
+      "id": "core-2.0.0", "package": "core", "version": "2.0.0",
+      "digest": "sha256:core-artifact", "rebuild_cost": 100,
+      "deps": [{"node": "util-1.0.0", "constraint": "^1.0.0"}]
+    },
+    {
+      "id": "web-1.4.0", "package": "web", "version": "1.4.0",
+      "digest": "sha256:web-artifact", "rebuild_cost": 60,
+      "deps": [{"node": "core-2.0.0", "constraint": ">=2.0.0, <3.0.0"}]
+    },
+    {
+      "id": "api-1.2.0", "package": "api", "version": "1.2.0",
+      "digest": "sha256:api-good", "rebuild_cost": 50,
+      "deps": [{"node": "core-2.0.0", "constraint": "~2.0.0"}]
+    },
+    {
+      "id": "cli-2.0.0", "package": "cli", "version": "2.0.0",
+      "digest": "sha256:cli-artifact", "rebuild_cost": 80,
+      "deps": [{"node": "util-1.0.0", "constraint": "1.0.0"}]
+    },
+    {
+      "id": "app-3.0.0", "package": "app", "version": "3.0.0",
+      "digest": "sha256:app-artifact", "rebuild_cost": 40,
+      "deps": [
+        {"node": "web-1.4.0", "constraint": "^1.4.0"},
+        {"node": "api-1.2.0", "constraint": "^1.2.0"}
+      ]
+    }
+  ],
+  "failed": ["core-2.0.0", "web-1.4.0", "app-3.0.0", "cli-2.0.0"],
+  "cache": [
+    {"node": "web-1.4.0", "digest": "sha256:web-artifact", "restore_cost": 5},
+    {"node": "app-3.0.0", "digest": "sha256:OLD-stale-digest", "restore_cost": 2},
+    {"node": "cli-2.0.0", "digest": "sha256:cli-artifact", "restore_cost": 15}
+  ],
+  "targets": ["web-1.4.0", "app-3.0.0", "cli-2.0.0"]
+}

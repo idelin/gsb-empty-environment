@@ -1,0 +1,81 @@
+{
+  "total_cost": 265,
+  "targets": [
+    "web-1.4.0",
+    "app-3.0.0",
+    "cli-2.0.0"
+  ],
+  "actions": [
+    {
+      "node": "util-1.0.0",
+      "package": "util",
+      "version": "1.0.0",
+      "action": "reuse",
+      "cost": 0,
+      "digest": "sha256:util-good",
+      "reason": "产物有效且依赖未变化，直接复用",
+      "deps": []
+    },
+    {
+      "node": "core-2.0.0",
+      "package": "core",
+      "version": "2.0.0",
+      "action": "rebuild",
+      "cost": 100,
+      "digest": "sha256:core-artifact",
+      "reason": "产物失效且缓存缺失/摘要不匹配，不可恢复，必须重建",
+      "deps": [
+        "util-1.0.0"
+      ]
+    },
+    {
+      "node": "web-1.4.0",
+      "package": "web",
+      "version": "1.4.0",
+      "action": "rebuild",
+      "cost": 60,
+      "digest": "sha256:web-artifact",
+      "reason": "依赖被重建，本节点产物失效，联动重建（缓存亦不可复用）",
+      "deps": [
+        "core-2.0.0"
+      ]
+    },
+    {
+      "node": "api-1.2.0",
+      "package": "api",
+      "version": "1.2.0",
+      "action": "rebuild",
+      "cost": 50,
+      "digest": "sha256:api-good",
+      "reason": "依赖被重建，本节点产物失效，联动重建（缓存亦不可复用）",
+      "deps": [
+        "core-2.0.0"
+      ]
+    },
+    {
+      "node": "cli-2.0.0",
+      "package": "cli",
+      "version": "2.0.0",
+      "action": "restore",
+      "cost": 15,
+      "digest": "sha256:cli-artifact",
+      "reason": "产物失效；缓存摘要匹配，从缓存恢复",
+      "deps": [
+        "util-1.0.0"
+      ]
+    },
+    {
+      "node": "app-3.0.0",
+      "package": "app",
+      "version": "3.0.0",
+      "action": "rebuild",
+      "cost": 40,
+      "digest": "sha256:app-artifact",
+      "reason": "依赖被重建，本节点产物失效，联动重建（缓存亦不可复用）",
+      "deps": [
+        "web-1.4.0",
+        "api-1.2.0"
+      ]
+    }
+  ]
+}

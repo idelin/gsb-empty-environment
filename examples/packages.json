@@ -1,0 +1,10 @@
+{
+  "packages": {
+    "util": {"versions": ["1.0.0", "1.1.0"]},
+    "core": {"versions": ["2.0.0", "2.1.0-rc.1", "2.1.0"]},
+    "web": {"versions": ["1.4.0"]},
+    "api": {"versions": ["1.2.0"]},
+    "cli": {"versions": ["2.0.0"]},
+    "app": {"versions": ["3.0.0"]}
+  }
+}
