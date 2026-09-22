@@ -1,0 +1,5 @@
+{
+  "roots": {"img": "[2.0.0,3.0.0)"},
+  "context": {"format": "av1"},
+  "locked": {}
+}

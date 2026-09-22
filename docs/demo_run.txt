@@ -1,0 +1,25 @@
+$ python3.11 demo.py
+== interval difference ==
+[1,3) - [2,4) = rel=[1.0.0,2.0.0)
+smallest counterexample vs [2,4): 1.0.0
+
+== prerelease channels ==
+2.0.0-alpha.1 in @alpha window: True
+2.0.0-beta.1  in @alpha window: False
+2.0.0         in @alpha window: False
+
+== compatible cycle ==
+smart: {'a': '2.0.0', 'b': '2.0.0'}
+brute: {'a': '2.0.0', 'b': '2.0.0'}
+
+== unsatisfiable cycle explanation ==
+cannot satisfy c:
+  - rel=[1.0.0,3.0.0)  [<root>]
+  - rel=[1.0.0,2.0.0)  [<root> -> c@2.0.0 -> d -> d@2.0.0 -> c]
+  known versions: 2.0.0, 1.0.0
+  hint: intersect the listed sets; their shared candidate set is empty
+
+== lock change tracing ==
+http: 1.0.0 -> 2.0.0 (forced to new locked pin)
+sock: 1.0.0 -> 2.0.0 (moved to satisfy constraints introduced by re-locked neighbours)
+web: 1.0.0 -> 2.0.0 (forced to new locked pin)

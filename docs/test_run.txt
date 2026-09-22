@@ -1,0 +1,44 @@
+$ python3.11 --version
+Python 3.11.15
+
+$ python3.11 -m unittest discover -s tests -v
+test_basic_build_from_local_json (test_json_pipeline.JsonPipelineTest.test_basic_build_from_local_json) ... ok
+test_unsat_explanation_names_paths_and_versions (test_json_pipeline.JsonPipelineTest.test_unsat_explanation_names_paths_and_versions) ... ok
+test_mutual_cycle_resolves_to_highest_pair (test_solver.CompatibleCycleTest.test_mutual_cycle_resolves_to_highest_pair) ... ok
+test_prerelease_cycle_requires_explicit_channels (test_solver.CompatibleCycleTest.test_prerelease_cycle_requires_explicit_channels) ... ok
+test_target_condition_gates_transitive_dependency (test_solver.CompatibleCycleTest.test_target_condition_gates_transitive_dependency) ... ok
+test_c_d_cycle_has_no_valid_assignment (test_solver.ConflictingCycleTest.test_c_d_cycle_has_no_valid_assignment) ... ok
+test_too_tight_root_is_unsatisfiable (test_solver.ConflictingCycleTest.test_too_tight_root_is_unsatisfiable) ... ok
+test_every_cycle_matrix_cell_matches_bruteforce (test_solver.ExhaustiveCycleCrossCheck.test_every_cycle_matrix_cell_matches_bruteforce) ... ok
+test_lock_inducing_conflict_records_core (test_solver.LockChangeTest.test_lock_inducing_conflict_records_core) ... ok
+test_report_traces_constraint_that_changed_selection (test_solver.LockChangeTest.test_report_traces_constraint_that_changed_selection) ... ok
+test_open_boundary_excludes_endpoint (test_solver.UnboundedAndAbuttingTest.test_open_boundary_excludes_endpoint) ... ok
+test_unbounded_upper_end_and_open_abutment (test_solver.UnboundedAndAbuttingTest.test_unbounded_upper_end_and_open_abutment) ... ok
+test_counterexample_is_smallest_grid_witness (test_spec_fuzz.SpecSemanticsFuzzTest.test_counterexample_is_smallest_grid_witness) ... ok
+test_hand_built_boundary_sets (test_spec_fuzz.SpecSemanticsFuzzTest.test_hand_built_boundary_sets) ... ok
+test_prerelease_channel_grid (test_spec_fuzz.SpecSemanticsFuzzTest.test_prerelease_channel_grid) ... ok
+test_random_expressions_match_grid_membership (test_spec_fuzz.SpecSemanticsFuzzTest.test_random_expressions_match_grid_membership) ... ok
+test_serialization_roundtrips_semantics_on_grid (test_spec_fuzz.SpecSemanticsFuzzTest.test_serialization_roundtrips_semantics_on_grid) ... ok
+test_branch_dictionary_and_list_parse_identically (test_targets.ConditionalSetTest.test_branch_dictionary_and_list_parse_identically) ... ok
+test_canonical_form_does_not_depend_on_branch_order (test_targets.ConditionalSetTest.test_canonical_form_does_not_depend_on_branch_order) ... ok
+test_conjunction_of_conditionals_intersects_sets (test_targets.ConditionalSetTest.test_conjunction_of_conditionals_intersects_sets) ... ok
+test_first_matching_branch_wins_and_otherwise_empty (test_targets.ConditionalSetTest.test_first_matching_branch_wins_and_otherwise_empty) ... ok
+test_unconditional_spec_stays_single_branch (test_targets.ConditionalSetTest.test_unconditional_spec_stays_single_branch) ... ok
+test_adjacent_and_overlapping_intervals_merge (test_version_set.CanonicalOrderTest.test_adjacent_and_overlapping_intervals_merge) ... ok
+test_boolean_assembly_order_is_semantically_equivalent (test_version_set.CanonicalOrderTest.test_boolean_assembly_order_is_semantically_equivalent) ... ok
+test_excluded_points_split_into_canonical_pieces (test_version_set.CanonicalOrderTest.test_excluded_points_split_into_canonical_pieces) ... ok
+test_serialization_hash_and_minimal_counterexample (test_version_set.CanonicalOrderTest.test_serialization_hash_and_minimal_counterexample) ... ok
+test_unbounded_ends (test_version_set.CanonicalOrderTest.test_unbounded_ends) ... ok
+test_all_subsets_have_finite_canonical_form_without_enumeration (test_version_set.FiniteCrossCheckTest.test_all_subsets_have_finite_canonical_form_without_enumeration) ... ok
+test_boolean_laws_on_finite_witness_set (test_version_set.FiniteCrossCheckTest.test_boolean_laws_on_finite_witness_set) ... ok
+test_minimum_counterexample_is_witness_smallest (test_version_set.FiniteCrossCheckTest.test_minimum_counterexample_is_witness_smallest) ... ok
+test_half_is_difference_of_overlapping_ranges (test_version_set.IntervalDifferenceTest.test_half_is_difference_of_overlapping_ranges) ... ok
+test_channel_intersection_is_lane_wise (test_version_set.PrereleaseChannelTest.test_channel_intersection_is_lane_wise) ... ok
+test_equal_numeric_triple_does_not_admit_other_lane (test_version_set.PrereleaseChannelTest.test_equal_numeric_triple_does_not_admit_other_lane) ... ok
+test_prereleases_never_enter_plain_release_sets (test_version_set.PrereleaseChannelTest.test_prereleases_never_enter_plain_release_sets) ... ok
+test_prereleases_require_explicit_channel_allowance (test_version_set.PrereleaseChannelTest.test_prereleases_require_explicit_channel_allowance) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 0.065s
+
+OK
