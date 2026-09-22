@@ -1,0 +1,102 @@
+"""Plan-DAG: typed/versioned local query plan documents.
+
+Standard-library-only package. No SQL engine, no code evaluation: plans
+describe an allow-listed set of operators over in-memory multiset relations.
+"""
+
+from .catalog import Catalog, Table
+from .codec import DOC_TYPE, DOC_VERSION, Plan, build_plan, from_document, from_json
+from .engine import ExecContext, ExecStats, execute
+from .errors import (
+    AmbiguousFieldError,
+    BindingError,
+    CycleError,
+    DocumentFormatError,
+    ExecutionError,
+    MissingNodeError,
+    NodeConflictError,
+    PlanDagError,
+    TypeMismatchError,
+    UnknownFieldError,
+    UnknownOperatorError,
+    UnknownTableError,
+    UnsupportedVersionError,
+)
+from .expr import (
+    BinOpExpr,
+    CoalesceExpr,
+    ColumnExpr,
+    IsNullExpr,
+    LiteralExpr,
+    NotExpr,
+    binop,
+    coalesce,
+    col,
+    expr_from_dict,
+    lit,
+)
+from .nodes import (
+    AggregateNode,
+    FilterNode,
+    HashJoinNode,
+    NamedExpr,
+    NODE_REGISTRY,
+    ProjectNode,
+    ScanNode,
+    UnionAllNode,
+)
+from .types import BOOL, DataType, FLOAT, INT, NULL, TEXT, Column, Relation, Schema
+
+__all__ = [
+    "DOC_TYPE",
+    "DOC_VERSION",
+    "AmbiguousFieldError",
+    "AggregateNode",
+    "BOOL",
+    "BinOpExpr",
+    "BindingError",
+    "Catalog",
+    "Column",
+    "ColumnExpr",
+    "CoalesceExpr",
+    "CycleError",
+    "DataType",
+    "DocumentFormatError",
+    "ExecContext",
+    "ExecStats",
+    "ExecutionError",
+    "FLOAT",
+    "FilterNode",
+    "HashJoinNode",
+    "INT",
+    "LiteralExpr",
+    "MissingNodeError",
+    "NamedExpr",
+    "NODE_REGISTRY",
+    "NULL",
+    "NotExpr",
+    "NodeConflictError",
+    "Plan",
+    "PlanDagError",
+    "ProjectNode",
+    "Relation",
+    "Schema",
+    "ScanNode",
+    "Table",
+    "TEXT",
+    "TypeMismatchError",
+    "UnionAllNode",
+    "UnknownFieldError",
+    "UnknownOperatorError",
+    "UnknownTableError",
+    "UnsupportedVersionError",
+    "binop",
+    "build_plan",
+    "coalesce",
+    "col",
+    "execute",
+    "expr_from_dict",
+    "from_document",
+    "from_json",
+    "lit",
+]
