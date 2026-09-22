@@ -1,0 +1,22 @@
+test_empty_table_issues_no_sorts (test_window_sharing.CountingTests.test_empty_table_issues_no_sorts) ... ok
+test_physical_sort_calls_match_counter_and_formula (test_window_sharing.CountingTests.test_physical_sort_calls_match_counter_and_formula) ... ok
+test_null_ordering_first_vs_last (test_window_sharing.ExecutionTests.test_null_ordering_first_vs_last) ... ok
+test_rank_gives_peer_rank_dense_rank_too (test_window_sharing.ExecutionTests.test_rank_gives_peer_rank_dense_rank_too) ... ok
+test_row_number_stable_on_ties_and_input_aligned_output (test_window_sharing.ExecutionTests.test_row_number_stable_on_ties_and_input_aligned_output) ... ok
+test_shared_sort_independent_results_for_distinct_frames (test_window_sharing.ExecutionTests.test_shared_sort_independent_results_for_distinct_frames) ... ok
+test_sum_ignores_null_values_but_rows_count_all (test_window_sharing.ExecutionTests.test_sum_ignores_null_values_but_rows_count_all) ... ok
+test_invalid_offsets_rejected (test_window_sharing.FrameTests.test_invalid_offsets_rejected) ... ok
+test_rows_frame_offsets_are_clamped_and_physical (test_window_sharing.FrameTests.test_rows_frame_offsets_are_clamped_and_physical) ... ok
+test_asc_vs_desc_cannot_share (test_window_sharing.PlannerSharingTests.test_asc_vs_desc_cannot_share) ... ok
+test_default_null_position_is_direction_dependent (test_window_sharing.PlannerSharingTests.test_default_null_position_is_direction_dependent) ... ok
+test_different_partition_columns_cannot_share (test_window_sharing.PlannerSharingTests.test_different_partition_columns_cannot_share) ... ok
+test_identical_order_different_rows_frames_share_one_sort (test_window_sharing.PlannerSharingTests.test_identical_order_different_rows_frames_share_one_sort) ... ok
+test_minimal_sort_set_removes_only_strictly_covered_prefix (test_window_sharing.PlannerSharingTests.test_minimal_sort_set_removes_only_strictly_covered_prefix) ... ok
+test_null_placement_difference_blocks_sharing (test_window_sharing.PlannerSharingTests.test_null_placement_difference_blocks_sharing) ... ok
+test_partition_by_is_multiset_order_insensitive_duplicates_count (test_window_sharing.PlannerSharingTests.test_partition_by_is_multiset_order_insensitive_duplicates_count) ... ok
+test_prefix_order_reuses_longer_sort (test_window_sharing.PlannerSharingTests.test_prefix_order_reuses_longer_sort) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.002s
+
+OK

@@ -1,0 +1,57 @@
+Input relation SALES (multiset; duplicates kept):
+  idx | region | product | amount
+    0 | East   | bolt    | 10.0
+    1 | West   | bolt    | NULL
+    2 | East   | nut     | 10.0
+    3 | East   | bolt    | 20.0
+    4 | West   | nut     | 30.0
+    5 | West   | bolt    | 5.0
+    6 | East   | nut     | 10.0
+    7 | West   | nut     | 30.0
+
+Window sort-sharing plan
+========================
+S1: PARTITION BY (none - whole table)
+    ORDER BY (none)
+    partitions sorted: 1
+    - grand_count [count] frame='ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING' (exact)
+S2: PARTITION BY region
+    ORDER BY product ASC NULLS LAST, amount ASC NULLS LAST
+    partitions sorted: 2
+    - centered_sum [sum] frame='ROWS BETWEEN 1 ROW PRECEDING AND 1 ROW FOLLOWING' (exact)
+    - product_rank [rank] frame='(function ignores ROWS frames)' (prefix-reuse)
+    - running_total [sum] frame='ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW' (exact)
+S3: PARTITION BY region
+    ORDER BY amount DESC NULLS LAST
+    partitions sorted: 2
+    - amount_rank_desc_nullslast [rank] frame='(function ignores ROWS frames)' (exact)
+S4: PARTITION BY region
+    ORDER BY amount DESC NULLS FIRST
+    partitions sorted: 2
+    - amount_rank_desc [rank] frame='(function ignores ROWS frames)' (exact)
+------------------------
+logical sort shapes: 4
+physical sort calls: 7
+without sharing:     11
+
+Actual sort() calls executed by the shared plan: 7
+Predicted from plan shape x partitions:          7
+Non-sharing baseline (one sort per window):      11
+
+Results (aligned to input order; each window has its own array):
+  idx | amount_rank_desc             | amount_rank_desc_nullslast   | centered_sum                 | grand_count                  | product_rank                 | running_total               
+    0 | 2                            | 2                            | 30.0                         | 8                            | 1                            | 10.0                        
+    1 | 1                            | 4                            | 35.0                         | 8                            | 1                            | 5.0                         
+    2 | 2                            | 2                            | 40.0                         | 8                            | 3                            | 40.0                        
+    3 | 1                            | 1                            | 40.0                         | 8                            | 1                            | 30.0                        
+    4 | 2                            | 1                            | 60.0                         | 8                            | 3                            | 35.0                        
+    5 | 4                            | 3                            | 5.0                          | 8                            | 1                            | 5.0                         
+    6 | 2                            | 2                            | 20.0                         | 8                            | 3                            | 50.0                        
+    7 | 2                            | 1                            | 60.0                         | 8                            | 3                            | 65.0                        
+
+Notes:
+  * running_total and centered_sum share S1 but keep separate frames/results.
+  * product_rank reuses S1 as a prefix (extra 'amount' key only breaks ties).
+  * amount_rank_desc and amount_rank_desc_nullslast cannot share: NULL placement differs.
+  * ASC vs DESC sorts are never reused; no reverse-scan assumption is made.
+  * Duplicate rows survive: multiset semantics, no DISTINCT anywhere.
