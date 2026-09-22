@@ -1,0 +1,11 @@
+{
+  "requirements": [
+    "capability-x",
+    "service-c"
+  ],
+  "target": {
+    "os": "linux",
+    "arch": "amd64"
+  },
+  "allow_prerelease": false
+}

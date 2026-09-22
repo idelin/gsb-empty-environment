@@ -1,0 +1,48 @@
+{
+  "capability_to_implementation": {
+    "capability-x": "impl-b==1.8.0",
+    "core-util": "core-util==1.2.0",
+    "impl-b": "impl-b==1.8.0",
+    "incompatible-c": "incompatible-c==2.0.0",
+    "service-c": "incompatible-c==2.0.0"
+  },
+  "selected": [
+    {
+      "name": "core-util",
+      "version": "1.2.0",
+      "provides": [
+        "core-util"
+      ]
+    },
+    {
+      "name": "impl-b",
+      "version": "1.8.0",
+      "provides": [
+        "capability-x",
+        "impl-b"
+      ]
+    },
+    {
+      "name": "incompatible-c",
+      "version": "2.0.0",
+      "provides": [
+        "incompatible-c",
+        "service-c"
+      ]
+    }
+  ],
+  "selection_order": [
+    "impl-b",
+    "core-util",
+    "incompatible-c"
+  ],
+  "tie_break_rules": [
+    "Filter candidates by all version constraints, prerelease policy, and build target constraints.",
+    "Reject a candidate when it conflicts with a selected package and continue with the next implementation.",
+    "Allow exactly one selected provider for every capability.",
+    "Prefer the highest semantic version; a prerelease is lower than its final release.",
+    "If versions remain equal, choose the lexicographically smallest package name.",
+    "Resolve requirements and dependencies by capability name, and versions from high to low, for stable output.",
+    "Reject a resolution path that revisits an active capability or package, preventing cyclic alternatives from recursing forever."
+  ]
+}

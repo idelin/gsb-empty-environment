@@ -1,0 +1,51 @@
+{
+  "packages": [
+    {
+      "name": "impl-a",
+      "version": "2.0.0",
+      "provides": ["capability-x"],
+      "requires": ["core-util>=1.0.0"],
+      "conflicts": ["incompatible-c"]
+    },
+    {
+      "name": "impl-a",
+      "version": "2.1.0-rc.1+build.42",
+      "provides": ["capability-x"],
+      "requires": ["core-util>=1.0.0"],
+      "conflicts": ["incompatible-c"]
+    },
+    {
+      "name": "impl-b",
+      "version": "1.8.0",
+      "provides": ["capability-x"],
+      "requires": ["core-util>=1.2.0"],
+      "target": {"os": "linux", "arch": "amd64"}
+    },
+    {
+      "name": "impl-b-windows",
+      "version": "3.0.0",
+      "provides": ["capability-x"],
+      "requires": ["core-util>=1.2.0"],
+      "target": {"os": "windows", "arch": "amd64"}
+    },
+    {
+      "name": "core-util",
+      "version": "1.1.0"
+    },
+    {
+      "name": "core-util",
+      "version": "1.2.0"
+    },
+    {
+      "name": "incompatible-c",
+      "version": "2.0.0",
+      "provides": ["service-c"]
+    },
+    {
+      "name": "friendly-c",
+      "version": "1.0.0",
+      "provides": ["service-c"],
+      "conflicts": ["impl-a"]
+    }
+  ]
+}
