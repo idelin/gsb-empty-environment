@@ -1,0 +1,54 @@
+== 初始一致性失败 ==
+safety: stale_read op=op-read-x node=B key=k expected="1" got="" at=0
+初始事件数: 13
+
+== ddmin 缩减过程 ==
+01 [n=2] 删除 [w-x s-x drop-x deliver-x read-x-at-b w-y s-y] => dependency_invalid (invalid event deliver-y: deliver requires a prior send)
+02 [n=2] 删除 [deliver-y read-y-at-a s-heartbeat deliver-heartbeat crash-a recover-a] => reproduced_safety_failure
+03 [n=2] 删除 [w-x s-x drop-x deliver-x] => dependency_invalid (invalid event read-x-at-b: read expects a value with no prior acknowledged write)
+04 [n=2] 删除 [read-x-at-b w-y s-y] => no_failure (no safety violation remains)
+05 [n=4] 删除 [w-x s-x] => dependency_invalid (invalid event drop-x: drop requires a prior send)
+06 [n=4] 删除 [drop-x deliver-x] => dependency_invalid (invalid event read-x-at-b: replication message removes its delivery or fault step)
+07 [n=4] 删除 [read-x-at-b w-y] => dependency_invalid (invalid event s-y: send requires a prior write operation)
+08 [n=4] 删除 [s-y] => reproduced_safety_failure
+09 [n=2] 删除 [w-x s-x drop-x] => dependency_invalid (invalid event deliver-x: deliver requires a prior send)
+10 [n=2] 删除 [deliver-x read-x-at-b w-y] => dependency_invalid (invalid event drop-x: drop fault requires its scheduled delivery event)
+11 [n=4] 删除 [w-x s-x] => dependency_invalid (invalid event drop-x: drop requires a prior send)
+12 [n=4] 删除 [drop-x deliver-x] => dependency_invalid (invalid event read-x-at-b: replication message removes its delivery or fault step)
+13 [n=4] 删除 [read-x-at-b] => no_failure (no safety violation remains)
+14 [n=4] 删除 [w-y] => reproduced_safety_failure
+15 [n=2] 删除 [w-x s-x drop-x] => dependency_invalid (invalid event deliver-x: deliver requires a prior send)
+16 [n=2] 删除 [deliver-x read-x-at-b] => dependency_invalid (invalid event drop-x: drop fault requires its scheduled delivery event)
+17 [n=4] 删除 [w-x s-x] => dependency_invalid (invalid event drop-x: drop requires a prior send)
+18 [n=4] 删除 [drop-x] => no_failure (no safety violation remains)
+19 [n=4] 删除 [deliver-x] => dependency_invalid (invalid event drop-x: drop fault requires its scheduled delivery event)
+20 [n=4] 删除 [read-x-at-b] => no_failure (no safety violation remains)
+21 [n=5] 删除 [w-x] => dependency_invalid (invalid event s-x: send requires a prior write operation)
+22 [n=5] 删除 [s-x] => dependency_invalid (invalid event drop-x: drop requires a prior send)
+23 [n=5] 删除 [drop-x] => no_failure (no safety violation remains)
+24 [n=5] 删除 [deliver-x] => dependency_invalid (invalid event drop-x: drop fault requires its scheduled delivery event)
+25 [n=5] 删除 [read-x-at-b] => no_failure (no safety violation remains)
+
+== 单事件必要性审计 ==
+删除 w-x => dependency_invalid (invalid event s-x: send requires a prior write operation)
+删除 s-x => dependency_invalid (invalid event drop-x: drop requires a prior send)
+删除 drop-x => no_failure (no safety violation remains)
+删除 deliver-x => dependency_invalid (invalid event drop-x: drop fault requires its scheduled delivery event)
+删除 read-x-at-b => no_failure (no safety violation remains)
+
+== 可重放最小反例 ==
+- w-x: write node=A op=op-write-x key=k value=1
+- s-x: send node=A op=op-write-x msg=m-x key=k value=1
+- drop-x: drop node=A msg=m-x
+- deliver-x: deliver node=B msg=m-x
+- read-x-at-b: read node=B op=op-read-x key=k expected=1
+
+== 最小反例安全证据 ==
+safety: stale_read op=op-read-x node=B key=k expected="1" got="" at=0
+B.k=""，A.k="1"；m-x={m-x A B op-write-x k 1 suppressed true false}
+
+== 对照组 ==
+去掉必要丢包 drop-x: no_failure（安全错误未被错误保留）
+删除 drop 的投递事件 deliver-x: rejected (invalid event drop-x: drop fault requires its scheduled delivery event)
+超时/崩溃序列: liveness
+liveness: deadline_exceeded op=op-pending-read node=B key=k expected="" got="" at=10

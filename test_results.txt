@@ -1,0 +1,16 @@
+=== RUN   TestReplayFindsSafetyViolation
+--- PASS: TestReplayFindsSafetyViolation (0.00s)
+=== RUN   TestMinimizeKeepsNecessaryDrop
+--- PASS: TestMinimizeKeepsNecessaryDrop (0.00s)
+=== RUN   TestRemovingNecessaryDropStopsFailure
+--- PASS: TestRemovingNecessaryDropStopsFailure (0.00s)
+=== RUN   TestTimeoutIsLivenessNotSafety
+--- PASS: TestTimeoutIsLivenessNotSafety (0.00s)
+=== RUN   TestDependencyBrokenCandidatesAreRejected
+--- PASS: TestDependencyBrokenCandidatesAreRejected (0.00s)
+=== RUN   TestDifferentSafetyFingerprintIsNotSameFailure
+--- PASS: TestDifferentSafetyFingerprintIsNotSameFailure (0.00s)
+=== RUN   TestBalancedChunks
+--- PASS: TestBalancedChunks (0.00s)
+PASS
+ok  	counterexample-reducer	0.250s
