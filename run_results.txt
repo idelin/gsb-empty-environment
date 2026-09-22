@@ -1,0 +1,23 @@
+$ python3.11 -m mini_sql examples/scalar_aggregates.sql
+customer | payment_count | total_amount
+Ada | 2 | 150
+Bo | 1 | NULL
+Cy | 0 | NULL
+Bo | 1 | NULL
+
+$ python3.11 -m mini_sql examples/exists_customers.sql --explain
+Project name
+  SemiJoin (payments.customer_id@1 = customers.id@0)
+    Scan customers AS customers (level=0)
+    Scan payments AS payments (level=1)
+name
+Ada
+Bo
+Bo
+
+$ python3.11 -m unittest discover -s tests
+................
+----------------------------------------------------------------------
+Ran 16 tests in 0.002s
+
+OK
