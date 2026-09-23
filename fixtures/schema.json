@@ -1,0 +1,13 @@
+{
+  "users": {
+    "id": {"sensitive": false},
+    "email": {"sensitive": true},
+    "ssn": {"sensitive": true},
+    "name": {"sensitive": false}
+  },
+  "orders": {
+    "id": {"sensitive": false},
+    "user_id": {"sensitive": false},
+    "amount": {"sensitive": false}
+  }
+}

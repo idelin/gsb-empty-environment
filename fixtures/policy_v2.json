@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "tables": {
+    "users": {
+      "primary_key": ["id"],
+      "fields": {
+        "id": "pseudonym",
+        "email": "pseudonym",
+        "ssn": "redact",
+        "name": "passthrough"
+      },
+      "foreign_keys": []
+    },
+    "orders": {
+      "primary_key": ["id"],
+      "fields": {
+        "id": "pseudonym",
+        "user_id": "pseudonym",
+        "amount": "passthrough"
+      },
+      "foreign_keys": [
+        {"field": "user_id", "ref_table": "users", "ref_field": "id"}
+      ]
+    }
+  }
+}
