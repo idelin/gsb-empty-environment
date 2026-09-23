@@ -1,0 +1,14 @@
+{
+  "name": "same_output_different_edges",
+  "comment": "input a produces output 0 from both s0 and s1 but traverses different internal edges (s0,a) vs (s1,a); union-style coverage would wrongly mark both covered after one step",
+  "states": ["s0", "s1"],
+  "inputs": ["a", "b"],
+  "outputs": ["0", "1"],
+  "transitions": {
+    "s0": {"a": ["s0", "0"], "b": ["s1", "1"]},
+    "s1": {"a": ["s1", "0"], "b": ["s1", "1"]}
+  },
+  "initial_candidates": ["s0", "s1"],
+  "reset": {"target": "s0", "cost": 3, "allowed_states": ["s0", "s1"]},
+  "input_costs": {"a": 1, "b": 1}
+}

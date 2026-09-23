@@ -1,0 +1,15 @@
+{
+  "name": "partial_reset",
+  "comment": "reset is illegal in s1; the planner must route through s2 before it may reset",
+  "states": ["s0", "s1", "s2"],
+  "inputs": ["a", "b"],
+  "outputs": ["0", "1"],
+  "transitions": {
+    "s0": {"a": ["s2", "0"], "b": ["s0", "1"]},
+    "s1": {"a": ["s2", "0"], "b": ["s1", "1"]},
+    "s2": {"a": ["s2", "0"], "b": ["s1", "1"]}
+  },
+  "initial_candidates": ["s0", "s1"],
+  "reset": {"target": "s0", "cost": 2, "allowed_states": ["s0", "s2"]},
+  "input_costs": {"a": 1, "b": 1}
+}

@@ -1,0 +1,13 @@
+{
+  "name": "identify_then_act",
+  "comment": "y is undefined at p1 and z is undefined at p0, so the only safe first move is the probe x; the policy must branch on its output before choosing y or z",
+  "states": ["p0", "p1"],
+  "inputs": ["x", "y", "z"],
+  "outputs": ["0", "1"],
+  "transitions": {
+    "p0": {"x": ["p0", "0"], "y": ["p1", "0"]},
+    "p1": {"x": ["p1", "1"], "z": ["p0", "1"]}
+  },
+  "initial_candidates": ["p0", "p1"],
+  "input_costs": {"x": 1, "y": 1, "z": 1}
+}

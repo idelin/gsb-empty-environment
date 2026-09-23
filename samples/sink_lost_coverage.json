@@ -1,0 +1,13 @@
+{
+  "name": "sink_lost_coverage",
+  "comment": "every input from s0 enters an irreversible sink; whichever of (s0,a)/(s0,b) is not taken first is lost forever -> unsolvable",
+  "states": ["s0", "sink"],
+  "inputs": ["a", "b"],
+  "outputs": ["0", "1"],
+  "transitions": {
+    "s0": {"a": ["sink", "0"], "b": ["sink", "1"]},
+    "sink": {"a": ["sink", "0"], "b": ["sink", "0"]}
+  },
+  "initial_candidates": ["s0"],
+  "input_costs": {"a": 1, "b": 1}
+}
