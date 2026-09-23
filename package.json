@@ -1,0 +1,14 @@
+{
+  "name": "monotone-ring",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Declarative monotone finite-lattice computation rings solved by fixed-point iteration",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
