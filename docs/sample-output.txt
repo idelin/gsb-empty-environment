@@ -1,0 +1,55 @@
+========================================================================
+scenario 1: all PREPARED -> coordinator crashes before decision -> restart
+========================================================================
+  [fault] coord crashes BEFORE durable decision for T1
+  [t=13ms] coordinator down; 3/3 participants blocked in PREPARED holding the lock
+  t=  1.00ms  coord -> p1 PREPARE{T1 writes=[acct/alice]} (#1)
+  t=  1.00ms  coord -> p2 PREPARE{T1 writes=[acct/alice]} (#2)
+  t=  1.00ms  coord -> p3 PREPARE{T1 writes=[acct/alice]} (#3)
+  t=  6.00ms  p1 -> coord PREPARED{T1} (#4)
+  t=  6.00ms  p2 -> coord PREPARED{T1} (#5)
+  t=  6.00ms  p3 -> coord PREPARED{T1} (#6)
+  t= 20.00ms  coord -> p1 ABORT{T1} (#7)
+  t= 20.00ms  coord -> p2 ABORT{T1} (#8)
+  t= 20.00ms  coord -> p3 ABORT{T1} (#9)
+  t= 25.00ms  p1 -> coord ACK{T1 ABORT from p1} (#10)
+  t= 25.00ms  p2 -> coord ACK{T1 ABORT from p2} (#11)
+  t= 25.00ms  p3 -> coord ACK{T1 ABORT from p3} (#12)
+  -- result --
+  coordinator decision for T1: ABORT
+  p1: committed=false aborted=true  lockHeld=false valueInstalled=false
+  p2: committed=false aborted=true  lockHeld=false valueInstalled=false
+  p3: committed=false aborted=true  lockHeld=false valueInstalled=false
+
+========================================================================
+scenario 2: lock conflict aborts contender; duplicated COMMIT is idempotent
+========================================================================
+  t=  1.00ms  coord -> p1 PREPARE{holder writes=[acct/bob]} (#1)
+  t=  1.00ms  coord -> p2 PREPARE{holder writes=[acct/bob]} (#2)
+  t=  6.00ms  p1 -> coord PREPARED{holder} (#3)
+  t=  6.00ms  p2 -> coord PREPARED{holder} (#4)
+  t=  6.00ms  p1 -> coord PREPARED{holder} (#5)
+  t=  8.00ms  coord -> p2 PREPARE{contender writes=[acct/bob acct/carol]} (#6)
+  t=  8.00ms  coord -> p3 PREPARE{contender writes=[acct/bob acct/carol]} (#7)
+  t= 11.00ms  coord -> p1 COMMIT{holder} (#8)
+  t= 11.00ms  coord -> p2 COMMIT{holder} (#9)
+  t= 11.00ms  coord -> p1 COMMIT{holder} (#10)
+  t= 13.00ms  p2 -> coord NOVOTE{contender by p2: lock conflict on acct/bob} (#11)
+  t= 13.00ms  p3 -> coord PREPARED{contender} (#12)
+  t= 16.00ms  p1 -> coord ACK{holder COMMIT from p1} (#13)
+  t= 16.00ms  p2 -> coord ACK{holder COMMIT from p2} (#14)
+  t= 16.00ms  p1 -> coord ACK{holder COMMIT from p1} (#15)
+  t= 16.00ms  p1 -> coord ACK{holder COMMIT from p1} (#16)
+  t= 16.00ms  p1 -> coord ACK{holder COMMIT from p1} (#17)
+  t= 18.00ms  coord -> p2 ABORT{contender} (#18)
+  t= 18.00ms  coord -> p3 ABORT{contender} (#19)
+  t= 18.00ms  coord -> p3 ABORT{contender} (#20)
+  t= 23.00ms  p2 -> coord ACK{contender ABORT from p2} (#21)
+  t= 23.00ms  p3 -> coord ACK{contender ABORT from p3} (#22)
+  t= 23.00ms  p3 -> coord ACK{contender ABORT from p3} (#23)
+  -- result --
+  holder decision:    COMMIT (p1 value acct/bob="10")
+  contender decision: ABORT
+  p1: holderCommitted=true  contenderAborted=false
+  p2: holderCommitted=true  contenderAborted=true 
+  p3: holderCommitted=false contenderAborted=true 

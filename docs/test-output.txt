@@ -1,0 +1,28 @@
+?   	twopc-lab/cmd/twopc-demo	[no test files]
+?   	twopc-lab/sim	[no test files]
+=== RUN   TestWALRoundTrip
+--- PASS: TestWALRoundTrip (0.00s)
+=== RUN   TestWALDetectsTornAndCorruptTail
+--- PASS: TestWALDetectsTornAndCorruptTail (0.00s)
+=== RUN   TestHappyPathCommits
+--- PASS: TestHappyPathCommits (0.00s)
+=== RUN   TestLockConflictAborts
+--- PASS: TestLockConflictAborts (0.00s)
+=== RUN   TestAllPreparedThenCoordinatorCrashAborts
+--- PASS: TestAllPreparedThenCoordinatorCrashAborts (0.00s)
+=== RUN   TestCrashAfterCommitRecordStillCommits
+--- PASS: TestCrashAfterCommitRecordStillCommits (0.00s)
+=== RUN   TestDuplicateCommitAndPrepareIdempotent
+--- PASS: TestDuplicateCommitAndPrepareIdempotent (0.00s)
+=== RUN   TestLatePrepareAfterAbortCannotRelock
+--- PASS: TestLatePrepareAfterAbortCannotRelock (0.00s)
+=== RUN   TestParticipantCrashAfterPreparedRecoversAndCommits
+--- PASS: TestParticipantCrashAfterPreparedRecoversAndCommits (0.00s)
+=== RUN   TestLostMessagesRepairedByRetransmission
+--- PASS: TestLostMessagesRepairedByRetransmission (0.00s)
+=== RUN   TestDeterministicReplay
+--- PASS: TestDeterministicReplay (0.00s)
+=== RUN   TestPreparedParticipantsBlockWhileCoordinatorDown
+--- PASS: TestPreparedParticipantsBlockWhileCoordinatorDown (0.00s)
+PASS
+ok  	twopc-lab/twopc	0.445s
