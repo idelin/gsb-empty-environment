@@ -1,0 +1,14 @@
+{
+  "name": "replayable-state-branches",
+  "version": "1.0.0",
+  "description": "Dependency-free event-sourced, branchable and replayable TypeScript state store.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node scripts/run.cjs --test --experimental-strip-types test/replay-store.test.ts test/bank.test.ts",
+    "sample": "node scripts/run.cjs --experimental-strip-types sample/bank.ts"
+  },
+  "license": "MIT"
+}
