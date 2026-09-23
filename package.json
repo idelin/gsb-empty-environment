@@ -1,0 +1,14 @@
+{
+  "name": "path-sub-patch-stream",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Path-based subscription patch stream with a shared matching automaton, transactional commits and replayable ops.",
+  "scripts": {
+    "test": "node --test tests/*.test.ts",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
