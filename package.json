@@ -1,0 +1,14 @@
+{
+  "name": "state-schema-migration",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Explicit schema migrations over a transactional, replayable state store. No dependencies.",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
