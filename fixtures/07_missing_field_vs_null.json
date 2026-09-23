@@ -1,0 +1,21 @@
+{
+  "name": "missing_field_is_not_equal_to_null",
+  "seed": [
+    {"table": "users", "pk": "A", "row": {"name": "n1"}},
+    {"table": "users", "pk": "B", "row": {"name": "n2", "email": null}}
+  ],
+  "steps": [
+    {"txn_id": "t1", "events": [
+      {"table": "users", "pk": "A", "commit_seq": 1,
+       "before": {"email": null}, "after": {"email": "a@x"}}
+    ]},
+    {"txn_id": "t2", "events": [
+      {"table": "users", "pk": "B", "commit_seq": 2,
+       "before": {"email": null}, "after": {"email": "b@x"}}
+    ]},
+    {"txn_id": "t3", "events": [
+      {"table": "users", "pk": "B", "commit_seq": 3,
+       "before": {"name": "n2"}, "after": {"email": "b2@x"}}
+    ]}
+  ]
+}

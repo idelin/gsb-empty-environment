@@ -1,0 +1,15 @@
+{
+  "name": "swap_values_between_two_keys_in_one_txn",
+  "seed": [
+    {"table": "seats", "pk": "L", "row": {"holder": "alice"}},
+    {"table": "seats", "pk": "R", "row": {"holder": "bob"}}
+  ],
+  "steps": [
+    {"txn_id": "t1", "events": [
+      {"table": "seats", "pk": "L", "commit_seq": 1,
+       "before": {"holder": "alice"}, "after": {"holder": "bob"}},
+      {"table": "seats", "pk": "R", "commit_seq": 2,
+       "before": {"holder": "bob"}, "after": {"holder": "alice"}}
+    ]}
+  ]
+}

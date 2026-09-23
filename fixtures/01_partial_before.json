@@ -1,0 +1,12 @@
+{
+  "name": "partial_before_validates_only_listed_fields",
+  "seed": [
+    {"table": "accounts", "pk": "A", "row": {"balance": 100, "tier": "gold", "note": "vip"}}
+  ],
+  "steps": [
+    {"txn_id": "t1", "events": [
+      {"table": "accounts", "pk": "A", "commit_seq": 1,
+       "before": {"balance": 100}, "after": {"balance": 120}}
+    ]}
+  ]
+}

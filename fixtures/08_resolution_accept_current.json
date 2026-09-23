@@ -1,0 +1,21 @@
+{
+  "name": "same_key_events_wait_then_rebase_on_resolution",
+  "seed": [
+    {"table": "docs", "pk": "A", "row": {"v": 1}}
+  ],
+  "steps": [
+    {"txn_id": "t1", "events": [
+      {"table": "docs", "pk": "A", "commit_seq": 1,
+       "before": {"v": 1}, "after": {"v": 2}}
+    ]},
+    {"txn_id": "t2", "events": [
+      {"table": "docs", "pk": "A", "commit_seq": 2,
+       "before": {"v": 1}, "after": {"v": 5}}
+    ]},
+    {"txn_id": "t3", "events": [
+      {"table": "docs", "pk": "A", "commit_seq": 3,
+       "before": {"v": 5}, "after": {"v": 6}}
+    ]},
+    {"resolve": {"table": "docs", "pk": "A", "strategy": "accept_current"}}
+  ]
+}

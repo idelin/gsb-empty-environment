@@ -1,0 +1,18 @@
+{
+  "name": "same_txn_same_key_validated_in_declared_order",
+  "seed": [
+    {"table": "accounts", "pk": "A", "row": {"balance": 100}}
+  ],
+  "steps": [
+    {"txn_id": "t1", "events": [
+      {"table": "accounts", "pk": "A", "commit_seq": 1,
+       "before": {"balance": 100}, "after": {"balance": 150}},
+      {"table": "accounts", "pk": "A", "commit_seq": 2,
+       "before": {"balance": 150}, "after": {"balance": 175}}
+    ]},
+    {"txn_id": "t2", "events": [
+      {"table": "accounts", "pk": "A", "commit_seq": 3,
+       "before": {"balance": 100}, "after": {"balance": 999}}
+    ]}
+  ]
+}

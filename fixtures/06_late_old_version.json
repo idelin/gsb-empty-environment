@@ -1,0 +1,16 @@
+{
+  "name": "late_old_version_rejected_not_overwritten",
+  "seed": [
+    {"table": "docs", "pk": "A", "row": {"v": 1}}
+  ],
+  "steps": [
+    {"txn_id": "t1", "events": [
+      {"table": "docs", "pk": "A", "commit_seq": 5,
+       "before": {"v": 1}, "after": {"v": 2}}
+    ]},
+    {"txn_id": "t2", "events": [
+      {"table": "docs", "pk": "A", "commit_seq": 3,
+       "before": {"v": 1}, "after": {"v": 9}}
+    ]}
+  ]
+}

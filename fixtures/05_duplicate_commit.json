@@ -1,0 +1,20 @@
+{
+  "name": "duplicate_commit_is_idempotently_skipped",
+  "seed": [
+    {"table": "counters", "pk": "A", "row": {"n": 1}}
+  ],
+  "steps": [
+    {"txn_id": "t1", "events": [
+      {"table": "counters", "pk": "A", "commit_seq": 1,
+       "before": {"n": 1}, "after": {"n": 2}}
+    ]},
+    {"txn_id": "t1", "events": [
+      {"table": "counters", "pk": "A", "commit_seq": 1,
+       "before": {"n": 1}, "after": {"n": 2}}
+    ]},
+    {"txn_id": "t2", "events": [
+      {"table": "counters", "pk": "A", "commit_seq": 2,
+       "before": {"n": 2}, "after": {"n": 3}}
+    ]}
+  ]
+}

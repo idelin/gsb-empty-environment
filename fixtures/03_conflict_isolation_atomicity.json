@@ -1,0 +1,29 @@
+{
+  "name": "conflict_isolation_and_atomicity_boundary",
+  "seed": [
+    {"table": "accounts", "pk": "A", "row": {"v": 1}},
+    {"table": "accounts", "pk": "B", "row": {"v": 2}},
+    {"table": "accounts", "pk": "C", "row": {"v": 3}}
+  ],
+  "steps": [
+    {"txn_id": "t1", "events": [
+      {"table": "accounts", "pk": "A", "commit_seq": 1,
+       "before": {"v": 9}, "after": {"v": 10}},
+      {"table": "accounts", "pk": "B", "commit_seq": 2,
+       "before": {"v": 2}, "after": {"v": 20}}
+    ]},
+    {"txn_id": "t2", "events": [
+      {"table": "accounts", "pk": "C", "commit_seq": 3,
+       "before": {"v": 3}, "after": {"v": 30}}
+    ]},
+    {"txn_id": "t3", "events": [
+      {"table": "accounts", "pk": "A", "commit_seq": 4,
+       "before": {"v": 1}, "after": {"v": 11}}
+    ]},
+    {"resolve": {"table": "accounts", "pk": "A", "strategy": "discard"}},
+    {"txn_id": "t4", "events": [
+      {"table": "accounts", "pk": "A", "commit_seq": 5,
+       "before": {"v": 1}, "after": {"v": 11}}
+    ]}
+  ]
+}
