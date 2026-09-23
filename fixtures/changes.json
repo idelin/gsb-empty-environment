@@ -1,0 +1,26 @@
+[
+  {
+    "txn_id": "txn-101",
+    "table": "users",
+    "pk": {"user_id": 7},
+    "commit_seq": 120,
+    "before": {"user_id": 7, "display_name": "ann", "age": 30},
+    "after": {"user_id": 7, "display_name": null, "age": 31}
+  },
+  {
+    "txn_id": "txn-099",
+    "table": "users",
+    "pk": {"user_id": 3},
+    "commit_seq": 40,
+    "before": {"user_id": 3, "user_name": "bob", "email": "b@x.com"},
+    "after": {"user_id": 3, "user_name": "bobby"}
+  },
+  {
+    "txn_id": "txn-095",
+    "table": "users",
+    "pk": {"user_id": 9},
+    "commit_seq": 10,
+    "before": {"user_id": 9, "user_name": "cy", "email": null},
+    "after": {"user_id": 9, "user_name": "cy", "email": "c@y.com"}
+  }
+]
