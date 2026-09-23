@@ -1,0 +1,11 @@
+{
+  "name": "time-travel-store",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "无响应式框架的时间旅行状态库：纯操作可回放、副作用不重复执行、事务原子提交、派生值按依赖重算、分支历史完整",
+  "scripts": {
+    "example": "node src/example.ts",
+    "test": "node --test test/store.test.ts"
+  }
+}
