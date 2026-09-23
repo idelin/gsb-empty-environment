@@ -1,0 +1,6 @@
+[project]
+name = "exact-unit-algebra"
+version = "0.1.0"
+description = "Exact unit algebra and integer dimension constraint solving"
+requires-python = ">=3.11"
+dependencies = []
