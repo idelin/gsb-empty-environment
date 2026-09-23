@@ -1,0 +1,42 @@
+[
+  {
+    "txid": "t1",
+    "table": "users",
+    "pk": {"id": 1},
+    "commit_seq": 10,
+    "before": null,
+    "after": {"id": 1, "full_name": "Ada Lovelace", "email": null, "age": 36}
+  },
+  {
+    "txid": "t2",
+    "table": "users",
+    "pk": {"id": 1},
+    "commit_seq": 120,
+    "before": {"id": 1, "display_name": "Ada Lovelace", "email": null},
+    "after": {"id": 1, "display_name": "Ada L.", "email": "ada@example.com"}
+  },
+  {
+    "txid": "t3",
+    "table": "users",
+    "pk": {"id": 2},
+    "commit_seq": 50,
+    "before": null,
+    "after": {"id": 2, "full_name": "Grace Hopper", "email": "g@example.com", "age": null}
+  },
+  {
+    "txid": "t4",
+    "table": "orders",
+    "pk": {"id": 9},
+    "commit_seq": 5,
+    "before": null,
+    "after": {"id": 9, "total": 100}
+  },
+  {
+    "txid": "t5",
+    "table": "users",
+    "pk": {"id": 3},
+    "commit_seq": 130,
+    "before": null,
+    "after": {"id": 3, "display_name": "Alan Turing", "nickname": "alan"}
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "table": "users",
+    "version": 1,
+    "effective_from": 0,
+    "fields": [
+      {"id": 1, "name": "id", "type": "int"},
+      {"id": 2, "name": "full_name", "type": "str"},
+      {"id": 3, "name": "email", "type": "str"},
+      {"id": 4, "name": "age", "type": "int"}
+    ]
+  },
+  {
+    "table": "users",
+    "version": 2,
+    "effective_from": 100,
+    "fields": [
+      {"id": 1, "name": "id", "type": "int"},
+      {"id": 2, "name": "display_name", "type": "str"},
+      {"id": 3, "name": "email", "type": "str"}
+    ]
+  }
+]
