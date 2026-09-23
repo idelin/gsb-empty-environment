@@ -1,0 +1,15 @@
+{
+  "name": "monotone-fixpoint-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "声明式单调有限格计算环：混沌不动点迭代、非单调拒绝、迭代预算、可回放事务存储",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/reachability.ts && node examples/not-loop.ts && node examples/schedule-order.ts && node examples/replay.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
