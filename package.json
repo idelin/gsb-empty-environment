@@ -1,0 +1,14 @@
+{
+  "name": "versioned-state-store",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Schema-versioned state store with explicit migrations, atomic transactions, pausable subscriptions and replayable op log. No dependencies.",
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
