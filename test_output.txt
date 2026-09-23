@@ -1,0 +1,31 @@
+test_chain_rule_log_of_composite (test_diffdag.TestBasicRules.test_chain_rule_log_of_composite) ... ok
+test_const_rule (test_diffdag.TestBasicRules.test_const_rule) ... ok
+test_other_var_is_const (test_diffdag.TestBasicRules.test_other_var_is_const) ... ok
+test_product_rule (test_diffdag.TestBasicRules.test_product_rule) ... ok
+test_sum_and_power_rule (test_diffdag.TestBasicRules.test_sum_and_power_rule) ... ok
+test_var_rule (test_diffdag.TestBasicRules.test_var_rule) ... ok
+test_deep_shared_dag_node_count (test_diffdag.TestDAGSharing.test_deep_shared_dag_node_count) ... ok
+test_hash_consing_shares_nodes (test_diffdag.TestDAGSharing.test_hash_consing_shares_nodes) ... ok
+test_shared_subgraph_differentiated_once (test_diffdag.TestDAGSharing.test_shared_subgraph_differentiated_once) ... ok
+test_every_step_has_domain (test_diffdag.TestDomain.test_every_step_has_domain) ... ok
+test_log_domain_preserved (test_diffdag.TestDomain.test_log_domain_preserved) ... ok
+test_negative_exponent_domain (test_diffdag.TestDomain.test_negative_exponent_domain) ... ok
+test_noninteger_exponent_domain (test_diffdag.TestDomain.test_noninteger_exponent_domain) ... ok
+test_simplify_does_not_change_domain (test_diffdag.TestDomain.test_simplify_does_not_change_domain) ... ok
+test_const_folding_exact (test_diffdag.TestExactRational.test_const_folding_exact) ... ok
+test_half_power_coefficient (test_diffdag.TestExactRational.test_half_power_coefficient) ... ok
+test_mixed_rational_polynomial (test_diffdag.TestExactRational.test_mixed_rational_polynomial) ... ok
+test_rational_coefficient_exact (test_diffdag.TestExactRational.test_rational_coefficient_exact) ... ok
+test_additive_identity (test_diffdag.TestSimplify.test_additive_identity) ... ok
+test_combine_like_terms (test_diffdag.TestSimplify.test_combine_like_terms) ... ok
+test_const_power_folding (test_diffdag.TestSimplify.test_const_power_folding) ... ok
+test_multiplicative_identity (test_diffdag.TestSimplify.test_multiplicative_identity) ... ok
+test_unit_exponent (test_diffdag.TestSimplify.test_unit_exponent) ... ok
+test_zero_power_domain_unrestricted (test_diffdag.TestZeroExponent.test_zero_power_domain_unrestricted) ... ok
+test_zero_power_is_constant_one (test_diffdag.TestZeroExponent.test_zero_power_is_constant_one) ... ok
+test_zero_power_simplifies_to_one (test_diffdag.TestZeroExponent.test_zero_power_simplifies_to_one) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.004s
+
+OK
