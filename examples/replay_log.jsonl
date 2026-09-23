@@ -1,0 +1,24 @@
+{"record": "event", "kind": "deliver", "msg": "data", "partition": 0, "epoch": 1, "seq": 1, "key": "a", "payload": "b1"}
+{"record": "event", "kind": "submit", "batch_id": "s0", "rows": [["a", "s1"], ["c", "s2"]]}
+{"record": "event", "kind": "deliver", "msg": "barrier", "partition": 0, "epoch": 1, "last_seq": 2}
+{"record": "event", "kind": "deliver", "msg": "data", "partition": 0, "epoch": 1, "seq": 2, "key": "c", "payload": "b2"}
+{"record": "event", "kind": "deliver", "msg": "data", "partition": 0, "epoch": 1, "seq": 2, "key": "c", "payload": "b2"}
+{"record": "event", "kind": "checkpoint"}
+{"record": "event", "kind": "rebuild", "partition": 0, "epoch": 2}
+{"record": "event", "kind": "deliver", "msg": "data", "partition": 0, "epoch": 2, "seq": 1, "key": "a", "payload": "n1"}
+{"record": "event", "kind": "submit", "batch_id": "s1", "rows": [["a", "s3"], [null, "s4"]]}
+{"record": "event", "kind": "poll"}
+{"record": "event", "kind": "crash"}
+{"record": "event", "kind": "deliver", "msg": "barrier", "partition": 0, "epoch": 2, "last_seq": 1}
+{"record": "event", "kind": "poll"}
+{"record": "event", "kind": "ackall"}
+{"record": "event", "kind": "submit", "batch_id": "s2", "rows": [["c", "s5"], ["a", "s6"]]}
+{"record": "event", "kind": "poll"}
+{"record": "event", "kind": "ackall"}
+{"record": "output", "id": "s0#0", "rows": [["a", "s1", "a", "b1"]]}
+{"record": "output", "id": "s0#1", "rows": [["c", "s2", "c", "b2"]]}
+{"record": "output", "id": "s1#0", "rows": [["a", "s3", "a", "n1"], [null, "s4", null, null]]}
+{"record": "output", "id": "s0#0", "rows": [["a", "s1", "a", "b1"]]}
+{"record": "output", "id": "s0#1", "rows": [["c", "s2", "c", "b2"]]}
+{"record": "output", "id": "s1#0", "rows": [["a", "s3", "a", "n1"], [null, "s4", null, null]]}
+{"record": "output", "id": "s2#0", "rows": [["c", "s5", null, null], ["a", "s6", "a", "n1"]]}
