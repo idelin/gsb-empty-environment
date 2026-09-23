@@ -1,0 +1,20 @@
+[
+  {"txn_id": "T1", "table": "orders", "pk": 4, "before": null,
+   "after": {"id": 4, "amount": 400}, "commit_seq": 101},
+  {"txn_id": "T2", "table": "orders", "pk": 2,
+   "before": {"id": 2, "amount": 200}, "after": {"id": 2, "amount": 250},
+   "commit_seq": 102},
+  {"txn_id": "T3", "table": "customers", "pk": 3, "before": null,
+   "after": {"id": 3, "amount": 30}, "commit_seq": 103},
+  {"txn_id": "T3", "table": "customers", "pk": 3, "before": null,
+   "after": {"id": 3, "amount": 30}, "commit_seq": 103},
+  {"txn_id": "T4", "table": "orders", "pk": 3,
+   "before": {"id": 3, "amount": 300}, "after": null, "commit_seq": 104},
+  {"txn_id": "T5", "table": "customers", "pk": 1,
+   "before": {"id": 1, "amount": 50}, "after": {"id": 1, "amount": 80},
+   "commit_seq": 105},
+  {"txn_id": "T6", "table": "orders", "pk": 5, "before": null,
+   "after": {"id": 5, "amount": 150}, "commit_seq": 106},
+  {"txn_id": "T6", "table": "orders", "pk": 5, "before": null,
+   "after": {"id": 5, "amount": 150}, "commit_seq": 106}
+]
