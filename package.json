@@ -1,0 +1,14 @@
+{
+  "name": "scoped-resource-ownership",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Async resource ownership scopes: dependency-ordered disposal, borrow leases, replayable journal, ownership ledger. Zero dependencies.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --no-warnings --test test/*.test.ts",
+    "demo": "node --no-warnings demo/main.ts"
+  }
+}
