@@ -1,0 +1,14 @@
+{
+  "name": "mvcc-state-store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "MVCC 事务状态库：快照隔离、乐观并发校验、原子回滚、只读快照与 GC、操作日志回放",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "demo": "node demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
