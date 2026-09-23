@@ -1,0 +1,11 @@
+{
+  "name": "atomic-command-store",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Command pattern with atomic multi-command commits, versioned preconditions, reverse-order undo, and isolated branch histories. No dependencies.",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node sample/demo.ts"
+  }
+}
