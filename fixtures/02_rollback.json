@@ -1,0 +1,7 @@
+{
+  "description": "tx-2 buffers a change and then rolls back; the change is discarded",
+  "events": [
+    {"kind": "change", "seq": 1, "tx_id": "tx-2", "table": "users", "pk": "u3", "op": "insert", "before": null, "after": {"name": "Alan"}},
+    {"kind": "rollback", "seq": 2, "tx_id": "tx-2"}
+  ]
+}

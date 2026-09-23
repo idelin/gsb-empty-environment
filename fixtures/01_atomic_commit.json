@@ -1,0 +1,8 @@
+{
+  "description": "tx-1 buffers two changes; nothing is visible until the commit applies them atomically",
+  "events": [
+    {"kind": "change", "seq": 1, "tx_id": "tx-1", "table": "users", "pk": "u1", "op": "insert", "before": null, "after": {"name": "Ada", "age": 36}},
+    {"kind": "change", "seq": 2, "tx_id": "tx-1", "table": "users", "pk": "u2", "op": "insert", "before": null, "after": {"name": "Grace", "age": 41}},
+    {"kind": "commit", "seq": 3, "tx_id": "tx-1", "expected_changes": 2}
+  ]
+}

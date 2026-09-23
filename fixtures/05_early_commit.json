@@ -1,0 +1,9 @@
+{
+  "description": "commit marker (seq 3) arrives before the last change (seq 4): it waits for the complete list",
+  "events": [
+    {"kind": "change", "seq": 1, "tx_id": "tx-6", "table": "users", "pk": "k1", "op": "insert", "before": null, "after": {"v": 1}},
+    {"kind": "change", "seq": 2, "tx_id": "tx-6", "table": "users", "pk": "k2", "op": "insert", "before": null, "after": {"v": 2}},
+    {"kind": "commit", "seq": 3, "tx_id": "tx-6", "expected_changes": 3},
+    {"kind": "change", "seq": 4, "tx_id": "tx-6", "table": "users", "pk": "k3", "op": "insert", "before": null, "after": {"v": 3}}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "description": "inside tx-7 the same key is deleted then re-inserted; changes apply in sequence order",
+  "events": [
+    {"kind": "change", "seq": 1, "tx_id": "tx-7a", "table": "users", "pk": "u1", "op": "insert", "before": null, "after": {"name": "old"}},
+    {"kind": "commit", "seq": 2, "tx_id": "tx-7a", "expected_changes": 1},
+    {"kind": "change", "seq": 3, "tx_id": "tx-7", "table": "users", "pk": "u1", "op": "delete", "before": {"name": "old"}, "after": null},
+    {"kind": "change", "seq": 4, "tx_id": "tx-7", "table": "users", "pk": "u1", "op": "insert", "before": null, "after": {"name": "new"}},
+    {"kind": "commit", "seq": 5, "tx_id": "tx-7", "expected_changes": 2}
+  ]
+}

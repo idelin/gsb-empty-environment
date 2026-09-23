@@ -1,0 +1,7 @@
+{
+  "description": "tx-8 has buffered changes but no commit; after a restart the half transaction stays invisible",
+  "events": [
+    {"kind": "change", "seq": 1, "tx_id": "tx-8", "table": "users", "pk": "ghost1", "op": "insert", "before": null, "after": {"alive": false}},
+    {"kind": "change", "seq": 2, "tx_id": "tx-8", "table": "users", "pk": "ghost2", "op": "insert", "before": null, "after": {"alive": false}}
+  ]
+}

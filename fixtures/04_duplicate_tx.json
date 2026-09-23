@@ -1,0 +1,13 @@
+{
+  "description": "tx-4 is delivered twice (same seqs and again with new seqs); it takes effect only once",
+  "events": [
+    {"kind": "change", "seq": 1, "tx_id": "tx-4", "table": "users", "pk": "u1", "op": "insert", "before": null, "after": {"n": 1}},
+    {"kind": "commit", "seq": 2, "tx_id": "tx-4", "expected_changes": 1},
+    {"kind": "change", "seq": 1, "tx_id": "tx-4", "table": "users", "pk": "u1", "op": "insert", "before": null, "after": {"n": 1}},
+    {"kind": "commit", "seq": 2, "tx_id": "tx-4", "expected_changes": 1},
+    {"kind": "change", "seq": 3, "tx_id": "tx-4", "table": "users", "pk": "u1", "op": "insert", "before": null, "after": {"n": 99}},
+    {"kind": "commit", "seq": 4, "tx_id": "tx-4", "expected_changes": 1},
+    {"kind": "change", "seq": 5, "tx_id": "tx-5", "table": "users", "pk": "u1", "op": "update", "before": {"n": 1}, "after": {"n": 2}},
+    {"kind": "commit", "seq": 6, "tx_id": "tx-5", "expected_changes": 1}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "description": "seq 4 arrives before seq 3: consumption pauses on the gap and resumes once it fills",
+  "events": [
+    {"kind": "change", "seq": 1, "tx_id": "tx-3", "table": "users", "pk": "a", "op": "insert", "before": null, "after": {"v": 1}},
+    {"kind": "change", "seq": 2, "tx_id": "tx-3", "table": "users", "pk": "b", "op": "insert", "before": null, "after": {"v": 2}},
+    {"kind": "change", "seq": 4, "tx_id": "tx-3", "table": "users", "pk": "d", "op": "insert", "before": null, "after": {"v": 4}},
+    {"kind": "change", "seq": 3, "tx_id": "tx-3", "table": "users", "pk": "c", "op": "insert", "before": null, "after": {"v": 3}},
+    {"kind": "commit", "seq": 5, "tx_id": "tx-3", "expected_changes": 4}
+  ]
+}
