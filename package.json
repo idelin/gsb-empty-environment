@@ -1,0 +1,11 @@
+{
+  "name": "tx-batch-store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Transactional batched state store: ordered functional/direct updates, single commit per scheduling cycle, no reactive framework",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
