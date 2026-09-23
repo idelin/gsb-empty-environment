@@ -1,0 +1,24 @@
+test_integer_content (test_polyfactor.TestContent.test_integer_content) ... ok
+test_multiply_back_strict_equality (test_polyfactor.TestContent.test_multiply_back_strict_equality) ... ok
+test_rational_gcd (test_polyfactor.TestContent.test_rational_gcd) ... ok
+test_zero_polynomial_has_no_content (test_polyfactor.TestContent.test_zero_polynomial_has_no_content) ... ok
+test_expansion_matches_poly_arithmetic (test_polyfactor.TestDag.test_expansion_matches_poly_arithmetic) ... ok
+test_shared_subexpression_counted_once (test_polyfactor.TestDag.test_shared_subexpression_counted_once) ... ok
+test_canonical_equality (test_polyfactor.TestPolyBasics.test_canonical_equality) ... ok
+test_exact_rational_arithmetic (test_polyfactor.TestPolyBasics.test_exact_rational_arithmetic) ... ok
+test_negative_exponent_rejected (test_polyfactor.TestPolyBasics.test_negative_exponent_rejected) ... ok
+test_parse_roundtrip (test_polyfactor.TestPolyBasics.test_parse_roundtrip) ... ok
+test_zero_coefficients_dropped (test_polyfactor.TestPolyBasics.test_zero_coefficients_dropped) ... ok
+test_budget_truncation_keeps_bounds (test_polyfactor.TestSearch.test_budget_truncation_keeps_bounds) ... ok
+test_classic_example_verified (test_polyfactor.TestSearch.test_classic_example_verified) ... ok
+test_every_step_verified_and_domain_recorded (test_polyfactor.TestSearch.test_every_step_verified_and_domain_recorded) ... ok
+test_grouping_beats_expanded (test_polyfactor.TestSearch.test_grouping_beats_expanded) ... ok
+test_multiply_back_for_random_polys (test_polyfactor.TestSearch.test_multiply_back_for_random_polys) ... ok
+test_no_greedy_global_claim (test_polyfactor.TestSearch.test_no_greedy_global_claim) ... ok
+test_zero_budget (test_polyfactor.TestSearch.test_zero_budget) ... ok
+test_zero_polynomial_special_case (test_polyfactor.TestSearch.test_zero_polynomial_special_case) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.015s
+
+OK

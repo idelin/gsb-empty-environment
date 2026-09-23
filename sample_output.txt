@@ -1,0 +1,370 @@
+内容提取机制演示 (6*x^2*y + 9*x*y^2 提 3xy):
+  有理系数 gcd: 3; 最小指数公共单项式: 3*x*y
+  本原部分: 3*y + 2*x
+  提取形式: 3*x*y * (3*y + 2*x)
+  乘回严格等于原式: True
+  适用域: 全体 R^2, 仅除以非零常数与非负指数单项式, 定义域限制不消失也不新增
+------------------------------------------------------------------------
+样例 1: 经典提取 (优化器按运算次数全局比较, 不贪心)
+输入多项式: 9*x*y^2 + 6*x^2*y
+变量顺序: x, y
+最优表达式: 9*y^2*x + 6*y*x^2
+搜索状态: 精确(候选全集已枚举); 评估步数: 4
+运算次数(共享子表达式计一次): 下界=3, 上界=3
+验证证书:
+  步骤 1 [monomial-leaf] ✓
+    变换: 单项式 9*x*y^2: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 2 [monomial-leaf] ✓
+    变换: 单项式 6*x^2*y: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 3 [term-grouping] ✓
+    变换: 项分组: 9*x*y^2 + 6*x^2*y = (9*x*y^2) + (6*x^2*y)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 4 [final-expansion] ✓
+    变换: expand(9*y^2*x + 6*y*x^2) == 9*x*y^2 + 6*x^2*y
+    适用域: —
+    核验: 独立规范展开, 逐项严格相等
+最终核验(乘回展开严格等于原式): 通过
+------------------------------------------------------------------------
+样例 2: 递归分组真正降低运算次数
+输入多项式: y*z + x*z + x*y + x^2
+变量顺序: x, y, z
+最优表达式: y*z + x*(y + z + x)
+搜索状态: 精确(候选全集已枚举); 评估步数: 46
+运算次数(共享子表达式计一次): 下界=4, 上界=4
+验证证书:
+  步骤 1 [monomial-leaf] ✓
+    变换: 单项式 y*z: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 2 [monomial-leaf] ✓
+    变换: 单项式 z: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 3 [monomial-leaf] ✓
+    变换: 单项式 y: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 4 [monomial-leaf] ✓
+    变换: 单项式 x: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 5 [term-grouping] ✓
+    变换: 项分组: y + x = (y) + (x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 6 [term-grouping] ✓
+    变换: 项分组: z + y + x = (z) + (y + x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 7 [content-extraction] ✓
+    变换: 提取有理内容 x: x*z + x*y + x^2 = (x) * (z + y + x)
+    适用域: 全体 R^n: 仅提取非零有理常数与非负指数单项式, 不引入也不消除定义域限制
+    核验: 规范展开 (x) * (z + y + x) 逐项对比 == 原式
+  步骤 8 [term-grouping] ✓
+    变换: 项分组: y*z + x*z + x*y + x^2 = (y*z) + (x*z + x*y + x^2)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 9 [final-expansion] ✓
+    变换: expand(y*z + x*(y + z + x)) == y*z + x*z + x*y + x^2
+    适用域: —
+    核验: 独立规范展开, 逐项严格相等
+最终核验(乘回展开严格等于原式): 通过
+------------------------------------------------------------------------
+样例 3: 有理系数精确提取
+输入多项式: 1/3*y + 1/2*x + 1/2*x*y
+变量顺序: x, y
+最优表达式: 1/3*y + 1/2*(y + 1)*x
+搜索状态: 精确(候选全集已枚举); 评估步数: 24
+运算次数(共享子表达式计一次): 下界=4, 上界=4
+验证证书:
+  步骤 1 [monomial-leaf] ✓
+    变换: 单项式 1/3*y: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 2 [monomial-leaf] ✓
+    变换: 单项式 1: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 3 [monomial-leaf] ✓
+    变换: 单项式 y: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 4 [term-grouping] ✓
+    变换: 项分组: 1 + y = (1) + (y)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 5 [content-extraction] ✓
+    变换: 提取有理内容 1/2*x: 1/2*x + 1/2*x*y = (1/2*x) * (1 + y)
+    适用域: 全体 R^n: 仅提取非零有理常数与非负指数单项式, 不引入也不消除定义域限制
+    核验: 规范展开 (1/2*x) * (1 + y) 逐项对比 == 原式
+  步骤 6 [term-grouping] ✓
+    变换: 项分组: 1/3*y + 1/2*x + 1/2*x*y = (1/3*y) + (1/2*x + 1/2*x*y)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 7 [final-expansion] ✓
+    变换: expand(1/3*y + 1/2*(y + 1)*x) == 1/3*y + 1/2*x + 1/2*x*y
+    适用域: —
+    核验: 独立规范展开, 逐项严格相等
+最终核验(乘回展开严格等于原式): 通过
+------------------------------------------------------------------------
+样例 4: 零多项式特殊处理
+输入多项式: 0
+变量顺序: (无)
+零多项式: 特殊处理, 表示为常数 0, 不做内容提取。
+最优表达式: 0
+搜索状态: 精确(候选全集已枚举); 评估步数: 0
+运算次数(共享子表达式计一次): 下界=0, 上界=0
+验证证书:
+  步骤 1 [zero-polynomial] ✓
+    变换: 零多项式: 约定表示为常数 0, 不定义内容/本原部分解
+    适用域: 任意(零多项式处处为 0)
+    核验: 规范展开 0 == 0
+  步骤 2 [final-expansion] ✓
+    变换: expand(0) == 0
+    适用域: —
+    核验: 独立规范展开, 逐项严格相等
+最终核验(乘回展开严格等于原式): 通过
+------------------------------------------------------------------------
+样例 5: 较大规模, 预算中断, 保留上下界
+  (展开后共 27 项)
+输入多项式: r*w*z + r*w*y + r*w*x + r*v*z + r*v*y + r*v*x + r*u*z + r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x
+变量顺序: p, q, r, u, v, w, x, y, z
+最优表达式: r*w*z + r*w*y + r*w*x + r*z*v + r*y*v + r*x*v + r*z*u + r*y*u + r*x*u + w*z*q + w*y*q + w*x*q + z*v*q + y*v*q + x*v*q + z*u*q + y*u*q + x*u*q + (w*z + w*y + w*x + u*(z + y + x) + v*(z + y + x))*p
+搜索状态: 预算中断(结果为上界); 评估步数: 400
+运算次数(共享子表达式计一次): 下界=5, 上界=27
+验证证书:
+  步骤 1 [monomial-leaf] ✓
+    变换: 单项式 r*w*z: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 2 [monomial-leaf] ✓
+    变换: 单项式 r*w*y: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 3 [monomial-leaf] ✓
+    变换: 单项式 r*w*x: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 4 [monomial-leaf] ✓
+    变换: 单项式 r*v*z: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 5 [monomial-leaf] ✓
+    变换: 单项式 r*v*y: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 6 [monomial-leaf] ✓
+    变换: 单项式 r*v*x: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 7 [monomial-leaf] ✓
+    变换: 单项式 r*u*z: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 8 [monomial-leaf] ✓
+    变换: 单项式 r*u*y: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 9 [monomial-leaf] ✓
+    变换: 单项式 r*u*x: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 10 [monomial-leaf] ✓
+    变换: 单项式 q*w*z: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 11 [monomial-leaf] ✓
+    变换: 单项式 q*w*y: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 12 [monomial-leaf] ✓
+    变换: 单项式 q*w*x: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 13 [monomial-leaf] ✓
+    变换: 单项式 q*v*z: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 14 [monomial-leaf] ✓
+    变换: 单项式 q*v*y: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 15 [monomial-leaf] ✓
+    变换: 单项式 q*v*x: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 16 [monomial-leaf] ✓
+    变换: 单项式 q*u*z: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 17 [monomial-leaf] ✓
+    变换: 单项式 q*u*y: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 18 [monomial-leaf] ✓
+    变换: 单项式 q*u*x: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 19 [monomial-leaf] ✓
+    变换: 单项式 w*z: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 20 [monomial-leaf] ✓
+    变换: 单项式 w*y: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 21 [monomial-leaf] ✓
+    变换: 单项式 w*x: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 22 [monomial-leaf] ✓
+    变换: 单项式 z: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 23 [monomial-leaf] ✓
+    变换: 单项式 y: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 24 [monomial-leaf] ✓
+    变换: 单项式 x: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 25 [term-grouping] ✓
+    变换: 项分组: y + x = (y) + (x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 26 [term-grouping] ✓
+    变换: 项分组: z + y + x = (z) + (y + x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 27 [content-extraction] ✓
+    变换: 提取有理内容 v: v*z + v*y + v*x = (v) * (z + y + x)
+    适用域: 全体 R^n: 仅提取非零有理常数与非负指数单项式, 不引入也不消除定义域限制
+    核验: 规范展开 (v) * (z + y + x) 逐项对比 == 原式
+  步骤 28 [monomial-leaf] ✓
+    变换: 单项式 z: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 29 [monomial-leaf] ✓
+    变换: 单项式 y: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 30 [monomial-leaf] ✓
+    变换: 单项式 x: 按系数与最小指数直接构造
+    适用域: 无限制: 叶节点直接构造
+    核验: 平凡恒等
+  步骤 31 [term-grouping] ✓
+    变换: 项分组: y + x = (y) + (x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 32 [term-grouping] ✓
+    变换: 项分组: z + y + x = (z) + (y + x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 33 [content-extraction] ✓
+    变换: 提取有理内容 u: u*z + u*y + u*x = (u) * (z + y + x)
+    适用域: 全体 R^n: 仅提取非零有理常数与非负指数单项式, 不引入也不消除定义域限制
+    核验: 规范展开 (u) * (z + y + x) 逐项对比 == 原式
+  步骤 34 [term-grouping] ✓
+    变换: 项分组: v*z + v*y + v*x + u*z + u*y + u*x = (v*z + v*y + v*x) + (u*z + u*y + u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 35 [term-grouping] ✓
+    变换: 项分组: w*x + v*z + v*y + v*x + u*z + u*y + u*x = (w*x) + (v*z + v*y + v*x + u*z + u*y + u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 36 [term-grouping] ✓
+    变换: 项分组: w*y + w*x + v*z + v*y + v*x + u*z + u*y + u*x = (w*y) + (w*x + v*z + v*y + v*x + u*z + u*y + u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 37 [term-grouping] ✓
+    变换: 项分组: w*z + w*y + w*x + v*z + v*y + v*x + u*z + u*y + u*x = (w*z) + (w*y + w*x + v*z + v*y + v*x + u*z + u*y + u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 38 [content-extraction] ✓
+    变换: 提取有理内容 p: p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (p) * (w*z + w*y + w*x + v*z + v*y + v*x + u*z + u*y + u*x)
+    适用域: 全体 R^n: 仅提取非零有理常数与非负指数单项式, 不引入也不消除定义域限制
+    核验: 规范展开 (p) * (w*z + w*y + w*x + v*z + v*y + v*x + u*z + u*y + u*x) 逐项对比 == 原式
+  步骤 39 [term-grouping] ✓
+    变换: 项分组: q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (q*u*x) + (p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 40 [term-grouping] ✓
+    变换: 项分组: q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (q*u*y) + (q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 41 [term-grouping] ✓
+    变换: 项分组: q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (q*u*z) + (q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 42 [term-grouping] ✓
+    变换: 项分组: q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (q*v*x) + (q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 43 [term-grouping] ✓
+    变换: 项分组: q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (q*v*y) + (q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 44 [term-grouping] ✓
+    变换: 项分组: q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (q*v*z) + (q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 45 [term-grouping] ✓
+    变换: 项分组: q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (q*w*x) + (q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 46 [term-grouping] ✓
+    变换: 项分组: q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (q*w*y) + (q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 47 [term-grouping] ✓
+    变换: 项分组: q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (q*w*z) + (q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 48 [term-grouping] ✓
+    变换: 项分组: r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (r*u*x) + (q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 49 [term-grouping] ✓
+    变换: 项分组: r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (r*u*y) + (r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 50 [term-grouping] ✓
+    变换: 项分组: r*u*z + r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (r*u*z) + (r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 51 [term-grouping] ✓
+    变换: 项分组: r*v*x + r*u*z + r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (r*v*x) + (r*u*z + r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 52 [term-grouping] ✓
+    变换: 项分组: r*v*y + r*v*x + r*u*z + r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (r*v*y) + (r*v*x + r*u*z + r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 53 [term-grouping] ✓
+    变换: 项分组: r*v*z + r*v*y + r*v*x + r*u*z + r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (r*v*z) + (r*v*y + r*v*x + r*u*z + r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 54 [term-grouping] ✓
+    变换: 项分组: r*w*x + r*v*z + r*v*y + r*v*x + r*u*z + r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (r*w*x) + (r*v*z + r*v*y + r*v*x + r*u*z + r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 55 [term-grouping] ✓
+    变换: 项分组: r*w*y + r*w*x + r*v*z + r*v*y + r*v*x + r*u*z + r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (r*w*y) + (r*w*x + r*v*z + r*v*y + r*v*x + r*u*z + r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 56 [term-grouping] ✓
+    变换: 项分组: r*w*z + r*w*y + r*w*x + r*v*z + r*v*y + r*v*x + r*u*z + r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x = (r*w*z) + (r*w*y + r*w*x + r*v*z + r*v*y + r*v*x + r*u*z + r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x)
+    适用域: 全体 R^n: 加法恒等式, 无定义域限制
+    核验: 规范展开 (A) + (B) 逐项对比 == 原式
+  步骤 57 [final-expansion] ✓
+    变换: expand(r*w*z + r*w*y + r*w*x + r*z*v + r*y*v + r*x*v + r*z*u + r*y*u + r*x*u + w*z*q + w*y*q + w*x*q + z*v*q + y*v*q + x*v*q + z*u*q + y*u*q + x*u*q + (w*z + w*y + w*x + u*(z + y + x) + v*(z + y + x))*p) == r*w*z + r*w*y + r*w*x + r*v*z + r*v*y + r*v*x + r*u*z + r*u*y + r*u*x + q*w*z + q*w*y + q*w*x + q*v*z + q*v*y + q*v*x + q*u*z + q*u*y + q*u*x + p*w*z + p*w*y + p*w*x + p*v*z + p*v*y + p*v*x + p*u*z + p*u*y + p*u*x
+    适用域: —
+    核验: 独立规范展开, 逐项严格相等
+最终核验(乘回展开严格等于原式): 通过
+------------------------------------------------------------------------
