@@ -1,0 +1,11 @@
+{
+  "name": "tx-invariant-store",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "事务性键值存储：跨字段不变量、增量验证、动态依赖、可重放反例",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
