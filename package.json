@@ -1,0 +1,14 @@
+{
+  "name": "oplog-recovery",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "State recovery from hash-chained operation logs: checkpoints bound to prefix digests, step/rollback/cancel, corruption localization, exactly-once side effects.",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
