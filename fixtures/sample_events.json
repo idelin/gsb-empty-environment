@@ -1,0 +1,11 @@
+{
+  "description": "本地重键事件夹具：交换、冲突、成功迁移、重复与迟到事件",
+  "events": [
+    {"tx_id": "tx-001", "table": "users", "old_key": "u1", "new_key": "u2", "commit_seq": 1},
+    {"tx_id": "tx-001", "table": "users", "old_key": "u2", "new_key": "u1", "commit_seq": 2},
+    {"tx_id": "tx-002", "table": "users", "old_key": "u3", "new_key": "u1", "commit_seq": 3},
+    {"tx_id": "tx-003", "table": "users", "old_key": "u3", "new_key": "u30", "commit_seq": 4},
+    {"tx_id": "tx-003", "table": "users", "old_key": "u3", "new_key": "u30", "commit_seq": 4},
+    {"tx_id": "tx-000", "table": "users", "old_key": "u1", "new_key": "u999", "commit_seq": 0}
+  ]
+}
