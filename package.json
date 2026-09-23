@@ -1,0 +1,14 @@
+{
+  "name": "optimistic-store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "乐观并发状态仓库：补丁可回放、按操作ID+版本确认、失败仅回滚自身、读不见中间态（零依赖，TypeScript 原生运行）",
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test --test-reporter=spec \"test/**/*.test.ts\"",
+    "example": "node --disable-warning=ExperimentalWarning src/example.ts"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}
