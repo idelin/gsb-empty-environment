@@ -1,0 +1,11 @@
+{
+  "name": "projection-store",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Selector-projection store with configurable equality, parameterized selector caches, transactions and replay. No reactive frameworks.",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "example": "node examples/demo.ts"
+  }
+}
