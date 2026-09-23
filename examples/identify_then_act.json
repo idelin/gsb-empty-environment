@@ -1,0 +1,18 @@
+{
+  "name": "identify_before_state_specific_action",
+  "states": ["s0", "s1", "t0", "t1"],
+  "inputs": ["p", "x", "y", "u"],
+  "outputs": ["0", "1"],
+  "initial_candidates": ["s0", "s1"],
+  "resettable": [],
+  "input_costs": {"p": 1, "x": 1, "y": 1, "u": 1},
+  "reset_cost": 10,
+  "transitions": [
+    {"source": "s0", "input": "p", "output": "0", "target": "s0"},
+    {"source": "s1", "input": "p", "output": "1", "target": "s1"},
+    {"source": "s0", "input": "x", "output": "0", "target": "t0"},
+    {"source": "t0", "input": "u", "output": "0", "target": "s1"},
+    {"source": "s1", "input": "y", "output": "1", "target": "t1"},
+    {"source": "t1", "input": "u", "output": "1", "target": "s0"}
+  ]
+}

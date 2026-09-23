@@ -1,0 +1,179 @@
+{
+  "status": "solved",
+  "optimal_worst_case_cost": 4,
+  "lower_bound": 4,
+  "upper_bound": 4,
+  "strategy": {
+    "schema_version": 1,
+    "root": "n0",
+    "nodes": [
+      {
+        "id": "n0",
+        "belief_audit": {
+          "common_covered": [],
+          "worlds": [
+            {
+              "origin": "s0",
+              "current": "s0",
+              "privately_covered": []
+            },
+            {
+              "origin": "s1",
+              "current": "s1",
+              "privately_covered": []
+            }
+          ]
+        },
+        "action_cost": 1,
+        "type": "input",
+        "input": "b",
+        "branches": [
+          {
+            "output": "0",
+            "next": "n1"
+          }
+        ]
+      },
+      {
+        "id": "n1",
+        "belief_audit": {
+          "common_covered": [],
+          "worlds": [
+            {
+              "origin": "s0",
+              "current": "s0",
+              "privately_covered": [
+                "s0:b"
+              ]
+            },
+            {
+              "origin": "s1",
+              "current": "s1",
+              "privately_covered": [
+                "s1:b"
+              ]
+            }
+          ]
+        },
+        "action_cost": 1,
+        "type": "input",
+        "input": "a",
+        "branches": [
+          {
+            "output": "0",
+            "next": "n2"
+          }
+        ]
+      },
+      {
+        "id": "n2",
+        "belief_audit": {
+          "common_covered": [],
+          "worlds": [
+            {
+              "origin": "s0",
+              "current": "s1",
+              "privately_covered": [
+                "s0:a",
+                "s0:b"
+              ]
+            },
+            {
+              "origin": "s1",
+              "current": "s0",
+              "privately_covered": [
+                "s1:a",
+                "s1:b"
+              ]
+            }
+          ]
+        },
+        "action_cost": 1,
+        "type": "input",
+        "input": "b",
+        "branches": [
+          {
+            "output": "0",
+            "next": "n3"
+          }
+        ]
+      },
+      {
+        "id": "n3",
+        "belief_audit": {
+          "common_covered": [
+            "s0:b",
+            "s1:b"
+          ],
+          "worlds": [
+            {
+              "origin": "s0",
+              "current": "s1",
+              "privately_covered": [
+                "s0:a"
+              ]
+            },
+            {
+              "origin": "s1",
+              "current": "s0",
+              "privately_covered": [
+                "s1:a"
+              ]
+            }
+          ]
+        },
+        "action_cost": 1,
+        "type": "input",
+        "input": "a",
+        "branches": [
+          {
+            "output": "0",
+            "next": "n4"
+          }
+        ]
+      },
+      {
+        "id": "n4",
+        "belief_audit": {
+          "common_covered": [
+            "s0:a",
+            "s0:b",
+            "s1:a",
+            "s1:b"
+          ],
+          "worlds": [
+            {
+              "origin": "s0",
+              "current": "s0",
+              "privately_covered": []
+            },
+            {
+              "origin": "s1",
+              "current": "s1",
+              "privately_covered": []
+            }
+          ]
+        },
+        "type": "terminal"
+      }
+    ]
+  },
+  "search": {
+    "budget": 10000,
+    "nodes_discovered": 14,
+    "nodes_expanded": 12,
+    "actions_generated": 19,
+    "truncated": false,
+    "required_transitions": [
+      "s0:a",
+      "s0:b",
+      "s1:a",
+      "s1:b"
+    ]
+  },
+  "semantics": {
+    "reset": "returns each possible trajectory to its true initial candidate; coverage is retained",
+    "definite_coverage": "common intersection of all possible actual trajectories in an output branch",
+    "objective": "minimum worst-branch positive action cost"
+  }
+}

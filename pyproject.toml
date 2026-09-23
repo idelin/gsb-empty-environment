@@ -1,0 +1,8 @@
+[project]
+name = "mealy-transition-coverage-planner"
+version = "0.1.0"
+description = "Deterministic Mealy transition-coverage contingent planner using only the Python standard library"
+requires-python = ">=3.11"
+
+[tool.unittest]
+start-dir = "tests"

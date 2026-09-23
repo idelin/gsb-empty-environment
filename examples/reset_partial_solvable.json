@@ -1,0 +1,17 @@
+{
+  "name": "partial_reset_after_identification",
+  "states": ["s0", "s1", "t0", "t1"],
+  "inputs": ["p", "u", "w", "v"],
+  "outputs": ["0", "1"],
+  "initial_candidates": ["s0", "s1"],
+  "resettable": ["t0"],
+  "input_costs": {"p": 1, "u": 1, "w": 1, "v": 1},
+  "reset_cost": 2,
+  "transitions": [
+    {"source": "s0", "input": "p", "output": "0", "target": "t0"},
+    {"source": "s1", "input": "p", "output": "1", "target": "t1"},
+    {"source": "t1", "input": "u", "output": "1", "target": "s1"},
+    {"source": "s0", "input": "w", "output": "0", "target": "s1"},
+    {"source": "s1", "input": "v", "output": "1", "target": "s0"}
+  ]
+}

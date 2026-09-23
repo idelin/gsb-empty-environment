@@ -1,0 +1,15 @@
+{
+  "name": "same_observations_cannot_safely_separate",
+  "states": ["s0", "s1"],
+  "inputs": ["p", "x"],
+  "outputs": ["0", "1"],
+  "initial_candidates": ["s0", "s1"],
+  "resettable": [],
+  "input_costs": {"p": 1, "x": 1},
+  "reset_cost": 10,
+  "transitions": [
+    {"source": "s0", "input": "p", "output": "0", "target": "s0"},
+    {"source": "s1", "input": "p", "output": "1", "target": "s1"},
+    {"source": "s0", "input": "x", "output": "0", "target": "s0"}
+  ]
+}

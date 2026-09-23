@@ -1,0 +1,16 @@
+{
+  "name": "forced_irreversible_sink_branch_loses_edge",
+  "states": ["s0", "s1", "z"],
+  "inputs": ["p", "e"],
+  "outputs": ["0", "1"],
+  "initial_candidates": ["s0", "s1"],
+  "resettable": [],
+  "input_costs": {"p": 1, "e": 1},
+  "reset_cost": 10,
+  "transitions": [
+    {"source": "s0", "input": "p", "output": "0", "target": "z"},
+    {"source": "s1", "input": "p", "output": "1", "target": "s1"},
+    {"source": "s1", "input": "e", "output": "1", "target": "s0"},
+    {"source": "z", "input": "e", "output": "0", "target": "z"}
+  ]
+}

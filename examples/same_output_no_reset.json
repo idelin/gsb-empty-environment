@@ -1,0 +1,16 @@
+{
+  "name": "same_output_different_internal_edges",
+  "states": ["s0", "s1"],
+  "inputs": ["a", "b"],
+  "outputs": ["0"],
+  "initial_candidates": ["s0", "s1"],
+  "resettable": [],
+  "input_costs": {"a": 1, "b": 1},
+  "reset_cost": 10,
+  "transitions": [
+    {"source": "s0", "input": "a", "output": "0", "target": "s1"},
+    {"source": "s0", "input": "b", "output": "0", "target": "s0"},
+    {"source": "s1", "input": "a", "output": "0", "target": "s0"},
+    {"source": "s1", "input": "b", "output": "0", "target": "s1"}
+  ]
+}
