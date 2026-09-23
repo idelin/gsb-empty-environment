@@ -1,0 +1,42 @@
+test_clean_merge_exit_zero (test_cli.TestCli.test_clean_merge_exit_zero) ... ok
+test_conflict_merge_exit_two (test_cli.TestCli.test_conflict_merge_exit_two) ... ok
+test_delete_rejection_exit_two (test_cli.TestCli.test_delete_rejection_exit_two) ... ok
+test_out_file_written (test_cli.TestCli.test_out_file_written) ... ok
+test_caret (test_constraints.TestConstraintParse.test_caret) ... ok
+test_caret_zero_major (test_constraints.TestConstraintParse.test_caret_zero_major) ... ok
+test_combined (test_constraints.TestConstraintParse.test_combined) ... ok
+test_exact (test_constraints.TestConstraintParse.test_exact) ... ok
+test_invalid (test_constraints.TestConstraintParse.test_invalid) ... ok
+test_operators (test_constraints.TestConstraintParse.test_operators) ... ok
+test_prerelease_bounds (test_constraints.TestConstraintParse.test_prerelease_bounds) ... ok
+test_tilde (test_constraints.TestConstraintParse.test_tilde) ... ok
+test_wildcard (test_constraints.TestConstraintParse.test_wildcard) ... ok
+test_missing_dependency_flagged (test_merge.TestClosureVerification.test_missing_dependency_flagged) ... ok
+test_orphan_is_warning_not_violation (test_merge.TestClosureVerification.test_orphan_is_warning_not_violation) ... ok
+test_root_version_mismatch_flagged (test_merge.TestClosureVerification.test_root_version_mismatch_flagged) ... ok
+test_shared_constraint_violation_flagged (test_merge.TestClosureVerification.test_shared_constraint_violation_flagged) ... ok
+test_unknown_package_version_flagged (test_merge.TestClosureVerification.test_unknown_package_version_flagged) ... ok
+test_unprocessable_collects_everything (test_merge.TestClosureVerification.test_unprocessable_collects_everything) ... ok
+test_both_delete_is_accepted (test_merge.TestDeletions.test_both_delete_is_accepted) ... ok
+test_delete_still_referenced_is_rejected (test_merge.TestDeletions.test_delete_still_referenced_is_rejected) ... ok
+test_delete_unreferenced_is_accepted (test_merge.TestDeletions.test_delete_unreferenced_is_accepted) ... ok
+test_add_and_remove_root_auto_merge (test_merge.TestIndependentChanges.test_add_and_remove_root_auto_merge) ... ok
+test_different_packages_auto_merge (test_merge.TestIndependentChanges.test_different_packages_auto_merge) ... ok
+test_identical_upgrade_recorded_once (test_merge.TestSameChanges.test_identical_upgrade_recorded_once) ... ok
+test_both_added_with_different_versions (test_merge.TestSharedConflict.test_both_added_with_different_versions) ... ok
+test_both_change_same_package_differently_is_conflict (test_merge.TestSharedConflict.test_both_change_same_package_differently_is_conflict) ... ok
+test_build_input_conflict_is_not_spliced (test_merge.TestSharedConflict.test_build_input_conflict_is_not_spliced) ... ok
+test_modify_delete_conflict (test_merge.TestSharedConflict.test_modify_delete_conflict) ... ok
+test_equality_and_hash (test_version.TestVersionOrdering.test_equality_and_hash) ... ok
+test_numeric_ordering (test_version.TestVersionOrdering.test_numeric_ordering) ... ok
+test_prerelease_before_final (test_version.TestVersionOrdering.test_prerelease_before_final) ... ok
+test_sorted (test_version.TestVersionOrdering.test_sorted) ... ok
+test_invalid_versions (test_version.TestVersionParse.test_invalid_versions) ... ok
+test_plain_version (test_version.TestVersionParse.test_plain_version) ... ok
+test_prerelease (test_version.TestVersionParse.test_prerelease) ... ok
+test_prerelease_aliases (test_version.TestVersionParse.test_prerelease_aliases) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 0.186s
+
+OK

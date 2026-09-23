@@ -1,0 +1,115 @@
+{
+  "status": "needs_manual",
+  "merged_lock": {
+    "roots": {
+      "app": "1.1.0",
+      "worker": "3.0.0"
+    },
+    "build_inputs": {
+      "python": ">=3.11,<4"
+    },
+    "packages": {
+      "app": {
+        "version": "1.1.0",
+        "integrity": "sha256:app-110"
+      },
+      "leaf": {
+        "version": "1.0.0",
+        "integrity": "sha256:leaf-100"
+      },
+      "util": {
+        "version": "2.0.0",
+        "integrity": "sha256:util-200"
+      },
+      "web": {
+        "version": "2.4.0",
+        "integrity": "sha256:web-240"
+      },
+      "worker": {
+        "version": "3.0.0",
+        "integrity": "sha256:worker-300"
+      }
+    }
+  },
+  "sources": {
+    "roots": {
+      "app": "ours",
+      "worker": "theirs"
+    },
+    "build_inputs": {
+      "python": "base"
+    },
+    "packages": {
+      "app": "ours",
+      "cache": "theirs-deleted",
+      "leaf": "theirs",
+      "util": "theirs",
+      "web": "conflict",
+      "worker": "theirs"
+    }
+  },
+  "conflict_hunks": [
+    {
+      "type": "both_changed_conflict",
+      "name": "web",
+      "base": "2.4.0",
+      "ours": "2.5.0",
+      "theirs": "3.0.0",
+      "kept": "2.4.0"
+    }
+  ],
+  "rejected_deletions": [],
+  "closure_violations": [
+    {
+      "type": "constraint_violation",
+      "name": "util",
+      "required_by": "app@1.1.0",
+      "constraint": "^1.1.0",
+      "locked": "2.0.0",
+      "message": "locked util@2.0.0 does not satisfy ^1.1.0 required by app@1.1.0"
+    },
+    {
+      "type": "constraint_violation",
+      "name": "util",
+      "required_by": "web@2.4.0",
+      "constraint": "^1.2.0",
+      "locked": "2.0.0",
+      "message": "locked util@2.0.0 does not satisfy ^1.2.0 required by web@2.4.0"
+    },
+    {
+      "type": "constraint_violation",
+      "name": "web",
+      "required_by": "worker@3.0.0",
+      "constraint": "^3.0.0",
+      "locked": "2.4.0",
+      "message": "locked web@2.4.0 does not satisfy ^3.0.0 required by worker@3.0.0"
+    }
+  ],
+  "warnings": [],
+  "unprocessable": [
+    {
+      "type": "merge_conflict",
+      "conflict": "both_changed_conflict",
+      "name": "web",
+      "message": "both_changed_conflict on web requires manual resolution and closure re-verification"
+    },
+    {
+      "type": "closure_violation",
+      "violation": "constraint_violation",
+      "name": "util",
+      "message": "locked util@2.0.0 does not satisfy ^1.1.0 required by app@1.1.0"
+    },
+    {
+      "type": "closure_violation",
+      "violation": "constraint_violation",
+      "name": "util",
+      "message": "locked util@2.0.0 does not satisfy ^1.2.0 required by web@2.4.0"
+    },
+    {
+      "type": "closure_violation",
+      "violation": "constraint_violation",
+      "name": "web",
+      "message": "locked web@2.4.0 does not satisfy ^3.0.0 required by worker@3.0.0"
+    }
+  ]
+}

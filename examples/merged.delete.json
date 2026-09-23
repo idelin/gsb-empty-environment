@@ -1,0 +1,71 @@
+{
+  "status": "needs_manual",
+  "merged_lock": {
+    "roots": {
+      "app": "1.0.0"
+    },
+    "build_inputs": {
+      "python": ">=3.11,<4"
+    },
+    "packages": {
+      "app": {
+        "version": "1.0.0",
+        "integrity": "sha256:app-100"
+      },
+      "cache": {
+        "version": "1.1.0",
+        "integrity": "sha256:cache-110"
+      },
+      "util": {
+        "version": "1.4.0",
+        "integrity": "sha256:util-140"
+      },
+      "web": {
+        "version": "2.4.0",
+        "integrity": "sha256:web-240"
+      }
+    }
+  },
+  "sources": {
+    "roots": {
+      "app": "base"
+    },
+    "build_inputs": {
+      "python": "base"
+    },
+    "packages": {
+      "app": "base",
+      "cache": "theirs",
+      "util": "base",
+      "web": "restored"
+    }
+  },
+  "conflict_hunks": [],
+  "rejected_deletions": [
+    {
+      "type": "deletion_still_referenced",
+      "package": "web",
+      "deleted_by": "ours",
+      "referenced_by": [
+        "app@1.0.0"
+      ],
+      "restored_version": "2.4.0",
+      "message": "refusing to delete web: still required by app@1.0.0"
+    }
+  ],
+  "closure_violations": [],
+  "warnings": [
+    {
+      "type": "orphan_package",
+      "package": "cache",
+      "message": "cache is locked but unreachable from any root"
+    }
+  ],
+  "unprocessable": [
+    {
+      "type": "deletion_rejected",
+      "package": "web",
+      "message": "refusing to delete web: still required by app@1.0.0"
+    }
+  ]
+}

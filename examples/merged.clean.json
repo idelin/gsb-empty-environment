@@ -1,0 +1,54 @@
+{
+  "status": "merged",
+  "merged_lock": {
+    "roots": {
+      "app": "1.1.0"
+    },
+    "build_inputs": {
+      "python": ">=3.11,<4"
+    },
+    "packages": {
+      "app": {
+        "version": "1.1.0",
+        "integrity": "sha256:app-110"
+      },
+      "cache": {
+        "version": "1.1.0",
+        "integrity": "sha256:cache-110"
+      },
+      "util": {
+        "version": "1.4.0",
+        "integrity": "sha256:util-140"
+      },
+      "web": {
+        "version": "2.5.0",
+        "integrity": "sha256:web-250"
+      }
+    }
+  },
+  "sources": {
+    "roots": {
+      "app": "ours"
+    },
+    "build_inputs": {
+      "python": "base"
+    },
+    "packages": {
+      "app": "ours",
+      "cache": "theirs",
+      "util": "base",
+      "web": "ours"
+    }
+  },
+  "conflict_hunks": [],
+  "rejected_deletions": [],
+  "closure_violations": [],
+  "warnings": [
+    {
+      "type": "orphan_package",
+      "package": "cache",
+      "message": "cache is locked but unreachable from any root"
+    }
+  ],
+  "unprocessable": []
+}

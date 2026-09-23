@@ -1,0 +1,11 @@
+{
+  "roots": {"app": "1.0.0", "worker": "3.0.0"},
+  "build_inputs": {"python": ">=3.11,<4"},
+  "packages": {
+    "app":    {"version": "1.0.0", "integrity": "sha256:app-100"},
+    "worker": {"version": "3.0.0", "integrity": "sha256:worker-300"},
+    "web":    {"version": "3.0.0", "integrity": "sha256:web-300"},
+    "util":   {"version": "2.0.0", "integrity": "sha256:util-200"},
+    "leaf":   {"version": "1.0.0", "integrity": "sha256:leaf-100"}
+  }
+}

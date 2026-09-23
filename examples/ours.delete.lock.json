@@ -1,0 +1,9 @@
+{
+  "roots": {"app": "1.0.0"},
+  "build_inputs": {"python": ">=3.11,<4"},
+  "packages": {
+    "app":   {"version": "1.0.0", "integrity": "sha256:app-100"},
+    "cache": {"version": "1.0.0", "integrity": "sha256:cache-100"},
+    "util":  {"version": "1.4.0", "integrity": "sha256:util-140"}
+  }
+}

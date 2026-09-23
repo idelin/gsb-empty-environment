@@ -1,0 +1,31 @@
+{
+  "packages": {
+    "app": {
+      "1.0.0": {"dependencies": {"web": "^2.0.0", "util": "^1.0.0"}},
+      "1.1.0": {"dependencies": {"web": "^2.0.0", "util": "^1.1.0"}}
+    },
+    "worker": {
+      "2.0.0": {"dependencies": {"cache": "^1.0.0", "util": "^1.0.0"}},
+      "3.0.0": {"dependencies": {"web": "^3.0.0", "util": "^2.0.0", "leaf": "*"}}
+    },
+    "web": {
+      "2.4.0": {"dependencies": {"util": "^1.2.0"}},
+      "2.5.0": {"dependencies": {"util": "^1.4.0"}},
+      "3.0.0": {"dependencies": {"util": "^2.0.0"}}
+    },
+    "cache": {
+      "1.0.0": {"dependencies": {"util": "^1.0.0"}},
+      "1.1.0": {"dependencies": {"util": "^1.4.0"}}
+    },
+    "util": {
+      "1.0.0": {"dependencies": {}},
+      "1.4.0": {"dependencies": {}},
+      "1.5.0-rc1": {"dependencies": {}},
+      "1.5.0": {"dependencies": {}},
+      "2.0.0": {"dependencies": {}}
+    },
+    "leaf": {
+      "1.0.0": {"dependencies": {}}
+    }
+  }
+}
