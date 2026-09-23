@@ -1,0 +1,12 @@
+{"tx_id":"t01","table":"scores","pk":"u1","before":null,"after":{"grp":"A","score":90,"name":"amy"},"commit_seq":1}
+{"tx_id":"t01","table":"scores","pk":"u2","before":null,"after":{"grp":"A","score":80,"name":"bob"},"commit_seq":1}
+{"tx_id":"t01","table":"scores","pk":"u3","before":null,"after":{"grp":"A","score":70,"name":"cy"},"commit_seq":1}
+{"tx_id":"t01","table":"scores","pk":"u4","before":null,"after":{"grp":"A","score":60,"name":"dan"},"commit_seq":1}
+{"tx_id":"t02","table":"scores","pk":"u5","before":null,"after":{"grp":"B","score":95,"name":"eli"},"commit_seq":2}
+{"tx_id":"t02","table":"scores","pk":"u6","before":null,"after":{"grp":"B","score":85,"name":"fay"},"commit_seq":2}
+{"tx_id":"t02","table":"meta","pk":"ignore1","before":null,"after":{"grp":"A","score":1},"commit_seq":2}
+{"tx_id":"t03","table":"scores","pk":"u1","before":{"grp":"A","score":90,"name":"amy"},"after":{"grp":"A","score":65,"name":"amy"},"commit_seq":3}
+{"tx_id":"t04","table":"scores","pk":"u2","before":{"grp":"A","score":80,"name":"bob"},"after":null,"commit_seq":4}
+{"tx_id":"t05","table":"scores","pk":"u3","before":{"grp":"A","score":70,"name":"cy"},"after":{"grp":"B","score":70,"name":"cy"},"commit_seq":5}
+{"tx_id":"t06","table":"scores","pk":"u7","before":null,"after":{"grp":"A","score":null,"name":"gus"},"commit_seq":6}
+{"tx_id":"t06","table":"scores","pk":"u8","before":null,"after":{"grp":"A","score":75,"name":"hal"},"commit_seq":6}
