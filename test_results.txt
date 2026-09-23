@@ -1,0 +1,14 @@
+test_constant_division_uses_exact_rational (test_rational_elimination.RationalEliminationTest.test_constant_division_uses_exact_rational) ... ok
+test_equivalent_circular_equations_are_free_family (test_rational_elimination.RationalEliminationTest.test_equivalent_circular_equations_are_free_family) ... ok
+test_exact_rational_solution_without_floating_point (test_rational_elimination.RationalEliminationTest.test_exact_rational_solution_without_floating_point) ... ok
+test_mutually_exclusive_equations_are_contradiction (test_rational_elimination.RationalEliminationTest.test_mutually_exclusive_equations_are_contradiction) ... ok
+test_negative_top_level_symbolic_divisor (test_rational_elimination.RationalEliminationTest.test_negative_top_level_symbolic_divisor) ... ok
+test_static_zero_divisor_is_rejected (test_rational_elimination.RationalEliminationTest.test_static_zero_divisor_is_rejected) ... ok
+test_symbolic_divisor_creates_nonzero_and_zero_branches (test_rational_elimination.RationalEliminationTest.test_symbolic_divisor_creates_nonzero_and_zero_branches) ... ok
+test_variable_times_variable_is_rejected_as_nonlinear (test_rational_elimination.RationalEliminationTest.test_variable_times_variable_is_rejected_as_nonlinear) ... ok
+test_zero_pivot_does_not_divide (test_rational_elimination.RationalEliminationTest.test_zero_pivot_does_not_divide) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.003s
+
+OK
