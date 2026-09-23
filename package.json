@@ -1,0 +1,11 @@
+{
+  "name": "reactive-snapshot-store",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "自研响应式状态库：可序列化快照、原子恢复、依赖证据重建计算图",
+  "scripts": {
+    "test": "node --test tests/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
