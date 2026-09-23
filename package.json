@@ -1,0 +1,10 @@
+{
+  "name": "tx-command-store",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test 'test/*.test.ts'"
+  }
+}
