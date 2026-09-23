@@ -1,0 +1,14 @@
+{
+  "name": "reactive-async-derived",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "手写响应式异步派生值：可回放状态操作、事务快照、代际取消",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
