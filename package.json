@@ -1,0 +1,13 @@
+{
+  "name": "controlled-bus-replicas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
