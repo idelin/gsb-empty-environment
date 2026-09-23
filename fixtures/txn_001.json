@@ -1,0 +1,7 @@
+{
+  "manifest": {"txn_id": "txn-001", "required_tables": ["A", "B"], "deadline": 2000.0},
+  "events": [
+    {"txn_id": "txn-001", "table": "A", "primary_key": "a-1", "before": {"qty": 3}, "after": {"qty": 5}, "commit_seq": 11, "manifest_digest": "b64e3448a83a5b86"},
+    {"txn_id": "txn-001", "table": "B", "primary_key": "b-1", "before": null, "after": {"note": "created"}, "commit_seq": 12, "manifest_digest": "b64e3448a83a5b86"}
+  ]
+}
