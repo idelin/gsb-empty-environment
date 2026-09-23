@@ -1,0 +1,14 @@
+test_alternate_evidence_preserves_vertex (test_impact_graph.ImpactGraphTest.test_alternate_evidence_preserves_vertex) ... ok
+test_compound_conditions_update_witness (test_impact_graph.ImpactGraphTest.test_compound_conditions_update_witness) ... ok
+test_conditional_propagation_and_explanation (test_impact_graph.ImpactGraphTest.test_conditional_propagation_and_explanation) ... ok
+test_cycle_does_not_prove_itself (test_impact_graph.ImpactGraphTest.test_cycle_does_not_prove_itself) ... ok
+test_half_open_time_interval (test_impact_graph.ImpactGraphTest.test_half_open_time_interval) ... ok
+test_lost_evidence_removes_affected_vertex (test_impact_graph.ImpactGraphTest.test_lost_evidence_removes_affected_vertex) ... ok
+test_multiple_edges_are_retained_and_tie_break_is_stable (test_impact_graph.ImpactGraphTest.test_multiple_edges_are_retained_and_tie_break_is_stable) ... ok
+test_reachable_node_can_become_a_change_root (test_impact_graph.ImpactGraphTest.test_reachable_node_can_become_a_change_root) ... ok
+test_shortest_chain_switches_incrementally (test_impact_graph.ImpactGraphTest.test_shortest_chain_switches_incrementally) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+OK

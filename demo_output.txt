@@ -1,0 +1,34 @@
+1. Initial graph: isolated vertices stay, gate is closed
+affected: compile, root, standby
+release: no evidence
+
+2. Facts make compile -> test -> release available
+affected: compile, release, root, standby, test
+release: root -> compile -> test -> release
+edges   : compile-on-merge, test-normal, release-after-test
+facts   : gate-open, signed
+
+3. Revoke 'signed': release loses all evidence
+affected: compile, root, standby, test
+release: no evidence
+
+4. Revoke compile edge fact: short chain disappears
+affected: root, standby
+test: no evidence
+
+5. t=10 is included by half-open [10, 20): hotfix evidence exists
+affected: release, root, standby, test
+test: standby -> test
+edges   : test-hotfix-window
+facts   : (none)
+
+6. t=20 is excluded by [10, 20): hotfix evidence disappears
+affected: root, standby
+test: no evidence
+
+7. Main evidence restored
+affected: compile, release, root, standby, test
+release: root -> compile -> test -> release
+edges   : compile-on-merge, test-normal, release-after-test
+facts   : gate-open, signed
+
