@@ -1,0 +1,10 @@
+{
+  "name": "stategraph",
+  "version": "1.0.0",
+  "description": "Transactional state graph with serializable, verifiable restore (no reactive framework)",
+  "type": "module",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
