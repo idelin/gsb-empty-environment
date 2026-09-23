@@ -1,0 +1,15 @@
+{
+  "name": "reactive-async-store",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "零依赖异步派生状态管理：代际取消、事务提交、命令日志回放",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "sample": "node --disable-warning=ExperimentalWarning examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
