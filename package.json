@@ -1,0 +1,12 @@
+{
+  "name": "crdt-replica-bus",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "可控消息总线 + 多副本因果复制：显式合并规则、幂等应用、事务原子可见、可回放",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node demo/main.ts"
+  }
+}
