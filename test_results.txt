@@ -1,0 +1,13 @@
+test_cancel_releases_quota (test_dag_engine.CancelQuotaAndCheckpointTest.test_cancel_releases_quota) ... ok
+test_checkpoint_resume_skips_confirmed_effects (test_dag_engine.CancelQuotaAndCheckpointTest.test_checkpoint_resume_skips_confirmed_effects) ... ok
+test_cycle_insert_rejected_and_plan_preserved (test_dag_engine.CycleRejectionTest.test_cycle_insert_rejected_and_plan_preserved) ... ok
+test_stale_attempts_and_branch_isolation (test_dag_engine.LateFailureAndIndependentBranchTest.test_stale_attempts_and_branch_isolation) ... ok
+test_completion_sequenced_before_update (test_dag_engine.SimultaneousUpdateAndCompletionTest.test_completion_sequenced_before_update) ... ok
+test_update_sequenced_before_completion (test_dag_engine.SimultaneousUpdateAndCompletionTest.test_update_sequenced_before_completion) ... ok
+test_quota_violation_rejected_atomically (test_dag_engine.StageBarrierAndGraphShapeTest.test_quota_violation_rejected_atomically) ... ok
+test_stage_barrier_and_graph_features (test_dag_engine.StageBarrierAndGraphShapeTest.test_stage_barrier_and_graph_features) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK
