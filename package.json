@@ -1,0 +1,11 @@
+{
+  "name": "path-patch-subscriptions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Transactional path-based patch-stream subscriptions with a shared matching automaton. Zero dependencies.",
+  "scripts": {
+    "test": "node --test test/store.test.ts",
+    "demo": "node demo.ts"
+  }
+}
