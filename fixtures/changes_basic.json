@@ -1,0 +1,17 @@
+{
+  "comment": "inserts + corrections; t4 moves p2 from account B to A, so rev-t4 has two parents (DAG)",
+  "events": [
+    {"txn_id": "t1", "table": "txn", "pk": "p1", "before": null,
+     "after": {"account": "A", "amount": 100}, "commit_seq": 1},
+    {"txn_id": "t1", "table": "txn", "pk": "p2", "before": null,
+     "after": {"account": "B", "amount": 50}, "commit_seq": 2},
+    {"txn_id": "t2", "table": "txn", "pk": "p3", "before": null,
+     "after": {"account": "A", "amount": 20}, "commit_seq": 3},
+    {"txn_id": "t3", "table": "txn", "pk": "p1",
+     "before": {"account": "A", "amount": 100},
+     "after": {"account": "A", "amount": 80}, "commit_seq": 4},
+    {"txn_id": "t4", "table": "txn", "pk": "p2",
+     "before": {"account": "B", "amount": 50},
+     "after": {"account": "A", "amount": 50}, "commit_seq": 5}
+  ]
+}

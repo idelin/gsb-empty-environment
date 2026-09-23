@@ -1,0 +1,11 @@
+{
+  "comment": "insert, retract (delete), then re-add the same pk with a new amount",
+  "events": [
+    {"txn_id": "t1", "table": "txn", "pk": "p1", "before": null,
+     "after": {"account": "A", "amount": 30}, "commit_seq": 1},
+    {"txn_id": "t2", "table": "txn", "pk": "p1",
+     "before": {"account": "A", "amount": 30}, "after": null, "commit_seq": 2},
+    {"txn_id": "t3", "table": "txn", "pk": "p1", "before": null,
+     "after": {"account": "A", "amount": 45}, "commit_seq": 3}
+  ]
+}

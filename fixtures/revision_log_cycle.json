@@ -1,0 +1,11 @@
+{
+  "comment": "hostile revision log: r2 and r3 reference each other as base (cycle)",
+  "revisions": [
+    {"id": "r1", "txn_id": "t1", "bases": {"txn:A": null},
+     "deltas": {"txn:A": 10}, "seq_lo": 1, "seq_hi": 1},
+    {"id": "r2", "txn_id": "t2", "bases": {"txn:A": "r3"},
+     "deltas": {"txn:A": 5}, "seq_lo": 2, "seq_hi": 2},
+    {"id": "r3", "txn_id": "t3", "bases": {"txn:A": "r2"},
+     "deltas": {"txn:A": 1}, "seq_lo": 3, "seq_hi": 3}
+  ]
+}
