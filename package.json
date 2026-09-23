@@ -1,0 +1,11 @@
+{
+  "name": "oplog-recovery",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "操作日志状态恢复：前缀摘要链、检查点、可逆步进、副作用去重、损坏定位",
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types demo/run.ts"
+  }
+}
