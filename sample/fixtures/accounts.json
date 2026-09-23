@@ -1,0 +1,36 @@
+{
+  "changes": [
+    {
+      "txn_id": "T-1001",
+      "table": "accounts",
+      "key": "acct-1",
+      "before": null,
+      "after": {"id": "acct-1", "name": "Ada", "balance": 100},
+      "commit_seq": 1
+    },
+    {
+      "txn_id": "T-1002",
+      "table": "accounts",
+      "key": "acct-1",
+      "before": {"id": "acct-1", "name": "Ada", "balance": 100},
+      "after": {"id": "acct-1", "name": "Ada", "balance": 70},
+      "commit_seq": 2
+    },
+    {
+      "txn_id": "T-1003",
+      "table": "accounts",
+      "key": "acct-2",
+      "before": null,
+      "after": {"id": "acct-2", "name": "Lin", "balance": 30},
+      "commit_seq": 3
+    },
+    {
+      "txn_id": "T-1004",
+      "table": "accounts",
+      "key": "acct-1",
+      "before": {"id": "acct-1", "name": "Ada", "balance": 70},
+      "after": null,
+      "commit_seq": 4
+    }
+  ]
+}
