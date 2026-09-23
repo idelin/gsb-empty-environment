@@ -1,0 +1,13 @@
+{
+  "description": "Local change fixture: tx_id, table, pk, before/after, commit_seq. No message platform involved.",
+  "changes": [
+    {"tx_id": 1, "table": "accounts", "pk": "alice", "before": null, "after": {"balance": 100}, "commit_seq": 1},
+    {"tx_id": 1, "table": "accounts", "pk": "bob",   "before": null, "after": {"balance": 50},  "commit_seq": 2},
+    {"tx_id": 2, "table": "accounts", "pk": "alice", "before": {"balance": 100}, "after": {"balance": 80}, "commit_seq": 3},
+    {"tx_id": 2, "table": "orders",   "pk": "o1",    "before": null, "after": {"status": "new"}, "commit_seq": 4},
+    {"tx_id": 3, "table": "accounts", "pk": "alice", "before": {"balance": 80}, "after": {"balance": 120}, "commit_seq": 5},
+    {"tx_id": 3, "table": "orders",   "pk": "o1",    "before": {"status": "new"}, "after": {"status": "paid"}, "commit_seq": 6},
+    {"tx_id": 4, "table": "accounts", "pk": "bob",   "before": {"balance": 50}, "after": null, "commit_seq": 7},
+    {"tx_id": 4, "table": "orders",   "pk": "o1",    "before": {"status": "paid"}, "after": {"status": "shipped"}, "commit_seq": 8}
+  ]
+}
