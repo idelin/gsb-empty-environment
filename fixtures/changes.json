@@ -1,0 +1,14 @@
+[
+  {"txid": "t01", "table": "users",  "pk": "u1", "before": null,                        "after": {"name": "Ann",   "balance": 100}, "lsn": 1},
+  {"txid": "t02", "table": "users",  "pk": "u2", "before": null,                        "after": {"name": "Bob",   "balance": 50},  "lsn": 2},
+  {"txid": "t03", "table": "orders", "pk": "o1", "before": null,                        "after": {"user": "u1",    "amount": 30},   "lsn": 3},
+  {"txid": "t04", "table": "users",  "pk": "u1", "before": {"name": "Ann", "balance": 100}, "after": {"name": "Ann", "balance": 70}, "lsn": 4},
+  {"txid": "t05", "table": "orders", "pk": "o2", "before": null,                        "after": {"user": "u2",    "amount": 12},   "lsn": 5},
+  {"txid": "t06", "table": "users",  "pk": "u3", "before": null,                        "after": {"name": "Cid",   "balance": 200}, "lsn": 6},
+  {"txid": "t07", "table": "orders", "pk": "o1", "before": {"user": "u1", "amount": 30}, "after": {"user": "u1",   "amount": 45},   "lsn": 7},
+  {"txid": "t08", "table": "users",  "pk": "u2", "before": {"name": "Bob", "balance": 50}, "after": {"name": "Bob", "balance": 38},  "lsn": 8},
+  {"txid": "t09", "table": "orders", "pk": "o3", "before": null,                        "after": {"user": "u3",    "amount": 99},   "lsn": 9},
+  {"txid": "t10", "table": "users",  "pk": "u3", "before": {"name": "Cid", "balance": 200}, "after": {"name": "Cid", "balance": 101}, "lsn": 10},
+  {"txid": "t11", "table": "orders", "pk": "o2", "before": {"user": "u2", "amount": 12}, "after": null,                             "lsn": 11},
+  {"txid": "t12", "table": "users",  "pk": "u1", "before": {"name": "Ann", "balance": 70}, "after": {"name": "Ann", "balance": 170}, "lsn": 12}
+]
