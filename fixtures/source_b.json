@@ -1,0 +1,6 @@
+[
+  {"txn_id": "B-t1", "source": "B", "table": "accounts", "pk": "b1", "op": "insert", "before": null, "after": {"amount": 200}, "commit_seq": 1},
+  {"txn_id": "B-t2", "source": "B", "table": "accounts", "pk": "b2", "op": "insert", "before": null, "after": {"amount": 70}, "commit_seq": 2},
+  {"txn_id": "B-t3", "source": "B", "table": "accounts", "pk": "b1", "op": "delete", "before": {"amount": 200}, "after": null, "commit_seq": 3},
+  {"txn_id": "B-t4", "source": "B", "table": "accounts", "pk": "b1", "op": "insert", "before": null, "after": {"amount": 260}, "commit_seq": 4}
+]
