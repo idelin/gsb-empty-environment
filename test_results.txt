@@ -1,0 +1,39 @@
+test_arithmetic (test_evaluator.EvaluatorTest.test_arithmetic) ... ok
+test_conditional_short_circuit (test_evaluator.EvaluatorTest.test_conditional_short_circuit) ... ok
+test_division_by_zero_domain (test_evaluator.EvaluatorTest.test_division_by_zero_domain) ... ok
+test_functions (test_evaluator.EvaluatorTest.test_functions) ... ok
+test_large_exact_value (test_evaluator.EvaluatorTest.test_large_exact_value) ... ok
+test_no_float_loss (test_evaluator.EvaluatorTest.test_no_float_loss) ... ok
+test_non_integer_power_domain (test_evaluator.EvaluatorTest.test_non_integer_power_domain) ... ok
+test_unbound_symbol_and_function (test_evaluator.EvaluatorTest.test_unbound_symbol_and_function) ... ok
+test_all_small_arithmetic_trees (test_exhaustive.ExhaustiveArithmeticTest.test_all_small_arithmetic_trees) ... ok
+test_all_small_conditional_call_trees (test_exhaustive.ExhaustiveCondCallTest.test_all_small_conditional_call_trees) ... ok
+test_bad_precedence_or_assoc (test_grammar.GrammarRejectionTest.test_bad_precedence_or_assoc) ... ok
+test_bad_unary_config (test_grammar.GrammarRejectionTest.test_bad_unary_config) ... ok
+test_custom_table_drives_parse_and_print (test_grammar.GrammarRejectionTest.test_custom_table_drives_parse_and_print) ... ok
+test_duplicate_symbol (test_grammar.GrammarRejectionTest.test_duplicate_symbol) ... ok
+test_left_assoc_tighter_than_unary_is_ambiguous (test_grammar.GrammarRejectionTest.test_left_assoc_tighter_than_unary_is_ambiguous) ... ok
+test_mixed_associativity_same_level_is_ambiguous (test_grammar.GrammarRejectionTest.test_mixed_associativity_same_level_is_ambiguous) ... ok
+test_reserved_symbol (test_grammar.GrammarRejectionTest.test_reserved_symbol) ... ok
+test_right_assoc_tighter_than_unary_allowed (test_grammar.GrammarRejectionTest.test_right_assoc_tighter_than_unary_allowed) ... ok
+test_bad_call (test_lexer_parser.LexerParserErrorTest.test_bad_call) ... ok
+test_bad_conditional (test_lexer_parser.LexerParserErrorTest.test_bad_conditional) ... ok
+test_dangling_operator (test_lexer_parser.LexerParserErrorTest.test_dangling_operator) ... ok
+test_division_is_operator_fraction_is_literal (test_lexer_parser.LexerParserErrorTest.test_division_is_operator_fraction_is_literal) ... ok
+test_empty_input (test_lexer_parser.LexerParserErrorTest.test_empty_input) ... ok
+test_float_literal_rejected (test_lexer_parser.LexerParserErrorTest.test_float_literal_rejected) ... ok
+test_unbalanced_parentheses (test_lexer_parser.LexerParserErrorTest.test_unbalanced_parentheses) ... ok
+test_unknown_character (test_lexer_parser.LexerParserErrorTest.test_unknown_character) ... ok
+test_zero_denominator_literal (test_lexer_parser.LexerParserErrorTest.test_zero_denominator_literal) ... ok
+test_calls (test_roundtrip.RoundTripTest.test_calls) ... ok
+test_conditional (test_roundtrip.RoundTripTest.test_conditional) ... ok
+test_exact_rational_literals (test_roundtrip.RoundTripTest.test_exact_rational_literals) ... ok
+test_explicit_ast_printing (test_roundtrip.RoundTripTest.test_explicit_ast_printing) ... ok
+test_power_vs_unary_minus (test_roundtrip.RoundTripTest.test_power_vs_unary_minus) ... ok
+test_subtraction_is_structural_not_numeric (test_roundtrip.RoundTripTest.test_subtraction_is_structural_not_numeric) ... ok
+test_unary_minus_contexts (test_roundtrip.RoundTripTest.test_unary_minus_contexts) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 25.915s
+
+OK
