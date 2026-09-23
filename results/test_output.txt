@@ -1,0 +1,23 @@
+test_abort_discards_buffered_txn (test_applier.AbortTests.test_abort_discards_buffered_txn) ... ok
+test_abort_txn_paused_behind_gap (test_applier.AbortTests.test_abort_txn_paused_behind_gap) ... ok
+test_abort_unknown_and_committed_txns (test_applier.AbortTests.test_abort_unknown_and_committed_txns) ... ok
+test_before_value_mismatch_rolls_back_whole_txn (test_applier.AtomicityTests.test_before_value_mismatch_rolls_back_whole_txn) ... ok
+test_later_commit_unblocked_after_conflict_txn_aborted (test_applier.AtomicityTests.test_later_commit_unblocked_after_conflict_txn_aborted) ... ok
+test_commit_applies_all_changes_atomically (test_applier.BufferingTests.test_commit_applies_all_changes_atomically) ... ok
+test_delete_then_insert_same_key_in_one_txn (test_applier.BufferingTests.test_delete_then_insert_same_key_in_one_txn) ... ok
+test_early_commit_marker_waits_for_full_list (test_applier.BufferingTests.test_early_commit_marker_waits_for_full_list) ... ok
+test_intra_txn_seq_gap_keeps_txn_waiting (test_applier.BufferingTests.test_intra_txn_seq_gap_keeps_txn_waiting) ... ok
+test_uncommitted_changes_are_invisible (test_applier.BufferingTests.test_uncommitted_changes_are_invisible) ... ok
+test_commit_marker_conflict_rejected (test_applier.DuplicateTests.test_commit_marker_conflict_rejected) ... ok
+test_committed_txn_events_are_idempotent (test_applier.DuplicateTests.test_committed_txn_events_are_idempotent) ... ok
+test_replayed_change_with_different_payload_rejected (test_applier.DuplicateTests.test_replayed_change_with_different_payload_rejected) ... ok
+test_commit_seq_gap_pauses_then_resumes (test_applier.OrderingTests.test_commit_seq_gap_pauses_then_resumes) ... ok
+test_out_of_order_commit_markers_apply_in_seq_order (test_applier.OrderingTests.test_out_of_order_commit_markers_apply_in_seq_order) ... ok
+test_integer_key_type_preserved_across_restart (test_applier.RecoveryTests.test_integer_key_type_preserved_across_restart) ... ok
+test_only_committed_data_survives_restart (test_applier.RecoveryTests.test_only_committed_data_survives_restart) ... ok
+test_resume_from_replayed_events_after_restart (test_applier.RecoveryTests.test_resume_from_replayed_events_after_restart) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.006s
+
+OK

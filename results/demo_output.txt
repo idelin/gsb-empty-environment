@@ -1,0 +1,55 @@
+状态文件：/var/folders/73/kmh6t_p53fvg95dxl50x8gw80000gn/T/txdemo-v5gudc0v/state.json
+
+========== 进程实例 1（崩溃前的乱序事件流） ==========
+  Commit tx=T6 commit_seq=6 变更数=1                                -> 等待清单
+  Change tx=T6 seq=1 accounts[2] 更新                              -> 就绪但遇序号缺口，暂停
+  Commit tx=T3 commit_seq=3 变更数=2                                -> 等待清单
+  Change tx=T1 seq=1 accounts[1] 插入                              -> 已缓冲
+  Change tx=T2 seq=1 accounts[1] 删除                              -> 已缓冲
+  Change tx=T1 seq=2 ledger[L1] 插入                               -> 已缓冲
+  Change tx=T5 seq=1 accounts[9] 插入                              -> 已缓冲
+  Commit tx=T1 commit_seq=1 变更数=2                                -> 已原子提交
+  Change tx=T2 seq=2 accounts[1] 插入                              -> 已缓冲
+  Commit tx=T2 commit_seq=2 变更数=2                                -> 已原子提交
+  Change tx=T3 seq=1 accounts[2] 插入                              -> 等待清单
+  Change tx=T3 seq=2 accounts[2] 更新                              -> 已原子提交
+  Change tx=T4 seq=1 accounts[3] 插入                              -> 已缓冲
+  Commit tx=T4 commit_seq=4 变更数=2                                -> 等待清单
+  Abort  tx=T5                                                   -> 回滚丢弃
+  Change tx=T1 seq=1 accounts[1] 插入                              -> 重复，忽略
+  Commit tx=T1 commit_seq=1 变更数=2                                -> 重复，忽略
+
+--- 实例 1 状态（T4 半事务、T5 回滚、T6 因缺口暂停，均不可见） ---
+last_commit_seq = 3
+表 accounts: {1: {'name': 'alice2', 'bal': 150}, 2: {'name': 'bob', 'bal': 250}}
+表 ledger: {'L1': {'acct': 1, 'delta': 100}}
+paused = True
+
+========== 模拟崩溃后重启：新实例只从 state.json 恢复 ==========
+
+--- 恢复后状态（半事务 T4 的缓冲已消失，只剩 T1/T2/T3） ---
+last_commit_seq = 3
+表 accounts: {1: {'bal': 150, 'name': 'alice2'}, 2: {'bal': 250, 'name': 'bob'}}
+表 ledger: {'L1': {'acct': 1, 'delta': 100}}
+
+========== 进程实例 2（补齐 T4 清单与缺失的提交序号 5） ==========
+  Change tx=T4 seq=1 accounts[3] 插入                              -> 已缓冲
+  Commit tx=T4 commit_seq=4 变更数=2                                -> 等待清单
+  Change tx=T4 seq=1 accounts[3] 插入                              -> 重复，忽略
+  Change tx=T4 seq=2 accounts[3] 更新                              -> 已原子提交
+  Commit tx=T4 commit_seq=4 变更数=2                                -> 重复，忽略
+  Change tx=T7 seq=1 ledger[L2] 插入                               -> 已缓冲
+  Commit tx=T7 commit_seq=5 变更数=1                                -> 已原子提交
+  Change tx=T6 seq=1 accounts[2] 更新                              -> 已缓冲
+  Commit tx=T6 commit_seq=6 变更数=1                                -> 已原子提交
+  Commit tx=T2 commit_seq=2 变更数=2                                -> 重复，忽略
+
+--- 实例 2 最终状态（T4/T7/T6 按 4/5/6 连续原子应用） ---
+last_commit_seq = 6
+表 accounts: {1: {'bal': 150, 'name': 'alice2'}, 2: {'name': 'bob', 'bal': 260}, 3: {'name': 'carol', 'bal': 320}}
+表 ledger: {'L1': {'acct': 1, 'delta': 100}, 'L2': {'acct': 2, 'delta': 10}}
+paused = False
+
+重复事务不二次生效：
+  重放 T1 提交标记 -> 重复，忽略
+  last_commit_seq 仍为 6
