@@ -1,0 +1,3 @@
+# 迟到旧事件：删除已生效后才到达，不得复活实体
+{"tx_id": "tx-late-1", "table": "users", "pk": "u-2", "before": null, "after": {"name": "Grace", "age": 84}, "commit_seq": 2}
+{"tx_id": "tx-late-2", "table": "users", "pk": "u-2", "before": null, "after": {"name": "Grace", "age": 83}, "commit_seq": 3}

@@ -1,0 +1,6 @@
+# 主变更流：tx_id / table / pk / before / after / commit_seq
+{"tx_id": "tx-1", "table": "users", "pk": "u-1", "before": null, "after": {"name": "Ada", "age": 36}, "commit_seq": 1}
+{"tx_id": "tx-2", "table": "users", "pk": "u-2", "before": null, "after": {"name": "Grace", "age": 85}, "commit_seq": 2}
+{"tx_id": "tx-3", "table": "users", "pk": "u-1", "before": {"name": "Ada", "age": 36}, "after": {"name": "Ada", "age": 37}, "commit_seq": 3}
+{"tx_id": "tx-4", "table": "users", "pk": "u-1", "before": {"name": "Ada", "age": 37}, "after": null, "commit_seq": 4}
+{"tx_id": "tx-5", "table": "users", "pk": "u-2", "before": {"name": "Grace", "age": 85}, "after": null, "commit_seq": 5}
