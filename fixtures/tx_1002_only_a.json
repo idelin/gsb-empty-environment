@@ -1,0 +1,12 @@
+{
+  "manifest": {"tx_id": "tx-1002", "tables": ["A", "B"], "ttl_seconds": 5},
+  "shards": [
+    {
+      "table": "A",
+      "changes": [
+        {"primary_key": "a-9", "before": null,
+         "after": {"id": "a-9", "amount": 40, "status": "new"}, "commit_seq": 1}
+      ]
+    }
+  ]
+}

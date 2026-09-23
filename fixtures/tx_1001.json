@@ -1,0 +1,21 @@
+{
+  "manifest": {"tx_id": "tx-1001", "tables": ["A", "B"], "ttl_seconds": 30},
+  "shards": [
+    {
+      "table": "A",
+      "changes": [
+        {"primary_key": "a-1", "before": null,
+         "after": {"id": "a-1", "amount": 100, "status": "new"}, "commit_seq": 1},
+        {"primary_key": "a-1", "before": {"id": "a-1", "amount": 100, "status": "new"},
+         "after": {"id": "a-1", "amount": 100, "status": "confirmed"}, "commit_seq": 3}
+      ]
+    },
+    {
+      "table": "B",
+      "changes": [
+        {"primary_key": "b-1", "before": null,
+         "after": {"id": "b-1", "ref": "a-1", "qty": 2}, "commit_seq": 2}
+      ]
+    }
+  ]
+}
