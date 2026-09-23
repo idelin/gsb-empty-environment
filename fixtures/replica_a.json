@@ -1,0 +1,21 @@
+{
+  "replica": "A",
+  "events": [
+    {"commit_seq": 90,  "txn_id": "t0", "table": "orders", "pk": "10", "before": null,            "after": {"qty": 5}},
+    {"commit_seq": 91,  "txn_id": "t0", "table": "orders", "pk": "10", "before": {"qty": 5},      "after": {"qty": 5}},
+    {"commit_seq": 96,  "txn_id": "t1", "table": "orders", "pk": "9",  "before": null,            "after": {"qty": 1}},
+    {"commit_seq": 97,  "txn_id": "t1", "table": "orders", "pk": "9",  "before": {"qty": 1},      "after": {"qty": 2}},
+    {"commit_seq": 98,  "txn_id": "t2", "table": "users",  "pk": "5",  "before": null,            "after": {"score": 10}},
+    {"commit_seq": 99,  "txn_id": "t2", "table": "users",  "pk": "5",  "before": {"score": 10},   "after": {"score": 10}},
+    {"commit_seq": 100, "txn_id": "t3", "table": "users",  "pk": "1",  "before": null,            "after": {"name": "ann"}},
+    {"commit_seq": 101, "txn_id": "t3", "table": "users",  "pk": "2",  "before": null,            "after": {"city": "bj"}},
+    {"commit_seq": 102, "txn_id": "t4", "table": "users",  "pk": "3",  "before": null,            "after": {"tier": "silver"}},
+    {"commit_seq": 103, "txn_id": "t4", "table": "users",  "pk": "1",  "before": {"name": "ann"}, "after": {"name": "anna"}},
+    {"commit_seq": 104, "txn_id": "t5", "table": "users",  "pk": "2",  "before": {"city": "bj"},  "after": {"city": "sh"}},
+    {"commit_seq": 105, "txn_id": "t6", "table": "users",  "pk": "3",  "before": {"tier": "silver"}, "after": {"tier": "gold"}},
+    {"commit_seq": 106, "txn_id": "t6", "table": "users",  "pk": "4",  "before": null,            "after": {"name": "dan"}},
+    {"commit_seq": 108, "txn_id": "t8", "table": "users",  "pk": "6",  "before": null,            "after": {"lang": "zh"}},
+    {"commit_seq": 109, "txn_id": "t9", "table": "users",  "pk": "4",  "before": {"name": "dan"}, "after": {"name": "dana"}},
+    {"commit_seq": 110, "txn_id": "t9", "table": "users",  "pk": "3",  "before": {"tier": "gold"}, "after": null}
+  ]
+}
