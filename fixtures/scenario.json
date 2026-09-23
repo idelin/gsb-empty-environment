@@ -1,0 +1,33 @@
+{
+  "transactions": [
+    {"tx_id": "tx-001", "commit_seq": 1, "ops": [
+      {"table": "accounts", "pk": "A", "before": {}, "after": {"balance": 100, "owner": "alice"}},
+      {"table": "accounts", "pk": "B", "before": {}, "after": {"balance": 50, "owner": "bob"}}
+    ]},
+    {"tx_id": "tx-002", "commit_seq": 2, "ops": [
+      {"table": "accounts", "pk": "A", "before": {"balance": 100}, "after": {"balance": 70}},
+      {"table": "accounts", "pk": "B", "before": {"balance": 50}, "after": {"balance": 80}}
+    ]},
+    {"tx_id": "tx-003", "commit_seq": 3, "ops": [
+      {"table": "accounts", "pk": "A", "before": {"balance": 70}, "after": {"balance": 60}},
+      {"table": "accounts", "pk": "A", "before": {"balance": 60}, "after": {"balance": 55}}
+    ]},
+    {"tx_id": "tx-004", "commit_seq": 4, "ops": [
+      {"table": "accounts", "pk": "A", "before": {"owner": "alice"}, "after": {"owner": "bob"}},
+      {"table": "accounts", "pk": "B", "before": {"owner": "bob"}, "after": {"owner": "alice"}}
+    ]},
+    {"tx_id": "tx-002", "commit_seq": 5, "ops": [
+      {"table": "accounts", "pk": "A", "before": {"balance": 100}, "after": {"balance": 70}},
+      {"table": "accounts", "pk": "B", "before": {"balance": 50}, "after": {"balance": 80}}
+    ]},
+    {"tx_id": "tx-006", "commit_seq": 6, "ops": [
+      {"table": "accounts", "pk": "A", "before": {"balance": 100}, "after": {"balance": 0}}
+    ]},
+    {"tx_id": "tx-007", "commit_seq": 7, "ops": [
+      {"table": "accounts", "pk": "C", "before": {}, "after": {"balance": 20, "owner": "carol"}}
+    ]},
+    {"tx_id": "tx-008", "commit_seq": 8, "ops": [
+      {"table": "accounts", "pk": "A", "before": {"balance": 55}, "after": {"balance": 56}}
+    ]}
+  ]
+}
