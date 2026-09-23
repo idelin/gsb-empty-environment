@@ -1,0 +1,80 @@
+
+========================================================================
+1. Exact division with remainder over Q[x]
+========================================================================
+a = 3/4*x^3 + 2*x^2 - 1/2*x + 1
+b = 2*x - 3
+q = 3/8*x^2 + 25/16*x + 67/32
+r = 233/32   (deg r = 0 < deg b = 1)
+independent check: a == q*b + r  [OK]
+division by zero polynomial rejected: polynomial division by the zero polynomial
+
+========================================================================
+2. Extended Euclidean algorithm (non-monic inputs, multiple common factor)
+========================================================================
+a = 4*x^4 + 2*x^3 - 22*x^2 + 22*x - 6
+b = 3*x^4 + 9*x^3 - 21*x^2 - 45*x + 54
+g = x^2 + 2*x - 3   (monic gcd)
+s = 5/168*x + 3/28
+t = -5/126*x - 11/252
+independent check: s*a + t*b == g, g | a, g | b, g monic  [OK]
+(maximality follows from the Bezout identity: every common divisor divides g)
+
+========================================================================
+3. Subresultant PRS: per-step quotient/remainder + Bezout certificates
+========================================================================
+status after run(): completed
+
+step 0: delta-deg transition
+  dividend        = 4*x^4 + 2*x^3 - 22*x^2 + 22*x - 6
+  divisor         = 3*x^4 + 9*x^3 - 21*x^2 - 45*x + 54
+  pseudo-quotient = 4
+  pseudo-rem      = -30*x^3 + 18*x^2 + 246*x - 234
+  beta            = -1
+  remainder       = 30*x^3 - 18*x^2 - 246*x + 234
+  bezout s        = -3
+  bezout t        = 4
+  domain note     = pseudo-division by lc^(delta+1) with delta=0: ring operations only, valid over any integral domain (here Q[x]); division by subresultant factor beta=-1: exact over the field Q, controls coefficient/denominator growth
+
+step 1: delta-deg transition
+  dividend        = 3*x^4 + 9*x^3 - 21*x^2 - 45*x + 54
+  divisor         = 30*x^3 - 18*x^2 - 246*x + 234
+  pseudo-quotient = 90*x + 324
+  pseudo-rem      = 9072*x^2 + 18144*x - 27216
+  beta            = -3
+  remainder       = -3024*x^2 - 6048*x + 9072
+  bezout s        = -90*x - 324
+  bezout t        = 120*x + 132
+  domain note     = pseudo-division by lc^(delta+1) with delta=1: ring operations only, valid over any integral domain (here Q[x]); division by subresultant factor beta=-3: exact over the field Q, controls coefficient/denominator growth
+
+step 2: delta-deg transition
+  dividend        = 30*x^3 - 18*x^2 - 246*x + 234
+  divisor         = -3024*x^2 - 6048*x + 9072
+  pseudo-quotient = -90720*x + 235872
+  pseudo-rem      = 0
+  beta            = -900
+  remainder       = 0
+  bezout s        = 9072*x^2 + 9072*x - 54432
+  bezout t        = -12096*x^2 + 18144*x - 6048
+  domain note     = pseudo-division by lc^(delta+1) with delta=1: ring operations only, valid over any integral domain (here Q[x]); division by subresultant factor beta=-900: exact over the field Q, controls coefficient/denominator growth
+
+gcd from PRS = x^2 + 2*x - 3
+independent check of every step + final gcd certificate  [OK]
+
+========================================================================
+4. Pause/resume and coefficient budget
+========================================================================
+tiny budget=120 -> status: budget_exceeded (gcd is None: True)
+budget raised, resume -> status: completed
+gcd = x^2 + 2*x - 3
+independent check after resume  [OK]
+
+pause every step: paused -> paused -> paused -> paused -> completed -> done
+checkpoint JSON round-trip: 3023 bytes, restored gcd matches: True
+
+========================================================================
+5. Zero-polynomial boundaries
+========================================================================
+gcd(0, 0) = 0  [checked]
+gcd(6*x^2 + 4*x + 2, 0) = x^2 + 2/3*x + 1/3  [checked]
+gcd(0, -6*x^2 + 3) = x^2 - 1/2  [checked]
