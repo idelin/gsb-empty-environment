@@ -1,0 +1,12 @@
+{
+  "name": "mvcc-occ-store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "MVCC + optimistic concurrency control transactional KV store in TypeScript",
+  "scripts": {
+    "test": "node --test test/mvcc.test.ts",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
