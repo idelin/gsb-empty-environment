@@ -1,0 +1,11 @@
+# 本地变更夹具：txn_id / table / pk / before / after / commit_seq
+{"txn_id": "t1", "table": "items", "pk": "A", "before": null, "after": {"dept": "eng", "tag": "x", "score": 5}, "commit_seq": 1}
+{"txn_id": "t1", "table": "items", "pk": "B", "before": null, "after": {"dept": "eng", "tag": "x", "score": 5}, "commit_seq": 2}
+{"txn_id": "t2", "table": "items", "pk": "C", "before": null, "after": {"dept": "eng", "tag": "y", "score": 7}, "commit_seq": 3}
+{"txn_id": "t2", "table": "items", "pk": "D", "before": null, "after": {"dept": "ops", "tag": null, "score": 9}, "commit_seq": 4}
+{"txn_id": "t3", "table": "items", "pk": "A", "before": {"dept": "eng", "tag": "x", "score": 5}, "after": {"dept": "ops", "tag": "x", "score": 5}, "commit_seq": 5}
+{"txn_id": "t3", "table": "items", "pk": "B", "before": {"dept": "eng", "tag": "x", "score": 5}, "after": null, "commit_seq": 6}
+{"txn_id": "t4", "table": "items", "pk": "E", "before": null, "after": {"dept": "eng", "tag": "z", "score": 1}, "commit_seq": 7}
+{"txn_id": "t4", "table": "items", "pk": "F", "before": null, "after": {"dept": "ops", "tag": null, "score": 8}, "commit_seq": 8}
+{"txn_id": "t3", "table": "items", "pk": "A", "before": {"dept": "eng", "tag": "x", "score": 5}, "after": {"dept": "ops", "tag": "x", "score": 5}, "commit_seq": 5}
+{"txn_id": "t5", "table": "items", "pk": "C", "before": {"dept": "eng", "tag": "y", "score": 7}, "after": null, "commit_seq": 9}
