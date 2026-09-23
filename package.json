@@ -1,0 +1,15 @@
+{
+  "name": "optimistic-store",
+  "version": "1.0.0",
+  "description": "零依赖乐观并发存储：乐观补丁、精确撤销、幂等确认、可回放状态",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/store.test.ts",
+    "demo": "node --experimental-strip-types src/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
