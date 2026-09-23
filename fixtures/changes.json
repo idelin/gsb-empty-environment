@@ -1,0 +1,8 @@
+[
+  {"tx_id": "tx-1001", "table": "accounts", "pk": "a-1", "before": null,            "after": {"balance": 500},  "commit_seq": 1},
+  {"tx_id": "tx-1002", "table": "accounts", "pk": "a-2", "before": null,            "after": {"balance": 300},  "commit_seq": 2},
+  {"tx_id": "tx-1003", "table": "accounts", "pk": "a-1", "before": {"balance": 500}, "after": {"balance": 450}, "commit_seq": 3},
+  {"tx_id": "tx-1004", "table": "orders",   "pk": "o-9", "before": null,            "after": {"status": "new"}, "commit_seq": 4},
+  {"tx_id": "tx-1005", "table": "accounts", "pk": "a-2", "before": {"balance": 300}, "after": {"balance": 275}, "commit_seq": 5},
+  {"tx_id": "tx-1006", "table": "orders",   "pk": "o-9", "before": {"status": "new"}, "after": {"status": "paid"}, "commit_seq": 6}
+]
