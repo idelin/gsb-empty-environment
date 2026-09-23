@@ -1,0 +1,26 @@
+{
+  "pre_snapshot": [
+    {"tx_id": "tx-001", "table": "users", "pk": "u1", "op": "insert",
+     "before": null, "after": {"name": "Alice", "balance": 100}},
+    {"tx_id": "tx-002", "table": "users", "pk": "u2", "op": "insert",
+     "before": null, "after": {"name": "Bob", "balance": 50}},
+    {"tx_id": "tx-003", "table": "users", "pk": "u3", "op": "insert",
+     "before": null, "after": {"name": "Carol", "balance": 30}},
+    {"tx_id": "tx-004", "table": "users", "pk": "u1", "op": "update",
+     "before": {"name": "Alice", "balance": 100}, "after": {"name": "Alice", "balance": 120}},
+    {"tx_id": "tx-005", "table": "orders", "pk": "o1", "op": "insert",
+     "before": null, "after": {"user": "u1", "amount": 88}}
+  ],
+  "during_scan": [
+    {"tx_id": "tx-006", "table": "users", "pk": "u1", "op": "update",
+     "before": {"name": "Alice", "balance": 120}, "after": {"name": "Alice", "balance": 999}},
+    {"tx_id": "tx-007", "table": "users", "pk": "u2", "op": "delete",
+     "before": {"name": "Bob", "balance": 50}, "after": null},
+    {"tx_id": "tx-008", "table": "users", "pk": "u4", "op": "insert",
+     "before": null, "after": {"name": "Dave", "balance": 77}},
+    {"tx_id": "tx-009", "table": "orders", "pk": "o2", "op": "insert",
+     "before": null, "after": {"user": "u3", "amount": 12}},
+    {"tx_id": "tx-010", "table": "orders", "pk": "o2", "op": "delete",
+     "before": {"user": "u3", "amount": 12}, "after": null}
+  ]
+}
