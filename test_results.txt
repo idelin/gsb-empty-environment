@@ -1,0 +1,26 @@
+test_and_intersects_partition_conditions (test_partition_pruning.CompositeAndOrTests.test_and_intersects_partition_conditions) ... ok
+test_each_null_partition_is_separately_represented (test_partition_pruning.CompositeAndOrTests.test_each_null_partition_is_separately_represented) ... ok
+test_or_uses_union_across_partitions (test_partition_pruning.CompositeAndOrTests.test_or_uses_union_across_partitions) ... ok
+test_enum_equality_and_in_list (test_partition_pruning.EnumTests.test_enum_equality_and_in_list) ... ok
+test_in_list_with_null_keeps_null_partition_unknown_only (test_partition_pruning.EnumTests.test_in_list_with_null_keeps_null_partition_unknown_only) ... ok
+test_overlapping_enum_partition_is_rejected (test_partition_pruning.EnumTests.test_overlapping_enum_partition_is_rejected) ... ok
+test_bound_parameter_prunes_and_null_parameter_skips_nonnull_fragments (test_partition_pruning.ParameterAndExecutorTests.test_bound_parameter_prunes_and_null_parameter_skips_nonnull_fragments) ... ok
+test_multiset_preserves_duplicates_and_order (test_partition_pruning.ParameterAndExecutorTests.test_multiset_preserves_duplicates_and_order) ... ok
+test_non_partition_column_does_not_permit_pruning (test_partition_pruning.ParameterAndExecutorTests.test_non_partition_column_does_not_permit_pruning) ... ok
+test_unbound_parameter_conservatively_keeps_all_partitions (test_partition_pruning.ParameterAndExecutorTests.test_unbound_parameter_conservatively_keeps_all_partitions) ... ok
+test_boundary_rows_select_exact_partitions (test_partition_pruning.RangeTests.test_boundary_rows_select_exact_partitions) ... ok
+test_gap_is_rejected (test_partition_pruning.RangeTests.test_gap_is_rejected) ... ok
+test_null_range_partition_is_independent (test_partition_pruning.RangeTests.test_null_range_partition_is_independent) ... ok
+test_open_lower_bound_is_canonical_closed_integer_range (test_partition_pruning.RangeTests.test_open_lower_bound_is_canonical_closed_integer_range) ... ok
+test_open_upper_bound_is_canonical_closed_integer_range (test_partition_pruning.RangeTests.test_open_upper_bound_is_canonical_closed_integer_range) ... ok
+test_overlap_is_rejected (test_partition_pruning.RangeTests.test_overlap_is_rejected) ... ok
+test_pruned_scan_equals_brute_force_scan_for_compound_predicates (test_partition_pruning.SoundnessTests.test_pruned_scan_equals_brute_force_scan_for_compound_predicates) ... ok
+test_skip_proof_root_state_never_contains_true (test_partition_pruning.SoundnessTests.test_skip_proof_root_state_never_contains_true) ... ok
+test_comparison_and_is_null_semantics (test_partition_pruning.ThreeValuedLogicTests.test_comparison_and_is_null_semantics) ... ok
+test_in_list_three_valued_logic (test_partition_pruning.ThreeValuedLogicTests.test_in_list_three_valued_logic) ... ok
+test_type_mismatch_is_unknown_and_does_not_select_partition (test_partition_pruning.ThreeValuedLogicTests.test_type_mismatch_is_unknown_and_does_not_select_partition) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.047s
+
+OK

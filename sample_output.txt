@@ -1,0 +1,79 @@
+
+1) 整数闭区间边界：amount = 10
+谓词: amount = 10
+选中: ten_to_ninety_nine|east, ten_to_ninety_nine|west, ten_to_ninety_nine|central, ten_to_ninety_nine|null_region
+跳过: 16 个分区
+  跳过分区 neg|east：根谓词不可能为TRUE，可能值={FALSE}
+  证明：左域=INT[-∞,-1]，右域=INT[10,10]，比较可能值为{FALSE}
+  跳过分区 neg|west：根谓词不可能为TRUE，可能值={FALSE}
+  证明：左域=INT[-∞,-1]，右域=INT[10,10]，比较可能值为{FALSE}
+  跳过分区 neg|central：根谓词不可能为TRUE，可能值={FALSE}
+  证明：左域=INT[-∞,-1]，右域=INT[10,10]，比较可能值为{FALSE}
+  …另有 13 个跳过证明具有相同结构
+命中行: [(3, 10, 'west', 'C')]
+
+2) OR 跨分区取并集
+谓词: (amount <= 9 OR region = 'west')
+选中: neg|east, neg|west, neg|central, neg|null_region, zero_to_nine|east, zero_to_nine|west, zero_to_nine|central, zero_to_nine|null_region, ten_to_ninety_nine|west, large|west, null_amount|west
+跳过: 9 个分区
+  跳过分区 ten_to_ninety_nine|east：根谓词不可能为TRUE，可能值={FALSE}
+  证明：OR在分区内合取所有分支，整体为{FALSE}
+    - amount <= 9 -> {FALSE}：左域=INT[10,99]，右域=INT[9,9]，比较可能值为{FALSE}
+    - region = 'west' -> {FALSE}：左域=ENUM{east}，右域=ENUM{west}，比较可能值为{FALSE}
+  跳过分区 ten_to_ninety_nine|central：根谓词不可能为TRUE，可能值={FALSE}
+  证明：OR在分区内合取所有分支，整体为{FALSE}
+    - amount <= 9 -> {FALSE}：左域=INT[10,99]，右域=INT[9,9]，比较可能值为{FALSE}
+    - region = 'west' -> {FALSE}：左域=ENUM{central}，右域=ENUM{west}，比较可能值为{FALSE}
+  跳过分区 ten_to_ninety_nine|null_region：根谓词不可能为TRUE，可能值={UNKNOWN}
+  证明：OR在分区内合取所有分支，整体为{UNKNOWN}
+    - amount <= 9 -> {FALSE}：左域=INT[10,99]，右域=INT[9,9]，比较可能值为{FALSE}
+    - region = 'west' -> {UNKNOWN}：左域=NULL，右域=ENUM{west}，比较可能值为{UNKNOWN}
+  …另有 6 个跳过证明具有相同结构
+命中行: [(1, 0, 'east', 'A'), (2, 9, 'east', 'B'), (3, 10, 'west', 'C'), (4, 99, 'west', 'D'), (8, 5, 'central', 'H')]
+
+3) 枚举 IN 与 NOT
+谓词: (region IN ('east', 'central') AND NOT (amount = 9))
+选中: neg|east, neg|central, zero_to_nine|east, zero_to_nine|central, ten_to_ninety_nine|east, ten_to_ninety_nine|central, large|east, large|central
+跳过: 12 个分区
+  跳过分区 neg|west：根谓词不可能为TRUE，可能值={FALSE}
+  证明：AND按三支真值表合取为{FALSE}
+    - region IN ('east', 'central') -> {FALSE}：值域=ENUM{west}，列表域=(ENUM{east}, ENUM{central})，可能值为{FALSE}
+    - NOT (amount = 9) -> {TRUE}：NOT交换T/F并保留U，结果为{TRUE}
+      - amount = 9 -> {FALSE}：左域=INT[-∞,-1]，右域=INT[9,9]，比较可能值为{FALSE}
+  跳过分区 neg|null_region：根谓词不可能为TRUE，可能值={UNKNOWN}
+  证明：AND按三支真值表合取为{UNKNOWN}
+    - region IN ('east', 'central') -> {UNKNOWN}：值域=NULL，列表域=(ENUM{east}, ENUM{central})，可能值为{UNKNOWN}
+    - NOT (amount = 9) -> {TRUE}：NOT交换T/F并保留U，结果为{TRUE}
+      - amount = 9 -> {FALSE}：左域=INT[-∞,-1]，右域=INT[9,9]，比较可能值为{FALSE}
+  跳过分区 zero_to_nine|west：根谓词不可能为TRUE，可能值={FALSE}
+  证明：AND按三支真值表合取为{FALSE}
+    - region IN ('east', 'central') -> {FALSE}：值域=ENUM{west}，列表域=(ENUM{east}, ENUM{central})，可能值为{FALSE}
+    - NOT (amount = 9) -> {TRUE,FALSE}：NOT交换T/F并保留U，结果为{TRUE,FALSE}
+      - amount = 9 -> {TRUE,FALSE}：左域=INT[0,9]，右域=INT[9,9]，比较可能值为{TRUE,FALSE}
+  …另有 9 个跳过证明具有相同结构
+命中行: [(1, 0, 'east', 'A'), (5, 100, 'central', 'E'), (8, 5, 'central', 'H')]
+
+4) 参数未绑定：保守保留全部叶子分区
+谓词: (amount >= :min_amount AND region = :target_region)
+选中: neg|east, neg|west, neg|central, neg|null_region, zero_to_nine|east, zero_to_nine|west, zero_to_nine|central, zero_to_nine|null_region, ten_to_ninety_nine|east, ten_to_ninety_nine|west, ten_to_ninety_nine|central, ten_to_ninety_nine|null_region, large|east, large|west, large|central, large|null_region, null_amount|east, null_amount|west, null_amount|central, null_amount|null_region
+跳过: 0 个分区
+命中行: []
+
+4a) 参数绑定后：重新裁剪
+谓词: (amount >= :min_amount AND region = :target_region)
+选中: ten_to_ninety_nine|west, large|west
+跳过: 18 个分区
+  跳过分区 neg|east：根谓词不可能为TRUE，可能值={FALSE}
+  证明：AND按三支真值表合取为{FALSE}
+    - amount >= :min_amount -> {FALSE}：左域=INT[-∞,-1]，右域=INT[50,50]，比较可能值为{FALSE}
+    - region = :target_region -> {FALSE}：左域=ENUM{east}，右域=ENUM{west}，比较可能值为{FALSE}
+  跳过分区 neg|west：根谓词不可能为TRUE，可能值={FALSE}
+  证明：AND按三支真值表合取为{FALSE}
+    - amount >= :min_amount -> {FALSE}：左域=INT[-∞,-1]，右域=INT[50,50]，比较可能值为{FALSE}
+    - region = :target_region -> {TRUE}：左域=ENUM{west}，右域=ENUM{west}，比较可能值为{TRUE}
+  跳过分区 neg|central：根谓词不可能为TRUE，可能值={FALSE}
+  证明：AND按三支真值表合取为{FALSE}
+    - amount >= :min_amount -> {FALSE}：左域=INT[-∞,-1]，右域=INT[50,50]，比较可能值为{FALSE}
+    - region = :target_region -> {FALSE}：左域=ENUM{central}，右域=ENUM{west}，比较可能值为{FALSE}
+  …另有 15 个跳过证明具有相同结构
+命中行: [(4, 99, 'west', 'D')]
