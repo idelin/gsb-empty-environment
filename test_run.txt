@@ -1,0 +1,48 @@
+test_all_counterexamples_hold_under_independent_eval (test_judge.TestCounterexamplesIndependentlyFromAST.test_all_counterexamples_hold_under_independent_eval) ... ok
+test_classic_identity_same_domain (test_judge.TestEquivalent.test_classic_identity_same_domain) ... ok
+test_common_denominator (test_judge.TestEquivalent.test_common_denominator) ... ok
+test_higher_degree_expansion (test_judge.TestEquivalent.test_higher_degree_expansion) ... ok
+test_irreducible_quadratic_domains_match_over_rationals (test_judge.TestEquivalent.test_irreducible_quadratic_domains_match_over_rationals) ... ok
+test_negative_power (test_judge.TestEquivalent.test_negative_power) ... ok
+test_rational_constants (test_judge.TestEquivalent.test_rational_constants) ... ok
+test_same_excluded_points (test_judge.TestEquivalent.test_same_excluded_points) ... ok
+test_same_excluded_points_with_extra (test_judge.TestEquivalent.test_same_excluded_points_with_extra) ... ok
+test_domain_difference_cancellation (test_judge.TestNotEquivalent.test_domain_difference_cancellation) ... ok
+test_domain_difference_extra_factor (test_judge.TestNotEquivalent.test_domain_difference_extra_factor) ... ok
+test_fractional_counterexample_possible (test_judge.TestNotEquivalent.test_fractional_counterexample_possible) ... ok
+test_value_difference_integer_point (test_judge.TestNotEquivalent.test_value_difference_integer_point) ... ok
+test_value_difference_polynomials (test_judge.TestNotEquivalent.test_value_difference_polynomials) ... ok
+test_zero_subtraction_still_excludes_point (test_judge.TestNotEquivalent.test_zero_subtraction_still_excludes_point) ... ok
+test_every_step_carries_domain_text (test_judge.TestStepsAndDomains.test_every_step_carries_domain_text) ... ok
+test_excluded_points_recorded (test_judge.TestStepsAndDomains.test_excluded_points_recorded) ... ok
+test_budget_blocks_large_equivalent_too (test_judge.TestUnknown.test_budget_blocks_large_equivalent_too) ... ok
+test_budget_exceeded (test_judge.TestUnknown.test_budget_exceeded) ... ok
+test_division_by_zero (test_judge.TestUnknown.test_division_by_zero) ... ok
+test_implicit_multiplication (test_judge.TestUnknown.test_implicit_multiplication) ... ok
+test_non_integer_exponent (test_judge.TestUnknown.test_non_integer_exponent) ... ok
+test_second_variable (test_judge.TestUnknown.test_second_variable) ... ok
+test_zero_to_zero (test_judge.TestUnknown.test_zero_to_zero) ... ok
+test_basic_structures (test_parser.TestParser.test_basic_structures) ... ok
+test_reject_garbage (test_parser.TestParser.test_reject_garbage) ... ok
+test_reject_implicit_multiplication (test_parser.TestParser.test_reject_implicit_multiplication) ... ok
+test_reject_multiple_variables (test_parser.TestParser.test_reject_multiple_variables) ... ok
+test_reject_non_integer_exponent (test_parser.TestParser.test_reject_non_integer_exponent) ... ok
+test_right_associative_power (test_parser.TestParser.test_right_associative_power) ... ok
+test_basic_gcd (test_polynomial.TestGcd.test_basic_gcd) ... ok
+test_repeated_factor_gcd (test_polynomial.TestGcd.test_repeated_factor_gcd) ... ok
+test_add_sub (test_polynomial.TestPolyArithmetic.test_add_sub) ... ok
+test_budget (test_polynomial.TestPolyArithmetic.test_budget) ... ok
+test_budget_allows_full_cancellation (test_polynomial.TestPolyArithmetic.test_budget_allows_full_cancellation) ... ok
+test_exact_eval (test_polynomial.TestPolyArithmetic.test_exact_eval) ... ok
+test_multiply_expand (test_polynomial.TestPolyArithmetic.test_multiply_expand) ... ok
+test_fractional_root (test_polynomial.TestRationalRoots.test_fractional_root) ... ok
+test_irrational_factor_left (test_polynomial.TestRationalRoots.test_irrational_factor_left) ... ok
+test_multiple_distinct_roots (test_polynomial.TestRationalRoots.test_multiple_distinct_roots) ... ok
+test_multiplicities (test_polynomial.TestRationalRoots.test_multiplicities) ... ok
+test_no_roots (test_polynomial.TestRationalRoots.test_no_roots) ... ok
+test_root_enumeration_budget (test_polynomial.TestRationalRoots.test_root_enumeration_budget) ... ok
+
+----------------------------------------------------------------------
+Ran 43 tests in 0.042s
+
+OK
