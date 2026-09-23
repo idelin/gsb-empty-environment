@@ -1,0 +1,22 @@
+(node:6984) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ 全部源成功：原子发布到同一逻辑版本，过程中读者看不到中间态 (3.674792ms)
+✔ 部分失败：保持旧一致视图、报告失败源，A 新 B 旧不能冒充已刷新 (42.341959ms)
+✔ 单源重试成功后整组只发布一次，视图跳到目标版本 (4.995708ms)
+✔ 非法重试被拒绝：已成功的源、并发重复重试、已发布轮次 (2.760084ms)
+✔ 版本不一致按失败处理：源返回旧版本数据不能参与整组发布 (4.257459ms)
+✔ 开启新一轮使旧轮过期：旧轮在途请求收到 abort 且迟到结果被丢弃 (1.07825ms)
+✔ 无视 abort 的慢源：上一轮迟到的成功结果不能混入下一轮 (1.15ms)
+✔ 多轮连续发布：新版本快照不含任何上一轮数据 (1.248ms)
+✔ 事件日志回放：纯 reducer 重建状态与在线状态逐字段一致 (3.379708ms)
+✔ 进程重启：用历史事件构造新协调器，视图与轮次状态完整恢复 (0.791583ms)
+✔ reducer 拒绝乱序/重复事件：同一轮重复发布会抛错 (0.253583ms)
+✔ getView 返回快照副本，读者无法篡改内部一致视图 (0.326417ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 259.660917

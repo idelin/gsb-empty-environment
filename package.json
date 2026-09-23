@@ -1,0 +1,15 @@
+{
+  "name": "atomic-multi-source-refresh",
+  "version": "1.0.0",
+  "description": "多数据源同版本原子发布：部分失败保持旧一致视图、可单源重试、事件可回放",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test tests/**/*.test.ts",
+    "start": "node examples/demo.ts",
+    "typecheck": "node --experimental-strip-types --check src/events.ts && node --experimental-strip-types --check src/coordinator.ts"
+  }
+}

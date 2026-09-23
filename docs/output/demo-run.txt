@@ -1,0 +1,51 @@
+== 场景 1：首轮全部成功，整组原子发布 v1 ==
+  结果: 轮次#1 published，已发布 v1
+  读者视图[发布后] -> 逻辑版本 v1, 数据 { A=a1, B=b1 }
+
+== 场景 2：刷新 v2，A 成功但 B 失败 -> 保持旧视图 v1 ==
+  结果: 轮次#2 partial，失败源=[B]，未发布
+  读者视图[部分失败后（A 新 B 旧不能冒充整组已刷新）] -> 逻辑版本 v1, 数据 { A=a1, B=b1 }
+
+== 场景 3：仅重试失败源 B，成功后整组发布一次 v2 ==
+  读者视图[重试进行中（读者看不到中间态）] -> 逻辑版本 v1, 数据 { A=a1, B=b1 }
+  结果: 轮次#2 published，已发布 v2
+  读者视图[重试成功后] -> 逻辑版本 v2, 数据 { A=a2, B=b2 }
+  日志中 RoundPublished 事件数量 = 2（v2 只发布一次）
+
+== 场景 4：刷新 v3 时 A 悬挂，立刻开启 v4 -> 旧轮过期、迟到结果丢弃 ==
+  结果: 轮次#3 superseded，失败源=[]，未发布
+  v3 的 A 迟到返回成功（底层忽略 abort）……
+  读者视图[旧轮迟到结果处理后] -> 逻辑版本 v2, 数据 { A=a2, B=b2 }
+  结果: 轮次#4 published，已发布 v4
+  读者视图[v4 发布后（无任何 v3 数据混入）] -> 逻辑版本 v4, 数据 { A=a4, B=b4 }
+
+== 场景 5：重放事件日志，从空状态重建 ==
+  重放 25 个事件后 -> 逻辑版本 v4, 数据 { A=a4, B=b4 }
+  重建视图与在线视图一致：是
+
+事件序列：
+  01. RefreshStarted {"type":"RefreshStarted","round":1,"version":1,"sources":["A","B"]}
+  02. SourceAttemptStarted {"type":"SourceAttemptStarted","round":1,"source":"A","attempt":1}
+  03. SourceAttemptStarted {"type":"SourceAttemptStarted","round":1,"source":"B","attempt":1}
+  04. SourceSucceeded {"type":"SourceSucceeded","round":1,"source":"A","version":1,"value":"a1"}
+  05. SourceSucceeded {"type":"SourceSucceeded","round":1,"source":"B","version":1,"value":"b1"}
+  06. RoundPublished {"type":"RoundPublished","round":1,"version":1,"values":[["A","a1"],["B","b1"]]}
+  07. RefreshStarted {"type":"RefreshStarted","round":2,"version":2,"sources":["A","B"]}
+  08. SourceAttemptStarted {"type":"SourceAttemptStarted","round":2,"source":"A","attempt":1}
+  09. SourceAttemptStarted {"type":"SourceAttemptStarted","round":2,"source":"B","attempt":1}
+  10. SourceSucceeded {"type":"SourceSucceeded","round":2,"source":"A","version":2,"value":"a2"}
+  11. SourceFailed {"type":"SourceFailed","round":2,"source":"B","reason":"B 网络抖动","retryable":true}
+  12. SourceAttemptStarted {"type":"SourceAttemptStarted","round":2,"source":"B","attempt":2}
+  13. SourceSucceeded {"type":"SourceSucceeded","round":2,"source":"B","version":2,"value":"b2"}
+  14. RoundPublished {"type":"RoundPublished","round":2,"version":2,"values":[["A","a2"],["B","b2"]]}
+  15. RefreshStarted {"type":"RefreshStarted","round":3,"version":3,"sources":["A","B"]}
+  16. SourceAttemptStarted {"type":"SourceAttemptStarted","round":3,"source":"A","attempt":1}
+  17. SourceAttemptStarted {"type":"SourceAttemptStarted","round":3,"source":"B","attempt":1}
+  18. SourceSucceeded {"type":"SourceSucceeded","round":3,"source":"B","version":3,"value":"b3"}
+  19. RoundSuperseded {"type":"RoundSuperseded","round":3,"byRound":4}
+  20. RefreshStarted {"type":"RefreshStarted","round":4,"version":4,"sources":["A","B"]}
+  21. SourceAttemptStarted {"type":"SourceAttemptStarted","round":4,"source":"A","attempt":1}
+  22. SourceAttemptStarted {"type":"SourceAttemptStarted","round":4,"source":"B","attempt":1}
+  23. SourceSucceeded {"type":"SourceSucceeded","round":4,"source":"A","version":4,"value":"a4"}
+  24. SourceSucceeded {"type":"SourceSucceeded","round":4,"source":"B","version":4,"value":"b4"}
+  25. RoundPublished {"type":"RoundPublished","round":4,"version":4,"values":[["A","a4"],["B","b4"]]}
