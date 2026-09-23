@@ -1,0 +1,265 @@
+{
+  "secret": "fixture-secret",
+  "policies": [
+    {
+      "version": 1,
+      "effective_seq": 1,
+      "strict": true,
+      "schemas": {
+        "customer": {
+          "sensitive": [
+            "id",
+            "name",
+            "email",
+            "ssn"
+          ]
+        },
+        "orders": {
+          "sensitive": [
+            "order_id",
+            "customer_id"
+          ]
+        }
+      },
+      "fields": {
+        "customer": {
+          "id": {
+            "strategy": "pseudonym",
+            "domain": "customer_id"
+          },
+          "name": "pseudonym",
+          "email": "pseudonym",
+          "ssn": "invisible",
+          "tier": "plain"
+        },
+        "orders": {
+          "order_id": "pseudonym",
+          "customer_id": {
+            "strategy": "pseudonym",
+            "domain": "customer_id"
+          },
+          "amount": "plain",
+          "note": "redact"
+        }
+      }
+    },
+    {
+      "version": 2,
+      "effective_seq": 100,
+      "strict": true,
+      "schemas": {
+        "customer": {
+          "sensitive": [
+            "id",
+            "name",
+            "email",
+            "ssn",
+            "phone",
+            "loyalty_no"
+          ]
+        },
+        "orders": {
+          "sensitive": [
+            "order_id",
+            "customer_id"
+          ]
+        }
+      },
+      "fields": {
+        "customer": {
+          "id": {
+            "strategy": "pseudonym",
+            "domain": "customer_id"
+          },
+          "name": "pseudonym",
+          "email": "pseudonym",
+          "ssn": "invisible",
+          "tier": "plain",
+          "phone": "pseudonym"
+        },
+        "orders": {
+          "order_id": "pseudonym",
+          "customer_id": {
+            "strategy": "pseudonym",
+            "domain": "customer_id"
+          },
+          "amount": "plain",
+          "note": "redact"
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "txid": "t1",
+      "table": "customer",
+      "pk": {
+        "id": "C-001"
+      },
+      "before": null,
+      "after": {
+        "id": "C-001",
+        "name": "Alice",
+        "email": "alice@example.com",
+        "ssn": "111-22-3333",
+        "tier": "gold"
+      },
+      "commit_seq": 1
+    },
+    {
+      "txid": "t2",
+      "table": "customer",
+      "pk": {
+        "id": "C-002"
+      },
+      "before": null,
+      "after": {
+        "id": "C-002",
+        "name": "Bob",
+        "email": "bob@example.com",
+        "ssn": "444-55-6666",
+        "tier": "silver"
+      },
+      "commit_seq": 2
+    },
+    {
+      "txid": "t3",
+      "table": "orders",
+      "pk": {
+        "order_id": "O-100"
+      },
+      "before": null,
+      "after": {
+        "order_id": "O-100",
+        "customer_id": "C-001",
+        "amount": 59.5,
+        "note": "leave at door"
+      },
+      "commit_seq": 3
+    },
+    {
+      "txid": "t4",
+      "table": "customer",
+      "pk": {
+        "id": "C-001"
+      },
+      "before": {
+        "id": "C-001",
+        "name": "Alice",
+        "email": "alice@example.com",
+        "ssn": "111-22-3333",
+        "tier": "gold"
+      },
+      "after": {
+        "id": "C-001",
+        "name": "Alice",
+        "email": "alice@example.com",
+        "ssn": "111-22-3333",
+        "tier": "platinum"
+      },
+      "commit_seq": 4
+    },
+    {
+      "txid": "t5",
+      "table": "orders",
+      "pk": {
+        "order_id": "O-101"
+      },
+      "before": null,
+      "after": {
+        "order_id": "O-101",
+        "customer_id": "C-002",
+        "amount": 12.0,
+        "note": "gift"
+      },
+      "commit_seq": 5
+    },
+    {
+      "txid": "t6",
+      "table": "customer",
+      "pk": {
+        "id": "C-001"
+      },
+      "before": {
+        "id": "C-001",
+        "name": "Alice",
+        "email": "alice@example.com",
+        "ssn": "111-22-3333",
+        "tier": "platinum"
+      },
+      "after": {
+        "id": "C-001",
+        "name": "Alice",
+        "email": "alice@example.com",
+        "ssn": "111-22-3333",
+        "tier": "platinum",
+        "phone": "+86-138-0000-0000"
+      },
+      "commit_seq": 101
+    },
+    {
+      "txid": "t7",
+      "table": "orders",
+      "pk": {
+        "order_id": "O-102"
+      },
+      "before": null,
+      "after": {
+        "order_id": "O-102",
+        "customer_id": "C-001",
+        "amount": 80.0,
+        "note": "fragile"
+      },
+      "commit_seq": 102
+    },
+    {
+      "txid": "t8",
+      "table": "customer",
+      "pk": {
+        "id": "C-002"
+      },
+      "before": {
+        "id": "C-002"
+      },
+      "after": null,
+      "commit_seq": 103
+    },
+    {
+      "txid": "t9",
+      "table": "customer",
+      "pk": {
+        "id": "C-001"
+      },
+      "before": {
+        "id": "C-001",
+        "name": "Alice",
+        "email": "alice@example.com",
+        "ssn": "111-22-3333",
+        "tier": "platinum",
+        "phone": "+86-138-0000-0000"
+      },
+      "after": {
+        "id": "C-001",
+        "name": "Alice",
+        "email": "alice@example.com",
+        "ssn": "111-22-3333",
+        "tier": "platinum",
+        "phone": "+86-138-0000-0000",
+        "loyalty_no": "L-777"
+      },
+      "commit_seq": 104
+    },
+    {
+      "txid": "t10",
+      "table": "customer",
+      "pk": {
+        "id": "C-001"
+      },
+      "before": {
+        "id": "C-001"
+      },
+      "after": null,
+      "commit_seq": 6
+    }
+  ]
+}
