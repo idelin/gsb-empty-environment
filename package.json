@@ -1,0 +1,14 @@
+{
+  "name": "tx-invariants",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Transactional cross-field invariant checking with dynamic dependency tracking",
+  "engines": {
+    "node": ">=22.14"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/store.test.ts",
+    "demo": "node --experimental-strip-types demo.ts"
+  }
+}
