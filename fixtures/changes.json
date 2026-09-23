@@ -1,0 +1,60 @@
+{
+  "modulus": 1000000007,
+  "transactions": [
+    {
+      "tx_id": "tx-0001",
+      "commit_seq": 1,
+      "changes": [
+        {"table": "items", "pk": "A", "before": null,
+         "after": {"group": "g1", "sort_key": 10, "matrix": [[1, 1], [0, 1]]}},
+        {"table": "items", "pk": "B", "before": null,
+         "after": {"group": "g1", "sort_key": 20, "matrix": [[1, 1], [1, 1]]}},
+        {"table": "items", "pk": "C", "before": null,
+         "after": {"group": "g1", "sort_key": 30, "matrix": [[1, 2], [2, 4]]}},
+        {"table": "items", "pk": "D", "before": null,
+         "after": {"group": "g1", "sort_key": 40, "matrix": [[2, 2], [2, 2]]}},
+        {"table": "items", "pk": "X", "before": null,
+         "after": {"group": "g2", "sort_key": 5, "matrix": [[2, 0], [0, 2]]}}
+      ]
+    },
+    {
+      "tx_id": "tx-0002",
+      "commit_seq": 2,
+      "changes": [
+        {"table": "items", "pk": "B",
+         "before": {"group": "g1", "sort_key": 20, "matrix": [[1, 1], [1, 1]]},
+         "after": {"group": "g1", "sort_key": 25, "matrix": [[2, 4], [1, 2]]}},
+        {"table": "items", "pk": "C",
+         "before": {"group": "g1", "sort_key": 30, "matrix": [[1, 2], [2, 4]]},
+         "after": {"group": "g2", "sort_key": 7, "matrix": [[1, 2], [2, 4]]}}
+      ]
+    },
+    {
+      "tx_id": "tx-0003",
+      "commit_seq": 3,
+      "changes": [
+        {"table": "items", "pk": "B",
+         "before": {"group": "g1", "sort_key": 25, "matrix": [[2, 4], [1, 2]]},
+         "after": null},
+        {"table": "items", "pk": "Y", "before": null,
+         "after": {"group": "g2", "sort_key": 7, "matrix": [[3, 1], [0, 3]]}}
+      ]
+    },
+    {
+      "tx_id": "tx-0004",
+      "commit_seq": 4,
+      "changes": [
+        {"table": "items", "pk": "A",
+         "before": {"group": "g1", "sort_key": 10, "matrix": [[1, 1], [0, 1]]},
+         "after": null},
+        {"table": "items", "pk": "D",
+         "before": {"group": "g1", "sort_key": 40, "matrix": [[2, 2], [2, 2]]},
+         "after": null},
+        {"table": "items", "pk": "P", "before": null,
+         "after": {"group": "g3", "sort_key": 1, "matrix": [[1, 0], [1, 1]]}},
+        {"table": "items", "pk": "Q", "before": null,
+         "after": {"group": "g3", "sort_key": 1, "matrix": [[2, 1], [1, 1]]}}
+      ]
+    }
+  ]
+}
