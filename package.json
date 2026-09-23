@@ -1,0 +1,14 @@
+{
+  "name": "selective-store",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "从零实现的选择器投影订阅状态库:参数化选择器图、可配置相等、事务、可回放操作日志",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
