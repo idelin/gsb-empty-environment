@@ -1,0 +1,9 @@
+name=Ada (first execution): INDEX_RANGE_SCAN, cache_hit=False, rows=[{'id': 1, 'name': 'Ada'}, {'id': 2, 'name': 'Ada'}]
+name=Cy  (same type/category, cached parameterized plan): INDEX_RANGE_SCAN, cache_hit=True, rows=[{'id': 3, 'name': 'Cy'}]
+age<15 (low-range estimate: index): INDEX_RANGE_SCAN, cache_hit=False, rows=[{'id': 1, 'age': 10}, {'id': 2, 'age': 10}]
+age<35 (high-range estimate: full scan): FULL_SCAN, cache_hit=False, rows=[{'id': 1, 'age': 10}, {'id': 2, 'age': 10}, {'id': 3, 'age': 30}]
+age<NULL (top-level unknown: empty): EMPTY_RESULT, cache_hit=False, rows=[]
+age=NULL OR age=30 (unknown OR true): FULL_SCAN, cache_hit=False, rows=[{'id': 3, 'age': 30}]
+age IS NULL: FULL_SCAN, cache_hit=False, rows=[{'id': 5}]
+age<35 after stats change (invalidated and re-planned): INDEX_RANGE_SCAN, cache_hit=False, rows=[{'id': 1, 'age': 10}, {'id': 2, 'age': 10}, {'id': 3, 'age': 30}]
+cache: hits=1 misses=7 invalidations=1 replans=7
