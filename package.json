@@ -1,0 +1,11 @@
+{
+  "name": "reactive-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Dependency-tracking reactive engine with transactions, cycle detection and model-checked tests. No dependencies.",
+  "scripts": {
+    "test": "node --test 'tests/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
