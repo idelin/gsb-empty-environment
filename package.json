@@ -1,0 +1,11 @@
+{
+  "name": "tx-batch-store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "事务式批量状态存储：合并提交、顺序函数更新、幂等重试、可回放",
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
