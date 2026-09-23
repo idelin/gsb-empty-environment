@@ -1,0 +1,11 @@
+{
+  "name": "tx-store",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Transactional state store with deterministic round-based subscriber notification. No dependencies.",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
