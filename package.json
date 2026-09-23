@@ -1,0 +1,11 @@
+{
+  "name": "reactive-core",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Minimal dependency-tracking reactive core with transactions and cycle detection (no framework).",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
