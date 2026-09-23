@@ -1,0 +1,11 @@
+{
+  "name": "tx-store",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "事务化版本状态存储：确定性通知轮次、背压合并、错误聚合、循环预算、可回放",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
