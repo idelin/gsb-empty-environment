@@ -1,0 +1,11 @@
+{
+  "name": "scoped-resources",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Async resource ownership scopes: dependency-ordered teardown, late-acquire return, replayable state, exactly-once release ledger.",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
