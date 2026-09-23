@@ -1,0 +1,27 @@
+test_arithmetic_exact (test_rational.PolynomialTests.test_arithmetic_exact) ... ok
+test_gcd_repeated_roots (test_rational.PolynomialTests.test_gcd_repeated_roots) ... ok
+test_rational_roots (test_rational.PolynomialTests.test_rational_roots) ... ok
+test_root_isolation_counts (test_rational.PolynomialTests.test_root_isolation_counts) ... ok
+test_root_isolation_irrational (test_rational.PolynomialTests.test_root_isolation_irrational) ... ok
+test_square_free_simple_polynomial (test_rational.PolynomialTests.test_square_free_simple_polynomial) ... ok
+test_square_free_yun (test_rational.PolynomialTests.test_square_free_yun) ... ok
+test_addition_keeps_all_domains (test_rational.RationalFunctionTests.test_addition_keeps_all_domains) ... ok
+test_chained_combinations_update_exclusions (test_rational.RationalFunctionTests.test_chained_combinations_update_exclusions) ... ok
+test_common_factor_with_irrational_roots (test_rational.RationalFunctionTests.test_common_factor_with_irrational_roots) ... ok
+test_denominator_leading_sign (test_rational.RationalFunctionTests.test_denominator_leading_sign) ... ok
+test_division_by_zero_function_rejected (test_rational.RationalFunctionTests.test_division_by_zero_function_rejected) ... ok
+test_evaluation_against_horner_independently (test_rational.RationalFunctionTests.test_evaluation_against_horner_independently) ... ok
+test_irrational_combined_exclusions (test_rational.RationalFunctionTests.test_irrational_combined_exclusions) ... ok
+test_multiplication_division_domain_union (test_rational.RationalFunctionTests.test_multiplication_division_domain_union) ... ok
+test_repeated_root_cancel (test_rational.RationalFunctionTests.test_repeated_root_cancel) ... ok
+test_steps_describe_domains (test_rational.RationalFunctionTests.test_steps_describe_domains) ... ok
+test_values_unchanged_by_reduction (test_rational.RationalFunctionTests.test_values_unchanged_by_reduction) ... ok
+test_x_over_x (test_rational.RationalFunctionTests.test_x_over_x) ... ok
+test_zero_denominator_rejected (test_rational.RationalFunctionTests.test_zero_denominator_rejected) ... ok
+test_zero_function (test_rational.RationalFunctionTests.test_zero_function) ... ok
+test_zero_function_zero_denominator (test_rational.RationalFunctionTests.test_zero_function_zero_denominator) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 1.754s
+
+OK
