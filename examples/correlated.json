@@ -1,0 +1,18 @@
+{
+  "description": "R(a,b): identical marginals to anti_correlated.json, but a and b are positively correlated (joint counts pin the correlation). Query counts rows with a=1 AND b=1 -> exactly 2.",
+  "relations": {
+    "R": {"columns": {"a": {"domain": [1, 2]}, "b": {"domain": [1, 2]}}}
+  },
+  "statistics": [
+    {"id": "R_rows", "type": "row_count", "relation": "R", "count": 4},
+    {"id": "R_a_hist", "type": "histogram", "relation": "R", "column": "a", "counts": {"1": 2, "2": 2}},
+    {"id": "R_b_hist", "type": "histogram", "relation": "R", "column": "b", "counts": {"1": 2, "2": 2}},
+    {"id": "R_a_nulls", "type": "null_count", "relation": "R", "column": "a", "count": 0},
+    {"id": "R_b_nulls", "type": "null_count", "relation": "R", "column": "b", "count": 0},
+    {"id": "R_ab_joint", "type": "joint_count", "relation": "R", "columns": ["a", "b"],
+     "counts": [{"values": [1, 1], "count": 2}, {"values": [2, 2], "count": 2}]}
+  ],
+  "query": {"type": "select", "from": "R",
+            "where": {"op": "and", "args": [{"op": "eq", "column": "a", "value": 1},
+                                            {"op": "eq", "column": "b", "value": 1}]}}
+}

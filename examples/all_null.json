@@ -1,0 +1,14 @@
+{
+  "description": "Column b is entirely NULL (null_count = row_count). SQL three-valued logic: b=1 is UNKNOWN on every row, WHERE keeps only TRUE -> exactly 0 rows.",
+  "relations": {
+    "R": {"columns": {"a": {"domain": [1, 2]}, "b": {"domain": [1, 2]}}}
+  },
+  "statistics": [
+    {"id": "R_rows", "type": "row_count", "relation": "R", "count": 3},
+    {"id": "R_a_hist", "type": "histogram", "relation": "R", "column": "a", "counts": {"1": 2, "2": 1}},
+    {"id": "R_b_hist", "type": "histogram", "relation": "R", "column": "b", "counts": {}},
+    {"id": "R_a_nulls", "type": "null_count", "relation": "R", "column": "a", "count": 0},
+    {"id": "R_b_nulls", "type": "null_count", "relation": "R", "column": "b", "count": 3}
+  ],
+  "query": {"type": "select", "from": "R", "where": {"op": "eq", "column": "b", "value": 1}}
+}

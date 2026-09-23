@@ -1,0 +1,34 @@
+python3 -m unittest discover -s tests -v
+date: 2026-09-23T13:52:03Z
+
+test_budget_exhaustion_is_honest (test_cardest.TestBudgetAndResume.test_budget_exhaustion_is_honest) ... ok
+test_resume_reaches_same_optimum (test_cardest.TestBudgetAndResume.test_resume_reaches_same_optimum) ... ok
+test_stale_state_rejected (test_cardest.TestBudgetAndResume.test_stale_state_rejected) ... ok
+test_domain_too_large (test_cardest.TestDomainLimit.test_domain_too_large) ... ok
+test_all_null_column (test_cardest.TestExamples.test_all_null_column) ... ok
+test_correlation_opposite_with_same_marginals (test_cardest.TestExamples.test_correlation_opposite_with_same_marginals) ... ok
+test_duplicate_key_join_multiplicity (test_cardest.TestExamples.test_duplicate_key_join_multiplicity) ... ok
+test_join_with_filter_range (test_cardest.TestExamples.test_join_with_filter_range) ... ok
+test_mutually_exclusive_predicates (test_cardest.TestExamples.test_mutually_exclusive_predicates) ... ok
+test_search_counters_recorded (test_cardest.TestExamples.test_search_counters_recorded) ... ok
+test_inconsistent_joint_statistics (test_cardest.TestInconsistency.test_inconsistent_joint_statistics) ... ok
+test_minimal_conflict_subset (test_cardest.TestInconsistency.test_minimal_conflict_subset) ... ok
+test_estimate_is_labeled_not_a_bound (test_cardest.TestPointEstimates.test_estimate_is_labeled_not_a_bound) ... ok
+test_join_estimate (test_cardest.TestPointEstimates.test_join_estimate) ... ok
+test_big_spec_matches_reference (test_cardest.TestReferenceCrossCheck.test_big_spec_matches_reference) ... ok
+test_examples_match_reference (test_cardest.TestReferenceCrossCheck.test_examples_match_reference) ... ok
+test_reference_does_not_import_searcher (test_cardest.TestReferenceCrossCheck.test_reference_does_not_import_searcher) ... /Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/43ceace5820c4486a2e534b8c19f0f54/run/A/attempt-030/workspace/tests/test_cardest.py:250: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/43ceace5820c4486a2e534b8c19f0f54/run/A/attempt-030/workspace/tests/../cardest/reference.py' mode='r' encoding='utf-8'>
+  src = open(ref_mod.__file__, encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_and_or_not_truth_table (test_cardest.TestThreeValuedLogic.test_and_or_not_truth_table) ... ok
+test_null_comparisons_are_unknown (test_cardest.TestThreeValuedLogic.test_null_comparisons_are_unknown) ... ok
+test_where_keeps_only_true (test_cardest.TestThreeValuedLogic.test_where_keeps_only_true) ... ok
+test_stale_certificate_detected (test_cardest.TestWitnessVerifier.test_stale_certificate_detected) ... ok
+test_tampered_witness_rejected (test_cardest.TestWitnessVerifier.test_tampered_witness_rejected) ... ok
+test_witnesses_verify (test_cardest.TestWitnessVerifier.test_witnesses_verify) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.035s
+
+OK
