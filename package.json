@@ -1,0 +1,14 @@
+{
+  "name": "atomic-multi-source-refresh",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "多数据源原子刷新：事件溯源 + 单指针发布，读者隔离，单源重试，轮次围栏",
+  "scripts": {
+    "test": "node --test test/store.test.ts",
+    "demo": "node src/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
