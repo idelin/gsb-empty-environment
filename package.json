@@ -1,0 +1,11 @@
+{
+  "name": "fold-projection",
+  "version": "0.1.0",
+  "description": "Nested folding regions: visible-text projection with original-offset mapping (UTF-16 safe)",
+  "type": "module",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "demo": "node --disable-warning=ExperimentalWarning examples/demo.ts"
+  }
+}
