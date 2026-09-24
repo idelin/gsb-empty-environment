@@ -1,0 +1,63 @@
+================ 1) 点-区间连接 ================
+--- 点 × 区间：索引连接（实现: interval-tree-index）---
+  left_id=1  right_id=10  overlap_len=0
+  left_id=1  right_id=11  overlap_len=0
+  left_id=2  right_id=10  overlap_len=0
+  left_id=2  right_id=11  overlap_len=0
+  left_id=3  right_id=10  overlap_len=0
+  left_id=3  right_id=11  overlap_len=0
+  left_id=4  right_id=11  overlap_len=0
+  left_id=4  right_id=13  overlap_len=0
+  left_id=5  right_id=11  overlap_len=0
+  left_id=5  right_id=13  overlap_len=0
+  left_id=6  right_id=11  overlap_len=0
+  左侧: 参与 6/6 行, null端点 0, NaN端点 0, 空/零长 0
+  右侧: 参与 4/6 行, null端点 1, NaN端点 0, 空/零长 1
+  比较对: 朴素笛卡尔 36 -> 实际只检查 11
+
+--- 点 × 区间：扫描线（对账）（实现: sweep-line）---
+  left_id=1  right_id=10  overlap_len=0
+  left_id=1  right_id=11  overlap_len=0
+  left_id=2  right_id=10  overlap_len=0
+  left_id=2  right_id=11  overlap_len=0
+  left_id=3  right_id=10  overlap_len=0
+  left_id=3  right_id=11  overlap_len=0
+  left_id=4  right_id=11  overlap_len=0
+  left_id=4  right_id=13  overlap_len=0
+  left_id=5  right_id=11  overlap_len=0
+  left_id=5  right_id=13  overlap_len=0
+  left_id=6  right_id=11  overlap_len=0
+  左侧: 参与 6/6 行, null端点 0, NaN端点 0, 空/零长 0
+  右侧: 参与 4/6 行, null端点 1, NaN端点 0, 空/零长 1
+  比较对: 朴素笛卡尔 36 -> 实际只检查 11
+
+================ 2) 区间-区间连接 ================
+--- 区间 × 区间：索引连接（实现: interval-tree-index）---
+  left_id=1  right_id=100  overlap_len=2
+  left_id=1  right_id=101  overlap_len=2
+  left_id=1  right_id=102  overlap_len=7
+  left_id=1  right_id=103  overlap_len=1
+  left_id=3  right_id=101  overlap_len=1
+  left_id=3  right_id=102  overlap_len=2
+  左侧: 参与 2/3 行, null端点 0, NaN端点 0, 空/零长 1
+  右侧: 参与 5/5 行, null端点 0, NaN端点 0, 空/零长 0
+  比较对: 朴素笛卡尔 15 -> 实际只检查 6
+
+--- 区间 × 区间：扫描线（对账）（实现: sweep-line）---
+  left_id=1  right_id=100  overlap_len=2
+  left_id=1  right_id=101  overlap_len=2
+  left_id=1  right_id=102  overlap_len=7
+  left_id=1  right_id=103  overlap_len=1
+  left_id=3  right_id=101  overlap_len=1
+  left_id=3  right_id=102  overlap_len=2
+  左侧: 参与 2/3 行, null端点 0, NaN端点 0, 空/零长 1
+  右侧: 参与 5/5 行, null端点 0, NaN端点 0, 空/零长 0
+  比较对: 朴素笛卡尔 15 -> 实际只检查 6
+
+================ 3) null vs NaN（float64 批次）================
+  null 端点行: 1（跳过）
+  NaN  端点行: 1（跳过，与 null 不同）
+  参与行: 1；匹配: [(1, 99, 5.0)]
+
+================ 4) 整数精确（大整数无浮点误差）================
+  [100000000000000000000,100000000000000000007) ∩ [100000000000000000005,100000000000000000010) => overlap_len=2（类型 int）
