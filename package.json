@@ -1,0 +1,14 @@
+{
+  "name": "derived-cache",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Dependency-versioned derived-value cache with physical-block memory accounting, subscription retention, and replayable state",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --experimental-strip-types examples/demo.ts",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  }
+}
