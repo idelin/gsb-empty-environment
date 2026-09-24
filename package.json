@@ -1,0 +1,11 @@
+{
+  "name": "selection-mapping",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Bidirectional multi-selection mapping across document versions (UTF-16 offsets, composable/invertible mappings)",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
