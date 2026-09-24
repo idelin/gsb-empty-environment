@@ -1,0 +1,11 @@
+{
+  "name": "chunked-search",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cross-chunk literal search over chunked text with incremental match index and pausable cursors",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
