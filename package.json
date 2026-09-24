@@ -1,0 +1,11 @@
+{
+  "name": "diagnostic-relocation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Version-aware diagnostic relocation: identity tracking vs text-similarity candidates, UTF-16 offsets, undo branches and history reclamation.",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
