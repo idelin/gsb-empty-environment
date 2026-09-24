@@ -1,0 +1,29 @@
+$ node --version
+v25.5.0
+
+$ npm test
+
+> versioned-sharded-text@1.0.0 test
+> node --test test/core.test.ts test/boundaries.test.ts
+
+✔ LF and CRLF both support line and column mapping (2.215083ms)
+✔ edit boundaries inside CRLF are rejected (1.929917ms)
+✔ lone CR input is rejected for LF and CRLF coverage (0.141083ms)
+✔ UTF-16 offsets never split surrogate pairs (0.163708ms)
+✔ emoji positions are reversible with UTF-16 columns (0.16025ms)
+✔ every valid offset round-trips in a mixed document (0.137583ms)
+✔ random edits match a string reference model (5.1375ms)
+✔ nodes cache UTF-16 length and line-break counts (1.067333ms)
+✔ three generations share unchanged nodes without read pollution (1.5505ms)
+✔ small edits do not copy the whole document (1.465792ms)
+✔ range iteration touches only intersecting chunks (1.072667ms)
+✔ versions stay immutable after further edits (0.115709ms)
+✔ empty documents and trailing line breaks (0.266416ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 237.68025

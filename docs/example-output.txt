@@ -1,0 +1,14 @@
+$ npm run example
+
+> versioned-sharded-text@1.0.0 example
+> node examples/demo.ts
+
+v1: "The quick brown fox\njumps over the lazy dog\r\n😀 emoji line\n"
+UTF-16 length=59, line breaks=3, lines=4
+v2: "The quick brown fox\nstill jumps over the lazy dog\r\n😀 emoji line\n"
+v3: "The quick brown fox\nstill jumps over the lazy cat\r\n😀 emoji line\n"
+v1 after later edits: "The quick brown fox\njumps over the lazy dog\r\n😀 emoji line\n"
+emoji offset 45 -> line 2, column 0 -> offset 45
+range chunks of v3 [24, 40):
+  [24, 40) "l jumps over the"
+CRLF middle insert rejected: Insert offset 2 falls inside a CRLF line ending; move the boundary before CR or after LF and retry.

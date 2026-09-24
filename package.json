@@ -1,0 +1,17 @@
+{
+  "name": "versioned-sharded-text",
+  "version": "1.0.0",
+  "description": "Persistent sharded text with UTF-16 offsets, line/column mapping and structural sharing.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test test/core.test.ts test/boundaries.test.ts",
+    "example": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
