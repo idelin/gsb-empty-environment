@@ -1,0 +1,14 @@
+{
+  "name": "line-diff-session",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Maintain line diff blocks between two long texts: local edits, context folding, bidirectional line mapping, UTF-16 safe offsets, LF/CRLF.",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
