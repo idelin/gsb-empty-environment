@@ -1,0 +1,14 @@
+{
+  "name": "attr-ranges",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Rich text attribute ranges (bold / link / entity) with UTF-16 offsets, surrogate-safe edits and canonical serialization",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test \"test/*.test.ts\"",
+    "demo": "node --disable-warning=ExperimentalWarning examples/demo.ts"
+  }
+}
