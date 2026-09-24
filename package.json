@@ -1,0 +1,13 @@
+{
+  "name": "three-way-merge",
+  "version": "1.0.0",
+  "description": "基于共同祖先的行级三路文本合并：自动合并不重叠修改，重叠修改生成结构化冲突",
+  "type": "module",
+  "main": "src/merge.ts",
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test",
+    "demo": "node --disable-warning=ExperimentalWarning demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT"
+}
