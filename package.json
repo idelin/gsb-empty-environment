@@ -1,0 +1,22 @@
+{
+  "name": "annotation-ranges",
+  "version": "1.0.0",
+  "description": "Edit-tracking annotation ranges with per-endpoint affinity, UTF-16 offsets, surrogate-pair safety, and undo",
+  "main": "src/document.ts",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "node --test \"src/**/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idelin/gsb-empty-environment.git"
+  },
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/idelin/gsb-empty-environment/issues"
+  },
+  "homepage": "https://github.com/idelin/gsb-empty-environment#readme"
+}
