@@ -1,0 +1,10 @@
+{
+  "name": "annotation-ranges",
+  "version": "0.1.0",
+  "description": "Edit-tracking annotation ranges with per-endpoint affinity, UTF-16 offsets and undo",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node examples/sample.ts"
+  }
+}
