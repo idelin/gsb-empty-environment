@@ -1,0 +1,11 @@
+{
+  "name": "stable-id-text-sequence",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline-first text sequence CRDT with stable element IDs, causal buffering, tombstones and watermark GC",
+  "scripts": {
+    "test": "node --test "test/*.test.ts"",
+    "demo": "node examples/demo.ts"
+  }
+}
