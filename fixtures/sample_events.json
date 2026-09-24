@@ -1,0 +1,23 @@
+[
+  {"event_id": "e1", "tx_id": "tx1", "table": "users", "pk": [1], "op": "insert",
+   "before": null, "after": {"id": 1, "country": "CN", "email": "a@x.cn"}, "commit_seq": 1},
+  {"event_id": "e2", "tx_id": "tx1", "table": "users", "pk": [2], "op": "insert",
+   "before": null, "after": {"id": 2, "country": "CN", "email": "a@x.cn"}, "commit_seq": 2},
+  {"event_id": "e3", "tx_id": "tx2", "table": "users", "pk": [3], "op": "insert",
+   "before": null, "after": {"id": 3, "country": "CN", "email": "b@x.cn"}, "commit_seq": 3},
+  {"event_id": "e4", "tx_id": "tx2", "table": "users", "pk": [4], "op": "insert",
+   "before": null, "after": {"id": 4, "country": "US", "email": "a@x.cn"}, "commit_seq": 4},
+  {"event_id": "e5", "tx_id": "tx3", "table": "users", "pk": [5], "op": "insert",
+   "before": null, "after": {"id": 5, "country": "US", "email": null}, "commit_seq": 5},
+  {"event_id": "e3", "tx_id": "tx2", "table": "users", "pk": [3], "op": "insert",
+   "before": null, "after": {"id": 3, "country": "CN", "email": "b@x.cn"}, "commit_seq": 3},
+  {"event_id": "e6", "tx_id": "tx4", "table": "users", "pk": [1], "op": "update",
+   "before": {"id": 1, "country": "CN", "email": "a@x.cn"},
+   "after": {"id": 1, "country": "US", "email": "a@x.cn"}, "commit_seq": 6},
+  {"event_id": "e7", "tx_id": "tx5", "table": "users", "pk": [2], "op": "delete",
+   "before": {"id": 2, "country": "CN", "email": "a@x.cn"}, "after": null, "commit_seq": 7},
+  {"event_id": "e8", "tx_id": "tx5", "table": "users", "pk": [3], "op": "delete",
+   "before": {"id": 3, "country": "CN", "email": "b@x.cn"}, "after": null, "commit_seq": 8},
+  {"event_id": "e9", "tx_id": "tx6", "table": "orders", "pk": [99], "op": "insert",
+   "before": null, "after": {"id": 99, "amount": 10}, "commit_seq": 9}
+]
