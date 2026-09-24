@@ -1,0 +1,13 @@
+[
+  {"txn_id": "txn-001", "table": "users", "pk": "id", "before": 1, "after": 10, "commit_seq": 1},
+  {"txn_id": "txn-002", "table": "users", "pk": "id", "before": 2, "after": 3, "commit_seq": 2},
+  {"txn_id": "txn-002", "table": "users", "pk": "id", "before": 3, "after": 2, "commit_seq": 3},
+  {"txn_id": "txn-003", "table": "users", "pk": "id", "before": 4, "after": 5, "commit_seq": 4},
+  {"txn_id": "txn-003", "table": "users", "pk": "id", "before": 5, "after": 6, "commit_seq": 5},
+  {"txn_id": "txn-003", "table": "users", "pk": "id", "before": 6, "after": 4, "commit_seq": 6},
+  {"txn_id": "txn-004", "table": "users", "pk": "id", "before": 10, "after": 4, "commit_seq": 7},
+  {"txn_id": "txn-004", "table": "users", "pk": "id", "before": 2, "after": 11, "commit_seq": 8},
+  {"txn_id": "txn-001", "table": "users", "pk": "id", "before": 1, "after": 10, "commit_seq": 1},
+  {"txn_id": "txn-005", "table": "users", "pk": "id", "before": 1, "after": 99, "commit_seq": 9},
+  {"txn_id": "txn-006", "table": "users", "pk": "id", "before": 10, "after": 15, "commit_seq": 1}
+]
