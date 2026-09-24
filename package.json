@@ -1,0 +1,14 @@
+{
+  "name": "bracket-match-lang",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Bracket pairing and mismatch diagnostics for a small language with strings and comments",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test",
+    "sample": "node examples/sample.ts"
+  }
+}
