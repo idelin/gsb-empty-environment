@@ -1,0 +1,13 @@
+{
+  "name": "reversible-patch",
+  "version": "0.1.0",
+  "description": "带上下文校验的可逆文本补丁：组合、求逆、坐标变换与三方重定位（UTF-16 偏移）",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --test test/patch.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
