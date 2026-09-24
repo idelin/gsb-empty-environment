@@ -1,0 +1,10 @@
+{
+  "name": "incremental-lexer",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Incremental line-state lexer for a small language (strings + block comments), UTF-16 offsets",
+  "scripts": {
+    "demo": "node --disable-warning=ExperimentalWarning src/demo.ts",
+    "test": "node --disable-warning=ExperimentalWarning --test test/lexer.test.ts"
+  }
+}
