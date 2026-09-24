@@ -1,0 +1,14 @@
+{
+  "name": "persistent-text-rope",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Persistent chunked text rope with UTF-16 offsets, cached line stats, and structural sharing",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
