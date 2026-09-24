@@ -1,0 +1,10 @@
+{
+  "name": "inline-3way-merge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test merge.test.ts",
+    "demo": "node demo.ts"
+  }
+}
