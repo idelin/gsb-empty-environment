@@ -1,0 +1,13 @@
+{
+  "name": "pairwise-ot",
+  "version": "1.0.0",
+  "description": "Insert/delete-only operational transformation with UTF-16 offsets, surrogate-pair safety and base-version validation",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
