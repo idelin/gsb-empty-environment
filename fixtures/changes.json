@@ -1,0 +1,770 @@
+[
+ {
+  "after": {
+   "grp": "hot",
+   "score": 999,
+   "ts": 1
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 1,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 998,
+   "ts": 2
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 2,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 997,
+   "ts": 3
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 3,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 996,
+   "ts": 4
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 4,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 995,
+   "ts": 5
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 5,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 994,
+   "ts": 6
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 6,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 993,
+   "ts": 7
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 7,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 992,
+   "ts": 8
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 8,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 991,
+   "ts": 9
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 9,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 990,
+   "ts": 10
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 10,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 989,
+   "ts": 11
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 11,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 988,
+   "ts": 12
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 12,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 987,
+   "ts": 13
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 13,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 986,
+   "ts": 14
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 14,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 985,
+   "ts": 15
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 15,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 984,
+   "ts": 16
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 16,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 983,
+   "ts": 17
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 17,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 982,
+   "ts": 18
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 18,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 981,
+   "ts": 19
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 19,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 980,
+   "ts": 20
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 20,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 979,
+   "ts": 21
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 21,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 978,
+   "ts": 22
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 22,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 977,
+   "ts": 23
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 23,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 976,
+   "ts": 24
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 24,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 975,
+   "ts": 25
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 25,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 974,
+   "ts": 26
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 26,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 973,
+   "ts": 27
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 27,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 972,
+   "ts": 28
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 28,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 971,
+   "ts": 29
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 29,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 970,
+   "ts": 30
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 30,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 969,
+   "ts": 31
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 31,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 968,
+   "ts": 32
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 32,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 967,
+   "ts": 33
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 33,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 966,
+   "ts": 34
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 34,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 965,
+   "ts": 35
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 35,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 964,
+   "ts": 36
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 36,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 963,
+   "ts": 37
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 37,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 962,
+   "ts": 38
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 38,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 961,
+   "ts": 39
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 39,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 960,
+   "ts": 40
+  },
+  "before": null,
+  "commit_seq": 1,
+  "pk": 40,
+  "table": "metrics",
+  "txn_id": "txn-001"
+ },
+ {
+  "after": {
+   "grp": "cold",
+   "score": 50,
+   "ts": 10
+  },
+  "before": null,
+  "commit_seq": 2,
+  "pk": 100,
+  "table": "metrics",
+  "txn_id": "txn-002"
+ },
+ {
+  "after": {
+   "grp": "cold",
+   "score": 51,
+   "ts": 11
+  },
+  "before": null,
+  "commit_seq": 2,
+  "pk": 101,
+  "table": "metrics",
+  "txn_id": "txn-002"
+ },
+ {
+  "after": {
+   "grp": "cold",
+   "score": 52,
+   "ts": 12
+  },
+  "before": null,
+  "commit_seq": 2,
+  "pk": 102,
+  "table": "metrics",
+  "txn_id": "txn-002"
+ },
+ {
+  "after": {
+   "grp": "cold",
+   "score": 53,
+   "ts": 13
+  },
+  "before": null,
+  "commit_seq": 2,
+  "pk": 103,
+  "table": "metrics",
+  "txn_id": "txn-002"
+ },
+ {
+  "after": {
+   "grp": "nil",
+   "score": null,
+   "ts": 1
+  },
+  "before": null,
+  "commit_seq": 3,
+  "pk": 200,
+  "table": "metrics",
+  "txn_id": "txn-003"
+ },
+ {
+  "after": {
+   "grp": "nil",
+   "score": 5,
+   "ts": null
+  },
+  "before": null,
+  "commit_seq": 3,
+  "pk": 201,
+  "table": "metrics",
+  "txn_id": "txn-003"
+ },
+ {
+  "after": {
+   "grp": "nil",
+   "score": null,
+   "ts": 2
+  },
+  "before": null,
+  "commit_seq": 3,
+  "pk": 202,
+  "table": "metrics",
+  "txn_id": "txn-003"
+ },
+ {
+  "after": {
+   "grp": "nil",
+   "score": 7,
+   "ts": 3
+  },
+  "before": null,
+  "commit_seq": 3,
+  "pk": 203,
+  "table": "metrics",
+  "txn_id": "txn-003"
+ },
+ {
+  "after": {
+   "grp": "tie",
+   "score": 50,
+   "ts": 1
+  },
+  "before": null,
+  "commit_seq": 4,
+  "pk": 300,
+  "table": "metrics",
+  "txn_id": "txn-004"
+ },
+ {
+  "after": {
+   "grp": "tie",
+   "score": 50,
+   "ts": 1
+  },
+  "before": null,
+  "commit_seq": 4,
+  "pk": 301,
+  "table": "metrics",
+  "txn_id": "txn-004"
+ },
+ {
+  "after": {
+   "grp": "tie",
+   "score": 50,
+   "ts": 1
+  },
+  "before": null,
+  "commit_seq": 4,
+  "pk": 302,
+  "table": "metrics",
+  "txn_id": "txn-004"
+ },
+ {
+  "after": {
+   "grp": "tie",
+   "score": 50,
+   "ts": 1
+  },
+  "before": null,
+  "commit_seq": 4,
+  "pk": 303,
+  "table": "metrics",
+  "txn_id": "txn-004"
+ },
+ {
+  "after": {
+   "grp": "tie",
+   "score": 50,
+   "ts": 1
+  },
+  "before": null,
+  "commit_seq": 4,
+  "pk": 304,
+  "table": "metrics",
+  "txn_id": "txn-004"
+ },
+ {
+  "after": {
+   "grp": "tie",
+   "score": 50,
+   "ts": 1
+  },
+  "before": null,
+  "commit_seq": 4,
+  "pk": 305,
+  "table": "metrics",
+  "txn_id": "txn-004"
+ },
+ {
+  "after": {
+   "grp": "tie",
+   "score": 50,
+   "ts": 1
+  },
+  "before": null,
+  "commit_seq": 4,
+  "pk": 306,
+  "table": "metrics",
+  "txn_id": "txn-004"
+ },
+ {
+  "after": {
+   "grp": "tie",
+   "score": 50,
+   "ts": 1
+  },
+  "before": null,
+  "commit_seq": 4,
+  "pk": 307,
+  "table": "metrics",
+  "txn_id": "txn-004"
+ },
+ {
+  "after": {
+   "grp": "hot",
+   "score": 10,
+   "ts": 1
+  },
+  "before": {
+   "grp": "hot",
+   "score": 999,
+   "ts": 1
+  },
+  "commit_seq": 5,
+  "pk": 1,
+  "table": "metrics",
+  "txn_id": "txn-005"
+ },
+ {
+  "after": {
+   "grp": "cold",
+   "score": 998,
+   "ts": 2
+  },
+  "before": {
+   "grp": "hot",
+   "score": 998,
+   "ts": 2
+  },
+  "commit_seq": 6,
+  "pk": 2,
+  "table": "metrics",
+  "txn_id": "txn-006"
+ },
+ {
+  "after": null,
+  "before": {
+   "grp": "hot",
+   "score": 997,
+   "ts": 3
+  },
+  "commit_seq": 7,
+  "pk": 3,
+  "table": "metrics",
+  "txn_id": "txn-007"
+ },
+ {
+  "after": null,
+  "before": {
+   "grp": "cold",
+   "score": 50,
+   "ts": 10
+  },
+  "commit_seq": 8,
+  "pk": 100,
+  "table": "metrics",
+  "txn_id": "txn-008"
+ },
+ {
+  "after": null,
+  "before": {
+   "grp": "cold",
+   "score": 51,
+   "ts": 11
+  },
+  "commit_seq": 8,
+  "pk": 101,
+  "table": "metrics",
+  "txn_id": "txn-008"
+ },
+ {
+  "after": {
+   "grp": "nil",
+   "score": 88,
+   "ts": 1
+  },
+  "before": {
+   "grp": "nil",
+   "score": null,
+   "ts": 1
+  },
+  "commit_seq": 9,
+  "pk": 200,
+  "table": "metrics",
+  "txn_id": "txn-009"
+ },
+ {
+  "after": {
+   "grp": "x",
+   "score": 1,
+   "ts": 1
+  },
+  "before": null,
+  "commit_seq": 10,
+  "pk": 1,
+  "table": "archive",
+  "txn_id": "txn-010"
+ }
+]
