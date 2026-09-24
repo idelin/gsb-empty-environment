@@ -1,0 +1,14 @@
+{
+  "name": "template-edit-kernel",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "模板编辑内核：嵌套占位、镜像引用、纯函数变换，原子编辑与撤销",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test test/kernel.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
