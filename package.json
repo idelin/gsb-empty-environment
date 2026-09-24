@@ -1,0 +1,12 @@
+{
+  "name": "terminal-layout",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Monospaced terminal-style layout engine over an editable piece tree (tab expansion, wide chars, zero-width combiners, soft wrap, UTF-16 offsets).",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
