@@ -1,0 +1,11 @@
+{
+  "name": "pairwise-ot",
+  "version": "1.0.0",
+  "description": "Operational transformation for insert/delete over UTF-16 text",
+  "type": "module",
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test",
+    "demo": "node --disable-warning=ExperimentalWarning demo.ts"
+  },
+  "license": "MIT"
+}
