@@ -1,0 +1,11 @@
+{
+  "name": "composition-state-machine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "IME composition editing state machine: formal version + temporary projection, generation-guarded sessions, deterministic conflict/transform rules, verified by finite state exploration.",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
