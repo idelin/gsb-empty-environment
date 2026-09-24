@@ -1,0 +1,11 @@
+{
+  "name": "branching-history",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Branching undo history with coalescing, UTF-16 offsets and capacity-safe compaction",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
