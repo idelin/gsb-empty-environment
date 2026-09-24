@@ -1,0 +1,8 @@
+; Yield inside nested try/finally. When the host closes the coroutine,
+; both finally blocks run exactly once.
+(try
+  (try
+    (yield "suspended-inside-nested-try")
+    (finally (print "inner finally")))
+  (finally (print "outer finally")))
+(print "unreachable after close")

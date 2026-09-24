@@ -1,0 +1,9 @@
+; Closures created in a loop capture a *fresh* binding per iteration,
+; so they are independent of each other.
+(let fns (list))
+(each x (list 10 20 30)
+  (push fns (fn () x)))
+(print "closures return:"
+  ((list-get fns 0))
+  ((list-get fns 1))
+  ((list-get fns 2)))

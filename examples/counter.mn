@@ -1,0 +1,18 @@
+; Two closures sharing one mutable counter.
+; After a snapshot/restore the sharing is preserved.
+(def make-counter ()
+  (let n 0)
+  (list (fn () (set n (+ n 1)) n)   ; increment, return new value
+        (fn () n)))                 ; read current value
+
+(let c (make-counter))
+(let inc (list-get c 0))
+(let get (list-get c 1))
+
+(inc)
+(print "count after 1 inc:" (get))
+(yield "checkpoint-1")              ; <-- snapshot is taken here
+(inc)
+(inc)
+(print "count after 2 more inc:" (get))
+(get)
