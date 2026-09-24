@@ -1,0 +1,11 @@
+{
+  "name": "selection-mapping",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Bidirectional mapping of multiple selections across document versions",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node sample/demo.ts"
+  }
+}
