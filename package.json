@@ -1,0 +1,15 @@
+{
+  "name": "branching-undo-history",
+  "version": "1.0.0",
+  "description": "Branch-aware coalescing undo history for UTF-16 text.",
+  "type": "module",
+  "main": "src/history.ts",
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --disable-warning=ExperimentalWarning --experimental-strip-types examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.0.0"
+  },
+  "license": "MIT"
+}
