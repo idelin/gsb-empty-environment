@@ -1,0 +1,13 @@
+{
+  "name": "atomic-multicursor-transactions",
+  "version": "1.0.0",
+  "description": "Atomic multi-cursor edit transactions over a shared baseline coordinate system (UTF-16 offsets, LF/CRLF)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
