@@ -1,0 +1,53 @@
+
+=== 1. A->B->C within one transaction merges to A->C ===
+input:
+  [tx1@c1 v1] acct/a1: 'A' -> 'B'
+  [tx1@c1 v1] acct/a1: 'B' -> 'C'
+output:
+  [tx1@c1 v1] acct/a1: 'A' -> 'C'
+
+=== 2. insert+delete annihilates; audit mode retains evidence ===
+output (no audit):
+  <empty>
+audit evidence: [{"event": "annihilated_insert_delete", "table": "acct", "pk": "a2", "value": "X", "insert_origin": [0], "delete_origin": [1], "commit_seq": 1}]
+
+=== 3. delete+recreate is an identity barrier (no merge) ===
+output:
+  [tx1@c1 v1] acct/a3: 'old' -> None
+  [tx1@c1 v1] acct/a3: None -> 'new'
+
+=== 4. visible commit point blocks cross-commit merge ===
+visible=[1, 2] -> 2 changes kept
+visible=[2] -> merged:
+  [tx2@c2 v1] acct/a4: None -> 'B'
+
+=== 5. schema barrier blocks merge ===
+output keeps 2 changes (schema v1 and v2 not merged)
+
+=== 6. budget exceeded: remainder stays uncompressed ===
+merges used: 1 (budget 1)
+output:
+  [tx1@c1 v1] acct/a6: 0 -> 2
+  [tx1@c1 v1] acct/a6: 2 -> 3
+  [tx1@c1 v1] acct/a6: 3 -> 4
+
+=== 7. equivalence certificate: build, serialize, independently verify ===
+certificate: 4 inputs -> 4 outputs, equivalent=True
+checkpoints (visible state + incremental aggregates):
+  commit 1: state={'acct|n1': 10, 'acct|n2': 5} aggregates={'row_count': 2, 'total': 15.0}
+  commit 2: state={'acct|n1': 7} aggregates={'row_count': 1, 'total': 7.0}
+  commit final: state={'acct|n1': 7} aggregates={'row_count': 1, 'total': 7.0}
+independent replay verification: True
+tamper check: detected -> CertificateError: certificate digest mismatch (tampered?)
+
+=== 8. counterexample: same final state, different intermediate semantics ===
+final state A == final state B: True ({'acct|k': 'B'})
+naive cross-commit merge equivalent: False
+  diff: visible state differs at commit 1: {'acct|k': 'A'} != {}
+  diff: incremental aggregates differ at commit 1: {'row_count': 1, 'total': 0.0} != {'row_count': 0, 'total': 0.0}
+boundary-aware compaction equivalent: True (2 changes kept)
+
+=== 9. exhaustive verification of small change sequences ===
+cases checked: 408
+boundary-aware failures: 0
+naive compaction violations caught: 84

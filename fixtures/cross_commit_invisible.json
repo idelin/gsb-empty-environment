@@ -1,0 +1,8 @@
+{
+  "description": "commit 1 is not visible, so the cross-commit merge is allowed",
+  "visible_commit_points": [2],
+  "changes": [
+    {"tx_id": "tx1", "table": "acct", "pk": "a4", "before": null, "after": "A", "commit_seq": 1, "schema": "v1"},
+    {"tx_id": "tx2", "table": "acct", "pk": "a4", "before": "A", "after": "B", "commit_seq": 2, "schema": "v1"}
+  ]
+}

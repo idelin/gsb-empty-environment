@@ -1,0 +1,10 @@
+{
+  "description": "numeric values across two visible commits; incremental aggregates must match",
+  "visible_commit_points": [1, 2],
+  "changes": [
+    {"tx_id": "tx1", "table": "acct", "pk": "n1", "before": null, "after": 10, "commit_seq": 1, "schema": "v1"},
+    {"tx_id": "tx1", "table": "acct", "pk": "n2", "before": null, "after": 5, "commit_seq": 1, "schema": "v1"},
+    {"tx_id": "tx2", "table": "acct", "pk": "n1", "before": 10, "after": 7, "commit_seq": 2, "schema": "v1"},
+    {"tx_id": "tx2", "table": "acct", "pk": "n2", "before": 5, "after": null, "commit_seq": 2, "schema": "v1"}
+  ]
+}

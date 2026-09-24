@@ -1,0 +1,8 @@
+{
+  "description": "schema version change is a hard barrier even within one tx",
+  "visible_commit_points": [1],
+  "changes": [
+    {"tx_id": "tx1", "table": "acct", "pk": "a5", "before": "A", "after": "B", "commit_seq": 1, "schema": "v1"},
+    {"tx_id": "tx1", "table": "acct", "pk": "a5", "before": "B", "after": "C", "commit_seq": 1, "schema": "v2"}
+  ]
+}

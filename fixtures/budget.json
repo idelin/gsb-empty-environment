@@ -1,0 +1,10 @@
+{
+  "description": "four updates in one tx; with budget=1 only the first merge happens",
+  "visible_commit_points": [1],
+  "changes": [
+    {"tx_id": "tx1", "table": "acct", "pk": "a6", "before": 0, "after": 1, "commit_seq": 1, "schema": "v1"},
+    {"tx_id": "tx1", "table": "acct", "pk": "a6", "before": 1, "after": 2, "commit_seq": 1, "schema": "v1"},
+    {"tx_id": "tx1", "table": "acct", "pk": "a6", "before": 2, "after": 3, "commit_seq": 1, "schema": "v1"},
+    {"tx_id": "tx1", "table": "acct", "pk": "a6", "before": 3, "after": 4, "commit_seq": 1, "schema": "v1"}
+  ]
+}

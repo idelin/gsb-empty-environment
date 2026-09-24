@@ -1,0 +1,8 @@
+{
+  "description": "delete then re-insert must NOT merge: entity identity changes",
+  "visible_commit_points": [1],
+  "changes": [
+    {"tx_id": "tx1", "table": "acct", "pk": "a3", "before": "old", "after": null, "commit_seq": 1, "schema": "v1"},
+    {"tx_id": "tx1", "table": "acct", "pk": "a3", "before": null, "after": "new", "commit_seq": 1, "schema": "v1"}
+  ]
+}

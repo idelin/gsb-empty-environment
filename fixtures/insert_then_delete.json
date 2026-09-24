@@ -1,0 +1,8 @@
+{
+  "description": "insert then delete in one tx annihilates; audit mode keeps evidence",
+  "visible_commit_points": [1],
+  "changes": [
+    {"tx_id": "tx1", "table": "acct", "pk": "a2", "before": null, "after": "X", "commit_seq": 1, "schema": "v1"},
+    {"tx_id": "tx1", "table": "acct", "pk": "a2", "before": "X", "after": null, "commit_seq": 1, "schema": "v1"}
+  ]
+}

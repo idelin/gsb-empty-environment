@@ -1,0 +1,8 @@
+{
+  "description": "A->B->C inside one transaction collapses to A->C",
+  "visible_commit_points": [1],
+  "changes": [
+    {"tx_id": "tx1", "table": "acct", "pk": "a1", "before": "A", "after": "B", "commit_seq": 1, "schema": "v1"},
+    {"tx_id": "tx1", "table": "acct", "pk": "a1", "before": "B", "after": "C", "commit_seq": 1, "schema": "v1"}
+  ]
+}
