@@ -1,0 +1,10 @@
+{
+  "name": "composition-editor",
+  "version": "1.0.0",
+  "description": "Composition (IME) editing state machine with dual formal/projected state and deterministic conflict rules",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
