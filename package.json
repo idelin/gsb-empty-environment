@@ -1,0 +1,14 @@
+{
+  "name": "atomic-multi-cursor-transactions",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Atomic multi-cursor edit transactions over a shared baseline coordinate system",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
