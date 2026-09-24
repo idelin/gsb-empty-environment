@@ -1,0 +1,24 @@
+test_cross_commit_is_not_merged (changelog_compaction.test.test_compaction.BarrierTests.test_cross_commit_is_not_merged) ... ok
+test_cross_schema_is_not_merged (changelog_compaction.test.test_compaction.BarrierTests.test_cross_schema_is_not_merged) ... ok
+test_cross_txn_barrier_rejected (changelog_compaction.test.test_compaction.BarrierTests.test_cross_txn_barrier_rejected) ... ok
+test_broken_chain_rejected (changelog_compaction.test.test_compaction.BeforeValueValidationTests.test_broken_chain_rejected) ... ok
+test_intra_commit_delete_recreate_bumps_identity (changelog_compaction.test.test_compaction.BeforeValueValidationTests.test_intra_commit_delete_recreate_bumps_identity) ... ok
+test_replay_detects_bad_before_across_commits (changelog_compaction.test.test_compaction.BeforeValueValidationTests.test_replay_detects_bad_before_across_commits) ... ok
+test_budget_allows_full_compaction_when_sufficient (changelog_compaction.test.test_compaction.BudgetTests.test_budget_allows_full_compaction_when_sufficient) ... ok
+test_budget_partial_keeps_uncompacted_fragments (changelog_compaction.test.test_compaction.BudgetTests.test_budget_partial_keeps_uncompacted_fragments) ... ok
+test_budget_zero_keeps_everything (changelog_compaction.test.test_compaction.BudgetTests.test_budget_zero_keeps_everything) ... ok
+test_cross_commit_fused_record_is_rejected (changelog_compaction.test.test_compaction.CertificateTests.test_cross_commit_fused_record_is_rejected) ... ok
+test_mixed_fixture_equivalent_at_every_commit_point (changelog_compaction.test.test_compaction.CertificateTests.test_mixed_fixture_equivalent_at_every_commit_point) ... ok
+test_tampered_view_is_rejected (changelog_compaction.test.test_compaction.CertificateTests.test_tampered_view_is_rejected) ... ok
+test_correct_compaction_splits_delete_recreate (changelog_compaction.test.test_compaction.CounterExampleTests.test_correct_compaction_splits_delete_recreate) ... ok
+test_delete_recreate_vs_update_identity_counterexample (changelog_compaction.test.test_compaction.CounterExampleTests.test_delete_recreate_vs_update_identity_counterexample) ... ok
+test_hidden_intermediate_version_is_inequivalent (changelog_compaction.test.test_compaction.CounterExampleTests.test_hidden_intermediate_version_is_inequivalent) ... ok
+test_abc_merge_rule (changelog_compaction.test.test_compaction.ExhaustiveSmallSequences.test_abc_merge_rule) ... ok
+test_all_valid_chains_length_1_to_4 (changelog_compaction.test.test_compaction.ExhaustiveSmallSequences.test_all_valid_chains_length_1_to_4) ... ok
+test_delete_recreate_never_forged_as_update (changelog_compaction.test.test_compaction.ExhaustiveSmallSequences.test_delete_recreate_never_forged_as_update) ... ok
+test_insert_delete_cancel_and_audit_evidence (changelog_compaction.test.test_compaction.ExhaustiveSmallSequences.test_insert_delete_cancel_and_audit_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.086s
+
+OK

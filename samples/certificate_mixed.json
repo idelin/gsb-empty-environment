@@ -1,0 +1,217 @@
+{
+  "audit_mode": true,
+  "barrier_policy": [
+    "no merge across commit_seq (declared visibility point)",
+    "no merge across table (schema barrier)",
+    "no merge across primary key (entity barrier)",
+    "no merge across txn_id (transaction barrier)",
+    "delete/recreate is split on ABSENT so identity generation is preserved"
+  ],
+  "budget": null,
+  "budget_exhausted": false,
+  "commit_points": [
+    1,
+    2
+  ],
+  "compacted_changes": [
+    {
+      "after": 30,
+      "before": null,
+      "commit_seq": 1,
+      "fused": true,
+      "idx": -1,
+      "key": "k6",
+      "op": "INSERT",
+      "table": "orders",
+      "txn_id": "t8"
+    },
+    {
+      "after": 5,
+      "before": null,
+      "commit_seq": 1,
+      "fused": false,
+      "idx": 3,
+      "key": "k7",
+      "op": "INSERT",
+      "table": "orders",
+      "txn_id": "t8"
+    },
+    {
+      "after": null,
+      "before": 30,
+      "commit_seq": 2,
+      "fused": false,
+      "idx": 4,
+      "key": "k6",
+      "op": "DELETE",
+      "table": "orders",
+      "txn_id": "t9"
+    },
+    {
+      "after": 9,
+      "before": 5,
+      "commit_seq": 2,
+      "fused": false,
+      "idx": 5,
+      "key": "k7",
+      "op": "UPDATE",
+      "table": "orders",
+      "txn_id": "t9"
+    }
+  ],
+  "compacted_digest": "de28896ee1cb29093f67999d081269eecb0a4f438ab43a7ed28fc1414178b6d7",
+  "declared_views": [
+    {
+      "aggregate": {
+        "orders": {
+          "count": 2,
+          "deletes": 0,
+          "inserts": 2,
+          "sum": 35.0,
+          "updates": 0
+        }
+      },
+      "commit_seq": 1,
+      "state": {
+        "orders": {
+          "\"k6\"": {
+            "gen": 1,
+            "identity": "orders:\"k6\"#g1",
+            "key": "k6",
+            "value": 30
+          },
+          "\"k7\"": {
+            "gen": 1,
+            "identity": "orders:\"k7\"#g1",
+            "key": "k7",
+            "value": 5
+          }
+        }
+      }
+    },
+    {
+      "aggregate": {
+        "orders": {
+          "count": 1,
+          "deletes": 1,
+          "inserts": 2,
+          "sum": 9.0,
+          "updates": 1
+        }
+      },
+      "commit_seq": 2,
+      "state": {
+        "orders": {
+          "\"k7\"": {
+            "gen": 1,
+            "identity": "orders:\"k7\"#g1",
+            "key": "k7",
+            "value": 9
+          }
+        }
+      }
+    }
+  ],
+  "elisions": [
+    {
+      "commit_seq": 1,
+      "evidence": [
+        {
+          "after": 10,
+          "before": null,
+          "idx": 0,
+          "op": "INSERT"
+        },
+        {
+          "after": 20,
+          "before": 10,
+          "idx": 1,
+          "op": "UPDATE"
+        },
+        {
+          "after": 30,
+          "before": 20,
+          "idx": 2,
+          "op": "UPDATE"
+        }
+      ],
+      "key": "k6",
+      "kind": "MERGE_INSERT_CHAIN",
+      "sources": [
+        0,
+        1,
+        2
+      ],
+      "table": "orders",
+      "txn_id": "t8"
+    }
+  ],
+  "merges_used": 2,
+  "raw_changes": [
+    {
+      "after": 10,
+      "before": null,
+      "commit_seq": 1,
+      "idx": 0,
+      "key": "k6",
+      "op": "INSERT",
+      "table": "orders",
+      "txn_id": "t8"
+    },
+    {
+      "after": 20,
+      "before": 10,
+      "commit_seq": 1,
+      "idx": 1,
+      "key": "k6",
+      "op": "UPDATE",
+      "table": "orders",
+      "txn_id": "t8"
+    },
+    {
+      "after": 30,
+      "before": 20,
+      "commit_seq": 1,
+      "idx": 2,
+      "key": "k6",
+      "op": "UPDATE",
+      "table": "orders",
+      "txn_id": "t8"
+    },
+    {
+      "after": 5,
+      "before": null,
+      "commit_seq": 1,
+      "idx": 3,
+      "key": "k7",
+      "op": "INSERT",
+      "table": "orders",
+      "txn_id": "t8"
+    },
+    {
+      "after": null,
+      "before": 30,
+      "commit_seq": 2,
+      "idx": 4,
+      "key": "k6",
+      "op": "DELETE",
+      "table": "orders",
+      "txn_id": "t9"
+    },
+    {
+      "after": 9,
+      "before": 5,
+      "commit_seq": 2,
+      "idx": 5,
+      "key": "k7",
+      "op": "UPDATE",
+      "table": "orders",
+      "txn_id": "t9"
+    }
+  ],
+  "raw_digest": "6d81e5e03b5f774c70630bc85ca627518f010b51c81ac3bf722190285321cb5f",
+  "schema": "pairwise-changelog-compaction/v1",
+  "signature": "3cace962198bdb4e4805a08a461b881b4cfbf6146258e37e37242c6fa748fac1",
+  "source": "local_fixture",
+  "view_digest": "920daaedea2a23000ea1c65860ee81a339e17acb1109b47f6296bc59987bca27"
+}
