@@ -1,0 +1,11 @@
+{
+  "name": "folded-text-projection",
+  "version": "0.1.0",
+  "description": "Nested folding ranges -> visible text projection with UTF-16 offset mapping back to the original text",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
