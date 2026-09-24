@@ -1,0 +1,12 @@
+input={"tenant":"tenant-a","parameter_type":"search","config_version":"cfg-3","params":1}
+canonical=K1T8:tenant-aY6:searchV5:cfg-3PN1:1
+key=ck:34d19541e9f5127ed882de43fa6b3f9b64b884dcc9cfd9c9e7c7198f6bc1b873:00000000000000000001 created=true
+
+input={"tenant":"tenant-a","parameter_type":"search","config_version":"cfg-3","params":"1"}
+canonical=K1T8:tenant-aY6:searchV5:cfg-3PS1:1
+key=ck:94c07367ae727cde18702c3ff30dc2ef5557dba568aae0f3498082c16995fcb6:00000000000000000002 created=true
+
+input={"tenant":"tenant-a","parameter_type":"search","config_version":"cfg-4","params":1}
+canonical=K1T8:tenant-aY6:searchV5:cfg-4PN1:1
+key=ck:4384014f6974db2a03b806dcf444751a91ebc1dcae3d758565dce2cde89dedd7:00000000000000000003 created=true
+

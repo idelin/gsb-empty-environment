@@ -1,0 +1,57 @@
+=== RUN   TestCanonicalCoreDistinctions
+=== RUN   TestCanonicalCoreDistinctions/number_one
+=== RUN   TestCanonicalCoreDistinctions/string_one
+=== RUN   TestCanonicalCoreDistinctions/missing_params
+=== RUN   TestCanonicalCoreDistinctions/null_params
+=== RUN   TestCanonicalCoreDistinctions/null_config
+--- PASS: TestCanonicalCoreDistinctions (0.00s)
+    --- PASS: TestCanonicalCoreDistinctions/number_one (0.00s)
+    --- PASS: TestCanonicalCoreDistinctions/string_one (0.00s)
+    --- PASS: TestCanonicalCoreDistinctions/missing_params (0.00s)
+    --- PASS: TestCanonicalCoreDistinctions/null_params (0.00s)
+    --- PASS: TestCanonicalCoreDistinctions/null_config (0.00s)
+=== RUN   TestObjectOrderAndArrayOrder
+--- PASS: TestObjectOrderAndArrayOrder (0.00s)
+=== RUN   TestExactNumberCanonicalization
+--- PASS: TestExactNumberCanonicalization (0.00s)
+=== RUN   TestUnicodeIsNotNormalizedAndSortsByUTF8
+--- PASS: TestUnicodeIsNotNormalizedAndSortsByUTF8 (0.00s)
+=== RUN   TestDecodeStrictnessAndOmittedConfig
+=== RUN   TestDecodeStrictnessAndOmittedConfig/duplicate_field
+=== RUN   TestDecodeStrictnessAndOmittedConfig/unknown_field
+=== RUN   TestDecodeStrictnessAndOmittedConfig/missing_config
+=== RUN   TestDecodeStrictnessAndOmittedConfig/numeric_versus_string
+--- PASS: TestDecodeStrictnessAndOmittedConfig (0.00s)
+    --- PASS: TestDecodeStrictnessAndOmittedConfig/duplicate_field (0.00s)
+    --- PASS: TestDecodeStrictnessAndOmittedConfig/unknown_field (0.00s)
+    --- PASS: TestDecodeStrictnessAndOmittedConfig/missing_config (0.00s)
+    --- PASS: TestDecodeStrictnessAndOmittedConfig/numeric_versus_string (0.00s)
+=== RUN   TestJSONRejectsInvalidUTF8
+--- PASS: TestJSONRejectsInvalidUTF8 (0.00s)
+=== RUN   TestCyclicSharedGraphCanonicalizesDeterministically
+--- PASS: TestCyclicSharedGraphCanonicalizesDeterministically (0.00s)
+=== RUN   TestGraphReferenceIdentityIsExplicit
+--- PASS: TestGraphReferenceIdentityIsExplicit (0.00s)
+=== RUN   TestGeneratedPairsHaveNoFalseEquivalence
+--- PASS: TestGeneratedPairsHaveNoFalseEquivalence (0.00s)
+=== RUN   TestPairProbeFindsInequivalentSameKeyCounterexample
+--- PASS: TestPairProbeFindsInequivalentSameKeyCounterexample (0.00s)
+=== RUN   TestConfigVersionIsolationAndOmittedVersion
+--- PASS: TestConfigVersionIsolationAndOmittedVersion (0.00s)
+=== RUN   TestMemoryCatalogCloseRejectsLaterUse
+--- PASS: TestMemoryCatalogCloseRejectsLaterUse (0.00s)
+=== RUN   TestDepthBudget
+--- PASS: TestDepthBudget (0.00s)
+=== RUN   TestCanonicalByteBudget
+--- PASS: TestCanonicalByteBudget (0.00s)
+=== RUN   TestCatalogForcedDigestCollisionRechecksCanonicalBytes
+--- PASS: TestCatalogForcedDigestCollisionRechecksCanonicalBytes (0.00s)
+=== RUN   TestServiceInjectableSourceClockAndDeterministicKey
+--- PASS: TestServiceInjectableSourceClockAndDeterministicKey (0.00s)
+=== RUN   TestServiceFailuresStillReleaseReader
+--- PASS: TestServiceFailuresStillReleaseReader (0.00s)
+=== RUN   TestServiceBudgetAndContextCancelReleaseReader
+--- PASS: TestServiceBudgetAndContextCancelReleaseReader (0.00s)
+PASS
+ok  	canonicalkey	1.528s
+?   	canonicalkey/cmd/canonicalkey-example	[no test files]
