@@ -1,0 +1,14 @@
+{
+  "name": "incremental-utf8",
+  "version": "0.1.0",
+  "description": "Incremental UTF-8 decoder with byte<->UTF-16 offset mapping, checkpoints and pluggable error strategies",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
