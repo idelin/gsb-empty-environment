@@ -1,0 +1,49 @@
+{
+  "status": "conflict",
+  "provenance": {
+    "db": "theirs",
+    "utils": "base",
+    "web": "ours"
+  },
+  "changes": [
+    {
+      "package": "db",
+      "action": "update",
+      "source": "theirs",
+      "detail": "1.0.0 -> 1.2.0"
+    },
+    {
+      "package": "web",
+      "action": "update",
+      "source": "ours",
+      "detail": "1.0.0 -> 1.1.0"
+    }
+  ],
+  "unresolved": [
+    {
+      "package": "utils",
+      "reason": "shared-dependency-conflict",
+      "detail": "no locally available version of utils satisfies: >=1.0.0,<1.2.0, >=1.2.0,<2.0.0"
+    }
+  ],
+  "merged": {
+    "packages": {
+      "db": {
+        "version": "1.2.0",
+        "dependencies": {
+          "utils": ">=1.0.0,<1.2.0"
+        }
+      },
+      "utils": {
+        "version": "1.1.0",
+        "dependencies": {}
+      },
+      "web": {
+        "version": "1.1.0",
+        "dependencies": {
+          "utils": ">=1.2.0,<2.0.0"
+        }
+      }
+    }
+  }
+}
