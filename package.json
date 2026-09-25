@@ -1,0 +1,11 @@
+{
+  "name": "pixel-delta-history",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Delta-based pixel edit history with branching undo, memory compression and size-change transactions",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node demo.ts"
+  }
+}
