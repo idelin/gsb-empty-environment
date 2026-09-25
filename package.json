@@ -1,0 +1,14 @@
+{
+  "name": "font-measure-cache",
+  "version": "0.1.0",
+  "description": "Generation-based font measurement cache with shared async tasks, byte-budget eviction and estimate/final layout channels",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node sample/demo.ts"
+  },
+  "license": "MIT"
+}
