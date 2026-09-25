@@ -1,0 +1,15 @@
+{
+  "name": "version-graph-migration",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "版本图迁移引擎：确定性路径选择、歧义拒绝、逐步骤 schema 校验、可恢复断点",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "sample": "node examples/sample.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  }
+}
