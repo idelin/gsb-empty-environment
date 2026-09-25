@@ -1,0 +1,25 @@
+test_before_chain_has_integer_witness (test_allen.AllenAlgebraTests.test_before_chain_has_integer_witness) ... ok
+test_before_transitivity (test_allen.AllenAlgebraTests.test_before_transitivity) ... ok
+test_budget_exhaustion_is_unknown_not_unsatisfiable (test_allen.AllenAlgebraTests.test_budget_exhaustion_is_unknown_not_unsatisfiable) ... ok
+test_local_path_consistency_is_not_global_satisfiability (test_allen.AllenAlgebraTests.test_local_path_consistency_is_not_global_satisfiability) ... ok
+test_push_pop_restores_domains_queue_and_evidence (test_allen.AllenAlgebraTests.test_push_pop_restores_domains_queue_and_evidence) ... ok
+test_rollback_conflicting_correction_recovers_search (test_allen.AllenAlgebraTests.test_rollback_conflicting_correction_recovers_search) ... ok
+test_satisfiable_search_returns_verifiable_witness (test_allen.AllenAlgebraTests.test_satisfiable_search_returns_verifiable_witness) ... ok
+test_synthetic_composition_table_has_core_entries (test_allen.AllenAlgebraTests.test_synthetic_composition_table_has_core_entries) ... ok
+test_synthetic_composition_table_matches_all_endpoint_orders (test_allen.AllenAlgebraTests.test_synthetic_composition_table_matches_all_endpoint_orders) ... ok
+test_time_point_duration_and_wall_clock_are_distinct (test_allen.AllenAlgebraTests.test_time_point_duration_and_wall_clock_are_distinct) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.111s
+
+OK
+
+Hard network path-consistency status: consistent
+Independent integer endpoint enumeration (0..6): None
+Complete atomic search status: unsatisfiable
+Branches explored: 2
+Conflict branch: ((0, 3, '<'),)
+   path conflict on 5->4->1: ssi ∘ m = <odifi has no relation left in m
+Conflict branch: ((0, 3, '='),)
+   path conflict on 4->1->5: mi ∘ m = ssi= has no relation left in ffi
+Python 3.11.15
