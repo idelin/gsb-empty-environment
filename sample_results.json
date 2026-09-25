@@ -1,0 +1,118 @@
+{
+  "adaptive_replan": {
+    "emitted_matches_result": true,
+    "executed_order": [
+      "D",
+      "B",
+      "C"
+    ],
+    "initial_order": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "multiset_matches_reference": true,
+    "partitioned_steps": [
+      "C"
+    ],
+    "reference_rows": 20000,
+    "replan_count": 1,
+    "replan_reasons": [
+      "stale_stats"
+    ],
+    "result_rows": 20000,
+    "states": [
+      "REPLANNED",
+      "SPILLED",
+      "STALE_STATS"
+    ],
+    "status": "COMPLETED"
+  },
+  "duplicate_key_spill": {
+    "emitted_matches_result": true,
+    "multiset_matches_reference": true,
+    "partitioned_stages": 1,
+    "reference_rows": 250190,
+    "result_rows": 250190,
+    "states": [
+      "SPILLED"
+    ],
+    "status": "COMPLETED"
+  },
+  "estimate_deviation": {
+    "emitted_matches_result": true,
+    "executed_order": [
+      "B",
+      "D",
+      "C"
+    ],
+    "initial_order": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "multiset_matches_reference": true,
+    "partitioned_steps": [
+      "B",
+      "C"
+    ],
+    "reference_rows": 20000,
+    "replan_reasons": [
+      "estimate_deviation"
+    ],
+    "result_rows": 20000,
+    "states": [
+      "REPLANNED",
+      "SPILLED"
+    ],
+    "status": "COMPLETED",
+    "tail_flipped": true
+  },
+  "low_selectivity_exception": {
+    "greedy_exact_cost": 104912.79999999999,
+    "greedy_gap": 11.484679232064144,
+    "greedy_order": [
+      "B",
+      "C"
+    ],
+    "legal_orders": [
+      [
+        "C",
+        "B"
+      ],
+      [
+        "B",
+        "C"
+      ]
+    ],
+    "planner_exact_cost": 9135.022222222222,
+    "planner_gap": 1.0,
+    "planner_optimal": true,
+    "planner_order": [
+      "C",
+      "B"
+    ]
+  },
+  "outer_join_barrier": {
+    "illegal_reassociated_rows": 1,
+    "legal_orders": [
+      [
+        "S",
+        "T"
+      ]
+    ],
+    "legal_result_rows": 0,
+    "multiset_differs": true
+  },
+  "terminal_states": {
+    "budget_cost_spent": 7006.4,
+    "budget_status": "BUDGET_EXHAUSTED",
+    "cancel_status": "CANCELLED",
+    "cancelled_emitted_rows": 100,
+    "emitted_submultiset_of_result": true,
+    "stale_stats_flag": true,
+    "stale_stats_status": "COMPLETED"
+  }
+}
