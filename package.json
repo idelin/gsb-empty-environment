@@ -1,0 +1,11 @@
+{
+  "name": "sortable-tree-dnd",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared mouse/keyboard state machine for a sortable hierarchical list",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node src/demo.ts"
+  }
+}
