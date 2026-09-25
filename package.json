@@ -1,0 +1,14 @@
+{
+  "name": "merged-grid",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Merged-cell grid: 2D navigation, range selection and copy, laid out from node-tree + glyph-metric fixtures without a browser layout engine.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test"
+  }
+}

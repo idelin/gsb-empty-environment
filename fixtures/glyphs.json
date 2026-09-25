@@ -1,0 +1,15 @@
+{
+  "defaultAdvance": 5,
+  "advances": {
+    "i": 2,
+    "l": 2,
+    "I": 2,
+    "t": 4,
+    "m": 8,
+    "w": 8,
+    "W": 8
+  },
+  "lineHeight": 10,
+  "cellPaddingX": 2,
+  "cellPaddingY": 2
+}

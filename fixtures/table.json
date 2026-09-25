@@ -1,0 +1,30 @@
+{
+  "rows": [
+    {
+      "cells": [
+        { "text": "Alpha", "colSpan": 2 },
+        { "text": "Beta" },
+        { "text": "Gamma", "rowSpan": 2 }
+      ]
+    },
+    {
+      "cells": [
+        { "text": "Delta" },
+        { "text": "Epsilon" },
+        { "text": "Zeta" }
+      ]
+    },
+    {
+      "cells": [
+        { "text": "Eta", "colSpan": 2, "rowSpan": 2 },
+        { "text": "Theta" },
+        { "text": "Iota" }
+      ]
+    },
+    {
+      "cells": [
+        { "text": "Kappa", "colSpan": 2 }
+      ]
+    }
+  ]
+}
