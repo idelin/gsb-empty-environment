@@ -1,0 +1,13 @@
+{
+  "name": "accname-incremental",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Simplified accessible name/description computation with dependency-tracked incremental recomputation",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\""
+  }
+}
