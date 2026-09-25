@@ -1,0 +1,14 @@
+{
+  "name": "graded-policy-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Exact rational-weight rule scoring with hard rejects, explicit grade thresholds, correlated unknown-attribute analysis and incremental recompute. No runtime dependencies.",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node examples/sample.ts"
+  }
+}
