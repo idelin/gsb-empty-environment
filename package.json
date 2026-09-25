@@ -1,0 +1,15 @@
+{
+  "name": "multi-header-grid",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-layer table header: hide/reorder/collapse with spans, keyboard tree and data-column mapping, computed without a browser layout engine.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/",
+    "sample": "node --experimental-strip-types samples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
