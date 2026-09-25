@@ -1,0 +1,7 @@
+random chunks: [(0, 2, 1), (0, 0, 2), (0, 3, 1), (1, 0, 2), (1, 2, 1)]
+reference   : {'word': ('a', 'b', None, '', 'b', 'a', 'b'), 'amount': (9223372036854775825, 9223372036854775825, None, 9223372036854775825, None, None, None)}
+merged      : {'word': ('a', 'b', None, '', 'b', 'a', 'b'), 'amount': (9223372036854775825, 9223372036854775825, None, 9223372036854775825, None, None, None)}
+equal       : True
+dictionary  : /var/folders/73/kmh6t_p53fvg95dxl50x8gw80000gn/T/tmpqoihu9nf/merge-job/published/generation-0001/dictionary.pdic
+recoded     : /var/folders/73/kmh6t_p53fvg95dxl50x8gw80000gn/T/tmpqoihu9nf/merge-job/published/generation-0001/batch.rcod
+accounting  : {'physical_dictionary_bytes': 150, 'physical_remap_bytes': 263, 'physical_recoded_bytes': 135, 'spill_bytes_written': 4543, 'spill_bytes_deleted': 3082, 'spill_bytes_remaining': 1461, 'peak_memory_bytes': 165, 'memory_limit_bytes': 96}
