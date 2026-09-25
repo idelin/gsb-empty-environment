@@ -1,0 +1,12 @@
+{
+  "name": "triv-algebra",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Three-valued Boolean + interval algebra simplifier with provenance and an exhaustive equivalence tester",
+  "engines": { "node": ">=22.6" },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node --experimental-strip-types src/demo.ts"
+  }
+}

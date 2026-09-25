@@ -1,0 +1,93 @@
+
+=== 1. excluded middle on a nullable domain (MUST NOT collapse) ===
+  before: (isAdmin [isAdmin#1] OR NOT(isAdmin))
+  after : (isAdmin [isAdmin#1] OR NOT(isAdmin)) [isAdmin#1]
+  isAdmin MISSING -> MISSING (NOT true: law of excluded middle fails on lossy domain)
+  if a tool rewrote it to `true`:
+    NOT EQUIVALENT — checked 4392/4392 finite-domain inputs
+      mismatch @ all attributes missing: before=MISSING after=TRUE
+      mismatch @ {"tier":"free"}: before=MISSING after=TRUE
+      mismatch @ {"tier":"pro"}: before=MISSING after=TRUE
+      mismatch @ {"tier":"ent"}: before=MISSING after=TRUE
+      mismatch @ {"age":0}: before=MISSING after=TRUE
+      mismatch @ {"age":0,"tier":"free"}: before=MISSING after=TRUE
+      mismatch @ {"age":0,"tier":"pro"}: before=MISSING after=TRUE
+      mismatch @ {"age":0,"tier":"ent"}: before=MISSING after=TRUE
+      mismatch @ {"age":1}: before=MISSING after=TRUE
+      mismatch @ {"age":1,"tier":"free"}: before=MISSING after=TRUE
+
+=== 2. false branch elimination in AND (with provenance) ===
+[false AND isAdmin AND age>=18]
+  before: (false [deny-rule#2] AND isAdmin [isAdmin#3] AND age>=18 [age-policy#4])
+  after : false [deny-rule#2]
+EQUIVALENT — checked 4392/4392 finite-domain inputs
+  lineage:
+    - and-false-annihilator: false AND ... -> false <- {deny-rule#2}
+
+=== 3. integer interval algebra (intersection / union) ===
+[age>=18 AND age<30]
+  before: (age>=18 [a1#5] AND age<30 [a2#6])
+  after : age∈{18..29} [a1#5,a2#6]
+EQUIVALENT — checked 4392/4392 finite-domain inputs
+  lineage:
+    - int-intersect: age: merged 2 interval(s) -> 1 box(es) <- {a1#5,a2#6}
+[age<10 AND age>20 (empty box, missing stays MISSING)]
+  before: (age<10 [a3#7] AND age>20 [a4#8])
+  after : age∈{} [a3#7,a4#8]
+EQUIVALENT — checked 4392/4392 finite-domain inputs
+  lineage:
+    - int-intersect: age: merged 2 interval(s) -> empty box(es) <- {a3#7,a4#8}
+[age<18 OR age>=65]
+  before: (age<18 [a5#9] OR age>=65 [a6#10])
+  after : age∈{-Infinity..17,65..Infinity} [a5#9,a6#10]
+EQUIVALENT — checked 4392/4392 finite-domain inputs
+  lineage:
+    - int-union: age: merged 2 interval(s) -> 2 box(es) <- {a5#9,a6#10}
+
+=== 4. finite-set algebra ===
+[tier∈{pro,ent} AND tier∈{ent,free}]
+  before: (tier∈{ent,pro} [t1#11] AND tier∈{ent,free} [t2#12])
+  after : tier∈{ent} [t1#11,t2#12]
+EQUIVALENT — checked 4392/4392 finite-domain inputs
+  lineage:
+    - set-intersect: tier: merged 2 set(s) -> {ent} <- {t1#11,t2#12}
+[NOT(tier∈{free})]
+  before: NOT(tier∈{free} [t3#13])
+  after : tier∈{ent,pro} [t3#13]
+EQUIVALENT — checked 4392/4392 finite-domain inputs
+  lineage:
+    - set-complement: NOT (tier ∈ S) -> tier ∈ U\S <- {t3#13}
+[tier∈{free} OR tier∈{pro,ent} (whole universe, missing stays MISSING)]
+  before: (tier∈{free} [t4#14] OR tier∈{ent,pro} [t5#15])
+  after : tier∈{ent,free,pro} [t4#14,t5#15]
+EQUIVALENT — checked 4392/4392 finite-domain inputs
+  lineage:
+    - set-union: tier: merged 2 set(s) -> {ent,free,pro} <- {t4#14,t5#15}
+
+=== 5. boolean algebra moves (all three-valued safe) ===
+[NOT(NOT mfa)]
+  before: NOT(NOT(mfa [m1#16]))
+  after : mfa [m1#16]
+EQUIVALENT — checked 4392/4392 finite-domain inputs
+  lineage:
+    - double-negation: NOT(NOT x) -> x <- {}
+[isAdmin AND isAdmin]
+  before: (isAdmin [b1#17] AND isAdmin [b2#18])
+  after : isAdmin [b1#17,b2#18]
+EQUIVALENT — checked 4392/4392 finite-domain inputs
+  lineage:
+    - and-idempotence: x op x -> x <- {b1#17,b2#18}
+[NOT(isAdmin AND mfa)]
+  before: NOT((isAdmin [b3#19] AND mfa [m2#20]))
+  after : (NOT(isAdmin [b3#19]) [b3#19] OR NOT(mfa [m2#20]) [m2#20]) [b3#19,m2#20]
+EQUIVALENT — checked 4392/4392 finite-domain inputs
+  lineage:
+    - de-morgan: NOT(AND) -> OR(NOT...) <- {b3#19,m2#20}
+[true OR isAdmin]
+  before: (true OR isAdmin [b4#21])
+  after : true
+EQUIVALENT — checked 4392/4392 finite-domain inputs
+  lineage:
+    - or-true-annihilator: true OR ... -> true <- {}
+
+Done.
