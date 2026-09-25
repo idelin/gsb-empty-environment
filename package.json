@@ -1,0 +1,11 @@
+{
+  "name": "policy-scope-containment",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Containment checking between policy applicability scopes over explicit finite domains",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
