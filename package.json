@@ -1,0 +1,14 @@
+{
+  "name": "unit-migrate",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Schema-driven unit migration for JSON trees with exact rational arithmetic, affine units, audit trails and atomic rollback.",
+  "scripts": {
+    "test": "node tools/with-node.mjs --test \"test/*.test.ts\"",
+    "sample": "node tools/with-node.mjs examples/sample.ts"
+  },
+  "engines": {
+    "node": ">=22.6"
+  }
+}
