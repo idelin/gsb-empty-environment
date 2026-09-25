@@ -1,0 +1,13 @@
+{
+  "name": "policy-combining",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Policy combining algorithms (deny-overrides / permit-overrides / first-applicable) with an explicit obligation merge algebra, atomic module version switching and replayable decisions.",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
