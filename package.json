@@ -1,0 +1,14 @@
+{
+  "name": "nested-scroll-tx",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Nested scroll containers with remainder-propagating wheel dispatch, replayable scroll transactions, exact residual accounting and feedback-safe programmatic scrolling.",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test",
+    "sample": "node examples/sample.ts"
+  }
+}

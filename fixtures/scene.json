@@ -1,0 +1,44 @@
+{
+  "glyphMetrics": {
+    "lineHeight": 20,
+    "advance": 10
+  },
+  "nodes": [
+    {
+      "id": "outer",
+      "parent": null,
+      "rect": [0, 0, 400, 300],
+      "axes": "both",
+      "snap": 1,
+      "transform": "none",
+      "content": { "lines": [{ "chars": 40, "repeat": 45 }] }
+    },
+    {
+      "id": "inner",
+      "parent": "outer",
+      "rect": [40, 40, 240, 160],
+      "axes": "both",
+      "snap": 1,
+      "transform": "none",
+      "content": { "lines": [{ "chars": 60, "repeat": 28 }] }
+    },
+    {
+      "id": "hstrip",
+      "parent": "outer",
+      "rect": [40, 220, 240, 80],
+      "axes": "x",
+      "snap": 1,
+      "transform": "none",
+      "content": { "lines": [{ "chars": 90, "repeat": 4 }] }
+    },
+    {
+      "id": "rotbox",
+      "parent": "outer",
+      "rect": [300, 40, 80, 160],
+      "axes": "both",
+      "snap": 1,
+      "transform": "swap",
+      "content": { "lines": [{ "chars": 50, "repeat": 10 }] }
+    }
+  ]
+}
