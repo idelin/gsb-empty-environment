@@ -1,0 +1,14 @@
+{
+  "name": "tri-value-policy-algebra",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Boolean + integer-interval algebra simplifier with Kleene three-valued semantics, source mapping, and an exhaustive finite-domain equivalence tester.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "sample": "node src/sample.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
