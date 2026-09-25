@@ -1,0 +1,2 @@
+var p = {name: "Ada"}
+p.age = 36

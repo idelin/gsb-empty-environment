@@ -1,0 +1,3 @@
+fn freeze(readonly r: {n: Int}) {
+    r.n = 3
+}

@@ -1,0 +1,2 @@
+var p = {name: "Ada"}
+print(p.age)

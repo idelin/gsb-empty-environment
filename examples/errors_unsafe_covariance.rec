@@ -1,0 +1,6 @@
+fn set_n(writable r: {n: Int}) {
+    r.n = 5
+}
+
+var wide = {n: 1, tag: "wide"}
+set_n(wide)
