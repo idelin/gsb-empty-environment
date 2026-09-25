@@ -1,0 +1,14 @@
+{
+  "name": "glyph-truncation-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Fixture-driven multi-line truncation engine: middle ellipsis, key-fragment retention, bidi, links, incremental re-layout on late metrics.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
