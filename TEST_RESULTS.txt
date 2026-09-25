@@ -1,0 +1,21 @@
+test_base_table_is_clean (tests.test_validator.TestBaseValid.test_base_table_is_clean) ... ok
+test_unsorted_declared_column_not_checked (tests.test_validator.TestBaseValid.test_unsorted_declared_column_not_checked) ... ok
+test_huge_offset_no_unbounded_read_and_no_masking (tests.test_validator.TestBoundedReadsAndIndependence.test_huge_offset_no_unbounded_read_and_no_masking) ... ok
+test_one_column_short_by_one_row (tests.test_validator.TestBoundedReadsAndIndependence.test_one_column_short_by_one_row) ... ok
+test_arbitrary_chunking_same_errors (tests.test_validator.TestChunkingAndResume.test_arbitrary_chunking_same_errors) ... ok
+test_pause_resume_same_errors (tests.test_validator.TestChunkingAndResume.test_pause_resume_same_errors) ... ok
+test_missing_vs_corrupt_severity (tests.test_validator.TestDictionaryVersions.test_missing_vs_corrupt_severity) ... ok
+test_sorted_str_cross_batch_inversion (tests.test_validator.TestDictionaryVersions.test_sorted_str_cross_batch_inversion) ... ok
+test_only_first_inversion_per_column (tests.test_validator.TestEarliestBadRow.test_only_first_inversion_per_column) ... ok
+test_big_integers_compared_exactly (tests.test_validator.TestExactIntegers.test_big_integers_compared_exactly) ... ok
+test_bool_rejected_in_int_column (tests.test_validator.TestExactIntegers.test_bool_rejected_in_int_column) ... ok
+test_every_single_point_mutation (tests.test_validator.TestMutations.test_every_single_point_mutation) ... ok
+test_nan_is_not_null_and_null_is_not_nan (tests.test_validator.TestNullVersusNaN.test_nan_is_not_null_and_null_is_not_nan) ... ok
+test_declared_and_shared_is_ok (tests.test_validator.TestSharedBuffers.test_declared_and_shared_is_ok) ... ok
+test_declared_but_not_shared_is_corrupt (tests.test_validator.TestSharedBuffers.test_declared_but_not_shared_is_corrupt) ... ok
+test_shared_but_undeclared_is_corrupt (tests.test_validator.TestSharedBuffers.test_shared_but_undeclared_is_corrupt) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.009s
+
+OK
