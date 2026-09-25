@@ -1,0 +1,11 @@
+{
+  "name": "declarative-normalizer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "声明式 JSON 树规范化：日期/空白/枚举别名规则、依赖分析、幂等搜索、逆补丁与版本化发布",
+  "scripts": {
+    "test": "node --test tests/",
+    "sample": "node examples/sample.ts"
+  }
+}
