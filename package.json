@@ -1,0 +1,14 @@
+{
+  "name": "json-migration-graph",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Version-graph JSON migrations with deterministic routing, per-step schemas, and checkpoint resume",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "sample": "node --experimental-strip-types examples/sample.ts"
+  }
+}
