@@ -1,0 +1,14 @@
+{
+  "name": "exact-timeline",
+  "version": "0.1.0",
+  "description": "Deterministic keyframe/timeline engine with exact integer-tick timing, nesting, events and fixture-driven layout. Zero dependencies.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/",
+    "demo": "node examples/demo.ts"
+  }
+}
