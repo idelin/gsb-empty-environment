@@ -1,0 +1,14 @@
+{
+  "name": "policy-containment",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Policy applicability containment over explicit finite domains (enums, integer intervals, difference constraints, set predicates, boolean combinations) with three-valued semantics, budgeted search and an independent exhaustive checker.",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}
