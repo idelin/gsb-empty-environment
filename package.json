@@ -1,0 +1,14 @@
+{
+  "name": "domain-pseudonymizer",
+  "version": "1.0.0",
+  "description": "Stable, domain-isolated pseudonymization for JSON trees with referential consistency, collision detection and separate mapping export.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "sample": "node --experimental-strip-types examples/run-sample.ts"
+  },
+  "license": "MIT"
+}
