@@ -1,0 +1,11 @@
+{
+  "name": "rule-module-system",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "显式导入导出的规则模块系统：命名空间隔离、版本匹配、原子批量链接、热替换与存活决策快照",
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
