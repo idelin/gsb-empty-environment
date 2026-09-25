@@ -1,0 +1,14 @@
+{
+  "name": "hier-graph-store",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-source incremental hierarchical graph with stable entity IDs, field-level lineage and replayable batches",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node src/sample.ts"
+  }
+}
