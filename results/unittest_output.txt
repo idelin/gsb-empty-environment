@@ -1,0 +1,32 @@
+test_no_false_completeness_claim (test_supportdag.BudgetPauseResumeTests.test_no_false_completeness_claim) ... ok
+test_over_budget_is_truncated_not_complete (test_supportdag.BudgetPauseResumeTests.test_over_budget_is_truncated_not_complete) ... ok
+test_resume_until_complete (test_supportdag.BudgetPauseResumeTests.test_resume_until_complete) ... ok
+test_conjunction_alternatives_and_negation_normalize (test_supportdag.DNFSemanticsTests.test_conjunction_alternatives_and_negation_normalize) ... ok
+test_contradictory_alternative_is_dropped (test_supportdag.DNFSemanticsTests.test_contradictory_alternative_is_dropped) ... ok
+test_A_dominates_A_B_but_not_C (test_supportdag.DominanceAndReappearanceTests.test_A_dominates_A_B_but_not_C) ... ok
+test_negative_premise_fails_when_fact_added (test_supportdag.DominanceAndReappearanceTests.test_negative_premise_fails_when_fact_added) ... ok
+test_pruned_alternative_reappears_after_retraction (test_supportdag.DominanceAndReappearanceTests.test_pruned_alternative_reappears_after_retraction) ... ok
+test_evidence_is_replayable_and_sufficient_irredundant (test_supportdag.EvidenceAndVerifierTests.test_evidence_is_replayable_and_sufficient_irredundant) ... ok
+test_kb_roundtrip_replays_identically (test_supportdag.EvidenceAndVerifierTests.test_kb_roundtrip_replays_identically) ... ok
+test_verifier_detects_version_drift (test_supportdag.EvidenceAndVerifierTests.test_verifier_detects_version_drift) ... ok
+test_verifier_rejects_redundant_fact (test_supportdag.EvidenceAndVerifierTests.test_verifier_rejects_redundant_fact) ... ok
+test_verifier_rejects_tampered_step (test_supportdag.EvidenceAndVerifierTests.test_verifier_rejects_tampered_step) ... ok
+test_cost_order_is_nondecreasing (test_supportdag.ExhaustiveSmallGraphTests.test_cost_order_is_nondecreasing) ... ok
+test_engine_matches_brute_force_oracle (test_supportdag.ExhaustiveSmallGraphTests.test_engine_matches_brute_force_oracle) ... ok
+test_inclusion_minimal_differs_from_minimum_cardinality (test_supportdag.ExhaustiveSmallGraphTests.test_inclusion_minimal_differs_from_minimum_cardinality) ... ok
+test_many_random_positive_graphs_match_oracle (test_supportdag.RandomizedExhaustiveTests.test_many_random_positive_graphs_match_oracle) ... ok
+test_goals_share_subproofs_but_not_results (test_supportdag.SharedSubproofTests.test_goals_share_subproofs_but_not_results) ... ok
+test_result_does_not_leak_between_unrelated_goals (test_supportdag.SharedSubproofTests.test_result_does_not_leak_between_unrelated_goals) ... ok
+test_fact_version_change_revises_dependents (test_supportdag.VersioningAndIncrementalTests.test_fact_version_change_revises_dependents) ... ok
+test_revision_monotone_and_stable_ids (test_supportdag.VersioningAndIncrementalTests.test_revision_monotone_and_stable_ids) ... ok
+test_rule_version_change_revises_only_dependent_goals (test_supportdag.VersioningAndIncrementalTests.test_rule_version_change_revises_only_dependent_goals) ... ok
+test_grounded_chain_through_cycle_shape_works (test_supportdag.WFSTests.test_grounded_chain_through_cycle_shape_works) ... ok
+test_mutual_rootless_cycle_proves_nothing (test_supportdag.WFSTests.test_mutual_rootless_cycle_proves_nothing) ... ok
+test_negative_premise_basic (test_supportdag.WFSTests.test_negative_premise_basic) ... ok
+test_negative_self_loop_is_undefined_not_true (test_supportdag.WFSTests.test_negative_self_loop_is_undefined_not_true) ... ok
+test_rootless_positive_cycle_proves_nothing (test_supportdag.WFSTests.test_rootless_positive_cycle_proves_nothing) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 2.284s
+
+OK

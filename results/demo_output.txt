@@ -1,0 +1,66 @@
+
+========================================================================
+1. Dominance: {A} dominates {A,B}, but never {C}
+========================================================================
+minimal supports of g: [{'A'}]
+minimal supports of h: [{'C'}]
+
+========================================================================
+2. Retraction makes a pruned alternative proof reappear
+========================================================================
+initial:               [{'FB'}]
+after adding A:        [{'FA'}]
+after retracting A:    [{'FB'}] revived: ('g',)
+
+========================================================================
+3. Negative premise defeated by a new fact
+========================================================================
+before: ['{FB}']
+after A is asserted: [] (status=complete)
+
+========================================================================
+4. Multiple goals share sub-proofs, not results
+========================================================================
+g: {F}  shared x-step: ['rule:rx:v1:86bb118e3f5c01e4']
+h: {F}  shared x-step: ['rule:rx:v1:86bb118e3f5c01e4']
+goal acceptance records are distinct objects: True
+
+========================================================================
+5. Rootless cycles prove nothing
+========================================================================
+p :- p          -> [] (complete=True)
+q :- r, r :- q  -> [] (complete=True)
+
+========================================================================
+6. Lazy enumeration: budget truncation, pause, resume
+========================================================================
+pull(budget=2): ['{F3}', '{F2}'] truncated: True complete: False
+resume #2:    ['{F1}', '{F4}'] truncated: True complete: False
+resume #3:    ['{F0}', '{F5}'] truncated: True complete: False
+resume #4:    [] truncated: False complete: True
+
+========================================================================
+7. Stable identity/version, replayable evidence, verifier
+========================================================================
+support id: support:g:38724c8fca4c0b43 facts: {A,B} cost: 5
+verifier: {'ok': True, 'goal': 'g', 'support_id': 'support:g:38724c8fca4c0b43', 'fact_ids': ['A', 'B'], 'num_steps': 4, 'num_facts': 2}
+derivation order:
+    fact:A:v1 => a
+    fact:B:v1 => b
+    rule:rx:v1:3163e615f90b3761 => x
+    rule:rg:v1:86f14fce0cd21a57 => g
+after fact v1->v2 support id: support:g:6d929f73aac3665d
+
+========================================================================
+8. Small graph: exhaustive comparison of all minimal sets
+========================================================================
+engine : [{'F4'}, {'F3', 'F1'}, {'F2', 'F1'}]
+oracle : [{'F4'}, {'F3', 'F1'}, {'F2', 'F1'}]
+match  : True
+inclusion-minimal family : [{'F4'}, {'F3', 'F1'}, {'F2', 'F1'}]
+minimum-cardinality only : [{'F4'}]
+
+========================================================================
+RESULT
+========================================================================
+ALL DEMONSTRATION CHECKS PASSED
