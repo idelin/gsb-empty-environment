@@ -1,0 +1,14 @@
+{
+  "name": "obligation-merge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Policy decision engine whose allow verdicts carry obligations (limits, masked fields, audit tags, ordered steps, output formats) merged with per-kind algebras",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "sample": "node samples/run-sample.ts"
+  }
+}
