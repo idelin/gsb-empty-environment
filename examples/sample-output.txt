@@ -1,0 +1,143 @@
+=== Semantic rule-set comparison ===
+old set: old-policy   new set: new-policy
+evaluation: order-independent deny-overrides; rules read explicit attributes only
+finite analysis scope (576 input points): role ∈ {guest, viewer, editor, admin}, env ∈ {prod, staging, dev}, resource ∈ {dashboard, report, logs, admin_panel}, mfa ∈ {true, false}, age ∈ [0, 2] (integer), risk ∈ [0, 1] (integer)
+
+--- Summary (counts of input points) ---
+  decision changed  allow -> deny : 36
+  decision changed  deny  -> allow: 84
+  explanation only (effect unchanged): 276
+  unchanged                         : 180
+
+### allow -> deny regions (5)
+  allow->deny  points=12
+    representative input: { role=admin, env=prod, resource=report, mfa=true, age=0, risk=0 }
+    old: allow via rules [r_editor_report_allow]
+    new: deny via (default effect, no rule matched)
+    region: role ∈ {admin}; env ∈ {prod, staging}; resource ∈ {report}; age ∈ {0, 1}
+  allow->deny  points=8
+    representative input: { role=editor, env=prod, resource=report, mfa=false, age=0, risk=0 }
+    old: allow via rules [r_editor_report_allow]
+    new: deny via rules [r_prod_no_mfa_deny]
+    region: role ∈ {admin, editor}; env ∈ {prod}; resource ∈ {report}; mfa ∈ {false}; age ∈ {0, 1}
+  allow->deny  points=8
+    representative input: { role=editor, env=staging, resource=report, mfa=true, age=0, risk=0 }
+    old: allow via rules [r_editor_report_allow]
+    new: deny via rules [r_staging_editor_report_deny]
+    region: role ∈ {editor}; env ∈ {staging}; resource ∈ {report}; age ∈ {0, 1}
+  allow->deny  points=4
+    representative input: { role=admin, env=prod, resource=logs, mfa=false, age=0, risk=0 }
+    old: allow via rules [r_admin_logs_allow]
+    new: deny via rules [r_prod_no_mfa_deny]
+    region: role ∈ {admin}; env ∈ {prod}; resource ∈ {logs}; mfa ∈ {false}; age ∈ {0, 1}
+  allow->deny  points=4
+    representative input: { role=admin, env=prod, resource=admin_panel, mfa=false, age=0, risk=0 }
+    old: allow via rules [r_admin_panel_allow]
+    new: deny via rules [r_prod_no_mfa_deny]
+    region: role ∈ {admin}; env ∈ {prod}; resource ∈ {admin_panel}; mfa ∈ {false}; age ∈ {0, 1}
+
+### deny -> allow regions (7)
+  deny->allow  points=30
+    representative input: { role=viewer, env=prod, resource=dashboard, mfa=true, age=2, risk=0 }
+    old: deny via rules [r_age_deny]
+    new: allow via rules [r_viewer_dashboard_broadened]
+    region: role ∈ {admin, editor, viewer}; resource ∈ {dashboard}; age ∈ {2}
+  deny->allow  points=24
+    representative input: { role=viewer, env=staging, resource=dashboard, mfa=false, age=0, risk=0 }
+    old: deny via (default effect, no rule matched)
+    new: allow via rules [r_viewer_dashboard_broadened]
+    region: role ∈ {admin, editor, viewer}; env ∈ {dev, staging}; resource ∈ {dashboard}; mfa ∈ {false}; age ∈ {0, 1}
+  deny->allow  points=10
+    representative input: { role=admin, env=prod, resource=admin_panel, mfa=true, age=2, risk=0 }
+    old: deny via rules [r_age_deny]
+    new: allow via rules [r_admin_panel_allow_v2]
+    region: role ∈ {admin}; resource ∈ {admin_panel}; age ∈ {2}
+  deny->allow  points=8
+    representative input: { role=viewer, env=dev, resource=logs, mfa=true, age=2, risk=0 }
+    old: deny via rules [r_age_deny]
+    new: allow via rules [r_dev_logs_general]
+    region: role ∈ {editor, viewer}; env ∈ {dev}; resource ∈ {logs}; age ∈ {2}
+  deny->allow  points=6
+    representative input: { role=admin, env=prod, resource=logs, mfa=true, age=2, risk=0 }
+    old: deny via rules [r_age_deny]
+    new: allow via rules [r_admin_logs_allow_v2]
+    region: role ∈ {admin}; env ∈ {prod, staging}; resource ∈ {logs}; age ∈ {2}
+  deny->allow  points=4
+    representative input: { role=admin, env=dev, resource=logs, mfa=true, age=2, risk=0 }
+    old: deny via rules [r_age_deny]
+    new: allow via rules [r_admin_logs_allow_v2, r_dev_logs_admin]
+    region: role ∈ {admin}; env ∈ {dev}; resource ∈ {logs}; age ∈ {2}
+  deny->allow  points=2
+    representative input: { role=editor, env=prod, resource=report, mfa=true, age=2, risk=0 }
+    old: deny via rules [r_age_deny]
+    new: allow via rules [r_editor_report_tightened]
+    region: role ∈ {editor}; env ∈ {prod}; resource ∈ {report}; mfa ∈ {true}; age ∈ {2}
+
+### explanation-only regions (13)
+  explanation-only (effect stays "deny")  points=56
+    representative input: { role=viewer, env=prod, resource=report, mfa=true, age=2, risk=0 }
+    old explanation: rules [r_age_deny]
+    new explanation: (default effect, no rule matched)
+    region: role ∈ {admin, editor, viewer}; resource ∈ {admin_panel, logs, report}; age ∈ {2}
+  explanation-only (effect stays "deny")  points=40
+    representative input: { role=guest, env=prod, resource=dashboard, mfa=true, age=2, risk=0 }
+    old explanation: rules [r_age_deny, r_guest_deny]
+    new explanation: rules [r_guest_deny]
+    region: role ∈ {guest}; age ∈ {2}
+  explanation-only (effect stays "allow")  points=36
+    representative input: { role=viewer, env=prod, resource=dashboard, mfa=true, age=0, risk=0 }
+    old explanation: rules [r_viewer_dashboard_allow]
+    new explanation: rules [r_viewer_dashboard_broadened]
+    region: role ∈ {admin, editor, viewer}; resource ∈ {dashboard}; mfa ∈ {true}; age ∈ {0, 1}
+  explanation-only (effect stays "deny")  points=32
+    representative input: { role=viewer, env=prod, resource=dashboard, mfa=false, age=0, risk=0 }
+    old explanation: (default effect, no rule matched)
+    new explanation: rules [r_prod_no_mfa_deny]
+    region: role ∈ {admin, editor, viewer}; env ∈ {prod}; mfa ∈ {false}; age ∈ {0, 1}
+  explanation-only (effect stays "deny")  points=24
+    representative input: { role=viewer, env=prod, resource=dashboard, mfa=false, age=2, risk=0 }
+    old explanation: rules [r_age_deny]
+    new explanation: rules [r_prod_no_mfa_deny]
+    region: role ∈ {admin, editor, viewer}; env ∈ {prod}; mfa ∈ {false}; age ∈ {2}
+  explanation-only (effect stays "allow")  points=20
+    representative input: { role=admin, env=prod, resource=admin_panel, mfa=true, age=0, risk=0 }
+    old explanation: rules [r_admin_panel_allow]
+    new explanation: rules [r_admin_panel_allow_v2]
+    region: role ∈ {admin}; resource ∈ {admin_panel}; age ∈ {0, 1}
+  explanation-only (effect stays "deny")  points=16
+    representative input: { role=guest, env=prod, resource=dashboard, mfa=false, age=0, risk=0 }
+    old explanation: rules [r_guest_deny]
+    new explanation: rules [r_guest_deny, r_prod_no_mfa_deny]
+    region: role ∈ {guest}; env ∈ {prod}; mfa ∈ {false}; age ∈ {0, 1}
+  explanation-only (effect stays "allow")  points=16
+    representative input: { role=viewer, env=dev, resource=logs, mfa=true, age=0, risk=0 }
+    old explanation: rules [r_dev_logs_allow]
+    new explanation: rules [r_dev_logs_general]
+    region: role ∈ {editor, viewer}; env ∈ {dev}; resource ∈ {logs}; age ∈ {0, 1}
+  explanation-only (effect stays "allow")  points=12
+    representative input: { role=admin, env=prod, resource=logs, mfa=true, age=0, risk=0 }
+    old explanation: rules [r_admin_logs_allow]
+    new explanation: rules [r_admin_logs_allow_v2]
+    region: role ∈ {admin}; env ∈ {prod, staging}; resource ∈ {logs}; age ∈ {0, 1}
+  explanation-only (effect stays "deny")  points=8
+    representative input: { role=guest, env=prod, resource=dashboard, mfa=false, age=2, risk=0 }
+    old explanation: rules [r_age_deny, r_guest_deny]
+    new explanation: rules [r_guest_deny, r_prod_no_mfa_deny]
+    region: role ∈ {guest}; env ∈ {prod}; mfa ∈ {false}; age ∈ {2}
+  explanation-only (effect stays "allow")  points=8
+    representative input: { role=admin, env=dev, resource=logs, mfa=true, age=0, risk=0 }
+    old explanation: rules [r_admin_logs_allow, r_dev_logs_allow]
+    new explanation: rules [r_admin_logs_allow_v2, r_dev_logs_admin]
+    region: role ∈ {admin}; env ∈ {dev}; resource ∈ {logs}; age ∈ {0, 1}
+  explanation-only (effect stays "allow")  points=4
+    representative input: { role=editor, env=prod, resource=report, mfa=true, age=0, risk=0 }
+    old explanation: rules [r_editor_report_allow]
+    new explanation: rules [r_editor_report_tightened]
+    region: role ∈ {editor}; env ∈ {prod}; resource ∈ {report}; mfa ∈ {true}; age ∈ {0, 1}
+  explanation-only (effect stays "deny")  points=4
+    representative input: { role=editor, env=staging, resource=report, mfa=true, age=2, risk=0 }
+    old explanation: rules [r_age_deny]
+    new explanation: rules [r_staging_editor_report_deny]
+    region: role ∈ {editor}; env ∈ {staging}; resource ∈ {report}; age ∈ {2}
+
+### unchanged regions: 2 (180 points, details omitted)

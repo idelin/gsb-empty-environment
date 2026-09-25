@@ -1,0 +1,14 @@
+{
+  "name": "ruleset-diff",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Semantic comparison of two ordered rule sets over a finite attribute domain",
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}

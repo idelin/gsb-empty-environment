@@ -1,0 +1,46 @@
+$ npm test
+(node:15759) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ enumeration covers exactly the declared finite cartesian product (1.237ms)
+✔ identical rule sets produce a single fully-unchanged partition (0.559208ms)
+✔ reordering rules changes neither decisions nor regions (0.259ms)
+✔ commuting AND/OR operands changes neither decisions nor explanations (0.165083ms)
+✔ allow -> deny is listed separately from deny -> allow (0.338417ms)
+✔ deny -> allow from relaxing an integer threshold (0.143958ms)
+✔ renaming a rule is explanation-only, never a decision change (0.253375ms)
+✔ splitting one rule into disjoint rules is explanation-only (0.0915ms)
+✔ explicit new deny that matches a previously default-denied input is explanation-only (1.259875ms)
+✔ region projection reports only the constrained attributes (0.367208ms)
+✔ every region's representative sample actually has the reported decisions (8.065959ms)
+✔ point counts over all regions sum to the finite domain size (0.179917ms)
+✔ projectRegion marks span correctly (0.072667ms)
+(node:15760) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ finite-set membership only reads the named explicit attribute (0.45725ms)
+✔ integer comparisons with strict integer typing (0.092958ms)
+✔ boolean AND / OR / NOT (0.238833ms)
+✔ deny overrides allow independent of rule order (22.267542ms)
+✔ default effect applies when nothing matches; allow otherwise (0.500458ms)
+✔ evaluation touches no attribute other than those named in conditions (0.491667ms)
+(node:15761) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ analysis universe is the declared finite product (0.5195ms)
+✔ summary partitions every input point exactly once (0.060625ms)
+✔ allow -> deny and deny -> allow are separate categories (0.143875ms)
+✔ admin prod report flips allow -> deny when rule tightens to editor only (0.429ms)
+✔ editor staging report flips allow -> deny via the new explicit deny (0.069459ms)
+✔ viewer staging dashboard without mfa flips deny -> allow (broadened rule) (0.076792ms)
+✔ prod dashboard without mfa stays deny: new deny replaces a former default (0.130833ms)
+✔ age gate relaxation yields deny -> allow where an allow rule now fires (0.096ms)
+✔ renaming admin rules is explanation-only (0.30825ms)
+✔ dev logs split is explanation-only for the non-admin branch (0.298375ms)
+✔ guest inputs remain denied regardless of the allow-side edits (0.131375ms)
+✔ shuffling the NEW rule set produces exactly the same comparison (13.985833ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 389.335416
