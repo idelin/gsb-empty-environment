@@ -1,0 +1,13 @@
+{
+  "name": "anchored-virtual-list",
+  "version": "0.1.0",
+  "description": "Variable row-height list with stable scroll anchoring, versioned prefix-height index, estimates, async measurement and collapsible groups.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
