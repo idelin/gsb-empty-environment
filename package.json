@@ -1,0 +1,11 @@
+{
+  "name": "obligation-guardian",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Policy-gated obligation executor with ordered rollback, idempotent compensation, and an explicit commit phase",
+  "scripts": {
+    "test": "node --test test/executor.test.ts test/policy.test.ts",
+    "sample": "node examples/run-sample.ts"
+  }
+}
