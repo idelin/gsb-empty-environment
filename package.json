@@ -1,0 +1,11 @@
+{
+  "name": "json-tree-patch",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Undoable JSON tree patches with precise inverses and identity-based three-way merge",
+  "scripts": {
+    "test": "node --test",
+    "example": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
