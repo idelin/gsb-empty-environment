@@ -1,0 +1,14 @@
+{
+  "name": "track-sizing",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Fixed / content / proportional track size distribution with spanning-item minimums, gaps and overflow diagnostics.",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node demo/run-sample.ts"
+  }
+}
