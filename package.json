@@ -1,0 +1,11 @@
+{
+  "name": "cartesian-expander",
+  "version": "0.1.0",
+  "description": "Streaming Cartesian expansion of reference templates with constraints, dedup, budgets and resumable cursors",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
