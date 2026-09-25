@@ -1,0 +1,14 @@
+{
+  "name": "rgba-diff-align",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Tolerance-aware RGBA image diff with connected regions and exact alignment-offset search (no dependencies).",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
