@@ -1,0 +1,50 @@
+{
+  "name": "old-policy",
+  "combining": "deny-overrides",
+  "default": "deny",
+  "rules": [
+    {
+      "id": "r1",
+      "effect": "allow",
+      "when": { "op": "eq", "attr": "role", "value": "admin" },
+      "reason": "管理员全时段放行"
+    },
+    {
+      "id": "r2",
+      "effect": "allow",
+      "when": {
+        "op": "and",
+        "args": [
+          { "op": "eq", "attr": "role", "value": "dev" },
+          { "op": "eq", "attr": "env", "value": "staging" }
+        ]
+      },
+      "reason": "开发可在预发环境操作"
+    },
+    {
+      "id": "r3",
+      "effect": "allow",
+      "when": {
+        "op": "and",
+        "args": [
+          { "op": "eq", "attr": "role", "value": "dev" },
+          { "op": "eq", "attr": "env", "value": "prod" },
+          { "op": "between", "attr": "hour", "min": 9, "max": 18 }
+        ]
+      },
+      "reason": "开发工作时间可上生产"
+    },
+    {
+      "id": "r4",
+      "effect": "deny",
+      "when": {
+        "op": "and",
+        "args": [
+          { "op": "eq", "attr": "role", "value": "guest" },
+          { "op": "eq", "attr": "env", "value": "prod" }
+        ]
+      },
+      "reason": "访客禁止生产"
+    }
+  ]
+}

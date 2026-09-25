@@ -1,0 +1,5 @@
+[
+  { "name": "role", "kind": "enum", "values": ["admin", "dev", "guest"] },
+  { "name": "env", "kind": "enum", "values": ["prod", "staging"] },
+  { "name": "hour", "kind": "int", "min": 0, "max": 23 }
+]

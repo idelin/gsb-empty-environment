@@ -1,0 +1,14 @@
+{
+  "name": "policy-diff",
+  "version": "0.1.0",
+  "description": "语义级规则集对比：求判定改变的输入区域与代表样例",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/",
+    "compare": "node src/cli.ts"
+  }
+}

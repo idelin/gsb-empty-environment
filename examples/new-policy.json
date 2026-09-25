@@ -1,0 +1,74 @@
+{
+  "name": "new-policy",
+  "combining": "deny-overrides",
+  "default": "deny",
+  "rules": [
+    {
+      "id": "r4",
+      "effect": "deny",
+      "when": {
+        "op": "and",
+        "args": [
+          { "op": "eq", "attr": "role", "value": "guest" },
+          { "op": "eq", "attr": "env", "value": "prod" }
+        ]
+      },
+      "reason": "访客账号禁止访问生产环境"
+    },
+    {
+      "id": "r5",
+      "effect": "deny",
+      "when": {
+        "op": "and",
+        "args": [
+          { "op": "eq", "attr": "env", "value": "prod" },
+          { "op": "ge", "attr": "hour", "value": 22 }
+        ]
+      },
+      "reason": "夜间 22 点后生产冻结"
+    },
+    {
+      "id": "r3",
+      "effect": "allow",
+      "when": {
+        "op": "and",
+        "args": [
+          { "op": "eq", "attr": "role", "value": "dev" },
+          { "op": "eq", "attr": "env", "value": "prod" },
+          { "op": "between", "attr": "hour", "min": 9, "max": 17 }
+        ]
+      },
+      "reason": "开发工作时间可上生产（截止 17 点）"
+    },
+    {
+      "id": "r2",
+      "effect": "allow",
+      "when": {
+        "op": "and",
+        "args": [
+          { "op": "eq", "attr": "role", "value": "dev" },
+          { "op": "eq", "attr": "env", "value": "staging" }
+        ]
+      },
+      "reason": "开发可在预发（staging）环境操作"
+    },
+    {
+      "id": "r1",
+      "effect": "allow",
+      "when": { "op": "eq", "attr": "role", "value": "admin" },
+      "reason": "管理员全时段放行"
+    },
+    {
+      "id": "r6",
+      "effect": "allow",
+      "when": {
+        "op": "and",
+        "args": [
+          { "op": "eq", "attr": "role", "value": "guest" },
+          { "op": "eq", "attr": "env", "value": "staging" }
+        ]
+      },
+      "reason": "访客开放预发只读体验"
+    }
+  ]
+}
