@@ -1,0 +1,10 @@
+{
+  "name": "json-dag-merge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "JSON 树内容摘要 DAG、差异定位与三方合并（对象键无序、数组稳定ID/位置模式、原子补丁、分块载入）",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
