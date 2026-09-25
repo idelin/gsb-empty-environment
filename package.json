@@ -1,0 +1,11 @@
+{
+  "name": "bidi-caret-mapping",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Visual-order / caret-movement mapping for text with pre-assigned bidi levels",
+  "scripts": {
+    "test": "node --test tests/reorder.test.ts tests/layout.test.ts tests/selection.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
