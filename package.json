@@ -1,0 +1,14 @@
+{
+  "name": "json-three-way-merge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Three-way merge for JSON-compatible trees: recursive object merge, id-matched array merge, path-addressable conflicts and input errors.",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
