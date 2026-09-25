@@ -1,0 +1,30 @@
+{
+  "spec_id": "shipping-fees",
+  "version": 3,
+  "facts": [
+    {"id": "customer_tier", "version": 1, "kind": "enum",
+     "values": ["gold", "silver", "bronze"]},
+    {"id": "order_total", "version": 1, "kind": "int", "lo": 0, "hi": 10000},
+    {"id": "destination", "version": 1, "kind": "enum",
+     "values": ["domestic", "international"]}
+  ],
+  "rules": [
+    {"id": "R1", "version": 1, "priority": 100, "action": "free_shipping",
+     "conditions": {"customer_tier": {"enum": ["gold"]}}},
+    {"id": "R2", "version": 1, "priority": 90, "action": "free_shipping",
+     "conditions": {"order_total": {"int": [500, 1500]}}},
+    {"id": "R3", "version": 1, "priority": 80, "action": "free_shipping",
+     "conditions": {"customer_tier": {"enum": ["gold"]},
+                    "order_total": {"int": [500, 10000]}}},
+    {"id": "R4", "version": 1, "priority": 70, "action": "express_fee",
+     "conditions": {"destination": {"enum": ["international"]},
+                    "order_total": {"int": [0, 999]}}},
+    {"id": "R5", "version": 1, "priority": 60, "action": "flat_fee",
+     "conditions": {"order_total": {"int": [1000, 3000]}}},
+    {"id": "R6", "version": 1, "priority": 50, "action": "standard_fee",
+     "conditions": {"destination": {"enum": ["domestic"]},
+                    "order_total": {"int": [0, 200]}}},
+    {"id": "R7", "version": 1, "priority": 50, "action": "small_order_discount",
+     "conditions": {"order_total": {"int": [0, 100]}}}
+  ]
+}

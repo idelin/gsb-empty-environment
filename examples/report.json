@@ -1,0 +1,802 @@
+{
+  "budget": {
+    "exhausted": false,
+    "limit": 100000,
+    "used": 38
+  },
+  "complete": true,
+  "findings": [
+    {
+      "covered_by": [
+        {
+          "id": "R1",
+          "version": 1
+        },
+        {
+          "id": "R2",
+          "version": 1
+        }
+      ],
+      "evidence": {
+        "steps": [
+          "S0002"
+        ]
+      },
+      "finding_id": "F-UNREACHABLE-R3",
+      "kind": "unreachable_rule",
+      "rule": {
+        "id": "R3",
+        "version": 1
+      }
+    },
+    {
+      "counterexample": {
+        "input": {
+          "customer_tier": "gold",
+          "destination": "domestic",
+          "order_total": 500
+        },
+        "loser": "R2",
+        "winner": "R1"
+      },
+      "evidence": {
+        "steps": [
+          "S0020"
+        ]
+      },
+      "finding_id": "F-OVERLAP-R2-R1",
+      "high_rule": {
+        "id": "R1",
+        "version": 1
+      },
+      "kind": "partial_overlap",
+      "low_rule": {
+        "id": "R2",
+        "version": 1
+      },
+      "overlap_region": {
+        "customer_tier": {
+          "enum": [
+            "gold"
+          ]
+        },
+        "order_total": {
+          "int": [
+            500,
+            1500
+          ]
+        }
+      }
+    },
+    {
+      "counterexample": {
+        "input": {
+          "customer_tier": "gold",
+          "destination": "international",
+          "order_total": 0
+        },
+        "loser": "R4",
+        "winner": "R1"
+      },
+      "evidence": {
+        "steps": [
+          "S0021"
+        ]
+      },
+      "finding_id": "F-OVERLAP-R4-R1",
+      "high_rule": {
+        "id": "R1",
+        "version": 1
+      },
+      "kind": "partial_overlap",
+      "low_rule": {
+        "id": "R4",
+        "version": 1
+      },
+      "overlap_region": {
+        "customer_tier": {
+          "enum": [
+            "gold"
+          ]
+        },
+        "destination": {
+          "enum": [
+            "international"
+          ]
+        },
+        "order_total": {
+          "int": [
+            0,
+            999
+          ]
+        }
+      }
+    },
+    {
+      "counterexample": {
+        "input": {
+          "customer_tier": "bronze",
+          "destination": "international",
+          "order_total": 500
+        },
+        "loser": "R4",
+        "winner": "R2"
+      },
+      "evidence": {
+        "steps": [
+          "S0022"
+        ]
+      },
+      "finding_id": "F-OVERLAP-R4-R2",
+      "high_rule": {
+        "id": "R2",
+        "version": 1
+      },
+      "kind": "partial_overlap",
+      "low_rule": {
+        "id": "R4",
+        "version": 1
+      },
+      "overlap_region": {
+        "destination": {
+          "enum": [
+            "international"
+          ]
+        },
+        "order_total": {
+          "int": [
+            500,
+            999
+          ]
+        }
+      }
+    },
+    {
+      "counterexample": {
+        "input": {
+          "customer_tier": "gold",
+          "destination": "international",
+          "order_total": 500
+        },
+        "loser": "R4",
+        "winner": "R3"
+      },
+      "evidence": {
+        "steps": [
+          "S0023"
+        ]
+      },
+      "finding_id": "F-OVERLAP-R4-R3",
+      "high_rule": {
+        "id": "R3",
+        "version": 1
+      },
+      "kind": "partial_overlap",
+      "low_rule": {
+        "id": "R4",
+        "version": 1
+      },
+      "overlap_region": {
+        "customer_tier": {
+          "enum": [
+            "gold"
+          ]
+        },
+        "destination": {
+          "enum": [
+            "international"
+          ]
+        },
+        "order_total": {
+          "int": [
+            500,
+            999
+          ]
+        }
+      }
+    },
+    {
+      "counterexample": {
+        "input": {
+          "customer_tier": "gold",
+          "destination": "domestic",
+          "order_total": 1000
+        },
+        "loser": "R5",
+        "winner": "R1"
+      },
+      "evidence": {
+        "steps": [
+          "S0024"
+        ]
+      },
+      "finding_id": "F-OVERLAP-R5-R1",
+      "high_rule": {
+        "id": "R1",
+        "version": 1
+      },
+      "kind": "partial_overlap",
+      "low_rule": {
+        "id": "R5",
+        "version": 1
+      },
+      "overlap_region": {
+        "customer_tier": {
+          "enum": [
+            "gold"
+          ]
+        },
+        "order_total": {
+          "int": [
+            1000,
+            3000
+          ]
+        }
+      }
+    },
+    {
+      "counterexample": {
+        "input": {
+          "customer_tier": "bronze",
+          "destination": "domestic",
+          "order_total": 1000
+        },
+        "loser": "R5",
+        "winner": "R2"
+      },
+      "evidence": {
+        "steps": [
+          "S0025"
+        ]
+      },
+      "finding_id": "F-OVERLAP-R5-R2",
+      "high_rule": {
+        "id": "R2",
+        "version": 1
+      },
+      "kind": "partial_overlap",
+      "low_rule": {
+        "id": "R5",
+        "version": 1
+      },
+      "overlap_region": {
+        "order_total": {
+          "int": [
+            1000,
+            1500
+          ]
+        }
+      }
+    },
+    {
+      "counterexample": {
+        "input": {
+          "customer_tier": "gold",
+          "destination": "domestic",
+          "order_total": 1000
+        },
+        "loser": "R5",
+        "winner": "R3"
+      },
+      "evidence": {
+        "steps": [
+          "S0026"
+        ]
+      },
+      "finding_id": "F-OVERLAP-R5-R3",
+      "high_rule": {
+        "id": "R3",
+        "version": 1
+      },
+      "kind": "partial_overlap",
+      "low_rule": {
+        "id": "R5",
+        "version": 1
+      },
+      "overlap_region": {
+        "customer_tier": {
+          "enum": [
+            "gold"
+          ]
+        },
+        "order_total": {
+          "int": [
+            1000,
+            3000
+          ]
+        }
+      }
+    },
+    {
+      "counterexample": {
+        "input": {
+          "customer_tier": "gold",
+          "destination": "domestic",
+          "order_total": 0
+        },
+        "loser": "R6",
+        "winner": "R1"
+      },
+      "evidence": {
+        "steps": [
+          "S0028"
+        ]
+      },
+      "finding_id": "F-OVERLAP-R6-R1",
+      "high_rule": {
+        "id": "R1",
+        "version": 1
+      },
+      "kind": "partial_overlap",
+      "low_rule": {
+        "id": "R6",
+        "version": 1
+      },
+      "overlap_region": {
+        "customer_tier": {
+          "enum": [
+            "gold"
+          ]
+        },
+        "destination": {
+          "enum": [
+            "domestic"
+          ]
+        },
+        "order_total": {
+          "int": [
+            0,
+            200
+          ]
+        }
+      }
+    },
+    {
+      "counterexample": {
+        "input": {
+          "customer_tier": "gold",
+          "destination": "domestic",
+          "order_total": 0
+        },
+        "loser": "R7",
+        "winner": "R1"
+      },
+      "evidence": {
+        "steps": [
+          "S0033"
+        ]
+      },
+      "finding_id": "F-OVERLAP-R7-R1",
+      "high_rule": {
+        "id": "R1",
+        "version": 1
+      },
+      "kind": "partial_overlap",
+      "low_rule": {
+        "id": "R7",
+        "version": 1
+      },
+      "overlap_region": {
+        "customer_tier": {
+          "enum": [
+            "gold"
+          ]
+        },
+        "order_total": {
+          "int": [
+            0,
+            100
+          ]
+        }
+      }
+    },
+    {
+      "counterexample": {
+        "input": {
+          "customer_tier": "bronze",
+          "destination": "international",
+          "order_total": 0
+        },
+        "loser": "R7",
+        "winner": "R4"
+      },
+      "evidence": {
+        "steps": [
+          "S0036"
+        ]
+      },
+      "finding_id": "F-OVERLAP-R7-R4",
+      "high_rule": {
+        "id": "R4",
+        "version": 1
+      },
+      "kind": "partial_overlap",
+      "low_rule": {
+        "id": "R7",
+        "version": 1
+      },
+      "overlap_region": {
+        "destination": {
+          "enum": [
+            "international"
+          ]
+        },
+        "order_total": {
+          "int": [
+            0,
+            100
+          ]
+        }
+      }
+    },
+    {
+      "actions": [
+        "small_order_discount",
+        "standard_fee"
+      ],
+      "counterexample": {
+        "input": {
+          "customer_tier": "bronze",
+          "destination": "domestic",
+          "order_total": 0
+        },
+        "matches": [
+          "R6",
+          "R7"
+        ]
+      },
+      "evidence": {
+        "steps": [
+          "S0038"
+        ]
+      },
+      "finding_id": "F-CONFLICT-R6-R7",
+      "kind": "same_priority_conflict",
+      "overlap_region": {
+        "destination": {
+          "enum": [
+            "domestic"
+          ]
+        },
+        "order_total": {
+          "int": [
+            0,
+            100
+          ]
+        }
+      },
+      "priority": 50,
+      "rules": [
+        {
+          "id": "R6",
+          "version": 1
+        },
+        {
+          "id": "R7",
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "generator": {
+    "name": "rulecov",
+    "version": "1.0.0"
+  },
+  "phases": {
+    "conflict": "complete",
+    "coverage": "complete",
+    "overlap": "complete"
+  },
+  "report_id": "RPT-5344650bb80ebb38",
+  "spec": {
+    "id": "shipping-fees",
+    "sha256": "c73589c0eb43f56b65d9336cb022c3541dd8b8ecf1fdf76ced0122c85bf44fe4",
+    "version": 3
+  },
+  "steps": [
+    {
+      "against_rule": "R1",
+      "op": "subtract",
+      "phase": "coverage",
+      "remainder_regions": 1,
+      "rule": "R2",
+      "step_id": "S0001"
+    },
+    {
+      "against_rule": "R1",
+      "op": "subtract",
+      "phase": "coverage",
+      "remainder_regions": 0,
+      "rule": "R3",
+      "step_id": "S0002"
+    },
+    {
+      "against_rule": "R1",
+      "op": "subtract",
+      "phase": "coverage",
+      "remainder_regions": 1,
+      "rule": "R4",
+      "step_id": "S0003"
+    },
+    {
+      "against_rule": "R2",
+      "op": "subtract",
+      "phase": "coverage",
+      "remainder_regions": 1,
+      "rule": "R4",
+      "step_id": "S0004"
+    },
+    {
+      "against_rule": "R3",
+      "empty": true,
+      "op": "intersect",
+      "phase": "coverage",
+      "rule": "R4",
+      "step_id": "S0005"
+    },
+    {
+      "against_rule": "R1",
+      "op": "subtract",
+      "phase": "coverage",
+      "remainder_regions": 1,
+      "rule": "R5",
+      "step_id": "S0006"
+    },
+    {
+      "against_rule": "R2",
+      "op": "subtract",
+      "phase": "coverage",
+      "remainder_regions": 1,
+      "rule": "R5",
+      "step_id": "S0007"
+    },
+    {
+      "against_rule": "R3",
+      "empty": true,
+      "op": "intersect",
+      "phase": "coverage",
+      "rule": "R5",
+      "step_id": "S0008"
+    },
+    {
+      "against_rule": "R4",
+      "empty": true,
+      "op": "intersect",
+      "phase": "coverage",
+      "rule": "R5",
+      "step_id": "S0009"
+    },
+    {
+      "against_rule": "R1",
+      "op": "subtract",
+      "phase": "coverage",
+      "remainder_regions": 1,
+      "rule": "R6",
+      "step_id": "S0010"
+    },
+    {
+      "against_rule": "R2",
+      "empty": true,
+      "op": "intersect",
+      "phase": "coverage",
+      "rule": "R6",
+      "step_id": "S0011"
+    },
+    {
+      "against_rule": "R3",
+      "empty": true,
+      "op": "intersect",
+      "phase": "coverage",
+      "rule": "R6",
+      "step_id": "S0012"
+    },
+    {
+      "against_rule": "R4",
+      "empty": true,
+      "op": "intersect",
+      "phase": "coverage",
+      "rule": "R6",
+      "step_id": "S0013"
+    },
+    {
+      "against_rule": "R5",
+      "empty": true,
+      "op": "intersect",
+      "phase": "coverage",
+      "rule": "R6",
+      "step_id": "S0014"
+    },
+    {
+      "against_rule": "R1",
+      "op": "subtract",
+      "phase": "coverage",
+      "remainder_regions": 1,
+      "rule": "R7",
+      "step_id": "S0015"
+    },
+    {
+      "against_rule": "R2",
+      "empty": true,
+      "op": "intersect",
+      "phase": "coverage",
+      "rule": "R7",
+      "step_id": "S0016"
+    },
+    {
+      "against_rule": "R3",
+      "empty": true,
+      "op": "intersect",
+      "phase": "coverage",
+      "rule": "R7",
+      "step_id": "S0017"
+    },
+    {
+      "against_rule": "R4",
+      "op": "subtract",
+      "phase": "coverage",
+      "remainder_regions": 1,
+      "rule": "R7",
+      "step_id": "S0018"
+    },
+    {
+      "against_rule": "R5",
+      "empty": true,
+      "op": "intersect",
+      "phase": "coverage",
+      "rule": "R7",
+      "step_id": "S0019"
+    },
+    {
+      "against_rule": "R1",
+      "empty": false,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R2",
+      "step_id": "S0020"
+    },
+    {
+      "against_rule": "R1",
+      "empty": false,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R4",
+      "step_id": "S0021"
+    },
+    {
+      "against_rule": "R2",
+      "empty": false,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R4",
+      "step_id": "S0022"
+    },
+    {
+      "against_rule": "R3",
+      "empty": false,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R4",
+      "step_id": "S0023"
+    },
+    {
+      "against_rule": "R1",
+      "empty": false,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R5",
+      "step_id": "S0024"
+    },
+    {
+      "against_rule": "R2",
+      "empty": false,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R5",
+      "step_id": "S0025"
+    },
+    {
+      "against_rule": "R3",
+      "empty": false,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R5",
+      "step_id": "S0026"
+    },
+    {
+      "against_rule": "R4",
+      "empty": true,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R5",
+      "step_id": "S0027"
+    },
+    {
+      "against_rule": "R1",
+      "empty": false,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R6",
+      "step_id": "S0028"
+    },
+    {
+      "against_rule": "R2",
+      "empty": true,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R6",
+      "step_id": "S0029"
+    },
+    {
+      "against_rule": "R3",
+      "empty": true,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R6",
+      "step_id": "S0030"
+    },
+    {
+      "against_rule": "R4",
+      "empty": true,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R6",
+      "step_id": "S0031"
+    },
+    {
+      "against_rule": "R5",
+      "empty": true,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R6",
+      "step_id": "S0032"
+    },
+    {
+      "against_rule": "R1",
+      "empty": false,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R7",
+      "step_id": "S0033"
+    },
+    {
+      "against_rule": "R2",
+      "empty": true,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R7",
+      "step_id": "S0034"
+    },
+    {
+      "against_rule": "R3",
+      "empty": true,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R7",
+      "step_id": "S0035"
+    },
+    {
+      "against_rule": "R4",
+      "empty": false,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R7",
+      "step_id": "S0036"
+    },
+    {
+      "against_rule": "R5",
+      "empty": true,
+      "op": "intersect",
+      "phase": "overlap",
+      "rule": "R7",
+      "step_id": "S0037"
+    },
+    {
+      "against_rule": "R7",
+      "empty": false,
+      "op": "intersect",
+      "phase": "conflict",
+      "rule": "R6",
+      "step_id": "S0038"
+    }
+  ]
+}
