@@ -1,0 +1,14 @@
+{
+  "name": "tile-block-store",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Content-addressed immutable tile blocks with copy-on-write images, snapshots, persistent manifest, read leases and generational GC",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --experimental-strip-types src/demo.ts",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  }
+}
