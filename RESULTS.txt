@@ -1,0 +1,27 @@
+# Recorded test run
+
+date: 2026-09-25 08:23:05 CST
+python: Python 3.11.15
+cmd: python3.11 -m unittest tests.test_scanfill -v
+
+test_evenodd_rule (tests.test_scanfill.HoleOrientationTests.test_evenodd_rule) ... ok
+test_nonzero_rule (tests.test_scanfill.HoleOrientationTests.test_nonzero_rule) ... ok
+test_clip_and_mask_unified_compositing (tests.test_scanfill.LayerCompositingTests.test_clip_and_mask_unified_compositing) ... ok
+test_degenerate_geometry (tests.test_scanfill.NegativeAndDegenerateTests.test_degenerate_geometry) ... ok
+test_negative_coordinates (tests.test_scanfill.NegativeAndDegenerateTests.test_negative_coordinates) ... ok
+test_nonsingular_exact_transform (tests.test_scanfill.NegativeAndDegenerateTests.test_nonsingular_exact_transform) ... ok
+test_singular_transform_is_defined_empty (tests.test_scanfill.NegativeAndDegenerateTests.test_singular_transform_is_defined_empty) ... ok
+test_random_polygons_match_per_pixel_oracle (tests.test_scanfill.RandomizedOracleTests.test_random_polygons_match_per_pixel_oracle) ... ok
+test_boundary_through_pixel_centers (tests.test_scanfill.RationalBoundaryTests.test_boundary_through_pixel_centers) ... ok
+test_horizontal_edge_on_sample_line (tests.test_scanfill.RationalBoundaryTests.test_horizontal_edge_on_sample_line) ... ok
+test_shared_edge_rational_coords (tests.test_scanfill.SharedEdgeTests.test_shared_edge_rational_coords) ... ok
+test_shared_slanted_edge_triangles (tests.test_scanfill.SharedEdgeTests.test_shared_slanted_edge_triangles) ... ok
+test_shared_vertical_edge_rectangles (tests.test_scanfill.SharedEdgeTests.test_shared_vertical_edge_rectangles) ... ok
+test_move_vertex_updates_only_dirty_tiles (tests.test_scanfill.VertexMoveDirtyTileTests.test_move_vertex_updates_only_dirty_tiles) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 2.036s
+
+OK
+
+[record] vertex move: dirty_tiles=4, rows_recomputed=16, full_render_rows=64
