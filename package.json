@@ -1,0 +1,11 @@
+{
+  "name": "hier-graph",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-source incremental hierarchical graph with stable entity IDs, field-level lineage, orphan queue and subtree stats",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "sample": "node src/sample.ts"
+  }
+}

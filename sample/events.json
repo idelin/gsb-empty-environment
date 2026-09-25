@@ -1,0 +1,229 @@
+{
+  "sources": [
+    {
+      "id": "crm",
+      "priority": 10
+    },
+    {
+      "id": "erp",
+      "priority": 5
+    },
+    {
+      "id": "web",
+      "priority": 5
+    }
+  ],
+  "batches": [
+    {
+      "batch": "b1-bootstrap",
+      "events": [
+        {
+          "kind": "upsert",
+          "eventId": "e1",
+          "source": "crm",
+          "version": 1,
+          "entity": {
+            "id": "R",
+            "parentId": null,
+            "fields": {
+              "name": "Root",
+              "weight": 1
+            }
+          }
+        },
+        {
+          "kind": "upsert",
+          "eventId": "e2",
+          "source": "erp",
+          "version": 1,
+          "entity": {
+            "id": "A",
+            "parentId": "R",
+            "fields": {
+              "name": "A-erp",
+              "weight": 2
+            }
+          }
+        },
+        {
+          "kind": "upsert",
+          "eventId": "e3",
+          "source": "crm",
+          "version": 1,
+          "entity": {
+            "id": "A",
+            "parentId": "R",
+            "fields": {
+              "name": "A-crm",
+              "weight": 2
+            }
+          }
+        },
+        {
+          "kind": "upsert",
+          "eventId": "e4",
+          "source": "erp",
+          "version": 1,
+          "entity": {
+            "id": "B",
+            "parentId": "A",
+            "fields": {
+              "name": "B-erp",
+              "weight": 3
+            }
+          }
+        },
+        {
+          "kind": "upsert",
+          "eventId": "e5",
+          "source": "web",
+          "version": 1,
+          "entity": {
+            "id": "B",
+            "parentId": "A",
+            "fields": {
+              "name": "B-web",
+              "weight": 3
+            }
+          }
+        },
+        {
+          "kind": "upsert",
+          "eventId": "e6",
+          "source": "erp",
+          "version": 1,
+          "entity": {
+            "id": "D",
+            "parentId": "M",
+            "fields": {
+              "name": "D",
+              "weight": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "batch": "b2-parent-arrives",
+      "events": [
+        {
+          "kind": "upsert",
+          "eventId": "e6",
+          "source": "erp",
+          "version": 1,
+          "entity": {
+            "id": "D",
+            "parentId": "M",
+            "fields": {
+              "name": "D",
+              "weight": 4
+            }
+          }
+        },
+        {
+          "kind": "upsert",
+          "eventId": "e7",
+          "source": "crm",
+          "version": 1,
+          "entity": {
+            "id": "M",
+            "parentId": "R",
+            "fields": {
+              "name": "M",
+              "weight": 5
+            }
+          }
+        }
+      ]
+    },
+    {
+      "batch": "b3-reparent-and-cycle",
+      "events": [
+        {
+          "kind": "upsert",
+          "eventId": "e8",
+          "source": "crm",
+          "version": 2,
+          "entity": {
+            "id": "B",
+            "parentId": "R",
+            "fields": {
+              "weight": 3
+            }
+          }
+        },
+        {
+          "kind": "upsert",
+          "eventId": "e9",
+          "source": "crm",
+          "version": 2,
+          "entity": {
+            "id": "R",
+            "parentId": "B",
+            "fields": {
+              "name": "Root",
+              "weight": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "batch": "b4-delete-and-restore",
+      "events": [
+        {
+          "kind": "delete",
+          "eventId": "e10",
+          "source": "crm",
+          "version": 2,
+          "entityId": "M"
+        },
+        {
+          "kind": "upsert",
+          "eventId": "e11",
+          "source": "erp",
+          "version": 1,
+          "entity": {
+            "id": "M",
+            "parentId": "R",
+            "fields": {
+              "name": "M-erp",
+              "weight": 5
+            }
+          }
+        }
+      ]
+    },
+    {
+      "batch": "b5-source-fallback",
+      "events": [
+        {
+          "kind": "delete",
+          "eventId": "e12",
+          "source": "crm",
+          "version": 2,
+          "entityId": "A"
+        }
+      ]
+    },
+    {
+      "batch": "b6-stale-version",
+      "events": [
+        {
+          "kind": "upsert",
+          "eventId": "e13",
+          "source": "erp",
+          "version": 1,
+          "entity": {
+            "id": "A",
+            "parentId": "R",
+            "fields": {
+              "name": "A-erp-again",
+              "weight": 2
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
