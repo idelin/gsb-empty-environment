@@ -1,0 +1,21 @@
+test_dry_run_does_not_mutate (test_evidence_reclaim.ClosureTests.test_dry_run_does_not_mutate) ... ok
+test_expired_but_live_referenced_chain (test_evidence_reclaim.ClosureTests.test_expired_but_live_referenced_chain) ... ok
+test_freeze_inheritance_chain (test_evidence_reclaim.ClosureTests.test_freeze_inheritance_chain) ... ok
+test_minimal_nonreclaimable_closure (test_evidence_reclaim.ClosureTests.test_minimal_nonreclaimable_closure) ... ok
+test_permanent_retention_never_expires (test_evidence_reclaim.ClosureTests.test_permanent_retention_never_expires) ... ok
+test_commit_reclaims_and_proves_liveness (test_evidence_reclaim.CommitTests.test_commit_reclaims_and_proves_liveness) ... ok
+test_dangling_reference_rejected (test_evidence_reclaim.CommitTests.test_dangling_reference_rejected) ... ok
+test_double_commit_rejected (test_evidence_reclaim.CommitTests.test_double_commit_rejected) ... ok
+test_new_reference_blocks_planned_deletion (test_evidence_reclaim.CommitTests.test_new_reference_blocks_planned_deletion) ... ok
+test_stale_plan_after_unrelated_event_requires_new_generation (test_evidence_reclaim.CommitTests.test_stale_plan_after_unrelated_event_requires_new_generation) ... ok
+test_tampered_plan_rejected (test_evidence_reclaim.CommitTests.test_tampered_plan_rejected) ... ok
+test_unfreeze_recomputes_closure (test_evidence_reclaim.CommitTests.test_unfreeze_recomputes_closure) ... ok
+test_certificate_replay_verification (test_evidence_reclaim.ReplayTests.test_certificate_replay_verification) ... ok
+test_interleaving_permutations (test_evidence_reclaim.ReplayTests.test_interleaving_permutations) ... ok
+test_log_replay_state_root (test_evidence_reclaim.ReplayTests.test_log_replay_state_root) ... ok
+test_replay_is_idempotent_and_stable (test_evidence_reclaim.ReplayTests.test_replay_is_idempotent_and_stable) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.114s
+
+OK
