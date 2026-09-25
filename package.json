@@ -1,0 +1,11 @@
+{
+  "name": "color-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "sRGB / linear RGB / XYZ conversion graph with explicit white points, gamut strategies and chunked batch processing",
+  "scripts": {
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "example": "node --experimental-strip-types --disable-warning=ExperimentalWarning examples/demo.ts"
+  }
+}
