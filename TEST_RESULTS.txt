@@ -1,0 +1,16 @@
+test_build_two_synthetic_dst_rules_and_deduplicates_identical_events (test_timekit.CalendarRecurrenceTests.test_build_two_synthetic_dst_rules_and_deduplicates_identical_events) ... ok
+test_daily_rule_steps_by_calendar_day_across_spring_gap (test_timekit.CalendarRecurrenceTests.test_daily_rule_steps_by_calendar_day_across_spring_gap) ... ok
+test_monthly_and_yearly_steps_are_calendar_steps (test_timekit.CalendarRecurrenceTests.test_monthly_and_yearly_steps_are_calendar_steps) ... ok
+test_large_epoch_nanoseconds_round_trip_exactly (test_timekit.ExactRepresentationTests.test_large_epoch_nanoseconds_round_trip_exactly) ... ok
+test_versioned_snapshot_and_partial_cache_invalidation (test_timekit.HotReloadTests.test_versioned_snapshot_and_partial_cache_invalidation) ... ok
+test_two_consecutive_fallbacks_can_emit_three_candidates (test_timekit.MultipleFallbackTests.test_two_consecutive_fallbacks_can_emit_three_candidates) ... ok
+test_forward_spring_gap_reports_missing_parts_and_no_silent_shift (test_timekit.SyntheticOffsetTableTests.test_forward_spring_gap_reports_missing_parts_and_no_silent_shift) ... ok
+test_repeated_wall_interval_has_two_candidate_utc_intervals (test_timekit.SyntheticOffsetTableTests.test_repeated_wall_interval_has_two_candidate_utc_intervals) ... ok
+test_union_merges_touching_utc_intervals_across_gap (test_timekit.SyntheticOffsetTableTests.test_union_merges_touching_utc_intervals_across_gap) ... ok
+test_utc_interval_crossing_spring_reports_skipped_wall_gap (test_timekit.SyntheticOffsetTableTests.test_utc_interval_crossing_spring_reports_skipped_wall_gap) ... ok
+test_utc_to_wall_and_back_preserves_earlier_later_identity (test_timekit.SyntheticOffsetTableTests.test_utc_to_wall_and_back_preserves_earlier_later_identity) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.001s
+
+OK

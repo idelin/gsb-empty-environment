@@ -1,0 +1,29 @@
+
+fall-back point and interval
+----------------------------
+wall: 2024-11-03T01:15:00.000000000
+candidate UTC: 1730610900000000000 offset hours: -4
+candidate UTC: 1730614500000000000 offset hours: -5
+wall interval UTC candidates: 2
+1730610900000000000 -> 1730612700000000000
+1730614500000000000 -> 1730616300000000000
+
+spring-forward missing wall-clock fragments
+-------------------------------------------
+missing: 2024-03-10T02:00:00.000000000 -> 2024-03-10T03:00:00.000000000 at transition spring-2024
+UTC interval wall pieces: 2
+skipped wall gaps: ['spring-2024']
+
+calendar recurrence, then disambiguation
+----------------------------------------
+spring:2024-03-10T7200000000000#0 nominal 2024-03-10T02:00:00.000000000 -> UTC 1710050400000000000 earlier-utc-candidate
+fall:2024-11-03T7200000000000#1 nominal 2024-11-03T02:00:00.000000000 -> UTC 1730613600000000000 earlier-utc-candidate
+
+versioned hot update keeps historical snapshots
+-----------------------------------------------
+snapshot version: v1
+current version: v2
+cached entries invalidated: 1
+historical snapshot transition: 1710054000000000000
+current transition: 1710055800000000000
+sample direct wall_at: 2024-11-03T02:00:00.000000000
