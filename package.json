@@ -1,0 +1,11 @@
+{
+  "name": "unit-migration",
+  "version": "0.1.0",
+  "description": "Schema-driven unit migration for JSON trees with exact rational arithmetic",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
