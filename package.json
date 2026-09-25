@@ -1,0 +1,14 @@
+{
+  "name": "tree-core",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Headless tree view core: expand/collapse, keyboard nav, type-ahead, multi-select, async loading, filtering, incremental visible sequence.",
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test 'test/*.test.ts'",
+    "demo": "node --disable-warning=ExperimentalWarning examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
