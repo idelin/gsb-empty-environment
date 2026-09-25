@@ -1,0 +1,14 @@
+{
+  "name": "json3-merge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Three-way merge for JSON-compatible trees: recursive object merge, ID-keyed array merge, three-way conflict records with manual resolution.",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "example": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}
