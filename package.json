@@ -1,0 +1,14 @@
+{
+  "name": "binary-contours",
+  "version": "1.0.0",
+  "description": "Extract outer contours and holes from a binary image as closed, non-repeating walk rings (pure TypeScript, zero dependencies)",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
