@@ -1,0 +1,14 @@
+{
+  "name": "delegation-chain",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scoped delegation with depth/expiry/non-delegatable limits, cascading revocation, chain proofs, and an attribute-only policy engine",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --experimental-strip-types --disable-warning=ExperimentalWarning examples/demo.ts",
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test \"test/**/*.test.ts\""
+  }
+}
