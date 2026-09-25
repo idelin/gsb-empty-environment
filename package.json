@@ -1,0 +1,11 @@
+{
+  "name": "secure-view-engine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Row-visibility + field-masking policy engine with leak-safe pipeline",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node src/sample.ts"
+  }
+}
