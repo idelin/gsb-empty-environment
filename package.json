@@ -1,0 +1,14 @@
+{
+  "name": "mask-compositor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Rect/path/inverse-mask compositing with boolean ops, soft-edge coverage and nested transforms. Zero dependencies, verified against a per-pixel reference.",
+  "scripts": {
+    "test": "node scripts/run-tests.mjs",
+    "demo": "node scripts/run-demo.mjs"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
