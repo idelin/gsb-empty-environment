@@ -1,0 +1,14 @@
+{
+  "name": "binary-contour-walk",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "sh scripts/run-node.sh --test test/contours.test.ts",
+    "sample": "sh scripts/run-node.sh scripts/sample.ts",
+    "check": "sh scripts/syntax-check.sh"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}

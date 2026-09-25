@@ -1,0 +1,68 @@
+
+> binary-contour-walk@1.0.0 test
+> sh scripts/run-node.sh --test test/contours.test.ts
+
+TAP version 13
+# (node:17273) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: RGBA binary image contour extraction
+    # Subtest: returns no contours for an empty image
+    ok 1 - returns no contours for an empty image
+      ---
+      duration_ms: 1.907541
+      ...
+    # Subtest: turns one pixel into four unit boundary edges
+    ok 2 - turns one pixel into four unit boundary edges
+      ---
+      duration_ms: 0.576291
+      ...
+    # Subtest: handles foreground objects touching all image borders
+    ok 3 - handles foreground objects touching all image borders
+      ---
+      duration_ms: 0.278583
+      ...
+    # Subtest: keeps a fully foreground image closed on all four image borders
+    ok 4 - keeps a fully foreground image closed on all four image borders
+      ---
+      duration_ms: 0.20325
+      ...
+    # Subtest: extracts a hole with the opposite signed orientation
+    ok 5 - extracts a hole with the opposite signed orientation
+      ---
+      duration_ms: 0.30425
+      ...
+    # Subtest: does not bridge diagonally touching foreground cells into a hole
+    ok 6 - does not bridge diagonally touching foreground cells into a hole
+      ---
+      duration_ms: 1.03825
+      ...
+    # Subtest: preserves a nested outer inside a hole after fill
+    ok 7 - preserves a nested outer inside a hole after fill
+      ---
+      duration_ms: 0.323333
+      ...
+    # Subtest: uses alpha threshold and supports custom foreground predicates
+    ok 8 - uses alpha threshold and supports custom foreground predicates
+      ---
+      duration_ms: 0.197208
+      ...
+    # Subtest: reconstructs a mask to the exact original RGBA alpha mask
+    ok 9 - reconstructs a mask to the exact original RGBA alpha mask
+      ---
+      duration_ms: 0.386333
+      ...
+    1..9
+ok 1 - RGBA binary image contour extraction
+  ---
+  duration_ms: 6.112083
+  type: 'suite'
+  ...
+1..1
+# tests 9
+# suites 1
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 204.377

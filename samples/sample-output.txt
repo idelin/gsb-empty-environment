@@ -1,0 +1,34 @@
+
+> binary-contour-walk@1.0.0 sample
+> sh scripts/run-node.sh scripts/sample.ts
+
+(node:17354) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+RGBA image: 12x9, raw RGBA8
+Input:
+  #...........
+  ............
+  ......#####.
+  ......#...#.
+  ......#.#.#.
+  ......#...#.
+  ......#####.
+  .#..........
+  ..#.........
+
+closed walks: 6
+#1 outer area=1
+  (0,0) -> (1,0) -> (1,1) -> (0,1) -> (0,0)
+#2 outer area=25
+  (6,2) -> (7,2) -> (8,2) -> (9,2) -> (10,2) -> (11,2) -> (11,3) -> (11,4) -> (11,5) -> (11,6) -> (11,7) -> (10,7) -> (9,7) -> (8,7) -> (7,7) -> (6,7) -> (6,6) -> (6,5) -> (6,4) -> (6,3) -> (6,2)
+#3 hole area=-9
+  (8,3) -> (7,3) -> (7,4) -> (7,5) -> (7,6) -> (8,6) -> (9,6) -> (10,6) -> (10,5) -> (10,4) -> (10,3) -> (9,3) -> (8,3)
+#4 outer area=1
+  (8,4) -> (9,4) -> (9,5) -> (8,5) -> (8,4)
+#5 outer area=1
+  (1,7) -> (2,7) -> (2,8) -> (1,8) -> (1,7)
+#6 outer area=1
+  (2,8) -> (3,8) -> (3,9) -> (2,9) -> (2,8)
+
+fill contours with nonzero winding: matches original RGBA mask
+wrote samples/sample-12x9.rgba, samples/sample-roundtrip-12x9.rgba, samples/contours.json
