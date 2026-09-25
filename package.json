@@ -1,0 +1,14 @@
+{
+  "name": "stable-id-tree-patch",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Minimal insert/move/remove/update patches between JSON trees keyed by stable node ids",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test",
+    "sample": "node --experimental-strip-types examples/sample.ts"
+  }
+}
