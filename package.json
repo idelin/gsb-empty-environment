@@ -1,0 +1,14 @@
+{
+  "name": "at-status-queue",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Assistive-technology status message queue: polite/urgent priorities, merge keys, TTL expiry, idempotent acks, injectable clock.",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test",
+    "sample": "node examples/demo.ts"
+  }
+}

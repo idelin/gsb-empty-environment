@@ -1,0 +1,32 @@
+{
+  "id": "app",
+  "role": "application",
+  "width": 800,
+  "children": [
+    {
+      "id": "toolbar",
+      "role": "toolbar",
+      "width": 800,
+      "children": [
+        { "id": "save-button", "role": "button", "width": 96 },
+        { "id": "sync-button", "role": "button", "width": 96 }
+      ]
+    },
+    {
+      "id": "content",
+      "role": "main",
+      "width": 800,
+      "children": [
+        { "id": "doc-list", "role": "list", "width": 520 },
+        {
+          "id": "sidebar",
+          "role": "complementary",
+          "width": 280,
+          "children": [
+            { "id": "status-region", "role": "status", "width": 160 }
+          ]
+        }
+      ]
+    }
+  ]
+}
