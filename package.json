@@ -1,0 +1,9 @@
+{
+  "name": "lazy-attr-policy",
+  "private": true,
+  "type": "module",
+  "description": "Cost-aware lazy attribute-fetch scheduler for policy decisions",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
