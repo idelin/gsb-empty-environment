@@ -1,0 +1,14 @@
+{
+  "name": "stream-transform-pipeline",
+  "version": "1.0.0",
+  "description": "流式记录变换：整批原子 / 逐条隔离两种模式，带路径定位的错误与可恢复检查点",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test test/*.test.ts"
+  },
+  "license": "MIT"
+}
