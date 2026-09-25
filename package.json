@@ -1,0 +1,11 @@
+{
+  "name": "sod-role-checker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pair-wise separation-of-duties role assignment: exact satisfiability, exceptions, alternates, alias merging and plan repair.",
+  "scripts": {
+    "test": "node --test test/checker.test.ts test/verifier.test.ts",
+    "example": "node examples/run.ts"
+  }
+}
