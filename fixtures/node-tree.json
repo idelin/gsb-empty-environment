@@ -1,0 +1,26 @@
+{
+  "type": "box",
+  "id": "root",
+  "style": { "width": 120, "padding": 10 },
+  "children": [
+    {
+      "type": "text",
+      "id": "title",
+      "text": "alpha beta gamma",
+      "style": { "fontSize": 10 }
+    },
+    {
+      "type": "box",
+      "id": "panel",
+      "style": { "margin": 5, "padding": 2 },
+      "children": [
+        {
+          "type": "text",
+          "id": "label",
+          "text": "ok",
+          "style": { "fontSize": 10 }
+        }
+      ]
+    }
+  ]
+}

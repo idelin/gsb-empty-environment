@@ -1,0 +1,14 @@
+{
+  "name": "deterministic-motion-engine",
+  "version": "0.1.0",
+  "description": "Deterministic keyframe/timeline animation engine with exact time semantics, verified with Node's built-in test runner",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "sample": "node samples/demo.ts"
+  }
+}
