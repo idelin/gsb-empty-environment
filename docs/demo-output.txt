@@ -1,0 +1,58 @@
+
+=== 1. corp issues a root grant to itself (the only power source) ===
+root grant fe9f517a expires at +1000s
+
+=== 2. corp delegates read/doc-a to alice ===
+alice grant e878a127, remaining depth 2
+
+=== 3. alice makes bob a sealed holder ===
+bob grant cbe07253 is sealed
+
+=== 4. bob reads doc-a with clearance=3 in prod -> ALLOW ===
+decision: ALLOW
+chain:  corp->corp[depth=3]  =>  corp->alice[depth=2]  =>  alice->bob[depth=1,sealed]
+
+=== 5. same call with clearance=1 -> DENY (ancestor integer policy) ===
+decision: DENY
+  - policy @cbe07253: conjoined chain policy denied the request
+chain:  corp->corp[depth=3]  =>  corp->alice[depth=2]  =>  alice->bob[depth=1,sealed]
+
+=== 6. bob tries doc-b -> DENY (scope never expands downward) ===
+decision: DENY
+  - requestScope @cbe07253: resource doc-b is outside the grant
+chain:  corp->corp[depth=3]  =>  corp->alice[depth=2]  =>  alice->bob[depth=1,sealed]
+
+=== 7. bob tries to redelegate the sealed grant -> rejected at issuance ===
+rejected: sealed - sealed [cbe07253-8231-4e64-af4e-fbe067843cdc]: parent grant is sealed (redelegation forbidden)
+
+=== 8. alice tries to grant carol deeper than the root allows -> rejected ===
+rejected: depth - depth [e878a127-4f47-4503-87e6-379b25c3f280]: depth 2 exceeds remaining depth 1
+
+=== 9. alice delegates to carol on a second, short-lived branch ===
+decision: ALLOW
+chain:  corp->corp[depth=3]  =>  corp->alice[depth=2]  =>  alice->carol[depth=1]
+
+=== 10. carol tries returning authority to corp -> cyclic delegation rejected ===
+rejected: cycle - cycle: subject corp already appears in the delegation chain
+
+=== 11. clock advances past carol's grant while alice's is alive -> DENY (time) ===
+decision: DENY
+  - time @a61253d8: grant not valid at 1700000150
+chain:  corp->corp[depth=3]  =>  corp->alice[depth=2]  =>  alice->carol[depth=1]
+
+=== 12. clock advances past the alice grant; bob's grant is still inside its window -> DENY ===
+decision: DENY
+  - time @cbe07253: grant not valid at 1700000400
+chain:  corp->corp[depth=3]  =>  corp->alice[depth=2]  =>  alice->bob[depth=1,sealed]
+
+=== 13. tamper with a serialized proof (add doc-b at the leaf) -> signature fails ===
+decision: DENY
+  - sig @cbe07253: grant contents differ from stored grant
+  - sig @cbe07253: signature does not verify
+  - nesting @cbe07253: resources escape the parent scope
+chain:  corp->corp[depth=3]  =>  corp->alice[depth=2]  =>  alice->bob[depth=1,sealed]
+
+=== 14. corp revokes alice's grant; bob (a descendant) stays invalid ===
+decision: DENY
+  - revoked @e878a127: grant has been revoked
+chain:  corp->corp[depth=3]  =>  corp->alice[depth=2]  =>  alice->bob[depth=1,sealed]

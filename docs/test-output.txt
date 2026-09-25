@@ -1,0 +1,64 @@
+(node:88135) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ root grants
+  ✔ issues a self-signed root and authorizes its holder (320.213334ms)
+  ✔ rejects root requests outside resource/action scope (25.033625ms)
+✔ root grants (455.340541ms)
+▶ delegation scope and depth
+  ✔ never allows a child to expand resources or actions (30.456708ms)
+  ✔ enforces the remaining delegation depth (1.136625ms)
+  ✔ cannot explicitly reserve more depth than the parent allows (219.701542ms)
+  ✔ a sealed grant cannot be redelegated (313.819542ms)
+✔ delegation scope and depth (565.547542ms)
+▶ delegation time windows
+  ✔ child grant cannot outlive its parent even with its own long duration (30.500417ms)
+  ✔ an expired ancestor invalidates the leaf even if the leaf is current (67.842458ms)
+✔ delegation time windows (236.471292ms)
+▶ cycles are never a power source
+  ✔ rejects self-delegation (0.893125ms)
+  ✔ rejects return delegation to an ancestor principal (29.454417ms)
+  ✔ rejects proofs that orderChain detects as cyclic or anchorless (0.426667ms)
+✔ cycles are never a power source (30.945375ms)
+▶ revocation
+  ✔ revoking an ancestor invalidates every descendant (98.481167ms)
+  ✔ only the issuer may revoke (105.255416ms)
+✔ revocation (203.837916ms)
+▶ chain policies conjoin
+  ✔ a child cannot satisfy a denied integer condition imposed above (120.346041ms)
+✔ chain policies conjoin (120.436583ms)
+(node:88152) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ policy evaluation reads only explicit attributes
+  ✔ allowAll / denyAll (16.634125ms)
+  ✔ attrIn checks membership in a finite set (0.113583ms)
+  ✔ attrIn supports array-valued attributes and fails closed (0.079125ms)
+  ✔ does not read inherited properties (0.137208ms)
+  ✔ intCmp supports all integer comparisons (0.08425ms)
+  ✔ intCmp rejects non-integer values on either side (0.085125ms)
+  ✔ boolean operators compose (63.44425ms)
+  ✔ short-circuits conjunction with denyAll (151.755958ms)
+✔ policy evaluation reads only explicit attributes (415.914375ms)
+▶ policy structural validation
+  ✔ rejects empty finite sets (110.459917ms)
+  ✔ rejects bad integer operator and non-integer literal (0.360459ms)
+  ✔ rejects empty boolean compounds and unknown kinds (0.098542ms)
+✔ policy structural validation (111.186084ms)
+(node:88155) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+▶ full chain proof
+  ✔ produces a root-first complete chain and verifies (205.952375ms)
+  ✔ fails verification when a grant payload is tampered (1.897667ms)
+  ✔ fails verification when a signature is forged (1.340792ms)
+  ✔ fails verification when chain links are reordered (31.808791ms)
+  ✔ rejects a self-contained forged chain that never existed in the store (150.103042ms)
+  ✔ survives JSON serialization round-trip and still verifies (1.258208ms)
+  ✔ denies wrong subject and wrong resource at the leaf (23.18875ms)
+✔ full chain proof (421.42875ms)
+ℹ tests 32
+ℹ suites 9
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5406.080541
