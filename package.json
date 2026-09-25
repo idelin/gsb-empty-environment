@@ -1,0 +1,12 @@
+{
+  "name": "json-path-move",
+  "version": "0.1.0",
+  "description": "Pattern-based rename/move over JSON tree paths with wildcards, captures, plan-first conflict detection",
+  "type": "module",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT"
+}
