@@ -1,0 +1,14 @@
+{
+  "name": "modal-focus-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "嵌套弹层焦点管理：顶层焦点限定、inert 引用计数、分代焦点请求",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "sample": "node --experimental-strip-types samples/demo.ts"
+  }
+}
