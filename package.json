@@ -1,0 +1,11 @@
+{
+  "name": "soft-coverage-raster",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Rect/path/inverse-mask compositing with boolean ops, soft-edge coverage and nested transforms, verified per-pixel against a reference",
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test 'test/*.test.ts'",
+    "sample": "node --disable-warning=ExperimentalWarning sample/demo.ts"
+  }
+}
