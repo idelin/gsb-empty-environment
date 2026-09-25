@@ -1,0 +1,14 @@
+{
+  "name": "replayable-policy-evidence",
+  "version": "0.1.0",
+  "description": "Rule digest + attribute snapshot + evaluation trace with offline replay verification",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
