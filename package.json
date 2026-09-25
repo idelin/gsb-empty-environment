@@ -1,0 +1,14 @@
+{
+  "name": "nested-modal-focus",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "嵌套模态的焦点管理:inert 引用计数、分代焦点请求、异步恢复与状态探索",
+  "scripts": {
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "sample": "node --experimental-strip-types --disable-warning=ExperimentalWarning src/sample.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
