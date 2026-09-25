@@ -1,0 +1,11 @@
+{
+  "name": "json-path-move",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Rename/move paths in a JSON tree via wildcard patterns with captures; plan-first, conflict-checked.",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node --disable-warning=ExperimentalWarning src/cli.ts 'a/*' 'b/$1' sample/tree.json"
+  }
+}
