@@ -1,0 +1,14 @@
+{
+  "name": "policy-decision-cache",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "带属性级失效的策略判定缓存（TypeScript + Node.js 内置测试）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
