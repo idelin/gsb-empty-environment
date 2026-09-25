@@ -1,0 +1,13 @@
+{
+  "name": "tri-policy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Three-valued (unknown-aware) policy language compiled to a shared decision DAG",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
