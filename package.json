@@ -1,0 +1,15 @@
+{
+  "name": "interval-policy-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Compile integer time-interval rules into non-overlapping decision segments with incremental updates and source-evidence queries.",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
