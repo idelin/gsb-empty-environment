@@ -1,0 +1,26 @@
+test_constant_false_removes_erroring_then_branch (test_pure_expr.BranchTests.test_constant_false_removes_erroring_then_branch) ... ok
+test_constant_true_selects_then_and_preserves_error (test_pure_expr.BranchTests.test_constant_true_selects_then_and_preserves_error) ... ok
+test_non_boolean_condition_contract_matches (test_pure_expr.BranchTests.test_non_boolean_condition_contract_matches) ... ok
+test_bindings_do_not_leak_across_conditional_branches (test_pure_expr.CommonSubexpressionTests.test_bindings_do_not_leak_across_conditional_branches) ... ok
+test_eliminates_repeated_pure_expression (test_pure_expr.CommonSubexpressionTests.test_eliminates_repeated_pure_expression) ... ok
+test_left_to_right_order_is_preserved (test_pure_expr.CommonSubexpressionTests.test_left_to_right_order_is_preserved) ... ok
+test_repeated_possible_error_keeps_first_error_position (test_pure_expr.CommonSubexpressionTests.test_repeated_possible_error_keeps_first_error_position) ... ok
+test_short_circuited_binding_is_not_evaluated (test_pure_expr.CommonSubexpressionTests.test_short_circuited_binding_is_not_evaluated) ... ok
+test_division_by_zero_keeps_operator_byte_span (test_pure_expr.ConstantFoldingTests.test_division_by_zero_keeps_operator_byte_span) ... ok
+test_erroring_operands_are_not_reordered (test_pure_expr.ConstantFoldingTests.test_erroring_operands_are_not_reordered) ... ok
+test_false_and_possible_error_becomes_false (test_pure_expr.ConstantFoldingTests.test_false_and_possible_error_becomes_false) ... ok
+test_folds_arithmetic_bottom_up (test_pure_expr.ConstantFoldingTests.test_folds_arithmetic_bottom_up) ... ok
+test_non_commutative_constant_folding_preserves_order (test_pure_expr.ConstantFoldingTests.test_non_commutative_constant_folding_preserves_order) ... ok
+test_runtime_type_error_prefers_left_operand (test_pure_expr.ConstantFoldingTests.test_runtime_type_error_prefers_left_operand) ... ok
+test_runtime_undefined_error_prefers_left_operand (test_pure_expr.ConstantFoldingTests.test_runtime_undefined_error_prefers_left_operand) ... ok
+test_true_or_possible_error_becomes_true (test_pure_expr.ConstantFoldingTests.test_true_or_possible_error_becomes_true) ... ok
+test_random_expressions_match (test_pure_expr.EquivalenceFuzzTests.test_random_expressions_match) ... ok
+test_non_boolean_condition_is_positioned_at_condition (test_pure_expr.ParserAndEvaluatorTests.test_non_boolean_condition_is_positioned_at_condition) ... ok
+test_parse_error_uses_byte_span (test_pure_expr.ParserAndEvaluatorTests.test_parse_error_uses_byte_span) ... ok
+test_precedence_and_short_circuit (test_pure_expr.ParserAndEvaluatorTests.test_precedence_and_short_circuit) ... ok
+test_utf8_source_positions (test_pure_expr.ParserAndEvaluatorTests.test_utf8_source_positions) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.762s
+
+OK

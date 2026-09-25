@@ -1,0 +1,490 @@
+[
+  {
+    "title": "arithmetic folding",
+    "source": "1 + 2 * 3",
+    "variables": {},
+    "optimized_ir": "7",
+    "contract": {
+      "before": {
+        "result": 7
+      },
+      "after": {
+        "result": 7
+      },
+      "matches": true
+    },
+    "reason_mapping": {
+      "ordered": [
+        {
+          "id": "cf-1",
+          "kind": "constant_fold",
+          "span": [
+            4,
+            9
+          ],
+          "expression": "binary",
+          "reason": "folded * on literals to 6"
+        },
+        {
+          "id": "cf-2",
+          "kind": "constant_fold",
+          "span": [
+            0,
+            9
+          ],
+          "expression": "binary",
+          "reason": "folded + on literals to 7"
+        }
+      ],
+      "by_id": {
+        "cf-1": {
+          "id": "cf-1",
+          "kind": "constant_fold",
+          "span": [
+            4,
+            9
+          ],
+          "expression": "binary",
+          "reason": "folded * on literals to 6"
+        },
+        "cf-2": {
+          "id": "cf-2",
+          "kind": "constant_fold",
+          "span": [
+            0,
+            9
+          ],
+          "expression": "binary",
+          "reason": "folded + on literals to 7"
+        }
+      },
+      "by_span": {
+        "4:9": [
+          "cf-1"
+        ],
+        "0:9": [
+          "cf-2"
+        ]
+      },
+      "by_kind": {
+        "constant_fold": [
+          "cf-1",
+          "cf-2"
+        ],
+        "branch_simplification": [],
+        "common_subexpression_elimination": []
+      }
+    }
+  },
+  {
+    "title": "false short-circuits division",
+    "source": "false && (1 / 0)",
+    "variables": {},
+    "optimized_ir": "false",
+    "contract": {
+      "before": {
+        "result": false
+      },
+      "after": {
+        "result": false
+      },
+      "matches": true
+    },
+    "reason_mapping": {
+      "ordered": [
+        {
+          "id": "bs-1",
+          "kind": "branch_simplification",
+          "span": [
+            0,
+            16
+          ],
+          "removed_span": [
+            9,
+            16
+          ],
+          "reason": "false left operand makes && short-circuit; right side is unreachable"
+        }
+      ],
+      "by_id": {
+        "bs-1": {
+          "id": "bs-1",
+          "kind": "branch_simplification",
+          "span": [
+            0,
+            16
+          ],
+          "removed_span": [
+            9,
+            16
+          ],
+          "reason": "false left operand makes && short-circuit; right side is unreachable"
+        }
+      },
+      "by_span": {
+        "0:16": [
+          "bs-1"
+        ]
+      },
+      "by_kind": {
+        "constant_fold": [],
+        "branch_simplification": [
+          "bs-1"
+        ],
+        "common_subexpression_elimination": []
+      }
+    }
+  },
+  {
+    "title": "true short-circuits division",
+    "source": "true || (1 / 0)",
+    "variables": {},
+    "optimized_ir": "true",
+    "contract": {
+      "before": {
+        "result": true
+      },
+      "after": {
+        "result": true
+      },
+      "matches": true
+    },
+    "reason_mapping": {
+      "ordered": [
+        {
+          "id": "bs-1",
+          "kind": "branch_simplification",
+          "span": [
+            0,
+            15
+          ],
+          "removed_span": [
+            8,
+            15
+          ],
+          "reason": "true left operand makes || short-circuit; right side is unreachable"
+        }
+      ],
+      "by_id": {
+        "bs-1": {
+          "id": "bs-1",
+          "kind": "branch_simplification",
+          "span": [
+            0,
+            15
+          ],
+          "removed_span": [
+            8,
+            15
+          ],
+          "reason": "true left operand makes || short-circuit; right side is unreachable"
+        }
+      },
+      "by_span": {
+        "0:15": [
+          "bs-1"
+        ]
+      },
+      "by_kind": {
+        "constant_fold": [],
+        "branch_simplification": [
+          "bs-1"
+        ],
+        "common_subexpression_elimination": []
+      }
+    }
+  },
+  {
+    "title": "constant conditional",
+    "source": "false ? 1 / 0 : 40 + 2",
+    "variables": {},
+    "optimized_ir": "42",
+    "contract": {
+      "before": {
+        "result": 42
+      },
+      "after": {
+        "result": 42
+      },
+      "matches": true
+    },
+    "reason_mapping": {
+      "ordered": [
+        {
+          "id": "cf-1",
+          "kind": "constant_fold",
+          "span": [
+            16,
+            22
+          ],
+          "expression": "binary",
+          "reason": "folded + on literals to 42"
+        },
+        {
+          "id": "bs-1",
+          "kind": "branch_simplification",
+          "span": [
+            0,
+            22
+          ],
+          "selected_span": [
+            16,
+            22
+          ],
+          "removed_span": [
+            8,
+            13
+          ],
+          "reason": "constant condition false selects else branch"
+        }
+      ],
+      "by_id": {
+        "cf-1": {
+          "id": "cf-1",
+          "kind": "constant_fold",
+          "span": [
+            16,
+            22
+          ],
+          "expression": "binary",
+          "reason": "folded + on literals to 42"
+        },
+        "bs-1": {
+          "id": "bs-1",
+          "kind": "branch_simplification",
+          "span": [
+            0,
+            22
+          ],
+          "selected_span": [
+            16,
+            22
+          ],
+          "removed_span": [
+            8,
+            13
+          ],
+          "reason": "constant condition false selects else branch"
+        }
+      },
+      "by_span": {
+        "16:22": [
+          "cf-1"
+        ],
+        "0:22": [
+          "bs-1"
+        ]
+      },
+      "by_kind": {
+        "constant_fold": [
+          "cf-1"
+        ],
+        "branch_simplification": [
+          "bs-1"
+        ],
+        "common_subexpression_elimination": []
+      }
+    }
+  },
+  {
+    "title": "common subexpression",
+    "source": "(x + 1) + (x + 1)",
+    "variables": {
+      "x": 40
+    },
+    "optimized_ir": "@cse1(x + 1) + cse1",
+    "contract": {
+      "before": {
+        "result": 82
+      },
+      "after": {
+        "result": 82
+      },
+      "matches": true
+    },
+    "reason_mapping": {
+      "ordered": [
+        {
+          "id": "cse-1",
+          "kind": "common_subexpression_elimination",
+          "mode": "binding",
+          "ident": "cse1",
+          "span": [
+            0,
+            7
+          ],
+          "reason": "first evaluation is bound because the same pure expression is evaluated later in the same reachable scope"
+        },
+        {
+          "id": "cse-2",
+          "kind": "common_subexpression_elimination",
+          "mode": "use",
+          "ident": "cse1",
+          "span": [
+            10,
+            17
+          ],
+          "reason": "reuses the previously evaluated value without changing operand order or short-circuiting"
+        }
+      ],
+      "by_id": {
+        "cse-1": {
+          "id": "cse-1",
+          "kind": "common_subexpression_elimination",
+          "mode": "binding",
+          "ident": "cse1",
+          "span": [
+            0,
+            7
+          ],
+          "reason": "first evaluation is bound because the same pure expression is evaluated later in the same reachable scope"
+        },
+        "cse-2": {
+          "id": "cse-2",
+          "kind": "common_subexpression_elimination",
+          "mode": "use",
+          "ident": "cse1",
+          "span": [
+            10,
+            17
+          ],
+          "reason": "reuses the previously evaluated value without changing operand order or short-circuiting"
+        }
+      },
+      "by_span": {
+        "0:7": [
+          "cse-1"
+        ],
+        "10:17": [
+          "cse-2"
+        ]
+      },
+      "by_kind": {
+        "constant_fold": [],
+        "branch_simplification": [],
+        "common_subexpression_elimination": [
+          "cse-1",
+          "cse-2"
+        ]
+      }
+    }
+  },
+  {
+    "title": "erroring common expression",
+    "source": "(x / 0) + (x / 0)",
+    "variables": {
+      "x": 1
+    },
+    "optimized_ir": "@cse1(x / 0) + cse1",
+    "contract": {
+      "before": {
+        "error": "DivisionByZero",
+        "span": [
+          3,
+          4
+        ]
+      },
+      "after": {
+        "error": "DivisionByZero",
+        "span": [
+          3,
+          4
+        ]
+      },
+      "matches": true
+    },
+    "reason_mapping": {
+      "ordered": [
+        {
+          "id": "cse-1",
+          "kind": "common_subexpression_elimination",
+          "mode": "binding",
+          "ident": "cse1",
+          "span": [
+            0,
+            7
+          ],
+          "reason": "first evaluation is bound because the same pure expression is evaluated later in the same reachable scope"
+        },
+        {
+          "id": "cse-2",
+          "kind": "common_subexpression_elimination",
+          "mode": "use",
+          "ident": "cse1",
+          "span": [
+            10,
+            17
+          ],
+          "reason": "reuses the previously evaluated value without changing operand order or short-circuiting"
+        }
+      ],
+      "by_id": {
+        "cse-1": {
+          "id": "cse-1",
+          "kind": "common_subexpression_elimination",
+          "mode": "binding",
+          "ident": "cse1",
+          "span": [
+            0,
+            7
+          ],
+          "reason": "first evaluation is bound because the same pure expression is evaluated later in the same reachable scope"
+        },
+        "cse-2": {
+          "id": "cse-2",
+          "kind": "common_subexpression_elimination",
+          "mode": "use",
+          "ident": "cse1",
+          "span": [
+            10,
+            17
+          ],
+          "reason": "reuses the previously evaluated value without changing operand order or short-circuiting"
+        }
+      },
+      "by_span": {
+        "0:7": [
+          "cse-1"
+        ],
+        "10:17": [
+          "cse-2"
+        ]
+      },
+      "by_kind": {
+        "constant_fold": [],
+        "branch_simplification": [],
+        "common_subexpression_elimination": [
+          "cse-1",
+          "cse-2"
+        ]
+      }
+    }
+  },
+  {
+    "title": "utf-8 positions",
+    "source": "值 + 1",
+    "variables": {
+      "值": 41
+    },
+    "optimized_ir": "值 + 1",
+    "contract": {
+      "before": {
+        "result": 42
+      },
+      "after": {
+        "result": 42
+      },
+      "matches": true
+    },
+    "reason_mapping": {
+      "ordered": [],
+      "by_id": {},
+      "by_span": {},
+      "by_kind": {
+        "constant_fold": [],
+        "branch_simplification": [],
+        "common_subexpression_elimination": []
+      }
+    }
+  }
+]
