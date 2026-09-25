@@ -1,0 +1,14 @@
+{
+  "name": "stream-transform-records",
+  "version": "1.0.0",
+  "description": "Streaming record transforms with atomic and isolated modes, path-located errors, and resumable checkpoints",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "sample": "node examples/sample.ts"
+  },
+  "license": "MIT"
+}
