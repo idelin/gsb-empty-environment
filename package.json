@@ -1,0 +1,14 @@
+{
+  "name": "policy-decision-cache",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "带精确失效语义的策略判定缓存：记录实际读取属性、规则版本与时间失效点",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types demo/run-sample.ts"
+  }
+}
