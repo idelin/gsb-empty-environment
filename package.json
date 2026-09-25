@@ -1,0 +1,14 @@
+{
+  "name": "modlink",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Explicit named import/export module system with versioned cache, atomic batch linking, HMR and a pure policy engine.",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node examples/sample.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
