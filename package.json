@@ -1,0 +1,12 @@
+{
+  "name": "judgment-diff-reducer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Budget-aware reducer for failing inputs that must preserve a judgment difference, with schema constraints, hierarchical delta debugging, integer boundary search, journaling and 1-minimality certificates.",
+  "engines": { "node": ">=22.6.0" },
+  "scripts": {
+    "test": "node --experimental-strip-types --test",
+    "sample": "node --experimental-strip-types examples/run-sample.ts"
+  }
+}
