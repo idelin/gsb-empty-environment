@@ -1,0 +1,7 @@
+{"k":"apple","v":"red"}
+{"k":"banana","v":"yellow"}
+this is not json
+{"k":"apple","v":"green"}
+
+{"k":"cherry"}
+{"k":"date","v":"brown"}
