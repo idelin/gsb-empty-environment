@@ -1,0 +1,10 @@
+{
+  "name": "accname-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Accessible name/description computation over a fixture node tree with incremental, dependency-tracked recomputation. No browser layout engine involved.",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\""
+  }
+}
