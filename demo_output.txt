@@ -1,0 +1,100 @@
+--- after asserting A, B, D: C has two independent supports
+  A: BELIEVED minimal_supports=[['fA']] count=1
+  B: BELIEVED minimal_supports=[['fB']] count=1
+  C: BELIEVED minimal_supports=[['fD'], ['fA', 'fB']] count=2
+  D: BELIEVED minimal_supports=[['fD']] count=1
+  X: absent   minimal_supports=[] count=0
+  Y: absent   minimal_supports=[] count=0
+  steps: r_ab_implies_c:on@v1, r_d_implies_c:on@v1, r_x_implies_y:off@v0, r_y_implies_x:off@v0
+  explain(C):
+    {"atom": "C", "believed": true, "supports": [{"env": ["fD"], "tree": {"atom": "C", "env": ["fD"], "kind": "rule", "premises": [{"atom": "D", "env": ["fD"], "fact_ids": ["fD"], "kind": "premise"}], "rule_id": "r_d_implies_c", "step_version": 1}}, {"env": ["fA", "fB"], "tree": {"atom": "C", "env": ["fA", "fB"], "kind": "rule", "premises": [{"atom": "A", "env": ["fA"], "fact_ids": ["fA"], "kind": "premise"}, {"atom": "B", "env": ["fB"], "fact_ids": ["fB"], "kind": "premise"}], "rule_id": "r_ab_implies_c", "step_version": 1}}]}
+  repeat assert fB -> C support count: 2 (still 2, fact fB version: 1 )
+--- retract B: D still supports C, conjunctive step stops
+  A: BELIEVED minimal_supports=[['fA']] count=1
+  B: absent   minimal_supports=[] count=0
+  C: BELIEVED minimal_supports=[['fD']] count=1
+  D: BELIEVED minimal_supports=[['fD']] count=1
+  X: absent   minimal_supports=[] count=0
+  Y: absent   minimal_supports=[] count=0
+  steps: r_ab_implies_c:off@v2, r_d_implies_c:on@v1, r_x_implies_y:off@v0, r_y_implies_x:off@v0
+--- retract D too: no support left, C withdrawn
+  A: BELIEVED minimal_supports=[['fA']] count=1
+  B: absent   minimal_supports=[] count=0
+  C: absent   minimal_supports=[] count=0
+  D: absent   minimal_supports=[] count=0
+  X: absent   minimal_supports=[] count=0
+  Y: absent   minimal_supports=[] count=0
+  steps: r_ab_implies_c:off@v2, r_d_implies_c:off@v2, r_x_implies_y:off@v0, r_y_implies_x:off@v0
+--- ungrounded cycle X->Y->X: X = False , Y = False (both must be False)
+--- evidence log (stable IDs + versions), JSON:
+{
+  "events": [
+    {
+      "conclusion": "C",
+      "id": "r_ab_implies_c",
+      "op": "add_rule",
+      "premises": [
+        "A",
+        "B"
+      ],
+      "version": 1
+    },
+    {
+      "conclusion": "C",
+      "id": "r_d_implies_c",
+      "op": "add_rule",
+      "premises": [
+        "D"
+      ],
+      "version": 1
+    },
+    {
+      "conclusion": "Y",
+      "id": "r_x_implies_y",
+      "op": "add_rule",
+      "premises": [
+        "X"
+      ],
+      "version": 1
+    },
+    {
+      "conclusion": "X",
+      "id": "r_y_implies_x",
+      "op": "add_rule",
+      "premises": [
+        "Y"
+      ],
+      "version": 1
+    },
+    {
+      "atom": "A",
+      "id": "fA",
+      "op": "assert_fact",
+      "version": 1
+    },
+    {
+      "atom": "B",
+      "id": "fB",
+      "op": "assert_fact",
+      "version": 1
+    },
+    {
+      "atom": "D",
+      "id": "fD",
+      "op": "assert_fact",
+      "version": 1
+    },
+    {
+      "id": "fB",
+      "op": "retract_fact",
+      "version": 2
+    },
+    {
+      "id": "fD",
+      "op": "retract_fact",
+      "version": 2
+    }
+  ],
+  "version": 1
+}
+--- replay: snapshot identical -> True | C believed after replay: False
