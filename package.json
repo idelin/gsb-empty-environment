@@ -1,0 +1,14 @@
+{
+  "name": "json-fix-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Priority/precondition-driven JSON tree fix engine with reversible journal, conflict and oscillation detection, budget termination and rollback.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/engine.test.ts",
+    "sample": "node --experimental-strip-types src/sample.ts"
+  }
+}
