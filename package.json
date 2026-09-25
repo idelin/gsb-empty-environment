@@ -1,0 +1,14 @@
+{
+  "name": "graded-policy-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Rule-based grading engine: rational weights, hard rejects, threshold bands, correlated unknown-attribute intervals, incremental recompute.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node samples/demo.ts"
+  }
+}
