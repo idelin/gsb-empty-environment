@@ -1,0 +1,12 @@
+{
+  "name": "layered-config",
+  "version": "0.1.0",
+  "description": "Multi-layer config compiler: field-specific merge strategies, conditional layers, cross-field refs, provenance, atomic snapshots",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=22.6.0" },
+  "scripts": {
+    "test": "sh scripts/node-run.sh --test test/*.test.ts",
+    "replay": "sh scripts/node-run.sh examples/replay.ts"
+  }
+}
