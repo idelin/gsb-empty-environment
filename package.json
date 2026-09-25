@@ -1,0 +1,11 @@
+{
+  "name": "cartesian-expand",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Expand reference templates with cartesian parameters: constraint propagation, dedup, resumable cursors, ranking.",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node examples/sample.ts"
+  }
+}
