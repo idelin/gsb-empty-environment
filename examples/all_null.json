@@ -1,0 +1,14 @@
+{
+  "description": "All-NULL column under SQL three-valued logic: even (n = 1) OR NOT (n = 1) keeps zero rows, because WHERE keeps only TRUE.",
+  "stats": {
+    "tables": {
+      "N": {
+        "row_count": 3,
+        "columns": {
+          "n": {"domain": [1, 2], "null_count": 3, "histogram": {}}
+        }
+      }
+    }
+  },
+  "query": {"select": {"table": "N", "where": {"or": [{"eq": ["n", 1]}, {"not": {"eq": ["n", 1]}}]}}}
+}

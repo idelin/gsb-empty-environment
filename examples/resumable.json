@@ -1,0 +1,16 @@
+{
+  "description": "Larger space (16 tuple types, 5 rows) used to demonstrate budget interruption and resumable search.",
+  "stats": {
+    "tables": {
+      "S": {
+        "row_count": 5,
+        "columns": {
+          "a": {"domain": [0, 1, 2], "null_count": 0, "histogram": {"0": 1, "1": 2, "2": 2}},
+          "b": {"domain": [0, 1, 2], "null_count": 1, "histogram": {"0": 2, "1": 2, "2": 0}}
+        }
+      }
+    }
+  },
+  "query": {"select": {"table": "S", "where": {"and": [{"range": ["a", 1, 2]}, {"or": [{"eq": ["b", 0]}, {"eq": ["b", 1]}]}]}}},
+  "budget": 40
+}

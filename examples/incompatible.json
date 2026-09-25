@@ -1,0 +1,18 @@
+{
+  "description": "Incompatible joint statistics: marginals force all 3 rows to be (0,0), but the joint count says only 1 row is (0,0).",
+  "stats": {
+    "tables": {
+      "T": {
+        "row_count": 3,
+        "columns": {
+          "a": {"domain": [0, 1], "null_count": 0, "histogram": {"0": 3}},
+          "b": {"domain": [0, 1], "null_count": 0, "histogram": {"0": 3}}
+        },
+        "joint_counts": [
+          {"columns": ["a", "b"], "counts": {"0,0": 1}}
+        ]
+      }
+    }
+  },
+  "query": {"select": {"table": "T", "where": {"eq": ["a", 0]}}}
+}

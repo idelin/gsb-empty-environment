@@ -1,0 +1,14 @@
+{
+  "description": "Mutually exclusive predicates: a = 0 AND a = 1 is always false.",
+  "stats": {
+    "tables": {
+      "T": {
+        "row_count": 4,
+        "columns": {
+          "a": {"domain": [0, 1], "null_count": 0, "histogram": {"0": 2, "1": 2}}
+        }
+      }
+    }
+  },
+  "query": {"select": {"table": "T", "where": {"and": [{"eq": ["a", 0]}, {"eq": ["a", 1]}]}}}
+}
