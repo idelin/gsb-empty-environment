@@ -1,0 +1,14 @@
+{
+  "name": "incremental-cc-labeler",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Incremental 4/8-connectivity component labeling for binary images with stable representative IDs",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
