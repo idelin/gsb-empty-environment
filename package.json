@@ -1,0 +1,13 @@
+{
+  "name": "json-path-records",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Streaming path-record format for large JSON trees with versioned, atomic rebuilds",
+  "scripts": {
+    "test": "node --test test/format.test.ts test/store.test.ts"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
