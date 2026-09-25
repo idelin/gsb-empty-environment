@@ -1,0 +1,13 @@
+{
+  "name": "pixel-delta-history",
+  "version": "1.0.0",
+  "description": "Local pixel edits with delta history, branch undo, memory compression and transactional metadata changes",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
