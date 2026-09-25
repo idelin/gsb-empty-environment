@@ -1,0 +1,11 @@
+{
+  "name": "normalization-rules-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Declarative JSON normalization rules: dates, whitespace, enum aliases; with dependency analysis, idempotency search, inverse patches and versioned publication.",
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "sample": "node --disable-warning=ExperimentalWarning samples/run.ts"
+  }
+}
