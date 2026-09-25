@@ -1,0 +1,11 @@
+{
+  "name": "judgment-diff-reducer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Budget-bounded reducer that shrinks failing inputs while preserving a judgment difference between two rule versions",
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}

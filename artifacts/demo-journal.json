@@ -1,0 +1,1294 @@
+{
+  "formatVersion": 1,
+  "status": "1-minimal",
+  "budget": {
+    "max": 200,
+    "spent": 42
+  },
+  "ruleVersions": {
+    "a": "v2025-Q4",
+    "b": "v2026-Q1"
+  },
+  "candidate": {
+    "requestCount": 50,
+    "betaOptIn": true,
+    "quotaOverride": 40
+  },
+  "cache": {
+    "{\"betaOptIn\":true,\"experimentGroup\":\"B\",\"legacyMode\":false,\"quotaOverride\":64,\"regions\":[\"us\",\"eu\",\"apac\",\"latam\"],\"requestCount\":87,\"tags\":[\"internal\",\"vip\",\"trial\"],\"userTier\":\"pro\"}": {
+      "a": true,
+      "b": false
+    },
+    "{\"regions\":[\"us\",\"eu\",\"apac\",\"latam\"],\"requestCount\":87,\"tags\":[\"internal\",\"vip\",\"trial\"],\"userTier\":\"pro\"}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"experimentGroup\":\"B\",\"legacyMode\":false,\"quotaOverride\":64}": {
+      "a": false,
+      "b": false
+    },
+    "{\"legacyMode\":false,\"regions\":[\"us\",\"eu\",\"apac\",\"latam\"],\"requestCount\":87,\"tags\":[\"internal\",\"vip\",\"trial\"],\"userTier\":\"pro\"}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"experimentGroup\":\"B\",\"regions\":[\"us\",\"eu\",\"apac\",\"latam\"],\"requestCount\":87,\"tags\":[\"internal\",\"vip\",\"trial\"],\"userTier\":\"pro\"}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"experimentGroup\":\"B\",\"legacyMode\":false,\"quotaOverride\":64,\"tags\":[\"internal\",\"vip\",\"trial\"],\"userTier\":\"pro\"}": {
+      "a": false,
+      "b": false
+    },
+    "{\"betaOptIn\":true,\"experimentGroup\":\"B\",\"legacyMode\":false,\"quotaOverride\":64,\"regions\":[\"us\",\"eu\",\"apac\",\"latam\"],\"requestCount\":87}": {
+      "a": true,
+      "b": false
+    },
+    "{\"legacyMode\":false,\"regions\":[\"us\",\"eu\",\"apac\",\"latam\"],\"requestCount\":87}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"experimentGroup\":\"B\",\"regions\":[\"us\",\"eu\",\"apac\",\"latam\"],\"requestCount\":87}": {
+      "a": true,
+      "b": true
+    },
+    "{\"experimentGroup\":\"B\",\"legacyMode\":false,\"regions\":[\"us\",\"eu\",\"apac\",\"latam\"],\"requestCount\":87}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"legacyMode\":false,\"quotaOverride\":64,\"regions\":[\"us\",\"eu\",\"apac\",\"latam\"],\"requestCount\":87}": {
+      "a": true,
+      "b": false
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":64,\"regions\":[\"us\",\"eu\",\"apac\",\"latam\"],\"requestCount\":87}": {
+      "a": true,
+      "b": false
+    },
+    "{\"regions\":[\"us\",\"eu\",\"apac\",\"latam\"],\"requestCount\":87}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"regions\":[\"us\",\"eu\",\"apac\",\"latam\"],\"requestCount\":87}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":64,\"requestCount\":87}": {
+      "a": true,
+      "b": false
+    },
+    "{\"requestCount\":87}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"requestCount\":87}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":64}": {
+      "a": false,
+      "b": false
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":64,\"requestCount\":43}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":64,\"requestCount\":65}": {
+      "a": true,
+      "b": false
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":64,\"requestCount\":54}": {
+      "a": true,
+      "b": false
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":64,\"requestCount\":49}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":64,\"requestCount\":52}": {
+      "a": true,
+      "b": false
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":64,\"requestCount\":51}": {
+      "a": true,
+      "b": false
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":64,\"requestCount\":50}": {
+      "a": true,
+      "b": false
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":32,\"requestCount\":50}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":48,\"requestCount\":50}": {
+      "a": true,
+      "b": false
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":40,\"requestCount\":50}": {
+      "a": true,
+      "b": false
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":36,\"requestCount\":50}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":38,\"requestCount\":50}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":39,\"requestCount\":50}": {
+      "a": true,
+      "b": true
+    },
+    "{\"requestCount\":50}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":40}": {
+      "a": false,
+      "b": false
+    },
+    "{\"betaOptIn\":true,\"requestCount\":50}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":40,\"requestCount\":25}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":40,\"requestCount\":38}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":40,\"requestCount\":44}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":40,\"requestCount\":47}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":40,\"requestCount\":49}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":20,\"requestCount\":50}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":30,\"requestCount\":50}": {
+      "a": true,
+      "b": true
+    },
+    "{\"betaOptIn\":true,\"quotaOverride\":35,\"requestCount\":50}": {
+      "a": true,
+      "b": true
+    }
+  },
+  "evidence": [
+    {
+      "step": 1,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {betaOptIn, experimentGroup, legacyMode, quotaOverride}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 2,
+        "remaining": 198
+      }
+    },
+    {
+      "step": 2,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {regions, requestCount, tags, userTier}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": false,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 3,
+        "remaining": 197
+      }
+    },
+    {
+      "step": 3,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {betaOptIn, experimentGroup}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 4,
+        "remaining": 196
+      }
+    },
+    {
+      "step": 4,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {legacyMode, quotaOverride}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 5,
+        "remaining": 195
+      }
+    },
+    {
+      "step": 5,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {regions, requestCount}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": false,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 6,
+        "remaining": 194
+      }
+    },
+    {
+      "step": 6,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {tags, userTier}",
+      "outcome": "accepted",
+      "verdicts": {
+        "a": true,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 7,
+        "remaining": 193
+      }
+    },
+    {
+      "step": 7,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {betaOptIn, experimentGroup}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 8,
+        "remaining": 192
+      }
+    },
+    {
+      "step": 8,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {legacyMode, quotaOverride}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 9,
+        "remaining": 191
+      }
+    },
+    {
+      "step": 9,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {regions, requestCount}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": false,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 9,
+        "remaining": 191
+      }
+    },
+    {
+      "step": 10,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {betaOptIn}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 10,
+        "remaining": 190
+      }
+    },
+    {
+      "step": 11,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {experimentGroup}",
+      "outcome": "accepted",
+      "verdicts": {
+        "a": true,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 11,
+        "remaining": 189
+      }
+    },
+    {
+      "step": 12,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {betaOptIn}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 11,
+        "remaining": 189
+      }
+    },
+    {
+      "step": 13,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {legacyMode}",
+      "outcome": "accepted",
+      "verdicts": {
+        "a": true,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 12,
+        "remaining": 188
+      }
+    },
+    {
+      "step": 14,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {betaOptIn}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 13,
+        "remaining": 187
+      }
+    },
+    {
+      "step": 15,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {quotaOverride}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 14,
+        "remaining": 186
+      }
+    },
+    {
+      "step": 16,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {regions}",
+      "outcome": "accepted",
+      "verdicts": {
+        "a": true,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 15,
+        "remaining": 185
+      }
+    },
+    {
+      "step": 17,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {betaOptIn}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 16,
+        "remaining": 184
+      }
+    },
+    {
+      "step": 18,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {quotaOverride}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 17,
+        "remaining": 183
+      }
+    },
+    {
+      "step": 19,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {requestCount}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": false,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 18,
+        "remaining": 182
+      }
+    },
+    {
+      "step": 20,
+      "phase": "int-boundary",
+      "op": "set requestCount = 43",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 19,
+        "remaining": 181
+      }
+    },
+    {
+      "step": 21,
+      "phase": "int-boundary",
+      "op": "set requestCount = 65",
+      "outcome": "accepted",
+      "verdicts": {
+        "a": true,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 20,
+        "remaining": 180
+      }
+    },
+    {
+      "step": 22,
+      "phase": "int-boundary",
+      "op": "set requestCount = 54",
+      "outcome": "accepted",
+      "verdicts": {
+        "a": true,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 21,
+        "remaining": 179
+      }
+    },
+    {
+      "step": 23,
+      "phase": "int-boundary",
+      "op": "set requestCount = 49",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 22,
+        "remaining": 178
+      }
+    },
+    {
+      "step": 24,
+      "phase": "int-boundary",
+      "op": "set requestCount = 52",
+      "outcome": "accepted",
+      "verdicts": {
+        "a": true,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 23,
+        "remaining": 177
+      }
+    },
+    {
+      "step": 25,
+      "phase": "int-boundary",
+      "op": "set requestCount = 51",
+      "outcome": "accepted",
+      "verdicts": {
+        "a": true,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 24,
+        "remaining": 176
+      }
+    },
+    {
+      "step": 26,
+      "phase": "int-boundary",
+      "op": "set requestCount = 50",
+      "outcome": "accepted",
+      "verdicts": {
+        "a": true,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 25,
+        "remaining": 175
+      }
+    },
+    {
+      "step": 27,
+      "phase": "int-boundary",
+      "op": "set quotaOverride = 32",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 26,
+        "remaining": 174
+      }
+    },
+    {
+      "step": 28,
+      "phase": "int-boundary",
+      "op": "set quotaOverride = 48",
+      "outcome": "accepted",
+      "verdicts": {
+        "a": true,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 27,
+        "remaining": 173
+      }
+    },
+    {
+      "step": 29,
+      "phase": "int-boundary",
+      "op": "set quotaOverride = 40",
+      "outcome": "accepted",
+      "verdicts": {
+        "a": true,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 28,
+        "remaining": 172
+      }
+    },
+    {
+      "step": 30,
+      "phase": "int-boundary",
+      "op": "set quotaOverride = 36",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 29,
+        "remaining": 171
+      }
+    },
+    {
+      "step": 31,
+      "phase": "int-boundary",
+      "op": "set quotaOverride = 38",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 30,
+        "remaining": 170
+      }
+    },
+    {
+      "step": 32,
+      "phase": "int-boundary",
+      "op": "set quotaOverride = 39",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 31,
+        "remaining": 169
+      }
+    },
+    {
+      "step": 33,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {betaOptIn, quotaOverride}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 32,
+        "remaining": 168
+      }
+    },
+    {
+      "step": 34,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {requestCount}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": false,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 33,
+        "remaining": 167
+      }
+    },
+    {
+      "step": 35,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {betaOptIn}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 33,
+        "remaining": 167
+      }
+    },
+    {
+      "step": 36,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {quotaOverride}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 34,
+        "remaining": 166
+      }
+    },
+    {
+      "step": 37,
+      "phase": "attr-ddmin",
+      "op": "remove attributes {requestCount}",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": false,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 34,
+        "remaining": 166
+      }
+    },
+    {
+      "step": 38,
+      "phase": "int-boundary",
+      "op": "set requestCount = 25",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 35,
+        "remaining": 165
+      }
+    },
+    {
+      "step": 39,
+      "phase": "int-boundary",
+      "op": "set requestCount = 38",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 36,
+        "remaining": 164
+      }
+    },
+    {
+      "step": 40,
+      "phase": "int-boundary",
+      "op": "set requestCount = 44",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 37,
+        "remaining": 163
+      }
+    },
+    {
+      "step": 41,
+      "phase": "int-boundary",
+      "op": "set requestCount = 47",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 38,
+        "remaining": 162
+      }
+    },
+    {
+      "step": 42,
+      "phase": "int-boundary",
+      "op": "set requestCount = 49",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 39,
+        "remaining": 161
+      }
+    },
+    {
+      "step": 43,
+      "phase": "int-boundary",
+      "op": "set quotaOverride = 20",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 40,
+        "remaining": 160
+      }
+    },
+    {
+      "step": 44,
+      "phase": "int-boundary",
+      "op": "set quotaOverride = 30",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 41,
+        "remaining": 159
+      }
+    },
+    {
+      "step": 45,
+      "phase": "int-boundary",
+      "op": "set quotaOverride = 35",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 42,
+        "remaining": 158
+      }
+    },
+    {
+      "step": 46,
+      "phase": "int-boundary",
+      "op": "set quotaOverride = 38",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 42,
+        "remaining": 158
+      }
+    },
+    {
+      "step": 47,
+      "phase": "int-boundary",
+      "op": "set quotaOverride = 39",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 42,
+        "remaining": 158
+      }
+    },
+    {
+      "step": 48,
+      "phase": "certify",
+      "op": "remove attribute betaOptIn",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 42,
+        "remaining": 158
+      }
+    },
+    {
+      "step": 49,
+      "phase": "certify",
+      "op": "remove attribute quotaOverride",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 42,
+        "remaining": 158
+      }
+    },
+    {
+      "step": 50,
+      "phase": "certify",
+      "op": "decrement quotaOverride by 1",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 42,
+        "remaining": 158
+      }
+    },
+    {
+      "step": 51,
+      "phase": "certify",
+      "op": "remove attribute requestCount",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": false,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 42,
+        "remaining": 158
+      }
+    },
+    {
+      "step": 52,
+      "phase": "certify",
+      "op": "decrement requestCount by 1",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 42,
+        "remaining": 158
+      }
+    },
+    {
+      "step": 53,
+      "phase": "certify",
+      "op": "remove attribute betaOptIn",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 42,
+        "remaining": 158
+      }
+    },
+    {
+      "step": 54,
+      "phase": "certify",
+      "op": "remove attribute quotaOverride",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 42,
+        "remaining": 158
+      }
+    },
+    {
+      "step": 55,
+      "phase": "certify",
+      "op": "decrement quotaOverride by 1",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 42,
+        "remaining": 158
+      }
+    },
+    {
+      "step": 56,
+      "phase": "certify",
+      "op": "remove attribute requestCount",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": false,
+        "b": false
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 42,
+        "remaining": 158
+      }
+    },
+    {
+      "step": 57,
+      "phase": "certify",
+      "op": "decrement requestCount by 1",
+      "outcome": "rejected-difference-lost",
+      "verdicts": {
+        "a": true,
+        "b": true
+      },
+      "ruleVersions": {
+        "a": "v2025-Q4",
+        "b": "v2026-Q1"
+      },
+      "budget": {
+        "max": 200,
+        "spent": 42,
+        "remaining": 158
+      }
+    }
+  ],
+  "certificate": [
+    {
+      "op": "remove attribute betaOptIn",
+      "outcome": "rejected-difference-lost"
+    },
+    {
+      "op": "remove attribute quotaOverride",
+      "outcome": "rejected-difference-lost"
+    },
+    {
+      "op": "decrement quotaOverride by 1",
+      "outcome": "rejected-difference-lost"
+    },
+    {
+      "op": "remove attribute requestCount",
+      "outcome": "rejected-difference-lost"
+    },
+    {
+      "op": "decrement requestCount by 1",
+      "outcome": "rejected-difference-lost"
+    }
+  ]
+}
