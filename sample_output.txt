@@ -1,0 +1,51 @@
+add c0-x0: revision=1 channels=(0,) rebuilt=0 revoked=() created=()
+add c0-x1: revision=2 channels=(0,) rebuilt=1 revoked=() created=(1,)
+add c0-x2: revision=3 channels=(0,) rebuilt=1 revoked=() created=(2,)
+add c1-x0: revision=4 channels=(1,) rebuilt=0 revoked=() created=()
+add c1-x1: revision=5 channels=(1,) rebuilt=0 revoked=() created=()
+add c1-x2: revision=6 channels=(1,) rebuilt=0 revoked=() created=()
+add c2-x0: revision=7 channels=(2,) rebuilt=0 revoked=() created=()
+add c2-x1: revision=8 channels=(2,) rebuilt=1 revoked=() created=(3,)
+add c2-x2: revision=9 channels=(2,) rebuilt=1 revoked=() created=(4,)
+
+Values:
+channel=0 x=1.0 [1.0700,1.1800] src=c0-x0,c0-x1 evidence=E1
+channel=1 x=1.0 unavailable: InterpolationGapError: a break or unknown node separates the endpoints
+channel=1 x=2.0 [2.1900,2.3100] src=c1-x1 evidence=-
+channel=1 x=3.0 unavailable: InterpolationGapError: a break or unknown node separates the endpoints
+channel=2 x=3.5 [1.4325,1.5675] src=c2-x1,c2-x2 evidence=E4
+
+Derivatives:
+channel=0 x=1.0 interval=[0.0700,0.1800] left=0.12 right=0.12
+channel=0 x=2.0 interval=[0.0600,0.1900] left=0.12 right=0.12
+channel=1 x=2.0 unavailable: InterpolationGapError: no adjacent interpolable segment
+
+Deterministic inverse queries:
+channel=0 target=1.3 solutions=[(2.4, 2.4, 'point')]
+channel=2 target=1.0 solutions=[(1.0, 1.0, 'point'), (3.0, 3.0, 'point')]
+channel=2 target=2.0 solutions=[(0.0, 0.0, 'point'), (4.0, 4.0, 'point')]
+
+Calibration snapshot check:
+before revision=9 value=1.1250
+calibrate c0-x1: revision=10 channels=(0,) rebuilt=4 revoked=(1, 2) created=(5, 6)
+after current value=1.6250
+old snapshot remains=1.1250
+old evidence E1 revoked=True
+
+Insert and delete/restore:
+insert c0-insert: revision=11 channels=(0,) rebuilt=3 revoked=(6,) created=(7, 8)
+after insert x=2.5 [2.5950,2.7550] src=c0-x1,c0-insert evidence=E7
+delete c0-insert: revision=12 channels=(0,) rebuilt=3 revoked=(7, 8) created=(9,)
+restore c0-insert: revision=13 channels=(0,) rebuilt=3 revoked=(9,) created=(10, 11)
+after restore x=2.5 [2.5950,2.7550] src=c0-x1,c0-insert evidence=E10
+
+Local rebuild isolation:
+calibrate c2-x1: revision=14 channels=(2,) rebuilt=4 revoked=(3, 4) created=(12, 13)
+
+Reproducible seeded evidence samples:
+step=0 noise=0.10 channel=2 x=0.5 [1.9625,2.0875] src=c2-x0,c2-x1 evidence=E12
+step=1 noise=0.12 channel=0 x=1.1 [1.6320,1.7430] src=c0-x0,c0-x1 evidence=E5
+step=2 noise=0.05 channel=2 x=1.7 [1.9925,2.1775] src=c2-x0,c2-x1 evidence=E12
+step=3 unavailable: InterpolationGapError
+step=4 noise=0.15 channel=2 x=2.9 [1.9685,2.1415] src=c2-x1,c2-x2 evidence=E13
+step=5 unavailable: InterpolationGapError
