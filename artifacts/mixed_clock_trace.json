@@ -1,0 +1,696 @@
+{
+  "scenario": "mixed_clock",
+  "trace": [
+    {
+      "attempts": 1,
+      "detail": "initial incarnation",
+      "kind": "restart",
+      "msg_id": null,
+      "node": "a",
+      "payload": null,
+      "peer": null,
+      "seq": 0,
+      "tag": {
+        "epoch": 0,
+        "logical": 0,
+        "node": "a",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "initial incarnation",
+      "kind": "restart",
+      "msg_id": null,
+      "node": "b",
+      "payload": null,
+      "peer": null,
+      "seq": 1,
+      "tag": {
+        "epoch": 0,
+        "logical": 0,
+        "node": "b",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "initial incarnation",
+      "kind": "restart",
+      "msg_id": null,
+      "node": "c",
+      "payload": null,
+      "peer": null,
+      "seq": 2,
+      "tag": {
+        "epoch": 0,
+        "logical": 0,
+        "node": "c",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "a",
+      "payload": null,
+      "peer": null,
+      "seq": 3,
+      "tag": {
+        "epoch": 0,
+        "logical": 1,
+        "node": "a",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "a",
+      "payload": null,
+      "peer": null,
+      "seq": 4,
+      "tag": {
+        "epoch": 0,
+        "logical": 2,
+        "node": "a",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "b",
+      "payload": null,
+      "peer": null,
+      "seq": 5,
+      "tag": {
+        "epoch": 0,
+        "logical": 1,
+        "node": "b",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "send",
+      "msg_id": "m1",
+      "node": "a",
+      "payload": "hello",
+      "peer": "b",
+      "seq": 6,
+      "tag": {
+        "epoch": 0,
+        "logical": 3,
+        "node": "a",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "receive",
+      "msg_id": "m1",
+      "node": "b",
+      "payload": "hello",
+      "peer": "a",
+      "seq": 7,
+      "tag": {
+        "epoch": 0,
+        "logical": 4,
+        "node": "b",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "b",
+      "payload": null,
+      "peer": null,
+      "seq": 8,
+      "tag": {
+        "epoch": 0,
+        "logical": 5,
+        "node": "b",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "b",
+      "payload": null,
+      "peer": null,
+      "seq": 9,
+      "tag": {
+        "epoch": 0,
+        "logical": 6,
+        "node": "b",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "c",
+      "payload": null,
+      "peer": null,
+      "seq": 10,
+      "tag": {
+        "epoch": 0,
+        "logical": 1,
+        "node": "c",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "c",
+      "payload": null,
+      "peer": null,
+      "seq": 11,
+      "tag": {
+        "epoch": 0,
+        "logical": 2,
+        "node": "c",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "c",
+      "payload": null,
+      "peer": null,
+      "seq": 12,
+      "tag": {
+        "epoch": 0,
+        "logical": 3,
+        "node": "c",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "c",
+      "payload": null,
+      "peer": null,
+      "seq": 13,
+      "tag": {
+        "epoch": 0,
+        "logical": 4,
+        "node": "c",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "c",
+      "payload": null,
+      "peer": null,
+      "seq": 14,
+      "tag": {
+        "epoch": 0,
+        "logical": 5,
+        "node": "c",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "c",
+      "payload": null,
+      "peer": null,
+      "seq": 15,
+      "tag": {
+        "epoch": 0,
+        "logical": 6,
+        "node": "c",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "c",
+      "payload": null,
+      "peer": null,
+      "seq": 16,
+      "tag": {
+        "epoch": 0,
+        "logical": 7,
+        "node": "c",
+        "physical": 1000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "c",
+      "payload": null,
+      "peer": null,
+      "seq": 17,
+      "tag": {
+        "epoch": 0,
+        "logical": 0,
+        "node": "c",
+        "physical": 1000001
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "send",
+      "msg_id": "m2",
+      "node": "c",
+      "payload": "",
+      "peer": "b",
+      "seq": 18,
+      "tag": {
+        "epoch": 0,
+        "logical": 1,
+        "node": "c",
+        "physical": 1000001
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "receive",
+      "msg_id": "m2",
+      "node": "b",
+      "payload": "",
+      "peer": "c",
+      "seq": 19,
+      "tag": {
+        "epoch": 0,
+        "logical": 2,
+        "node": "b",
+        "physical": 1000001
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "a",
+      "payload": null,
+      "peer": null,
+      "seq": 20,
+      "tag": {
+        "epoch": 0,
+        "logical": 4,
+        "node": "a",
+        "physical": 1000000
+      },
+      "wall": 0
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "send",
+      "msg_id": "m3",
+      "node": "a",
+      "payload": "after-rollback",
+      "peer": "c",
+      "seq": 21,
+      "tag": {
+        "epoch": 0,
+        "logical": 5,
+        "node": "a",
+        "physical": 1000000
+      },
+      "wall": 0
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "receive",
+      "msg_id": "m3",
+      "node": "c",
+      "payload": "after-rollback",
+      "peer": "a",
+      "seq": 22,
+      "tag": {
+        "epoch": 0,
+        "logical": 2,
+        "node": "c",
+        "physical": 1000001
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "send",
+      "msg_id": "m4",
+      "node": "c",
+      "payload": "",
+      "peer": "a",
+      "seq": 23,
+      "tag": {
+        "epoch": 0,
+        "logical": 0,
+        "node": "c",
+        "physical": 1003000
+      },
+      "wall": 1003000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "receive",
+      "msg_id": "m4",
+      "node": "a",
+      "payload": "",
+      "peer": "c",
+      "seq": 24,
+      "tag": {
+        "epoch": 0,
+        "logical": 1,
+        "node": "a",
+        "physical": 1003000
+      },
+      "wall": 0
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "a",
+      "payload": null,
+      "peer": null,
+      "seq": 25,
+      "tag": {
+        "epoch": 0,
+        "logical": 2,
+        "node": "a",
+        "physical": 1003000
+      },
+      "wall": 0
+    },
+    {
+      "attempts": 1,
+      "detail": "tag physical 10001000000 exceeds wall 1000000 + skew 500000",
+      "kind": "quarantine",
+      "msg_id": "evil",
+      "node": "b",
+      "payload": null,
+      "peer": "attacker",
+      "seq": 26,
+      "tag": {
+        "epoch": 0,
+        "logical": 0,
+        "node": "attacker",
+        "physical": 10001000000
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "b",
+      "payload": null,
+      "peer": null,
+      "seq": 27,
+      "tag": {
+        "epoch": 0,
+        "logical": 3,
+        "node": "b",
+        "physical": 1000001
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "before_sync (tag never durable)",
+      "kind": "crash",
+      "msg_id": "lost-before-sync",
+      "node": "c",
+      "payload": null,
+      "peer": "a",
+      "seq": 28,
+      "tag": {
+        "epoch": 0,
+        "logical": 1,
+        "node": "c",
+        "physical": 1003000
+      },
+      "wall": 1003000
+    },
+    {
+      "attempts": 1,
+      "detail": "recovered incarnation #1",
+      "kind": "restart",
+      "msg_id": null,
+      "node": "c",
+      "payload": null,
+      "peer": null,
+      "seq": 29,
+      "tag": {
+        "epoch": 1,
+        "logical": 0,
+        "node": "c",
+        "physical": 1003000
+      },
+      "wall": 998000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "send",
+      "msg_id": "m5",
+      "node": "c",
+      "payload": "durable-unpublished",
+      "peer": "a",
+      "seq": 30,
+      "tag": {
+        "epoch": 1,
+        "logical": 1,
+        "node": "c",
+        "physical": 1003000
+      },
+      "wall": 998000
+    },
+    {
+      "attempts": 1,
+      "detail": "after_sync (durable, unpublished; outbox will republish)",
+      "kind": "crash",
+      "msg_id": "m5",
+      "node": "c",
+      "payload": null,
+      "peer": "a",
+      "seq": 31,
+      "tag": {
+        "epoch": 1,
+        "logical": 1,
+        "node": "c",
+        "physical": 1003000
+      },
+      "wall": 998000
+    },
+    {
+      "attempts": 1,
+      "detail": "recovered incarnation #2",
+      "kind": "restart",
+      "msg_id": null,
+      "node": "c",
+      "payload": null,
+      "peer": null,
+      "seq": 32,
+      "tag": {
+        "epoch": 2,
+        "logical": 0,
+        "node": "c",
+        "physical": 1003000
+      },
+      "wall": 997000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "receive",
+      "msg_id": "m5",
+      "node": "a",
+      "payload": "durable-unpublished",
+      "peer": "c",
+      "seq": 33,
+      "tag": {
+        "epoch": 0,
+        "logical": 0,
+        "node": "a",
+        "physical": 1003001
+      },
+      "wall": 0
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "send",
+      "msg_id": "m6",
+      "node": "a",
+      "payload": "published-then-crash",
+      "peer": "b",
+      "seq": 34,
+      "tag": {
+        "epoch": 0,
+        "logical": 1,
+        "node": "a",
+        "physical": 1003001
+      },
+      "wall": 0
+    },
+    {
+      "attempts": 1,
+      "detail": "after_publish (ack never synced)",
+      "kind": "crash",
+      "msg_id": "m6",
+      "node": "a",
+      "payload": null,
+      "peer": "b",
+      "seq": 35,
+      "tag": {
+        "epoch": 0,
+        "logical": 1,
+        "node": "a",
+        "physical": 1003001
+      },
+      "wall": 0
+    },
+    {
+      "attempts": 1,
+      "detail": "recovered incarnation #1",
+      "kind": "restart",
+      "msg_id": null,
+      "node": "a",
+      "payload": null,
+      "peer": null,
+      "seq": 36,
+      "tag": {
+        "epoch": 1,
+        "logical": 0,
+        "node": "a",
+        "physical": 1003001
+      },
+      "wall": -1004000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "receive",
+      "msg_id": "m6",
+      "node": "b",
+      "payload": "published-then-crash",
+      "peer": "a",
+      "seq": 37,
+      "tag": {
+        "epoch": 0,
+        "logical": 2,
+        "node": "b",
+        "physical": 1003001
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "message already consumed durably",
+      "kind": "duplicate",
+      "msg_id": "m6",
+      "node": "b",
+      "payload": null,
+      "peer": "a",
+      "seq": 38,
+      "tag": {
+        "epoch": 0,
+        "logical": 1,
+        "node": "a",
+        "physical": 1003001
+      },
+      "wall": 1000000
+    },
+    {
+      "attempts": 1,
+      "detail": "",
+      "kind": "local",
+      "msg_id": null,
+      "node": "a",
+      "payload": null,
+      "peer": null,
+      "seq": 39,
+      "tag": {
+        "epoch": 1,
+        "logical": 1,
+        "node": "a",
+        "physical": 1003001
+      },
+      "wall": -1004000
+    }
+  ],
+  "validation": {
+    "causal_edges": 32,
+    "crashes": 3,
+    "duplicates": 1,
+    "errors": [],
+    "events": 40,
+    "ok": true,
+    "published": 29,
+    "quarantined": 1,
+    "restarts": 6
+  }
+}
