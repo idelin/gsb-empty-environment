@@ -1,0 +1,15 @@
+test_cross_boundary_bin_uses_partial_weight (test_integration.SpectrumIntegrationTest.test_cross_boundary_bin_uses_partial_weight) ... ok
+test_nested_overlap_is_not_normalized_to_one (test_integration.SpectrumIntegrationTest.test_nested_overlap_is_not_normalized_to_one) ... ok
+test_non_overlapping_full_coverage_conserves_energy (test_integration.SpectrumIntegrationTest.test_non_overlapping_full_coverage_conserves_energy) ... ok
+test_small_grid_matches_hand_integration (test_integration.SpectrumIntegrationTest.test_small_grid_matches_hand_integration) ... ok
+test_widening_one_band_changes_only_that_band (test_integration.SpectrumIntegrationTest.test_widening_one_band_changes_only_that_band) ... ok
+test_zero_total_energy_has_unknown_relative_energy (test_integration.SpectrumIntegrationTest.test_zero_total_energy_has_unknown_relative_energy) ... ok
+test_checkpoint_restores_events_versions_and_missing_state (test_streaming.MissingAndCheckpointTest.test_checkpoint_restores_events_versions_and_missing_state) ... ok
+test_missing_interval_statistics (test_streaming.MissingAndCheckpointTest.test_missing_interval_statistics) ... ok
+test_band_version_update_emits_incremental_correction (test_streaming.StreamingVersionTest.test_band_version_update_emits_incremental_correction) ... ok
+test_frame_correction_and_band_switch_interleave_without_mixing (test_streaming.StreamingVersionTest.test_frame_correction_and_band_switch_interleave_without_mixing) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.021s
+
+OK
