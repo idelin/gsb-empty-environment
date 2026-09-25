@@ -1,0 +1,11 @@
+{
+  "name": "line-diff-session",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Incremental line-diff blocks between two long texts with folding and bidirectional line mapping",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
