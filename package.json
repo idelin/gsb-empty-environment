@@ -1,0 +1,13 @@
+{
+  "name": "graph-store",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Cross-document $id/$ref object graph with shared identity, COW, reversible inline export and versioned GC",
+  "scripts": {
+    "test": "node --experimental-strip-types --test 'test/*.test.ts'"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
