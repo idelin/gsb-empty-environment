@@ -1,0 +1,11 @@
+{
+  "name": "lineage-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Composable, versioned, deduplicated field-level lineage for JSON filter/split/aggregate/join pipelines",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node examples/sample.ts"
+  }
+}
