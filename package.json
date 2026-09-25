@@ -1,0 +1,14 @@
+{
+  "name": "evidence-replay",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tamper-evident policy evaluation records with offline replay verification",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "demo": "node --experimental-strip-types src/demo.ts"
+  }
+}
