@@ -1,0 +1,12 @@
+{
+  "name": "segmented-policy-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "整数时间区间规则 -> 不重叠判定段：增量插删、半开边界、默认策略、来源溯源、结构共享",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "test": "node --test test/engine.test.ts",
+    "demo": "node demo.ts"
+  }
+}
