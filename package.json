@@ -1,0 +1,10 @@
+{
+  "name": "json-tree-stream",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Streaming path-record format for large JSON trees with versioning, spill and atomic publish",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
