@@ -1,0 +1,10 @@
+{
+  "name": "json-tree-diff",
+  "version": "1.0.0",
+  "description": "Minimal insert/move/remove/update patches between JSON trees keyed by stable node ids",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
