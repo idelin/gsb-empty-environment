@@ -1,0 +1,14 @@
+{
+  "name": "sod-assignment",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Separation-of-duties assignment checker: exact small-scale solver with aliases, qualification policies, exception budgets, and an independent verifier.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
