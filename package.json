@@ -1,0 +1,13 @@
+{
+  "name": "obligation-merge-engine",
+  "version": "1.0.0",
+  "description": "允许判定伴随义务的合并引擎：专用代数、依赖求解、来源证据、最小不可满足核、有限枚举参考检查",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
