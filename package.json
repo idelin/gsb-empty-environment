@@ -1,0 +1,14 @@
+{
+  "name": "grid-track-sizing",
+  "version": "1.0.0",
+  "description": "Fixed / content / fraction track sizing with spanning-item minimums, gaps and overflow diagnostics. No browser layout engine.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "sample": "node --experimental-strip-types examples/demo.ts"
+  }
+}
