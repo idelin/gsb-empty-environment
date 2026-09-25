@@ -1,0 +1,45 @@
+test_composite_matches_oracle_counts (test_composite_query.CompositeTest.test_composite_matches_oracle_counts) ... ok
+test_composite_requires_shared_table (test_composite_query.CompositeTest.test_composite_requires_shared_table) ... ok
+test_difference_removes_mondays (test_composite_query.CompositeTest.test_difference_removes_mondays) ... ok
+test_intersection_is_mondays (test_composite_query.CompositeTest.test_intersection_is_mondays) ... ok
+test_union_count_and_order (test_composite_query.CompositeTest.test_union_count_and_order) ... ok
+test_microsecond_exactness_survives_transition (test_composite_query.DurationSemanticsTest.test_microsecond_exactness_survives_transition) ... ok
+test_nominal_vs_elapsed_across_fall_back (test_composite_query.DurationSemanticsTest.test_nominal_vs_elapsed_across_fall_back) ... ok
+test_nominal_vs_elapsed_across_spring_forward (test_composite_query.DurationSemanticsTest.test_nominal_vs_elapsed_across_spring_forward) ... ok
+test_nth_daily (test_composite_query.NthEventTest.test_nth_daily) ... ok
+test_nth_invalid (test_composite_query.NthEventTest.test_nth_invalid) ... ok
+test_nth_monthly_31_skips_months (test_composite_query.NthEventTest.test_nth_monthly_31_skips_months) ... ok
+test_nth_respects_exclusions (test_composite_query.NthEventTest.test_nth_respects_exclusions) ... ok
+test_cursor_stale_on_rule_change (test_composite_query.PaginationTest.test_cursor_stale_on_rule_change) ... ok
+test_cursor_stale_on_table_version (test_composite_query.PaginationTest.test_cursor_stale_on_table_version) ... ok
+test_cursor_stale_on_window (test_composite_query.PaginationTest.test_cursor_stale_on_window) ... ok
+test_pages_cover_window_without_gaps_or_dupes (test_composite_query.PaginationTest.test_pages_cover_window_without_gaps_or_dupes) ... ok
+test_fall_back_overlap_policies (test_offsets.OffsetTableTest.test_fall_back_overlap_policies) ... ok
+test_spring_forward_gap_policies (test_offsets.OffsetTableTest.test_spring_forward_gap_policies) ... ok
+test_standard_and_daylight_offsets (test_offsets.OffsetTableTest.test_standard_and_daylight_offsets) ... ok
+test_transition_edges_are_explicit (test_offsets.OffsetTableTest.test_transition_edges_are_explicit) ... ok
+test_version_changes_with_content (test_offsets.OffsetTableTest.test_version_changes_with_content) ... ok
+test_wall_at_round_trip (test_offsets.OffsetTableTest.test_wall_at_round_trip) ... ok
+test_decade_query_does_not_day_scan (test_rules.LargeSpanJumpTest.test_decade_query_does_not_day_scan) ... ok
+test_daily_matches_day_by_day_oracle (test_rules.RuleExpansionTest.test_daily_matches_day_by_day_oracle) ... ok
+test_duplicate_instants_deduplicated (test_rules.RuleExpansionTest.test_duplicate_instants_deduplicated) ... ok
+test_exclusion_beats_same_day_extra (test_rules.RuleExpansionTest.test_exclusion_beats_same_day_extra) ... ok
+test_exclusion_changes_count_and_ranking (test_rules.RuleExpansionTest.test_exclusion_changes_count_and_ranking) ... ok
+test_extra_date_adds_occurrence (test_rules.RuleExpansionTest.test_extra_date_adds_occurrence) ... ok
+test_fold_day_can_emit_two_occurrences (test_rules.RuleExpansionTest.test_fold_day_can_emit_two_occurrences) ... ok
+test_gap_day_uses_forward_policy_in_expansion (test_rules.RuleExpansionTest.test_gap_day_uses_forward_policy_in_expansion) ... ok
+test_monthly_day_31_skips_short_months (test_rules.RuleExpansionTest.test_monthly_day_31_skips_short_months) ... ok
+test_monthly_interval_advances_by_months_not_seconds (test_rules.RuleExpansionTest.test_monthly_interval_advances_by_months_not_seconds) ... ok
+test_weekly_matches_oracle (test_rules.RuleExpansionTest.test_weekly_matches_oracle) ... ok
+test_window_is_half_open (test_rules.RuleExpansionTest.test_window_is_half_open) ... ok
+test_instant_and_duration_exact_microseconds (test_time_model.TimeModelTest.test_instant_and_duration_exact_microseconds) ... ok
+test_invalid_calendar_date (test_time_model.TimeModelTest.test_invalid_calendar_date) ... ok
+test_no_float_on_timeline (test_time_model.TimeModelTest.test_no_float_on_timeline) ... ok
+test_wall_arithmetic_preserves_time_of_day (test_time_model.TimeModelTest.test_wall_arithmetic_preserves_time_of_day) ... ok
+test_wall_parts_and_round_trip (test_time_model.TimeModelTest.test_wall_parts_and_round_trip) ... ok
+test_wall_subtraction_is_nominal (test_time_model.TimeModelTest.test_wall_subtraction_is_nominal) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 0.062s
+
+OK

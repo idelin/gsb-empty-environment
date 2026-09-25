@@ -1,0 +1,36 @@
+offset table version: synthetic-dst:d32be133d358
+
+-- daily (with Mar 12 excluded, Mar 13 20:00 added) --
+  2024-03-09T23:30:00Z  nominal=2024-03-10T08:30:00  rule
+  2024-03-12T23:30:00Z  nominal=2024-03-13T08:30:00  rule
+  2024-03-13T11:00:00Z  nominal=2024-03-13T20:00:00  extra
+  ... 31 events, 35 period jumps
+
+-- 31st-of-month across 2024 (short months skipped) --
+  months: ['01', '03', '05', '07', '08', '10', '12']
+  jumps: 13 (13 month steps, not 366 days)
+
+-- set algebra for March --
+  union       : 31 events
+  intersection: [1, 4, 6, 8, 11, 13, 15, 18, 20, 22, 25, 27, 29]
+  difference  : 18 events
+
+-- DST handling (spring gap / fall overlap) --
+  2024-03-10 02:30 is skipped -> 2024-03-10T03:00:00 = 2024-03-09T18:00:00Z
+  2024-11-03 01:30 earliest   -> 2024-11-02T16:30:00Z (offset +9)
+
+-- k-th occurrence (exclusions affect rank) --
+  daily k=10 -> 2024-01-10
+
+-- pagination (limit 5, bound to schedule+table+window) --
+  page 1: ['01@08:30', '02@08:30', '03@08:30', '04@08:30', '05@08:30'] (jumps=35)
+  page 2: ['06@08:30', '07@08:30', '08@08:30', '09@08:30', '10@08:30'] (jumps=31)
+  page 3: ['11@08:30', '13@08:30', '13@20:00', '14@08:30', '15@08:30'] (jumps=26)
+  page 4: ['16@08:30', '17@08:30', '18@08:30', '19@08:30', '20@08:30'] (jumps=21)
+  page 5: ['21@08:30', '22@08:30', '23@08:30', '24@08:30', '25@08:30'] (jumps=16)
+  page 6: ['26@08:30', '27@08:30', '28@08:30', '29@08:30', '30@08:30'] (jumps=11)
+  page 7: ['31@08:30'] (jumps=6)
+  paged total: 31
+
+-- large span: 10 years, jumps vs days --
+  monthly-31: 70 events in 3653 days using 121 month jumps
