@@ -1,0 +1,14 @@
+{
+  "name": "restricted-path-engine",
+  "version": "0.1.0",
+  "description": "Restricted property-path engine: compiled resumable plans, bounded steps, prototype-safe access, version-bound cache",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
