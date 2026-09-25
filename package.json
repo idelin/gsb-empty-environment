@@ -1,0 +1,11 @@
+{
+  "name": "tree-view-core",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Headless tree view: incremental visible sequence, focus/selection/type-ahead, async loading. Runs on Node >= 23 native TypeScript.",
+  "scripts": {
+    "test": "node --test tests/",
+    "demo": "node examples/demo.ts"
+  }
+}
