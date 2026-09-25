@@ -1,0 +1,11 @@
+{
+  "name": "rle-label-raster",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-label raster with row-wise run-length storage, reversible patches and snapshots",
+  "scripts": {
+    "test": "node --test test/raster.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
