@@ -1,0 +1,14 @@
+{
+  "name": "obligation-saga",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Policy-gated obligation executor with ordered rollback, idempotent compensation and an explicit commit phase.",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "sample": "node samples/demo.ts"
+  }
+}
