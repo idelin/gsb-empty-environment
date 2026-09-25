@@ -1,0 +1,14 @@
+{
+  "name": "fixpoint-rule-engine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Precondition/priority driven fixpoint rewrite engine over JSON trees with oscillation & conflict detection, step journal and rollback.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
