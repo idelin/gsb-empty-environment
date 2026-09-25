@@ -1,0 +1,23 @@
+test_degenerate_edges_are_defined (test_scanfill.GeometryEdgeCasesTest.test_degenerate_edges_are_defined) ... ok
+test_empty_point_and_line_polygons (test_scanfill.GeometryEdgeCasesTest.test_empty_point_and_line_polygons) ... ok
+test_exact_rotation_90_into_negative_space (test_scanfill.GeometryEdgeCasesTest.test_exact_rotation_90_into_negative_space) ... ok
+test_negative_coordinates (test_scanfill.GeometryEdgeCasesTest.test_negative_coordinates) ... ok
+test_rational_scale_and_translate (test_scanfill.GeometryEdgeCasesTest.test_rational_scale_and_translate) ... ok
+test_singular_transform_fills_nothing (test_scanfill.GeometryEdgeCasesTest.test_singular_transform_fills_nothing) ... ok
+test_evenodd (test_scanfill.HoleOrientationTest.test_evenodd) ... ok
+test_nonzero (test_scanfill.HoleOrientationTest.test_nonzero) ... ok
+test_clip_and_boolean_mask (test_scanfill.LayerCompositeTest.test_clip_and_boolean_mask) ... ok
+test_shared_edge_layers_no_crack_no_double (test_scanfill.LayerCompositeTest.test_shared_edge_layers_no_crack_no_double) ... ok
+test_move_vertex (test_scanfill.MoveVertexPartialRefillTest.test_move_vertex) ... ok
+test_complex_shape_small_canvas (test_scanfill.ReferenceParityTest.test_complex_shape_small_canvas) ... ok
+test_rational_vertices_on_pixel_centres (test_scanfill.ReferenceParityTest.test_rational_vertices_on_pixel_centres) ... ok
+test_rectangles_sharing_rational_edge (test_scanfill.SharedEdgeUnionTest.test_rectangles_sharing_rational_edge) ... ok
+test_rectangles_sharing_vertical_edge (test_scanfill.SharedEdgeUnionTest.test_rectangles_sharing_vertical_edge) ... ok
+test_triangles_sharing_diagonal_through_pixel_centres (test_scanfill.SharedEdgeUnionTest.test_triangles_sharing_diagonal_through_pixel_centres) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.082s
+
+OK
+
+[record] vertex move: recomputed 24/32 distinct rows, 72 tile-row passes, 9 tiles
