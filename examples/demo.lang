@@ -1,0 +1,20 @@
+# 演示：常量折叠、分支简化、公共子表达式消除（CSE）
+let x = 2 + 3 * 4;          # 纯表达式 -> 常量折叠为 14
+let y = x * 2;
+let a = x * 2 + 1;          # CSE: x * 2 复用 y
+print a;                    # 29
+print y;                    # 28
+if true {
+    print x;                # 14
+} else {
+    print 1 / 0;            # 死分支：被删除，不会抛错
+}
+print false and (1 / 0);    # 短路：化简为 false，不抛除零错误
+print true or (1 / 0);      # 短路：化简为 true
+let 甲 = 10 / 2;            # UTF-8 标识符；常量折叠为 5
+print 甲;                   # 5
+if false {
+    print 999;
+} else {
+    print 甲 + 1;           # 6
+}
