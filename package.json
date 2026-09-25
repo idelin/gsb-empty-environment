@@ -1,0 +1,14 @@
+{
+  "name": "status-announce-queue",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Assistive-technology status message queue: polite/urgent priorities, merge keys, expiry, injectable clock, ack dedup, fair scheduling.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
