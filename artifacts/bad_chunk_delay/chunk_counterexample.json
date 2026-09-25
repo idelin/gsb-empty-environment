@@ -1,0 +1,1 @@
+{"kind": "chunk_inconsistency", "input": [-0.11734310896858802, 0.23572626926468032], "boundaries": [1], "max_abs_diff": 2.6198553340605523e-07, "first_diff_index": 1, "tolerance": 1e-09}

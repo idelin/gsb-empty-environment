@@ -1,0 +1,147 @@
+{
+  "spec": {
+    "sample_rate": 48000.0,
+    "passband": [
+      0.0,
+      8000.0
+    ],
+    "stopband": [
+      12000.0,
+      24000.0
+    ],
+    "passband_ripple_db": 0.5,
+    "stopband_atten_db": 40.0,
+    "max_latency_samples": 10000.0,
+    "latency_tolerance_samples": 1.0,
+    "chunk_tolerance": 1e-09,
+    "shift_tolerance": 1e-09,
+    "nyquist_guard_hz": 100.0
+  },
+  "overall_passed": false,
+  "checks": [
+    {
+      "name": "impulse_response",
+      "passed": true,
+      "method": "impulse excitation; delay = parabolic-interpolated cross-correlation peak; support at -120 dB of peak",
+      "n_samples": 2048,
+      "measured": {
+        "delay_samples": 50.0,
+        "response_support": 100,
+        "peak_amplitude": 0.4166680452342801
+      },
+      "tolerances": {},
+      "detail": ""
+    },
+    {
+      "name": "declared_latency",
+      "passed": true,
+      "method": "impulse-measured delay vs impl.latency_samples",
+      "n_samples": 2048,
+      "measured": {
+        "measured_delay": 50.0,
+        "declared_latency": 50.0,
+        "abs_error": 0.0
+      },
+      "tolerances": {
+        "latency_tolerance_samples": 1.0,
+        "max_latency_samples": 10000.0
+      },
+      "detail": ""
+    },
+    {
+      "name": "swept_response",
+      "passed": true,
+      "method": "log-chirp deconvolution H=Y/X, magnitude only (delay-invariant); one-sided grid",
+      "n_samples": 8192,
+      "measured": {
+        "passband_ripple_db": 0.001323352479886868,
+        "stopband_atten_db": 76.47535191424917,
+        "grid_spacing_hz": 2.9296875,
+        "grid_points_passband": 2723,
+        "grid_points_stopband": 4062
+      },
+      "tolerances": {
+        "passband_ripple_db": 0.5,
+        "stopband_atten_db": 40.0
+      },
+      "detail": "finite resolution: |H| sampled every 2.930 Hz; behaviour between grid points is NOT certified by this measurement (see fir_certificate)"
+    },
+    {
+      "name": "multitone_passband",
+      "passed": true,
+      "method": "bin-aligned multitone; steady-state segment analysed by quadrature projection (window-free, coherent-gain exact); segment=2048 samples, resolution=23.438 Hz",
+      "n_samples": 4096,
+      "measured": {
+        "deviation_db": 0.0007429015925213317,
+        "tones": 8
+      },
+      "tolerances": {
+        "passband_ripple_db": 0.5
+      },
+      "detail": "first 2048 samples discarded as transient; amplitude ratios are delay-invariant"
+    },
+    {
+      "name": "stopband_leakage",
+      "passed": true,
+      "method": "bin-aligned multitone; steady-state segment analysed by quadrature projection (window-free, coherent-gain exact); segment=2048 samples, resolution=23.438 Hz",
+      "n_samples": 4096,
+      "measured": {
+        "leakage_db": -87.11428486573934,
+        "tones": 8
+      },
+      "tolerances": {
+        "stopband_atten_db": 40.0
+      },
+      "detail": "first 2048 samples discarded as transient; amplitude ratios are delay-invariant"
+    },
+    {
+      "name": "nyquist_edge",
+      "passed": true,
+      "method": "tones placed below fs/2 with 100.0 Hz guard; quadrature projection at the true frequency (no negative-frequency aliasing)",
+      "n_samples": 4096,
+      "measured": {
+        "worst_leakage_db": -114.91337293086889,
+        "edge_tones_hz": [
+          20179.6875,
+          21679.6875,
+          23156.25
+        ]
+      },
+      "tolerances": {
+        "stopband_atten_db": 40.0
+      },
+      "detail": ""
+    },
+    {
+      "name": "chunk_invariance",
+      "passed": false,
+      "method": "random partition search + greedy/ddmin shrinking",
+      "n_samples": 2,
+      "measured": {
+        "max_abs_diff": 2.6198553340605523e-07,
+        "chunks": 2,
+        "first_diff_index": 1
+      },
+      "tolerances": {
+        "chunk_tolerance": 1e-09
+      },
+      "detail": "shrunk replayable counterexample saved to /Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/0e0e94e7949b43af84d729028b15bca0/run/B/attempt-004/workspace/artifacts/bad_chunk_delay/chunk_counterexample.json"
+    },
+    {
+      "name": "shift_invariance",
+      "passed": true,
+      "method": "shifts 1..8 samples vs shifted reference",
+      "n_samples": 1024,
+      "measured": {
+        "max_abs_diff": 0.0
+      },
+      "tolerances": {
+        "shift_tolerance": 1e-09
+      },
+      "detail": ""
+    }
+  ],
+  "artifacts": [
+    "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/0e0e94e7949b43af84d729028b15bca0/run/B/attempt-004/workspace/artifacts/bad_chunk_delay/chunk_counterexample.json"
+  ]
+}
