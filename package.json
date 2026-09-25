@@ -1,0 +1,14 @@
+{
+  "name": "multi-dim-quota",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-dimensional quota manager with idempotent operations, all-or-nothing deduction, rollback and versioned policies",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
