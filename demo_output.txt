@@ -1,0 +1,61 @@
+
+================================================================
+1. Two-layer chain; layer 1 has a large norm
+================================================================
+budget 2.0, per-layer kept-nnz caps [2, 4]
+chain L_inf certificate
+  global budget            : 2
+  final |error|_inf bound  : 1
+  within budget            : True
+  within nnz caps          : True
+  feasible (both)          : True
+  nnz kept / exact / cap   : 4 / 5 / none
+  layer 0 2x2: threshold=0.01 nnz=2/3 (cap=2) injected=0.01 final_contrib=1
+  layer 1 2x2: threshold=0 nnz=2/2 (cap=4) injected=0 final_contrib=0
+corner enumeration over 4 box corners
+  max observed |error|_inf : 1
+  certificate bound        : 1
+  bound HOLDS (observed is never substituted for the bound)
+note: layer-0 local injected error is only 0.01, but the large
+layer-1 norm (100) propagates it to a final bound of 1.0; layers
+are NOT certified independently against the same budget.
+
+================================================================
+2. Same chain under a tight 0.5 budget: keep exact, report
+================================================================
+chain L_inf certificate
+  global budget            : 0.5
+  final |error|_inf bound  : 0
+  within budget            : True
+  within nnz caps          : False
+  feasible (both)          : False
+  nnz kept / exact / cap   : 5 / 5 / none
+  layer 0 2x2: threshold=0 nnz=3/3 (cap=2) injected=0 final_contrib=0
+  layer 1 2x2: threshold=0 nnz=2/2 (cap=4) injected=0 final_contrib=0
+  UNSATISFIED layers (kept exact): 0
+
+================================================================
+3. Negative coefficients and interval propagation
+================================================================
+input z0 in [1,2]^2; exact output interval:
+  lo: [-1.0, -1.0]  hi: [4.0, 1.0]  (negative entries flip endpoints)
+
+================================================================
+4. Incremental certificate update after a local input change
+================================================================
+chain L_inf certificate
+  global budget            : 2
+  final |error|_inf bound  : 0.5
+  within budget            : True
+  within nnz caps          : True
+  feasible (both)          : True
+  nnz kept / exact / cap   : 4 / 5 / none
+  layer 0 2x2: threshold=0.01 nnz=2/3 (cap=2) injected=0.005 final_contrib=0.5
+  layer 1 2x2: threshold=0 nnz=2/2 (cap=4) injected=0 final_contrib=0
+
+================================================================
+5. Revocable approximation + rollback restores matrix/ledger
+================================================================
+after restore_entry(0,0,1): layer0 kept = 3
+after rollback: layer0 dropped = {(0, 1): -0.01}
+after undo(2) (input update + schedule): layer0 kept = 3  dropped = {}
