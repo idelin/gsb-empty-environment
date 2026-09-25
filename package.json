@@ -1,0 +1,15 @@
+{
+  "name": "color-graph",
+  "version": "0.1.0",
+  "description": "sRGB / linear RGB / XYZ conversion graph with explicit white points, gamut strategies and versioned batch pipelines",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
