@@ -1,0 +1,13 @@
+{
+  "items": [
+    {"id": "BOOK", "price": 10, "quantity": 1},
+    {"id": "PEN", "price": 10, "quantity": 1}
+  ],
+  "offers": [
+    {"id": "BUNDLE15", "amount": 15, "item_ids": ["BOOK", "PEN"], "min_subtotal": 20},
+    {"id": "BOOK8", "amount": 8, "item_ids": ["BOOK"]},
+    {"id": "SAVE6", "amount": 6, "item_ids": ["BOOK", "PEN"], "mutex_group": "site"},
+    {"id": "SAVE7", "amount": 7, "item_ids": ["BOOK", "PEN"], "mutex_group": "site"},
+    {"id": "VIP5", "amount": 5, "item_ids": ["PEN"], "min_subtotal": 50}
+  ]
+}
