@@ -1,0 +1,7 @@
+{
+  "items": [{"id": "sku-1", "price": 10}],
+  "offers": [
+    {"id": "OFFER-A", "discount": 6, "items": ["sku-1"]},
+    {"id": "OFFER-B", "discount": 6, "items": ["sku-1"]}
+  ]
+}

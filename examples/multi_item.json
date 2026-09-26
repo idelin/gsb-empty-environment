@@ -1,0 +1,14 @@
+{
+  "items": [
+    {"id": "apple", "price": 8},
+    {"id": "bread", "price": 12},
+    {"id": "milk", "price": 15}
+  ],
+  "offers": [
+    {"id": "FRUIT5", "discount": 5, "items": ["apple"], "min_original": 5},
+    {"id": "COMBO10", "discount": 10, "items": ["apple", "bread"], "min_original": 20},
+    {"id": "COMBO12", "discount": 12, "items": ["apple", "bread"], "group": "combo"},
+    {"id": "COMBO9", "discount": 9, "items": ["bread", "milk"], "group": "combo"},
+    {"id": "ALL3", "discount": 3}
+  ]
+}
