@@ -1,0 +1,7 @@
+{
+  "operation": {"name": "pantograph-check", "duration": 4, "safety_before": 0, "safety_after": "1/2"},
+  "budget": 10,
+  "tracks": [
+    {"id": "T1", "maintenance": [["0", "100"]], "occupied": []}
+  ]
+}

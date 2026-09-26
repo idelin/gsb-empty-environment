@@ -1,0 +1,7 @@
+{
+  "operation": {"name": "full-train-wash", "duration": 6, "safety_before": 1, "safety_after": 1},
+  "horizon": {"start": 0, "end": 10},
+  "tracks": [
+    {"id": "T1", "maintenance": [["2", "6"]], "occupied": [["8", "9"]]}
+  ]
+}

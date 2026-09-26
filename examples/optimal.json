@@ -1,0 +1,10 @@
+{
+  "operation": {"name": "inspect-bogie", "duration": "3/2", "safety_before": "1/2", "safety_after": 1},
+  "horizon": {"start": 0, "end": 24},
+  "budget": 8,
+  "tracks": [
+    {"id": "T1", "maintenance": [["0", "5"], ["9", "11"]], "occupied": [["6", "7"]]},
+    {"id": "T2", "maintenance": [["0", "2"]], "occupied": []}
+  ],
+  "compatible_tracks": ["T1", "T2"]
+}

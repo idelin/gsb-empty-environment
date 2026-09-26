@@ -1,0 +1,8 @@
+{
+  "operation": {"name": "wheel-lathe", "duration": 4, "safety_before": 1, "safety_after": 1},
+  "horizon": {"start": 0, "end": 20},
+  "budget": 5,
+  "tracks": [
+    {"id": "T1", "maintenance": [["0", "7"]], "occupied": []}
+  ]
+}
