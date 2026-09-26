@@ -1,0 +1,12 @@
+{
+  "name": "min-cost-schema-repair",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "自研 schema 校验与最小代价修复建议（不借现成验证器）",
+  "scripts": {
+    "test": "node --test tests/repair.test.ts",
+    "demo": "node samples/demo.ts",
+    "typecheck": "node --experimental-strip-types --check src/index.ts"
+  }
+}
