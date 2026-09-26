@@ -1,0 +1,14 @@
+{
+  "name": "spill-tile-convolver",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "可溢写 tile 卷积器: 多可分离核串联 / 任意锚点 / 逐阶段边界策略 / 融合与分步执行 / 增量重算",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
