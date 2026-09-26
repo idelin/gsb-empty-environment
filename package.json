@@ -1,0 +1,10 @@
+{
+  "name": "truncation-engine",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "sample": "node samples/demo.ts"
+  }
+}
