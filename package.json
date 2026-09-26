@@ -1,0 +1,14 @@
+{
+  "name": "field-group-contract",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Field-group contract validation (exactlyOne / atLeastOne / atMostK) with conditional enablement, joint satisfiability, subset-minimal conflict cores and minimal completions.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node samples/run-sample.ts"
+  }
+}
