@@ -1,0 +1,8 @@
+{
+  "comment": "合成数据：删除墓碑不被旧事件复活；e2 的改名戳比删除旧，对象保持已删",
+  "events": [
+    {"id": "e1", "op": "create", "obj": "a", "clock": 1, "replica": "R1", "name": "a.txt", "parent": "root"},
+    {"id": "e3", "op": "delete", "obj": "a", "clock": 3, "replica": "R1", "deps": ["e1"]},
+    {"id": "e2", "op": "rename", "obj": "a", "clock": 2, "replica": "R2", "name": "ghost.txt"}
+  ]
+}

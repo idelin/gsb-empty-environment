@@ -1,0 +1,9 @@
+{
+  "comment": "合成数据：a 与 b 并发改名为同名 same.txt，高戳 (2,R2) 的 b 胜，a 进 /.conflicts/",
+  "events": [
+    {"id": "e1", "op": "create", "obj": "a", "clock": 1, "replica": "R1", "name": "a.txt", "parent": "root"},
+    {"id": "e2", "op": "create", "obj": "b", "clock": 1, "replica": "R2", "name": "b.txt", "parent": "root"},
+    {"id": "e3", "op": "rename", "obj": "a", "clock": 2, "replica": "R1", "deps": ["e1"], "name": "same.txt"},
+    {"id": "e4", "op": "rename", "obj": "b", "clock": 2, "replica": "R2", "deps": ["e2"], "name": "same.txt"}
+  ]
+}

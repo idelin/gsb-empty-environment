@@ -1,0 +1,8 @@
+{
+  "comment": "合成数据：把目录 a 移入它自己的后代 b，移动 e3 被拒绝，不形成环",
+  "events": [
+    {"id": "e1", "op": "create", "obj": "a", "clock": 1, "replica": "R1", "name": "a", "parent": "root"},
+    {"id": "e2", "op": "create", "obj": "b", "clock": 2, "replica": "R1", "deps": ["e1"], "name": "b", "parent": "a"},
+    {"id": "e3", "op": "move", "obj": "a", "clock": 3, "replica": "R1", "deps": ["e2"], "parent": "b"}
+  ]
+}
