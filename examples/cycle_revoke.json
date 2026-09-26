@@ -1,0 +1,10 @@
+{
+  "sources": {"s": ["A"]},
+  "rules": [
+    {"premises": ["A"], "conclusion": "B"},
+    {"premises": ["B"], "conclusion": "A"}
+  ],
+  "operations": [
+    {"op": "revoke", "source": "s"}
+  ]
+}
