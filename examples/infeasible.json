@@ -1,0 +1,13 @@
+{
+  "name": "infeasible",
+  "description": "Demand in period 1 exceeds available stored energy (no charging is allowed in a demand period).",
+  "capacity": 2,
+  "charge_efficiency": 1,
+  "discharge_efficiency": 1,
+  "max_charge_power": 2,
+  "max_discharge_power": 5,
+  "initial_energy": 1,
+  "final_energy": 0,
+  "prices": [1, 1],
+  "demands": [3, 3]
+}

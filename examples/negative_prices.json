@@ -1,0 +1,13 @@
+{
+  "name": "negative_prices",
+  "description": "Negative prices: get paid to charge, but same-period buy-and-resell cycling is forbidden, so profit stays bounded.",
+  "capacity": 1,
+  "charge_efficiency": "1/2",
+  "discharge_efficiency": "1/2",
+  "max_charge_power": 4,
+  "max_discharge_power": 4,
+  "initial_energy": 0,
+  "final_energy": 0,
+  "prices": [-2, -3],
+  "demands": [0, 0]
+}

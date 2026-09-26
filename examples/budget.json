@@ -1,0 +1,13 @@
+{
+  "name": "budget",
+  "description": "Pure arbitrage used for budget queries (optimal net cost is -40).",
+  "capacity": 10,
+  "charge_efficiency": 1,
+  "discharge_efficiency": 1,
+  "max_charge_power": 10,
+  "max_discharge_power": 10,
+  "initial_energy": 0,
+  "final_energy": 0,
+  "prices": [1, 5],
+  "demands": [0, 0]
+}
