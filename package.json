@@ -1,0 +1,14 @@
+{
+  "name": "exact-json-decimal",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Exact decimal JSON numbers with lexical preservation, incremental chunk parsing, and a hand-written JSON Schema subset validator.",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
