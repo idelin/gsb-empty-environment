@@ -1,0 +1,12 @@
+{
+  "name": "nested-scroll-tx",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "可重放的嵌套滚动事务引擎：剩余增量传递、边界锁定、轴方向、精确有理残差、程序滚动令牌防反馈",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "demo": "node demo/run-sample.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
