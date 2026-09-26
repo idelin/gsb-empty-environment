@@ -1,0 +1,14 @@
+{
+  "name": "schema-regression-diff",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "新旧 JSON Schema 对样本库的回归对比：新增失败 / 已修复 / 原因变化；缓存绑定 schema 与样本摘要",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node src/cli.ts data/schemas/user.v1.json data/schemas/user.v2.json data/samples"
+  }
+}
