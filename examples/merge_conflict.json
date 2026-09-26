@@ -1,0 +1,5 @@
+{
+  "base": [{"id": "e1", "amount": 10, "tags": ["a"]}],
+  "left": [{"op_id": "L1", "op": "set_amount", "entry": "e1", "amount": 11}],
+  "right": [{"op_id": "R1", "op": "set_amount", "entry": "e1", "amount": 12}]
+}
