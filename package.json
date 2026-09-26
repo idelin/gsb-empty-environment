@@ -1,0 +1,11 @@
+{
+  "name": "incremental-schema-validator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Incremental tree validator with a dependency index over a declared schema subset. Zero dependencies.",
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test \"test/*.test.ts\""
+  }
+}
