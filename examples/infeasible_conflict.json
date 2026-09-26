@@ -1,0 +1,5 @@
+{
+  "licenses": {"X": {"cost": 1}, "Y": {"cost": 2}, "Z": {"cost": 3}},
+  "incompatible": [["Y", "Z"]],
+  "dependencies": {"A": "X OR Y", "B": "Y AND Z"}
+}
