@@ -1,0 +1,13 @@
+{
+  "trace_id": "demo-cycle",
+  "spans": [
+    {"id": "a", "name": "a", "start_ms": 0, "end_ms": 0},
+    {"id": "b", "name": "b", "start_ms": 0, "end_ms": 0},
+    {"id": "c", "name": "c", "start_ms": 0, "end_ms": 0}
+  ],
+  "dependencies": [
+    {"from": "a", "to": "b"},
+    {"from": "b", "to": "c"},
+    {"from": "c", "to": "a"}
+  ]
+}
