@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "rules": [
+    {"id": "allow-root-read", "effect": "allow", "subject": "*", "action": "read",
+     "prefix": "/root", "start": null, "end": null},
+    {"id": "deny-private-read", "effect": "deny", "subject": "*", "action": "read",
+     "prefix": "/root/private", "start": null, "end": null}
+  ]
+}
