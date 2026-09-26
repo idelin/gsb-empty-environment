@@ -1,0 +1,11 @@
+{
+  "name": "pagination-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Constraint-aware pagination engine: widows/orphans, keep-with-next, unbreakable blocks, footnote fixpoint, exhaustive cost certificates.",
+  "scripts": {
+    "sample": "node src/sample.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
