@@ -1,0 +1,14 @@
+{
+  "name": "versioned-doc-pipeline",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Version-field driven schema selection, explicit migration chains, phased error reporting. No external validator.",
+  "scripts": {
+    "test": "node --test",
+    "sample": "node examples/sample.ts"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
