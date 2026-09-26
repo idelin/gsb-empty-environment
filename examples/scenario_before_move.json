@@ -1,0 +1,12 @@
+{
+  "now": 15,
+  "directories": [
+    {"id": "R20", "parent": null, "retention_days": 20},
+    {"id": "R5", "parent": null, "retention_days": 5},
+    {"id": "S", "parent": "R20"}
+  ],
+  "files": [
+    {"id": "f1", "dir": "S", "created_at": 0, "retention_days": 10, "version": 1}
+  ],
+  "operations": []
+}
