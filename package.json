@@ -1,0 +1,14 @@
+{
+  "name": "oneof-anyof-diagnoser",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "JSON Schema oneOf/anyOf validation with minimal explanatory error sets (implemented subset only, no external validators)",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
