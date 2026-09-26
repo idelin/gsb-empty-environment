@@ -1,0 +1,11 @@
+{
+  "name": "joint-presence-constraints",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Presence-based field-group constraints (exactlyOne / atLeastOne / atMost k) with conditional enablement, joint satisfiability, minimal unsat cores and minimal corrections.",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node samples/demo.ts"
+  }
+}
