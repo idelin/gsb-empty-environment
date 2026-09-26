@@ -1,0 +1,16 @@
+{
+  "budget": 20,
+  "hours_budget": 30,
+  "scenarios": [
+    {"id": "R-欺诈", "weight": 10, "k": 2},
+    {"id": "R-泄露", "weight": 6, "k": 1},
+    {"id": "R-合规", "weight": 4, "k": 2}
+  ],
+  "checks": [
+    {"id": "chk-a", "family": "访谈", "cost": 4, "hours": 5, "covers": ["R-欺诈", "R-泄露"]},
+    {"id": "chk-b", "family": "访谈", "cost": 3, "hours": 4, "covers": ["R-欺诈"]},
+    {"id": "chk-c", "family": "日志分析", "cost": 6, "hours": 8, "covers": ["R-欺诈", "R-合规"]},
+    {"id": "chk-d", "family": "凭证抽查", "cost": 5, "hours": 6, "covers": ["R-合规", "R-泄露"]},
+    {"id": "chk-e", "family": "日志分析", "cost": 2, "hours": 3, "covers": ["R-泄露"]}
+  ]
+}
