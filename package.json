@@ -1,0 +1,15 @@
+{
+  "name": "sample-schema-inferrer",
+  "version": "0.1.0",
+  "description": "Inductive JSON schema candidate inference from samples, with provenance, retraction, and self-validation",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test tests/",
+    "infer": "node src/cli.ts",
+    "demo": "sh examples/run-demo.sh"
+  }
+}
