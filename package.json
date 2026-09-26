@@ -1,0 +1,14 @@
+{
+  "name": "fd-constraint-kit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Rule evaluation with explicit missing-value semantics + finite-domain integer constraint solver (no external validators).",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node examples/sample.ts"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
