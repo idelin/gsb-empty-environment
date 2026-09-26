@@ -1,0 +1,32 @@
+{
+  "certificate_version": 1,
+  "kind": "counterexample",
+  "model": {
+    "name": "trap_unsafe",
+    "fingerprint": "f41468b0b023e64fc346b8de00c0924f81d2b4bb55a33a8cc315ba3716e44b01"
+  },
+  "generator_stats": {
+    "path_length": 3,
+    "expansions": 3
+  },
+  "path": [
+    0,
+    1,
+    3
+  ],
+  "transitions": [
+    {
+      "index": 0,
+      "source": 0,
+      "target": 1,
+      "action": "step_0"
+    },
+    {
+      "index": 1,
+      "source": 1,
+      "target": 3,
+      "action": "step_1"
+    }
+  ],
+  "bad_state": 3
+}

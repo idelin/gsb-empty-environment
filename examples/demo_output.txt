@@ -1,0 +1,70 @@
+### 1. Safe model -> reachability closure
+SAFE: reachability closure certificate
+{
+  "model": "two_bit_counter",
+  "fingerprint": "d9a35a1b189f02433ab822b77714fa4db40da420ef33723a242517b2479c5dd3",
+  "outcome": "safe",
+  "explored": 4,
+  "expansions": 4,
+  "budget": null,
+  "certificate_path": "examples/certs/_demo/safe.json"
+}
+VALID closure: initial-covered, successor-closed, property holds
+{
+  "model": "two_bit_counter",
+  "fingerprint": "d9a35a1b189f02433ab822b77714fa4db40da420ef33723a242517b2479c5dd3",
+  "verdict": "valid",
+  "certificate_kind": "reachability_closure",
+  "findings": []
+}
+
+### 2. Unsafe model -> replayable counterexample (exit 2)
+UNSAFE: counterexample path [0, 1, 2]
+{
+  "model": "trap_unsafe",
+  "fingerprint": "f41468b0b023e64fc346b8de00c0924f81d2b4bb55a33a8cc315ba3716e44b01",
+  "outcome": "unsafe",
+  "explored": 3,
+  "expansions": 3,
+  "budget": null,
+  "certificate_path": "examples/certs/_demo/cex.json"
+}
+VALID counterexample: property is violated by the replayed path
+{
+  "model": "trap_unsafe",
+  "fingerprint": "f41468b0b023e64fc346b8de00c0924f81d2b4bb55a33a8cc315ba3716e44b01",
+  "verdict": "valid",
+  "certificate_kind": "counterexample",
+  "findings": []
+}
+
+### 3. Budget exhausted -> UNKNOWN, no certificate (exit 3)
+UNKNOWN: only 4 state(s) explored within budget 3; no certificate emitted
+{
+  "model": "long_chain",
+  "fingerprint": "c3b1781c1bb98ac85741c12d71c367d023fe3fb3ceecdc7140c30ac749edf7eb",
+  "outcome": "unknown",
+  "explored": 4,
+  "expansions": 3,
+  "budget": 3,
+  "reason": "budget exhausted before the reachable set was closed"
+}
+
+### 4. Delete a required successor -> verifier rejects (exit 1)
+INVALID: certificate rejected
+{
+  "model": "two_bit_counter",
+  "fingerprint": "d9a35a1b189f02433ab822b77714fa4db40da420ef33723a242517b2479c5dd3",
+  "verdict": "invalid",
+  "certificate_kind": "reachability_closure",
+  "findings": [
+    {
+      "code": "SUCCESSOR_NOT_CLOSED",
+      "message": "a required successor state is missing from the certificate",
+      "detail": {
+        "state": 1,
+        "missing_successor": 2
+      }
+    }
+  ]
+}

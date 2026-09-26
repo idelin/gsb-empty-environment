@@ -1,0 +1,29 @@
+{
+  "certificate_version": 1,
+  "kind": "reachability_closure",
+  "model": {
+    "name": "long_chain",
+    "fingerprint": "c3b1781c1bb98ac85741c12d71c367d023fe3fb3ceecdc7140c30ac749edf7eb"
+  },
+  "generator_stats": {
+    "reachable_count": 3,
+    "expansions": 10
+  },
+  "initial": [
+    0
+  ],
+  "reachable_states": [
+    0,
+    1,
+    2
+  ],
+  "successors": {
+    "0": [
+      1
+    ],
+    "1": [
+      2
+    ],
+    "2": []
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "certificate_version": 1,
+  "kind": "reachability_closure",
+  "model": {
+    "name": "two_bit_counter",
+    "fingerprint": "d9a35a1b189f02433ab822b77714fa4db40da420ef33723a242517b2479c5dd3"
+  },
+  "generator_stats": {
+    "reachable_count": 4,
+    "expansions": 4
+  },
+  "initial": [
+    0
+  ],
+  "reachable_states": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "successors": {
+    "0": [
+      1
+    ],
+    "1": [
+      2
+    ],
+    "2": [
+      3
+    ],
+    "3": [
+      0
+    ]
+  }
+}

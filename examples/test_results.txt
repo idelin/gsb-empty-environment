@@ -1,0 +1,32 @@
+test_budget_exhaustion_stays_unknown (test_modelchecker.TestChecker.test_budget_exhaustion_stays_unknown) ... ok
+test_budget_greater_than_reachable_decides (test_modelchecker.TestChecker.test_budget_greater_than_reachable_decides) ... ok
+test_budget_zero_multiple_initial_states (test_modelchecker.TestChecker.test_budget_zero_multiple_initial_states) ... ok
+test_safe_model_emits_complete_closure (test_modelchecker.TestChecker.test_safe_model_emits_complete_closure) ... ok
+test_unreachable_bad_state_is_safe (test_modelchecker.TestChecker.test_unreachable_bad_state_is_safe) ... ok
+test_unsafe_model_emits_replayable_path (test_modelchecker.TestChecker.test_unsafe_model_emits_replayable_path) ... ok
+test_cli_budget_unknown_exit_code (test_modelchecker.TestCli.test_cli_budget_unknown_exit_code) ... ok
+test_cli_check_and_verify_safe_roundtrip (test_modelchecker.TestCli.test_cli_check_and_verify_safe_roundtrip) ... ok
+test_cli_custom_json_model (test_modelchecker.TestCli.test_cli_custom_json_model) ... ok
+test_cli_unsafe_exit_code (test_modelchecker.TestCli.test_cli_unsafe_exit_code) ... ok
+test_cli_verifier_catches_tampering (test_modelchecker.TestCli.test_cli_verifier_catches_tampering) ... ok
+test_module_invocation (test_modelchecker.TestCli.test_module_invocation) ... ok
+test_budget_partial_graph_rejected_as_certificate (test_modelchecker.TestPartialAndMismatch.test_budget_partial_graph_rejected_as_certificate) ... ok
+test_fingerprint_mismatch_rejected (test_modelchecker.TestPartialAndMismatch.test_fingerprint_mismatch_rejected) ... ok
+test_generator_stats_are_not_trusted (test_modelchecker.TestPartialAndMismatch.test_generator_stats_are_not_trusted) ... ok
+test_model_validation_rejects_unknown_state (test_modelchecker.TestPartialAndMismatch.test_model_validation_rejects_unknown_state) ... ok
+test_partial_closure_missing_frontier_state_rejected (test_modelchecker.TestPartialAndMismatch.test_partial_closure_missing_frontier_state_rejected) ... ok
+test_dispatch_by_kind (test_modelchecker.TestVerifierHappyPath.test_dispatch_by_kind) ... ok
+test_valid_counterexample_replayed (test_modelchecker.TestVerifierHappyPath.test_valid_counterexample_replayed) ... ok
+test_valid_safe_closure (test_modelchecker.TestVerifierHappyPath.test_valid_safe_closure) ... ok
+test_bad_counterexample_transition_is_localized (test_modelchecker.TestVerifierTampering.test_bad_counterexample_transition_is_localized) ... ok
+test_bad_state_injected_into_safe_closure (test_modelchecker.TestVerifierTampering.test_bad_state_injected_into_safe_closure) ... ok
+test_deleting_required_successor_fails_closure (test_modelchecker.TestVerifierTampering.test_deleting_required_successor_fails_closure) ... ok
+test_deleting_successor_state_also_detected_independently (test_modelchecker.TestVerifierTampering.test_deleting_successor_state_also_detected_independently) ... ok
+test_missing_initial_state_rejected (test_modelchecker.TestVerifierTampering.test_missing_initial_state_rejected) ... ok
+test_non_initial_counterexample_start_rejected (test_modelchecker.TestVerifierTampering.test_non_initial_counterexample_start_rejected) ... ok
+test_phantom_successor_rejected (test_modelchecker.TestVerifierTampering.test_phantom_successor_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.072s
+
+OK
