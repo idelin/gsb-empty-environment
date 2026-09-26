@@ -1,0 +1,13 @@
+{
+  "name": "spec-executor-checker",
+  "version": "0.1.0",
+  "description": "Spec-driven interaction executor with recording/replay, independent model checker, hot-swap migration, and fixture-based layout",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "sample": "node samples/demo.ts"
+  }
+}
