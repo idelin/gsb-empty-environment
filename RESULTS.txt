@@ -1,0 +1,61 @@
+# Test run recorded 2026-09-26 18:40:59 CST
+# Python: Python 3.11.15
+
+test_chunking_does_not_change_results (test_batch.TestStableSampleStreams.test_chunking_does_not_change_results) ... ok
+test_distinct_ids_get_distinct_streams (test_batch.TestStableSampleStreams.test_distinct_ids_get_distinct_streams) ... ok
+test_integer_ids_supported (test_batch.TestStableSampleStreams.test_integer_ids_supported) ... ok
+test_invalid_chunk_size (test_batch.TestStableSampleStreams.test_invalid_chunk_size) ... ok
+test_shuffle_does_not_change_per_sample_values (test_batch.TestStableSampleStreams.test_shuffle_does_not_change_per_sample_values) ... ok
+test_stream_depends_on_id_not_position (test_batch.TestStableSampleStreams.test_stream_depends_on_id_not_position) ... ok
+test_extreme_probabilities (test_distributions.TestBernoulli.test_extreme_probabilities) ... ok
+test_frequency (test_distributions.TestBernoulli.test_frequency) ... ok
+test_invalid_probability (test_distributions.TestBernoulli.test_invalid_probability) ... ok
+test_matches_threshold_formula (test_distributions.TestBernoulli.test_matches_threshold_formula) ... ok
+test_invalid_parameters (test_distributions.TestNormalFormula.test_invalid_parameters) ... ok
+test_matches_box_muller_computed_independently (test_distributions.TestNormalFormula.test_matches_box_muller_computed_independently) ... ok
+test_mean_std_reparameterisation (test_distributions.TestNormalFormula.test_mean_std_reparameterisation) ... ok
+test_statistical_sanity (test_distributions.TestNormalFormula.test_statistical_sanity) ... ok
+test_gradients_match_finite_differences (test_distributions.TestReparameterizedNormal.test_gradients_match_finite_differences) ... ok
+test_value_and_exact_gradients (test_distributions.TestReparameterizedNormal.test_value_and_exact_gradients) ... ok
+test_checkpoint_backward_uses_original_mask (test_dropout_checkpoint.TestCheckpointRecomputation.test_checkpoint_backward_uses_original_mask) ... ok
+test_checkpoint_token_is_lightweight (test_dropout_checkpoint.TestCheckpointRecomputation.test_checkpoint_token_is_lightweight) ... ok
+test_recomputed_mask_is_identical_not_resampled (test_dropout_checkpoint.TestCheckpointRecomputation.test_recomputed_mask_is_identical_not_resampled) ... ok
+test_empty_tensor (test_dropout_checkpoint.TestDropout.test_empty_tensor) ... ok
+test_forward_applies_mask (test_dropout_checkpoint.TestDropout.test_forward_applies_mask) ... ok
+test_gradient_flows_only_through_kept_units (test_dropout_checkpoint.TestDropout.test_gradient_flows_only_through_kept_units) ... ok
+test_invalid_rate (test_dropout_checkpoint.TestDropout.test_invalid_rate) ... ok
+test_mask_values_and_keep_fraction (test_dropout_checkpoint.TestDropout.test_mask_values_and_keep_fraction) ... ok
+test_same_key_reproduces_mask (test_dropout_checkpoint.TestDropout.test_same_key_reproduces_mask) ... ok
+test_node_keys_are_stable_and_distinct (test_graph.TestExecutionOrderIndependence.test_node_keys_are_stable_and_distinct) ... ok
+test_node_listing_order_does_not_change_results (test_graph.TestExecutionOrderIndependence.test_node_listing_order_does_not_change_results) ... ok
+test_root_key_determines_everything (test_graph.TestExecutionOrderIndependence.test_root_key_determines_everything) ... ok
+test_empty_tensor_node (test_graph.TestGraphEdgeCases.test_empty_tensor_node) ... ok
+test_invalid_sampling_parameters_propagate (test_graph.TestGraphEdgeCases.test_invalid_sampling_parameters_propagate) ... ok
+test_fully_cached_run_consumes_no_keys (test_graph.TestResume.test_fully_cached_run_consumes_no_keys) ... ok
+test_resume_does_not_reconsume_keys (test_graph.TestResume.test_resume_does_not_reconsume_keys) ... ok
+test_resume_under_strict_mode (test_graph.TestResume.test_resume_under_strict_mode) ... ok
+test_consuming_same_key_twice_raises (test_graph.TestStrictKeyCollision.test_consuming_same_key_twice_raises) ... ok
+test_cycle_rejected (test_graph.TestStrictKeyCollision.test_cycle_rejected) ... ok
+test_duplicate_node_names_rejected (test_graph.TestStrictKeyCollision.test_duplicate_node_names_rejected) ... ok
+test_non_strict_mode_allows_reuse (test_graph.TestStrictKeyCollision.test_non_strict_mode_allows_reuse) ... ok
+test_unknown_dependency_rejected (test_graph.TestStrictKeyCollision.test_unknown_dependency_rejected) ... ok
+test_gradient_matches_original_mask (test_integration.TestChunkedDropoutGradient.test_gradient_matches_original_mask) ... ok
+test_values_and_gradients_invariant_to_chunking (test_integration.TestChunkedDropoutGradient.test_values_and_gradients_invariant_to_chunking) ... ok
+test_empty_tensor (test_prng.TestEdgeCases.test_empty_tensor) ... ok
+test_invalid_arguments (test_prng.TestEdgeCases.test_invalid_arguments) ... ok
+test_strict_key_registry_detects_reuse (test_prng.TestEdgeCases.test_strict_key_registry_detects_reuse) ... ok
+test_random_bits_matches_independent_reference (test_prng.TestIndependentNumericalValidation.test_random_bits_matches_independent_reference) ... ok
+test_uniform_matches_top53bit_formula (test_prng.TestIndependentNumericalValidation.test_uniform_matches_top53bit_formula) ... ok
+test_uniform_statistical_sanity (test_prng.TestIndependentNumericalValidation.test_uniform_statistical_sanity) ... ok
+test_different_keys_differ (test_prng.TestKeyDeterminism.test_different_keys_differ) ... ok
+test_fold_in_changes_stream (test_prng.TestKeyDeterminism.test_fold_in_changes_stream) ... ok
+test_same_key_different_shape_same_prefix (test_prng.TestKeyDeterminism.test_same_key_different_shape_same_prefix) ... ok
+test_same_key_same_shape_identical (test_prng.TestKeyDeterminism.test_same_key_same_shape_identical) ... ok
+test_interleaved_consumption_does_not_change_streams (test_prng.TestStateIndependentSubstreams.test_interleaved_consumption_does_not_change_streams) ... ok
+test_split_subkeys_are_distinct_and_order_free (test_prng.TestStateIndependentSubstreams.test_split_subkeys_are_distinct_and_order_free) ... ok
+test_subkeys_differ_from_parent (test_prng.TestStateIndependentSubstreams.test_subkeys_differ_from_parent) ... ok
+
+----------------------------------------------------------------------
+Ran 53 tests in 0.935s
+
+OK
