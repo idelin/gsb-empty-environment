@@ -1,0 +1,12 @@
+{
+  "name": "mini-style-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Incremental computed-style engine: cascade, inheritance, CSS variables, dependency tracking, fixture-driven layout",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test \"test/**/*.test.ts\""
+  }
+}
