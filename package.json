@@ -1,0 +1,14 @@
+{
+  "name": "layer-dirty-region",
+  "version": "1.0.0",
+  "description": "Layer compositing with conservative dirty-region tracking (no deps)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.ts",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}
