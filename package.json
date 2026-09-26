@@ -1,0 +1,14 @@
+{
+  "name": "layer-dirty-region",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Layer compositing with minimal conservative dirty-region derivation (transforms, clipping, blending, shadows), validated with hand-built RGBA images.",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node src/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}
