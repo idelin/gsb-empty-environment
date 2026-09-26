@@ -1,0 +1,8 @@
+{
+  "capacity": 10,
+  "setup_cost": 1,
+  "jobs": [
+    {"id": "x1", "family": "A", "size": 2, "time": 3, "deadline": 3},
+    {"id": "x2", "family": "B", "size": 2, "time": 3, "deadline": 4}
+  ]
+}
