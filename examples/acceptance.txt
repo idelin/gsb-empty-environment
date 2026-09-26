@@ -1,0 +1,14 @@
+# 合成示例（验收边界）：root = (a OR b) AND (b OR c)
+leaf a
+leaf b
+leaf c
+or o1 a b
+or o2 b c
+and r o1 o2
+root r
+witness r
+revoke b
+witness r
+value r
+assert b
+witness r
