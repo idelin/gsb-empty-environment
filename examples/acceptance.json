@@ -1,0 +1,15 @@
+{
+  "budget": 1000000,
+  "rules": [
+    {"premises": ["A"], "conclusion": "B"},
+    {"premises": ["B"], "conclusion": "A"}
+  ],
+  "base": [{"source": "s", "fact": "A"}],
+  "commands": [
+    {"op": "state", "_note": "s supports A; cycle derives B from A and A from B"},
+    {"op": "revoke", "source": "s"},
+    {"op": "state", "_note": "after revoking s, the cycle has no outside support: A and B vanish"},
+    {"op": "add", "source": "t", "fact": "B"},
+    {"op": "state", "_note": "independent source t backs B; A is derived via B->A"}
+  ]
+}
