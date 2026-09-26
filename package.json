@@ -1,0 +1,11 @@
+{
+  "name": "stream-array-validator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Streaming validator for large JSON arrays: per-item schema checks plus length, uniqueness and aggregate constraints confirmed at finish. No dependencies.",
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "demo": "node --disable-warning=ExperimentalWarning examples/demo.ts"
+  }
+}
