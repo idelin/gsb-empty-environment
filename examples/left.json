@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {"id": "e1", "amount": 11, "tag_ops": []},
+    {"id": "e2", "amount": 5, "tag_ops": [
+      {"op": "add", "op_id": "a1", "tag": "reviewed"},
+      {"op": "remove", "op_id": "r1", "removes": ["a1"]}
+    ]}
+  ]
+}
