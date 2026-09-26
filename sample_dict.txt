@@ -1,0 +1,16 @@
+# 合成示例词典（虚构数据）：每行 词条<TAB>非负权重
+apple	10
+app	8
+application	6
+apply	7
+banana	9
+band	7
+orange	5
+ac	5
+abc	4
+ab	2
+ba	100
+axb	3
+微笑	4
+🙂笑脸	3
+🙂b	2
