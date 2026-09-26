@@ -1,0 +1,12 @@
+{
+  "name": "indexed-palette-quantizer",
+  "version": "1.0.0",
+  "description": "Deterministic fixed-size RGBA palette/indexed-image quantizer with transparent barriers, optional error diffusion, chunked streaming, save/restore frontier and local pixel revision.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/palette.test.ts tests/diffusion.test.ts tests/streaming.test.ts tests/revision.test.ts tests/reconstruction.test.ts",
+    "demo": "node scripts/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}

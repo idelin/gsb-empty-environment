@@ -1,0 +1,46 @@
+
+> indexed-palette-quantizer@1.0.0 test
+> node --test tests/palette.test.ts tests/diffusion.test.ts tests/streaming.test.ts tests/revision.test.ts tests/reconstruction.test.ts
+
+(node:75770) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ method=none is a pure nearest-palette assignment (1.183ms)
+✔ diffusion does not cross a vertical transparent barrier (0.43425ms)
+✔ diffusion does not cross a horizontal transparent barrier (diagonal gate) (0.430584ms)
+✔ canDeliver bridge rule blocks corner cutting (0.083084ms)
+✔ reconstruction error counts only opaque RGB error and reports no leaks (0.288208ms)
+✔ identical inputs produce identical palettes and indices repeatedly (2.892833ms)
+(node:75771) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ colorCount=1 has a defined single weighted-mean color (2.008917ms)
+✔ transparent pixels do not consume opaque color budget (0.129084ms)
+✔ image with no opaque pixels yields a defined all-zero palette (0.199916ms)
+✔ exact solver matches independent brute force on a tiny domain (4817.624917ms)
+✔ median cut is deterministic and reports gap without claiming optimal (1.359834ms)
+✔ exact result never worse than median cut (0.412583ms)
+✔ distinct color extraction ignores transparent pixels (0.17325ms)
+(node:75772) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ round trip preserves opaque palette pixels exactly when color exists (0.992791ms)
+✔ transparent pixels reconstruct to zero alpha and never map to a color (0.479584ms)
+(node:75773) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ local revision equals full re-encode from the modified image (7.351041ms)
+✔ affected cone reaches beyond the edited tile (2.344916ms)
+✔ revision does not propagate across the transparent barrier (0.345292ms)
+✔ editing pixels in chunks then finishing equals one streamed encode (0.415291ms)
+✔ changing an opaque pixel to transparent recomputes the downstream cone (1.985041ms)
+(node:75774) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ chunk sizes do not change the result vs one-shot (2.719166ms)
+✔ saved/restored frontier continues identically (0.893583ms)
+✔ restoring an incompatible color-space version is rejected (0.478542ms)
+✔ method=none streaming also matches one-shot (0.414292ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4995.664542

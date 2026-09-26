@@ -1,0 +1,49 @@
+
+=== color-space version: srgb-rgb-fs-v1 ===
+
+=== 1) fixed-size palette (K=4), transparent pixels excluded ===
+method         : median-cut (heuristic, NOT optimal)
+palette        : rgb(40,53,110) rgb(85,204,69) rgb(114,206,190) rgb(164,113,122)
+opaque colors  : 20 | transparent pixels never counted
+fingerprint    : 40-53-110_85-204-69_114-206-190_164-113-122
+
+=== 2) indexed image without / with Floyd-Steinberg diffusion ===
+nearest-only:
+0 0 1 . 3 3
+0 2 2 . 3 1
+0 3 2 . 3 1
+0 1 1 . 2 2
+floyd-steinberg ('.' = transparent sentinel, barrier column):
+0 0 1 . 3 3
+0 0 2 . 3 1
+0 2 2 . 3 1
+0 3 1 . 2 2
+
+=== 3) reconstruction error ===
+{
+  totalSquaredError: 154455,
+  opaqueSse: 154455,
+  opaquePixelCount: 20,
+  transparentPixelCount: 4,
+  opaqueMse: 2574.25,
+  opacityMismatches: 0,
+  transparentLeaks: 0
+}
+
+=== 4) chunked streaming gives identical output (chunks of 1 row) ===
+identical to one-shot: true
+
+=== 5) save / restore the diffusion frontier mid-image ===
+restored result identical: true
+saved frontier rows: 2 version: srgb-rgb-fs-v1
+
+=== 6) local pixel revision recomputes the diffusion cone ===
+changed pixels: 4 | recomputed cone pixels: 12
+cone revision == full re-encode: true
+
+=== 7) heuristic gap report on a small color domain ===
+heuristic SSE: 48681 | exact SSE: 30315 | relative gap: 60.58% | certifiedBest: false
+
+=== 8) K=1 defined; no opaque pixels defined ===
+K=1 palette: [ [ 6, 6, 6 ] ]
+all-transparent K=2 palette: [ [ 0, 0, 0 ], [ 0, 0, 0 ] ]
