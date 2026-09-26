@@ -1,0 +1,15 @@
+{
+  "name": "versioned-doc-loader",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "按版本字段选择 schema、显式迁移链、分阶段错误报告的文档载入器（手写验证器，无第三方依赖）",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
