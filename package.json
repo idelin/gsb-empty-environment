@@ -1,0 +1,11 @@
+{
+  "name": "defaulting-validator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "JSON-Schema subset validator with topologically-ordered default filling and all-or-nothing semantics",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
