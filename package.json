@@ -1,0 +1,14 @@
+{
+  "name": "font-measure-cache",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "带版本失效与可控调度的字体测量缓存（Node 内置测试，无第三方依赖）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
