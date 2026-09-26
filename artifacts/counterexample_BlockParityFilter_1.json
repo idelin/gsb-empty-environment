@@ -1,0 +1,60 @@
+{
+  "error_index": 925,
+  "evidence": {
+    "around_error": [
+      {
+        "index": 921,
+        "observed": -0.020937843082055037,
+        "reference": -0.024632756567123576
+      },
+      {
+        "index": 922,
+        "observed": 0.16348122387998437,
+        "reference": 0.19233085162351102
+      },
+      {
+        "index": 923,
+        "observed": -0.05710353492630699,
+        "reference": -0.06718062932506705
+      },
+      {
+        "index": 924,
+        "observed": 0.3853629263827875,
+        "reference": 0.45336814868563236
+      },
+      {
+        "index": 925,
+        "observed": 0.848229399297436,
+        "reference": 0.9979169403499247
+      },
+      {
+        "index": 926,
+        "observed": 0.27963542051655965,
+        "reference": 0.3289828476665408
+      },
+      {
+        "index": 927,
+        "observed": -0.06019949656145825,
+        "reference": -0.07082293713112736
+      },
+      {
+        "index": 928,
+        "observed": 0.11932527809389464,
+        "reference": 0.1403826801104643
+      },
+      {
+        "index": 929,
+        "observed": -0.007830934115818138,
+        "reference": -0.009212863665668397
+      }
+    ]
+  },
+  "kind": "phase_misalignment",
+  "max_error": 0.14968754105248872,
+  "partition": null,
+  "sample_rate": 8000.0,
+  "seed": 8640,
+  "shift": 1,
+  "signal_length": 1024,
+  "tolerance": 1e-06
+}

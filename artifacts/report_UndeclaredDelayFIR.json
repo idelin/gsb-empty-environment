@@ -1,0 +1,196 @@
+{
+  "counterexamples": [],
+  "declared_latency_samples": 23,
+  "full_band_claim": "certified from FIR coefficients: passband deviation <= 0.002551, stopband attenuation >= 53.8 dB everywhere (grid 257 points, between-grid margin 0.000139)",
+  "implementation": "UndeclaredDelayFIR (latency off by 3)",
+  "measurements": [
+    {
+      "details": {
+        "coefficient_mismatch_index": -1,
+        "response_head": [
+          -0.000302319,
+          0.000749614,
+          0.001176397,
+          0.000237651,
+          -0.00155146,
+          -0.002177737,
+          0.0,
+          0.003503438
+        ]
+      },
+      "method": "unit impulse; DFT grid resolution fs/N; compared to declared coefficients",
+      "name": "impulse_response",
+      "num_samples": 4096,
+      "passed": true,
+      "resolution": 1.953125,
+      "sample_rate": 8000.0,
+      "tolerance": 1e-09,
+      "value": 0.0
+    },
+    {
+      "details": {
+        "declared": 23,
+        "measured_lag": 26
+      },
+      "method": "log-chirp cross-correlation lag minus declared latency",
+      "name": "time_offset",
+      "num_samples": 8192,
+      "passed": false,
+      "resolution": 1.0,
+      "sample_rate": 8000.0,
+      "tolerance": 1.0,
+      "value": 3.0
+    },
+    {
+      "details": {
+        "gains": [
+          1.006704,
+          1.001118,
+          1.002166,
+          1.007064,
+          1.003476,
+          0.992719,
+          0.994906,
+          0.998101
+        ],
+        "windowed_gain_crosscheck": [
+          0.998104,
+          0.992611,
+          0.987238
+        ]
+      },
+      "method": "multitone least-squares tone fits; windowed coherent-gain cross-check",
+      "name": "passband_deviation",
+      "num_samples": 4096,
+      "passed": true,
+      "resolution": 128.5714285714286,
+      "sample_rate": 8000.0,
+      "tolerance": 0.05,
+      "value": 0.007281333582314087
+    },
+    {
+      "details": {
+        "residuals_rad": [
+          0.237602,
+          0.326702,
+          0.45276,
+          0.63445,
+          0.875684,
+          1.223911,
+          1.696023,
+          2.356801
+        ]
+      },
+      "method": "multitone phase after declared-latency alignment, wrapped to +/-pi",
+      "name": "passband_phase_residual",
+      "num_samples": 4096,
+      "passed": false,
+      "resolution": 128.5714285714286,
+      "sample_rate": 8000.0,
+      "tolerance": 0.1,
+      "value": 2.3568006115452462
+    },
+    {
+      "details": {
+        "attenuation_db": 56.978
+      },
+      "method": "stopband multitone; max output/input tone amplitude ratio",
+      "name": "stopband_leakage",
+      "num_samples": 4096,
+      "passed": true,
+      "resolution": 299.99999999999994,
+      "sample_rate": 8000.0,
+      "tolerance": -40.0,
+      "value": -56.977816364708616
+    },
+    {
+      "details": {
+        "num_grid_points": 24,
+        "passband_gains": [
+          0.998524,
+          0.998169,
+          0.997914,
+          0.997939,
+          0.998027,
+          0.998706,
+          0.999477,
+          1.000076,
+          0.999602,
+          0.998261,
+          0.99813,
+          0.9997,
+          0.999628,
+          0.998043,
+          1.000275
+        ]
+      },
+      "method": "stepped-sine sweep, per-step least-squares fit after settling; grid points only, no inter-point guarantee",
+      "name": "sweep_passband_grid",
+      "num_samples": 12288,
+      "passed": true,
+      "resolution": 165.217391304348,
+      "sample_rate": 8000.0,
+      "tolerance": 0.05,
+      "value": 0.002085539972211503
+    },
+    {
+      "details": {
+        "between_grid_margin": 0.000139,
+        "grid_points": 257,
+        "passband_deviation_bound": 0.002551,
+        "stopband_attenuation_bound_db": 53.765
+      },
+      "method": "coefficient grid + demodulated derivative bound (linear phase removed); valid between grid points",
+      "name": "fir_conservative_bound",
+      "num_samples": 53,
+      "passed": true,
+      "resolution": 3.515625,
+      "sample_rate": 8000.0,
+      "tolerance": 0.05,
+      "value": 0.002550721301688319
+    },
+    {
+      "details": {
+        "frequencies_hz": [
+          3600.0,
+          3900.0
+        ],
+        "gains": [
+          0.000332,
+          0.000397
+        ]
+      },
+      "method": "tones at 0.45fs and 0.4875fs, conditioned least-squares fit; checked against coefficient response",
+      "name": "near_nyquist_response",
+      "num_samples": 4096,
+      "passed": true,
+      "resolution": null,
+      "sample_rate": 8000.0,
+      "tolerance": null,
+      "value": 0.00039739498376924773
+    },
+    {
+      "details": {},
+      "method": "random block-partition search (12 trials) + ddmin shrink",
+      "name": "block_consistency",
+      "num_samples": 1024,
+      "passed": true,
+      "resolution": null,
+      "sample_rate": 8000.0,
+      "tolerance": 1e-06,
+      "value": null
+    },
+    {
+      "details": {},
+      "method": "shifted-probe search over k=1..32 samples + minimal-shift shrink",
+      "name": "shift_invariance",
+      "num_samples": 1024,
+      "passed": true,
+      "resolution": null,
+      "sample_rate": 8000.0,
+      "tolerance": 1e-06,
+      "value": null
+    }
+  ],
+  "notes": []
+}

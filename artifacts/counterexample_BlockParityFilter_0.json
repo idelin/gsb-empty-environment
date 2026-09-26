@@ -1,0 +1,63 @@
+{
+  "error_index": 275,
+  "evidence": {
+    "around_error": [
+      {
+        "index": 271,
+        "observed": 0.03311060612740445,
+        "reference": 0.038953654267534644
+      },
+      {
+        "index": 272,
+        "observed": -0.14384277052020197,
+        "reference": -0.16922678884729644
+      },
+      {
+        "index": 273,
+        "observed": -0.0044658913029687825,
+        "reference": -0.005253989768198568
+      },
+      {
+        "index": 274,
+        "observed": -0.37611249468502095,
+        "reference": -0.4424852878647305
+      },
+      {
+        "index": 275,
+        "observed": -0.8424204871696451,
+        "reference": -0.9910829260819355
+      },
+      {
+        "index": 276,
+        "observed": -0.3416926067900791,
+        "reference": -0.40199130210597545
+      },
+      {
+        "index": 277,
+        "observed": -0.005290067828424742,
+        "reference": -0.006223609209911461
+      },
+      {
+        "index": 278,
+        "observed": -0.17808731703379088,
+        "reference": -0.20951449062798927
+      },
+      {
+        "index": 279,
+        "observed": 0.06434150673955898,
+        "reference": 0.07569589028183409
+      }
+    ]
+  },
+  "kind": "block_inconsistency",
+  "max_error": 0.14866243891229036,
+  "partition": [
+    869,
+    155
+  ],
+  "sample_rate": 8000.0,
+  "seed": 8639,
+  "shift": null,
+  "signal_length": 1024,
+  "tolerance": 1e-06
+}

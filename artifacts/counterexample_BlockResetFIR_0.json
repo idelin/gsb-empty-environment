@@ -1,0 +1,63 @@
+{
+  "error_index": 913,
+  "evidence": {
+    "around_error": [
+      {
+        "index": 909,
+        "observed": -0.0007534076141509462,
+        "reference": -0.0649869781032597
+      },
+      {
+        "index": 910,
+        "observed": 0.0012670045902417435,
+        "reference": 0.08060273085259252
+      },
+      {
+        "index": 911,
+        "observed": 0.002664695921635061,
+        "reference": 0.3411885869746065
+      },
+      {
+        "index": 912,
+        "observed": 0.0015523961099108163,
+        "reference": 0.5600422184455628
+      },
+      {
+        "index": 913,
+        "observed": -0.002621731915709912,
+        "reference": 0.5830786782418432
+      },
+      {
+        "index": 914,
+        "observed": -0.00600536749130274,
+        "reference": 0.3689161138529172
+      },
+      {
+        "index": 915,
+        "observed": -0.0028031678244998266,
+        "reference": 0.026156879436170972
+      },
+      {
+        "index": 916,
+        "observed": 0.005841186181819151,
+        "reference": -0.26055825440383096
+      },
+      {
+        "index": 917,
+        "observed": 0.010049421369328971,
+        "reference": -0.3550111710335248
+      }
+    ]
+  },
+  "kind": "block_inconsistency",
+  "max_error": 0.5857004101575531,
+  "partition": [
+    904,
+    120
+  ],
+  "sample_rate": 8000.0,
+  "seed": 8639,
+  "shift": null,
+  "signal_length": 1024,
+  "tolerance": 1e-06
+}
