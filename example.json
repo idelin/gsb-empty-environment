@@ -1,0 +1,9 @@
+{
+  "base": "USD",
+  "rates": {"USD": "1", "EUR": "6/5", "JPY": "1/150"},
+  "claims": [
+    {"from": "alice", "to": "bob", "amount": "10", "currency": "EUR"},
+    {"from": "bob", "to": "carol", "amount": "1500", "currency": "JPY"},
+    {"from": "carol", "to": "alice", "amount": "2", "currency": "USD"}
+  ]
+}
