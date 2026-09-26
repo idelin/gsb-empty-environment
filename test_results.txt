@@ -1,0 +1,46 @@
+test_cjk_phrase_positions (test_index.IndexTest.test_cjk_phrase_positions) ... ok
+test_duplicate_doc_id_rejected (test_index.IndexTest.test_duplicate_doc_id_rejected) ... ok
+test_offsets_and_text_at (test_index.IndexTest.test_offsets_and_text_at) ... ok
+test_phrase_positions_contiguous_only (test_index.IndexTest.test_phrase_positions_contiguous_only) ... ok
+test_phrase_rejects_noncontiguous (test_index.IndexTest.test_phrase_rejects_noncontiguous) ... ok
+test_postings_positions (test_index.IndexTest.test_postings_positions) ... ok
+test_clique_back_edges_counted (test_query_graph.QueryGraphTest.test_clique_back_edges_counted) ... ok
+test_cycle_expanded_once (test_query_graph.QueryGraphTest.test_cycle_expanded_once) ... ok
+test_edge_budget_truncation_marked (test_query_graph.QueryGraphTest.test_edge_budget_truncation_marked) ... ok
+test_enumerate_simple_paths_on_small_cycle (test_query_graph.QueryGraphTest.test_enumerate_simple_paths_on_small_cycle) ... ok
+test_enumerate_simple_paths_rejects_large_graph (test_query_graph.QueryGraphTest.test_enumerate_simple_paths_rejects_large_graph) ... ok
+test_hop_limit (test_query_graph.QueryGraphTest.test_hop_limit) ... ok
+test_node_budget_truncation_marked (test_query_graph.QueryGraphTest.test_node_budget_truncation_marked) ... ok
+test_original_keeps_highest_weight (test_query_graph.QueryGraphTest.test_original_keeps_highest_weight) ... ok
+test_phrase_alternatives_not_split_into_word_edges (test_query_graph.QueryGraphTest.test_phrase_alternatives_not_split_into_word_edges) ... ok
+test_shared_expansion_attributed_to_both_roots (test_query_graph.QueryGraphTest.test_shared_expansion_attributed_to_both_roots) ... ok
+test_weight_is_product_and_best_path_chosen (test_query_graph.QueryGraphTest.test_weight_is_product_and_best_path_chosen) ... ok
+test_cjk_phrase_search (test_search.SearchTest.test_cjk_phrase_search) ... ok
+test_evidence_tags_distinguish_original_and_expansion (test_search.SearchTest.test_evidence_tags_distinguish_original_and_expansion) ... ok
+test_noncontiguous_phrase_does_not_match (test_search.SearchTest.test_noncontiguous_phrase_does_not_match) ... ok
+test_original_and_expansion_same_position_not_double_counted (test_search.SearchTest.test_original_and_expansion_same_position_not_double_counted) ... ok
+test_original_ranks_above_expansion (test_search.SearchTest.test_original_ranks_above_expansion) ... ok
+test_phrase_is_not_split (test_search.SearchTest.test_phrase_is_not_split) ... ok
+test_phrase_preserves_path_length (test_search.SearchTest.test_phrase_preserves_path_length) ... ok
+test_score_has_idf_structure (test_search.SearchTest.test_score_has_idf_structure) ... ok
+test_shared_expansion_scored_once (test_search.SearchTest.test_shared_expansion_scored_once) ... ok
+test_top_k_limit_and_deterministic_order (test_search.SearchTest.test_top_k_limit_and_deterministic_order) ... ok
+test_truncated_result_marked_incomplete (test_search.SearchTest.test_truncated_result_marked_incomplete) ... ok
+test_cjk_phrase (test_synonyms.SynonymStoreTest.test_cjk_phrase) ... ok
+test_duplicate_pair_keeps_single_max_edge (test_synonyms.SynonymStoreTest.test_duplicate_pair_keeps_single_max_edge) ... ok
+test_invalid_weight (test_synonyms.SynonymStoreTest.test_invalid_weight) ... ok
+test_pair_is_bidirectional (test_synonyms.SynonymStoreTest.test_pair_is_bidirectional) ... ok
+test_phrase_group_kept_separate_from_word_layer (test_synonyms.SynonymStoreTest.test_phrase_group_kept_separate_from_word_layer) ... ok
+test_phrase_group_requires_multiword_member (test_synonyms.SynonymStoreTest.test_phrase_group_requires_multiword_member) ... ok
+test_phrase_iter_longest_first_left_to_right (test_synonyms.SynonymStoreTest.test_phrase_iter_longest_first_left_to_right) ... ok
+test_word_group_is_clique_undirected (test_synonyms.SynonymStoreTest.test_word_group_is_clique_undirected) ... ok
+test_ascii_words_and_numbers (test_tokenizer.TokenizerTest.test_ascii_words_and_numbers) ... ok
+test_casefold (test_tokenizer.TokenizerTest.test_casefold) ... ok
+test_cjk_split_per_character (test_tokenizer.TokenizerTest.test_cjk_split_per_character) ... ok
+test_offsets_roundtrip (test_tokenizer.TokenizerTest.test_offsets_roundtrip) ... ok
+test_punctuation_and_whitespace_dropped (test_tokenizer.TokenizerTest.test_punctuation_and_whitespace_dropped) ... ok
+
+----------------------------------------------------------------------
+Ran 41 tests in 0.004s
+
+OK
