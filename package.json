@@ -1,0 +1,11 @@
+{
+  "name": "sample-schema-inference",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Evidence-based schema candidate inference from samples, with provenance, retraction, and a hand-written validator",
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
