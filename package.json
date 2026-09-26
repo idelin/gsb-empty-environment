@@ -1,0 +1,10 @@
+{
+  "name": "region-grow",
+  "version": "1.0.0",
+  "description": "Iterative multi-seed region growing with barrier masks, dual threshold semantics and minimum-bottleneck-path competition",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/",
+    "demo": "node examples/demo.ts"
+  }
+}
