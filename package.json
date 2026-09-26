@@ -1,0 +1,11 @@
+{
+  "name": "incremental-label-map",
+  "version": "1.0.0",
+  "description": "二值图 4/8 连通分量增量标注：局部修改后的合并/拆分与稳定代表 ID",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
