@@ -1,0 +1,11 @@
+{
+  "name": "mini-style-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Incremental CSS-like style computation engine (cascade, inheritance, custom properties) with a differential full interpreter, no browser layout.",
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/"
+  }
+}
