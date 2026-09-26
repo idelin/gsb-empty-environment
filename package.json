@@ -1,0 +1,14 @@
+{
+  "name": "stream-composite-unique",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Streaming composite-key uniqueness checker with configurable null equality and hash-partitioned disk spill. Zero dependencies; runs on Node >= 23.6 native TypeScript type stripping.",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
