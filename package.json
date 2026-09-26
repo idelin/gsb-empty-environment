@@ -1,0 +1,11 @@
+{
+  "name": "rle-raster",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "test": "node --test test/raster.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
