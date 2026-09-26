@@ -1,0 +1,15 @@
+{
+  "name": "finite-constraints",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Finite-integer-domain constraint validation and satisfiability with explicit missing-value semantics",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "example": "node examples/run.ts",
+    "typecheck": "node node_modules/typescript/bin/tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
