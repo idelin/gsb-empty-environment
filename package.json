@@ -1,0 +1,11 @@
+{
+  "name": "bidi-visual-layout",
+  "version": "1.0.0",
+  "description": "Visual-order and caret-movement mapping over text fragments with supplied direction levels (no full Unicode bidi classification).",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
