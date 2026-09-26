@@ -1,0 +1,11 @@
+{
+  "name": "hierarchical-sortable-list",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared mouse/keyboard state machine for a sortable hierarchical list (preview/commit separation, idempotent ops, server reorder sync)",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
