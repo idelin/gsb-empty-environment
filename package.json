@@ -1,0 +1,14 @@
+{
+  "name": "spill-tile-convolver",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Spillable tile-based separable convolver for oversized multi-channel rasters",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "example": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
