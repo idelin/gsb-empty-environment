@@ -1,0 +1,9 @@
+{
+  "ttl_ms": 5000,
+  "events": [
+    {"at": "2026-01-01T00:00:00Z", "trace_id": "t1", "span_id": "root", "parent_id": "", "name": "root"},
+    {"at": "2026-01-01T00:00:01Z", "trace_id": "t1", "span_id": "ok", "parent_id": "root", "name": "fine"},
+    {"at": "2026-01-01T00:00:02Z", "trace_id": "t1", "span_id": "lost", "parent_id": "ghost", "name": "parentless"},
+    {"at": "2026-01-01T00:00:03Z", "trace_id": "t1", "span_id": "lost-child", "parent_id": "lost", "name": "child-of-lost"}
+  ]
+}

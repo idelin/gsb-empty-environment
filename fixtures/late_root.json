@@ -1,0 +1,9 @@
+{
+  "ttl_ms": 5000,
+  "events": [
+    {"at": "2026-01-01T00:00:00Z", "trace_id": "t1", "span_id": "c1", "parent_id": "b1", "name": "db.query"},
+    {"at": "2026-01-01T00:00:01Z", "trace_id": "t1", "span_id": "c2", "parent_id": "b1", "name": "cache.get"},
+    {"at": "2026-01-01T00:00:02Z", "trace_id": "t1", "span_id": "b1", "parent_id": "root", "name": "handler"},
+    {"at": "2026-01-01T00:00:03Z", "trace_id": "t1", "span_id": "root", "parent_id": "", "name": "http.request"}
+  ]
+}

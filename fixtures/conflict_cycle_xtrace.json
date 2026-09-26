@@ -1,0 +1,12 @@
+{
+  "ttl_ms": 5000,
+  "events": [
+    {"at": "2026-01-01T00:00:00Z", "trace_id": "t1", "span_id": "root", "parent_id": "", "name": "root"},
+    {"at": "2026-01-01T00:00:01Z", "trace_id": "t1", "span_id": "a", "parent_id": "root", "name": "worker"},
+    {"at": "2026-01-01T00:00:02Z", "trace_id": "t1", "span_id": "a", "parent_id": "root", "name": "worker-v2"},
+    {"at": "2026-01-01T00:00:03Z", "trace_id": "t1", "span_id": "a", "parent_id": "other", "name": "worker-v3"},
+    {"at": "2026-01-01T00:00:04Z", "trace_id": "t2", "span_id": "x", "parent_id": "y", "name": "x"},
+    {"at": "2026-01-01T00:00:05Z", "trace_id": "t2", "span_id": "y", "parent_id": "x", "name": "y"},
+    {"at": "2026-01-01T00:00:06Z", "trace_id": "t3", "span_id": "z", "parent_id": "root", "name": "foreign-ref"}
+  ]
+}
