@@ -1,0 +1,4 @@
+{"name":"latency_ms","bounds":[5,10,20,50,100],"counts":[3,8,15,30,40]}
+{"name":"latency_ms","bounds":[10,50,100],"counts":[5,20,35]}
+{"name":"payload_bytes","bounds":[64,128,256,512],"counts":[2,6,9,12]}
+{"name":"payload_bytes","bounds":[100,200,300],"counts":[1,4,7]}
