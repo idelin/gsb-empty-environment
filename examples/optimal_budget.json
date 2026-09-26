@@ -1,0 +1,9 @@
+{
+  "operation": {"id": "op-budget", "duration": "5/2", "pre_buffer": "1/2", "post_buffer": "1/2"},
+  "horizon": {"start": 0, "end": 20},
+  "budget": "6",
+  "tracks": [
+    {"id": "TA", "maintenance": [["0", "3"]]},
+    {"id": "TB", "maintenance": [["1", "2"]]}
+  ]
+}

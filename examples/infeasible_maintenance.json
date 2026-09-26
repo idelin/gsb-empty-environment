@@ -1,0 +1,12 @@
+{
+  "operation": {"id": "op-blocked", "duration": 4, "pre_buffer": 1, "post_buffer": 1},
+  "horizon": {"start": 0, "end": 12},
+  "budget": 11,
+  "tracks": [
+    {"id": "T1",
+     "maintenance": [["3", "7"]],
+     "bookings": [{"start": "8", "end": "10", "post_buffer": 1}]},
+    {"id": "T2",
+     "maintenance": [["0", "5"], ["5", "12"]]}
+  ]
+}

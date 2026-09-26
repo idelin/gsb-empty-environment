@@ -1,0 +1,5 @@
+{
+  "operation": {"id": "op-notrack", "duration": 2, "pre_buffer": 1, "post_buffer": 1},
+  "horizon": {"start": 0, "end": 10},
+  "tracks": []
+}

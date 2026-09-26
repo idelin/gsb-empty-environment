@@ -1,0 +1,12 @@
+{
+  "operation": {"id": "op-basic", "duration": 4, "pre_buffer": 1, "post_buffer": 1},
+  "horizon": {"start": 0, "end": 24},
+  "tracks": [
+    {"id": "T1",
+     "maintenance": [["0", "6"]],
+     "bookings": [{"start": "10", "end": "14", "pre_buffer": 1, "post_buffer": 1}]},
+    {"id": "T2",
+     "maintenance": [],
+     "bookings": [{"start": "3", "end": "9"}]}
+  ]
+}

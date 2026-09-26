@@ -1,0 +1,7 @@
+{
+  "operation": {"id": "op-nobudget", "duration": 3, "pre_buffer": 1, "post_buffer": 0},
+  "horizon": {"start": 0, "end": 12},
+  "tracks": [
+    {"id": "T1", "maintenance": [["2", "5"]]}
+  ]
+}
