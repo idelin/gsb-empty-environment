@@ -1,0 +1,233 @@
+
+> unicode-schema-validator@1.0.0 test
+> node --experimental-strip-types --test 'test/**/*.test.ts'
+
+TAP version 13
+# (node:55163) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: NormalizedText 长度：码点 / 字形簇 / UTF-16
+    # Subtest: 同一抽象字符串的预组合与组合重音：NFC 后三种长度相等
+    ok 1 - 同一抽象字符串的预组合与组合重音：NFC 后三种长度相等
+      ---
+      duration_ms: 9.441625
+      ...
+    # Subtest: NFD 把预组合字符拆成基本字符+组合记号，码点数增加但簇数不变
+    ok 2 - NFD 把预组合字符拆成基本字符+组合记号，码点数增加但簇数不变
+      ---
+      duration_ms: 0.17825
+      ...
+    # Subtest: emoji ZWJ 组合簇不能按码点数冒充簇数
+    ok 3 - emoji ZWJ 组合簇不能按码点数冒充簇数
+      ---
+      duration_ms: 0.118625
+      ...
+    # Subtest: 代理对在 UTF-16 中占 2 个单元
+    ok 4 - 代理对在 UTF-16 中占 2 个单元
+      ---
+      duration_ms: 0.165958
+      ...
+    1..4
+ok 1 - NormalizedText 长度：码点 / 字形簇 / UTF-16
+  ---
+  duration_ms: 10.45375
+  type: 'suite'
+  ...
+# Subtest: 规范化范围映射回原文
+    # Subtest: 组合重音规范化后位置变化，簇映射回原组合记号区间
+    ok 1 - 组合重音规范化后位置变化，簇映射回原组合记号区间
+      ---
+      duration_ms: 0.478292
+      ...
+    # Subtest: 多个原码点融合成一个字符时，映射覆盖全部参与者（不丢组合记号）
+    ok 2 - 多个原码点融合成一个字符时，映射覆盖全部参与者（不丢组合记号）
+      ---
+      duration_ms: 0.086958
+      ...
+    # Subtest: none 形式下映射即原码点区间
+    ok 3 - none 形式下映射即原码点区间
+      ---
+      duration_ms: 0.179042
+      ...
+    # Subtest: 空字符串映射为零长度区间
+    ok 4 - 空字符串映射为零长度区间
+      ---
+      duration_ms: 0.252666
+      ...
+    # Subtest: 越界区间（码点单位）映射回包含组合记号的覆盖区间
+    ok 5 - 越界区间（码点单位）映射回包含组合记号的覆盖区间
+      ---
+      duration_ms: 0.215959
+      ...
+    1..5
+ok 2 - 规范化范围映射回原文
+  ---
+  duration_ms: 2.016667
+  type: 'suite'
+  ...
+# Subtest: 双向控制字符定位
+    # Subtest: 在原文上逐个定位 Bidi 控制字符
+    ok 1 - 在原文上逐个定位 Bidi 控制字符
+      ---
+      duration_ms: 0.216958
+      ...
+    # Subtest: codePointRuns 正确切分 BMP 与辅助平面字符
+    ok 2 - codePointRuns 正确切分 BMP 与辅助平面字符
+      ---
+      duration_ms: 0.070584
+      ...
+    1..2
+ok 3 - 双向控制字符定位
+  ---
+  duration_ms: 0.340208
+  type: 'suite'
+  ...
+# (node:55164) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: 长度校验：三种单位独立生效
+    # Subtest: codepoints / graphemes / utf16 分别按各自单位计数
+    ok 1 - codepoints / graphemes / utf16 分别按各自单位计数
+      ---
+      duration_ms: 9.761375
+      ...
+    # Subtest: minLength 默认按码点计
+    ok 2 - minLength 默认按码点计
+      ---
+      duration_ms: 0.175375
+      ...
+    # Subtest: 字形簇越界报告原串范围，且不能按码点数冒充簇数
+    ok 3 - 字形簇越界报告原串范围，且不能按码点数冒充簇数
+      ---
+      duration_ms: 0.494292
+      ...
+    # Subtest: 码点越界范围映射回原文（组合重音所在位置不同也正确覆盖）
+    ok 4 - 码点越界范围映射回原文（组合重音所在位置不同也正确覆盖）
+      ---
+      duration_ms: 0.221833
+      ...
+    1..4
+ok 4 - 长度校验：三种单位独立生效
+  ---
+  duration_ms: 11.236542
+  type: 'suite'
+  ...
+# Subtest: 规范化
+    # Subtest: 组合重音与预组合在 NFC 下等价，但映射的原位置不同
+    ok 1 - 组合重音与预组合在 NFC 下等价，但映射的原位置不同
+      ---
+      duration_ms: 0.357167
+      ...
+    # Subtest: NFKC 兼容分解生效（全角字母）
+    ok 2 - NFKC 兼容分解生效（全角字母）
+      ---
+      duration_ms: 0.071958
+      ...
+    1..2
+ok 5 - 规范化
+  ---
+  duration_ms: 0.556583
+  type: 'suite'
+  ...
+# Subtest: allowedScripts 脚本集合
+    # Subtest: 只允许 Latin+Han 时，假名与 emoji 被逐码点拒绝
+    ok 1 - 只允许 Latin+Han 时，假名与 emoji 被逐码点拒绝
+      ---
+      duration_ms: 0.729833
+      ...
+    # Subtest: 组合记号（Inherited/Common）需显式放行 Common 才不误报
+    ok 2 - 组合记号（Inherited/Common）需显式放行 Common 才不误报
+      ---
+      duration_ms: 0.332
+      ...
+    1..2
+ok 6 - allowedScripts 脚本集合
+  ---
+  duration_ms: 1.32175
+  type: 'suite'
+  ...
+# Subtest: bidiControl 双向控制字符策略
+    # Subtest: 默认 deny：逐个控制字符报错且保留原文范围
+    ok 1 - 默认 deny：逐个控制字符报错且保留原文范围
+      ---
+      duration_ms: 0.222208
+      ...
+    # Subtest: 显式 allow 时不报错
+    ok 2 - 显式 allow 时不报错
+      ---
+      duration_ms: 0.194458
+      ...
+    1..2
+ok 7 - bidiControl 双向控制字符策略
+  ---
+  duration_ms: 0.466958
+  type: 'suite'
+  ...
+# Subtest: 实例路径与规则路径
+    # Subtest: 嵌套对象与数组中的错误同时给出 instancePath 和 rulePath
+    ok 1 - 嵌套对象与数组中的错误同时给出 instancePath 和 rulePath
+      ---
+      duration_ms: 0.343042
+      ...
+    # Subtest: required、type、const、enum 错误路径正确
+    ok 2 - required、type、const、enum 错误路径正确
+      ---
+      duration_ms: 0.387292
+      ...
+    # Subtest: type 数组支持 number 容纳 integer
+    ok 3 - type 数组支持 number 容纳 integer
+      ---
+      duration_ms: 0.056875
+      ...
+    # Subtest: const 允许 null（不与缺省混淆）
+    ok 4 - const 允许 null（不与缺省混淆）
+      ---
+      duration_ms: 0.043625
+      ...
+    1..4
+ok 8 - 实例路径与规则路径
+  ---
+  duration_ms: 0.99
+  type: 'suite'
+  ...
+# Subtest: 拒绝项不静默删除（maxItems）
+    # Subtest: 每个越界元素继续按 items 校验并单独报错
+    ok 1 - 每个越界元素继续按 items 校验并单独报错
+      ---
+      duration_ms: 0.081125
+      ...
+    1..1
+ok 9 - 拒绝项不静默删除（maxItems）
+  ---
+  duration_ms: 0.111584
+  type: 'suite'
+  ...
+# Subtest: schema 子集边界（只承诺实现的子集）
+    # Subtest: 未知关键字在编译期报错并指向规则路径
+    ok 1 - 未知关键字在编译期报错并指向规则路径
+      ---
+      duration_ms: 0.2385
+      ...
+    # Subtest: 未知脚本名与非法取值在编译期报错
+    ok 2 - 未知脚本名与非法取值在编译期报错
+      ---
+      duration_ms: 0.122833
+      ...
+    # Subtest: 字符串关键字不得用于非字符串类型
+    ok 3 - 字符串关键字不得用于非字符串类型
+      ---
+      duration_ms: 0.043458
+      ...
+    1..3
+ok 10 - schema 子集边界（只承诺实现的子集）
+  ---
+  duration_ms: 0.448833
+  type: 'suite'
+  ...
+1..10
+# tests 29
+# suites 10
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 114.372541

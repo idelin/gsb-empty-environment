@@ -1,0 +1,14 @@
+{
+  "name": "unicode-schema-validator",
+  "version": "1.0.0",
+  "description": "手写的 JSON Schema 子集校验器：码点/字形簇/UTF-16 三种长度、显式规范化、脚本集合、双向控制字符策略，错误映射回原文范围。",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test 'test/**/*.test.ts'",
+    "example": "node --experimental-strip-types examples/run.ts"
+  },
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,54 @@
+
+> unicode-schema-validator@1.0.0 example
+> node --experimental-strip-types examples/run.ts
+
+
+=== 上限 4（单位=graphemes）："👩‍👩‍👧" ===
+valid: true
+
+=== 上限 4（单位=codepoints）："👩‍👩‍👧" ===
+valid: false
+- instancePath=#  rulePath=#/maxLength  原文范围=[6,8) 片段="👧"
+  长度 5 codepoints 超过上限 4（规范化：none）
+
+=== 上限 4（单位=utf16）："👩‍👩‍👧" ===
+valid: false
+- instancePath=#  rulePath=#/maxLength  原文范围=[3,8) 片段="👩‍👧"
+  长度 8 utf16 超过上限 4（规范化：none）
+
+=== NFC + maxLength(码点)=3："café"（预组合） ===
+valid: false
+- instancePath=#  rulePath=#/maxLength  原文范围=[3,4) 片段="é"
+  长度 4 codepoints 超过上限 3（规范化：NFC）
+
+=== NFC + maxLength(码点)=3："cafe\u0301"（组合重音） ===
+valid: false
+- instancePath=#  rulePath=#/maxLength  原文范围=[3,5) 片段="é"
+  长度 4 codepoints 超过上限 3（规范化：NFC）
+
+=== 字形簇上限 2："a" + 挥手深肤色簇 + "b" ===
+valid: false
+- instancePath=#  rulePath=#/maxLength  原文范围=[5,6) 片段="b"
+  长度 3 graphemes 超过上限 2（规范化：none）
+
+=== 用户资料（含假名 + RLM U+200F + 超长） ===
+valid: false
+- instancePath=#/nickname  rulePath=#/properties/nickname/bidiControl  原文范围=[3,4) 片段="U+200F"
+  包含被拒绝的双向格式控制字符 U+200F（策略：deny）；该字符不会被静默删除
+- instancePath=#/nickname  rulePath=#/properties/nickname/allowedScripts  原文范围=[2,3) 片段="ア"
+  码点 U+30A2 不属于允许的脚本集合 [Latin, Han, Common, Inherited]
+- instancePath=#/nickname  rulePath=#/properties/nickname/allowedScripts  原文范围=[5,6) 片段="す"
+  码点 U+3059 不属于允许的脚本集合 [Latin, Han, Common, Inherited]
+- instancePath=#/nickname  rulePath=#/properties/nickname/allowedScripts  原文范围=[6,7) 片段="ぎ"
+  码点 U+304E 不属于允许的脚本集合 [Latin, Han, Common, Inherited]
+- instancePath=#/nickname  rulePath=#/properties/nickname/maxLength  原文范围=[4,7) 片段="長すぎ"
+  长度 7 graphemes 超过上限 4（规范化：NFC）
+
+=== tags 数组 maxItems=2，越界项仍校验 ===
+valid: false
+- instancePath=#  rulePath=#/maxItems
+  数组长度 3 超过上限 2；被拒项索引 [2] 仍逐项校验并在下方报告，未被静默删除
+- instancePath=#/2  rulePath=#/items/bidiControl  原文范围=[0,1) 片段="U+200E"
+  包含被拒绝的双向格式控制字符 U+200E（策略：deny）；该字符不会被静默删除
+- instancePath=#/1  rulePath=#/items/bidiControl  原文范围=[0,1) 片段="U+200E"
+  包含被拒绝的双向格式控制字符 U+200E（策略：deny）；该字符不会被静默删除
