@@ -1,0 +1,14 @@
+{
+  "name": "json-defaults-validator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Minimal JSON schema subset validator with topologically-ordered default filling. No dependencies.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
