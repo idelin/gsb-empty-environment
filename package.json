@@ -1,0 +1,14 @@
+{
+  "name": "anchored-virtual-list",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Variable-height virtual list core: versioned prefix-height index, stable-id anchors, async measurement, collapsed groups. No browser layout engine.",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
