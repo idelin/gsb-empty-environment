@@ -1,0 +1,14 @@
+{
+  "name": "layered-config",
+  "version": "1.0.0",
+  "description": "Multi-layer configuration with field-specific merge strategies, references, provenance and atomic snapshots",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "replay": "node examples/replay.ts"
+  }
+}
