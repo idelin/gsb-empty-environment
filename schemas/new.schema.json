@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "user-record v2",
+  "type": "object",
+  "required": ["name", "age"],
+  "properties": {
+    "name": { "type": "string", "maxLength": 20 },
+    "age": { "type": "integer", "minimum": 0 },
+    "tag": { "type": "string", "pattern": "^[a-z]+$" },
+    "email": { "type": "string", "format": "email" }
+  },
+  "additionalProperties": false
+}

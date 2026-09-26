@@ -1,0 +1,10 @@
+[
+  { "id": "s1-ok",          "data": { "name": "amy", "age": 3, "tag": "abc" } },
+  { "id": "s2-missing-age", "data": { "name": "bo" } },
+  { "id": "s3-long-name",   "data": { "name": "alexander", "age": 5 } },
+  { "id": "s4-negative-age","data": { "name": "cy", "age": -2 } },
+  { "id": "s5-bad-tag",     "data": { "name": "di", "age": 1, "tag": "ABC" } },
+  { "id": "s6-rule-shift",  "data": { "name": "toolongname", "age": -1 } },
+  { "id": "s7-extra-field", "data": { "name": "ek", "age": 1, "extra": 1 } },
+  { "id": "s8-wrong-type",  "data": { "name": 42, "age": 1 } }
+]

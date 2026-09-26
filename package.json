@@ -1,0 +1,14 @@
+{
+  "name": "schema-diff-validator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Diff validation outcomes of a sample library between an old and a new JSON Schema (hand-written validator, digest-bound cache).",
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "diff": "node --experimental-strip-types src/cli.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}
