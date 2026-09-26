@@ -1,0 +1,6 @@
+{"type":"upsert","subject":"s1","event_id":"e1","group":"g","value":2,"revision":1,"generation":1}
+{"type":"upsert","subject":"s1","event_id":"e2","group":"g","value":8,"revision":1,"generation":1}
+{"type":"retract","subject":"s1","generation":1}
+{"type":"upsert","subject":"s1","event_id":"e3","group":"g","value":100,"revision":1,"generation":1}
+{"type":"consent","subject":"s1","generation":2}
+{"type":"upsert","subject":"s1","event_id":"e4","group":"g","value":3,"revision":1,"generation":2}
