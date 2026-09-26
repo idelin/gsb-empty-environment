@@ -1,0 +1,9 @@
+{
+  "jobs": [
+    {"id": "A", "release": 0, "deadline": 12, "duration": 3, "weight": 4},
+    {"id": "B", "release": 2, "deadline": 12, "duration": 2, "weight": 6},
+    {"id": "C", "release": 0, "deadline": 12, "duration": 1, "weight": 2, "predecessors": ["B"]},
+    {"id": "D", "release": 6, "deadline": 12, "duration": 4, "weight": 5}
+  ],
+  "maintenance": [[3, 5], [9, 10]]
+}
