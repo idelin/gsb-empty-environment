@@ -1,0 +1,31 @@
+test_default_null_position_follows_sql_convention (test_search.SearchTest.test_default_null_position_follows_sql_convention) ... ok
+test_delete_unknown_id (test_search.SearchTest.test_delete_unknown_id) ... ok
+test_deleted_docs_invisible_and_refilled (test_search.SearchTest.test_deleted_docs_invisible_and_refilled) ... ok
+test_empty_query_has_no_matches (test_search.SearchTest.test_empty_query_has_no_matches) ... ok
+test_filter_refills_full_eight (test_search.SearchTest.test_filter_refills_full_eight) ... ok
+test_filter_refills_when_segment_heads_all_filtered (test_search.SearchTest.test_filter_refills_when_segment_heads_all_filtered) ... ok
+test_invalid_arguments (test_search.SearchTest.test_invalid_arguments) ... ok
+test_limit_zero_and_empty_result (test_search.SearchTest.test_limit_zero_and_empty_result) ... ok
+test_matches_brute_force_many_cases (test_search.SearchTest.test_matches_brute_force_many_cases) ... ok
+test_nulls_first_and_last (test_search.SearchTest.test_nulls_first_and_last) ... ok
+test_score_descending_default (test_search.SearchTest.test_score_descending_default) ... ok
+test_segment_head_fully_filtered_keeps_reading (test_search.SearchTest.test_segment_head_fully_filtered_keeps_reading) ... ok
+test_ties_stable_by_doc_id (test_search.SearchTest.test_ties_stable_by_doc_id) ... ok
+test_delete_bitmap (test_segment.SegmentTest.test_delete_bitmap) ... ok
+test_delete_excluded_from_idf (test_segment.SegmentTest.test_delete_excluded_from_idf) ... ok
+test_duplicate_doc_id_rejected (test_segment.SegmentTest.test_duplicate_doc_id_rejected) ... ok
+test_or_matching (test_segment.SegmentTest.test_or_matching) ... ok
+test_postings_sorted (test_segment.SegmentTest.test_postings_sorted) ... ok
+test_segment_yields_all_candidates_not_topk (test_segment.SegmentTest.test_segment_yields_all_candidates_not_topk) ... ok
+test_basic_latin_and_numbers (test_tokenizer.TokenizerTest.test_basic_latin_and_numbers) ... ok
+test_casefold_and_nfkc (test_tokenizer.TokenizerTest.test_casefold_and_nfkc) ... ok
+test_cjk_unigrams (test_tokenizer.TokenizerTest.test_cjk_unigrams) ... ok
+test_empty_and_non_string (test_tokenizer.TokenizerTest.test_empty_and_non_string) ... ok
+test_mixed_cjk_latin (test_tokenizer.TokenizerTest.test_mixed_cjk_latin) ... ok
+test_punctuation_split (test_tokenizer.TokenizerTest.test_punctuation_split) ... ok
+test_underscore_is_separator (test_tokenizer.TokenizerTest.test_underscore_is_separator) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.029s
+
+OK

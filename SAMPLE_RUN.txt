@@ -1,0 +1,56 @@
+分段索引信息：
+  段 0: 8 条文档, 可见 8 条, 词表 58 项
+  段 1: 8 条文档, 可见 8 条, 词表 60 项
+  段 2: 8 条文档, 可见 8 条, 词表 60 项
+
+=== 分词规则样例 ===
+  原文: 'Wireless 机械键盘 keyboard_42 ßtraße ＵＳＢ'
+  tokens: ['wireless', '机', '械', '键', '盘', 'keyboard', '42', 'sstrasse', 'usb']
+
+=== 1) 多字段归并 Top2：price 升序（过滤促销后自动补足） ===
+ 1. id= 1 seg=0 score= 0.0000 price=   15 rating= 4.2 promo=0 flagship=0  wireless mouse 无线鼠标 ergonomic
+ 2. id= 6 seg=0 score= 0.0000 price=   60 rating= 4.1 promo=0 flagship=0  webcam 1080p 摄像头 with microphone
+   [错误对照] 每段只取前 2 个原始项再过滤，得到 [1, 18]（段头促销文档之后的 doc 6 被漏掉，正确应为 [1, 6]）
+
+=== 2) null 位置：rating 降序 NULLS LAST + price 升序（query=keyboard） ===
+ 1. id=10 seg=1 score= 2.0986 price=  150 rating= 4.8 promo=0 flagship=1  mechanical keyboard 机械键盘 红轴 rgb
+ 2. id= 2 seg=0 score= 2.5041 price=  120 rating= 4.7 promo=1 flagship=0  mechanical keyboard 机械键盘 青轴
+ 3. id= 9 seg=1 score= 2.0986 price=   90 rating= 4.4 promo=0 flagship=0  wireless keyboard 无线键盘 静音
+ 4. id=19 seg=2 score= 2.5041 price=  110 rating=None promo=0 flagship=0  mechanical keyboard 机械键盘 银轴 compact
+
+=== 3) rating 升序 NULLS FIRST（同样的 keyboard 查询） ===
+ 1. id=19 seg=2 score= 2.5041 price=  110 rating=None promo=0 flagship=0  mechanical keyboard 机械键盘 银轴 compact
+ 2. id= 9 seg=1 score= 2.0986 price=   90 rating= 4.4 promo=0 flagship=0  wireless keyboard 无线键盘 静音
+ 3. id= 2 seg=0 score= 2.5041 price=  120 rating= 4.7 promo=1 flagship=0  mechanical keyboard 机械键盘 青轴
+ 4. id=10 seg=1 score= 2.0986 price=  150 rating= 4.8 promo=0 flagship=1  mechanical keyboard 机械键盘 红轴 rgb
+
+=== 4) 默认按相关度 _score 降序：query='4k monitor 旗舰' ===
+ 1. id=13 seg=1 score= 9.2054 price=  450 rating= 4.8 promo=0 flagship=1  flagship monitor 旗舰显示器 32-inch 4k
+ 2. id=24 seg=2 score= 6.7013 price= 1500 rating= 4.9 promo=0 flagship=1  flagship camera 旗舰相机 full-frame 4k
+ 3. id= 4 seg=0 score= 5.0082 price=  320 rating= 4.6 promo=1 flagship=1  4k monitor 显示器 27-inch 护眼
+ 4. id= 8 seg=0 score= 5.0082 price= 1600 rating= 4.9 promo=0 flagship=1  flagship laptop 旗舰笔记本 pro 16-inch
+ 5. id=16 seg=1 score= 4.1972 price=  900 rating= 4.7 promo=0 flagship=1  flagship tablet 旗舰平板 12.9-inch
+ 6. id=22 seg=2 score= 4.1972 price=  700 rating= 4.6 promo=0 flagship=1  flagship smartphone 旗舰手机 5g 256gb
+ 7. id=20 seg=2 score= 2.0986 price=  380 rating= 4.4 promo=0 flagship=1  ultrawide monitor 带鱼屏显示器 34-inch
+ 8. id=21 seg=2 score= 2.0986 price=  140 rating= 4.3 promo=0 flagship=0  docking station 扩展坞 dual monitor
+
+=== 5) 多字段排序：mechanical keyboard，rating 降序(NULLS LAST) + price 升序 ===
+ 1. id=10 seg=1 score= 4.6027 price=  150 rating= 4.8 promo=0 flagship=1  mechanical keyboard 机械键盘 红轴 rgb
+ 2. id= 2 seg=0 score= 5.0082 price=  120 rating= 4.7 promo=1 flagship=0  mechanical keyboard 机械键盘 青轴
+ 3. id= 9 seg=1 score= 2.0986 price=   90 rating= 4.4 promo=0 flagship=0  wireless keyboard 无线键盘 静音
+ 4. id=19 seg=2 score= 5.0082 price=  110 rating=None promo=0 flagship=0  mechanical keyboard 机械键盘 银轴 compact
+
+=== 6) 删除位图：删除 doc 10 与 doc 23 后重新检索 ===
+  已删除: 10 (mechanical keyboard 红轴), 23 (wireless earbuds)
+
+=== 删除后 query='keyboard' Top3，仅在有货文档中取（10 不可见，继续补足） ===
+ 1. id= 9 seg=1 score= 2.3863 price=   90 rating= 4.4 promo=0 flagship=0  wireless keyboard 无线键盘 静音
+ 2. id=19 seg=2 score= 2.3863 price=  110 rating=None promo=0 flagship=0  mechanical keyboard 机械键盘 银轴 compact
+ 3. id= 2 seg=0 score= 2.5041 price=  120 rating= 4.7 promo=1 flagship=0  mechanical keyboard 机械键盘 青轴
+  段 1 可见 7/8，doc 10 is_deleted=True
+
+=== 7) 段头被过滤后继续读取：query='usb'，排除促销（段 1 段头 doc14 被过滤） ===
+ 1. id= 3 seg=0 score= 2.5041 price=  100 rating= 4.5 promo=0 flagship=0  usb-c hub type-c 扩展坞
+
+=== 8) 候选确实耗尽：usb 且旗舰且无货 ===
+   结果数: 0（空结果：没有候选被丢弃，只是无满足条件的可见文档）
