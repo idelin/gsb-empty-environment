@@ -1,0 +1,5 @@
+{"type":"define","name":"a","bounds":[0.5,1,5]}
+{"type":"define","name":"b","bounds":[0.5,2,5]}
+{"type":"observe","name":"a","value":0.4}
+{"type":"observe","name":"b","value":0.4}
+{"type":"merge","name":"a","from":"b"}
