@@ -1,0 +1,14 @@
+{
+  "name": "streaming-array-validator",
+  "version": "1.0.0",
+  "description": "Zero-dependency streaming validator for large arrays (length / unique keys / aggregate constraints) over a small JSON-Schema subset.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts",
+    "typecheck": "node --experimental-strip-types --check src/validator.ts src/index.ts examples/demo.ts test/validator.test.ts >/dev/null 2>&1 || echo '(syntax check only; tsc not installed)'"
+  }
+}

@@ -1,0 +1,53 @@
+(node:28264) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+=== 1. happy path: 3 items, global sum 330 within [100, 1000000] ===
+  valid=true length=3 sums={"amount":330}
+
+=== 2. 100,000 items: the 100,000th item repeats item #1's id (and nested email) ===
+  valid=false length=99999 in 530 ms
+  instancePath=/99999/id  rulePath=uniqueKeys/id
+    -> duplicate value for unique key "id": 1
+  instancePath=/99999/profile/email  rulePath=uniqueKeys/profile.email
+    -> duplicate value for unique key "profile.email": "user1@x.io"
+
+=== 3. unfinished stream can NEVER report overall pass ===
+  status before finish(): {"state":"open","length":1,"valid":false}
+  (no result object exists until finish() -> minItems/aggregates unchecked)
+
+=== 4. minItems can only be confirmed at finish() ===
+  pushed 1 valid item; status: {"state":"open","length":1,"valid":false}
+  after finish(): valid=false
+  instancePath=(root)  rulePath=minItems
+    -> array length 1 is below minItems 3
+
+=== 5. onError='throw': first error stops the stream early ===
+  threw ValidationError with 3 issue(s), stream stayed at length=1
+  instancePath=/1/id  rulePath=items/properties/id/minimum
+    -> value -5 is below minimum 1
+  instancePath=/1/amount  rulePath=items/properties/amount/minimum
+    -> value -1 is below minimum 0
+  instancePath=/1/profile/email  rulePath=items/properties/profile/properties/email/pattern
+    -> string does not match pattern @
+
+=== 6. onError='collect' (default): bad items are rejected, processing continues ===
+  push issues per call: 0, 3, 2, 0
+  accepted length=2 (bad item not counted), valid=false
+  instancePath=/1/id  rulePath=items/required
+    -> missing required property "id"
+  instancePath=/1/profile/email  rulePath=items/properties/profile/required
+    -> missing required property "email"
+  instancePath=/1/profile/role  rulePath=items/properties/profile/properties/role/enum
+    -> value is not one of the allowed enum values
+  instancePath=/1/id  rulePath=uniqueKeys/id
+    -> duplicate value for unique key "id": 1
+  instancePath=/1/profile/email  rulePath=uniqueKeys/profile.email
+    -> duplicate value for unique key "profile.email": "a@x.io"
+  instancePath=(root)  rulePath=minItems
+    -> array length 2 is below minItems 3
+
+=== 7. aggregate upper bound checked only at finish() ===
+  after 8: {"state":"open","length":1,"valid":false} (still open)
+  after finish(): valid=false
+  instancePath=(root)  rulePath=aggregates/amount/sum/maximum
+    -> sum of "amount" is 13, exceeds maximum 10
