@@ -1,0 +1,11 @@
+{
+  "name": "spec-driven-interaction-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Spec-generated interaction executor + independent model checker over a pure layout core (no browser layout engine).",
+  "scripts": {
+    "demo": "node src/main.ts",
+    "test": "node --test 'test/*.test.ts'"
+  }
+}
