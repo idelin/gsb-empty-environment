@@ -1,0 +1,14 @@
+{
+  "name": "tile-pyramid",
+  "version": "0.1.0",
+  "description": "Layered downsampling tile pyramid with generation-based invalidation, snapshot-isolated reads and a bounded LRU cache. No image libraries, no Canvas.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/pyramid.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
