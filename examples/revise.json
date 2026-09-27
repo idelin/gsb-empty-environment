@@ -1,0 +1,23 @@
+{
+  "invoice": {
+    "id": "INV-100",
+    "jurisdiction": "SYNTH",
+    "issued_on": "2026-01-15",
+    "rate_version": "v1",
+    "rounding": "half_even",
+    "lines": [
+      {"description": "synthetic widget", "net_cents": 1},
+      {"description": "synthetic gadget", "net_cents": 3}
+    ]
+  },
+  "rates": [
+    {"version": "v1", "jurisdiction": "SYNTH", "numerator": 1, "denominator": 2,
+     "valid_from": "2026-01-01", "valid_to": "2026-07-01"},
+    {"version": "v2", "jurisdiction": "SYNTH", "numerator": 1, "denominator": 4,
+     "valid_from": "2026-01-01", "valid_to": "2026-07-01"}
+  ],
+  "revisions": [
+    {"id": "REV-1", "new_rate_version": "v2"},
+    {"id": "REV-1", "new_rate_version": "v2"}
+  ]
+}
