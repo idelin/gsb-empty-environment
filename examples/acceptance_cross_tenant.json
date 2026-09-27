@@ -1,0 +1,9 @@
+{
+  "max_payload": 4,
+  "fixed_fee": 3,
+  "payload_tiers": [],
+  "jobs": [
+    {"id": "a", "tenant": "t1", "endpoint": "/v1/chat", "payload": 2},
+    {"id": "b", "tenant": "t2", "endpoint": "/v1/chat", "payload": 2}
+  ]
+}

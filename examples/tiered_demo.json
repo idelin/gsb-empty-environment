@@ -1,0 +1,11 @@
+{
+  "max_payload": 8,
+  "fixed_fee": 3,
+  "payload_tiers": [[4, 0], [8, 10]],
+  "jobs": [
+    {"id": "a", "tenant": "t1", "endpoint": "/v1/chat", "payload": 4},
+    {"id": "b", "tenant": "t1", "endpoint": "/v1/chat", "payload": 4},
+    {"id": "c", "tenant": "t1", "endpoint": "/v1/embed", "payload": 3},
+    {"id": "d", "tenant": "t2", "endpoint": "/v1/chat", "payload": 5}
+  ]
+}
