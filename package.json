@@ -1,0 +1,11 @@
+{
+  "name": "bigint-rational",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "BigInt 精确有理数：规范化、四则、交叉乘比较、循环节十进制、延迟约分 DAG 与位长预算",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
