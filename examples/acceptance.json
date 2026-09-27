@@ -1,0 +1,1 @@
+{"maintenance": [[3, 5]], "jobs": [{"id": "A", "release": 0, "due": 3, "duration": 3, "weight": 1, "predecessors": []}, {"id": "B", "release": 1, "due": 4, "duration": 3, "weight": 1, "predecessors": []}]}

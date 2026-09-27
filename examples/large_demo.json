@@ -1,0 +1,22 @@
+{
+  "maintenance": [[10, 13], [30, 32]],
+  "jobs": [
+    {"id": "J01", "release": 0,  "due": 20, "duration": 3, "weight": 2},
+    {"id": "J02", "release": 2,  "due": 18, "duration": 2, "weight": 5},
+    {"id": "J03", "release": 1,  "due": 15, "duration": 4, "weight": 1},
+    {"id": "J04", "release": 0,  "due": 40, "duration": 2, "weight": 3,
+     "predecessors": ["J01"]},
+    {"id": "J05", "release": 5,  "due": 25, "duration": 3, "weight": 4},
+    {"id": "J06", "release": 0,  "due": 12, "duration": 2, "weight": 2},
+    {"id": "J07", "release": 8,  "due": 38, "duration": 5, "weight": 3},
+    {"id": "J08", "release": 3,  "due": 22, "duration": 2, "weight": 1},
+    {"id": "J09", "release": 0,  "due": 9,  "duration": 3, "weight": 6},
+    {"id": "J10", "release": 12, "due": 45, "duration": 4, "weight": 2},
+    {"id": "J11", "release": 0,  "due": 30, "duration": 3, "weight": 3},
+    {"id": "J12", "release": 6,  "due": 28, "duration": 2, "weight": 2},
+    {"id": "J13", "release": 10, "due": 50, "duration": 3, "weight": 1,
+     "predecessors": ["J05"]},
+    {"id": "J14", "release": 0,  "due": 16, "duration": 2, "weight": 4},
+    {"id": "J15", "release": 14, "due": 60, "duration": 4, "weight": 2}
+  ]
+}

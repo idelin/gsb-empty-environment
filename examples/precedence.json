@@ -1,0 +1,11 @@
+{
+  "maintenance": [[6, 9]],
+  "jobs": [
+    {"id": "design", "release": 0, "due": 5, "duration": 3, "weight": 4},
+    {"id": "build",  "release": 0, "due": 12, "duration": 3, "weight": 3,
+     "predecessors": ["design"]},
+    {"id": "qa",     "release": 0, "due": 16, "duration": 2, "weight": 2,
+     "predecessors": ["build"]},
+    {"id": "docs",   "release": 0, "due": 4, "duration": 4, "weight": 1}
+  ]
+}
