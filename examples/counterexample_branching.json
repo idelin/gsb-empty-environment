@@ -1,0 +1,203 @@
+{
+  "kind": "simulation-counterexample",
+  "version": 1,
+  "mode": "branching",
+  "divergence_sensitive": false,
+  "impl": "stutter-impl",
+  "spec": "choice-spec",
+  "initial_pair": [
+    "i0",
+    "s0"
+  ],
+  "rounds": 4,
+  "final_relation": [
+    [
+      "i0",
+      "s2"
+    ],
+    [
+      "i0",
+      "s3"
+    ],
+    [
+      "i1",
+      "s2"
+    ],
+    [
+      "i1",
+      "s3"
+    ],
+    [
+      "i2",
+      "s2"
+    ],
+    [
+      "i2",
+      "s3"
+    ],
+    [
+      "i3",
+      "s2"
+    ],
+    [
+      "i3",
+      "s3"
+    ],
+    [
+      "i4",
+      "s2"
+    ],
+    [
+      "i4",
+      "s3"
+    ]
+  ],
+  "ranks": [
+    [
+      "i0",
+      "s0",
+      2
+    ],
+    [
+      "i0",
+      "s1",
+      0
+    ],
+    [
+      "i1",
+      "s0",
+      0
+    ],
+    [
+      "i1",
+      "s1",
+      1
+    ],
+    [
+      "i2",
+      "s0",
+      0
+    ],
+    [
+      "i2",
+      "s1",
+      0
+    ],
+    [
+      "i3",
+      "s0",
+      0
+    ],
+    [
+      "i3",
+      "s1",
+      0
+    ],
+    [
+      "i4",
+      "s0",
+      0
+    ],
+    [
+      "i4",
+      "s1",
+      0
+    ]
+  ],
+  "strategy": {
+    "root": "pair:0",
+    "nodes": [
+      {
+        "id": "pair:0",
+        "type": "pair",
+        "impl": "i0",
+        "spec": "s0",
+        "rank": 2,
+        "attacks": [
+          "attack:0"
+        ]
+      },
+      {
+        "id": "pair:1",
+        "type": "pair",
+        "impl": "i1",
+        "spec": "s1",
+        "rank": 1,
+        "attacks": [
+          "attack:1"
+        ]
+      },
+      {
+        "id": "attack:0",
+        "type": "attack",
+        "kind": "visible",
+        "action": "a",
+        "spec_next": "s1",
+        "responses": [
+          {
+            "endpoint": "i1",
+            "path": [
+              [
+                "a",
+                "i1"
+              ]
+            ],
+            "pair": "pair:1"
+          }
+        ]
+      },
+      {
+        "id": "attack:1",
+        "type": "attack",
+        "kind": "visible",
+        "action": "b",
+        "spec_next": "s2",
+        "responses": []
+      }
+    ]
+  },
+  "trace": {
+    "steps": [
+      {
+        "pair": [
+          "i0",
+          "s0"
+        ],
+        "pair_rank": 2,
+        "attack": {
+          "kind": "visible",
+          "action": "a",
+          "spec_next": "s1"
+        },
+        "response": {
+          "endpoint": "i1",
+          "path": [
+            [
+              "a",
+              "i1"
+            ]
+          ]
+        },
+        "response_pair": [
+          "i1",
+          "s1"
+        ]
+      },
+      {
+        "pair": [
+          "i1",
+          "s1"
+        ],
+        "pair_rank": 1,
+        "attack": {
+          "kind": "visible",
+          "action": "b",
+          "spec_next": "s2"
+        },
+        "response": null,
+        "response_pair": null
+      }
+    ],
+    "terminal_reason": "no-response (implementation deadlocks or has no matching move)"
+  }
+}

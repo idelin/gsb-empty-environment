@@ -1,0 +1,9 @@
+{
+  "name": "vending-spec",
+  "initial": "p0",
+  "transitions": {
+    "p0": [["coin", "p1"]],
+    "p1": [["tea", "p2"]],
+    "p2": []
+  }
+}

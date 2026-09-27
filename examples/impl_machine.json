@@ -1,0 +1,11 @@
+{
+  "name": "vending-impl",
+  "initial": "q0",
+  "transitions": {
+    "q0": [["tau", "q1"]],
+    "q1": [["coin", "q2"]],
+    "q2": [["tau", "q3"]],
+    "q3": [["tea", "q4"]],
+    "q4": []
+  }
+}

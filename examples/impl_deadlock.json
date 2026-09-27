@@ -1,0 +1,7 @@
+{
+  "name": "deadlocked-impl",
+  "initial": "d0",
+  "transitions": {
+    "d0": []
+  }
+}

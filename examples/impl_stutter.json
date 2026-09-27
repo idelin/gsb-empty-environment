@@ -1,0 +1,11 @@
+{
+  "name": "stutter-impl",
+  "initial": "i0",
+  "transitions": {
+    "i0": [["a", "i1"]],
+    "i1": [["tau", "i2"], ["c", "i3"]],
+    "i2": [["b", "i4"]],
+    "i3": [],
+    "i4": []
+  }
+}

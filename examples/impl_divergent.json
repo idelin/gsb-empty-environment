@@ -1,0 +1,8 @@
+{
+  "name": "divergent-impl",
+  "initial": "l0",
+  "transitions": {
+    "l0": [["tau", "l0"], ["a", "l1"]],
+    "l1": []
+  }
+}

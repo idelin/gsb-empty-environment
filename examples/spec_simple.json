@@ -1,0 +1,8 @@
+{
+  "name": "simple-spec",
+  "initial": "u0",
+  "transitions": {
+    "u0": [["a", "u1"]],
+    "u1": []
+  }
+}

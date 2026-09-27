@@ -1,0 +1,8 @@
+{
+  "name": "progress-spec",
+  "initial": "s0",
+  "transitions": {
+    "s0": [["a", "s1"]],
+    "s1": []
+  }
+}
