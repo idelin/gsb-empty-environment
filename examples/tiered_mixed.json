@@ -1,0 +1,19 @@
+{
+  "config": {
+    "max_payload": 8,
+    "fixed_fee": 2,
+    "payload_tiers": [
+      {"up_to": 3, "fee": 0},
+      {"up_to": 6, "fee": 2},
+      {"up_to": 8, "fee": 6}
+    ]
+  },
+  "jobs": [
+    {"id": "a1", "tenant": "tenant-a", "endpoint": "chat", "payload": 3},
+    {"id": "a2", "tenant": "tenant-a", "endpoint": "chat", "payload": 3},
+    {"id": "a3", "tenant": "tenant-a", "endpoint": "chat", "payload": 2},
+    {"id": "a4", "tenant": "tenant-a", "endpoint": "embed", "payload": 4},
+    {"id": "b1", "tenant": "tenant-b", "endpoint": "chat", "payload": 5},
+    {"id": "b2", "tenant": "tenant-b", "endpoint": "chat", "payload": 3}
+  ]
+}
