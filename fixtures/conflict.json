@@ -1,0 +1,9 @@
+{
+  "nodes": ["A", "B"],
+  "events": [
+    {"node": "A", "kind": "send", "msg": "m1", "ts": 100},
+    {"node": "B", "kind": "recv", "msg": "m1", "ts": 105},
+    {"node": "B", "kind": "send", "msg": "m2", "ts": 200},
+    {"node": "A", "kind": "recv", "msg": "m2", "ts": 190}
+  ]
+}

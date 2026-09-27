@@ -1,0 +1,17 @@
+{
+  "nodes": ["A", "B", "C"],
+  "events": [
+    {"node": "A", "kind": "send", "msg": "m1", "ts": 100},
+    {"node": "B", "kind": "recv", "msg": "m1", "ts": 157},
+    {"node": "B", "kind": "send", "msg": "m2", "ts": 160},
+    {"node": "A", "kind": "recv", "msg": "m2", "ts": 115},
+    {"node": "B", "kind": "send", "msg": "m3", "ts": 200},
+    {"node": "C", "kind": "recv", "msg": "m3", "ts": 124},
+    {"node": "C", "kind": "send", "msg": "m4", "ts": 130},
+    {"node": "B", "kind": "recv", "msg": "m4", "ts": 216},
+    {"node": "A", "kind": "send", "msg": "m5", "ts": 300},
+    {"node": "C", "kind": "recv", "msg": "m5", "ts": 279},
+    {"node": "C", "kind": "send", "msg": "m6", "ts": 400},
+    {"node": "A", "kind": "recv", "msg": "m6", "ts": 433}
+  ]
+}
