@@ -1,0 +1,5 @@
+{
+  "expression": "x - x",
+  "variables": {"x": [0, 1]},
+  "assertion": "x - x >= 0"
+}

@@ -1,0 +1,5 @@
+{
+  "expression": "x + y",
+  "variables": {"x": [1, 3], "y": [2, 4]},
+  "assertion": "x + y >= 3"
+}

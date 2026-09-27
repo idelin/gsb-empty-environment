@@ -1,0 +1,5 @@
+{
+  "expression": "a // b",
+  "variables": {"a": [0, 5], "b": [-2, 2]},
+  "assertion": "a // b >= 0"
+}

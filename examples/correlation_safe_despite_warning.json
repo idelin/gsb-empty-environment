@@ -1,0 +1,6 @@
+{
+  "expression": "x // ((x - x) + 1)",
+  "variables": {"x": [0, 1]},
+  "assertion": "x // ((x - x) + 1) >= 0",
+  "enumerate_limit": 16
+}
