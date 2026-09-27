@@ -1,0 +1,17 @@
+{
+  "blocks": {"os-base": 500, "app-v1": 120, "app-v2": 130, "data-a": 300, "data-b": 280, "tmp": 50},
+  "versions": {
+    "img-1": ["os-base", "app-v1"],
+    "img-2": ["os-base", "app-v2"],
+    "vol-a": ["data-a"],
+    "vol-b": ["data-b"],
+    "scratch": ["tmp"]
+  },
+  "snapshots": [
+    {"id": "daily-01", "loss": 2, "versions": ["img-1", "vol-a"]},
+    {"id": "daily-02", "loss": 2, "versions": ["img-1", "vol-b"]},
+    {"id": "weekly-1", "loss": 6, "versions": ["img-2", "vol-a", "scratch"]},
+    {"id": "monthly-1", "loss": 15, "versions": ["img-2", "vol-b"]}
+  ],
+  "required_bytes": 700
+}

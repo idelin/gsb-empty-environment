@@ -1,0 +1,49 @@
+{
+  "blocks": {
+    "b1": 10,
+    "b2": 6,
+    "b3": 4,
+    "b4": 8
+  },
+  "versions": {
+    "v1": [
+      "b1"
+    ],
+    "v2": [
+      "b1",
+      "b2"
+    ],
+    "v3": [
+      "b3"
+    ],
+    "v4": [
+      "b4"
+    ]
+  },
+  "snapshots": [
+    {
+      "id": "snap-a",
+      "loss": 3,
+      "versions": [
+        "v1",
+        "v3"
+      ]
+    },
+    {
+      "id": "snap-b",
+      "loss": 2,
+      "versions": [
+        "v2"
+      ]
+    },
+    {
+      "id": "snap-c",
+      "loss": 5,
+      "versions": [
+        "v3",
+        "v4"
+      ]
+    }
+  ],
+  "required_bytes": 14
+}
