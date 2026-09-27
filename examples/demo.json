@@ -1,0 +1,11 @@
+{
+  "capacity": 10,
+  "files": [
+    {"id": "core",       "size": 3, "value": 8,  "deps": ["lib"]},
+    {"id": "lib",        "size": 2, "value": 1},
+    {"id": "plugin_v1",  "size": 2, "value": 4,  "group": "plugin"},
+    {"id": "plugin_v2",  "size": 3, "value": 6,  "deps": ["lib"], "group": "plugin"},
+    {"id": "docs",       "size": 1, "value": 2},
+    {"id": "extra",      "size": 4, "value": 3}
+  ]
+}

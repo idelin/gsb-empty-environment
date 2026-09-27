@@ -1,0 +1,7 @@
+{
+  "capacity": 4,
+  "files": [
+    {"id": "a", "size": 2, "value": 5, "deps": ["b"]},
+    {"id": "b", "size": 3, "value": 0}
+  ]
+}
