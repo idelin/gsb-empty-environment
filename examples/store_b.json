@@ -1,0 +1,32 @@
+{
+  "records": [
+    {
+      "deleted": false,
+      "key": "user:1",
+      "value": "alice-v1",
+      "value_b64": "YWxpY2UtdjE=",
+      "version": 1
+    },
+    {
+      "deleted": false,
+      "key": "user:2",
+      "value": "shared-new",
+      "value_b64": "c2hhcmVkLW5ldw==",
+      "version": 5
+    },
+    {
+      "deleted": false,
+      "key": "user:4",
+      "value": "resurrected",
+      "value_b64": "cmVzdXJyZWN0ZWQ=",
+      "version": 3
+    },
+    {
+      "deleted": false,
+      "key": "user:5",
+      "value": "only-in-bob",
+      "value_b64": "b25seS1pbi1ib2I=",
+      "version": 1
+    }
+  ]
+}

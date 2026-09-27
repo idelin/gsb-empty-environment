@@ -1,0 +1,32 @@
+{
+  "records": [
+    {
+      "deleted": false,
+      "key": "user:1",
+      "value": "alice-v1",
+      "value_b64": "YWxpY2UtdjE=",
+      "version": 1
+    },
+    {
+      "deleted": false,
+      "key": "user:2",
+      "value": "shared-old",
+      "value_b64": "c2hhcmVkLW9sZA==",
+      "version": 2
+    },
+    {
+      "deleted": false,
+      "key": "user:3",
+      "value": "only-in-alice",
+      "value_b64": "b25seS1pbi1hbGljZQ==",
+      "version": 1
+    },
+    {
+      "deleted": true,
+      "key": "user:4",
+      "value": null,
+      "value_b64": null,
+      "version": 6
+    }
+  ]
+}
