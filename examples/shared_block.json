@@ -1,0 +1,13 @@
+{
+  "blocks": {
+    "blk-shared": 10
+  },
+  "file_versions": {
+    "fv-a": ["blk-shared"],
+    "fv-b": ["blk-shared"]
+  },
+  "snapshots": [
+    {"id": "snap-1", "loss": 4, "file_versions": ["fv-a"]},
+    {"id": "snap-2", "loss": 6, "file_versions": ["fv-b"]}
+  ]
+}
