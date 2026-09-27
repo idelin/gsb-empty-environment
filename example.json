@@ -1,0 +1,11 @@
+{
+  "budget": 2,
+  "scenarios": [
+    {"id": "R", "k": 2, "weight": 10}
+  ],
+  "checks": [
+    {"id": "a", "family": "F1", "cost": 1, "hours": 1, "covers": ["R"]},
+    {"id": "b", "family": "F1", "cost": 1, "hours": 1, "covers": ["R"]},
+    {"id": "c", "family": "F2", "cost": 1, "hours": 1, "covers": ["R"]}
+  ]
+}
