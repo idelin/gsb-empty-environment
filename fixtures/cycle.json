@@ -1,0 +1,8 @@
+{
+  "orphanTimeout": "5s",
+  "spans": [
+    {"at": "2026-01-01T00:00:00Z", "traceID": "t3", "spanID": "a", "parentSpanID": "b", "name": "a"},
+    {"at": "2026-01-01T00:00:01Z", "traceID": "t3", "spanID": "b", "parentSpanID": "a", "name": "b"},
+    {"at": "2026-01-01T00:00:02Z", "traceID": "t3", "spanID": "self", "parentSpanID": "self", "name": "self-loop"}
+  ]
+}

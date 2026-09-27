@@ -1,0 +1,7 @@
+{
+  "orphanTimeout": "5s",
+  "spans": [
+    {"at": "2026-01-01T00:00:00Z", "traceID": "tC", "spanID": "s1", "name": "root"},
+    {"at": "2026-01-01T00:00:01Z", "traceID": "tC", "spanID": "s2", "parentSpanID": "missing", "name": "orphan"}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "orphanTimeout": "5s",
+  "spans": [
+    {"at": "2026-01-01T00:00:01Z", "traceID": "t1", "spanID": "s3", "parentSpanID": "s2", "name": "grandchild"},
+    {"at": "2026-01-01T00:00:02Z", "traceID": "t1", "spanID": "s2", "parentSpanID": "s1", "name": "child"},
+    {"at": "2026-01-01T00:00:03Z", "traceID": "t1", "spanID": "s1", "name": "root"},
+    {"at": "2026-01-01T00:00:04Z", "traceID": "t1", "spanID": "s2", "parentSpanID": "s1", "name": "child-renamed"}
+  ]
+}
