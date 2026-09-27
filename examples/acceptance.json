@@ -1,0 +1,18 @@
+{
+  "ops": [
+    {"op": "mkdir", "path": "/p20", "retention_until": 20},
+    {"op": "mkdir", "path": "/p5", "retention_until": 5},
+    {"op": "create", "path": "/p20/report.txt", "retention_until": 10},
+    {"op": "tick", "now": 15},
+    {"op": "due"},
+    {"op": "plan", "id": "before-move"},
+    {"op": "execute", "plan": "before-move"},
+    {"op": "move", "src": "/p20/report.txt", "dst_dir": "/p5"},
+    {"op": "due"},
+    {"op": "plan", "id": "after-move"},
+    {"op": "execute", "plan": "after-move"},
+    {"op": "create", "path": "/p5/held.txt", "retention_until": 1, "legal_hold": true},
+    {"op": "tick", "now": 1000},
+    {"op": "due"}
+  ]
+}
