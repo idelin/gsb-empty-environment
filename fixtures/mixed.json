@@ -1,0 +1,23 @@
+{
+  "config": {
+    "max_traces": 2,
+    "max_decisions": 16,
+    "trace_timeout_ms": 1000,
+    "latency_threshold_ms": 500,
+    "budget_per_window": 1,
+    "budget_window_ms": 10000,
+    "num_shards": 8,
+    "timeout_policy": "keep_error"
+  },
+  "events": [
+    {"at_ms": 10, "trace_id": "t1", "span_id": "r1", "parent_id": "", "name": "GET /ok", "start_ms": 0, "end_ms": 100, "error": false},
+    {"at_ms": 20, "trace_id": "t2", "span_id": "r2", "parent_id": "", "name": "GET /ok", "start_ms": 0, "end_ms": 50, "error": false},
+    {"at_ms": 30, "trace_id": "t3", "span_id": "c3", "parent_id": "r3", "name": "db.query", "start_ms": 10, "end_ms": 90, "error": true},
+    {"at_ms": 40, "trace_id": "t3", "span_id": "r3", "parent_id": "", "name": "POST /pay", "start_ms": 0, "end_ms": 120, "error": false},
+    {"at_ms": 50, "trace_id": "t4", "span_id": "r4", "parent_id": "", "name": "GET /slow", "start_ms": 0, "end_ms": 800, "error": false},
+    {"at_ms": 60, "trace_id": "t5", "span_id": "c5", "parent_id": "r5", "name": "cache.get", "start_ms": 5, "end_ms": 20, "error": false},
+    {"at_ms": 70, "trace_id": "t6", "span_id": "c6", "parent_id": "r6", "name": "rpc.call", "start_ms": 5, "end_ms": 30, "error": false},
+    {"at_ms": 80, "trace_id": "t7", "span_id": "c7", "parent_id": "r7", "name": "rpc.call", "start_ms": 5, "end_ms": 25, "error": false},
+    {"at_ms": 5000, "trace_id": "t2", "span_id": "late2", "parent_id": "r2", "name": "audit.log", "start_ms": 40, "end_ms": 60, "error": false}
+  ]
+}
