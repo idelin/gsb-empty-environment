@@ -1,0 +1,11 @@
+{
+  "version": "v1",
+  "rules": [
+    {"id": "r-allow-root", "effect": "allow", "subject": "*",
+     "resource_prefix": "/root/*", "action": "read",
+     "valid_from": null, "valid_to": null},
+    {"id": "r-deny-private", "effect": "deny", "subject": "*",
+     "resource_prefix": "/root/private/*", "action": "read",
+     "valid_from": null, "valid_to": null}
+  ]
+}
