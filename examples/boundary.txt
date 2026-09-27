@@ -1,0 +1,14 @@
+# Acceptance boundary: root = (a OR b) AND (b OR c)
+# All data below is synthetic.
+leaf a asserted
+leaf b asserted
+leaf c asserted
+or left a b
+or right b c
+and root left right
+root root
+witness        # expect: root true b
+retract b      # incremental update
+witness        # expect: root true a c
+assert b
+witness        # expect: root true b
