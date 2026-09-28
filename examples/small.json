@@ -1,0 +1,18 @@
+{
+  "horizon": 6,
+  "window_length": 3,
+  "max_pushes_per_window": 1,
+  "channel_capacity": {
+    "sms": 10,
+    "push": 10,
+    "email": 5
+  },
+  "notifications": [
+    {"id": "n1", "user": "u1", "channel": "sms",  "revenue": 10, "release": 0, "deadline": 1, "cost": 6, "activity_id": null},
+    {"id": "n2", "user": "u1", "channel": "push", "revenue": 7,  "release": 2, "deadline": 4, "cost": 4, "activity_id": null},
+    {"id": "n3", "user": "u2", "channel": "push", "revenue": 12, "release": 1, "deadline": 3, "cost": 8, "activity_id": null},
+    {"id": "n4", "user": "u2", "channel": "email","revenue": 6,  "release": 0, "deadline": 5, "cost": 3, "activity_id": null},
+    {"id": "n5", "user": "u3", "channel": "sms",  "revenue": 11, "release": 0, "deadline": 2, "cost": 9, "activity_id": "A"},
+    {"id": "n6", "user": "u4", "channel": "sms",  "revenue": 3,  "release": 1, "deadline": 1, "cost": 2, "activity_id": "A"}
+  ]
+}

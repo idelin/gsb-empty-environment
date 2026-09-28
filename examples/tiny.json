@@ -1,0 +1,10 @@
+{
+  "horizon": 4,
+  "window_length": 3,
+  "max_pushes_per_window": 1,
+  "channel_capacity": {"sms": 10},
+  "notifications": [
+    {"id": "a", "user": "u1", "channel": "sms", "revenue": 10, "release": 0, "deadline": 3, "cost": 1},
+    {"id": "b", "user": "u1", "channel": "sms", "revenue": 8,  "release": 0, "deadline": 3, "cost": 1}
+  ]
+}
