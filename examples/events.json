@@ -1,0 +1,37 @@
+[
+  {"id": "e1", "type": "create", "object_id": "dir-docs", "is_dir": true,
+   "new_parent_id": "root", "new_name": "docs", "stamp": {"value": 1, "node": "n1"}, "deps": []},
+  {"id": "e2", "type": "create", "object_id": "file-a", "is_dir": false,
+   "new_parent_id": "dir-docs", "new_name": "draft-a.md", "stamp": {"value": 2, "node": "n1"}, "deps": ["e1"]},
+  {"id": "e3", "type": "create", "object_id": "file-b", "is_dir": false,
+   "new_parent_id": "dir-docs", "new_name": "draft-b.md", "stamp": {"value": 3, "node": "n1"}, "deps": ["e1"]},
+  {"id": "e4", "type": "rename", "object_id": "file-a",
+   "new_name": "report.md", "stamp": {"value": 10, "node": "n1"}, "deps": ["e2"]},
+  {"id": "e5", "type": "rename", "object_id": "file-b",
+   "new_name": "report.md", "stamp": {"value": 11, "node": "n2"}, "deps": ["e3"]},
+
+  {"id": "e6", "type": "create", "object_id": "dir-x", "is_dir": true,
+   "new_parent_id": "root", "new_name": "x", "stamp": {"value": 4, "node": "n1"}, "deps": []},
+  {"id": "e7", "type": "create", "object_id": "dir-y", "is_dir": true,
+   "new_parent_id": "dir-x", "new_name": "y", "stamp": {"value": 5, "node": "n1"}, "deps": ["e6"]},
+  {"id": "e8", "type": "create", "object_id": "file-z", "is_dir": false,
+   "new_parent_id": "dir-y", "new_name": "z.md", "stamp": {"value": 6, "node": "n1"}, "deps": ["e7"]},
+  {"id": "e9", "type": "move", "object_id": "dir-x",
+   "new_parent_id": "dir-y", "stamp": {"value": 20, "node": "n1"}, "deps": ["e8"]},
+
+  {"id": "e10", "type": "create", "object_id": "file-temp", "is_dir": false,
+   "new_parent_id": "root", "new_name": "temp.txt", "stamp": {"value": 7, "node": "n1"}, "deps": []},
+  {"id": "e11", "type": "delete", "object_id": "file-temp",
+   "stamp": {"value": 8, "node": "n1"}, "deps": ["e10"]},
+  {"id": "e12", "type": "rename", "object_id": "file-temp",
+   "new_name": "renamed.txt", "stamp": {"value": 9, "node": "n1"}, "deps": ["e10"]},
+  {"id": "e13", "type": "create", "object_id": "file-temp", "is_dir": false,
+   "new_parent_id": "root", "new_name": "temp-v2.txt", "stamp": {"value": 12, "node": "n1"}, "deps": ["e11"]},
+
+  {"id": "e14", "type": "create", "object_id": "file-c1", "is_dir": false,
+   "new_parent_id": "dir-docs", "new_name": "shared.md", "stamp": {"value": 13, "node": "n1"}, "deps": ["e1"]},
+  {"id": "e15", "type": "create", "object_id": "file-c2", "is_dir": false,
+   "new_parent_id": "dir-docs", "new_name": "other.md", "stamp": {"value": 14, "node": "n1"}, "deps": ["e1"]},
+  {"id": "e16", "type": "rename", "object_id": "file-c2",
+   "new_name": "shared.md", "stamp": {"value": 15, "node": "n1"}, "deps": ["e14", "e15"]}
+]
