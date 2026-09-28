@@ -1,0 +1,22 @@
+---- reset epoch -> 1 @ tick 18 ----
+---- ordered output ----
+[release] epoch=0 seq=1  eventTick=0  body=A
+[release] epoch=0 seq=2  eventTick=0  body=B
+[release] epoch=0 seq=3  eventTick=1  body=C
+[release] epoch=0 seq=4  eventTick=1  body=D
+[gap ]      seq 5..5 @tick=10 reason=cache_full
+[release] epoch=0 seq=6  eventTick=2  body=F
+[release] epoch=0 seq=7  eventTick=3  body=G
+[release] epoch=0 seq=8  eventTick=3  body=H
+[release] epoch=0 seq=9  eventTick=4  body=I
+[gap ]      seq 10..10 @tick=15 reason=wait_timeout
+[release] epoch=0 seq=11 eventTick=5  body=K
+[release] epoch=1 seq=1  eventTick=20 body=Y
+[release] epoch=1 seq=2  eventTick=21 body=Z
+[release] epoch=1 seq=3  eventTick=20 body=X
+---- side channel ----
+[side] duplicate epoch=0 seq=1  @tick=12
+[side] late      epoch=0 seq=5  @tick=16
+[side] stale     epoch=0 seq=12 @tick=19
+---- stats ----
+released=12 gaps=2 missingSeq=2 late=1 stale=1 duplicate=1

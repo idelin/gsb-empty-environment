@@ -1,0 +1,40 @@
+=== RUN   TestInOrderAndSameTickOrdering
+--- PASS: TestInOrderAndSameTickOrdering (0.10s)
+=== RUN   TestOutOfOrderReleasesBySeq
+--- PASS: TestOutOfOrderReleasesBySeq (0.00s)
+=== RUN   TestWaitTimeoutIsBoundNotPermanentBlock
+--- PASS: TestWaitTimeoutIsBoundNotPermanentBlock (0.00s)
+=== RUN   TestArriveJustBeforeTimeoutStillReleases
+--- PASS: TestArriveJustBeforeTimeoutStillReleases (0.00s)
+=== RUN   TestCacheFullEvictsGapAndReleases
+--- PASS: TestCacheFullEvictsGapAndReleases (0.00s)
+=== RUN   TestCacheFullEvictionNeverJumpsPastArrivingPacket
+--- PASS: TestCacheFullEvictionNeverJumpsPastArrivingPacket (0.00s)
+=== RUN   TestLatePacketGoesSideChannel
+--- PASS: TestLatePacketGoesSideChannel (0.00s)
+=== RUN   TestDuplicatePacketGoesSideChannel
+--- PASS: TestDuplicatePacketGoesSideChannel (0.00s)
+=== RUN   TestResetClearsQueuesAndOldEpochIsStale
+--- PASS: TestResetClearsQueuesAndOldEpochIsStale (0.00s)
+=== RUN   TestReleasedSequenceNeverMutated
+--- PASS: TestReleasedSequenceNeverMutated (0.00s)
+=== RUN   TestStatsAreAccurate
+--- PASS: TestStatsAreAccurate (0.00s)
+=== RUN   TestInvalidConfigAndBadCalls
+--- PASS: TestInvalidConfigAndBadCalls (0.00s)
+PASS
+ok  	reorder	1.308s
+?   	reorder/cmd/demo	[no test files]
+=== RUN   TestSchedulerTickOrderingAndClock
+--- PASS: TestSchedulerTickOrderingAndClock (0.00s)
+=== RUN   TestSchedulerRejectsPastEvents
+--- PASS: TestSchedulerRejectsPastEvents (0.00s)
+=== RUN   TestScriptLinkReordersAndDrops
+--- PASS: TestScriptLinkReordersAndDrops (0.00s)
+=== RUN   TestRandomLinkDeterministicAndEndToEnd
+--- PASS: TestRandomLinkDeterministicAndEndToEnd (0.00s)
+    sim_test.go:137: deterministic run: output items=32 side items=3
+=== RUN   TestNewLinkValidatesConfig
+--- PASS: TestNewLinkValidatesConfig (0.00s)
+PASS
+ok  	reorder/sim	1.084s
