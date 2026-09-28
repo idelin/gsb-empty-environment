@@ -1,0 +1,153 @@
+{
+  "seed": 1,
+  "spans": [
+    {
+      "traceId": "trace-1",
+      "spanId": "cli-cli",
+      "name": "GET /users",
+      "kind": "client",
+      "service": "web",
+      "status": "ok",
+      "startUnixNano": 1700000000000000000,
+      "endUnixNano": 1700000000004000000
+    },
+    {
+      "traceId": "trace-1",
+      "spanId": "cli-srv",
+      "parentSpanId": "cli-cli",
+      "name": "GET /users",
+      "kind": "server",
+      "service": "api",
+      "status": "ok",
+      "startUnixNano": 1700000000004779410,
+      "endUnixNano": 1700000000007779410
+    },
+    {
+      "traceId": "trace-2",
+      "spanId": "cli-cli",
+      "name": "GET /users",
+      "kind": "client",
+      "service": "web",
+      "status": "error",
+      "startUnixNano": 1700000000007932961,
+      "endUnixNano": 1700000000011932961
+    },
+    {
+      "traceId": "trace-2",
+      "spanId": "cli-srv",
+      "parentSpanId": "cli-cli",
+      "name": "GET /users",
+      "kind": "server",
+      "service": "api",
+      "status": "error",
+      "startUnixNano": 1700000000012078782,
+      "endUnixNano": 1700000000015078782
+    },
+    {
+      "traceId": "trace-3",
+      "spanId": "root",
+      "name": "POST /pay",
+      "kind": "internal",
+      "service": "web",
+      "status": "ok",
+      "startUnixNano": 1700000000015088833,
+      "endUnixNano": 1700000000024088833
+    },
+    {
+      "traceId": "trace-3",
+      "spanId": "a1-cli",
+      "parentSpanId": "root",
+      "name": "POST /charge",
+      "kind": "client",
+      "service": "web",
+      "status": "error",
+      "startUnixNano": 1700000000024202770,
+      "endUnixNano": 1700000000028202770
+    },
+    {
+      "traceId": "trace-3",
+      "spanId": "a1-srv",
+      "parentSpanId": "a1-cli",
+      "name": "POST /charge",
+      "kind": "server",
+      "service": "billing",
+      "status": "error",
+      "startUnixNano": 1700000000028370090,
+      "endUnixNano": 1700000000031370090
+    },
+    {
+      "traceId": "trace-3",
+      "spanId": "a2-cli",
+      "parentSpanId": "root",
+      "name": "POST /charge",
+      "kind": "client",
+      "service": "web",
+      "status": "ok",
+      "startUnixNano": 1700000000032339848,
+      "endUnixNano": 1700000000036339848
+    },
+    {
+      "traceId": "trace-3",
+      "spanId": "a2-srv",
+      "parentSpanId": "a2-cli",
+      "name": "POST /charge",
+      "kind": "server",
+      "service": "billing",
+      "status": "ok",
+      "startUnixNano": 1700000000037115996,
+      "endUnixNano": 1700000000040115996
+    },
+    {
+      "traceId": "trace-4",
+      "spanId": "lonely-cli",
+      "name": "GET /search",
+      "kind": "client",
+      "service": "web",
+      "status": "error",
+      "startUnixNano": 1700000000040233212,
+      "endUnixNano": 1700000000042233212
+    },
+    {
+      "traceId": "trace-5",
+      "spanId": "lonely-srv",
+      "parentSpanId": "missing-parent",
+      "name": "GET /health",
+      "kind": "server",
+      "service": "api",
+      "status": "ok",
+      "startUnixNano": 1700000000042512661,
+      "endUnixNano": 1700000000045512661
+    },
+    {
+      "traceId": "trace-6",
+      "spanId": "cli-cli",
+      "name": "GET /legacy",
+      "kind": "client",
+      "service": "api",
+      "status": "ok",
+      "startUnixNano": 1700000000045910745,
+      "endUnixNano": 1700000000049910745
+    },
+    {
+      "traceId": "trace-6",
+      "spanId": "cli-srv",
+      "parentSpanId": "cli-cli",
+      "name": "GET /legacy",
+      "kind": "server",
+      "status": "ok",
+      "startUnixNano": 1700000000050580032,
+      "endUnixNano": 1700000000053580032
+    },
+    {
+      "traceId": "trace-1",
+      "spanId": "cli-srv",
+      "parentSpanId": "cli-cli",
+      "name": "GET /users",
+      "kind": "server",
+      "service": "api",
+      "status": "ok",
+      "startUnixNano": 1700000000004779410,
+      "endUnixNano": 1700000000007779410
+    }
+  ]
+}
