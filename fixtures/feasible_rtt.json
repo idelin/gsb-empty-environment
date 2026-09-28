@@ -1,0 +1,13 @@
+{
+  "reference": "client",
+  "events": [
+    {"id": "c_req",  "node": "client", "ts": 1000},
+    {"id": "s_req",  "node": "server", "ts": 1100},
+    {"id": "s_resp", "node": "server", "ts": 1120},
+    {"id": "c_resp", "node": "client", "ts": 1040}
+  ],
+  "edges": [
+    {"from": "c_req",  "to": "s_req"},
+    {"from": "s_resp", "to": "c_resp"}
+  ]
+}

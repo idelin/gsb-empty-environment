@@ -1,0 +1,10 @@
+{
+  "reference": "client",
+  "events": [
+    {"id": "c1", "node": "client", "ts": "10ms"},
+    {"id": "s1", "node": "server", "ts": "9ms"}
+  ],
+  "edges": [
+    {"from": "c1", "to": "s1"}
+  ]
+}

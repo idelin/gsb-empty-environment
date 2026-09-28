@@ -1,0 +1,81 @@
+################ feasible_rtt
+reference node: client
+
+feasible clock offset intervals (relative to reference):
+  client   [0s, 0s] (ns: [0, 0])
+  server   [-100ns, -80ns] (ns: [-100, -80])
+
+minimum corrected causal duration (slack): 0s
+corrected timestamps (observed local ts + assigned offset):
+  c_req client@1000 -> 1000
+  s_req server@1100 -> 1020
+  s_resp server@1120 -> 1040
+  c_resp client@1040 -> 1040
+(exit code: 0)
+
+################ contradiction_rtt
+reference node: client
+
+INFEASIBLE: 1 contradiction chain(s)
+
+chain 1: total signed duration -5ns (negative => contradiction)
+  client@1000 -> server@990   weight = -10ns
+  server@1005 -> client@1010   weight = 5ns
+
+(exit code: 1)
+
+################ disconnected
+reference node: client
+
+feasible clock offset intervals (relative to reference):
+  client   [0s, 0s] (ns: [0, 0])
+  island   [-infty, +infty] (ns: [-31536000000000000, 31536000000000000])
+
+minimum corrected causal duration (slack): 20ns
+corrected timestamps (observed local ts + assigned offset):
+  c1   client@1000 -> 1000
+  c2   client@1020 -> 1020
+  o1   island@5000 -> 5000
+  o2   island@5030 -> 5030
+(exit code: 0)
+
+################ negative_delta
+reference node: client
+
+feasible clock offset intervals (relative to reference):
+  client   [0s, 0s] (ns: [0, 0])
+  server   [1ms, +infty] (ns: [1000000, 31536000000000000])
+
+minimum corrected causal duration (slack): 0s
+corrected timestamps (observed local ts + assigned offset):
+  c1   client@10000000 -> 10000000
+  s1   server@9000000 -> 10000000
+(exit code: 0)
+
+################ contradiction_rtt (JSON)
+{
+  "feasible": false,
+  "reference": "client",
+  "chains": [
+    {
+      "sum_ns": -5,
+      "edges": [
+        {
+          "from_node": "client",
+          "to_node": "server",
+          "from_ts_ns": 1000,
+          "to_ts_ns": 990,
+          "weight_ns": -10
+        },
+        {
+          "from_node": "server",
+          "to_node": "client",
+          "from_ts_ns": 1005,
+          "to_ts_ns": 1010,
+          "weight_ns": 5
+        }
+      ]
+    }
+  ]
+}
+(exit code: 1)

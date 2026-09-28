@@ -1,0 +1,10 @@
+{
+  "reference": "client",
+  "events": [
+    {"id": "c1", "node": "client", "ts": 1000},
+    {"id": "c2", "node": "client", "ts": 1020},
+    {"id": "o1", "node": "island", "ts": 5000},
+    {"id": "o2", "node": "island", "ts": 5030}
+  ],
+  "edges": []
+}
