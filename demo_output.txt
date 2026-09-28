@@ -1,0 +1,72 @@
+========================================================================
+SYNTHETIC DATA ONLY
+  v1: SyntheticData(label='synthetic:employees:n=2000:seed=20260929', n=2000, version=a794c6fcd3fb)
+  v2: SyntheticData(label='synthetic:employees:n=2001:seed=20260929', n=2001, version=cf505e18449f)
+========================================================================
+1) EXACT REPEAT -> stored noisy output, zero extra epsilon
+  true count(pro) = 309
+  publication #1 = 308.6087 (charged 1)
+  repeat call    = 308.6087  identical=True
+  remaining epsilon (v1) = 4
+========================================================================
+2) THRESHOLD CHANGE -> different semantics, no reuse, new charge
+  threshold=10 -> 307.9475 (fresh draw, new charge)
+  remaining epsilon (v1) = 3
+========================================================================
+3) EPSILON CHANGE -> different semantics, no reuse
+  epsilon=0.5  -> 307.4648 (fresh charge of 0.5)
+  remaining epsilon (v1) = 2.5
+========================================================================
+4) DATA VERSION CHANGE -> separate ledger, separate cache
+  same query on v2 -> 309.0597
+  remaining epsilon (v1) = 2.5
+  remaining epsilon (v2) = 4
+========================================================================
+5) BOUNDED SUM + HISTOGRAM, then BUDGET EXHAUSTION
+  noisy sum salary (active & Beijing) = 10,056,758.82
+  true  sum salary (active & Beijing) = 10,059,051.82
+  remaining epsilon (v1) = 1.5
+  noisy histogram by city:
+    Beijing    true= 395  noisy=    394.93
+    Guangzhou  true= 392  noisy=    392.55
+    Hangzhou   true= 388  noisy=    387.87
+    Shanghai   true= 416  noisy=    416.99
+    Shenzhen   true= 409  noisy=    408.14
+  remaining epsilon (v1) = 0.5
+  BudgetExceededError -> version a794c6fcd3fb: need 1.0, spent 4.5, budget 5
+  repeating an already-published query still works for free:
+  threshold query reused -> 307.9475, remaining unchanged = 0.5
+========================================================================
+6) CONCURRENT IDENTICAL QUERIES -> one mechanism output, one charge
+  8 concurrent calls -> 1 distinct noisy value(s): 810.6087
+  remaining epsilon = 3
+========================================================================
+7) STATISTICAL DIAGNOSTICS (not a formal privacy proof)
+  trials=20000 epsilon=1 scale=1.0000 bias=-0.0163 stddev=1.4146
+  empirical coverage of |noise|<=scale = 0.633 (theory 1-exp(-1)=0.632); fraction of answers within +/-1 scale of truth = 0.633
+========================================================================
+LEDGER v1
+ledger version=a794c6fcd3fb budget=5 spent=4.5 remaining=0.5 charges=5 reuses=2
+  [charge] eps=1 cum=1 id=["count",["and",["[\"cond\",\"segment\",\"==\",[ (new count publication)
+  [reuse ] eps=0 cum=1 id=["count",["and",["[\"cond\",\"segment\",\"==\",[ (exact repeated query, stored output reused)
+  [charge] eps=1 cum=2 id=["count",["and",["[\"cond\",\"segment\",\"==\",[ (new count publication)
+  [charge] eps=0.5 cum=2.5 id=["count",["and",["[\"cond\",\"segment\",\"==\",[ (new count publication)
+  [charge] eps=1 cum=3.5 id=["sum","salary",0.0,60000.0,["and",["[\"cond\",\ (new sum publication)
+  [charge] eps=1 cum=4.5 id=["hist","city",["and",[]],1.0,null] (new histogram publication)
+  [reuse ] eps=0 cum=4.5 id=["count",["and",["[\"cond\",\"segment\",\"==\",[ (exact repeated query, stored output reused)
+LEDGER v2
+ledger version=cf505e18449f budget=5 spent=1 remaining=4 charges=1 reuses=0
+  [charge] eps=1 cum=1 id=["count",["and",["[\"cond\",\"segment\",\"==\",[ (new count publication)
+LEDGER (concurrency engine)
+ledger version=a794c6fcd3fb budget=4 spent=1 remaining=3 charges=1 reuses=7
+  [charge] eps=1 cum=1 id=["count",["and",["[\"cond\",\"city\",\"in\",[[\" (new count publication)
+  [reuse ] eps=0 cum=1 id=["count",["and",["[\"cond\",\"city\",\"in\",[[\" (exact repeated query, stored output reused)
+  [reuse ] eps=0 cum=1 id=["count",["and",["[\"cond\",\"city\",\"in\",[[\" (exact repeated query, stored output reused)
+  [reuse ] eps=0 cum=1 id=["count",["and",["[\"cond\",\"city\",\"in\",[[\" (exact repeated query, stored output reused)
+  [reuse ] eps=0 cum=1 id=["count",["and",["[\"cond\",\"city\",\"in\",[[\" (exact repeated query, stored output reused)
+  [reuse ] eps=0 cum=1 id=["count",["and",["[\"cond\",\"city\",\"in\",[[\" (exact repeated query, stored output reused)
+  [reuse ] eps=0 cum=1 id=["count",["and",["[\"cond\",\"city\",\"in\",[[\" (exact repeated query, stored output reused)
+  [reuse ] eps=0 cum=1 id=["count",["and",["[\"cond\",\"city\",\"in\",[[\" (exact repeated query, stored output reused)
+========================================================================
+8) NON-SYNTHETIC INPUT IS REJECTED
+  TypeError -> only SyntheticData is accepted; this engine processes synthetic data only
