@@ -1,0 +1,24 @@
+test_interruption_does_not_draw_and_resume_continues_once (test_seqtest.TestBudgetInterruption.test_interruption_does_not_draw_and_resume_continues_once) ... ok
+test_corrupt_checkpoint_rejected (test_seqtest.TestCheckpoint.test_corrupt_checkpoint_rejected) ... ok
+test_snapshot_restore_matches_replay (test_seqtest.TestCheckpoint.test_snapshot_restore_matches_replay) ... ok
+test_invalid_bounds_rejected (test_seqtest.TestConfigValidation.test_invalid_bounds_rejected) ... ok
+test_p0_zero_observation_one_is_infinite_evidence (test_seqtest.TestDegenerateLikelihood.test_p0_zero_observation_one_is_infinite_evidence) ... ok
+test_p1_one_observation_one_is_negative_infinite (test_seqtest.TestDegenerateLikelihood.test_p1_one_observation_one_is_negative_infinite) ... ok
+test_zero_probability_paths_excluded_from_exact_recursion (test_seqtest.TestDegenerateLikelihood.test_zero_probability_paths_excluded_from_exact_recursion) ... ok
+test_empirical_close_to_exact (test_seqtest.TestEmpiricalSimulation.test_empirical_close_to_exact) ... ok
+test_seed_reproducibility (test_seqtest.TestEmpiricalSimulation.test_seed_reproducibility) ... ok
+test_boundary_hit_at_nmax_is_decisive (test_seqtest.TestExactRecursion.test_boundary_hit_at_nmax_is_decisive) ... ok
+test_hand_calculated_nmax2 (test_seqtest.TestExactRecursion.test_hand_calculated_nmax2) ... ok
+test_nmax_reached_undecided_is_inconclusive (test_seqtest.TestExactRecursion.test_nmax_reached_undecided_is_inconclusive) ... ok
+test_probability_mass_normalizes_to_one (test_seqtest.TestExactRecursion.test_probability_mass_normalizes_to_one) ... ok
+test_declaration_rejects_rule_exceeding_allocation (test_seqtest.TestMultiStream.test_declaration_rejects_rule_exceeding_allocation) ... ok
+test_family_alpha_cap_enforced_only_for_declared_rules (test_seqtest.TestMultiStream.test_family_alpha_cap_enforced_only_for_declared_rules) ... ok
+test_shared_sample_budget_interrupts_without_double_count (test_seqtest.TestMultiStream.test_shared_sample_budget_interrupts_without_double_count) ... ok
+test_online_matches_canonical_and_exact (test_seqtest.TestOnlineConsistency.test_online_matches_canonical_and_exact) ... ok
+test_repeatable_queries_do_not_mutate (test_seqtest.TestOnlineConsistency.test_repeatable_queries_do_not_mutate) ... ok
+test_terminal_rejects_more_observations (test_seqtest.TestOnlineConsistency.test_terminal_rejects_more_observations) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 4.465s
+
+OK
