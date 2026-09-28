@@ -1,0 +1,54 @@
+$ node --version
+v23.9.0
+
+$ npm test
+
+> exact-rational@1.0.0 test
+> node --test tests/fraction.test.ts tests/decimal.test.ts tests/expr.test.ts tests/exhaustive.test.ts
+
+✔ 1/6 is 0.1(6): prefix length 1, period length 1 (0.85425ms)
+✔ known repeating expansions render canonically (124.253875ms)
+✔ terminating decimals carry no period; zero renders as 0 (83.896209ms)
+✔ preperiodInfo is pure number theory (strip 2 and 5) (17.381833ms)
+✔ locateCycle reports prefix and period length without a huge string (0.661167ms)
+✔ budget exceeded is reported incomplete, not an infinite or false exact string (2.5285ms)
+✔ a long pure-preperiod denominator is also marked incomplete inside the budget (0.265958ms)
+✔ paging a repeating decimal wraps by period index arithmetic (0.284542ms)
+✔ paging a terminating decimal returns infinite zeros (0.373209ms)
+✔ paging an incomplete expansion marks truncation honestly (2.617875ms)
+✔ paging validates arguments (8.65425ms)
+✔ parseExact reconstructs terminating and repeating decimals algebraically (2.417666ms)
+✔ parseExact rejects truncated input: a prefix is never treated as exact (0.663833ms)
+✔ exhaustive canonicalization: coprime, positive denominator, zero is 0/1 (46.383792ms)
+✔ exhaustive four operations against raw cross-multiplication identities (3077.236375ms)
+✔ exhaustive comparison agrees with sign of cross product (including zero) (520.124ms)
+✔ exhaustive decimal expansion matches an independent long division and round-trips (60.046666ms)
+✔ period rotation: digits produced by paging reproduce the reference period (129.271083ms)
+✔ incomplete rendering is visibly truncated and must not parse as exact (2.463041ms)
+✔ exact fractions never compare equal merely because truncated decimals coincide (0.197958ms)
+✔ DAG evaluates a shared expression and reduces only at the root (161.71275ms)
+✔ DAG four operations + negation (54.115458ms)
+✔ raw leaf pairs are sign-normalized but not reduced until evaluation (0.295541ms)
+✔ comparison uses cross multiplication: no decimal expansion needed (9.315459ms)
+✔ shared node is evaluated once (memoization) and reused by two parents (0.118333ms)
+✔ bit budget: intermediates over budget mark the result incomplete (0.129584ms)
+✔ bit budget covers products whose intermediates grow (1.50425ms)
+✔ division by zero is reported, not thrown (0.194083ms)
+✔ zero-denominator leaf is rejected at construction (2.970416ms)
+✔ unknown node ids are rejected (0.598292ms)
+✔ canonical form: sign moves to numerator, coprime, zero is 0/1 (12.233459ms)
+✔ zero denominator and non-integer input are rejected (0.335625ms)
+✔ four operations over BigInt (0.29375ms)
+✔ operations normalize signs after subtraction through zero (0.102833ms)
+✔ cross multiplication comparison, including negatives (0.16825ms)
+✔ huge integers never round-trip through Number (0.096916ms)
+✔ gcd (0.046792ms)
+✔ roundToDecimal: explicit modes, exact Fraction results (4.941667ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7934.073375

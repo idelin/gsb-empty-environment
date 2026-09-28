@@ -1,0 +1,15 @@
+{
+  "name": "exact-rational",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Exact rational arithmetic over BigInt with repeating-decimal expansion and a lazy DAG.",
+  "scripts": {
+    "test": "node --test tests/fraction.test.ts tests/decimal.test.ts tests/expr.test.ts tests/exhaustive.test.ts",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}

@@ -1,0 +1,58 @@
+
+=== 1. Canonical fractions (sign on numerator, 0 is 0/1) ===
+1/2
+-1/6
+1/3
+0/1
+
+=== 2. Exact four operations (1/6 and 1/7) ===
+1/6 + 1/7 = 13/42
+1/6 - 1/7 = 1/42
+1/6 * 1/7 = 1/42
+1/6 / 1/7 = 7/6
+
+=== 3. Safe comparison via cross multiplication (100-digit integers) ===
+cmp(A, B) = 1 (no decimal string expanded)
+
+=== 4. Repeating decimals: prefix and period ===
+1/6 = 0.1(6)       kind=repeating prefixLen=1 periodLen=1
+1/7 = 0.(142857)   kind=repeating prefixLen=0 periodLen=6
+1/28 = 0.03(571428) kind=repeating prefixLen=2 periodLen=6
+1/202 = 0.0(0495)  kind=repeating prefixLen=1 periodLen=4
+-1/6 = -0.1(6)     kind=repeating prefixLen=1 periodLen=1
+1/2 = 0.5          kind=terminating prefixLen=1 periodLen=0
+
+=== 5. Cycle located with a bounded state table (no unbounded storage) ===
+locateCycle(1/7) = { kind: 'repeating', preperiodLength: 0, periodLength: 6 }
+1/100003 within 12 digits => 0.000009999700... kind = incomplete
+
+=== 6. Pagination of fractional digits (deep pages use index arithmetic) ===
+1/7 digits 0..5  = 142857
+1/7 digits 6..11 = 142857
+1/7 at offset 1,000,000 (7 digits) = 5714285
+1/8 after end pads zeros = 12500000
+
+=== 7. Exact parse round-trip (truncated '...' is rejected) ===
+0.1(6)       -> 1/6
+0.(142857)   -> 1/7
+0.03(571428) -> 1/28
+-2.5         -> -5/2
+1.(9)        -> 2
+parse 0.333... rejected: Not an exact decimal (truncated "..." is not accepted): 0.333...
+
+=== 8. Explicit rounding rules (result stays an exact Fraction) ===
+1/3 @ 2 digits [trunc] = 33/100
+1/3 @ 2 digits [floor] = 33/100
+1/3 @ 2 digits [ceil] = 17/50
+1/3 @ 2 digits [half-up] = 33/100
+
+=== 9. Lazy-reduction DAG with a bit-length budget ===
+(1/6+1/7)^2 = 169/1764
+compare(1/6, 1/7) on DAG = 1
+2^200 under 64-bit budget: incomplete (over budget -> incomplete)
+2^200 under 1000-bit budget: ok
+a growing product chain @128 bits => incomplete peakBits = 151
+
+=== 10. expandText convenience ===
+3.(142857)
+0.(0434782608695652173913)
