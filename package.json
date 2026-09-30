@@ -1,0 +1,14 @@
+{
+  "name": "pipeline-divergence-analyzer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "精确比较有理数数值计算流水：定位首个舍入/单位/分母口径分歧，支持反事实重算与最小反例搜索",
+  "scripts": {
+    "sample": "node src/sample.ts",
+    "test": "node --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
