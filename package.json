@@ -1,0 +1,10 @@
+{
+  "name": "exact-bound-judge",
+  "version": "0.1.0",
+  "description": "Exact rational classification of error-bounded measurements against linear thresholds",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
