@@ -1,0 +1,70 @@
+{
+  "entries": {
+    "group:left": {
+      "noise": -1,
+      "noisy": 30,
+      "scale": "16"
+    },
+    "group:mid": {
+      "noise": -27,
+      "noisy": 4,
+      "scale": "16"
+    },
+    "group:right": {
+      "noise": -4,
+      "noisy": 26,
+      "scale": "16"
+    },
+    "leaf:a": {
+      "noise": 26,
+      "noisy": 40,
+      "scale": "16"
+    },
+    "leaf:b": {
+      "noise": 20,
+      "noisy": 37,
+      "scale": "16"
+    },
+    "leaf:b0": {
+      "noise": 9,
+      "noisy": 28,
+      "scale": "10"
+    },
+    "leaf:b1": {
+      "noise": -33,
+      "noisy": -14,
+      "scale": "10"
+    },
+    "leaf:b2": {
+      "noise": -6,
+      "noisy": 14,
+      "scale": "10"
+    },
+    "leaf:b3": {
+      "noise": 22,
+      "noisy": 40,
+      "scale": "10"
+    },
+    "leaf:b4": {
+      "noise": -4,
+      "noisy": 9,
+      "scale": "10"
+    },
+    "leaf:c": {
+      "noise": -6,
+      "noisy": 8,
+      "scale": "16"
+    },
+    "leaf:d": {
+      "noise": 0,
+      "noisy": 16,
+      "scale": "16"
+    },
+    "total": {
+      "noise": 22,
+      "noisy": 83,
+      "scale": "16"
+    }
+  },
+  "master_seed": 20261001
+}
