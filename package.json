@@ -1,0 +1,14 @@
+{
+  "name": "optimal-line-breaking",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "最小代价换行: 词宽/伸缩空格/断词罚分的 DP 最优排版, 含增量复用与穷举校验",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "sample": "node --experimental-strip-types src/cli.ts"
+  }
+}
