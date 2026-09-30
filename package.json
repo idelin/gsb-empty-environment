@@ -1,0 +1,11 @@
+{
+  "name": "policy-conflict-analyzer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Detect inputs where allow and deny rules simultaneously apply, over finite enum and integer domains.",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
