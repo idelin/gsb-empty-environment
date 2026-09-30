@@ -1,0 +1,12 @@
+{
+  "name": "pointer-gesture-arbiter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pointer gesture recognition (click/drag/pinch) with arbitration, compensation and a finite trace verifier. No browser layout engine.",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node src/runSample.ts",
+    "verify": "node src/verifyTraces.ts"
+  }
+}

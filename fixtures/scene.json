@@ -1,0 +1,41 @@
+{
+  "spaces": {
+    "root": { "a": 1, "b": 0, "c": 0, "d": 1, "e": 0, "f": 0 },
+    "viewport": { "a": 1, "b": 0, "c": 0, "d": 1, "e": 10, "f": 20 },
+    "zoomed": { "a": 2, "b": 0, "c": 0, "d": 2, "e": -100, "f": 0 }
+  },
+  "glyphMetrics": {
+    "unitsPerEm": 1000,
+    "glyphs": {
+      "H": { "advance": 720 }, "e": { "advance": 501 }, "l": { "advance": 236 },
+      "o": { "advance": 549 }, "O": { "advance": 760 }, "K": { "advance": 680 },
+      "C": { "advance": 700 }, "a": { "advance": 510 }, "n": { "advance": 520 },
+      "c": { "advance": 460 }, "i": { "advance": 230 }, "k": { "advance": 490 },
+      " ": { "advance": 250 }
+    },
+    "defaultAdvance": 500
+  },
+  "tree": {
+    "id": "root",
+    "kind": "box",
+    "rect": { "x": 0, "y": 0, "w": 400, "h": 300 },
+    "children": [
+      {
+        "id": "button",
+        "kind": "box",
+        "rect": { "x": 20, "y": 20, "w": 120, "h": 44 },
+        "children": [
+          { "id": "button-label", "kind": "text", "text": "Click", "fontSize": 16, "rect": { "x": 28, "y": 32, "w": 0, "h": 0 } }
+        ]
+      },
+      {
+        "id": "canvas",
+        "kind": "box",
+        "rect": { "x": 0, "y": 100, "w": 400, "h": 200 },
+        "children": [
+          { "id": "canvas-caption", "kind": "text", "text": "Hello", "fontSize": 12, "rect": { "x": 8, "y": 108, "w": 0, "h": 0 } }
+        ]
+      }
+    ]
+  }
+}
