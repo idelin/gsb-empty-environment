@@ -1,0 +1,24 @@
+{
+  "name": "diamond",
+  "links": [
+    {"id": "AB", "from": "A", "to": "B", "capacity": 10, "bidirectional": "separate"},
+    {"id": "AC", "from": "A", "to": "C", "capacity": 10, "bidirectional": "separate"},
+    {"id": "BD", "from": "B", "to": "D", "capacity": 10, "bidirectional": "separate"},
+    {"id": "CD", "from": "C", "to": "D", "capacity": 10, "bidirectional": "separate"},
+    {"id": "BC", "from": "B", "to": "C", "capacity": 4,  "bidirectional": "shared"},
+    {"id": "DE", "from": "D", "to": "E", "capacity": 10, "bidirectional": "separate"}
+  ],
+  "flows": [
+    {"id": "F1", "src": "A", "dst": "D", "demand": 6, "path": ["AB", "BD"]},
+    {"id": "F2", "src": "A", "dst": "D", "demand": 6, "path": ["AC", "CD"]},
+    {"id": "F3", "src": "B", "dst": "C", "demand": 3, "path": ["BC"]},
+    {"id": "F4", "src": "C", "dst": "B", "demand": 3, "path": ["BC"]},
+    {"id": "F5", "src": "D", "dst": "E", "demand": 2, "path": ["DE"]},
+    {"id": "F6", "src": "A", "dst": "B", "demand": 6, "path": ["AB"]}
+  ],
+  "failureScenarios": [
+    {"id": "S1", "failedLinks": ["AB"]},
+    {"id": "S2", "failedLinks": ["BC", "CD"]}
+  ],
+  "simulation": {"ticks": 500}
+}
