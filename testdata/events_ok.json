@@ -1,0 +1,17 @@
+[
+  {"type":"trace_attrs","trace_id":"t1","ts":0,"attrs":{"env":"prod","cache":"on"}},
+  {"type":"span_start","trace_id":"t1","span_id":"s1","name":"http.request","ts":100},
+  {"type":"span_start","trace_id":"t1","span_id":"s2","parent_id":"s1","name":"auth.token","ts":120},
+  {"type":"span_end","trace_id":"t1","span_id":"s2","ts":200},
+  {"type":"span_start","trace_id":"t1","span_id":"s3","parent_id":"s1","name":"db.query","ts":210},
+  {"type":"span_end","trace_id":"t1","span_id":"s3","ts":300},
+  {"type":"span_start","trace_id":"t1","span_id":"s4","parent_id":"s1","name":"db.query","ts":310},
+  {"type":"span_end","trace_id":"t1","span_id":"s4","ts":390},
+  {"type":"span_start","trace_id":"t1","span_id":"s5","parent_id":"s1","name":"cache.lookup","ts":400},
+  {"type":"span_end","trace_id":"t1","span_id":"s5","ts":440},
+  {"type":"span_start","trace_id":"t1","span_id":"s6","parent_id":"s1","name":"render","ts":500},
+  {"type":"span_start","trace_id":"t1","span_id":"s7","parent_id":"s6","name":"render.template","ts":550},
+  {"type":"span_end","trace_id":"t1","span_id":"s7","ts":700},
+  {"type":"span_end","trace_id":"t1","span_id":"s6","ts":800},
+  {"type":"span_end","trace_id":"t1","span_id":"s1","ts":900}
+]

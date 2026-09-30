@@ -1,0 +1,16 @@
+{
+  "name": "http.request",
+  "children": [
+    {
+      "name": "auth",
+      "kind": "choice",
+      "children": [
+        { "name": "auth.token" },
+        { "name": "auth.basic" }
+      ]
+    },
+    { "name": "db.query", "min": 1, "max": 2 },
+    { "name": "cache.lookup", "when": "cache=on", "min": 0, "max": 1 },
+    { "name": "render", "children": [ { "name": "render.template" } ] }
+  ]
+}
