@@ -1,0 +1,12 @@
+{
+  "capacity": 8,
+  "changes": [
+    {"id": "cache-tune", "benefit": 6, "cost": 3, "depends_on": ["cache-core"]},
+    {"id": "cache-core", "benefit": -1, "cost": 2},
+    {"id": "index-v1", "benefit": 4, "cost": 3},
+    {"id": "index-v2", "benefit": 5, "cost": 3},
+    {"id": "log-prune", "benefit": 2, "cost": 2, "depends_on": ["log-rotate"]},
+    {"id": "log-rotate", "benefit": 3, "cost": 1, "depends_on": ["log-prune"]}
+  ],
+  "mutex_groups": [["index-v1", "index-v2"]]
+}

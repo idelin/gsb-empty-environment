@@ -1,0 +1,8 @@
+{
+  "capacity": 10,
+  "changes": [
+    {"id": "A", "benefit": 5, "cost": 2, "depends_on": ["B"]},
+    {"id": "B", "benefit": -2, "cost": 1}
+  ],
+  "mutex_groups": []
+}
