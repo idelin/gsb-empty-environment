@@ -1,0 +1,17 @@
+{
+  "rules": [
+    {"name": "web",        "prefix": "10.0.0.0/8",    "proto": "tcp",          "ports": "80-80",     "action": "allow"},
+    {"name": "web-alt",    "prefix": "10.0.0.0/8",    "proto": "tcp",          "ports": "8000-8080", "action": "allow"},
+    {"name": "tcp-block",  "prefix": "10.0.0.0/8",    "proto": "tcp",          "ports": "any",       "action": "deny"},
+    {"name": "legacy-app", "prefix": "10.1.2.0/24",   "proto": "tcp",          "ports": "8080-8080", "action": "allow"},
+    {"name": "dns",        "prefix": "10.0.0.0/8",    "proto": "udp",          "ports": "53",        "action": "allow"},
+    {"name": "lab-low",    "prefix": "172.16.0.0/16", "proto": "tcp",          "ports": "0-1023",    "action": "deny"},
+    {"name": "lab-high",   "prefix": "172.16.0.0/16", "proto": "tcp",          "ports": "1024-65535","action": "deny"},
+    {"name": "lab-open",   "prefix": "172.16.0.0/16", "proto": "tcp",          "ports": "any",       "action": "allow"},
+    {"name": "v6-web",     "prefix": "2001:db8::/32", "proto": "tcp",          "ports": "443",       "action": "allow"},
+    {"name": "v4-catchall","prefix": "0.0.0.0/0",     "proto": "any",          "ports": "any",       "action": "deny"},
+    {"name": "ghost",      "prefix": "192.0.2.0/24",  "proto": ["udp","tcp"],  "ports": "53",        "action": "allow"},
+    {"name": "v6-catchall","prefix": "::/0",          "proto": "any",          "ports": "any",       "action": "deny"}
+  ],
+  "sim": {"serviceTicks": 1, "linkDelay": 2, "bytesPerTick": 64, "queueCapacity": 8}
+}
