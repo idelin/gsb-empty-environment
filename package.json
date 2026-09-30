@@ -1,0 +1,14 @@
+{
+  "name": "plan-type-inference",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "字段投影/改名/计算/删除计划的静态类型推导、证书、枚举反例检查与增量失效",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node examples/run-sample.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}
