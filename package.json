@@ -1,0 +1,11 @@
+{
+  "name": "tier-select-bnb",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Exact-arithmetic tier selection under a worst-case error budget (branch and bound + certificates)",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node src/cli.ts samples/demo.json --exhaustive",
+    "demo:budget": "node src/cli.ts samples/demo.json --budget=40"
+  }
+}

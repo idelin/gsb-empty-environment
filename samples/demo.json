@@ -1,0 +1,55 @@
+{
+  "name": "sensor-chain-demo",
+  "errorBudget": "0.05",
+  "sources": [
+    { "id": "cal", "kind": "shared" },
+    { "id": "n_sensor", "kind": "independent" },
+    { "id": "n_amp", "kind": "independent" },
+    { "id": "n_adc", "kind": "independent" },
+    { "id": "n_ref", "kind": "independent" }
+  ],
+  "components": [
+    {
+      "id": "sensor",
+      "tiers": [
+        { "id": "low", "cost": "8", "error": "0.020" },
+        { "id": "mid", "cost": "20", "error": "0.008" },
+        { "id": "high", "cost": "55", "error": "0.002" }
+      ],
+      "sensitivities": { "cal": "1.2", "n_sensor": "0.6" }
+    },
+    {
+      "id": "amp",
+      "tiers": [
+        { "id": "low", "cost": "5", "error": "0.015" },
+        { "id": "mid", "cost": "15", "error": "0.006" },
+        { "id": "high", "cost": "40", "error": "0.0015" }
+      ],
+      "sensitivities": { "cal": "-0.8", "n_amp": "1.0" }
+    },
+    {
+      "id": "adc",
+      "tiers": [
+        { "id": "low", "cost": "6", "error": "0.012" },
+        { "id": "mid", "cost": "18", "error": "0.005" },
+        { "id": "high", "cost": "50", "error": "0.001" }
+      ],
+      "sensitivities": { "cal": "0.5", "n_adc": "0.9" }
+    },
+    {
+      "id": "ref",
+      "tiers": [
+        { "id": "low", "cost": "4", "error": "0.010" },
+        { "id": "mid", "cost": "12", "error": "0.004" },
+        { "id": "high", "cost": "30", "error": "0.001" }
+      ],
+      "sensitivities": { "cal": "1.0", "n_ref": "0.4" }
+    }
+  ],
+  "exclusions": [
+    { "a": { "component": "sensor", "tier": "low" }, "b": { "component": "adc", "tier": "high" } }
+  ],
+  "dependencies": [
+    { "if": { "component": "amp", "tier": "high" }, "requires": { "component": "ref", "tier": "high" } }
+  ]
+}

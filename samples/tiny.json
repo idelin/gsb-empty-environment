@@ -1,0 +1,29 @@
+{
+  "name": "tiny-two-component",
+  "errorBudget": "0.03",
+  "sources": [
+    { "id": "cal", "kind": "shared" },
+    { "id": "n_a", "kind": "independent" },
+    { "id": "n_b", "kind": "independent" }
+  ],
+  "components": [
+    {
+      "id": "a",
+      "tiers": [
+        { "id": "cheap", "cost": "3", "error": "0.02" },
+        { "id": "precise", "cost": "9", "error": "0.005" }
+      ],
+      "sensitivities": { "cal": "1.5", "n_a": "-0.5" }
+    },
+    {
+      "id": "b",
+      "tiers": [
+        { "id": "cheap", "cost": "4", "error": "0.015" },
+        { "id": "precise", "cost": "7", "error": "0.004" }
+      ],
+      "sensitivities": { "cal": "-1.0", "n_b": "0.8" }
+    }
+  ],
+  "exclusions": [],
+  "dependencies": []
+}
