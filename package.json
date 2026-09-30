@@ -1,0 +1,14 @@
+{
+  "name": "exact-window-stats",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "滑窗精确统计（BigInt 有理数）：sum / mean / variance，支持增删、undo、显式舍入",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
