@@ -1,0 +1,12 @@
+{
+  "name": "recovery-during-suppression",
+  "repeat_interval": "10m",
+  "steps": [
+    {"at": "2026-01-01T00:00:00Z", "suppress": true},
+    {"at": "2026-01-01T00:01:00Z", "source": "cache-1", "state": "FIRING"},
+    {"at": "2026-01-01T00:03:00Z", "source": "cache-1", "state": "OK"},
+    {"at": "2026-01-01T00:05:00Z", "suppress": false},
+    {"at": "2026-01-01T00:06:00Z", "source": "cache-1", "state": "FIRING"},
+    {"at": "2026-01-01T00:07:00Z", "source": "cache-1", "state": "OK"}
+  ]
+}

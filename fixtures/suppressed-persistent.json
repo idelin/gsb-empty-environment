@@ -1,0 +1,13 @@
+{
+  "name": "suppressed-persistent-fault",
+  "repeat_interval": "10m",
+  "steps": [
+    {"at": "2026-01-01T00:00:00Z", "suppress": true},
+    {"at": "2026-01-01T00:01:00Z", "source": "api-1", "state": "FIRING"},
+    {"at": "2026-01-01T00:02:00Z", "source": "api-1", "state": "FIRING"},
+    {"at": "2026-01-01T00:10:00Z", "tick": true},
+    {"at": "2026-01-01T00:15:00Z", "suppress": false},
+    {"at": "2026-01-01T00:26:00Z", "tick": true},
+    {"at": "2026-01-01T00:30:00Z", "source": "api-1", "state": "OK"}
+  ]
+}

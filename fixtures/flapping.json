@@ -1,0 +1,14 @@
+{
+  "name": "flapping-merge-with-repeats",
+  "repeat_interval": "10m",
+  "steps": [
+    {"at": "2026-01-01T00:00:00Z", "source": "db-1", "state": "FIRING"},
+    {"at": "2026-01-01T00:01:00Z", "source": "db-1", "state": "FIRING"},
+    {"at": "2026-01-01T00:02:00Z", "source": "db-1", "state": "FIRING"},
+    {"at": "2026-01-01T00:10:00Z", "tick": true},
+    {"at": "2026-01-01T00:20:00Z", "tick": true},
+    {"at": "2026-01-01T00:25:00Z", "source": "db-1", "state": "OK"},
+    {"at": "2026-01-01T00:30:00Z", "source": "db-1", "state": "FIRING"},
+    {"at": "2026-01-01T00:31:00Z", "source": "db-1", "state": "OK"}
+  ]
+}
