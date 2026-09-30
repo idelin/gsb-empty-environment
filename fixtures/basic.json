@@ -1,0 +1,36 @@
+{
+  "observationEnd": "2026-01-01T01:00:00Z",
+  "config": {
+    "maxLead": "30s",
+    "maxLag": "300s",
+    "symptomClasses": {
+      "disk_latency": "disk",
+      "io_wait": "disk"
+    },
+    "entityGroups": {
+      "cache-1": "cache",
+      "cache-2": "cache"
+    },
+    "earlyAlertAsFalsePositive": false
+  },
+  "faults": [
+    {"id": "f1", "entity": "web-1", "symptom": "cpu_spike", "start": "2026-01-01T00:00:10Z", "end": "2026-01-01T00:05:00Z"},
+    {"id": "f2", "entity": "web-1", "symptom": "cpu_spike", "start": "2026-01-01T00:10:00Z", "end": "2026-01-01T00:15:00Z"},
+    {"id": "f3", "entity": "db-1", "symptom": "disk_latency", "start": "2026-01-01T00:20:00Z", "end": "2026-01-01T00:25:00Z"},
+    {"id": "f4", "entity": "cache-1", "symptom": "mem_pressure", "start": "2026-01-01T00:30:00Z", "end": "2026-01-01T00:35:00Z"},
+    {"id": "f5", "entity": "web-2", "symptom": "cpu_spike", "start": "2026-01-01T00:40:00Z"},
+    {"id": "f6", "entity": "db-2", "symptom": "disk_latency", "start": "2026-01-01T00:50:00Z", "end": "2026-01-01T00:55:00Z"}
+  ],
+  "alerts": [
+    {"id": "a1", "entity": "web-1", "symptom": "cpu_spike", "time": "2026-01-01T00:00:45Z"},
+    {"id": "a2", "entity": "web-1", "symptom": "cpu_spike", "time": "2026-01-01T00:00:50Z"},
+    {"id": "a3", "entity": "web-1", "symptom": "cpu_spike", "time": "2026-01-01T00:09:55Z"},
+    {"id": "a4", "entity": "db-1", "symptom": "io_wait", "time": "2026-01-01T00:20:30Z"},
+    {"id": "a5", "entity": "cache-2", "symptom": "mem_pressure", "time": "2026-01-01T00:30:20Z"},
+    {"id": "a6", "entity": "web-9", "symptom": "cpu_spike", "time": "2026-01-01T00:41:00Z"},
+    {"id": "a7", "entity": "db-1", "symptom": "disk_latency", "time": "2026-01-01T00:20:10Z"}
+  ],
+  "corrections": [
+    {"alertId": "a2", "newTime": "2026-01-01T00:09:50Z"}
+  ]
+}
