@@ -1,0 +1,7 @@
+{
+  "events": {"A": [0, 2], "B": [1, 3]},
+  "constraints": [
+    {"upstream": "A", "downstream": "B", "delay": 2},
+    {"upstream": "B", "downstream": "A", "delay": 1}
+  ]
+}
