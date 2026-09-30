@@ -1,0 +1,13 @@
+{
+  "name": "exact-units",
+  "version": "0.1.0",
+  "description": "精确单位换算：BigInt 有理数 + 量纲向量 + 转换图矛盾检测 + 绝对量/差量类型",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
