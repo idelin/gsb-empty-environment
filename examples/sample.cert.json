@@ -1,0 +1,791 @@
+{
+  "format": "wce-bnb-cert/1",
+  "problemHash": "2fa52c58b8443487",
+  "objective": "minimize-total-grade-cost",
+  "maxNodes": 1000000,
+  "status": "optimal",
+  "upperBound": "27",
+  "lowerBound": "27",
+  "bestAssignment": {
+    "ref": "prec",
+    "sensor": "b",
+    "amp": "mid",
+    "adc": "fast",
+    "psu": "hi"
+  },
+  "nodesExplored": 56,
+  "budgetExhausted": false,
+  "log": [
+    {
+      "node": 1,
+      "depth": 0,
+      "assigned": {},
+      "costLb": "11",
+      "hullLo": "-11/100",
+      "hullHi": "1/10",
+      "action": "expand"
+    },
+    {
+      "node": 2,
+      "depth": 1,
+      "assigned": {
+        "amp": "cheap"
+      },
+      "costLb": "16",
+      "hullLo": "-11/100",
+      "hullHi": "1/10",
+      "action": "expand"
+    },
+    {
+      "node": 3,
+      "depth": 2,
+      "assigned": {
+        "amp": "cheap",
+        "adc": "slow"
+      },
+      "costLb": "16",
+      "hullLo": "-11/100",
+      "hullHi": "1/10",
+      "action": "expand"
+    },
+    {
+      "node": 4,
+      "depth": 3,
+      "assigned": {
+        "ref": "std",
+        "amp": "cheap",
+        "adc": "slow"
+      },
+      "costLb": "16",
+      "hullLo": "-11/100",
+      "hullHi": "1/10",
+      "action": "expand"
+    },
+    {
+      "node": 5,
+      "depth": 4,
+      "assigned": {
+        "ref": "std",
+        "sensor": "a",
+        "amp": "cheap",
+        "adc": "slow"
+      },
+      "costLb": "16",
+      "hullLo": "-11/100",
+      "hullHi": "1/10",
+      "action": "expand"
+    },
+    {
+      "node": 6,
+      "depth": 5,
+      "assigned": {
+        "ref": "std",
+        "sensor": "a",
+        "amp": "cheap",
+        "adc": "slow",
+        "psu": "lo"
+      },
+      "costLb": "16",
+      "hullLo": "-11/100",
+      "hullHi": "1/10",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 7,
+      "depth": 5,
+      "assigned": {
+        "ref": "std",
+        "sensor": "a",
+        "amp": "cheap",
+        "adc": "slow",
+        "psu": "hi"
+      },
+      "costLb": "19",
+      "hullLo": "-11/100",
+      "hullHi": "1/10",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 8,
+      "depth": 4,
+      "assigned": {
+        "ref": "std",
+        "sensor": "b",
+        "amp": "cheap",
+        "adc": "slow"
+      },
+      "costLb": "21",
+      "hullLo": "-99/1000",
+      "hullHi": "69/1000",
+      "action": "expand"
+    },
+    {
+      "node": 9,
+      "depth": 5,
+      "assigned": {
+        "ref": "std",
+        "sensor": "b",
+        "amp": "cheap",
+        "adc": "slow",
+        "psu": "lo"
+      },
+      "costLb": "21",
+      "hullLo": "-99/1000",
+      "hullHi": "69/1000",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 10,
+      "depth": 5,
+      "assigned": {
+        "ref": "std",
+        "sensor": "b",
+        "amp": "cheap",
+        "adc": "slow",
+        "psu": "hi"
+      },
+      "costLb": "24",
+      "hullLo": "-99/1000",
+      "hullHi": "69/1000",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 11,
+      "depth": 3,
+      "assigned": {
+        "ref": "prec",
+        "amp": "cheap",
+        "adc": "slow"
+      },
+      "costLb": "21",
+      "hullLo": "-2/25",
+      "hullHi": "19/200",
+      "action": "expand"
+    },
+    {
+      "node": 12,
+      "depth": 4,
+      "assigned": {
+        "ref": "prec",
+        "sensor": "a",
+        "amp": "cheap",
+        "adc": "slow"
+      },
+      "costLb": "21",
+      "hullLo": "-2/25",
+      "hullHi": "19/200",
+      "action": "expand"
+    },
+    {
+      "node": 13,
+      "depth": 5,
+      "assigned": {
+        "ref": "prec",
+        "sensor": "a",
+        "amp": "cheap",
+        "adc": "slow",
+        "psu": "lo"
+      },
+      "costLb": "21",
+      "hullLo": "-2/25",
+      "hullHi": "19/200",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 14,
+      "depth": 5,
+      "assigned": {
+        "ref": "prec",
+        "sensor": "a",
+        "amp": "cheap",
+        "adc": "slow",
+        "psu": "hi"
+      },
+      "costLb": "24",
+      "hullLo": "-2/25",
+      "hullHi": "19/200",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 15,
+      "depth": 4,
+      "assigned": {
+        "ref": "prec",
+        "sensor": "b",
+        "amp": "cheap",
+        "adc": "slow"
+      },
+      "costLb": "26",
+      "hullLo": "-69/1000",
+      "hullHi": "8/125",
+      "action": "expand"
+    },
+    {
+      "node": 16,
+      "depth": 5,
+      "assigned": {
+        "ref": "prec",
+        "sensor": "b",
+        "amp": "cheap",
+        "adc": "slow",
+        "psu": "lo"
+      },
+      "costLb": "26",
+      "hullLo": "-69/1000",
+      "hullHi": "8/125",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 17,
+      "depth": 5,
+      "assigned": {
+        "ref": "prec",
+        "sensor": "b",
+        "amp": "cheap",
+        "adc": "slow",
+        "psu": "hi"
+      },
+      "costLb": "29",
+      "hullLo": "-69/1000",
+      "hullHi": "8/125",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 18,
+      "depth": 1,
+      "assigned": {
+        "amp": "mid"
+      },
+      "costLb": "14",
+      "hullLo": "-43/500",
+      "hullHi": "19/250",
+      "action": "expand"
+    },
+    {
+      "node": 19,
+      "depth": 2,
+      "assigned": {
+        "amp": "mid",
+        "adc": "fast"
+      },
+      "costLb": "17",
+      "hullLo": "-41/500",
+      "hullHi": "9/125",
+      "action": "expand"
+    },
+    {
+      "node": 20,
+      "depth": 3,
+      "assigned": {
+        "ref": "std",
+        "amp": "mid",
+        "adc": "fast"
+      },
+      "costLb": "17",
+      "hullLo": "-41/500",
+      "hullHi": "9/125",
+      "action": "expand"
+    },
+    {
+      "node": 21,
+      "depth": 4,
+      "assigned": {
+        "ref": "std",
+        "sensor": "a",
+        "amp": "mid",
+        "adc": "fast"
+      },
+      "costLb": "17",
+      "hullLo": "-41/500",
+      "hullHi": "9/125",
+      "action": "expand"
+    },
+    {
+      "node": 22,
+      "depth": 5,
+      "assigned": {
+        "ref": "std",
+        "sensor": "a",
+        "amp": "mid",
+        "adc": "fast",
+        "psu": "hi"
+      },
+      "costLb": "17",
+      "hullLo": "-41/500",
+      "hullHi": "9/125",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 23,
+      "depth": 4,
+      "assigned": {
+        "ref": "std",
+        "sensor": "b",
+        "amp": "mid",
+        "adc": "fast"
+      },
+      "costLb": "22",
+      "hullLo": "-71/1000",
+      "hullHi": "41/1000",
+      "action": "expand"
+    },
+    {
+      "node": 24,
+      "depth": 5,
+      "assigned": {
+        "ref": "std",
+        "sensor": "b",
+        "amp": "mid",
+        "adc": "fast",
+        "psu": "hi"
+      },
+      "costLb": "22",
+      "hullLo": "-71/1000",
+      "hullHi": "41/1000",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 25,
+      "depth": 3,
+      "assigned": {
+        "ref": "prec",
+        "amp": "mid",
+        "adc": "fast"
+      },
+      "costLb": "22",
+      "hullLo": "-13/250",
+      "hullHi": "67/1000",
+      "action": "expand"
+    },
+    {
+      "node": 26,
+      "depth": 4,
+      "assigned": {
+        "ref": "prec",
+        "sensor": "a",
+        "amp": "mid",
+        "adc": "fast"
+      },
+      "costLb": "22",
+      "hullLo": "-13/250",
+      "hullHi": "67/1000",
+      "action": "expand"
+    },
+    {
+      "node": 27,
+      "depth": 5,
+      "assigned": {
+        "ref": "prec",
+        "sensor": "a",
+        "amp": "mid",
+        "adc": "fast",
+        "psu": "hi"
+      },
+      "costLb": "22",
+      "hullLo": "-13/250",
+      "hullHi": "67/1000",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 28,
+      "depth": 4,
+      "assigned": {
+        "ref": "prec",
+        "sensor": "b",
+        "amp": "mid",
+        "adc": "fast"
+      },
+      "costLb": "27",
+      "hullLo": "-41/1000",
+      "hullHi": "9/250",
+      "action": "expand"
+    },
+    {
+      "node": 29,
+      "depth": 5,
+      "assigned": {
+        "ref": "prec",
+        "sensor": "b",
+        "amp": "mid",
+        "adc": "fast",
+        "psu": "hi"
+      },
+      "costLb": "27",
+      "hullLo": "-41/1000",
+      "hullHi": "9/250",
+      "action": "incumbent"
+    },
+    {
+      "node": 30,
+      "depth": 2,
+      "assigned": {
+        "amp": "mid",
+        "adc": "slow"
+      },
+      "costLb": "19",
+      "hullLo": "-43/500",
+      "hullHi": "19/250",
+      "action": "expand"
+    },
+    {
+      "node": 31,
+      "depth": 3,
+      "assigned": {
+        "ref": "std",
+        "amp": "mid",
+        "adc": "slow"
+      },
+      "costLb": "19",
+      "hullLo": "-43/500",
+      "hullHi": "19/250",
+      "action": "expand"
+    },
+    {
+      "node": 32,
+      "depth": 4,
+      "assigned": {
+        "ref": "std",
+        "sensor": "a",
+        "amp": "mid",
+        "adc": "slow"
+      },
+      "costLb": "19",
+      "hullLo": "-43/500",
+      "hullHi": "19/250",
+      "action": "expand"
+    },
+    {
+      "node": 33,
+      "depth": 5,
+      "assigned": {
+        "ref": "std",
+        "sensor": "a",
+        "amp": "mid",
+        "adc": "slow",
+        "psu": "lo"
+      },
+      "costLb": "19",
+      "hullLo": "-43/500",
+      "hullHi": "19/250",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 34,
+      "depth": 5,
+      "assigned": {
+        "ref": "std",
+        "sensor": "a",
+        "amp": "mid",
+        "adc": "slow",
+        "psu": "hi"
+      },
+      "costLb": "22",
+      "hullLo": "-43/500",
+      "hullHi": "19/250",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 35,
+      "depth": 4,
+      "assigned": {
+        "ref": "std",
+        "sensor": "b",
+        "amp": "mid",
+        "adc": "slow"
+      },
+      "costLb": "24",
+      "hullLo": "-3/40",
+      "hullHi": "9/200",
+      "action": "expand"
+    },
+    {
+      "node": 36,
+      "depth": 5,
+      "assigned": {
+        "ref": "std",
+        "sensor": "b",
+        "amp": "mid",
+        "adc": "slow",
+        "psu": "lo"
+      },
+      "costLb": "24",
+      "hullLo": "-3/40",
+      "hullHi": "9/200",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 37,
+      "depth": 5,
+      "assigned": {
+        "ref": "std",
+        "sensor": "b",
+        "amp": "mid",
+        "adc": "slow",
+        "psu": "hi"
+      },
+      "costLb": "27",
+      "hullLo": "-3/40",
+      "hullHi": "9/200",
+      "action": "prune-cost"
+    },
+    {
+      "node": 38,
+      "depth": 3,
+      "assigned": {
+        "ref": "prec",
+        "amp": "mid",
+        "adc": "slow"
+      },
+      "costLb": "24",
+      "hullLo": "-7/125",
+      "hullHi": "71/1000",
+      "action": "expand"
+    },
+    {
+      "node": 39,
+      "depth": 4,
+      "assigned": {
+        "ref": "prec",
+        "sensor": "a",
+        "amp": "mid",
+        "adc": "slow"
+      },
+      "costLb": "24",
+      "hullLo": "-7/125",
+      "hullHi": "71/1000",
+      "action": "expand"
+    },
+    {
+      "node": 40,
+      "depth": 5,
+      "assigned": {
+        "ref": "prec",
+        "sensor": "a",
+        "amp": "mid",
+        "adc": "slow",
+        "psu": "lo"
+      },
+      "costLb": "24",
+      "hullLo": "-7/125",
+      "hullHi": "71/1000",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 41,
+      "depth": 5,
+      "assigned": {
+        "ref": "prec",
+        "sensor": "a",
+        "amp": "mid",
+        "adc": "slow",
+        "psu": "hi"
+      },
+      "costLb": "27",
+      "hullLo": "-7/125",
+      "hullHi": "71/1000",
+      "action": "prune-cost"
+    },
+    {
+      "node": 42,
+      "depth": 4,
+      "assigned": {
+        "ref": "prec",
+        "sensor": "b",
+        "amp": "mid",
+        "adc": "slow"
+      },
+      "costLb": "29",
+      "hullLo": "-9/200",
+      "hullHi": "1/25",
+      "action": "prune-cost"
+    },
+    {
+      "node": 43,
+      "depth": 1,
+      "assigned": {
+        "amp": "hi"
+      },
+      "costLb": "20",
+      "hullLo": "-37/500",
+      "hullHi": "8/125",
+      "action": "expand"
+    },
+    {
+      "node": 44,
+      "depth": 2,
+      "assigned": {
+        "amp": "hi",
+        "adc": "fast"
+      },
+      "costLb": "23",
+      "hullLo": "-7/100",
+      "hullHi": "3/50",
+      "action": "expand"
+    },
+    {
+      "node": 45,
+      "depth": 3,
+      "assigned": {
+        "ref": "std",
+        "amp": "hi",
+        "adc": "fast"
+      },
+      "costLb": "23",
+      "hullLo": "-7/100",
+      "hullHi": "3/50",
+      "action": "expand"
+    },
+    {
+      "node": 46,
+      "depth": 4,
+      "assigned": {
+        "ref": "std",
+        "sensor": "a",
+        "amp": "hi",
+        "adc": "fast"
+      },
+      "costLb": "23",
+      "hullLo": "-7/100",
+      "hullHi": "3/50",
+      "action": "expand"
+    },
+    {
+      "node": 47,
+      "depth": 5,
+      "assigned": {
+        "ref": "std",
+        "sensor": "a",
+        "amp": "hi",
+        "adc": "fast",
+        "psu": "hi"
+      },
+      "costLb": "23",
+      "hullLo": "-7/100",
+      "hullHi": "3/50",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 48,
+      "depth": 4,
+      "assigned": {
+        "ref": "std",
+        "sensor": "b",
+        "amp": "hi",
+        "adc": "fast"
+      },
+      "costLb": "28",
+      "hullLo": "-59/1000",
+      "hullHi": "29/1000",
+      "action": "prune-cost"
+    },
+    {
+      "node": 49,
+      "depth": 3,
+      "assigned": {
+        "ref": "prec",
+        "amp": "hi",
+        "adc": "fast"
+      },
+      "costLb": "28",
+      "hullLo": "-1/25",
+      "hullHi": "11/200",
+      "action": "prune-cost"
+    },
+    {
+      "node": 50,
+      "depth": 2,
+      "assigned": {
+        "amp": "hi",
+        "adc": "slow"
+      },
+      "costLb": "25",
+      "hullLo": "-37/500",
+      "hullHi": "8/125",
+      "action": "expand"
+    },
+    {
+      "node": 51,
+      "depth": 3,
+      "assigned": {
+        "ref": "std",
+        "amp": "hi",
+        "adc": "slow"
+      },
+      "costLb": "25",
+      "hullLo": "-37/500",
+      "hullHi": "8/125",
+      "action": "expand"
+    },
+    {
+      "node": 52,
+      "depth": 4,
+      "assigned": {
+        "ref": "std",
+        "sensor": "a",
+        "amp": "hi",
+        "adc": "slow"
+      },
+      "costLb": "25",
+      "hullLo": "-37/500",
+      "hullHi": "8/125",
+      "action": "expand"
+    },
+    {
+      "node": 53,
+      "depth": 5,
+      "assigned": {
+        "ref": "std",
+        "sensor": "a",
+        "amp": "hi",
+        "adc": "slow",
+        "psu": "lo"
+      },
+      "costLb": "25",
+      "hullLo": "-37/500",
+      "hullHi": "8/125",
+      "action": "leaf-infeasible"
+    },
+    {
+      "node": 54,
+      "depth": 5,
+      "assigned": {
+        "ref": "std",
+        "sensor": "a",
+        "amp": "hi",
+        "adc": "slow",
+        "psu": "hi"
+      },
+      "costLb": "28",
+      "hullLo": "-37/500",
+      "hullHi": "8/125",
+      "action": "prune-cost"
+    },
+    {
+      "node": 55,
+      "depth": 4,
+      "assigned": {
+        "ref": "std",
+        "sensor": "b",
+        "amp": "hi",
+        "adc": "slow"
+      },
+      "costLb": "30",
+      "hullLo": "-63/1000",
+      "hullHi": "33/1000",
+      "action": "prune-cost"
+    },
+    {
+      "node": 56,
+      "depth": 3,
+      "assigned": {
+        "ref": "prec",
+        "amp": "hi",
+        "adc": "slow"
+      },
+      "costLb": "30",
+      "hullLo": "-11/250",
+      "hullHi": "59/1000",
+      "action": "prune-cost"
+    }
+  ]
+}

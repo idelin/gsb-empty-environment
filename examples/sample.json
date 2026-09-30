@@ -1,0 +1,51 @@
+{
+  "errorLimit": "0.05",
+  "components": [
+    {
+      "id": "ref",
+      "sensitivities": { "cal": "1" },
+      "grades": [
+        { "id": "std",  "cost": "4", "errors": { "cal": ["-0.04", "0.01"] } },
+        { "id": "prec", "cost": "9", "errors": { "cal": ["-0.01", "0.005"] } }
+      ]
+    },
+    {
+      "id": "sensor",
+      "sensitivities": { "cal": "-1", "ind_sen": "1" },
+      "grades": [
+        { "id": "a", "cost": "3", "errors": { "cal": ["-0.03", "0.01"], "ind_sen": ["-0.01", "0.01"] } },
+        { "id": "b", "cost": "8", "errors": { "cal": ["-0.005", "0.005"], "ind_sen": ["-0.004", "0.004"] } }
+      ]
+    },
+    {
+      "id": "amp",
+      "sensitivities": { "temp": "2" },
+      "grades": [
+        { "id": "cheap", "cost": "2",  "errors": { "temp": ["-0.02", "0.02"] } },
+        { "id": "mid",   "cost": "5",  "errors": { "temp": ["-0.008", "0.008"] } },
+        { "id": "hi",    "cost": "11", "errors": { "temp": ["-0.002", "0.002"] } }
+      ]
+    },
+    {
+      "id": "adc",
+      "sensitivities": { "ind_adc": "1" },
+      "grades": [
+        { "id": "slow", "cost": "6", "errors": { "ind_adc": ["-0.01", "0.01"] } },
+        { "id": "fast", "cost": "1", "errors": { "ind_adc": ["-0.006", "0.006"] } }
+      ]
+    },
+    {
+      "id": "psu",
+      "grades": [
+        { "id": "lo", "cost": "1" },
+        { "id": "hi", "cost": "4" }
+      ]
+    }
+  ],
+  "exclusions": [
+    { "a": { "component": "amp", "grade": "cheap" }, "b": { "component": "adc", "grade": "fast" } }
+  ],
+  "dependencies": [
+    { "if": { "component": "adc", "grade": "fast" }, "requires": { "component": "psu", "grade": "hi" } }
+  ]
+}

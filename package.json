@@ -1,0 +1,13 @@
+{
+  "name": "wce-bnb",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Min-cost grade selection under a worst-case correlated error bound. Exact BigInt rationals, branch & bound, certificates.",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "solve": "node src/cli.ts solve examples/sample.json --cert examples/sample.cert.json",
+    "verify": "node src/cli.ts verify examples/sample.json examples/sample.cert.json",
+    "exhaustive": "node src/cli.ts exhaustive examples/sample.json"
+  }
+}
