@@ -1,0 +1,14 @@
+{
+  "name": "ladder-piecewise",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Exact piecewise functions composed from tiered ladder rules (progressive vs flat), with explicit rounding anchors, inversion, and rational-grid validation. Pure numeric library: no order/billing integration.",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node samples/demo.ts"
+  }
+}
