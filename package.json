@@ -1,0 +1,13 @@
+{
+  "name": "error-digest",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
