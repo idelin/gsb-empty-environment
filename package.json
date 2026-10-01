@@ -1,0 +1,14 @@
+{
+  "name": "exact-uncertainty-propagation",
+  "version": "0.1.0",
+  "description": "Exact (BigInt-rational) uncertainty propagation: independent linear, covariance-matrix, and shared-error-source models",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node examples/sample.ts"
+  }
+}
