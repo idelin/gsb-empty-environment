@@ -1,0 +1,13 @@
+{
+  "name": "arithmetic-coding",
+  "version": "1.0.0",
+  "description": "Probability-distribution-based arithmetic coding with BigInt rational interval state",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/strip-types.mjs",
+    "test": "node scripts/strip-types.mjs && node scripts/run-tests.mjs",
+    "test:node18": "node scripts/strip-types.mjs && node --test dist/test/",
+    "demo": "node scripts/strip-types.mjs && node dist/examples/demo.js"
+  }
+}
