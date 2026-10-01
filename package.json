@@ -1,0 +1,14 @@
+{
+  "name": "directional-focus-nav",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Directional focus navigation over nested scroll containers and modal regions, with async mount/scroll orchestration. No browser layout engine required.",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "sample": "node samples/replay-sample.ts"
+  }
+}
