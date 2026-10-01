@@ -1,0 +1,19 @@
+{
+  "simTicks": 200,
+  "links": [
+    {"id": "L1", "from": "A", "to": "B", "capacity": 10, "mode": "shared"},
+    {"id": "L2", "from": "B", "to": "C", "capacity": 8,  "mode": "separate"},
+    {"id": "L3", "from": "A", "to": "D", "capacity": 6,  "mode": "unidirectional"},
+    {"id": "L4", "from": "D", "to": "C", "capacity": 6,  "mode": "shared"}
+  ],
+  "flows": [
+    {"id": "F1", "src": "A", "dst": "C", "demand": 5, "route": ["A", "B", "C"]},
+    {"id": "F2", "src": "B", "dst": "C", "demand": 4, "route": ["B", "C"]},
+    {"id": "F3", "src": "C", "dst": "A", "demand": 3, "route": ["C", "B", "A"]},
+    {"id": "F4", "src": "A", "dst": "C", "demand": 4, "route": ["A", "D", "C"]}
+  ],
+  "failures": [
+    {"name": "cut-L1", "links": ["L1"]},
+    {"name": "cut-L4", "links": ["L4"]}
+  ]
+}

@@ -1,0 +1,65 @@
+=== Scenario: baseline ===
+  Unreachable flows: none
+  Link loads (5 capacity budgets):
+    L1 [A<->B shared]            cap= 10.00 load=  8.00  ok
+      flows: F1(5.00) F3(3.00)
+    L2 [B->C separate]           cap=  8.00 load=  9.00  OVERLOAD excess=1.00
+      flows: F1(5.00) F2(4.00)
+      minimal overload flow set (remove to fix): {F2}
+    L2 [C->B separate]           cap=  8.00 load=  3.00  ok
+      flows: F3(3.00)
+    L3 [A->D]                    cap=  6.00 load=  4.00  ok
+      flows: F4(4.00)
+    L4 [D<->C shared]            cap=  6.00 load=  4.00  ok
+      flows: F4(4.00)
+  Redundancy (link-disjoint backup path):
+    F1: backup available: A->D->C
+    F2: backup available: B->A->D->C
+    F3: NO link-disjoint backup path
+    F4: backup available: A->B->C
+  Simulation (200 ticks, discrete event model):
+    link L1|shared    received=1600 forwarded=1597 maxBacklog=0 endBacklog=3
+    link L2|fwd       received=1800 forwarded=1600 maxBacklog=200 endBacklog=200  CONGESTED (backlog keeps growing)
+    link L2|rev       received=600 forwarded=600 maxBacklog=0 endBacklog=0
+    link L3|fwd       received=800 forwarded=800 maxBacklog=0 endBacklog=0
+    link L4|shared    received=800 forwarded=800 maxBacklog=0 endBacklog=0
+    flow F1: injected=1000 delivered=888 inFlightOrQueued=112
+    flow F2: injected=800 delivered=712 inFlightOrQueued=88
+    flow F3: injected=600 delivered=597 inFlightOrQueued=3
+    flow F4: injected=800 delivered=800 inFlightOrQueued=0
+=== Scenario: failure: cut-L1 (links down: L1) ===
+  UNREACHABLE flow F1 (A->C demand=5.00): no usable link for hop A->B
+  UNREACHABLE flow F3 (C->A demand=3.00): no usable link for hop B->A
+  Link loads (3 capacity budgets):
+    L2 [B->C separate]           cap=  8.00 load=  4.00  ok
+      flows: F2(4.00)
+    L3 [A->D]                    cap=  6.00 load=  4.00  ok
+      flows: F4(4.00)
+    L4 [D<->C shared]            cap=  6.00 load=  4.00  ok
+      flows: F4(4.00)
+  Simulation (200 ticks, discrete event model):
+    link L2|fwd       received=800 forwarded=800 maxBacklog=0 endBacklog=0
+    link L3|fwd       received=800 forwarded=800 maxBacklog=0 endBacklog=0
+    link L4|shared    received=800 forwarded=800 maxBacklog=0 endBacklog=0
+    flow F1: unreachable, 0 packets injected (not a success)
+    flow F2: injected=800 delivered=800 inFlightOrQueued=0
+    flow F3: unreachable, 0 packets injected (not a success)
+    flow F4: injected=800 delivered=800 inFlightOrQueued=0
+=== Scenario: failure: cut-L4 (links down: L4) ===
+  UNREACHABLE flow F4 (A->C demand=4.00): no usable link for hop D->C
+  Link loads (3 capacity budgets):
+    L1 [A<->B shared]            cap= 10.00 load=  8.00  ok
+      flows: F1(5.00) F3(3.00)
+    L2 [B->C separate]           cap=  8.00 load=  9.00  OVERLOAD excess=1.00
+      flows: F1(5.00) F2(4.00)
+      minimal overload flow set (remove to fix): {F2}
+    L2 [C->B separate]           cap=  8.00 load=  3.00  ok
+      flows: F3(3.00)
+  Simulation (200 ticks, discrete event model):
+    link L1|shared    received=1600 forwarded=1597 maxBacklog=0 endBacklog=3
+    link L2|fwd       received=1800 forwarded=1600 maxBacklog=200 endBacklog=200  CONGESTED (backlog keeps growing)
+    link L2|rev       received=600 forwarded=600 maxBacklog=0 endBacklog=0
+    flow F1: injected=1000 delivered=888 inFlightOrQueued=112
+    flow F2: injected=800 delivered=712 inFlightOrQueued=88
+    flow F3: injected=600 delivered=597 inFlightOrQueued=3
+    flow F4: unreachable, 0 packets injected (not a success)
