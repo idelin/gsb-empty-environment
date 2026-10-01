@@ -1,0 +1,9 @@
+{
+  "demands": [
+    {"start": 600, "end": 660, "required": 2}
+  ],
+  "shifts": [
+    {"id": "cheap", "start": 600, "end": 660, "cost": 3},
+    {"id": "pricey", "start": 600, "end": 660, "cost": 5}
+  ]
+}
