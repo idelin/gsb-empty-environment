@@ -1,0 +1,13 @@
+{
+  "name": "exact-units",
+  "version": "0.1.0",
+  "description": "Exact unit conversion: dimension vectors, rational scales, optional offsets, absolute/delta quantities, contradiction-detecting conversion graph.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
