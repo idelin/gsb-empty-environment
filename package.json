@@ -1,0 +1,11 @@
+{
+  "name": "plan-static-analyzer",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "JSON 计划（投影/改名/计算/删除/分支）的静态字段存在性与类型推导",
+  "scripts": {
+    "test": "node --test test/",
+    "sample": "node examples/sample.ts"
+  }
+}
