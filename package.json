@@ -1,0 +1,11 @@
+{
+  "name": "spatial-focus-nav",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "嵌套滚动与模态区域的方向键焦点导航（纯 TypeScript，无浏览器布局引擎）",
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "sample": "node --experimental-strip-types samples/replay-sample.ts"
+  }
+}
