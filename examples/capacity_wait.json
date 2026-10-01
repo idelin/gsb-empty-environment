@@ -1,0 +1,8 @@
+{
+  "edges": [
+    {"id": "e0", "from": "A", "to": "B", "duration": 1, "capacity": 1, "cost": 5}
+  ],
+  "batches": [
+    {"id": "b0", "origin": "A", "destination": "B", "quantity": 2, "departure": 0, "expiry": 3}
+  ]
+}

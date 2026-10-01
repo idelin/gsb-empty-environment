@@ -1,0 +1,11 @@
+{
+  "horizon": 10,
+  "edges": [
+    {"id": "direct", "from": "A", "to": "C", "duration": 3, "capacity": 10, "cost": 1},
+    {"id": "e1", "from": "A", "to": "B", "duration": 1, "capacity": 1, "cost": 1},
+    {"id": "e2", "from": "B", "to": "C", "duration": 1, "capacity": 1, "cost": 1}
+  ],
+  "batches": [
+    {"id": "b0", "origin": "A", "destination": "C", "quantity": 1, "departure": 0, "expiry": 3}
+  ]
+}
