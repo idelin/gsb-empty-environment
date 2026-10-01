@@ -1,0 +1,14 @@
+{
+  "name": "exact-compare",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "精确数（整数/有理/十进制/误差区间）的可恢复精度细化比较协议，基于 BigInt，不经过 Number",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
