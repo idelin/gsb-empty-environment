@@ -1,0 +1,28 @@
+{
+  "name": "exact-uncertainty-propagation",
+  "version": "0.1.0",
+  "description": "Exact (BigInt rational) uncertainty propagation: linear models, covariance graphs from shared error sources, PSD validation with negative-direction witnesses, declared first-order nonlinear approximation",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idelin/gsb-empty-environment.git"
+  },
+  "keywords": [
+    "uncertainty-propagation",
+    "covariance",
+    "exact-arithmetic",
+    "bigint",
+    "metrology"
+  ],
+  "license": "ISC"
+}
