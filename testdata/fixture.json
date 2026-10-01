@@ -1,0 +1,24 @@
+{
+  "config": {
+    "maxLead": "20m",
+    "maxLag": "10m",
+    "earlyAsFP": false,
+    "obsEnd": "2026-10-01T11:30:00Z"
+  },
+  "faults": [
+    {"id": "f1", "entity": "host-a", "symptom": "cpu_spike", "start": "2026-10-01T10:00:00Z", "end": "2026-10-01T10:30:00Z"},
+    {"id": "f2", "entity": "host-b", "symptom": "disk_full", "start": "2026-10-01T10:10:00Z", "end": "2026-10-01T10:20:00Z"},
+    {"id": "f3", "entity": "host-a", "symptom": "mem_leak",  "start": "2026-10-01T10:40:00Z"},
+    {"id": "f4", "entity": "host-b", "symptom": "cpu_spike", "start": "2026-10-01T11:00:00Z", "end": "2026-10-01T11:15:00Z"}
+  ],
+  "alerts": [
+    {"id": "a1", "entity": "host-a", "symptom": "cpu_spike", "time": "2026-10-01T10:03:00Z"},
+    {"id": "a2", "entity": "host-a", "symptom": "cpu_spike", "time": "2026-10-01T10:05:00Z"},
+    {"id": "a3", "entity": "host-b", "symptom": "disk_full", "time": "2026-10-01T09:55:00Z"},
+    {"id": "a4", "entity": "host-c", "symptom": "cpu_spike", "time": "2026-10-01T10:02:00Z"}
+  ],
+  "corrections": [
+    {"kind": "alert", "id": "a4", "entity": "host-b", "time": "2026-10-01T11:02:00Z"},
+    {"kind": "fault", "id": "f3", "end": "2026-10-01T10:55:00Z"}
+  ]
+}
