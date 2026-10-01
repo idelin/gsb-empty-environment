@@ -1,0 +1,34 @@
+# TCP byte-stream reconstruction demo (discrete-event model, integer ticks).
+# No real network traffic: commands enqueue packets onto a simulated link,
+# delivered after an integer tick delay.
+CONN c1 10.0.0.1:4001 10.0.0.2:80
+CONN c2 10.0.0.1:4002 10.0.0.3:443
+CONN c3 10.0.0.1:4003 10.0.0.4:22
+SET delay=1 timewait=10
+
+# --- c1 epoch 1: retransmission, overlap conflict, gap, half-close ---
+0  SYN  c1 c->s isn=100
+0  SYN  c1 s->c isn=5000
+1  DATA c1 c->s seq=101 "hello"
+2  DATA c1 c->s seq=101 "hello"          # identical retransmission: harmless
+3  DATA c1 c->s seq=104 "LO"             # overlapping, different bytes: conflict
+4  DATA c1 c->s seq=108 "end"            # bytes 106-107 never sent -> [GAP 2]
+5  DATA c1 c->s seq=101 "hello" delay=18 # stuck in the link, arrives in epoch 3
+6  FIN  c1 c->s                          # half-close: c->s done, s->c still open
+7  DATA c1 s->c seq=5001 "200 OK"
+8  FIN  c1 s->c                          # fully closed -> TIME_WAIT
+12 SYN  c1 c->s isn=700                  # rejected: 4-tuple still in TIME_WAIT
+20 SYN  c1 c->s isn=900                  # TIME_WAIT expired: new epoch begins
+20 SYN  c1 s->c isn=300
+21 DATA c1 c->s seq=901 "ping"
+22 FIN  c1 c->s
+23 FIN  c1 s->c
+
+# --- c2: connection aborted with RST ---
+2  SYN  c2 c->s isn=50
+2  SYN  c2 s->c isn=60
+3  DATA c2 c->s seq=51 "reset me"
+4  RST  c2 s->c
+
+# --- c3: data for a connection that never opened ---
+1  DATA c3 c->s seq=1 "no conn"
