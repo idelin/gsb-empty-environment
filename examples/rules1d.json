@@ -1,0 +1,8 @@
+{
+  "rules": [
+    {"id": "a", "priority": 1, "version": 1, "start": 0, "end": 5, "value": "X"},
+    {"id": "b", "priority": 1, "version": 1, "start": 5, "end": 10, "value": "X"},
+    {"id": "c", "priority": 2, "version": 1, "start": 3, "end": 7, "value": "Y"},
+    {"id": "d", "priority": 0, "version": 9, "start": 0, "end": 10, "value": "Z"}
+  ]
+}

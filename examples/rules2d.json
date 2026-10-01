@@ -1,0 +1,8 @@
+{
+  "query": {"t0": 0, "t1": 10, "v0": 0, "v1": 4},
+  "rules": [
+    {"id": "base", "priority": 1, "version": 1, "t0": 0, "t1": 10, "v0": 0, "v1": 4, "value": "BASE"},
+    {"id": "hot",  "priority": 2, "version": 1, "t0": 2, "t1": 6,  "v0": 1, "v1": 3, "value": "HOT"},
+    {"id": "hot2", "priority": 2, "version": 2, "t0": 3, "t1": 5,  "v0": 1, "v1": 3, "value": "HOT2"}
+  ]
+}
