@@ -1,0 +1,7 @@
+{
+  "rules": [
+    {"id": "e1", "from": "A", "to": "B", "cost": 1},
+    {"id": "e2", "from": "B", "to": "C", "cost": 2},
+    {"id": "e3", "from": "C", "to": "A", "cost": 3}
+  ]
+}
