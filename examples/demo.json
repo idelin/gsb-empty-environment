@@ -1,0 +1,16 @@
+{
+  "seed": 20261001,
+  "candidates": [
+    {"id": "c01", "group": "freshman"},
+    {"id": "c02", "group": "freshman"},
+    {"id": "c03", "group": "senior"},
+    {"id": "c04", "group": "senior"},
+    {"id": "c05", "group": "senior"}
+  ],
+  "awards": [
+    {"id": "scholarship", "capacity": 1, "quotas": {"freshman": 1, "senior": 1}},
+    {"id": "research", "capacity": 1, "quotas": {"senior": 1}},
+    {"id": "travel", "capacity": 2, "quotas": {"freshman": 1, "senior": 1}}
+  ],
+  "forbidden": [["c01", "research"], ["c05", "travel"]]
+}

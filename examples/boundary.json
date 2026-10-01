@@ -1,0 +1,12 @@
+{
+  "seed": 7,
+  "candidates": [
+    {"id": "a", "group": "g1"},
+    {"id": "b", "group": "g2"}
+  ],
+  "awards": [
+    {"id": "x", "capacity": 1, "quotas": {"g1": 1, "g2": 1}},
+    {"id": "y", "capacity": 1, "quotas": {"g2": 1}}
+  ],
+  "forbidden": []
+}
