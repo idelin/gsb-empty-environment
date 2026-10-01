@@ -1,0 +1,13 @@
+{
+  "name": "exact-window-stats",
+  "version": "1.0.0",
+  "description": "Exact rational sliding-window statistics (sum / mean / variance) on BigInt, no float cancellation",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "example": "node examples/demo.ts"
+  }
+}
