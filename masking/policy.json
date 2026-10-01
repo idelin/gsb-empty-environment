@@ -1,0 +1,49 @@
+{
+  "policies": [
+    {
+      "role": "hr_admin",
+      "level": "internal",
+      "rules": [
+        {"field": "emp_id", "rule": "keep"},
+        {"field": "name", "rule": "keep"},
+        {"field": "department", "rule": "keep"},
+        {"field": "phone", "rule": "mask", "keep_head": 3, "keep_tail": 4},
+        {"field": "id_card", "rule": "mask", "keep_head": 4, "keep_tail": 4},
+        {"field": "salary", "rule": "keep"}
+      ]
+    },
+    {
+      "role": "finance",
+      "level": "confidential",
+      "rules": [
+        {"field": "emp_id", "rule": "keep"},
+        {"field": "name", "rule": "keep"},
+        {"field": "department", "rule": "keep"},
+        {"field": "phone", "rule": "mask", "keep_head": 3, "keep_tail": 4},
+        {"field": "id_card", "rule": "redact", "replacement": "***"},
+        {"field": "salary", "rule": "keep"}
+      ]
+    },
+    {
+      "role": "contractor",
+      "level": "restricted",
+      "rules": [
+        {"field": "emp_id", "rule": "pseudonym", "prefix": "EMP-"},
+        {"field": "name", "rule": "pseudonym", "prefix": "NAME-"},
+        {"field": "department", "rule": "keep"},
+        {"field": "phone", "rule": "redact", "replacement": "N/A"},
+        {"field": "id_card", "rule": "redact", "replacement": "N/A"},
+        {"field": "salary", "rule": "range", "bucket_width": 5000}
+      ]
+    },
+    {
+      "role": "analyst",
+      "level": "statistical",
+      "rules": [
+        {"field": "emp_id", "rule": "pseudonym", "prefix": "EMP-"},
+        {"field": "department", "rule": "keep"},
+        {"field": "salary", "rule": "noise", "noise_scale": 2000}
+      ]
+    }
+  ]
+}
