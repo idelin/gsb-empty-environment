@@ -1,0 +1,7 @@
+{
+  "name": "base-fail",
+  "variables": ["b1", "b0"],
+  "init": "~b1 & ~b0",
+  "invariant": "b0",
+  "transition": {"edges": [[0, 1], [1, 2], [2, 0], [3, 3]]}
+}

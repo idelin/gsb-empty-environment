@@ -1,0 +1,7 @@
+{
+  "name": "mod5-counter-unreachable-step",
+  "variables": ["b2", "b1", "b0"],
+  "init": "~b2 & ~b1 & ~b0",
+  "invariant": "~(b2 & ~b1 & b0)",
+  "transition": {"edges": [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0], [5, 5], [6, 5], [7, 5]]}
+}

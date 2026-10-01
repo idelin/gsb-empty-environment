@@ -1,0 +1,7 @@
+{
+  "name": "empty-init",
+  "variables": ["b1", "b0"],
+  "init": "b0 & ~b0",
+  "invariant": "~(b1 & b0)",
+  "transition": {"edges": [[0, 1], [1, 2], [2, 0], [3, 3]]}
+}

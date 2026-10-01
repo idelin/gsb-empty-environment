@@ -1,0 +1,7 @@
+{
+  "name": "mod3-counter",
+  "variables": ["b1", "b0"],
+  "init": "~b1 & ~b0",
+  "invariant": "~(b1 & b0)",
+  "transition": {"edges": [[0, 1], [1, 2], [2, 0], [3, 3]]}
+}

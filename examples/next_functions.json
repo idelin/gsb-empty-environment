@@ -1,0 +1,7 @@
+{
+  "name": "two-bit-saturate",
+  "variables": ["b1", "b0"],
+  "init": "~b1 & ~b0",
+  "invariant": "b1 -> b0",
+  "transition": {"next": {"b0": "~b1 | b0", "b1": "b1 | (b0 & ~b1)"}}
+}
