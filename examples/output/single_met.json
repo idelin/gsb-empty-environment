@@ -1,0 +1,126 @@
+{
+  "evidence": {
+    "conclusion_kind": "empirical",
+    "delta": 0.05,
+    "epsilon": 0.05,
+    "estimate": 0.2890625,
+    "guarantee": "P(|estimate - mean| <= epsilon) >= 1 - delta: staged Hoeffding at pre-declared checkpoints with zeta-2 error allocation (union bound over stages; no independence assumption on the checks).",
+    "n_samples": 2048,
+    "name": "bern_0.3",
+    "radius": 0.047280519492458296,
+    "rng_draws": 2048,
+    "seed": 42,
+    "stages": [
+      {
+        "delta_stage": 0.030396355092701333,
+        "estimate": 0.0,
+        "met": false,
+        "n": 1,
+        "radius": 1.446820610266643,
+        "rule": "hoeffding",
+        "stage": 1
+      },
+      {
+        "delta_stage": 0.007599088773175333,
+        "estimate": 0.5,
+        "met": false,
+        "n": 2,
+        "radius": 1.1803467835454726,
+        "rule": "hoeffding",
+        "stage": 2
+      },
+      {
+        "delta_stage": 0.0033773727880779263,
+        "estimate": 0.75,
+        "met": false,
+        "n": 4,
+        "radius": 0.8932947675544242,
+        "rule": "hoeffding",
+        "stage": 3
+      },
+      {
+        "delta_stage": 0.0018997721932938333,
+        "estimate": 0.5,
+        "met": false,
+        "n": 8,
+        "radius": 0.6595058983258064,
+        "rule": "hoeffding",
+        "stage": 4
+      },
+      {
+        "delta_stage": 0.0012158542037080534,
+        "estimate": 0.5,
+        "met": false,
+        "n": 16,
+        "radius": 0.48106183274128345,
+        "rule": "hoeffding",
+        "stage": 5
+      },
+      {
+        "delta_stage": 0.0008443431970194816,
+        "estimate": 0.40625,
+        "met": false,
+        "n": 32,
+        "radius": 0.3484362095276729,
+        "rule": "hoeffding",
+        "stage": 6
+      },
+      {
+        "delta_stage": 0.000620333777402068,
+        "estimate": 0.375,
+        "met": false,
+        "n": 64,
+        "radius": 0.2512220142171205,
+        "rule": "hoeffding",
+        "stage": 7
+      },
+      {
+        "delta_stage": 0.0004749430483234583,
+        "estimate": 0.3515625,
+        "met": false,
+        "n": 128,
+        "radius": 0.18055321713703312,
+        "rule": "hoeffding",
+        "stage": 8
+      },
+      {
+        "delta_stage": 0.0003752636431197696,
+        "estimate": 0.33984375,
+        "met": false,
+        "n": 256,
+        "radius": 0.1294597315473003,
+        "rule": "hoeffding",
+        "stage": 9
+      },
+      {
+        "delta_stage": 0.00030396355092701335,
+        "estimate": 0.32421875,
+        "met": false,
+        "n": 512,
+        "radius": 0.09265901630868809,
+        "rule": "hoeffding",
+        "stage": 10
+      },
+      {
+        "delta_stage": 0.0002512095462206722,
+        "estimate": 0.296875,
+        "met": false,
+        "n": 1024,
+        "radius": 0.06622630141501201,
+        "rule": "hoeffding",
+        "stage": 11
+      },
+      {
+        "delta_stage": 0.0002110857992548704,
+        "estimate": 0.2890625,
+        "met": true,
+        "n": 2048,
+        "radius": 0.047280519492458296,
+        "rule": "hoeffding",
+        "stage": 12
+      }
+    ],
+    "status": "MET"
+  },
+  "recorded_at_utc": "2026-10-01T08:08:41.166945+00:00"
+}

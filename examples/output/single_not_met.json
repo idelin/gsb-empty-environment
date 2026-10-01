@@ -1,0 +1,90 @@
+{
+  "evidence": {
+    "conclusion_kind": "empirical",
+    "delta": 0.05,
+    "epsilon": 0.01,
+    "estimate": 0.54,
+    "guarantee": "BUDGET EXHAUSTED before the error target was certified: the epsilon-accuracy guarantee does NOT hold for this run. All staged evidence is preserved.",
+    "n_samples": 100,
+    "name": "too_tight",
+    "radius": 0.20427264672422926,
+    "rng_draws": 100,
+    "seed": 7,
+    "stages": [
+      {
+        "delta_stage": 0.030396355092701333,
+        "estimate": 1.0,
+        "met": false,
+        "n": 1,
+        "radius": 1.446820610266643,
+        "rule": "hoeffding",
+        "stage": 1
+      },
+      {
+        "delta_stage": 0.007599088773175333,
+        "estimate": 1.0,
+        "met": false,
+        "n": 2,
+        "radius": 1.1803467835454726,
+        "rule": "hoeffding",
+        "stage": 2
+      },
+      {
+        "delta_stage": 0.0033773727880779263,
+        "estimate": 0.75,
+        "met": false,
+        "n": 4,
+        "radius": 0.8932947675544242,
+        "rule": "hoeffding",
+        "stage": 3
+      },
+      {
+        "delta_stage": 0.0018997721932938333,
+        "estimate": 0.625,
+        "met": false,
+        "n": 8,
+        "radius": 0.6595058983258064,
+        "rule": "hoeffding",
+        "stage": 4
+      },
+      {
+        "delta_stage": 0.0012158542037080534,
+        "estimate": 0.75,
+        "met": false,
+        "n": 16,
+        "radius": 0.48106183274128345,
+        "rule": "hoeffding",
+        "stage": 5
+      },
+      {
+        "delta_stage": 0.0008443431970194816,
+        "estimate": 0.625,
+        "met": false,
+        "n": 32,
+        "radius": 0.3484362095276729,
+        "rule": "hoeffding",
+        "stage": 6
+      },
+      {
+        "delta_stage": 0.000620333777402068,
+        "estimate": 0.546875,
+        "met": false,
+        "n": 64,
+        "radius": 0.2512220142171205,
+        "rule": "hoeffding",
+        "stage": 7
+      },
+      {
+        "delta_stage": 0.0004749430483234583,
+        "estimate": 0.54,
+        "met": false,
+        "n": 100,
+        "radius": 0.20427264672422926,
+        "rule": "hoeffding",
+        "stage": 8
+      }
+    ],
+    "status": "NOT_MET"
+  },
+  "recorded_at_utc": "2026-10-01T08:08:41.167631+00:00"
+}

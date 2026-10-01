@@ -1,0 +1,99 @@
+{
+  "evidence": {
+    "conclusion_kind": "empirical",
+    "delta": 0.05,
+    "epsilon": 0.05,
+    "estimate": 0.0,
+    "guarantee": "P(|estimate - mean| <= epsilon) >= 1 - delta: staged Hoeffding at pre-declared checkpoints with zeta-2 error allocation (union bound over stages; no independence assumption on the checks). bernoulli_endpoint_rule enabled: each stage splits its budget evenly between Hoeffding and the all-equal-endpoint rule.",
+    "n_samples": 256,
+    "name": "rare_event",
+    "radius": 0.032964085587200764,
+    "rng_draws": 0,
+    "seed": 11,
+    "stages": [
+      {
+        "delta_stage": 0.030396355092701333,
+        "estimate": 0.0,
+        "met": false,
+        "n": 1,
+        "radius": 0.9848018224536493,
+        "rule": "bernoulli-endpoint",
+        "stage": 1
+      },
+      {
+        "delta_stage": 0.007599088773175333,
+        "estimate": 0.0,
+        "met": false,
+        "n": 2,
+        "radius": 0.93835955559385,
+        "rule": "bernoulli-endpoint",
+        "stage": 2
+      },
+      {
+        "delta_stage": 0.0033773727880779263,
+        "estimate": 0.0,
+        "met": false,
+        "n": 4,
+        "radius": 0.7972843627045512,
+        "rule": "bernoulli-endpoint",
+        "stage": 3
+      },
+      {
+        "delta_stage": 0.0018997721932938333,
+        "estimate": 0.0,
+        "met": false,
+        "n": 8,
+        "radius": 0.5810049026036093,
+        "rule": "bernoulli-endpoint",
+        "stage": 4
+      },
+      {
+        "delta_stage": 0.0012158542037080534,
+        "estimate": 0.0,
+        "met": false,
+        "n": 16,
+        "radius": 0.37050726963998626,
+        "rule": "bernoulli-endpoint",
+        "stage": 5
+      },
+      {
+        "delta_stage": 0.0008443431970194816,
+        "estimate": 0.0,
+        "met": false,
+        "n": 32,
+        "radius": 0.2155838408484836,
+        "rule": "bernoulli-endpoint",
+        "stage": 6
+      },
+      {
+        "delta_stage": 0.000620333777402068,
+        "estimate": 0.0,
+        "met": false,
+        "n": 64,
+        "radius": 0.11858349499617904,
+        "rule": "bernoulli-endpoint",
+        "stage": 7
+      },
+      {
+        "delta_stage": 0.0004749430483234583,
+        "estimate": 0.0,
+        "met": false,
+        "n": 128,
+        "radius": 0.06311892744867842,
+        "rule": "bernoulli-endpoint",
+        "stage": 8
+      },
+      {
+        "delta_stage": 0.0003752636431197696,
+        "estimate": 0.0,
+        "met": true,
+        "n": 256,
+        "radius": 0.032964085587200764,
+        "rule": "bernoulli-endpoint",
+        "stage": 9
+      }
+    ],
+    "status": "MET"
+  },
+  "recorded_at_utc": "2026-10-01T08:08:41.168059+00:00"
+}
