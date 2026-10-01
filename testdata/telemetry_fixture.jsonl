@@ -1,0 +1,7 @@
+{"seq":1,"version":1,"type":"rules_published","detail":{"rules":"1"}}
+{"seq":2,"version":1,"type":"cache_store","detail":{"input":"instance\u0000a\u0001","output":""}}
+{"seq":3,"version":1,"type":"series_added","detail":{"input":"m\u0000instance\u0000a\u0001","output":""}}
+{"seq":4,"version":1,"type":"cache_store","detail":{"input":"instance\u0000b\u0001","output":""}}
+{"seq":5,"version":1,"type":"series_merged","detail":{"input":"m\u0000instance\u0000b\u0001","output":""}}
+{"seq":6,"version":2,"type":"series_split","detail":{"output":"","into":"2"}}
+{"seq":7,"version":2,"type":"rule_retracted","detail":{"rule":"r1"}}
