@@ -1,0 +1,11 @@
+{
+  "name": "version-vector-sync",
+  "version": "1.0.0",
+  "description": "Version vector merge kernel for a distributed KV store with eventual-consistency synchronizer",
+  "type": "module",
+  "engines": { "node": ">=23.6.0" },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node demo/scenario.ts"
+  }
+}
