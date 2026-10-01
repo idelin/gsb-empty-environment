@@ -1,0 +1,12 @@
+{
+  "name": "fault starts inside suppression and outlives it: notified at lift",
+  "repeat_interval": "30m",
+  "suppressions": [
+    {"start": "2026-01-01T00:10:00Z", "end": "2026-01-01T01:00:00Z"}
+  ],
+  "events": [
+    {"at": "2026-01-01T00:15:00Z", "state": "firing"},
+    {"at": "2026-01-01T02:00:00Z", "state": "ok"}
+  ],
+  "advance_to": "2026-01-01T02:00:00Z"
+}
