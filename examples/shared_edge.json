@@ -1,0 +1,9 @@
+{
+  "rules": [
+    {"id": "e1", "cost": 1, "src": "A", "dst": "B"},
+    {"id": "e2", "cost": 5, "src": "B", "dst": "C"},
+    {"id": "e3", "cost": 5, "src": "C", "dst": "A"},
+    {"id": "e4", "cost": 5, "src": "C", "dst": "D"},
+    {"id": "e5", "cost": 5, "src": "D", "dst": "A"}
+  ]
+}
