@@ -1,0 +1,14 @@
+{
+  "name": "errbound-judge",
+  "version": "0.1.0",
+  "description": "Exact (BigInt-rational) threshold classification and joint feasibility for measurements with error bounds",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "example": "node --experimental-strip-types examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
