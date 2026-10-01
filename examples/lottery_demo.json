@@ -1,0 +1,16 @@
+{
+  "seed": 20261001,
+  "candidates": [
+    {"id": "c01", "group": "engineering", "awards": ["laptop", "book", "cash"]},
+    {"id": "c02", "group": "engineering", "awards": ["laptop", "book"]},
+    {"id": "c03", "group": "design", "awards": ["book", "cash"]},
+    {"id": "c04", "group": "design", "awards": ["laptop", "cash"]},
+    {"id": "c05", "group": "design", "awards": ["book"]}
+  ],
+  "awards": [
+    {"id": "laptop", "quotas": {"engineering": 1, "design": 0}},
+    {"id": "book", "quotas": {"engineering": 1, "design": 1}},
+    {"id": "cash", "quotas": {"engineering": 0, "design": 1}}
+  ],
+  "forbidden": [["c04", "cash"]]
+}
