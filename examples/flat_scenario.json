@@ -1,0 +1,19 @@
+{
+  "mode": "flat",
+  "quantum": 2,
+  "deficit_cap": 5,
+  "tenants": [
+    {"id": "A", "weight": 1, "tasks": [["a1", 5], ["a2", 2]]},
+    {"id": "B", "weight": 2, "tasks": [["b1", 4], ["b2", 1]]}
+  ],
+  "operations": [
+    {"op": "run_rounds", "n": 2},
+    {"op": "pause", "tenant": "B"},
+    {"op": "run_rounds", "n": 1},
+    {"op": "resume", "tenant": "B"},
+    {"op": "set_weight", "tenant": "A", "weight": 2},
+    {"op": "enqueue", "tenant": "A", "task_id": "a3", "cost": 3},
+    {"op": "enqueue", "tenant": "B", "task_id": "b3", "cost": 6},
+    {"op": "run_until_idle", "max_rounds": 50}
+  ]
+}

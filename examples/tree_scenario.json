@@ -1,0 +1,22 @@
+{
+  "mode": "tree",
+  "nodes": [
+    {"id": "g1", "parent": "root", "weight": 1, "quantum": 4, "cap": 8},
+    {"id": "g2", "parent": "root", "weight": 1, "quantum": 4, "cap": 8},
+    {"id": "A", "parent": "g1", "weight": 1, "quantum": 3, "cap": 6, "leaf": true,
+     "tasks": [["a1", 2], ["a2", 5]]},
+    {"id": "B", "parent": "g1", "weight": 1, "quantum": 3, "cap": 6, "leaf": true,
+     "tasks": [["b1", 6]]},
+    {"id": "C", "parent": "g2", "weight": 1, "quantum": 3, "cap": 6, "leaf": true,
+     "tasks": [["c1", 1]]}
+  ],
+  "operations": [
+    {"op": "run_rounds", "n": 2},
+    {"op": "pause", "node": "g1"},
+    {"op": "run_rounds", "n": 1},
+    {"op": "resume", "node": "g1"},
+    {"op": "snapshot"},
+    {"op": "migrate", "leaf": "C", "new_parent": "g1"},
+    {"op": "run_until_idle", "max_rounds": 50}
+  ]
+}

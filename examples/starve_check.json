@@ -1,0 +1,11 @@
+{
+  "nodes": [
+    {"id": "g1", "parent": "root", "weight": 1, "quantum": 4, "cap": 8},
+    {"id": "A", "parent": "g1", "weight": 1, "quantum": 3, "cap": 6, "leaf": true},
+    {"id": "B", "parent": "g1", "weight": 1, "quantum": 3, "cap": 6, "leaf": true}
+  ],
+  "streams": {"B": [6, 3]},
+  "victim_leaf": "A",
+  "victim_cost": 6,
+  "state_bound": 100000
+}
