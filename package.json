@@ -1,0 +1,14 @@
+{
+  "name": "raster-transform-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Raster transform pipeline: crop, affine, area downscale, bilinear upscale in linear premultiplied color",
+  "scripts": {
+    "test": "node --test",
+    "example": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}

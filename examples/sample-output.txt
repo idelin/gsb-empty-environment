@@ -1,0 +1,33 @@
+(node:18757) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+=== 1. transparent red next to opaque blue, downscaled 2x (no red fringe) ===
+row 0: (0,0,0,0) (0,0,0,0) (0,0,255,255) (0,0,255,255)
+row 3: (0,0,0,0) (0,0,0,0) (0,0,255,255) (0,0,255,255)
+
+=== 2. linear-space filtering: black|white -> 188, not 128 ===
+downscaled pixel: (188,188,188,255), linearToSrgb(0.5) = 188
+
+=== 3. crop -> rotate -> downscale pipeline, with stage merging ===
+stages before optimize: copy -> bilinear -> area
+stages after optimize:  bilinear -> area
+ *@*-  
+ @@@@@*
+-@@@@@@
+*@@@@@*
+@@@@@@-
+*@@@@@ 
+  -*@* 
+
+=== 4. local edit -> precise dirty region, incremental render ===
+dirty chain: 4,4 1x1 -> 3,1 4x3 -> 1,0 3x2
+output dirty: 1,0 3x2
+rows rendered per stage: 3, 2 (full heights: 14, 7)
+incremental vs full re-render max diff: 0.00e+0
+changed pixels: 2 of 49
+
+=== 5. transform update dirties old + new region ===
+dirty after update: 2,0 6x4
+old spot alpha: 0, new spot alpha: 1
+
+=== 6. cancellation ===
+cancelled after 6 row checks: CancelledError
