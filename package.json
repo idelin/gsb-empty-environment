@@ -1,0 +1,12 @@
+{
+  "name": "tiered-piecewise",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Exact piecewise functions from tiered rules (progressive vs whole-amount), BigInt rational arithmetic, explicit rounding, inverse solving. Numeric function only - no real orders or billing.",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
