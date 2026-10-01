@@ -1,0 +1,11 @@
+{
+  "memory_limit": 7,
+  "nodes": [
+    {"id": "s",  "cost": 5, "size": 3, "parents": []},
+    {"id": "x",  "cost": 1, "size": 3, "parents": ["s"]},
+    {"id": "t1", "cost": 1, "size": 2, "parents": ["x"]},
+    {"id": "y",  "cost": 1, "size": 2, "parents": ["s"]},
+    {"id": "t2", "cost": 1, "size": 2, "parents": ["y"]}
+  ],
+  "targets": ["t1", "t2"]
+}
