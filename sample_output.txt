@@ -1,0 +1,86 @@
+$ python3.11 demo.py
+
+====================================================================
+1. Pausable Fisher-Yates with caller-injected PRNG
+====================================================================
+  frontier i=7  j=6 (range [0, 7])  -> ABCDEFHG
+  frontier i=6  j=5 (range [0, 6])  -> ABCDEHFG
+  frontier i=5  j=0 (range [0, 5])  -> HBCDEAFG
+  frontier i=4  j=1 (range [0, 4])  -> HECDBAFG
+  frontier i=3  j=2 (range [0, 3])  -> HEDCBAFG
+  frontier i=2  j=0 (range [0, 2])  -> DEHCBAFG
+  frontier i=1  j=0 (range [0, 1])  -> EDHCBAFG
+  result: EDHCBAFG  seed=20261001  samples=7  raw 64-bit draws=12
+  paused after 3 swaps, restored from snapshot: EDHCBAFG (identical: True)
+
+====================================================================
+2. Partial permutation positioned by rank  [EXACT]
+====================================================================
+  P(5,3) = 60
+  rank  0 -> [0, 1, 2]  (rank again: 0)
+  rank 17 -> [1, 2, 4]  (rank again: 17)
+  rank 59 -> [4, 3, 2]  (rank again: 59)
+  big-integer check: P(1000,500) has 1434 digits; roundtrip ok: True
+
+====================================================================
+3. Small-n exhaustive enumeration  [EXACT]
+====================================================================
+  n=3: 6 draw sequences -> 6 distinct permutations, each exactly once: True
+  n=4: 24 draw sequences -> 24 distinct permutations, each exactly once: True
+  n=5: 120 draw sequences -> 120 distinct permutations, each exactly once: True
+  => every permutation has probability exactly 1/n! (proven by
+     enumeration, not estimated)
+
+====================================================================
+4. Resumable external-memory shuffle with crash recovery
+====================================================================
+  continuous run (block_size=1): [10, 18, 11, 2, 6, 4, 12, 13, 7, 16, 17, 19, 1, 15, 5, 9, 8, 3, 0, 14]
+  simulated crash: power loss at frontier 12 (block_size=4)
+  journal on disk: frontier=12 j=1 (pending swap, full record images stored)
+  recovered run:   [10, 18, 11, 2, 6, 4, 12, 13, 7, 16, 17, 19, 1, 15, 5, 9, 8, 3, 0, 14]
+  identical to continuous run: True
+  still a permutation of the input: True
+  final checkpoint: frontier=0 published_from=1 seed=777 samples=19
+
+====================================================================
+5. Permutation frequencies, n=3  [EMPIRICAL estimate]
+====================================================================
+  (0, 1, 2): 19976  (16.6467%)
+  (0, 2, 1): 19994  (16.6617%)
+  (1, 0, 2): 19867  (16.5558%)
+  (1, 2, 0): 19816  (16.5133%)
+  (2, 0, 1): 20152  (16.7933%)
+  (2, 1, 0): 20195  (16.8292%)
+  chi2=5.664 (df=5, 1% critical 15.086) -- empirical estimate
+  seed=2026  samples=240000  raw draws=399332
+
+$ python3.11 -m unittest discover -v
+test_block_size_does_not_change_result (tests.test_external.BlockSizeAndRetryTest.test_block_size_does_not_change_result) ... ok
+test_io_retries_do_not_change_result (tests.test_external.BlockSizeAndRetryTest.test_io_retries_do_not_change_result) ... ok
+test_checkpoint_contents (tests.test_external.ContinuousRunTest.test_checkpoint_contents) ... ok
+test_result_is_a_permutation_and_deterministic (tests.test_external.ContinuousRunTest.test_result_is_a_permutation_and_deterministic) ... ok
+test_crash_and_recover_everywhere (tests.test_external.CrashRecoveryTest.test_crash_and_recover_everywhere) ... ok
+test_recovery_does_not_repeat_swaps (tests.test_external.CrashRecoveryTest.test_recovery_does_not_repeat_swaps) ... ok
+test_seed_mismatch_is_rejected (tests.test_external.CrashRecoveryTest.test_seed_mismatch_is_rejected) ... ok
+test_deterministic_for_same_seed (tests.test_rangesample.BigIntegerTest.test_deterministic_for_same_seed) ... ok
+test_huge_range (tests.test_rangesample.BigIntegerTest.test_huge_range) ... ok
+test_state_roundtrip_preserves_stream (tests.test_rangesample.BigIntegerTest.test_state_roundtrip_preserves_stream) ... ok
+test_chi_square_against_uniform (tests.test_rangesample.EmpiricalUniformityTest.test_chi_square_against_uniform) ... ok
+test_degenerate_and_invalid_ranges (tests.test_rangesample.ExactUniformityTest.test_degenerate_and_invalid_ranges) ... ok
+test_every_value_has_exactly_one_preimage_per_cycle (tests.test_rangesample.ExactUniformityTest.test_every_value_has_exactly_one_preimage_per_cycle) ... ok
+test_exactly_one_preimage_per_value (tests.test_rangesample.ExactUniformityTest.test_exactly_one_preimage_per_value) ... ok
+test_chi_square_over_permutations (tests.test_shuffle.EmpiricalUniformityTest.test_chi_square_over_permutations) ... ok
+test_all_draw_sequences_hit_each_permutation_once (tests.test_shuffle.ExactEnumerationTest.test_all_draw_sequences_hit_each_permutation_once) ... ok
+test_fisher_yates_wrapper_matches (tests.test_shuffle.SnapshotTest.test_fisher_yates_wrapper_matches) ... ok
+test_restore_at_every_pause_point (tests.test_shuffle.SnapshotTest.test_restore_at_every_pause_point) ... ok
+test_empty_and_singleton (tests.test_shuffle.StepRangeTest.test_empty_and_singleton) ... ok
+test_trace_ranges_and_frontier_progression (tests.test_shuffle.StepRangeTest.test_trace_ranges_and_frontier_progression) ... ok
+test_invalid_inputs (tests.test_unrank.BigIntegerTest.test_invalid_inputs) ... ok
+test_roundtrip_huge_rank (tests.test_unrank.BigIntegerTest.test_roundtrip_huge_rank) ... ok
+test_lexicographic_order (tests.test_unrank.EnumerationTest.test_lexicographic_order) ... ok
+test_unrank_is_bijection_for_small_nk (tests.test_unrank.EnumerationTest.test_unrank_is_bijection_for_small_nk) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 6.379s
+
+OK
