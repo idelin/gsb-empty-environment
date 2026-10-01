@@ -1,0 +1,14 @@
+{
+  "name": "lsm-snapshot-exporter",
+  "version": "1.0.0",
+  "description": "LSM storage engine full/incremental physical backup via zero-copy hard-link snapshots",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test \"test/*.test.ts\"",
+    "demo": "node --experimental-strip-types --no-warnings examples/demo.ts"
+  },
+  "license": "MIT"
+}
