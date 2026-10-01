@@ -1,0 +1,14 @@
+{
+  "name": "exact-decimal",
+  "version": "1.0.0",
+  "description": "Exact decimal arithmetic on BigInt with explicit rounding modes and per-context precision",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
