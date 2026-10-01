@@ -1,0 +1,7 @@
+{
+  "capacity": 10,
+  "changes": [
+    {"id": "A", "benefit": 5, "cost": 2, "deps": ["B"]},
+    {"id": "B", "benefit": -2, "cost": 2}
+  ]
+}

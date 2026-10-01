@@ -1,0 +1,10 @@
+{
+  "capacity": 6,
+  "changes": [
+    {"id": "A", "benefit": 3, "cost": 1, "deps": ["B"]},
+    {"id": "B", "benefit": 2, "cost": 1, "deps": ["A"]},
+    {"id": "C", "benefit": 4, "cost": 2, "mutex": ["D"]},
+    {"id": "D", "benefit": 5, "cost": 3},
+    {"id": "E", "benefit": -1, "cost": 1}
+  ]
+}
