@@ -1,0 +1,13 @@
+{
+  "name": "fine-grained-patch-engine",
+  "version": "1.0.0",
+  "description": "Signal-driven fine-grained UI update engine: minimal patches without tree diff",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
