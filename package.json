@@ -1,0 +1,11 @@
+{
+  "name": "bigint-fixed-root",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Exact BigInt fixed-point nth root with provably correct rounding",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node demo.ts"
+  }
+}
