@@ -1,0 +1,15 @@
+{
+  "name": "rational-timecode",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Rational-frame-rate timecode <-> frame/sample conversion with explicit drop-frame period tables, BigInt exact arithmetic, and cross-rule timeline splicing.",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
