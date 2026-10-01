@@ -1,0 +1,14 @@
+{
+  "name": "schema-sampler",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Seeded sample & counterexample generator for a restricted JSON-Schema subset, with an independent validator",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
