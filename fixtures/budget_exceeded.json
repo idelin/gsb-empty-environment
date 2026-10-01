@@ -1,0 +1,17 @@
+{
+  "name": "budget-exceeded",
+  "budget": 1,
+  "expected": {
+    "id": "root", "kind": "span", "name": "req",
+    "children": [
+      {"id": "a", "kind": "span", "name": "a"},
+      {"id": "b", "kind": "span", "name": "b"}
+    ]
+  },
+  "events": [
+    {"type": "start", "id": "s1", "name": "req", "ts": 1},
+    {"type": "start", "id": "s2", "name": "a", "parent": "s1", "ts": 2},
+    {"type": "end", "id": "s2", "ts": 3},
+    {"type": "end", "id": "s1", "ts": 4}
+  ]
+}

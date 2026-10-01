@@ -1,0 +1,20 @@
+{
+  "name": "duplicates-cannot-offset-missing",
+  "expected": {
+    "id": "root", "kind": "span", "name": "job",
+    "children": [
+      {"id": "worker", "kind": "span", "name": "worker.run"},
+      {"id": "cleanup", "kind": "span", "name": "job.cleanup"}
+    ]
+  },
+  "events": [
+    {"type": "start", "id": "s1", "name": "job", "ts": 1},
+    {"type": "start", "id": "s2", "name": "worker.run", "parent": "s1", "ts": 2},
+    {"type": "end", "id": "s2", "ts": 3},
+    {"type": "start", "id": "s3", "name": "worker.run", "parent": "s1", "ts": 4},
+    {"type": "end", "id": "s3", "ts": 5},
+    {"type": "start", "id": "s4", "name": "worker.run", "parent": "s1", "ts": 6},
+    {"type": "end", "id": "s4", "ts": 7},
+    {"type": "end", "id": "s1", "ts": 8}
+  ]
+}

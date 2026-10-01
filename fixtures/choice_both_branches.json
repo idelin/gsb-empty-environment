@@ -1,0 +1,23 @@
+{
+  "name": "choice-both-branches",
+  "expected": {
+    "id": "root", "kind": "span", "name": "payment",
+    "children": [
+      {"id": "method", "kind": "choice", "children": [
+        {"id": "card", "kind": "span", "name": "payment.card"},
+        {"id": "paypal", "kind": "span", "name": "payment.paypal"}
+      ]},
+      {"id": "receipt", "kind": "span", "name": "payment.receipt"}
+    ]
+  },
+  "events": [
+    {"type": "start", "id": "s1", "name": "payment", "ts": 1},
+    {"type": "start", "id": "s2", "name": "payment.card", "parent": "s1", "ts": 2},
+    {"type": "end", "id": "s2", "ts": 3},
+    {"type": "start", "id": "s3", "name": "payment.paypal", "parent": "s1", "ts": 4},
+    {"type": "end", "id": "s3", "ts": 5},
+    {"type": "start", "id": "s4", "name": "payment.receipt", "parent": "s1", "ts": 6},
+    {"type": "end", "id": "s4", "ts": 7},
+    {"type": "end", "id": "s1", "ts": 8}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "checkout-ok",
+  "trace_attrs": {"channel": "web"},
+  "expected": {
+    "id": "root", "kind": "span", "name": "http.checkout",
+    "children": [
+      {"id": "auth", "kind": "span", "name": "auth.verify"},
+      {"id": "cart", "kind": "span", "name": "cart.load"},
+      {"id": "db", "kind": "span", "name": "db.query", "min": 1, "max": 3},
+      {"id": "pay", "kind": "choice", "children": [
+        {"id": "pay-card", "kind": "span", "name": "payment.card"},
+        {"id": "pay-paypal", "kind": "span", "name": "payment.paypal"}
+      ]},
+      {"id": "sms", "kind": "span", "name": "notify.sms", "min": 0, "max": 1, "when": {"channel": "mobile"}},
+      {"id": "email", "kind": "span", "name": "notify.email", "min": 0, "max": 1}
+    ]
+  },
+  "events": [
+    {"type": "start", "id": "s1", "name": "http.checkout", "ts": 1},
+    {"type": "start", "id": "s2", "name": "auth.verify", "parent": "s1", "ts": 2},
+    {"type": "end", "id": "s2", "ts": 3},
+    {"type": "start", "id": "s3", "name": "cart.load", "parent": "s1", "ts": 4},
+    {"type": "end", "id": "s3", "ts": 5},
+    {"type": "start", "id": "s4", "name": "db.query", "parent": "s1", "ts": 6},
+    {"type": "end", "id": "s4", "ts": 7},
+    {"type": "start", "id": "s5", "name": "db.query", "parent": "s1", "ts": 8},
+    {"type": "end", "id": "s5", "ts": 9},
+    {"type": "start", "id": "s6", "name": "payment.card", "parent": "s1", "ts": 10},
+    {"type": "end", "id": "s6", "ts": 11},
+    {"type": "end", "id": "s1", "ts": 12}
+  ]
+}

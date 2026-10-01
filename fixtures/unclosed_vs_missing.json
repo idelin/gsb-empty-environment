@@ -1,0 +1,15 @@
+{
+  "name": "unclosed-vs-missing",
+  "expected": {
+    "id": "root", "kind": "span", "name": "req",
+    "children": [
+      {"id": "db", "kind": "span", "name": "db.query"},
+      {"id": "cache", "kind": "span", "name": "cache.get"}
+    ]
+  },
+  "events": [
+    {"type": "start", "id": "s1", "name": "req", "ts": 1},
+    {"type": "start", "id": "s2", "name": "db.query", "parent": "s1", "ts": 2},
+    {"type": "end", "id": "s1", "ts": 3}
+  ]
+}
