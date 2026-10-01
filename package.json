@@ -1,0 +1,14 @@
+{
+  "name": "exact-ratio-metrics",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Exact ratio / percentage-point / relative-change metrics on BigInt rationals",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
