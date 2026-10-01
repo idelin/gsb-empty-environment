@@ -1,0 +1,14 @@
+{
+  "name": "optimal-fit-linebreaker",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Minimum-cost line breaking over fixture glyph metrics: DP with history-constrained state, incremental frontier reuse, exhaustive verification.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --experimental-strip-types src/demo.ts",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  }
+}
