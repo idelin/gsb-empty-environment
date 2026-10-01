@@ -1,0 +1,8 @@
+{
+  "k": 2,
+  "migrations": [
+    {"name": "A", "reads": [], "writes": ["x"]},
+    {"name": "B", "reads": ["x"], "writes": []},
+    {"name": "C", "reads": [], "writes": ["y"]}
+  ]
+}
