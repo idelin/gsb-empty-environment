@@ -1,0 +1,14 @@
+{
+  "name": "graceful-leave",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Graceful Leave & Quiescent Period broadcast protocol (TypeScript, zero dependencies)",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
