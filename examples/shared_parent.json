@@ -1,0 +1,9 @@
+{
+  "memory_limit": 4,
+  "nodes": [
+    {"id": "P", "cost": 5, "size": 2, "parents": []},
+    {"id": "A", "cost": 1, "size": 1, "parents": ["P"]},
+    {"id": "B", "cost": 1, "size": 1, "parents": ["P"]}
+  ],
+  "outputs": ["A", "B"]
+}
