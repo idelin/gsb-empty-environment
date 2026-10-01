@@ -1,0 +1,10 @@
+{
+  "name": "bigint-base-convert",
+  "version": "0.1.0",
+  "description": "Arbitrary base (2-62) BigInt & rational conversion with repeating-cycle detection, budgets and work reports",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/",
+    "sample": "node samples/demo.ts"
+  }
+}
