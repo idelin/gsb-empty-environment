@@ -1,0 +1,13 @@
+{
+  "name": "exact-decimal",
+  "version": "1.0.0",
+  "description": "Exact decimal arithmetic on BigInt: add/sub/mul/div, quantize, explicit rounding modes, context precision and error flags. No Number intermediates.",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
