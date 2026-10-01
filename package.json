@@ -1,0 +1,14 @@
+{
+  "name": "strict-decimal",
+  "version": "0.1.0",
+  "description": "Strict exact-decimal parser with significant-digit metadata, incremental chunked parsing, budget checks, exact quantize evidence and interval constraints. BigInt-based, never transits Number for big values.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6"
+  },
+  "license": "MIT"
+}
