@@ -1,0 +1,10 @@
+{
+  "name": "slotted-page",
+  "version": "1.0.0",
+  "description": "Compact variable-length slotted-page manager (4KB pages)",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
