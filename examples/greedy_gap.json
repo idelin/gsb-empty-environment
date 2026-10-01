@@ -1,0 +1,11 @@
+{
+  "k": 2,
+  "migrations": [
+    {"name": "D0", "writes": ["w0"]},
+    {"name": "D1", "writes": ["w1"]},
+    {"name": "D2", "writes": ["w2"]},
+    {"name": "C0", "writes": ["k1"]},
+    {"name": "C1", "writes": ["k1"]},
+    {"name": "C2", "writes": ["k1"]}
+  ]
+}
