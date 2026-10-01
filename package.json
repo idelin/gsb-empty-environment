@@ -1,0 +1,14 @@
+{
+  "name": "bigint-fixed-roots",
+  "version": "1.0.0",
+  "description": "Correctly rounded fixed-point square roots and n-th roots on BigInt, with exact tie handling, integer bracketing and provable iteration termination.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
