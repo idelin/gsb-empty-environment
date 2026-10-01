@@ -1,0 +1,12 @@
+{
+  "r": 2,
+  "q": 1,
+  "servers": [
+    {"id": "s1", "rack": "r1", "zone": "z1", "capacity": 1, "cost": 1},
+    {"id": "s2", "rack": "r1", "zone": "z1", "capacity": 1, "cost": 1},
+    {"id": "s3", "rack": "r2", "zone": "z2", "capacity": 1, "cost": 5}
+  ],
+  "failure_sets": [
+    {"name": "fs1", "servers": ["s1", "s2"]}
+  ]
+}
