@@ -1,0 +1,11 @@
+{
+  "name": "compressed-validation-errors",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Compress large sets of similar validation errors into range-based summaries with lossless expansion",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "sample": "node sample/run-sample.ts"
+  }
+}
