@@ -1,0 +1,14 @@
+{
+  "name": "json-template-engine",
+  "version": "0.1.0",
+  "description": "JSON template engine: path-only reads, whitelisted functions, loops/conditionals, dual provenance, incremental rendering with stable entity ids, transactional publish",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}
