@@ -1,0 +1,14 @@
+{
+  "comment": "Synthetic. Left L1 (200.00) settles against rights R1+R2 (120+80). L2/R3 form a plain 1-1 pair. R9 shares no key and stays unmatched.",
+  "window": 3600,
+  "left": [
+    {"id": "L1", "keys": ["batch-7"], "amount": "200.00", "time": 90000},
+    {"id": "L2", "keys": ["inv-22"], "amount": "35.50", "time": 90100}
+  ],
+  "right": [
+    {"id": "R1", "keys": ["batch-7"], "amount": "120.00", "time": 90030},
+    {"id": "R2", "keys": ["batch-7"], "amount": "80.00", "time": 90050},
+    {"id": "R3", "keys": ["inv-22"], "amount": "35.50", "time": 90120},
+    {"id": "R9", "keys": ["other"], "amount": "999.99", "time": 90000}
+  ]
+}

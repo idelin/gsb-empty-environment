@@ -1,0 +1,12 @@
+{
+  "comment": "Synthetic. Acceptance boundary: left a can take x or y, left b can only take x. Optimal is a-r_y plus b-r_x; a greedy a-r_x choice would strand b.",
+  "window": 600,
+  "left": [
+    {"id": "a", "keys": ["x", "y"], "amount": "100.00", "time": 10000},
+    {"id": "b", "keys": ["x"], "amount": "100.00", "time": 10010}
+  ],
+  "right": [
+    {"id": "r_x", "keys": ["x"], "amount": "100.00", "time": 10005},
+    {"id": "r_y", "keys": ["y"], "amount": "100.00", "time": 10020}
+  ]
+}

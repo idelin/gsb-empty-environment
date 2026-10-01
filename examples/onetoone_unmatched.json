@@ -1,0 +1,12 @@
+{
+  "comment": "Synthetic. c has no compatible row (no_candidates); d competes for the same right row (competition).",
+  "window": 60,
+  "left": [
+    {"id": "c", "keys": ["k_only_left"], "amount": "50.00", "time": 0},
+    {"id": "d", "keys": ["k_shared"], "amount": "70.00", "time": 100},
+    {"id": "e", "keys": ["k_shared"], "amount": "70.00", "time": 102}
+  ],
+  "right": [
+    {"id": "r1", "keys": ["k_shared"], "amount": "70.00", "time": 110}
+  ]
+}
