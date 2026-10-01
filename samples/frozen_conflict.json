@@ -1,0 +1,26 @@
+{
+  "now": 8,
+  "tasks": [
+    {
+      "id": "E",
+      "machine": "M1",
+      "duration": 3,
+      "start": 4,
+      "executed": true
+    },
+    {
+      "id": "A",
+      "machine": "M1",
+      "duration": 1,
+      "start": 9
+    }
+  ],
+  "new_tasks": [],
+  "failures": [
+    {
+      "machine": "M1",
+      "start": 5,
+      "end": 8
+    }
+  ]
+}

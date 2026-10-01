@@ -1,0 +1,25 @@
+{
+  "now": "1/2",
+  "tasks": [
+    {
+      "id": "A",
+      "machine": "M1",
+      "duration": "1/2",
+      "start": "3/2"
+    },
+    {
+      "id": "B",
+      "machine": "M1",
+      "duration": "1/2",
+      "start": 3
+    }
+  ],
+  "new_tasks": [],
+  "failures": [
+    {
+      "machine": "M1",
+      "start": "3/2",
+      "end": "5/2"
+    }
+  ]
+}

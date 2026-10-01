@@ -1,0 +1,41 @@
+{
+  "now": 0,
+  "tasks": [
+    {
+      "id": "A",
+      "machine": "M1",
+      "duration": 2,
+      "start": 7
+    },
+    {
+      "id": "B",
+      "machine": "M1",
+      "duration": 2,
+      "start": 0
+    },
+    {
+      "id": "C",
+      "machine": "M1",
+      "duration": 2,
+      "start": 4
+    }
+  ],
+  "new_tasks": [
+    {
+      "id": "N",
+      "machine": "M1",
+      "duration": 3
+    }
+  ],
+  "failures": [
+    {
+      "machine": "M1",
+      "start": 10,
+      "end": null
+    }
+  ],
+  "budget": {
+    "subset": 2,
+    "placement": 100000
+  }
+}
