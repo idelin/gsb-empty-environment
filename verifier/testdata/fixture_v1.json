@@ -1,0 +1,86 @@
+[
+  {
+    "op": "stage",
+    "chunk": {
+      "version": "v1",
+      "name": "trace.jsonl",
+      "data": "eyJpZCI6InNwYW4tMSIsInRpbWVzdGFtcCI6IjIwMjYtMDEtMDFUMTA6MDA6MDBaIiwic3RhcnQiOiIyMDI2LTAxLTAxVDEwOjAwOjAwWiIsImVuZCI6IjIwMjYtMDEtMDFUMTA6MDA6MDVaIn0KeyJpZCI6InNwYW4tMiIsInRpbWVzdGFtcCI6IjIwMjYtMDEtMDFUMTA6MDA6MTBaIiwic3RhcnQiOiIyMDI2LTAxLTAxVDEwOjAwOjEwWiIsImVuZCI6IjIwMjYtMDEtMDFUMTA6MDA6MTJaIn0K"
+    }
+  },
+  {
+    "op": "stage",
+    "chunk": {
+      "version": "v1",
+      "name": "app.log",
+      "data": "eyJpZCI6ImxvZy0xIiwidGltZXN0YW1wIjoiMjAyNi0wMS0wMVQxMDowMDowMloifQp7ImlkIjoibG9nLTIiLCJ0aW1lc3RhbXAiOiIyMDI2LTAxLTAxVDEwOjAwOjExWiJ9Cg=="
+    }
+  },
+  {
+    "op": "stage",
+    "chunk": {
+      "version": "v1",
+      "name": "metrics.jsonl",
+      "data": "eyJpZCI6Im1ldC0xIiwidGltZXN0YW1wIjoiMjAyNi0wMS0wMVQxMDowMDowM1oifQp7ImlkIjoibWV0LTIiLCJ0aW1lc3RhbXAiOiIyMDI2LTAxLTAxVDEwOjAwOjA5WiJ9Cg=="
+    }
+  },
+  {
+    "op": "commit",
+    "manifest": {
+      "version": "v1",
+      "files": [
+        {
+          "name": "trace.jsonl",
+          "kind": "trace",
+          "sha256": "93481a0e1148db892b4797737e3b5c5129785fc7c6d3954d22baa723e290f7db",
+          "size": 222,
+          "timeRange": {
+            "start": "2026-01-01T10:00:00Z",
+            "end": "2026-01-01T10:00:12Z"
+          }
+        },
+        {
+          "name": "app.log",
+          "kind": "log",
+          "sha256": "d837c6a53ae7ca398c75aca66065b01a4de9e9805ced6ce84983abcb79756838",
+          "size": 100,
+          "timeRange": {
+            "start": "2026-01-01T10:00:00Z",
+            "end": "2026-01-01T10:00:12Z"
+          }
+        },
+        {
+          "name": "metrics.jsonl",
+          "kind": "metric",
+          "sha256": "a4b760de9a5157e990af1adf1f4c392d5be4643b957429c184155680403b849b",
+          "size": 100,
+          "timeRange": {
+            "start": "2026-01-01T10:00:00Z",
+            "end": "2026-01-01T10:00:12Z"
+          }
+        }
+      ],
+      "references": [
+        {
+          "source": {
+            "file": "trace.jsonl",
+            "record": "span-1"
+          },
+          "target": {
+            "file": "app.log",
+            "record": "log-1"
+          }
+        },
+        {
+          "source": {
+            "file": "trace.jsonl",
+            "record": "span-2"
+          },
+          "target": {
+            "file": "app.log",
+            "record": "log-2"
+          }
+        }
+      ]
+    }
+  }
+]
