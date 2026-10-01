@@ -1,0 +1,13 @@
+{
+  "name": "exact-cmp",
+  "version": "0.1.0",
+  "description": "Resumable precision-refinement comparison protocol over exact integers, rationals, decimals and explicit error intervals.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
