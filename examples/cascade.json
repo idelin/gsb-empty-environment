@@ -1,0 +1,11 @@
+{
+  "operations": [
+    {"op": "add_root",  "id": "root", "quota": 10, "start": 0, "end": 100, "weight": 0},
+    {"op": "add_lease", "id": "p",  "parent": "root", "quota": 6, "start": 0, "end": 80, "weight": 2},
+    {"op": "add_lease", "id": "q",  "parent": "root", "quota": 4, "start": 0, "end": 80, "weight": 3},
+    {"op": "add_lease", "id": "p1", "parent": "p", "quota": 3, "start": 0, "end": 60, "weight": 5},
+    {"op": "add_lease", "id": "p2", "parent": "p", "quota": 3, "start": 0, "end": 60, "weight": 7},
+    {"op": "add_lease", "id": "p1a", "parent": "p1", "quota": 1, "start": 0, "end": 40, "weight": 11},
+    {"op": "resize",    "id": "root", "quota": 4}
+  ]
+}
