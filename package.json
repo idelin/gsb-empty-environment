@@ -1,0 +1,13 @@
+{
+  "name": "negation-stream-joiner",
+  "version": "1.0.0",
+  "description": "双流时序 Join 组件：带否定（取消）事件、超时孤立输出与迟到补配",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node src/demo.ts"
+  }
+}
