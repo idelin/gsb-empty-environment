@@ -1,0 +1,10 @@
+{
+  "leases": [
+    {"id": "root",    "parent": null,    "start": 0, "end": 100, "quota": 5, "weight": 0},
+    {"id": "child",   "parent": "root",  "start": 0, "end": 100, "quota": 3, "weight": 10},
+    {"id": "grand",   "parent": "child", "start": 0, "end": 100, "quota": 2, "weight": 7},
+    {"id": "great",   "parent": "grand", "start": 0, "end": 100, "quota": 1, "weight": 4},
+    {"id": "sibling", "parent": "root",  "start": 0, "end": 100, "quota": 2, "weight": 1}
+  ],
+  "operation": {"lease": "root", "quota": 1}
+}
