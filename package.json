@@ -1,0 +1,11 @@
+{
+  "name": "budgeted-schema-validator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Dependency-free JSON Schema subset validator with a shared budget, cancellation and capped error collection.",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "sample": "node examples/sample.ts"
+  }
+}
