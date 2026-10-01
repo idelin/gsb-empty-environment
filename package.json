@@ -1,0 +1,14 @@
+{
+  "name": "refdoc-store",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-document JSON store with cross-document ID references, versioned schemas, reverse cardinality and atomic batches",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "sample": "node samples/demo.ts"
+  }
+}
