@@ -1,0 +1,14 @@
+{
+  "name": "rational-approx",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Best rational approximation within a denominator bound via continued fractions (BigInt-exact), with interval targets, explicit tie-breaking and budget interruption.",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
