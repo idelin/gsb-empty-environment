@@ -1,0 +1,8 @@
+{
+  "events": {"E1": [0, 10], "E2": [0, 10], "E3": [0, 10], "E4": [2, 12]},
+  "constraints": [
+    {"upstream": "E1", "downstream": "E2", "min_delay": 3},
+    {"upstream": "E2", "downstream": "E3", "min_delay": 4},
+    {"upstream": "E1", "downstream": "E4", "min_delay": 1}
+  ]
+}
