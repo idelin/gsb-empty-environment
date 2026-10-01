@@ -1,0 +1,7 @@
+[
+  {"id": "a", "keys": ["inv-100", "inv-200"], "amount": "10.00", "time": 1000},
+  {"id": "b", "keys": ["inv-100"], "amount": "10.00", "time": 1000},
+  {"id": "c", "keys": ["inv-999"], "amount": "77.50", "time": 1000},
+  {"id": "L1", "keys": ["bat-7"], "amount": "25.00", "time": 2000},
+  {"id": "L2", "keys": ["bat-7"], "amount": "5.00", "time": 2005}
+]
