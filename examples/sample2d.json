@@ -1,0 +1,8 @@
+{
+  "query": {"t0": 0, "t1": 10, "v0": 0, "v1": 10},
+  "configs": [
+    {"id": "base", "priority": 1, "version": 1, "t0": 0, "t1": 10, "v0": 0, "v1": 10, "value": "base"},
+    {"id": "promo", "priority": 2, "version": 1, "t0": 2, "t1": 6, "v0": 1, "v1": 5, "value": "promo"},
+    {"id": "promo2", "priority": 2, "version": 2, "t0": 4, "t1": 8, "v0": 3, "v1": 7, "value": "promo2"}
+  ]
+}

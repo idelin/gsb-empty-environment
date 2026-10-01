@@ -1,0 +1,46 @@
+"""稀疏区间冲突修复：一维时间线 + 二维矩形分区。"""
+from .core1d import (
+    AffectedInterval,
+    Config,
+    Explanation,
+    Segment,
+    Timeline,
+)
+from .rect2d import (
+    AffectedRect,
+    BudgetExceeded,
+    Grid,
+    Rect,
+    RectConfig,
+    RectTimeline,
+    SolveResult,
+    build_grid,
+    exact_min_partition,
+    greedy_partition,
+    point_winner,
+    rects_from_cells,
+    verify_partition,
+    winner_value,
+)
+
+__all__ = [
+    "AffectedInterval",
+    "AffectedRect",
+    "BudgetExceeded",
+    "Config",
+    "Explanation",
+    "Grid",
+    "Rect",
+    "RectConfig",
+    "RectTimeline",
+    "Segment",
+    "SolveResult",
+    "Timeline",
+    "build_grid",
+    "exact_min_partition",
+    "greedy_partition",
+    "point_winner",
+    "rects_from_cells",
+    "verify_partition",
+    "winner_value",
+]

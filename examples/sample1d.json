@@ -1,0 +1,8 @@
+{
+  "configs": [
+    {"id": "a", "key": "rate", "priority": 1, "version": 1, "start": 0, "end": 5, "value": "x"},
+    {"id": "b", "key": "rate", "priority": 1, "version": 1, "start": 5, "end": 10, "value": "x"},
+    {"id": "c", "key": "rate", "priority": 2, "version": 1, "start": 3, "end": 7, "value": "hot"},
+    {"id": "d", "key": "quota", "priority": 0, "version": 2, "start": 0, "end": 20, "value": 100}
+  ]
+}
