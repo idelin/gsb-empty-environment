@@ -1,0 +1,19 @@
+{
+  "graph": {
+    "vertices": ["s", "m", "t"],
+    "edges": [
+      {"id": 0, "src": "s", "dst": "t", "label": "a", "cost": 1},
+      {"id": 1, "src": "s", "dst": "m", "label": "a", "cost": 1},
+      {"id": 2, "src": "m", "dst": "t", "label": "b", "cost": 1}
+    ]
+  },
+  "dfa": {
+    "states": ["q0", "q1", "q2"],
+    "alphabet": ["a", "b"],
+    "start": "q0",
+    "accepting": ["q2"],
+    "transitions": [["q0", "a", "q1"], ["q1", "b", "q2"]]
+  },
+  "source": "s",
+  "target": "t"
+}
