@@ -1,0 +1,14 @@
+{
+  "name": "bigint-base-convert",
+  "version": "1.0.0",
+  "description": "Arbitrary base (2-62) conversion for big integers and rationals with repeating-cycle detection, output budget, and pausable output. BigInt-only, no Number intermediates.",
+  "type": "module",
+  "scripts": {
+    "test": "node --no-warnings --test test/*.test.ts",
+    "demo": "node --no-warnings examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6"
+  },
+  "license": "MIT"
+}
