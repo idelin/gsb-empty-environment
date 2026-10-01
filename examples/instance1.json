@@ -1,0 +1,13 @@
+{
+  "servers": [
+    {"id": "s1", "rack": "rk1", "zone": "z1", "capacity": 2, "cost": 1},
+    {"id": "s2", "rack": "rk1", "zone": "z1", "capacity": 2, "cost": 1},
+    {"id": "s3", "rack": "rk2", "zone": "z2", "capacity": 2, "cost": 10}
+  ],
+  "fault_sets": [
+    {"id": "fs1", "servers": ["s1", "s2"]}
+  ],
+  "r": 2,
+  "q": 1,
+  "shards": ["shard-a"]
+}

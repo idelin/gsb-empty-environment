@@ -1,0 +1,14 @@
+{
+  "servers": [
+    {"id": "s1", "rack": "rk1", "zone": "z1", "capacity": 1, "cost": 1},
+    {"id": "s2", "rack": "rk2", "zone": "z1", "capacity": 1, "cost": 2},
+    {"id": "s3", "rack": "rk3", "zone": "z2", "capacity": 1, "cost": 5},
+    {"id": "s4", "rack": "rk4", "zone": "z2", "capacity": 1, "cost": 9}
+  ],
+  "fault_sets": [
+    {"id": "fs1", "servers": ["s1", "s3"]}
+  ],
+  "r": 2,
+  "q": 1,
+  "shards": ["shard-a", "shard-b"]
+}
