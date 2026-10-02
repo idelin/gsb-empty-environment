@@ -1,0 +1,11 @@
+{
+  "name": "latch-crabbing-bptree",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "螃蟹脚并发加锁协议（Latch Crabbing / Coupling）TypeScript 版 B+ 树",
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/crabbing.test.ts"
+  }
+}
