@@ -1,0 +1,14 @@
+{
+  "name": "mvcc-version-chain-gc",
+  "version": "1.0.0",
+  "description": "MVCC version-chain management with ReadView-aware garbage collection",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/**/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
