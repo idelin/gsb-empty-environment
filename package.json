@@ -1,0 +1,13 @@
+{
+  "name": "clock-skew-guardian",
+  "version": "1.0.0",
+  "description": "双时钟源偏差检测与租约熔断守护器（Monotonic vs Wall-Clock）",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
