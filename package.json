@@ -1,0 +1,13 @@
+{
+  "name": "spacetime-density-cube",
+  "version": "1.0.0",
+  "description": "Streaming spatio-temporal density analyzer: tile-grid heatmap accumulator + hourly data cube + Top-K hotspot queries",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
