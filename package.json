@@ -1,0 +1,15 @@
+{
+  "name": "hierarchical-lease-coordinator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "分层租约与多级代理授权协调器：根协调器 -> 区域网关 -> 边缘工作节点",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --experimental-strip-types src/demo.ts",
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  }
+}
