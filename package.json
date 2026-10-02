@@ -1,0 +1,14 @@
+{
+  "name": "rolling-hash-cdc",
+  "version": "1.0.0",
+  "description": "Content-defined chunking (Buzhash rolling hash) with Merkle tree for incremental sync",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
