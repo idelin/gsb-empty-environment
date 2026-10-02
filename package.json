@@ -1,0 +1,14 @@
+{
+  "name": "bitemporal-exposure-monitor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "多币种联合授信时态敞口监控器（双时态：业务时间 + 系统时间）",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test",
+    "demo": "node --experimental-strip-types src/demo.ts"
+  }
+}
