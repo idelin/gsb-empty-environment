@@ -1,0 +1,13 @@
+{
+  "name": "delaunay-topology",
+  "version": "1.0.0",
+  "description": "Incremental Delaunay triangulation with Lawson flips, adjacency graph and convex hull output",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test"
+  }
+}
