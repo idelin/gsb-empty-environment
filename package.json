@@ -1,0 +1,10 @@
+{
+  "name": "range-lease-router",
+  "version": "1.0.0",
+  "description": "Fine-grained key-range partition lease routing gateway",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
