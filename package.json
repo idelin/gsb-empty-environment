@@ -1,0 +1,13 @@
+{
+  "name": "aries-wal",
+  "version": "1.0.0",
+  "description": "WAL-based transactional persistence with ARIES recovery (Analysis/Redo/Undo)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/crash-demo.ts"
+  }
+}
