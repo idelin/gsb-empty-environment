@@ -1,0 +1,10 @@
+{
+  "name": "slotted-page",
+  "version": "1.0.0",
+  "description": "Compact slotted-page manager for variable-length byte records",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "demo": "node demo.ts"
+  }
+}
