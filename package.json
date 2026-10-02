@@ -1,0 +1,14 @@
+{
+  "name": "trace-veil",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Traceable trajectory temporal-encryption index with pseudonymized auditing",
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
