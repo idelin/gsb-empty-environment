@@ -1,0 +1,14 @@
+{
+  "name": "maxcsp-bnb-solver",
+  "version": "1.0.0",
+  "description": "带权最大约束满足(Max-CSP)分支定界求解器",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "demo": "node src/demo.ts"
+  }
+}
