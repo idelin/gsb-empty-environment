@@ -1,0 +1,11 @@
+{
+  "name": "json-ref-repo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-document JSON store with ID references, versioned schemas, reverse cardinality and atomic batches",
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.ts\"",
+    "sample": "node examples/sample.ts"
+  }
+}
