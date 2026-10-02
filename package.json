@@ -1,0 +1,11 @@
+{
+  "name": "skiplist-memtable",
+  "version": "1.0.0",
+  "description": "In-memory SkipList MemTable with concurrent ordered inserts and snapshot-isolated read-only iterators",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node sample/demo.ts"
+  },
+  "license": "MIT"
+}
