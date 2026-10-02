@@ -1,0 +1,14 @@
+{
+  "name": "bitemporal-price-ledger",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "双时态（Valid Time + Transaction Time）价格规则引擎，金额使用整数分",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
