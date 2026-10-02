@@ -1,0 +1,15 @@
+{
+  "name": "sliding-window-flow-control",
+  "version": "1.0.0",
+  "description": "Bidirectional flow-control beacons with a sliding-window coordinator (zero-dependency, Node.js built-in test runner)",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test \"test/*.test.ts\"",
+    "demo": "node --experimental-strip-types --disable-warning=ExperimentalWarning examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
