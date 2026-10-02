@@ -1,0 +1,13 @@
+{
+  "name": "lsm-diagnostics-monitor",
+  "version": "1.0.0",
+  "description": "LSM 读放大与 Bloom Filter 误判率监控诊断器",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/"
+  }
+}
