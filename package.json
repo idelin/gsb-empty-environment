@@ -1,0 +1,15 @@
+{
+  "name": "fine-grained-patch-engine",
+  "version": "0.1.0",
+  "description": "Fine-grained reactive UI update engine: signal changes map directly to minimal virtual-node patches, no full-tree diff.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"tests/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {}
+}
