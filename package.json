@@ -1,0 +1,13 @@
+{
+  "name": "paxos-sparse-engine",
+  "version": "1.0.0",
+  "description": "Multi-Paxos majority consensus log engine + sparse-data memory-compact optimizer (TypeScript, Node built-in test runner)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/**/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
