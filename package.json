@@ -1,0 +1,11 @@
+{
+  "name": "rational-timecode",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Rational-frame-rate timecode <-> sample conversion with explicit drop-frame period tables, BigInt exact math, and cross-rule timeline splicing.",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
