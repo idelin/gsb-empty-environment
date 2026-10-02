@@ -1,0 +1,33 @@
+=== python3.11 -m unittest discover -s tests -v ===
+date: 2026-10-02 13:15:58 UTC
+Python 3.11.15
+test_cancel_then_restart_from_checkpoint (test_sparse_cg.TestCheckpointAndHotStart.test_cancel_then_restart_from_checkpoint) ... ok
+test_matrix_change_after_save_rejects_stale_checkpoint (test_sparse_cg.TestCheckpointAndHotStart.test_matrix_change_after_save_rejects_stale_checkpoint) ... ok
+test_matrix_version_change_hot_start_with_precond_update (test_sparse_cg.TestCheckpointAndHotStart.test_matrix_version_change_hot_start_with_precond_update) ... ok
+test_reused_solution_reinitializes_krylov_state (test_sparse_cg.TestCheckpointAndHotStart.test_reused_solution_reinitializes_krylov_state) ... ok
+test_matches_exact_elimination_on_small_spd (test_sparse_cg.TestDenseCrossCheck.test_matches_exact_elimination_on_small_spd) ... ok
+test_exact_x0_returns_in_zero_iterations (test_sparse_cg.TestExactInitialGuess.test_exact_x0_returns_in_zero_iterations) ... ok
+test_bad_index_range_rejected (test_sparse_cg.TestExplicitInputValidation.test_bad_index_range_rejected) ... ok
+test_bad_indptr_rejected (test_sparse_cg.TestExplicitInputValidation.test_bad_indptr_rejected) ... ok
+test_nonsquare_rejected_by_solver (test_sparse_cg.TestExplicitInputValidation.test_nonsquare_rejected_by_solver) ... ok
+test_preconditioner_update_size_mismatch (test_sparse_cg.TestExplicitInputValidation.test_preconditioner_update_size_mismatch) ... ok
+test_asymmetric_input_reports_defect (test_sparse_cg.TestNumericalEvidence.test_asymmetric_input_reports_defect) ... ok
+test_failing_matvec_reported_with_iteration (test_sparse_cg.TestNumericalEvidence.test_failing_matvec_reported_with_iteration) ... ok
+test_lost_positive_definiteness_reports_pAp (test_sparse_cg.TestNumericalEvidence.test_lost_positive_definiteness_reports_pAp) ... ok
+test_max_iterations_is_not_no_solution (test_sparse_cg.TestNumericalEvidence.test_max_iterations_is_not_no_solution) ... ok
+test_zero_preconditioner_entry_reported (test_sparse_cg.TestNumericalEvidence.test_zero_preconditioner_entry_reported) ... ok
+test_illconditioned_converges_only_on_true_residual (test_sparse_cg.TestTrueResidualTermination.test_illconditioned_converges_only_on_true_residual) ... ok
+test_stagnation_detected_on_true_residual_history (test_sparse_cg.TestTrueResidualTermination.test_stagnation_detected_on_true_residual_history) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.208s
+
+OK
+
+=== key numerical evidence (actual runs) ===
+[ill-conditioned SPD] status=converged iterations=140 true_residual=6.069e-05 tol=1.0e-04
+  premature convergence rejected at it=139: recurrence=4.881e-05 <= tol but true=1.910e-04 > tol
+[stagnation] status=stagnated iterations=90 norm_then=6.211e+08 norm_now=3.570e+08 (required 0.5x reduction over window=4)
+[indefinite] status=not_positive_definite pAp=-2.0 at iteration 1
+[asymmetric] status=asymmetric_input defect=1.0 at (0,1): a_ij=1.5 a_ji=0.5
+[checkpoint] VersionMismatchError evidence={'checkpoint_matrix_version': 0, 'current_matrix_version': 1, 'checkpoint_iteration': 3, 'checkpoint_true_residual_norm': 0.04095973831648277}
