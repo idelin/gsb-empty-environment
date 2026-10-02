@@ -1,0 +1,14 @@
+{
+  "name": "htb-bandwidth-allocator",
+  "version": "1.0.0",
+  "description": "Hierarchical Token Bucket (HTB) tree bandwidth allocator",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/htb.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "license": "MIT"
+}
