@@ -1,0 +1,14 @@
+{
+  "name": "vector-mempool",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Vectorized intermediate-result memory pool with GC avoidance for query execution",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --expose-gc --test test/pipeline.test.ts",
+    "sample": "node --expose-gc examples/run-sample.ts"
+  }
+}
