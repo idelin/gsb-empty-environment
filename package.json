@@ -1,0 +1,14 @@
+{
+  "name": "incremental-topo",
+  "version": "1.0.0",
+  "description": "双向增量拓扑排序与环检测器（Pearce-Kelly 双向局部重染色）",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test 'test/*.test.ts'",
+    "demo": "node --disable-warning=ExperimentalWarning examples/demo.ts"
+  },
+  "license": "MIT"
+}
