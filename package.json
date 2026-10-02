@@ -1,0 +1,14 @@
+{
+  "name": "lsm-tombstone",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "LSM 树删除语义管理内核：Tombstone 标记与生命周期清理器",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/lsm-tree.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
