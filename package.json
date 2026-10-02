@@ -1,0 +1,14 @@
+{
+  "name": "pbwire-snapshot",
+  "version": "1.0.0",
+  "description": "Zero-dependency Protobuf wire-format codec + incremental snapshot/checkpoint engine (TypeScript)",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
