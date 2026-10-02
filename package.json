@@ -1,0 +1,14 @@
+{
+  "name": "anti-entropy-merkle",
+  "version": "1.0.0",
+  "description": "Anti-Entropy background full-state repairer over lightweight Gossip, with Merkle-tree depth-first sync (TypeScript, Node built-in test runner)",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
