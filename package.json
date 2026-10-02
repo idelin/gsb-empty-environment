@@ -1,0 +1,14 @@
+{
+  "name": "dynamic-dominator-tree",
+  "version": "1.0.0",
+  "description": "Dynamic CFG dominator tree maintenance with counterexample path generation",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
