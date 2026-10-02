@@ -1,0 +1,29 @@
+test_recompute_matches_cached (test_numerics.TestCheckpoint.test_recompute_matches_cached) ... ok
+test_affine_param_gradients (test_numerics.TestFiniteDifferences.test_affine_param_gradients) ... ok
+test_grad_data_and_coords (test_numerics.TestFiniteDifferences.test_grad_data_and_coords) ... ok
+test_tiled_matches_full_execution (test_numerics.TestTiling.test_tiled_matches_full_execution) ... ok
+test_centers_shifts_by_half_pixel (test_sampling.TestAlignMapping.test_centers_shifts_by_half_pixel) ... ok
+test_corners_endpoints_hit_corner_pixels (test_sampling.TestAlignMapping.test_corners_endpoints_hit_corner_pixels) ... ok
+test_clamp_outside_has_zero_coordinate_gradient (test_sampling.TestBoundaryRules.test_clamp_outside_has_zero_coordinate_gradient) ... ok
+test_reflect_region_gradient_carries_direction (test_sampling.TestBoundaryRules.test_reflect_region_gradient_carries_direction) ... ok
+test_zeros_mask_closed_interval_and_outside (test_sampling.TestBoundaryRules.test_zeros_mask_closed_interval_and_outside) ... ok
+test_full_mask_all_invalid (test_sampling.TestDegenerateCases.test_full_mask_all_invalid) ... ok
+test_single_pixel_image (test_sampling.TestDegenerateCases.test_single_pixel_image) ... ok
+test_zero_length_axis_with_zeros_boundary (test_sampling.TestDegenerateCases.test_zero_length_axis_with_zeros_boundary) ... ok
+test_zero_length_height (test_sampling.TestDegenerateCases.test_zero_length_height) ... ok
+test_zero_length_width (test_sampling.TestDegenerateCases.test_zero_length_width) ... ok
+test_repeated_sampling_gradients_add_up (test_sampling.TestSharedPositionAccumulation.test_repeated_sampling_gradients_add_up) ... ok
+test_clamp_endpoint_uses_interior_side (test_sampling.TestSubgradientConventions.test_clamp_endpoint_uses_interior_side) ... ok
+test_integer_node_uses_right_cell (test_sampling.TestSubgradientConventions.test_integer_node_uses_right_cell) ... ok
+test_last_node_uses_last_cell (test_sampling.TestSubgradientConventions.test_last_node_uses_last_cell) ... ok
+test_reflect_turning_point_takes_plus_one_branch (test_sampling.TestSubgradientConventions.test_reflect_turning_point_takes_plus_one_branch) ... ok
+test_chain_rule_matches_composed_transform (test_transforms.TestChainVsDirect.test_chain_rule_matches_composed_transform) ... ok
+test_chain_through_sampling_pipeline (test_transforms.TestChainVsDirect.test_chain_through_sampling_pipeline) ... ok
+test_compose_matches_sequential_application (test_transforms.TestChainVsDirect.test_compose_matches_sequential_application) ... ok
+test_rank_one_through_sampling (test_transforms.TestSingularTransform.test_rank_one_through_sampling) ... ok
+test_rank_zero_collapses_everything (test_transforms.TestSingularTransform.test_rank_zero_collapses_everything) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.013s
+
+OK
