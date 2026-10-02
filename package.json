@@ -1,0 +1,13 @@
+{
+  "name": "negation-stream-joiner",
+  "version": "1.0.0",
+  "description": "Dual-stream temporal join with negation (cancel) events, timeout and late-event repair",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
