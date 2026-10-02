@@ -1,0 +1,13 @@
+{
+  "name": "persisted-reactive-store",
+  "version": "1.0.0",
+  "description": "持久化响应式存储与增量 Hydration 恢复器（TypeScript + Node.js 内置测试）",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
