@@ -1,0 +1,13 @@
+{
+  "name": "bitemporal-prescription-checker",
+  "version": "1.0.0",
+  "description": "多版本医疗处方配伍禁忌检查器：双时态（业务时间 + 知悉时间）处方合规判定与追溯风险审计",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
