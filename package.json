@@ -1,0 +1,14 @@
+{
+  "name": "swim-deterministic-sim",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Discrete-event network simulator + SWIM protocol with fully deterministic test harness",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/swim.test.ts",
+    "sample": "node --experimental-strip-types examples/run-sample.ts"
+  }
+}
