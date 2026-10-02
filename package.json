@@ -1,0 +1,14 @@
+{
+  "name": "lsm-prefix-seek",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Prefix-range scan locator over an LSM/SSTable index (prefix Seek + boundary truncation)",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
