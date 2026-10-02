@@ -1,0 +1,13 @@
+{
+  "name": "sliding-window-duration-integrator",
+  "version": "1.0.0",
+  "description": "Cumulative milliseconds a streaming metric satisfies a boolean condition within a sliding window",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
