@@ -1,0 +1,14 @@
+{
+  "name": "incremental-maxflow",
+  "version": "1.0.0",
+  "description": "Incremental max-flow adjuster with min-cut certificate generation",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
