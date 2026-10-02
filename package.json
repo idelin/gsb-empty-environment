@@ -1,0 +1,14 @@
+{
+  "name": "hmm-map-matching",
+  "version": "1.0.0",
+  "description": "HMM-based map matching kernel for GPS trajectories (Viterbi over road-network candidates)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "example": "node examples/urban-canyon.ts"
+  },
+  "license": "MIT"
+}
