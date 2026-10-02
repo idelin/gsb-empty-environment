@@ -1,0 +1,10 @@
+{
+  "name": "log-stream-pipeline",
+  "version": "1.0.0",
+  "description": "High-throughput ordered log pipeline with persistence barriers",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/pipeline.test.ts",
+    "demo": "node demo.ts"
+  }
+}
