@@ -1,0 +1,15 @@
+{
+  "name": "lease-mutex",
+  "version": "1.0.0",
+  "description": "Distributed mutex with lease isolation, keep-alive heartbeats and fencing tokens",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT"
+}
