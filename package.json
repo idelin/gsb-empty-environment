@@ -1,0 +1,13 @@
+{
+  "name": "phi-accrual-failure-detector",
+  "version": "1.0.0",
+  "description": "Adaptive heartbeat health detector based on the φ-Accrual Failure Detector",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
