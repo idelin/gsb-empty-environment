@@ -1,0 +1,14 @@
+{
+  "name": "temporal-rbac-delegation",
+  "version": "1.0.0",
+  "description": "Bitemporal RBAC permission delegation & inheritance resolution kernel",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
