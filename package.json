@@ -1,0 +1,14 @@
+{
+  "name": "sliding-window-histogram",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "固定桶宽+对数桶混合的滑动窗口直方图，流式 P90/P99 估算（O(1) 过期、反向补偿、无常驻明细样本）",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node src/demo.ts"
+  }
+}
