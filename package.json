@@ -1,0 +1,14 @@
+{
+  "name": "sliding-window-quantile",
+  "version": "1.0.0",
+  "description": "Exact sliding-window quantile maintenance via an order-statistics skip list",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
