@@ -1,0 +1,14 @@
+{
+  "name": "lockfree-mvcc",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "只读事务非阻塞无锁读取器：基于 SharedArrayBuffer 的无锁 MVCC 读路径",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "demo": "node --experimental-strip-types src/demo.ts"
+  }
+}
