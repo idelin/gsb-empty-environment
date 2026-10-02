@@ -1,0 +1,8 @@
+test_distinct_streams_differ (tests.test_rng.TestStreamFactory.test_distinct_streams_differ) ... ok
+test_order_independence (tests.test_rng.TestStreamFactory.test_order_independence) ... ok
+test_seed_type_checked (tests.test_rng.TestStreamFactory.test_seed_type_checked) ... ok
+
+----------------------------------------------------------------------
+Ran 54 tests in 0.196s
+
+OK
