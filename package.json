@@ -1,0 +1,13 @@
+{
+  "name": "hmm-map-matching",
+  "version": "1.0.0",
+  "description": "HMM-based map matching kernel for noisy GPS trajectories (Viterbi over road-network candidate graph)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "demo": "node --disable-warning=ExperimentalWarning examples/city-canyon-demo.ts"
+  }
+}
