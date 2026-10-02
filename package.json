@@ -1,0 +1,11 @@
+{
+  "name": "json-ref-store",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-document JSON store with ID references, reverse index, batched atomic transactions and a versioned schema subset",
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
