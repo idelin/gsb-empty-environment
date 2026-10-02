@@ -1,0 +1,13 @@
+{
+  "name": "rete-matcher",
+  "version": "1.0.0",
+  "description": "Incremental RETE network pattern matcher with alpha constant filtering, beta joins and negative-token retraction",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
