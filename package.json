@@ -1,0 +1,10 @@
+{
+  "name": "lease-read-optimizer",
+  "version": "1.0.0",
+  "description": "Lease-based strongly-consistent local read optimizer for replicated databases",
+  "type": "module",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
