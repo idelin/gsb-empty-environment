@@ -1,0 +1,14 @@
+{
+  "name": "exact-quota-distributor",
+  "version": "1.0.0",
+  "description": "Exact integer apportionment with rational weights, item/group bounds, largest-remainder baseline, movement-minimizing re-weighting, and conservation/optimality certificates.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "example": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
