@@ -1,0 +1,14 @@
+{
+  "name": "rete-incremental",
+  "version": "1.0.0",
+  "description": "增量规则 RETE 网络模式匹配器(Alpha 常量过滤 + Beta 跨事实 Join + 负 Token 级联撤回)",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/**/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
