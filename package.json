@@ -1,0 +1,13 @@
+{
+  "name": "compact-proto-codec",
+  "version": "1.0.0",
+  "description": "Zero-dependency Protobuf wire-format codec with reflection validation and sparse-data memory optimizer",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
