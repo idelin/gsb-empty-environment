@@ -1,0 +1,14 @@
+{
+  "name": "exact-rational-matrix",
+  "version": "1.0.0",
+  "description": "纯有理数矩阵代数：Bareiss 无除法行列式 + 伴随矩阵法精确求逆",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test tests/*.test.ts",
+    "demo": "node --experimental-strip-types --no-warnings examples/demo.ts"
+  },
+  "license": "MIT"
+}
