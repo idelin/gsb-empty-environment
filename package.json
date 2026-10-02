@@ -1,0 +1,14 @@
+{
+  "name": "dag-reachability-index",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "DAG 全节点可达性位图索引器：拓扑分层 + 稀疏压缩位图 + 增量传递闭包更新 + O(1) 查询",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test test/reachability.test.ts"
+  }
+}
