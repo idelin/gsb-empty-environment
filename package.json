@@ -1,0 +1,10 @@
+{
+  "name": "incremental-topo",
+  "version": "1.0.0",
+  "description": "双向增量拓扑排序与环检测器（Pearce & Kelly 算法）",
+  "type": "module",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
