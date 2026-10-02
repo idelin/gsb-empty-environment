@@ -1,0 +1,14 @@
+{
+  "name": "rational-simplex",
+  "version": "1.0.0",
+  "description": "Exact rational-arithmetic simplex solver (two-phase, Bland's rule) with dual values and unbounded/infeasible certificates",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "sample": "node examples/sample.ts"
+  },
+  "license": "MIT"
+}
