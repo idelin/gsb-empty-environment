@@ -1,0 +1,11 @@
+{
+  "name": "traj-compact",
+  "version": "1.0.0",
+  "description": "面向车载终端低带宽传输的时空轨迹压缩编码器（航向角保持）",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
