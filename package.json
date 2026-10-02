@@ -1,0 +1,13 @@
+{
+  "name": "crash-safe-versionset",
+  "version": "1.0.0",
+  "description": "Crash-consistent LSM VersionSet manager with append-only MANIFEST log",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test 'test/*.test.ts'",
+    "demo": "node --experimental-strip-types --no-warnings examples/demo.ts"
+  }
+}
