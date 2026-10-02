@@ -1,0 +1,10 @@
+{
+  "name": "version-set",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Crash-consistent LSM VersionSet manager with atomic manifest-based version evolution",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node demo/run.ts"
+  }
+}
