@@ -1,0 +1,13 @@
+{
+  "name": "trajectory-compressor",
+  "version": "1.0.0",
+  "description": "Spatiotemporal trajectory compression codec with heading-angle preservation for low-bandwidth vehicle terminals",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/",
+    "sample": "node examples/run-sample.ts"
+  }
+}
