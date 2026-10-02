@@ -1,0 +1,11 @@
+{
+  "name": "exact-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Exact rational affine/quantize pipeline: per-step loss audit, deferred vs stepwise rounding, exact preimages, safe composition, exhaustive grid verification",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node samples/demo.ts"
+  }
+}
