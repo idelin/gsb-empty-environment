@@ -1,0 +1,14 @@
+{
+  "name": "tiered-ttl-lru-indexer",
+  "version": "1.0.0",
+  "description": "Tiered time-aware (TTL/TTD) LRU dual indexer: O(1) hotness list + expiry min-heap with batch reaping",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "license": "MIT"
+}
