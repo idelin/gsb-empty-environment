@@ -1,0 +1,14 @@
+{
+  "name": "ratelimit-metrics-exporter",
+  "version": "1.0.0",
+  "description": "Rate limiter runtime observability: throughput, dropped count, wait-duration histogram, token level, with Prometheus self-exporter",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node examples/stress-sample.ts"
+  },
+  "license": "MIT"
+}
