@@ -1,0 +1,13 @@
+{
+  "name": "wirecodec-fair-scheduler",
+  "version": "1.0.0",
+  "description": "Zero-dependency Protocol Buffers wire-format codec + multi-tenant DRR fair scheduler (TypeScript)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
