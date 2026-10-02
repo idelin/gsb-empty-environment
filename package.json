@@ -1,0 +1,14 @@
+{
+  "name": "mgl-lock-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "多粒度锁（MGL）与意向锁调度器：库/表/行三级层次锁，自动意向锁，O(1) 表级冲突判定",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
