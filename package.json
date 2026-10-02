@@ -1,0 +1,13 @@
+{
+  "name": "dynamic-convex-hull-evolver",
+  "version": "1.0.0",
+  "description": "Time-aware dynamic convex hull evolver for expiring spatial point sets",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/evolver.test.ts",
+    "demo": "node examples/drone-swarm.ts"
+  }
+}
