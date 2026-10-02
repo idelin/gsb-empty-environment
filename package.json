@@ -1,0 +1,14 @@
+{
+  "name": "risk-rule-engine",
+  "version": "1.0.0",
+  "description": "Streaming risk-control rule engine with sliding-window frequency rules and smooth hot-swappable rule versions",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node src/demo.ts"
+  },
+  "license": "MIT"
+}
