@@ -1,0 +1,10 @@
+{
+  "name": "lr1-conflict-diagnoser",
+  "version": "1.0.0",
+  "description": "LR(1) item-set closure, parse table construction and conflict diagnostics",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node src/demo.ts"
+  }
+}
