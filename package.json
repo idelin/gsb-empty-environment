@@ -1,0 +1,15 @@
+{
+  "name": "risk-rule-engine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "流式风控规则引擎: 滑动窗口频次 + 单笔特征组合条件, 规则版本热切换与会话级版本钉住",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --experimental-strip-types examples/demo.ts",
+    "test": "node --experimental-strip-types --test test/engine.test.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
