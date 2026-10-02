@@ -1,0 +1,13 @@
+{
+  "name": "coroutine-channel",
+  "version": "1.0.0",
+  "description": "Go-style coroutine Channel with lock-free ring buffer, in TypeScript",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
