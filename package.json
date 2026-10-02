@@ -1,0 +1,14 @@
+{
+  "name": "mvcc-gc",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "MVCC 多版本链管理与基于全局最小 ReadView 的垃圾回收器",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/**/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
