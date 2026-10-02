@@ -1,0 +1,12 @@
+# 合成示例数据：验收边界 + 身份合并/拆分 + 旧版本查询
+{"op": "event", "key": "k1", "event_id": "t1", "version": 1, "subject": "u1", "time": 2, "kind": "touchpoint", "channel": "a"}
+{"op": "event", "key": "k2", "event_id": "c1", "version": 1, "subject": "u1", "time": 5, "kind": "conversion", "amount": 100}
+{"op": "query"}
+{"op": "event", "key": "k3", "event_id": "t2", "version": 1, "subject": "u1", "time": 4, "kind": "touchpoint", "channel": "b"}
+{"op": "query"}
+{"op": "event", "key": "k4", "event_id": "t3", "version": 1, "subject": "u2", "time": 3, "kind": "touchpoint", "channel": "c"}
+{"op": "add_edge", "key": "k5", "a": "u1", "b": "u2"}
+{"op": "query"}
+{"op": "query_at", "seq": 2}
+{"op": "remove_edge", "key": "k6", "a": "u1", "b": "u2"}
+{"op": "query"}
