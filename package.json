@@ -1,0 +1,14 @@
+{
+  "name": "deterministic-mp-state-machine",
+  "version": "1.0.0",
+  "description": "多分区确定性事务状态机：本地确定性日志 + 两阶段回放 + 依赖拓扑排序 + 可审计决胜证据 + 快照切片恢复",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
