@@ -1,0 +1,13 @@
+{
+  "name": "dag-reachability-index",
+  "version": "1.0.0",
+  "description": "DAG reachability bitmap indexer: O(1) pairwise reachability queries with incremental transitive-closure updates over compressed bitmaps",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/",
+    "example": "node examples/demo.ts"
+  }
+}
