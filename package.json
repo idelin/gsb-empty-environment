@@ -1,0 +1,11 @@
+{
+  "name": "bplus-slotted-page",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "B+ tree leaf/internal node binary slotted-page encoder (TypeScript)",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
