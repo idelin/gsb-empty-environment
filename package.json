@@ -1,0 +1,14 @@
+{
+  "name": "ssi-anomaly-preventer",
+  "version": "1.0.0",
+  "description": "可串行化快照隔离（SSI）防异常器：基于 SIREAD 锁与 rw-反依赖危险结构检测，精准中止写倾斜事务",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/ssi.test.ts",
+    "demo": "node examples/write-skew.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
