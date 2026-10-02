@@ -1,0 +1,14 @@
+{
+  "name": "exact-calibration",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Piecewise-linear calibration table with exact BigInt decimal arithmetic",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test",
+    "sample": "node examples/sample.ts"
+  }
+}
