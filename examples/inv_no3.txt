@@ -1,0 +1,2 @@
+# candidate: the mod-4 counter never shows (a=1,b=1)
+invariant: !(a & b)

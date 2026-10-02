@@ -1,0 +1,8 @@
+{
+  "name": "latch",
+  "variables": ["a", "b"],
+  "init": "!a & !b",
+  "transitions": [
+    {"name": "set", "guard": "true", "assign": {"a": "a | b"}}
+  ]
+}

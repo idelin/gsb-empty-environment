@@ -1,0 +1,9 @@
+{
+  "name": "mod4_counter",
+  "variables": ["a", "b"],
+  "init": "!a & !b",
+  "transitions": [
+    {"name": "wrap", "guard": "a & b", "assign": {"a": "false", "b": "false"}},
+    {"name": "tick", "guard": "!(a & b)", "assign": {"b": "!b", "a": "a ^ b"}}
+  ]
+}

@@ -1,0 +1,4 @@
+# stage 1: 'a' stays false -- fails inductively from an unreachable state
+# stage 2: strengthened with '!b' -- becomes an inductive invariant
+invariant: !a
+refine: !b

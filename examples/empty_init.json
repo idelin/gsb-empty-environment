@@ -1,0 +1,9 @@
+{
+  "name": "empty_init",
+  "variables": ["a", "b"],
+  "init": "false",
+  "transitions": [
+    {"name": "wrap", "guard": "a & !b", "assign": {"a": "false", "b": "false"}},
+    {"name": "tick", "guard": "!(a & !b)", "assign": {"b": "!b", "a": "a ^ b"}}
+  ]
+}
