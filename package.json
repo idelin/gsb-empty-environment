@@ -1,0 +1,14 @@
+{
+  "name": "swim-failure-detector",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SWIM 风格故障检测器：周期性心跳探测 + K 个间接 PingReq 代理探针（TypeScript，零依赖）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
