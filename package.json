@@ -1,0 +1,19 @@
+{
+  "name": "columnar-vector-kernel",
+  "version": "1.0.0",
+  "description": "Columnar batch vectorized expression evaluation kernel",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "bench": "node src/benchmark.ts",
+    "sample": "node src/sample.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/node": "^22.0.0"
+  }
+}
