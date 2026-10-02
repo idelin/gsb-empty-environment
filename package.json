@@ -1,0 +1,15 @@
+{
+  "name": "reactive-form-validator",
+  "version": "1.0.0",
+  "description": "动态响应式表单验证与依赖交叉校验器（TypeScript + node:test）",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"tests/**/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
