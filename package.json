@@ -1,0 +1,10 @@
+{
+  "name": "proto-wire-engine",
+  "version": "1.0.0",
+  "description": "Zero-dependency protobuf wire-format codec with object pooling and zero-alloc cache",
+  "type": "module",
+  "scripts": {
+    "demo": "node --disable-warning=ExperimentalWarning examples/demo.ts",
+    "test": "node --disable-warning=ExperimentalWarning --test 'test/*.test.ts'"
+  }
+}
