@@ -1,0 +1,14 @@
+{
+  "name": "dual-ring-router",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Topology-aware active/standby consistent-hash-ring routing controller",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types demo/demo.ts"
+  }
+}
