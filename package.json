@@ -1,0 +1,14 @@
+{
+  "name": "lseq-causal-tree",
+  "version": "1.0.0",
+  "description": "LSEQ: adaptive variable-base identifier allocation over an unbounded fractional causal tree (TypeScript)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/lseq.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "license": "MIT"
+}
