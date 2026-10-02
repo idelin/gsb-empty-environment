@@ -1,0 +1,13 @@
+{
+  "name": "hierarchical-quorum-arbiter",
+  "version": "1.0.0",
+  "description": "分层仲裁多数派决策引擎：多数据中心分级 Quorum 仲裁器",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
