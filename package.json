@@ -1,0 +1,10 @@
+{
+  "name": "late-materialization",
+  "version": "1.0.0",
+  "description": "Late materialization projection operator for OLAP queries",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node src/demo.ts"
+  }
+}
