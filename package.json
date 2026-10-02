@@ -1,0 +1,14 @@
+{
+  "name": "xa-resource-manager",
+  "version": "1.0.0",
+  "description": "XA-style local resource manager (RM) for distributed transactions with crash-safe prepare",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node demo/crash-demo.ts"
+  }
+}
