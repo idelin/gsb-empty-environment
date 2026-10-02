@@ -1,0 +1,10 @@
+{
+  "name": "entity-store",
+  "version": "1.0.0",
+  "description": "Normalized entity store with optimistic layers, versioning and replayable ops",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
