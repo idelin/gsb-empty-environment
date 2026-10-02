@@ -1,0 +1,14 @@
+{
+  "name": "seed-bootstrap-gossip",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Seed-node based cold-start self-discovery for new cluster nodes (TypeScript, zero dependencies)",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "demo": "node --disable-warning=ExperimentalWarning examples/demo.ts"
+  }
+}
