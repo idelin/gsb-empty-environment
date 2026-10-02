@@ -1,0 +1,14 @@
+{
+  "name": "merkle-anchor",
+  "version": "1.0.0",
+  "description": "Timestamped, replay-protected Merkle anchoring service with audit certificates",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --experimental-strip-types src/demo.ts",
+    "test": "node --experimental-strip-types --test \"tests/*.test.ts\""
+  }
+}
