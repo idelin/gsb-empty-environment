@@ -1,0 +1,10 @@
+{
+  "name": "temporal-delegation-kernel",
+  "version": "1.0.0",
+  "description": "带时态约束的 RBAC 权限委托内核（双时态：业务时间 + 审计时间）",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
