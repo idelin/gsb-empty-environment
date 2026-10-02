@@ -1,0 +1,13 @@
+{
+  "name": "json-crdt-tree",
+  "version": "1.0.0",
+  "description": "Hierarchical JSON CRDT (Array/Map/Register) with precise in-place three-way merge",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "example": "node --experimental-strip-types examples/demo.ts"
+  }
+}
