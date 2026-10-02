@@ -1,0 +1,14 @@
+{
+  "name": "bplustree-range-scan",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "B+ 树范围扫描迭代器与页边界穿越（TypeScript，Node.js 内置测试）",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node demo.ts"
+  }
+}
