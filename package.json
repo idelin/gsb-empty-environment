@@ -1,0 +1,14 @@
+{
+  "name": "reactive-loop-guard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Reactive signals with a circular-update guard: call-stack cycle detection plus an iteration threshold, producing causal-chain reports.",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
