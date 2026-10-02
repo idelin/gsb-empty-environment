@@ -1,0 +1,12 @@
+export { DecodeError, type DecodeErrorCode } from './wire/errors.ts';
+export { BufferReader } from './wire/reader.ts';
+export { BufferWriter } from './wire/writer.ts';
+export { zigZagEncode32, zigZagDecode32, zigZagEncode64, zigZagDecode64 } from './wire/zigzag.ts';
+export { WireType, wireTypeOf, isPackable } from './reflect/schema.ts';
+export type { FieldDescriptor, FieldType, MessageDescriptor } from './reflect/schema.ts';
+export { CompiledSchema, decodeMessage } from './reflect/decoder.ts';
+export { validate, type ValidationIssue, type ValidationResult } from './reflect/validator.ts';
+export { LatencyHistogram, type HistogramSnapshot } from './metrics/histogram.ts';
+export { MetricsRegistry, type RegistrySnapshot } from './metrics/registry.ts';
+export { exportJson, exportText } from './metrics/exporter.ts';
+export { ProtoEngine, type DecodeOutcome } from './engine.ts';

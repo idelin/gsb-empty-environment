@@ -1,0 +1,11 @@
+{
+  "name": "proto-wire-metrics",
+  "version": "1.0.0",
+  "description": "Zero-dependency protobuf wire-format codec with reflection validation and fine-grained metrics",
+  "type": "module",
+  "engines": { "node": ">=23.6.0" },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node demo/demo.ts"
+  }
+}
