@@ -1,0 +1,13 @@
+{
+  "name": "network-bottleneck-analyzer",
+  "version": "1.0.0",
+  "description": "Betweenness-centrality based network bottleneck evaluator with dynamic edge-weight updates, top-K tracking, failure simulation and rerouting suggestions.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node src/demo.ts"
+  }
+}
