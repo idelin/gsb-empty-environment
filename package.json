@@ -1,0 +1,14 @@
+{
+  "name": "coroutine-pool",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "带优先级抢占与时间片轮转的协同式协程池（零依赖，TypeScript）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
