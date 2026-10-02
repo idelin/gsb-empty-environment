@@ -1,0 +1,11 @@
+{
+  "name": "acyclic-tree-crdt",
+  "version": "1.0.0",
+  "description": "Acyclic CRDT coordinator for rename/move operations on a hierarchical virtual directory tree",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
