@@ -1,0 +1,14 @@
+{
+  "name": "view-change-log-replicator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Single-process discrete-time Raft-style replicated log with pre-vote, consistency checks and safe truncation",
+  "scripts": {
+    "test": "node --test tests/",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}
