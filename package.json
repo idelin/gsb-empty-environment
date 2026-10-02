@@ -1,0 +1,14 @@
+{
+  "name": "compact-inverted-index-segment",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Compact read-only inverted index segment: front-coded dictionary, delta-compressed postings, skip-pointer AND evaluation",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/",
+    "demo": "node --experimental-strip-types demo.ts"
+  }
+}
