@@ -1,0 +1,13 @@
+{
+  "name": "reversible-reasoner",
+  "version": "1.0.0",
+  "description": "Reversible Horn-clause forward-chaining reasoner with proof trees, minimal explanations and cascaded retraction",
+  "type": "module",
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}
