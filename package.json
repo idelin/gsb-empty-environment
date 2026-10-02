@@ -1,0 +1,12 @@
+{
+  "name": "atlas-packer",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Deterministic fixed-page rectangle/sprite packer with margins, rotation, fixed items, exact small-scale proofs and pixel-level verification.",
+  "scripts": {
+    "test": "node --test",
+    "sample": "node examples/run-sample.ts"
+  },
+  "engines": { "node": ">=23.6" }
+}
