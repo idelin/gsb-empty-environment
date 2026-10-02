@@ -1,0 +1,14 @@
+{
+  "name": "txn-chunk-transporter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "大事务分片传输与内存保护限流器：超大事务自动分片、背压限流、磁盘溢写防 OOM",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --expose-gc --max-semi-space-size=1 --max-old-space-size=12 --test \"test/*.test.ts\"",
+    "demo": "node --experimental-strip-types --expose-gc --max-semi-space-size=1 --max-old-space-size=12 examples/demo.ts"
+  }
+}
