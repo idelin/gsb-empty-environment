@@ -1,0 +1,10 @@
+{
+  "name": "delta-crdt-sync",
+  "version": "1.0.0",
+  "description": "增量 Delta-CRDT 压缩同步网络传输协议",
+  "type": "module",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
