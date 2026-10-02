@@ -1,0 +1,14 @@
+{
+  "name": "btree-slotted-page",
+  "version": "1.0.0",
+  "description": "B+ tree slotted-page binary slot encoder (leaf & internal nodes) in TypeScript",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test \"test/**/*.test.ts\"",
+    "demo": "node --disable-warning=ExperimentalWarning src/demo.ts"
+  }
+}
