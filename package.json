@@ -1,0 +1,18 @@
+{
+  "name": "skiplist-memtable",
+  "version": "1.0.0",
+  "description": "内存跳表（SkipList）并发有序 MemTable：无锁插入 + MVCC 快照只读迭代器",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  }
+}
