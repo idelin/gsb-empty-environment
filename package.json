@@ -1,0 +1,14 @@
+{
+  "name": "pbwire-adaptive",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Zero-dependency Protobuf wire-format codec with reflection validation engine and adaptive load-aware threshold controller",
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test \"test/*.test.ts\"",
+    "demo": "node --disable-warning=ExperimentalWarning examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}
