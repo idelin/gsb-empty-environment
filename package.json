@@ -1,0 +1,14 @@
+{
+  "name": "delta-crdt-sync",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Incremental Delta-CRDT compressed sync network protocol (TypeScript, zero dependencies)",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
