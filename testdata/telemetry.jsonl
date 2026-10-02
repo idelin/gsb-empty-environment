@@ -1,0 +1,27 @@
+{"seq":0,"kind":"template_add","fields":{"count":"1","id":"0","signature":"E900 disk almost full"}}
+{"seq":1,"kind":"record_classified","fields":{"template":"0"}}
+{"seq":2,"kind":"template_add","fields":{"count":"1","id":"1","signature":"ERR-100 disk almost full"}}
+{"seq":3,"kind":"record_classified","fields":{"template":"1"}}
+{"seq":4,"kind":"template_retract","fields":{"id":"1","reason":"generalized","signature":"ERR-100 disk almost full"}}
+{"seq":5,"kind":"template_add","fields":{"count":"2","evidence_forbidden":"","evidence_kind":"generalize","evidence_positions":"0","evidence_sources":"1","id":"2","signature":"\u003cERR:ERR\u003e disk almost full"}}
+{"seq":6,"kind":"record_classified","fields":{"template":"2"}}
+{"seq":7,"kind":"template_add","fields":{"count":"1","id":"3","signature":"job worker-1 failed"}}
+{"seq":8,"kind":"record_classified","fields":{"template":"3"}}
+{"seq":9,"kind":"template_retract","fields":{"id":"3","reason":"generalized","signature":"job worker-1 failed"}}
+{"seq":10,"kind":"template_add","fields":{"count":"2","evidence_forbidden":"0","evidence_kind":"generalize","evidence_positions":"1","evidence_sources":"3","id":"4","signature":"job \u003cWORD\u003e failed"}}
+{"seq":11,"kind":"record_classified","fields":{"template":"4"}}
+{"seq":12,"kind":"template_add","fields":{"count":"1","id":"5","signature":"request id = a1b2c3d4e5f6 completed in 120 ms"}}
+{"seq":13,"kind":"record_classified","fields":{"template":"5"}}
+{"seq":14,"kind":"template_retract","fields":{"id":"5","reason":"generalized","signature":"request id = a1b2c3d4e5f6 completed in 120 ms"}}
+{"seq":15,"kind":"template_add","fields":{"count":"2","evidence_forbidden":"0","evidence_kind":"generalize","evidence_positions":"3,6","evidence_sources":"5","id":"6","signature":"request id = \u003cID\u003e completed in \u003cNUM\u003e ms"}}
+{"seq":16,"kind":"record_classified","fields":{"template":"6"}}
+{"seq":17,"kind":"template_add","fields":{"count":"1","id":"7","signature":"status = 200 health ok"}}
+{"seq":18,"kind":"record_classified","fields":{"template":"7"}}
+{"seq":19,"kind":"template_retract","fields":{"id":"7","reason":"generalized","signature":"status = 200 health ok"}}
+{"seq":20,"kind":"template_add","fields":{"count":"2","evidence_forbidden":"0","evidence_kind":"generalize","evidence_positions":"2","evidence_sources":"7","id":"8","signature":"status = \u003cNUM\u003e health ok"}}
+{"seq":21,"kind":"record_classified","fields":{"template":"8"}}
+{"seq":22,"kind":"template_add","fields":{"count":"1","id":"9","signature":"user alice logged in"}}
+{"seq":23,"kind":"record_classified","fields":{"template":"9"}}
+{"seq":24,"kind":"template_retract","fields":{"id":"9","reason":"generalized","signature":"user alice logged in"}}
+{"seq":25,"kind":"template_add","fields":{"count":"2","evidence_forbidden":"0","evidence_kind":"generalize","evidence_positions":"1","evidence_sources":"9","id":"10","signature":"user \u003cWORD\u003e logged in"}}
+{"seq":26,"kind":"record_classified","fields":{"template":"10"}}

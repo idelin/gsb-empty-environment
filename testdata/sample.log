@@ -1,0 +1,11 @@
+user alice logged in
+user bob logged in
+request id=a1b2c3d4e5f6 completed in 120 ms
+request id=ff00aa11bb22 completed in 98 ms
+ERR-100 disk almost full
+ERR-200 disk almost full
+E900 disk almost full
+status=200 health ok
+status=404 health ok
+job worker-1 failed
+job worker-2 failed
