@@ -1,0 +1,10 @@
+{
+  "name": "dynamic-bvh",
+  "version": "1.0.0",
+  "description": "Dynamic AABB BVH tree with SAH build, insertion/removal and ray casting",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node src/demo.ts"
+  }
+}
