@@ -1,0 +1,14 @@
+{
+  "name": "lease-contention-audit-trail",
+  "version": "1.0.0",
+  "description": "租约争抢事件可重放审计追踪器：分布式协调故障排查黑匣子",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/race-demo.ts"
+  }
+}
