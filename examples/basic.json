@@ -1,0 +1,11 @@
+{
+  "states": ["q0", "q1", "q2"],
+  "alphabet": ["a", "b", "x", "y"],
+  "initial": "q0",
+  "finals": ["q2"],
+  "edges": [
+    {"id": 0, "src": "q0", "dst": "q1", "in": "a", "out": "x", "cost": 2},
+    {"id": 1, "src": "q1", "dst": "q2", "in": "b", "out": "y", "cost": 1},
+    {"id": 2, "src": "q0", "dst": "q2", "in": "a", "out": "xy", "cost": 5}
+  ]
+}

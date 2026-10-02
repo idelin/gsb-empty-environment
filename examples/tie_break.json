@@ -1,0 +1,16 @@
+{
+  "states": ["q0", "q1", "q2", "q3", "qf"],
+  "alphabet": ["a", "b", "c"],
+  "initial": "q0",
+  "finals": ["qf"],
+  "edges": [
+    {"id": 0, "src": "q0", "dst": "q1", "in": "a", "out": "c", "cost": 3},
+    {"id": 1, "src": "q1", "dst": "qf", "in": null, "out": "", "cost": 0},
+    {"id": 2, "src": "q0", "dst": "q2", "in": "a", "out": "ab", "cost": 3},
+    {"id": 3, "src": "q2", "dst": "qf", "in": null, "out": "", "cost": 0},
+    {"id": 4, "src": "q0", "dst": "q3", "in": "a", "out": "aa", "cost": 3},
+    {"id": 5, "src": "q3", "dst": "qf", "in": null, "out": "", "cost": 0},
+    {"id": 6, "src": "q0", "dst": "q3", "in": "b", "out": "aa", "cost": 3},
+    {"id": 7, "src": "q0", "dst": "qf", "in": "c", "out": "aa", "cost": 3}
+  ]
+}
