@@ -1,0 +1,10 @@
+{
+  "name": "ring-mempool",
+  "version": "1.0.0",
+  "description": "定长环形内存池与零拷贝切片复用器（高性能网络 IO 缓冲区管理）",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
