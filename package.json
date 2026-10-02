@@ -1,0 +1,13 @@
+{
+  "name": "dvv-tracker",
+  "version": "1.0.0",
+  "description": "Dotted Version Vectors (DVV) precise causality tracker for leaderless replication",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node demo/demo.ts"
+  }
+}
