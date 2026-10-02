@@ -1,0 +1,14 @@
+{
+  "name": "distributed-lease-manager",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Single-machine simulation of a distributed lease coordination kernel with clock-drift tolerance",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
