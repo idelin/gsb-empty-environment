@@ -1,0 +1,14 @@
+{
+  "name": "cdc-fk-replay-scheduler",
+  "version": "1.0.0",
+  "description": "Multi-table FK dependency topological sort and CDC replay scheduler with FK ordering guarantees",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test tests/*.test.ts",
+    "demo": "node --experimental-strip-types --no-warnings examples/demo.ts"
+  }
+}
