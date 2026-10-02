@@ -1,0 +1,13 @@
+{
+  "name": "hlc-engine",
+  "version": "1.0.0",
+  "description": "Hybrid Logical Clock (HLC) engine: strictly monotonic, causally consistent timestamps bounded by max physical clock drift epsilon",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node demo.ts"
+  }
+}
