@@ -1,0 +1,13 @@
+{
+  "name": "spatiotemporal-density-cube",
+  "version": "1.0.0",
+  "description": "时空聚合热力图与密度网格累加器：流式人流/车流时空密度分析",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
