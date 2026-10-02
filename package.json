@@ -1,0 +1,13 @@
+{
+  "name": "lease-manager",
+  "version": "1.0.0",
+  "description": "Distributed lease manager with clock-drift tolerance (single-machine simulation)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
