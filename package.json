@@ -1,0 +1,14 @@
+{
+  "name": "spatiotemporal-convex-hull-evolver",
+  "version": "1.0.0",
+  "description": "带时效性的空间点集凸包演化器：TTL 感知 + 增量维护的动态二维凸包",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/dynamic-hull.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "license": "MIT"
+}
