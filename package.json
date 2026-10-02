@@ -1,0 +1,10 @@
+{
+  "name": "huffman-resync",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Fault-tolerant Huffman decoder with sync-word resynchronization",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node src/demo.ts"
+  }
+}
