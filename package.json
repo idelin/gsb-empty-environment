@@ -1,0 +1,14 @@
+{
+  "name": "reactive-form-validator",
+  "version": "1.0.0",
+  "description": "动态响应式表单验证与依赖交叉校验器(企业级表单响应式规则计算器)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
