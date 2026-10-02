@@ -1,0 +1,907 @@
+{
+  "events": [
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:30:00Z",
+      "value": 1000
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:30:00Z",
+      "value": 2000
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:30:00Z",
+      "value": 500
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:30:00Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:30:00Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:30:30Z",
+      "value": 1030
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:30:30Z",
+      "value": 2050
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:30:30Z",
+      "value": 520
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:30:30Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:30:30Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:31:00Z",
+      "value": 1060
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:31:00Z",
+      "value": 2100
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:31:00Z",
+      "value": 540
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:31:00Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:31:00Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:31:30Z",
+      "value": 1090
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:31:30Z",
+      "value": 2150
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:31:30Z",
+      "value": 560
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:31:30Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:31:30Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:32:00Z",
+      "value": 1120
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:32:00Z",
+      "value": 2200
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:32:00Z",
+      "value": 580
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:32:00Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:32:00Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:32:30Z",
+      "value": 1150
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:32:30Z",
+      "value": 2250
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:32:30Z",
+      "value": 600
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:32:30Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:32:30Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:33:00Z",
+      "value": 1180
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:33:00Z",
+      "value": 2300
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:33:00Z",
+      "value": 620
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:33:00Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:33:00Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:33:30Z",
+      "value": 1210
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:33:30Z",
+      "value": 2350
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:33:30Z",
+      "value": 640
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:33:30Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:33:30Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:34:00Z",
+      "value": 1240
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:34:00Z",
+      "value": 2400
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:34:00Z",
+      "value": 660
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:34:00Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:34:00Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:34:30Z",
+      "value": 1270
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:34:30Z",
+      "value": 2450
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:34:30Z",
+      "value": 680
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:34:30Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:34:30Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:35:00Z",
+      "value": 1300
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:35:00Z",
+      "value": 5
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:35:00Z",
+      "value": 700
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:35:00Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:35:00Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:35:30Z",
+      "value": 1330
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:35:30Z",
+      "value": 55
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:35:30Z",
+      "value": 720
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:35:30Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:35:30Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:36:00Z",
+      "value": 1360
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:36:00Z",
+      "value": 105
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:36:00Z",
+      "value": 740
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:36:00Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:36:00Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:36:30Z",
+      "value": 1390
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:36:30Z",
+      "value": 155
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:36:30Z",
+      "value": 760
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:36:30Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:36:30Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:37:00Z",
+      "value": 1420
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:37:00Z",
+      "value": 205
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:37:00Z",
+      "value": 780
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:37:00Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:37:00Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:37:30Z",
+      "value": 1450
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:37:30Z",
+      "value": 255
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:37:30Z",
+      "value": 800
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:37:30Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:37:30Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:38:00Z",
+      "value": 1480
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:38:00Z",
+      "value": 305
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:38:00Z",
+      "value": 820
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:38:00Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:38:00Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:38:30Z",
+      "value": 1510
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:38:30Z",
+      "value": 355
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:38:30Z",
+      "value": 840
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:38:30Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:38:30Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:39:00Z",
+      "value": 1540
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:39:00Z",
+      "value": 405
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:39:00Z",
+      "value": 860
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:39:00Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:39:00Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:39:30Z",
+      "value": 1570
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:39:30Z",
+      "value": 455
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:39:30Z",
+      "value": 880
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:39:30Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:39:30Z",
+      "value": 4
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "a",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:40:00Z",
+      "value": 1600
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "b",
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:40:00Z",
+      "value": 505
+    },
+    {
+      "metric": "http_requests_total",
+      "labels": {
+        "instance": "c",
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:40:00Z",
+      "value": 900
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "api"
+      },
+      "ts": "2026-10-02T03:40:00Z",
+      "value": 8
+    },
+    {
+      "metric": "machine_cores",
+      "labels": {
+        "job": "web"
+      },
+      "ts": "2026-10-02T03:40:00Z",
+      "value": 4
+    }
+  ]
+}
