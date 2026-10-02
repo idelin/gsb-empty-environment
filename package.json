@@ -1,0 +1,13 @@
+{
+  "name": "merkle-anchor",
+  "version": "1.0.0",
+  "description": "Timestamped, replay-protected signed Merkle root anchorer with audit certificates",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node src/demo.ts"
+  }
+}
