@@ -1,0 +1,14 @@
+{
+  "name": "write-skew-guard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "写倾斜检测与声明式约束断言器：业务不变量保护 + 并发检测",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/doctor-roster-demo.ts"
+  }
+}
