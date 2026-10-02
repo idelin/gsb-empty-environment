@@ -1,0 +1,14 @@
+{
+  "name": "lsm-snapshot-backup",
+  "version": "1.0.0",
+  "description": "Incremental backup & hard-link snapshot exporter for an LSM storage engine",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test test/*.test.ts",
+    "demo": "node --experimental-strip-types --no-warnings examples/demo.ts"
+  }
+}
