@@ -1,0 +1,17 @@
+{
+  "name": "broadphase-aabb-tree",
+  "version": "1.0.0",
+  "description": "物理引擎粗测阶段碰撞检测器：增量动态 AABB 树 + 动态碰撞对筛选",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
