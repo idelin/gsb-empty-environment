@@ -1,0 +1,13 @@
+{
+  "name": "logical-delete-archive-splitter",
+  "version": "1.0.0",
+  "description": "逻辑删除转物理归档流式分流器：拦截 is_deleted=1 的 Update，分流为归档库 Insert 与只读查询库 Delete",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/splitter.test.ts"
+  }
+}
