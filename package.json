@@ -1,0 +1,13 @@
+{
+  "name": "bitemporal-prescription-checker",
+  "version": "1.0.0",
+  "description": "多版本医疗处方配伍禁忌检查器：处方开具与禁忌规则双时态判定",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
