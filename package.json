@@ -1,0 +1,14 @@
+{
+  "name": "config-lease-binder",
+  "version": "1.0.0",
+  "description": "带版本约束的配置信息租约绑定器：集群动态配置分发与生效机制",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "demo": "node --experimental-strip-types examples/demo.ts",
+    "test": "node --experimental-strip-types --test test/lease-binding.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
