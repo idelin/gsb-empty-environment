@@ -1,0 +1,14 @@
+{
+  "name": "cluster-view-divergence-detector",
+  "version": "1.0.0",
+  "description": "Decentralized cluster topology view divergence detection and checksum fast comparison (membership consistency auditor)",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --disable-warning=ExperimentalWarning src/simulation.ts",
+    "test": "node --disable-warning=ExperimentalWarning --test"
+  }
+}
