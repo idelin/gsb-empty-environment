@@ -1,0 +1,11 @@
+{
+  "name": "piggyback-gossip",
+  "version": "1.0.0",
+  "description": "Piggyback-gossip membership event disseminator (SWIM-style) in TypeScript",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
