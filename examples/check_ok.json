@@ -1,0 +1,10 @@
+{
+  "comment": "SYNTHETIC: all stream tasks feasible -> checker should prove NO_STARVATION",
+  "tree": {
+    "id": "G", "weight": 1, "quantum": 4, "cap": 8,
+    "children": [
+      {"id": "a", "weight": 1, "quantum": 2, "cap": 4, "stream": [3, 1]},
+      {"id": "b", "weight": 1, "quantum": 2, "cap": 4, "stream": [4]}
+    ]
+  }
+}

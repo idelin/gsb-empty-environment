@@ -1,0 +1,13 @@
+{
+  "comment": "SYNTHETIC: pause/resume + dynamic weight update events",
+  "rounds": 8,
+  "tenants": [
+    {"id": "A", "weight": 1, "quantum": 2, "cap": 6, "tasks": [2, 2, 2, 2]},
+    {"id": "B", "weight": 1, "quantum": 2, "cap": 6, "tasks": [4, 4]}
+  ],
+  "events": [
+    {"round": 2, "op": "pause", "tenant": "B"},
+    {"round": 4, "op": "resume", "tenant": "B"},
+    {"round": 5, "op": "set_weight", "tenant": "B", "weight": 3}
+  ]
+}

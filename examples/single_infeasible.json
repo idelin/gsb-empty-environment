@@ -1,0 +1,7 @@
+{
+  "comment": "SYNTHETIC rejection case: cap=4 < head cost 5 -> explicit rejection",
+  "rounds": 3,
+  "tenants": [
+    {"id": "A", "weight": 1, "quantum": 2, "cap": 4, "tasks": [{"tag": "A#too-big", "cost": 5}, {"tag": "A#ok", "cost": 2}]}
+  ]
+}

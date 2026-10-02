@@ -1,0 +1,8 @@
+{
+  "comment": "SYNTHETIC acceptance case: weight=1, quantum=2, head cost=5, cap=5 -> served in round 3",
+  "rounds": 5,
+  "tenants": [
+    {"id": "A", "weight": 1, "quantum": 2, "cap": 5, "tasks": [{"tag": "A#big", "cost": 5}, {"tag": "A#s1", "cost": 1}]},
+    {"id": "B", "weight": 2, "quantum": 2, "cap": 8, "tasks": [3, 3, 3]}
+  ]
+}

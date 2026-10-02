@@ -1,0 +1,10 @@
+{
+  "comment": "SYNTHETIC: leaf b has weight 0 -> never credited -> permanent starvation counterexample",
+  "tree": {
+    "id": "G", "weight": 1, "quantum": 4, "cap": 8,
+    "children": [
+      {"id": "a", "weight": 1, "quantum": 2, "cap": 4, "stream": [2]},
+      {"id": "b", "weight": 0, "quantum": 2, "cap": 4, "stream": [1]}
+    ]
+  }
+}

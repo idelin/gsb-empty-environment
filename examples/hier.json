@@ -1,0 +1,19 @@
+{
+  "comment": "SYNTHETIC two-level tree: root group G with leaves t1,t2; pause/migrate/snapshot demo",
+  "rounds": 8,
+  "tree": {
+    "id": "G", "weight": 1, "quantum": 6, "cap": 12,
+    "children": [
+      {"id": "t1", "weight": 1, "quantum": 2, "cap": 5, "tasks": [{"tag": "t1#big", "cost": 5}, 1, 1]},
+      {"id": "sub", "weight": 2, "quantum": 3, "cap": 8, "children": [
+        {"id": "t2", "weight": 1, "quantum": 2, "cap": 4, "tasks": [3, 3]},
+        {"id": "t3", "weight": 1, "quantum": 1, "cap": 3, "tasks": [2]}
+      ]}
+    ]
+  },
+  "events": [
+    {"round": 3, "op": "pause", "node": "sub"},
+    {"round": 5, "op": "resume", "node": "sub"},
+    {"round": 6, "op": "migrate", "leaf": "t3", "new_parent": "G"}
+  ]
+}
