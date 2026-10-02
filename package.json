@@ -1,0 +1,11 @@
+{
+  "name": "chandy-lamport-snapshot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Chandy-Lamport consistent global snapshot recorder over a simulated distributed transfer cluster",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "example": "node examples/sample-run.ts"
+  }
+}
