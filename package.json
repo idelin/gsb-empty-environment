@@ -1,0 +1,13 @@
+{
+  "name": "causal-broadcast",
+  "version": "1.0.0",
+  "description": "Causal broadcast middleware with vector clocks: buffers out-of-order messages and delivers them in causal order.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --experimental-strip-types examples/demo.ts",
+    "test": "node --experimental-strip-types --test"
+  }
+}
