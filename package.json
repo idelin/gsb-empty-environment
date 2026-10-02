@@ -1,0 +1,14 @@
+{
+  "name": "undo-redo-crdt-graph",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "可逆编辑撤销树 (Undo/Redo CRDT Graph) — 协同编辑中的分布式撤销树",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/undoTree.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
