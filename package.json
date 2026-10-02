@@ -1,0 +1,14 @@
+{
+  "name": "subcluster-gossip",
+  "version": "1.0.0",
+  "description": "动态分片广播（Sub-cluster Gossip）海量规模降噪器 — 分层拓扑 Gossip 协议与 1000 节点模拟器",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "sim": "node src/sim/run.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
