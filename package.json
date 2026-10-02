@@ -1,0 +1,13 @@
+{
+  "name": "clock-guardian",
+  "version": "1.0.0",
+  "description": "Dual-clock (monotonic vs wall-clock) drift detector with lease circuit breaker",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
