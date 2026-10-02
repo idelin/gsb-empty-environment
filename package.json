@@ -1,0 +1,15 @@
+{
+  "name": "mgl-lock-scheduler",
+  "version": "1.0.0",
+  "description": "多粒度锁（MGL）与意向锁调度器：库/表/行三级层次锁，IS/IX/S/SIX/X，O(1) 冲突判定",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "demo": "node --no-warnings examples/demo.ts",
+    "test": "node --no-warnings --test test/mgl.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
