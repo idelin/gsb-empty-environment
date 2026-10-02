@@ -1,0 +1,14 @@
+{
+  "name": "lr1-conflict-diagnoser",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "LR(1) 分析表构建与冲突检测诊断器（First/Follow、项集闭包、Shift/Reduce 与 Reduce/Reduce 冲突定位、最短输入证据）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --experimental-strip-types examples/dangling-else.ts",
+    "test": "node --experimental-strip-types --test test/lr1.test.ts"
+  }
+}
