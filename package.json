@@ -1,0 +1,15 @@
+{
+  "name": "cbj-csp-solver",
+  "version": "1.0.0",
+  "description": "带非时序回溯（Conflict-directed Backjumping）的 CSP 求解器",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node src/demo.ts"
+  },
+  "keywords": ["csp", "backjumping", "constraint-satisfaction"],
+  "license": "ISC"
+}
