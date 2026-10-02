@@ -1,0 +1,14 @@
+{
+  "name": "protobuf-wire-inspector",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Zero-dependency Protocol Buffers wire-format codec with a reflection-mode constraint inspector (formal invariant assertions).",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
