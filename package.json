@@ -1,0 +1,14 @@
+{
+  "name": "protobuf-wire-inspector",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "零依赖 Protobuf Wire-format 编解码器 + 形式化约束巡检与不变式断言仪",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --expose-gc --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
