@@ -1,0 +1,14 @@
+{
+  "name": "saga-engine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "长事务补偿（Saga）与状态机持久化引擎",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/procurement.ts"
+  }
+}
