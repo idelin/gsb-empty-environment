@@ -1,0 +1,14 @@
+{
+  "name": "causal-trace-reconstructor",
+  "version": "1.0.0",
+  "description": "跨时区事件关联与因果图重构器：基于 RPC 四元组校正分布式日志的时钟漂移",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
