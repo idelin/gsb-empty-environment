@@ -1,0 +1,14 @@
+{
+  "name": "peak-overlap-detector",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "滑动窗口峰值重叠区间检测器：设备占用区间峰值并发统计",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
