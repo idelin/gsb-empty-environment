@@ -1,0 +1,14 @@
+{
+  "name": "crdt-tree-move",
+  "version": "1.0.0",
+  "description": "Acyclic CRDT rename/move coordinator for a hierarchical tree file system",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node demo/sample.ts"
+  },
+  "license": "MIT"
+}
