@@ -1,0 +1,14 @@
+{
+  "name": "fiber-debugger",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "可暂停与逐步单步步进的协程(Fiber)调试器",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/livelock-demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
