@@ -1,0 +1,14 @@
+{
+  "name": "aries-recovery",
+  "version": "1.0.0",
+  "description": "ARIES write-ahead log analysis and crash recovery (Redo/Undo) engine with compact binary persistence and zero-copy deserialization",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/crash-recovery-demo.ts"
+  }
+}
