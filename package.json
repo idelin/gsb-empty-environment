@@ -1,0 +1,14 @@
+{
+  "name": "aries-recovery-metrics",
+  "version": "1.0.0",
+  "description": "ARIES crash recovery (Analysis/Redo/Undo) with fine-grained metrics, TypeScript on Node.js built-in test runner",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "sample": "node examples/run-sample.ts",
+    "test": "node --test 'test/*.test.ts'"
+  },
+  "license": "MIT"
+}
