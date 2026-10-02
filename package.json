@@ -1,0 +1,11 @@
+{
+  "name": "view-change-log-replicator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Single-process discrete-time view-change (Raft-style) log replicator with pre-vote and safe truncation",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
