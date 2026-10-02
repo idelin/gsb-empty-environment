@@ -1,0 +1,14 @@
+{
+  "name": "maxcsp-solver",
+  "version": "1.0.0",
+  "description": "带权 Max-CSP 分支定界求解器（软约束优化 / 任务排期示例）",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --disable-warning=ExperimentalWarning src/demo.ts",
+    "test": "node --disable-warning=ExperimentalWarning --test",
+    "typecheck": "tsc --noEmit"
+  }
+}
