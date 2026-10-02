@@ -1,0 +1,10 @@
+{
+  "name": "shift-qualification-bitemporal-matcher",
+  "version": "1.0.0",
+  "description": "动态排班技能资质双时态匹配器：排班时校验资质持续有效，追溯吊销时预警受影响班次",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
