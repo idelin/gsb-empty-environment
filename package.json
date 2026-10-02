@@ -1,0 +1,15 @@
+{
+  "name": "deterministic-txn-sm",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-partition deterministic transaction state machine over a local deterministic log",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node demo/run.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
