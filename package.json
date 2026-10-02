@@ -1,0 +1,12 @@
+{
+  "name": "best-rational-approx",
+  "version": "1.0.0",
+  "description": "Best rational approximation within a denominator bound via continued fractions (exact BigInt arithmetic)",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT"
+}
