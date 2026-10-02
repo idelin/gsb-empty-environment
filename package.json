@@ -1,0 +1,13 @@
+{
+  "name": "proto-wire-metrics",
+  "version": "1.0.0",
+  "description": "Zero-dependency Protocol Buffers wire-format parser with fine-grained metrics engine",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "example": "node example/demo.ts"
+  }
+}
