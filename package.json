@@ -1,0 +1,15 @@
+{
+  "name": "geo-fence",
+  "version": "1.0.0",
+  "description": "带权重地理围栏多边形包含判定器（射线法 + 风向数法双内核）",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/geofence.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT"
+}
