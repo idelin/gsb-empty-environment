@@ -1,0 +1,13 @@
+{
+  "name": "graceful-leave",
+  "version": "1.0.0",
+  "description": "Graceful Leave protocol with Quiescent Period broadcast (TypeScript, Node.js built-in test runner)",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node src/demo.ts"
+  }
+}
