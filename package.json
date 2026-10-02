@@ -1,0 +1,14 @@
+{
+  "name": "arithmetic-coding",
+  "version": "1.0.0",
+  "description": "Big-integer rational arithmetic coding for binary symbol streams, approaching the Shannon entropy limit",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test \"test/*.test.ts\""
+  },
+  "license": "MIT"
+}
