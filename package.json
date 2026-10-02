@@ -1,0 +1,11 @@
+{
+  "name": "fiber-debugger",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "可暂停与逐步单步的协程（Fiber）调试器：断点、全局时钟暂停、单协程单指令步进、挂起原因与状态迁移字典",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/fake-deadlock-demo.ts"
+  }
+}
