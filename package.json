@@ -1,0 +1,17 @@
+{
+  "name": "lease-cache-coherence",
+  "version": "1.0.0",
+  "description": "基于租约的分布式缓存失效一致性保证器(AFS/Leases 风格)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0 || >=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  }
+}
