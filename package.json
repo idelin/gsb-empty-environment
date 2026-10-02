@@ -1,0 +1,13 @@
+{
+  "name": "tombstone-gc-coordinator",
+  "version": "1.0.0",
+  "description": "Causal history pruning & tombstone GC coordinator for CRDTs via a distributed causal stability frontier",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --experimental-strip-types src/simulation.ts",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  }
+}
