@@ -1,0 +1,11 @@
+{
+  "name": "wire-sim",
+  "version": "1.0.0",
+  "description": "Zero-dependency Protobuf wire-format codec + deterministic discrete-event simulation & fault reproduction toolkit",
+  "type": "module",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
