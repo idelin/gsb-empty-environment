@@ -1,0 +1,14 @@
+{
+  "name": "peritext-richtext-crdt",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Peritext/Fugue 风格富文本格式标注 CRDT 合并器（TypeScript）",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
