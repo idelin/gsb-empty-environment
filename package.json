@@ -1,0 +1,14 @@
+{
+  "name": "write-skew-guard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "声明式约束断言器 + 提交期写倾斜检测（MVCC 快照隔离教学实现）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test test/*.test.ts",
+    "demo": "node --experimental-strip-types --no-warnings examples/doctor-oncall.ts"
+  }
+}
