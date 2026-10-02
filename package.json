@@ -1,0 +1,14 @@
+{
+  "name": "aries-recovery",
+  "version": "1.0.0",
+  "description": "ARIES write-ahead-log analysis & crash recovery (Redo/Undo) engine with formal invariant inspector",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --experimental-strip-types src/demo.ts",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  }
+}
