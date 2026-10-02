@@ -1,0 +1,14 @@
+{
+  "name": "hierarchical-hash-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Two-layer hierarchical hash aggregation routing gateway (tenant -> cluster, device -> protocol node)",
+  "scripts": {
+    "test": "node --test",
+    "sample": "node sample/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
