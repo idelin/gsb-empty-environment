@@ -1,0 +1,13 @@
+{
+  "name": "aries-wal",
+  "version": "1.0.0",
+  "description": "WAL-based transaction durability & ARIES recovery manager (single-node)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
