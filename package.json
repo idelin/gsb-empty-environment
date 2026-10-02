@@ -1,0 +1,13 @@
+{
+  "name": "lsm-column-families",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Single LSM instance with isolated column families, shared WAL, atomic multi-CF writes",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}
