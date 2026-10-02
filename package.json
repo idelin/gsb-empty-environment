@@ -1,0 +1,13 @@
+{
+  "name": "rule-sandbox",
+  "version": "1.0.0",
+  "description": "Multi-tenant rule sandbox with execution quota guard",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
