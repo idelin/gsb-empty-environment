@@ -1,0 +1,12 @@
+{
+  "name": "ratelimit-metrics",
+  "version": "1.0.0",
+  "description": "Rate limiter runtime observability: metrics + Prometheus self-exporter (TypeScript, zero deps)",
+  "type": "module",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/stress-demo.ts",
+    "serve": "node examples/serve.ts"
+  }
+}
