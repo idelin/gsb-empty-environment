@@ -1,0 +1,10 @@
+{
+  "name": "aries-recovery-sim",
+  "version": "1.0.0",
+  "description": "ARIES WAL analysis / redo / undo recovery engine with deterministic event-driven simulation and fault reproduction (TypeScript, Node built-in test runner)",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
