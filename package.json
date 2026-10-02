@@ -1,0 +1,14 @@
+{
+  "name": "coroutine-pool",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "带优先级抢占与时间片轮转的协程池（Node.js 原生 TypeScript 类型擦除运行）",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "sample": "node sample.ts",
+    "test": "node --test scheduler.test.ts"
+  }
+}
