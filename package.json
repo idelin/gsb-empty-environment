@@ -1,0 +1,10 @@
+{
+  "name": "atlas-packer",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Deterministic fixed-page rectangle packer with spacing, rotation, fixed items, atomic update plans and an independent pixel-occupancy verifier.",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node demo/demo.ts"
+  }
+}
