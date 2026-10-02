@@ -1,0 +1,10 @@
+{
+  "name": "rational-bezier-extrema",
+  "version": "1.0.0",
+  "description": "Exact extremum locator for 1D rational Bezier curves (integer polynomial roots, Sturm isolation)",
+  "type": "module",
+  "scripts": {
+    "sample": "node src/cli.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
