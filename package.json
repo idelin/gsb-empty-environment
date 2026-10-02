@@ -1,0 +1,14 @@
+{
+  "name": "overflow-page-btree",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "B+ tree with chained overflow pages for oversized keys/values (TypeScript, Node.js native type stripping)",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/overflow.test.ts test/btree.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
