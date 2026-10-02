@@ -1,0 +1,10 @@
+{
+  "name": "paxos-shard-engine",
+  "version": "1.0.0",
+  "description": "Multi-Paxos majority consensus with gap-free log commit + hierarchical sharding with locality-aware routing",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
