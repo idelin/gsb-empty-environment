@@ -1,0 +1,15 @@
+{
+  "name": "incremental-scc",
+  "version": "1.0.0",
+  "description": "动态有向图的增量强连通分量维护器（TypeScript，零依赖）",
+  "type": "module",
+  "main": "src/incremental-scc.ts",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "license": "MIT"
+}
