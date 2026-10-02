@@ -1,0 +1,13 @@
+{
+  "name": "ss2pl-lock-manager",
+  "version": "1.0.0",
+  "description": "Strict two-phase locking (SS2PL) kernel with shrink-phase manager",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"tests/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
