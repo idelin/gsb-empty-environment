@@ -1,0 +1,14 @@
+{
+  "name": "global-lease-federation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "跨集群租约联邦与全局互斥控制器（Witness 仲裁 + Fencing Token）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
