@@ -1,0 +1,13 @@
+{
+  "name": "lsm-column-families",
+  "version": "1.0.0",
+  "description": "Column family isolation and multi-table management on a single LSM instance",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
