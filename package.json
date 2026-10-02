@@ -1,0 +1,10 @@
+{
+  "name": "aw-lww-map",
+  "version": "1.0.0",
+  "description": "AW-LWW-Map: Add-Wins Last-Writer-Wins Map CRDT (TypeScript)",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/awlwwmap.test.ts",
+    "demo": "node src/demo.ts"
+  }
+}
