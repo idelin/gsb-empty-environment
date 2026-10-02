@@ -1,0 +1,14 @@
+{
+  "name": "rec-schemata",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Recursive-schema validator: shared validation graph, incremental updates, independent interpreter cross-check",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
