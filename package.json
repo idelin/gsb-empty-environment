@@ -1,0 +1,15 @@
+{
+  "name": "signal-time-travel",
+  "version": "1.0.0",
+  "description": "跨组件响应式状态快照与时间旅行控制器（Signal + Computed + 不可变快照树 + Undo/Redo）",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "license": "MIT"
+}
