@@ -1,0 +1,13 @@
+{
+  "name": "lease-controller",
+  "version": "1.0.0",
+  "description": "Lease controller with dynamic renewal and smooth graceful handover",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test test/*.test.ts",
+    "demo": "node --experimental-strip-types --no-warnings examples/rolling-restart-demo.ts"
+  }
+}
