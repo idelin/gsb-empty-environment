@@ -1,0 +1,10 @@
+{
+  "name": "horn-reasoner",
+  "version": "1.0.0",
+  "description": "可逆事实演绎推理与最小解释生成器(霍恩子句正向链 + 真值维护)",
+  "type": "module",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
