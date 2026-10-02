@@ -1,0 +1,10 @@
+{
+  "name": "cluster-view-divergence-auditor",
+  "version": "1.0.0",
+  "description": "去中心化集群拓扑视图分歧检测与校验和快速比对（TypeScript / Node 内置测试）",
+  "type": "module",
+  "scripts": {
+    "start": "node src/simulation.ts",
+    "test": "node --test"
+  }
+}
