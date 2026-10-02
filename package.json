@@ -1,0 +1,15 @@
+{
+  "name": "reactive-circular-guard",
+  "version": "1.0.0",
+  "description": "带周期检测的响应式循环更新守护器（CircularSignalUpdate）",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT"
+}
