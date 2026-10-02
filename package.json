@@ -1,0 +1,14 @@
+{
+  "name": "adaptive-batch-size-regulator",
+  "version": "1.0.0",
+  "description": "向量化执行引擎的自适应批大小调节器（Adaptive Batch Size Regulator）",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
