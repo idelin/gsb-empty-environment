@@ -1,0 +1,14 @@
+{
+  "name": "immutable-audit-ledger",
+  "version": "1.0.0",
+  "description": "Append-only transactional audit ledger with hash chain, signed receipts, reversals and Merkle proofs",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
