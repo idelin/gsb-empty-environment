@@ -1,0 +1,14 @@
+{
+  "name": "erasable-compliance-prover",
+  "version": "1.0.0",
+  "description": "可擦除合规数据脱敏证明器：支持被遗忘权的可验证擦除 Merkle 存证树",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/*.test.ts"
+  },
+  "license": "MIT"
+}
