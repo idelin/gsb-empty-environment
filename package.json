@@ -1,0 +1,14 @@
+{
+  "name": "lease-router-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "细粒度分区范围租约路由网关（Key Range 分区 + 租约路由 + 动态分裂与租约继承）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node src/demo.ts"
+  }
+}
