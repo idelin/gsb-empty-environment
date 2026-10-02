@@ -1,0 +1,15 @@
+{
+  "name": "rle-huffman-raster-codec",
+  "version": "1.0.0",
+  "description": "Composite run-length + preset-Huffman compressor for binary / low-colour-depth raster drawings (Fax G3/G4 style)",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "license": "MIT"
+}
