@@ -1,0 +1,14 @@
+{
+  "name": "aries-recovery-tenant-scheduler",
+  "version": "1.0.0",
+  "description": "ARIES crash recovery (Analysis/Redo/Undo) + multi-tenant DRR fair scheduler, in TypeScript on Node's built-in test runner",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test tests/recovery.test.ts tests/scheduler.test.ts",
+    "example": "node examples/demo.ts"
+  }
+}
