@@ -1,0 +1,14 @@
+{
+  "name": "aries-recovery-drr-scheduler",
+  "version": "1.0.0",
+  "description": "ARIES crash recovery (Analysis/Redo/Undo with CLRs) + multi-tenant DRR fair scheduler in TypeScript",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test 'test/*.test.ts'",
+    "demo": "node --experimental-strip-types src/demo.ts"
+  },
+  "license": "MIT"
+}
