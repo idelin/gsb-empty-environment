@@ -1,0 +1,14 @@
+{
+  "name": "sharded-merkle-proof",
+  "version": "1.0.0",
+  "description": "Dynamic sharded Merkle tree with cross-shard proof aggregation",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/transfer-demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
