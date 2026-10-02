@@ -1,0 +1,14 @@
+{
+  "name": "huffman-resync",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "霍夫曼编码流损坏单点定位与错误扩散隔离器（基于同步字的容错解码器）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
