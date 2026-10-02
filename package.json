@@ -1,0 +1,14 @@
+{
+  "name": "persistent-reactive-store",
+  "version": "1.0.0",
+  "description": "Persistent reactive store with incremental hydration restorer",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts write && node examples/demo.ts restore"
+  }
+}
