@@ -1,0 +1,13 @@
+{
+  "name": "chandy-lamport-snapshot",
+  "version": "1.0.0",
+  "description": "Chandy-Lamport consistent global snapshot recorder (TypeScript, Node.js built-in test runner)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
