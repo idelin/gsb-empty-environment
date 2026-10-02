@@ -1,0 +1,14 @@
+{
+  "name": "dual-ring-hash-router",
+  "version": "1.0.0",
+  "description": "网络拓扑感知的主备哈希环：双环热备路由控制器",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "license": "MIT"
+}
