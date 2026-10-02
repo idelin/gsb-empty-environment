@@ -1,0 +1,13 @@
+{
+  "name": "lsm-wal-memtable-flush",
+  "version": "1.0.0",
+  "description": "WAL + MemTable -> Immutable -> Level-0 SSTable flush state machine (LSM write path)",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
