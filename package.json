@@ -1,0 +1,14 @@
+{
+  "name": "swim-mttd-fp-analyzer",
+  "version": "1.0.0",
+  "description": "SWIM 故障检测 MTTD 与误报率度量分析仪 (TypeScript)",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "sample": "node src/run-sample.ts",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
