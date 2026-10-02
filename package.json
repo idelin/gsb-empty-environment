@@ -1,0 +1,14 @@
+{
+  "name": "deterministic-replay-kernel",
+  "version": "1.0.0",
+  "description": "确定性事件重放调试内核：无副作用时间旅行的事件调度器",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "demo": "node --disable-warning=ExperimentalWarning src/main.ts",
+    "test": "node --disable-warning=ExperimentalWarning --test test/replay.test.ts"
+  }
+}
