@@ -1,0 +1,13 @@
+{
+  "name": "piggyback-gossip",
+  "version": "1.0.0",
+  "description": "SWIM-style piggyback gossip disseminator for membership change events (TypeScript, zero dependencies)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "sample": "node examples/sample.ts"
+  }
+}
