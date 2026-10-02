@@ -1,0 +1,11 @@
+{
+  "name": "hierarchical-quorum-arbiter",
+  "version": "1.0.0",
+  "description": "Hierarchical multi-datacenter quorum arbiter with weighted votes, degraded topology failover and signed decision evidence",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
