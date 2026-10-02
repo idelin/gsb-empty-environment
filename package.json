@@ -1,0 +1,13 @@
+{
+  "name": "spacetime-bvh",
+  "version": "1.0.0",
+  "description": "4D (3D + Time) space-time BVH indexer for moving-object trajectories",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
