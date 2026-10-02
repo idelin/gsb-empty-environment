@@ -1,0 +1,11 @@
+{
+  "name": "global-read-view-aligner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Global read-view aligner for consistent snapshots across sharded clusters",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node src/demo.ts"
+  }
+}
