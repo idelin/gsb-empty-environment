@@ -1,0 +1,14 @@
+{
+  "name": "proto-wire-adaptive",
+  "version": "1.0.0",
+  "description": "零依赖 Protobuf Wire-format 编解码器 + 反射校验引擎 + 自适应阈值伸缩/负载感知限流器",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test",
+    "demo": "node --disable-warning=ExperimentalWarning examples/demo.ts"
+  }
+}
