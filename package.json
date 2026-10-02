@@ -1,0 +1,13 @@
+{
+  "name": "rolling-hash-cdc-merkle",
+  "version": "1.0.0",
+  "description": "基于 Buzhash 滚动哈希的内容定义分块 + 默克尔树，支持增量同步",
+  "type": "module",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
