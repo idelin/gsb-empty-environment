@@ -1,0 +1,14 @@
+{
+  "name": "fine-grained-reactive",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "细粒度响应式 Signal/Computed/Effect，拓扑染色 + 两阶段更新，防钻石依赖瞬态脏值",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "example": "node --experimental-strip-types examples/diamond.ts"
+  }
+}
