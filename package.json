@@ -1,0 +1,11 @@
+{
+  "name": "lease-negotiation-sm",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "可租约租赁协商状态机：单机模拟的主备租约管理（离散 tick）",
+  "scripts": {
+    "demo": "node src/scenario.ts",
+    "test": "node --test test/lease.test.ts"
+  }
+}
