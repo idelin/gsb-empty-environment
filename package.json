@@ -1,0 +1,14 @@
+{
+  "name": "lease-fenced-lock",
+  "version": "1.0.0",
+  "description": "带租约隔离机制（TTL 租约 + 心跳续期 + fencing token）的分布式互斥锁",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --test \"tests/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
