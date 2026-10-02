@@ -1,0 +1,11 @@
+{
+  "name": "temporal-kpi-ledger",
+  "version": "1.0.0",
+  "description": "员工绩效考评时态指标账本：跨考评周期KPI目标/权重版本化管理与历史快照推演",
+  "type": "module",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
