@@ -1,0 +1,14 @@
+{
+  "name": "gesture-arbiter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pointer-event gesture recognition (click / drag / pinch) with threshold arbitration, preview compensation and a finite trace checker. No browser, no dependencies.",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
