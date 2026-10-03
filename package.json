@@ -1,0 +1,14 @@
+{
+  "name": "cabac-kernel",
+  "version": "1.0.0",
+  "description": "上下文自适应二进制算术编码（CABAC）内核 —— TypeScript 实现",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
