@@ -1,0 +1,11 @@
+{
+  "name": "subcluster-gossip",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sub-cluster Gossip: hierarchical gossip noise reducer for 10k-scale node clusters",
+  "scripts": {
+    "test": "node --test",
+    "sample": "node examples/run-simulation.ts"
+  }
+}
