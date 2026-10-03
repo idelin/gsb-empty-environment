@@ -1,0 +1,13 @@
+{
+  "name": "rational-simplex",
+  "version": "1.0.0",
+  "description": "Exact rational (lossless) two-phase simplex solver in TypeScript",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18 || >=23.6"
+  },
+  "scripts": {
+    "example": "node src/example.ts",
+    "test": "node --test"
+  }
+}
