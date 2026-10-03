@@ -1,0 +1,14 @@
+{
+  "name": "lsm-diagnostics",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "LSM 存储引擎读放大与 Bloom Filter 误判率监控诊断器",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test 'test/*.test.ts'"
+  }
+}
