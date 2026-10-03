@@ -1,0 +1,14 @@
+{
+  "name": "wireshard",
+  "version": "1.0.0",
+  "description": "Zero-dependency Protobuf wire-format codec with reflection validation, plus hierarchical sharding and locality-aware routing engine",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "license": "MIT"
+}
