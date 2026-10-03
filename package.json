@@ -1,0 +1,14 @@
+{
+  "name": "cabac-kernel",
+  "version": "1.0.0",
+  "description": "Context-Adaptive Binary Arithmetic Coding (CABAC) kernel in TypeScript",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --experimental-strip-types demo/demo.ts",
+    "test": "node --experimental-strip-types --test test/"
+  },
+  "license": "MIT"
+}
