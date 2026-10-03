@@ -1,0 +1,14 @@
+{
+  "name": "shift-qualification-matcher",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "轮班调度与岗位资质双时态匹配器（valid time + knowledge time）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
