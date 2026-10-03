@@ -1,0 +1,13 @@
+{
+  "name": "dynamic-clique-toolkit",
+  "version": "1.0.0",
+  "description": "动态图极大团枚举（Bron–Kerbosch 带主元剪枝）与团树分解器",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "example": "node examples/social-circle.ts"
+  }
+}
