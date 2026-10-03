@@ -1,0 +1,13 @@
+{
+  "name": "late-materialization-operator",
+  "version": "1.0.0",
+  "description": "OLAP late materialization projection operator: scan only filter/sort columns, fetch expensive columns only for final LIMIT winners",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
