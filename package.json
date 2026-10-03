@@ -1,0 +1,12 @@
+{
+  "name": "json-columnar-projector",
+  "version": "1.0.0",
+  "description": "结构化 JSON 扁平化列式投影器：自动推断字段路径建立虚拟列，按需投影时仅物化相关列，避免整文档反序列化",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node dist/test/projector.test.js",
+    "example": "node scripts/build.mjs && node dist/examples/demo.js"
+  }
+}
