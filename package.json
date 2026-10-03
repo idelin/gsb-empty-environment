@@ -1,0 +1,16 @@
+{
+  "name": "occ-engine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "无阻塞自旋乐观并发控制（OCC）引擎：读取 / 验证 / 写入三阶段执行内核",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts",
+    "bench": "node --experimental-strip-types bench/compare.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
