@@ -1,0 +1,14 @@
+{
+  "name": "lockfree-mvcc",
+  "version": "1.0.0",
+  "description": "Lock-free MVCC read path: read-only transactions never block and never observe torn snapshots",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node src/demo.ts"
+  }
+}
