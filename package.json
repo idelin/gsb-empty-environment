@@ -1,0 +1,14 @@
+{
+  "name": "incremental-scc",
+  "version": "1.0.0",
+  "description": "动态有向图的增量强连通分量(SCC)维护组件",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
