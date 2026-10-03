@@ -1,0 +1,14 @@
+{
+  "name": "cdc-fk-replay-scheduler",
+  "version": "1.0.0",
+  "description": "Cross-table CDC change replay scheduler: FK dependency topological ordering (parent INSERT first, child DELETE first)",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --experimental-strip-types src/demo.ts",
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\""
+  }
+}
