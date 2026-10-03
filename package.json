@@ -1,0 +1,11 @@
+{
+  "name": "paxos-saga",
+  "version": "1.0.0",
+  "description": "Multi-Paxos majority consensus with hole-free commit engine + saga reverse-compensation orchestrator",
+  "type": "module",
+  "engines": { "node": ">=22.6.0" },
+  "scripts": {
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "demo": "node --experimental-strip-types --disable-warning=ExperimentalWarning examples/demo.ts"
+  }
+}
