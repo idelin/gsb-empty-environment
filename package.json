@@ -1,0 +1,13 @@
+{
+  "name": "lease-contention-audit-trail",
+  "version": "1.0.0",
+  "description": "Replayable audit trail for distributed lease contention debugging",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/race-demo.ts"
+  }
+}
