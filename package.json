@@ -1,0 +1,11 @@
+{
+  "name": "protobuf-wire-faultlab",
+  "version": "1.0.0",
+  "description": "Zero-dependency Protobuf wire-format codec + reflection validator + fault-injection/crash-recovery engine",
+  "type": "module",
+  "engines": { "node": ">=23.6.0" },
+  "scripts": {
+    "test": "node --test tests/",
+    "demo": "node examples/demo.ts"
+  }
+}
