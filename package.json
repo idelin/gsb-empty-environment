@@ -1,0 +1,10 @@
+{
+  "name": "columnar-vectorized-engine",
+  "version": "1.0.0",
+  "description": "列式批量向量化表达式求值内核（TypeScript / Node.js）",
+  "type": "module",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "bench": "node bench/benchmark.ts"
+  }
+}
