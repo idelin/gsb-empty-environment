@@ -1,0 +1,14 @@
+{
+  "name": "multi-paxos-engine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-Paxos majority consensus with hole-free commit log, leader lease fast-path, and conflict arbitration",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test \"tests/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
