@@ -1,0 +1,14 @@
+{
+  "name": "capacity-aware-consistent-hash",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "动态容量感知一致性哈希分发器：虚拟节点随实时 CPU/内存负载伸缩，高负载自动分流泻洪",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
