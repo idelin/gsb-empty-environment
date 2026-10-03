@@ -1,0 +1,13 @@
+{
+  "name": "aries-recovery-engine",
+  "version": "1.0.0",
+  "description": "ARIES crash recovery: Analysis/Redo/Undo with CLR-based reverse compensation (TypeScript, Node.js built-in test runner)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "sample": "sh scripts/run.sh sample/crash-recovery-demo.ts",
+    "test": "sh scripts/run.sh --test tests/analysis.test.ts tests/redo.test.ts tests/undo.test.ts tests/rollback.test.ts tests/recovery.test.ts tests/concurrency.test.ts"
+  }
+}
