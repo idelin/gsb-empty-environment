@@ -1,0 +1,13 @@
+{
+  "name": "anti-entropy-repairer",
+  "version": "1.0.0",
+  "description": "Anti-Entropy background full out-of-order state repairer over lightweight gossip, with Merkle-tree depth traversal (TypeScript, Node.js built-in test runner)",
+  "type": "module",
+  "engines": {
+    "node": ">=23.0.0"
+  },
+  "scripts": {
+    "demo": "node --disable-warning=ExperimentalWarning src/demo.ts",
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.ts"
+  }
+}
