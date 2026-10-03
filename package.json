@@ -1,0 +1,14 @@
+{
+  "name": "swim-failure-detector",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SWIM-style periodic heartbeat probing with indirect PingReq proxy probes (TypeScript, zero dependencies)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test tests/swim.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
