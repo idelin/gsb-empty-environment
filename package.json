@@ -1,0 +1,13 @@
+{
+  "name": "vectorized-chunk-pool",
+  "version": "1.0.0",
+  "description": "向量化中间结果内存池与垃圾回收规避器：算子间 Chunk 复用，稳态零堆分配",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
