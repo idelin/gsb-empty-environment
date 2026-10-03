@@ -1,0 +1,14 @@
+{
+  "name": "mvcc-store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "内存快照隔离 MVCC 存储引擎（首写获胜写写冲突检测）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
