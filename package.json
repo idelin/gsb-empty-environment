@@ -1,0 +1,13 @@
+{
+  "name": "rational-hyperplane-separator",
+  "version": "1.0.0",
+  "description": "Exact rational-arithmetic verifier for strict linear separability of two planar point sets",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node src/cli.ts examples/separated.json && node src/cli.ts examples/intersecting.json && node src/cli.ts examples/rational.json"
+  }
+}
