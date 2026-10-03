@@ -1,0 +1,14 @@
+{
+  "name": "reactive-time-travel",
+  "version": "1.0.0",
+  "description": "Cross-component reactive state snapshots with a time-travel controller",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
