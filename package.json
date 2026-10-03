@@ -1,0 +1,14 @@
+{
+  "name": "json-crdt-tree",
+  "version": "0.1.0",
+  "description": "JSON CRDT 层次对象协同解析与变更高阶树（Array / Map / Register 混合嵌套，三向合并）",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
