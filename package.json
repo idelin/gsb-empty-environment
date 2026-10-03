@@ -1,0 +1,13 @@
+{
+  "name": "physical-property-enforcement",
+  "version": "1.0.0",
+  "description": "Physical property enforcement (Sort/Order): bottom-up tracking & top-down enforcement of ordering in a query optimizer",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
