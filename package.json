@@ -1,0 +1,11 @@
+{
+  "name": "bplus-tree-cascading-merge",
+  "version": "1.0.0",
+  "description": "B+ tree leaf/internal-node cascading merge with page recycling (TypeScript)",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/merge.test.ts",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
