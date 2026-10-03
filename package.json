@@ -1,0 +1,15 @@
+{
+  "name": "aries-sharding-engine",
+  "version": "1.0.0",
+  "description": "ARIES crash recovery (Analysis/Redo/Undo) + hierarchical sharding with locality-aware routing, in dependency-free TypeScript",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "test:node22": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
