@@ -1,0 +1,15 @@
+{
+  "name": "causal-trace-reconstructor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Cross-timezone distributed-trace causal topology reconstructor with clock-drift correction",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "demo": "node demo/sample.ts",
+    "test": "node --test 'test/*.test.ts'",
+    "typecheck": "tsc --noEmit"
+  }
+}
