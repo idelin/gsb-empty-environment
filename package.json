@@ -1,0 +1,11 @@
+{
+  "name": "lseq-crdt",
+  "version": "1.0.0",
+  "description": "LSEQ：基于无界分数因果树的高效协同序列（TypeScript 版）",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node src/demo.ts"
+  },
+  "license": "MIT"
+}
