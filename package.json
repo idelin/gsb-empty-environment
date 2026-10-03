@@ -1,0 +1,13 @@
+{
+  "name": "lsm-tombstone",
+  "version": "1.0.0",
+  "description": "LSM-tree delete-semantics kernel: tombstones, read masking, bottom-most-level physical elimination",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test tests/lsm.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
