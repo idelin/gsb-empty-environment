@@ -1,0 +1,14 @@
+{
+  "name": "kcore-decomposition",
+  "version": "1.0.0",
+  "private": true,
+  "description": "图拓扑 K-核（K-Core）分解与剥离器：批量核度分解 + 增删边时的局部增量传播",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node demo/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
