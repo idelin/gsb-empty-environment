@@ -1,0 +1,13 @@
+{
+  "name": "tracevault",
+  "version": "1.0.0",
+  "description": "可追溯轨迹时态加密索引与假名化审计器 —— 保护隐私的时空数据检索组件",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node src/demo.ts"
+  }
+}
