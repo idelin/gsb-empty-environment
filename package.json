@@ -1,0 +1,14 @@
+{
+  "name": "marker-watershed",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Marker-controlled watershed segmentation on integer heightmaps with deterministic plateau competition, incremental tiled recomputation, versioned patches and replayable samples.",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "sample": "node examples/run-sample.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
