@@ -1,0 +1,14 @@
+{
+  "name": "protobuf-wire-saga",
+  "version": "1.0.0",
+  "description": "Zero-dependency protobuf wire-format codec + saga compensation orchestrator (TypeScript, Node built-in test runner)",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
