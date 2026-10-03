@@ -1,0 +1,15 @@
+{
+  "name": "pbwire-arbiter",
+  "version": "1.0.0",
+  "description": "Zero-dependency protobuf wire-format codec, reflection validator, and multi-node contention arbiter (TypeScript, node:test)",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node scripts/run-tests.mjs",
+    "demo": "node scripts/run.mjs examples/demo.ts"
+  },
+  "license": "MIT"
+}
