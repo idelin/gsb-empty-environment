@@ -1,0 +1,11 @@
+{
+  "name": "saga-engine",
+  "version": "1.0.0",
+  "description": "长事务补偿与状态机持久化引擎 (Saga orchestration with persistent state machine)",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "example": "node examples/procurement.ts"
+  },
+  "license": "MIT"
+}
