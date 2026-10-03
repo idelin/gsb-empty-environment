@@ -1,0 +1,14 @@
+{
+  "name": "latch-crabbing",
+  "version": "1.0.0",
+  "description": "Latch Crabbing / Coupling protocol on a B+ tree (TypeScript, node:test)",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node demo.ts"
+  }
+}
