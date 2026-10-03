@@ -1,0 +1,11 @@
+{
+  "name": "proto-wire-faultlab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Zero-dependency protobuf wire-format codec + reflection validator + fault-injection crash-recovery lab",
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test 'test/*.test.ts'",
+    "demo": "node --experimental-strip-types --no-warnings examples/demo.ts"
+  }
+}
