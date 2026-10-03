@@ -1,0 +1,16 @@
+{
+  "name": "spatiotemporal-collision-warner",
+  "version": "1.0.0",
+  "description": "Spatio-temporal grid hashing engine for near-neighbor collision early warning of large-scale dynamic entities",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node test/run.js",
+    "demo": "node demo/run-demo.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
