@@ -1,0 +1,13 @@
+{
+  "name": "adaptive-batch-size-regulator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "向量化执行引擎自适应批大小（Adaptive Batch Size）调节器",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node test/compat-runner.cjs",
+    "test:node18": "npm run build && node --test dist/test/",
+    "demo": "npm run build && node dist/demo/run-demo.js"
+  }
+}
