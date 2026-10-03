@@ -1,0 +1,11 @@
+{
+  "name": "multipaxos-inspector",
+  "version": "1.0.0",
+  "description": "Multi-Paxos majority consensus with gap-free log commit engine, formal constraint inspector and invariant assertion monitor (TypeScript, Node built-in test runner)",
+  "type": "module",
+  "engines": { "node": ">=22.6.0" },
+  "scripts": {
+    "test": "sh scripts/run.sh --test tests/*.test.ts",
+    "demo": "sh scripts/run.sh examples/demo.ts"
+  }
+}
