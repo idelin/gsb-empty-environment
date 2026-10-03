@@ -1,0 +1,13 @@
+{
+  "name": "recoverable-2pc-coordinator",
+  "version": "1.0.0",
+  "description": "可回退两阶段提交(2PC)协调器：离散事件仿真 + WAL 预写式状态转移 + 崩溃恢复",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
