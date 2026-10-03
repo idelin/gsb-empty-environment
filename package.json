@@ -1,0 +1,10 @@
+{
+  "name": "matrix-clock-dgc",
+  "version": "1.0.0",
+  "description": "Matrix clock based distributed garbage collection (3-node demo, node:test)",
+  "type": "module",
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test"
+  }
+}
