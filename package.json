@@ -1,0 +1,13 @@
+{
+  "name": "bitemporal-org-chart",
+  "version": "1.0.0",
+  "description": "可追溯员工组织架构时态树（双时态：业务时间 + 系统知悉时间）",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}
