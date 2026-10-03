@@ -1,0 +1,11 @@
+{
+  "name": "peritext-crdt",
+  "version": "1.0.0",
+  "description": "Peritext/Fugue 风格的富文本格式标注区间 CRDT 合并器 (TypeScript)",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
