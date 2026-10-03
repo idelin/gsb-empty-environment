@@ -1,0 +1,14 @@
+{
+  "name": "sliding-window-flow-control",
+  "version": "1.0.0",
+  "description": "Bidirectional flow-control beacon + sliding window coordinator (lightweight TCP-like protocol)",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
