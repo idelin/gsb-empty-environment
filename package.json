@@ -1,0 +1,14 @@
+{
+  "name": "hetero-member-router",
+  "version": "1.0.0",
+  "description": "带标签与元数据属性的异构节点成员列表路由（TypeScript）",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
