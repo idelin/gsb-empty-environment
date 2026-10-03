@@ -1,0 +1,14 @@
+{
+  "name": "peak-concurrency-tracker",
+  "version": "1.0.0",
+  "description": "Sliding-window peak overlap interval detector for device occupancy events",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
