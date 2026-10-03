@@ -1,0 +1,14 @@
+{
+  "name": "session-window-merger",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "会话超时可撤销合并窗口：retract/upsert 变更流 + 水位线状态清理",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
