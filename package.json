@@ -1,0 +1,11 @@
+{
+  "name": "exact-matrix",
+  "version": "1.0.0",
+  "description": "Pure rational matrix algebra: exact determinant and inverse (fraction-free Bareiss / adjugate)",
+  "type": "module",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
