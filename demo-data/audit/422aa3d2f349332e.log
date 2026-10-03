@@ -1,0 +1,12 @@
+{"time":"2026-10-04T00:14:07.171436+08:00","instance_id":"422aa3d2f349332e","type":"instance_created","detail":"procurement"}
+{"time":"2026-10-04T00:14:07.184934+08:00","instance_id":"422aa3d2f349332e","type":"step_started","step":"approve"}
+{"time":"2026-10-04T00:14:07.241955+08:00","instance_id":"422aa3d2f349332e","type":"step_completed","step":"approve"}
+{"time":"2026-10-04T00:14:07.26491+08:00","instance_id":"422aa3d2f349332e","type":"step_started","step":"purchase"}
+{"time":"2026-10-04T00:14:07.282689+08:00","instance_id":"422aa3d2f349332e","type":"step_completed","step":"purchase"}
+{"time":"2026-10-04T00:14:07.386892+08:00","instance_id":"422aa3d2f349332e","type":"step_started","step":"pay"}
+{"time":"2026-10-04T00:14:07.397127+08:00","instance_id":"422aa3d2f349332e","type":"step_waiting","step":"pay","detail":"deadline=2026-10-04T00:14:07+08:00"}
+{"time":"2026-10-04T00:14:07.72498+08:00","instance_id":"422aa3d2f349332e","type":"step_timeout","step":"pay","detail":"external wait exceeded deadline 2026-10-04T00:14:07+08:00"}
+{"time":"2026-10-04T00:14:07.734566+08:00","instance_id":"422aa3d2f349332e","type":"compensation_started"}
+{"time":"2026-10-04T00:14:07.746494+08:00","instance_id":"422aa3d2f349332e","type":"step_compensated","step":"purchase"}
+{"time":"2026-10-04T00:14:07.764209+08:00","instance_id":"422aa3d2f349332e","type":"step_compensated","step":"approve"}
+{"time":"2026-10-04T00:14:07.823017+08:00","instance_id":"422aa3d2f349332e","type":"instance_compensated"}

@@ -1,0 +1,40 @@
+{
+  "id": "422aa3d2f349332e",
+  "saga": "procurement",
+  "status": "compensated",
+  "steps": [
+    {
+      "name": "approve",
+      "status": "completed",
+      "attempts": 1,
+      "deadline": "0001-01-01T00:00:00Z",
+      "started_at": "2026-10-04T00:14:07.179635+08:00",
+      "completed_at": "2026-10-04T00:14:07.23705+08:00",
+      "compensated": true
+    },
+    {
+      "name": "purchase",
+      "status": "completed",
+      "attempts": 1,
+      "deadline": "0001-01-01T00:00:00Z",
+      "started_at": "2026-10-04T00:14:07.260472+08:00",
+      "completed_at": "2026-10-04T00:14:07.269525+08:00",
+      "compensated": true
+    },
+    {
+      "name": "pay",
+      "status": "failed",
+      "attempts": 1,
+      "err": "external wait exceeded deadline 2026-10-04T00:14:07+08:00",
+      "deadline": "2026-10-04T00:14:07.691741+08:00",
+      "started_at": "2026-10-04T00:14:07.334278+08:00",
+      "completed_at": "0001-01-01T00:00:00Z"
+    }
+  ],
+  "data": {
+    "approver": "张经理",
+    "po": "PO-1001"
+  },
+  "created_at": "2026-10-04T00:14:07.161198+08:00",
+  "updated_at": "2026-10-04T00:14:07.814952+08:00"
+}
