@@ -1,0 +1,15 @@
+{
+  "name": "attribute-grammar-evaluator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Attribute grammar evaluator: synthesized & inherited attributes, dependency topological sort, cycle detection, scoped type checking demo language",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test \"dist/test/*.test.js\"",
+    "demo": "npm run build && node dist/src/demo.js"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/node": "22.19.19"
+  }
+}
