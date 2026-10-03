@@ -1,0 +1,14 @@
+{
+  "name": "paxos-shard-engine",
+  "version": "1.0.0",
+  "description": "Multi-Paxos majority consensus log engine + hierarchical sharding with locality-aware routing (TypeScript, Node.js built-in test runner)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "license": "MIT"
+}
