@@ -1,0 +1,14 @@
+{
+  "name": "vectorized-string-matcher",
+  "version": "1.0.0",
+  "description": "向量化字符串前缀与正则匹配器：紧凑字符串列 + 批量过滤算子 + 压缩位图输出",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
