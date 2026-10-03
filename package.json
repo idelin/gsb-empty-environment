@@ -1,0 +1,11 @@
+{
+  "name": "capacity-aware-consistent-hash",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Dynamic capacity-aware consistent hashing distributor (TypeScript, zero deps)",
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
