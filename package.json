@@ -1,0 +1,14 @@
+{
+  "name": "txn-chunk-streamer",
+  "version": "1.0.0",
+  "description": "Large-transaction chunked transfer with memory-protection rate limiter",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --expose-gc --test test/*.test.ts",
+    "demo": "node --expose-gc --max-old-space-size=16 --max-semi-space-size=2 examples/run-demo.ts",
+    "demo:naive": "node --expose-gc examples/run-demo.ts --naive"
+  }
+}
