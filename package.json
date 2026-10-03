@@ -1,0 +1,13 @@
+{
+  "name": "multipaxos-log",
+  "version": "1.0.0",
+  "description": "Multi-Paxos majority consensus with gap-free commit engine and zero-copy persistent codec",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node demo/partition-demo.ts"
+  }
+}
