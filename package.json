@@ -1,0 +1,11 @@
+{
+  "name": "kcore-decomposition",
+  "version": "1.0.0",
+  "description": "K-core decomposition and incremental core-number maintenance for large sparse graphs",
+  "type": "module",
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test \"test/**/*.test.ts\"",
+    "demo": "node --disable-warning=ExperimentalWarning examples/demo.ts"
+  },
+  "license": "MIT"
+}
