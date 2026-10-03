@@ -1,0 +1,13 @@
+{
+  "name": "deterministic-replay-kernel",
+  "version": "1.0.0",
+  "description": "Deterministic event-replay debugging kernel with side-effect-free time travel",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node src/simulate.ts"
+  }
+}
