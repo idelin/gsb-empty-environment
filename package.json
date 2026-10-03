@@ -1,0 +1,15 @@
+{
+  "name": "erasable-compliance-prover",
+  "version": "1.0.0",
+  "description": "Erasable compliance data-redaction prover: Merkle-tree ledger with verifiable erasure (right-to-be-forgotten)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/**/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT"
+}
