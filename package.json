@@ -1,0 +1,12 @@
+{
+  "name": "lease-federation",
+  "version": "1.0.0",
+  "description": "跨集群租约联邦与全局互斥控制器（Witness 仲裁的全局单点写入租约）",
+  "type": "module",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
