@@ -1,0 +1,14 @@
+{
+  "name": "lsm-checkpoint",
+  "version": "1.0.0",
+  "description": "Log-structured state machine incremental checkpoint generator",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"tests/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
