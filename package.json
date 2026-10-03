@@ -1,0 +1,14 @@
+{
+  "name": "json-columnar-projector",
+  "version": "1.0.0",
+  "description": "Structured JSON flattening columnar projector: infers JSON field paths into virtual columns and reads only the requested leaf paths without deserializing the whole document.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node examples/order-demo.ts",
+    "test": "node --test \"test/*.test.ts\""
+  },
+  "license": "MIT"
+}
