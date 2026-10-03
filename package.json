@@ -1,0 +1,14 @@
+{
+  "name": "lease-quorum-arbiter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Majority-quorum lease arbitration for leader election with split-brain prevention",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/partition-demo.ts"
+  }
+}
