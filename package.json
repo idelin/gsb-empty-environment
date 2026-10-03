@@ -1,0 +1,13 @@
+{
+  "name": "dict-column-hot-reencoder",
+  "version": "1.0.0",
+  "description": "列存字典动态扩容与热重构器：字典编码列存，基数突破 uint8 门限时自动热迁移至 uint16/uint32",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
