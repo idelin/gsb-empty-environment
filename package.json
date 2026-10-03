@@ -1,0 +1,14 @@
+{
+  "name": "aries-recovery-and-locality-router",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ARIES 崩溃恢复引擎 + 分层分片局部性感知路由引擎（TypeScript / Node 内置测试）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
