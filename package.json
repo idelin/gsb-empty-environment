@@ -1,0 +1,14 @@
+{
+  "name": "lsm-memtable-flush",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "WAL + MemTable -> Immutable -> L0 SSTable flush state machine (LSM tree write path)",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
