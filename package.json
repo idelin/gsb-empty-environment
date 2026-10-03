@@ -1,0 +1,10 @@
+{
+  "name": "verifiable-mpt",
+  "version": "1.0.0",
+  "description": "Merkle Patricia Trie with range summaries and verifiable proofs",
+  "type": "module",
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test "test/*.test.ts""
+  }
+}
