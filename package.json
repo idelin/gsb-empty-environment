@@ -1,0 +1,13 @@
+{
+  "name": "network-bottleneck-analyzer",
+  "version": "1.0.0",
+  "description": "网络瓶颈度与介数中心性近似器：关键枢纽评估、Top-K 瓶颈跟踪、故障分流建议",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
