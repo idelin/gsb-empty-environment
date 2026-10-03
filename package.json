@@ -1,0 +1,13 @@
+{
+  "name": "tree-automata-validator",
+  "version": "1.0.0",
+  "description": "基于树自动机的 XML/JSON 层次结构模式校验器",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "sample": "node examples/run-sample.ts"
+  }
+}
