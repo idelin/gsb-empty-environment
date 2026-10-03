@@ -1,0 +1,13 @@
+{
+  "name": "subquery-unnesting",
+  "version": "1.0.0",
+  "description": "关联子查询解除（Subquery Unnesting / Decorrelation）：将 WHERE EXISTS / IN 重写为 Semi/Anti Join 并生成 Hash Join 物理计划",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "demo": "node demo.ts",
+    "test": "node --test test/"
+  }
+}
