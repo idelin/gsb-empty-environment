@@ -1,0 +1,13 @@
+{
+  "name": "overflow-page-chain",
+  "version": "1.0.0",
+  "description": "B+ tree leaf pages with chained overflow pages for oversized variable-length keys/values (TypeScript)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "example": "node examples/demo.ts"
+  }
+}
