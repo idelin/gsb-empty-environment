@@ -1,0 +1,14 @@
+{
+  "name": "edt-field",
+  "version": "1.0.0",
+  "description": "Exact Euclidean squared distance field over a 2D obstacle grid with incremental updates, chunked versioning and path clearance queries",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test test/*.test.ts",
+    "example": "node --experimental-strip-types --no-warnings examples/demo.ts"
+  }
+}
