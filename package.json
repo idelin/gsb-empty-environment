@@ -1,0 +1,14 @@
+{
+  "name": "vectorized-string-matcher",
+  "version": "1.0.0",
+  "description": "Vectorized string prefix & regex matcher over compact columnar storage",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test 'test/*.test.ts'",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "license": "MIT"
+}
