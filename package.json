@@ -1,0 +1,14 @@
+{
+  "name": "paxos-lockfree",
+  "version": "1.0.0",
+  "description": "Multi-Paxos majority consensus with gap-free commit engine and a lock-free MPMC queue with CAS acceleration (TypeScript, zero dependencies)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "./test.sh",
+    "demo": "./demo.sh"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
