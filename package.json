@@ -1,0 +1,13 @@
+{
+  "name": "attribute-grammar-evaluator",
+  "version": "1.0.0",
+  "description": "Attribute grammar evaluator: synthesized & inherited attributes, dependency topological sort, cycle detection, scoped type inference demo language",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "sample": "node examples/sample.ts"
+  }
+}
