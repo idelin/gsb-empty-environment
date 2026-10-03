@@ -1,0 +1,14 @@
+{
+  "name": "ring-pool",
+  "version": "1.0.0",
+  "description": "定长环形内存池 + 零拷贝切片复用器（高性能网络 IO 缓冲区管理）",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node --expose-gc examples/demo.ts"
+  }
+}
