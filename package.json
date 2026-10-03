@@ -1,0 +1,13 @@
+{
+  "name": "lease-cache-coherence",
+  "version": "1.0.0",
+  "description": "Lease-based distributed cache invalidation consistency guarantor (AFS/Leases style)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test test/lease.test.ts",
+    "demo": "node --experimental-strip-types --no-warnings demo.ts"
+  }
+}
