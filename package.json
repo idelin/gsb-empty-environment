@@ -1,0 +1,14 @@
+{
+  "name": "quorum-lease-arbiter",
+  "version": "1.0.0",
+  "description": "多节点租约竞争与脑裂预防仲裁器：多数派租约仲裁协议",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node demo/sample.ts"
+  }
+}
