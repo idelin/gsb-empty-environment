@@ -1,0 +1,11 @@
+{
+  "name": "distributed-quota-lease",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "分布式滑动窗口限流：心跳租约 + 配额预分配（TypeScript，Node 内置测试）",
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test \"test/*.test.ts\""
+  }
+}
