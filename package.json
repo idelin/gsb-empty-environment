@@ -1,0 +1,10 @@
+{
+  "name": "bitemporal-contract-fulfillment",
+  "version": "1.0.0",
+  "description": "双时态合同履约状态机：条款时态变更 + 履约状态跟踪",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
