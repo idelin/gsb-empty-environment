@@ -1,0 +1,14 @@
+{
+  "name": "broadphase-collision",
+  "version": "1.0.0",
+  "description": "Incremental dynamic AABB tree broadphase for pairwise collision candidate filtering",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/**/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
