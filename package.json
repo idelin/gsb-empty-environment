@@ -1,0 +1,13 @@
+{
+  "name": "hashring-analyzer",
+  "version": "1.0.0",
+  "description": "一致性哈希算法质量检验诊断内核：哈希环碰撞与分布均匀度方差分析器",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "analyze": "node --experimental-strip-types src/cli.ts",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  }
+}
