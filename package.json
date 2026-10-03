@@ -1,0 +1,11 @@
+{
+  "name": "global-read-view-aligner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "分布式事务全局一致性读取（Global Read-View）对齐器",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/transfer-demo.ts"
+  }
+}
