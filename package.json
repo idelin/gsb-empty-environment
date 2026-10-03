@@ -1,0 +1,14 @@
+{
+  "name": "algebraic-number-compare",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Exact comparison of algebraic numbers (radicals with rational coefficients) via minimal polynomials and real-root isolation. No floating-point approximation.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "demo": "node --experimental-strip-types --disable-warning=ExperimentalWarning examples/demo.ts"
+  }
+}
