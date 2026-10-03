@@ -1,0 +1,14 @@
+{
+  "name": "allen-scheduler",
+  "version": "1.0.0",
+  "description": "Temporal interval algebra constraint solver (Allen's interval algebra) with STP-based time windows, critical path analysis and timezone/working-calendar projection.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "example": "node examples/project-schedule.ts"
+  }
+}
