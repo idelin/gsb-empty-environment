@@ -1,0 +1,14 @@
+{
+  "name": "multi-paxos-lockfree",
+  "version": "1.0.0",
+  "description": "Multi-Paxos majority consensus & hole-free log commit engine with lock-free queues and CAS acceleration",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
