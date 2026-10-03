@@ -1,0 +1,15 @@
+{
+  "name": "subquery-unnesting",
+  "version": "1.0.0",
+  "description": "Correlated subquery unnesting (decorrelation): rewrite EXISTS/IN subqueries into hash semi/anti joins",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node tests/decorrelate.test.js",
+    "demo": "node demo/run.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  },
+  "license": "MIT"
+}
