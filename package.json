@@ -1,0 +1,14 @@
+{
+  "name": "wire-arbiter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Zero-dependency Protobuf wire-format codec + reflection validator + multi-node conflict arbiter (TypeScript, Node built-in test runner)",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test 'test/**/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
