@@ -1,0 +1,14 @@
+{
+  "name": "cdc-undo-replay-engine",
+  "version": "1.0.0",
+  "description": "Reverse compensation replay & data rollback package generator based on CDC before/after images",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
