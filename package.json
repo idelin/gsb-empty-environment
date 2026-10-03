@@ -1,0 +1,14 @@
+{
+  "name": "tombstone-gc-coordinator",
+  "version": "1.0.0",
+  "description": "Causal history pruning & Tombstone GC coordinator for CRDT clusters (TypeScript, Node.js built-in test runner)",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "demo": "node --disable-warning=ExperimentalWarning examples/demo.ts"
+  },
+  "license": "MIT"
+}
