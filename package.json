@@ -1,0 +1,14 @@
+{
+  "name": "exact-decimal-validator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Exact decimal-string validation (range, digits, multiples) with feasibility intersection, witnesses and minimal counterexamples. No binary floating point.",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
