@@ -1,0 +1,13 @@
+{
+  "name": "paxos-sparse-engine",
+  "version": "1.0.0",
+  "description": "Multi-Paxos 多数派共识与无空洞日志提交引擎 + 海量稀疏数据内存紧凑优化器",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
