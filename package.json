@@ -1,0 +1,11 @@
+{
+  "name": "aries-recovery",
+  "version": "1.0.0",
+  "description": "ARIES write-ahead logging crash recovery (Analysis/Redo/Undo) with incremental snapshots and checkpoint archiving",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
