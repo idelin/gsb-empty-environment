@@ -1,0 +1,19 @@
+{
+  "name": "sliding-window-condition-integrator",
+  "version": "1.0.0",
+  "description": "滑动窗口内连续条件持续时间的精确积分器（TypeScript + Node.js 内置测试）",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/**/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}
