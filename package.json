@@ -1,0 +1,13 @@
+{
+  "name": "spacetime-collision-sentinel",
+  "version": "1.0.0",
+  "description": "Spatiotemporal grid-hashing collision early-warning engine for large-scale dynamic entities",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node src/demo.ts"
+  }
+}
