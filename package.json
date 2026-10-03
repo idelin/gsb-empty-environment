@@ -1,0 +1,14 @@
+{
+  "name": "bidirectional-pretty-printer",
+  "version": "1.0.0",
+  "description": "Bidirectional parser and AST pretty-printer with 80-column layout and round-trip guarantee",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
