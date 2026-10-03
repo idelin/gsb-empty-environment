@@ -1,0 +1,13 @@
+{
+  "name": "swim-metrics-analyzer",
+  "version": "1.0.0",
+  "description": "False-positive-rate and MTTD metrics analyzer for the SWIM failure-detection protocol",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18 || >=23.6"
+  },
+  "scripts": {
+    "start": "node src/main.ts",
+    "test": "node --test 'test/*.test.ts'"
+  }
+}
