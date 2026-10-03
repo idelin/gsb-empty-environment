@@ -1,0 +1,14 @@
+{
+  "name": "spacetime-bvh",
+  "version": "1.0.0",
+  "description": "4D (3D + Time) spacetime AABB BVH indexer for moving-object trajectories",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "license": "MIT"
+}
