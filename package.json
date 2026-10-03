@@ -1,0 +1,12 @@
+{
+  "name": "aries-recovery",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ARIES write-ahead logging analysis and crash recovery (redo/undo) engine with fault injection, in TypeScript",
+  "engines": { "node": ">=22.6.0" },
+  "scripts": {
+    "test": "bash run.sh test",
+    "demo": "bash run.sh demo"
+  }
+}
