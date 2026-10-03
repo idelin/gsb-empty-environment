@@ -1,0 +1,13 @@
+{
+  "name": "delaunay-topology",
+  "version": "1.0.0",
+  "description": "Incremental Delaunay triangulator with Lawson edge flipping and compact triangle adjacency mesh",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/delaunay.test.ts",
+    "sample": "node examples/sample.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}
