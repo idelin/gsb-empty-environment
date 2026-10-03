@@ -1,0 +1,14 @@
+{
+  "name": "bidirectional-parser-printer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Bidirectional parser and AST pretty printer with 80-column layout and round-trip fidelity",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --experimental-strip-types examples/demo.ts",
+    "test": "node --experimental-strip-types --test test/roundtrip.test.ts"
+  }
+}
