@@ -1,0 +1,10 @@
+{
+  "name": "ls-spf-engine",
+  "version": "1.0.0",
+  "description": "OSPF-like link-state routing engine: LSA flooding, incremental SPF (Dijkstra), route oscillation damping",
+  "type": "module",
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
