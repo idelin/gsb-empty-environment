@@ -1,0 +1,23 @@
+{
+  "name": "rle-huffman-raster-compressor",
+  "version": "1.0.0",
+  "description": "Compound RLE + preset-Huffman compressor for binary / low-bit-depth raster drawings (Fax Group 3/4 style)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "rle",
+    "huffman",
+    "raster",
+    "compression",
+    "fax",
+    "bitmap"
+  ],
+  "license": "MIT"
+}
