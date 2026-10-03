@@ -1,0 +1,14 @@
+{
+  "name": "ttl-lru-cache",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "分层时间感知（TTL/TTD）LRU 双重索引器：热度双向链表 + 到期小顶堆",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
