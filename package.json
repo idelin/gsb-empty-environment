@@ -1,0 +1,14 @@
+{
+  "name": "aries-recovery-sim",
+  "version": "1.0.0",
+  "description": "ARIES write-ahead logging analysis and crash recovery (Redo/Undo) engine with a deterministic discrete-time event-driven simulation and fault reproduction tool",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "simulate": "node src/demo.ts simulate",
+    "test": "node --test "test/*.test.ts""
+  }
+}
