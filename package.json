@@ -1,0 +1,14 @@
+{
+  "name": "protobuf-wire-codec",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Zero-dependency Protocol Buffers binary wire-format codec with a reflection schema validation engine (TypeScript, Node.js built-in test runner)",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --expose-gc --test test/varint.test.ts test/reader.test.ts test/message.test.ts test/compat.test.ts test/truncation.test.ts test/persistence.test.ts test/concurrency.test.ts test/leak.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
