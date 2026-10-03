@@ -1,0 +1,14 @@
+{
+  "name": "lease-negotiation-sm",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "单机模拟的主备租约管理状态机:离散 tick、受界时钟漂移、多数派心跳续期、防脑裂写入",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "demo": "sh scripts/node-ts.sh src/demo.ts",
+    "test": "sh scripts/node-ts.sh --test test/*.test.ts"
+  }
+}
