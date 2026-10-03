@@ -1,0 +1,14 @@
+{
+  "name": "sdf-toolkit",
+  "version": "1.0.0",
+  "description": "Dynamic signed-distance-field rasterization, isosurface extraction and sphere-tracing ray marcher (2D/3D)",
+  "type": "module",
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
