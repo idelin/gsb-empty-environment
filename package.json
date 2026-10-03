@@ -1,0 +1,14 @@
+{
+  "name": "spacetime-intersection-prover",
+  "version": "1.0.0",
+  "description": "四维时空反向索引与历史相交证明器：时间切片倒排网格 + 精确时空求交 + 不可抵赖证书",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
