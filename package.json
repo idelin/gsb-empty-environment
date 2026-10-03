@@ -1,0 +1,13 @@
+{
+  "name": "pbwire-snapshot",
+  "version": "1.0.0",
+  "description": "Zero-dependency Protocol Buffers wire-format codec and incremental snapshot / checkpoint archive engine",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test test/*.test.ts",
+    "example": "node --experimental-strip-types --no-warnings examples/demo.ts"
+  }
+}
