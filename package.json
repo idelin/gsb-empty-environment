@@ -1,0 +1,14 @@
+{
+  "name": "weighted-voting-crdt",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "带权重投票的协同决策无冲突选择器（CRDT，TypeScript）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
