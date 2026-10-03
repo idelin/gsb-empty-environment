@@ -1,0 +1,15 @@
+{
+  "name": "ss2pl-kernel",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Strict two-phase locking (SS2PL) kernel with shrinking-phase manager, deadlock detection and crash recovery",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test tests/",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
