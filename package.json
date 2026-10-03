@@ -1,0 +1,14 @@
+{
+  "name": "tans-fse",
+  "version": "1.0.0",
+  "description": "tANS (tabled Asymmetric Numeral Systems) finite-state entropy codec in TypeScript, zero dependencies",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
