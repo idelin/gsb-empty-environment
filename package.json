@@ -1,0 +1,11 @@
+{
+  "name": "rga-collab-text",
+  "version": "1.0.0",
+  "description": "RGA (Replicated Growable Array) 协作文本列表 —— 基于因果树的协同富文本底层数组",
+  "type": "module",
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/*.test.ts"
+  },
+  "license": "MIT"
+}
