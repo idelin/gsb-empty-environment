@@ -1,0 +1,13 @@
+{
+  "name": "cas-token-bucket",
+  "version": "1.0.0",
+  "description": "原子无锁并发令牌桶 (CAS-Based Token Bucket) — TypeScript / Node.js",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/token-bucket.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
