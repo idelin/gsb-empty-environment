@@ -1,0 +1,13 @@
+{
+  "name": "retroactive-credit-ledger",
+  "version": "1.0.0",
+  "description": "追溯性信用额度占用流水账：支持历史冲正与重叠期冻结的信用额度管理器",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node src/demo.ts"
+  }
+}
