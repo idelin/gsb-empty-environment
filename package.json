@@ -1,0 +1,14 @@
+{
+  "name": "deflate-lite",
+  "version": "0.1.0",
+  "description": "Pure-standard-library Deflate (RFC 1951) kernel: LZ77 + Huffman pipeline in TypeScript",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
