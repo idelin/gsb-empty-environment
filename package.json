@@ -1,0 +1,14 @@
+{
+  "name": "cas-token-bucket",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "原子无锁并发令牌桶（CAS-Based Token Bucket），基于 SharedArrayBuffer + Atomics.compareExchange",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
