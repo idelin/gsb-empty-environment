@@ -1,0 +1,14 @@
+{
+  "name": "partition-merge-coordinator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Split-brain recovery: network partition merging coordinator (SWIM-style, TypeScript)",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test "dist/test/*.test.js"",
+    "demo": "npm run build && node dist/src/demo.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
