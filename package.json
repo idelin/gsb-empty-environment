@@ -1,0 +1,14 @@
+{
+  "name": "hashring-analyzer",
+  "version": "1.0.0",
+  "description": "Consistent-hash ring collision & distribution uniformity variance analyzer",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "analyze": "node src/cli.ts",
+    "test": "node --test tests/*.test.ts"
+  },
+  "license": "MIT"
+}
