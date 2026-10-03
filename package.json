@@ -1,0 +1,14 @@
+{
+  "name": "ordered-log-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "High-throughput ordered log pipeline with monotonic LSNs, explicit durability barriers and rollback of unconfirmed buffers.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
