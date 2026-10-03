@@ -1,0 +1,14 @@
+{
+  "name": "protobuf-wire-sparse-optimizer",
+  "version": "1.0.0",
+  "description": "Zero-dependency Protocol Buffers wire-format codec, reflection validator and sparse-data memory optimizer (TypeScript)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --expose-gc --test tests/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "license": "MIT"
+}
