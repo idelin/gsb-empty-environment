@@ -1,0 +1,14 @@
+{
+  "name": "cdc-rollback-engine",
+  "version": "1.0.0",
+  "description": "反向补偿重放与数据回滚包生成器：基于 CDC Before/After 镜像的灾备冲正引擎",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "sample": "node examples/run-sample.ts",
+    "test": "node --test \"test/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
