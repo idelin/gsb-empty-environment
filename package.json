@@ -1,0 +1,18 @@
+{
+  "name": "partition-merge-coordinator",
+  "version": "1.0.0",
+  "description": "Split-brain recovery: network partition merging coordinator (SWIM-style heartbeat + deterministic merge handshake), TypeScript on Node.js",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "demo": "node examples/demo.ts",
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}
