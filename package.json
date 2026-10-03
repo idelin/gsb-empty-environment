@@ -1,0 +1,14 @@
+{
+  "name": "schema-sample-gen",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "受限 JSON Schema 子集的正例/单规则反例生成器（独立验证器验真，种子确定性）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node src/demo.ts"
+  }
+}
