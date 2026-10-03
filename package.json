@@ -1,0 +1,14 @@
+{
+  "name": "cep-nfa-engine",
+  "version": "1.0.0",
+  "description": "Multi-pattern NFA-based complex event processing engine (A -> B without C, sliding window, out-of-order compensation, timeout discard)",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
