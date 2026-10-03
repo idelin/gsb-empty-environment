@@ -1,0 +1,14 @@
+{
+  "name": "deflate-core",
+  "version": "1.0.0",
+  "description": "Pure-stdlib Deflate (RFC 1951) compressor: LZ77 sliding-window hash chains + Huffman pipeline",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test test/*.test.ts",
+    "demo": "node --experimental-strip-types --no-warnings examples/demo.ts"
+  },
+  "license": "MIT"
+}
