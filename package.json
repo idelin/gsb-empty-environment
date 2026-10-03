@@ -1,0 +1,22 @@
+{
+  "name": "spatiotemporal-flood-simulator",
+  "version": "1.0.0",
+  "description": "Spatiotemporal grid dynamic-connectivity flood spread simulator (DEM + rainfall series + infiltration), with flooded-region boundary polygons and road blockage breakpoints.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test tests/*.test.ts",
+    "demo": "node --experimental-strip-types --no-warnings examples/demo.ts"
+  },
+  "keywords": [
+    "flood",
+    "dem",
+    "spatiotemporal",
+    "grid",
+    "connectivity",
+    "simulation"
+  ],
+  "license": "MIT"
+}
