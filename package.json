@@ -1,0 +1,14 @@
+{
+  "name": "exact-apportion",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Exact integer apportionment with rational weights, bounds, overlapping group constraints, certificates and minimal-move repair. BigInt-only, no Number for big values.",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "example": "node --disable-warning=ExperimentalWarning examples/run-sample.ts"
+  }
+}
