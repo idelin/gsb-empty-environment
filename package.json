@@ -1,0 +1,14 @@
+{
+  "name": "proto-wire-codec",
+  "version": "1.0.0",
+  "description": "Zero-dependency Protocol Buffers wire-format codec with bounds-checked zero-copy parsing (TypeScript, Node.js built-in test runner)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "example": "node example/demo.ts"
+  },
+  "license": "MIT"
+}
