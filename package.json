@@ -1,0 +1,13 @@
+{
+  "name": "rule-sandbox",
+  "version": "1.0.0",
+  "description": "Multi-tenant rule sandbox with execution-limit guard for user-supplied expressions",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/sandbox.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
