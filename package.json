@@ -1,0 +1,14 @@
+{
+  "name": "sharded-merkle-aggregator",
+  "version": "1.0.0",
+  "description": "Dynamic sharded Merkle trees with a meta-tree cross-shard proof aggregator",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test test/*.test.ts",
+    "demo": "node --experimental-strip-types --no-warnings examples/transferDemo.ts"
+  },
+  "license": "MIT"
+}
