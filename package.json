@@ -1,0 +1,14 @@
+{
+  "name": "wirelock",
+  "version": "1.0.0",
+  "description": "Zero-dependency Protobuf wire-format codec, reflection validator, and lock-free MPMC queue with CAS acceleration",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts",
+    "bench": "node bench/throughput.ts"
+  }
+}
