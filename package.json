@@ -1,0 +1,11 @@
+{
+  "name": "recoverable-2pc-coordinator",
+  "version": "1.0.0",
+  "description": "Recoverable two-phase commit coordinator in a discrete-event environment",
+  "type": "module",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node src/demo.ts"
+  },
+  "license": "MIT"
+}
