@@ -1,0 +1,11 @@
+{
+  "name": "aries-recovery-arbiter",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "ARIES 崩溃恢复引擎（Analysis/Redo/Undo+CLR）与多节点并发冲突仲裁器",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/crash-recovery-demo.ts"
+  }
+}
