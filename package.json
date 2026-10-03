@@ -1,0 +1,10 @@
+{
+  "name": "rga-collab-text",
+  "version": "1.0.0",
+  "description": "RGA (Replicated Growable Array) 协作文本列表 — TypeScript 实现",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
