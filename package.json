@@ -1,0 +1,14 @@
+{
+  "name": "aries-recovery",
+  "version": "1.0.0",
+  "description": "ARIES write-ahead logging analysis & crash recovery (Redo/Undo) engine with a multi-node concurrency conflict arbiter, in TypeScript",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"tests/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
