@@ -1,0 +1,14 @@
+{
+  "name": "diffserv-priority-mapper",
+  "version": "1.0.0",
+  "description": "DiffServ (DSCP/TOS) priority mapper: EF strict-priority + AF WRR + BE forwarding with a bandwidth-limited link simulator",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
