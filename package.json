@@ -1,0 +1,15 @@
+{
+  "name": "cep-sequence-matcher",
+  "version": "1.0.0",
+  "description": "Multi-pattern composite event sequence matcher (CEP) over a nondeterministic DAG",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "demo": "node --experimental-strip-types demo/sample.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT"
+}
