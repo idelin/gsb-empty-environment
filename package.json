@@ -1,0 +1,13 @@
+{
+  "name": "sync-checksum-inspector",
+  "version": "1.0.0",
+  "description": "数据同步校验和（Checksum）实时比对器：滚动 XOR + Merkle 树，毫秒级发现丢数与篡改",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node --experimental-strip-types src/demo.ts",
+    "test": "node --experimental-strip-types --test test/"
+  }
+}
