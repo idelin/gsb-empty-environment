@@ -1,0 +1,14 @@
+{
+  "name": "ls-spf-engine",
+  "version": "1.0.0",
+  "description": "OSPF 风格的链路状态路由计算引擎：LSA 泛洪 + 增量 Dijkstra SPF + 路由震荡抑制",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
