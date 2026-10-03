@@ -1,0 +1,11 @@
+{
+  "name": "labeled-memberlist-router",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "带标签与元数据属性的异构节点成员列表路由（Gossip 元数据同步 + 属性筛选路由）",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
