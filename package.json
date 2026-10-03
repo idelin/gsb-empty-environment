@@ -1,0 +1,15 @@
+{
+  "name": "tans-entropy",
+  "version": "1.0.0",
+  "description": "tANS (tabled Asymmetric Numeral Systems) finite-state entropy coder in TypeScript",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts",
+    "bench": "node examples/benchmark.ts"
+  },
+  "license": "MIT"
+}
