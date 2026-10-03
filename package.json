@@ -1,0 +1,11 @@
+{
+  "name": "rational-hyperplane-separator",
+  "version": "1.0.0",
+  "description": "Exact rational hyperplane separation theorem verifier for finite point sets in R^d",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
