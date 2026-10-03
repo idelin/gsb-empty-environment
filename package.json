@@ -1,0 +1,14 @@
+{
+  "name": "projection-pruning",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "列投影消除与无用字段修剪（Projection Pruning）：全树依赖字段分析，压缩底层 Scan 输出模式",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/**/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  }
+}
