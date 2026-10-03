@@ -1,0 +1,22 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "main": "src/optimizer.ts",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idelin/gsb-empty-environment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/idelin/gsb-empty-environment/issues"
+  },
+  "homepage": "https://github.com/idelin/gsb-empty-environment#readme",
+  "description": ""
+}
