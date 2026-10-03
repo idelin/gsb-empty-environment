@@ -1,0 +1,13 @@
+{
+  "name": "aries-recovery-sparse",
+  "version": "1.0.0",
+  "description": "ARIES crash recovery (Analysis/Redo/Undo) with a memory-compact adaptive sparse data container, in TypeScript",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
