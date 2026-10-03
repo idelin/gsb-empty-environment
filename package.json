@@ -1,0 +1,13 @@
+{
+  "name": "protobuf-wire-codec",
+  "version": "1.0.0",
+  "description": "Zero-dependency Protocol Buffers wire-format codec with object pooling and zero-allocation decode paths",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "example": "node examples/demo.ts"
+  }
+}
