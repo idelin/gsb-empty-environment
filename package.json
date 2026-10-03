@@ -1,0 +1,14 @@
+{
+  "name": "distributed-rate-limit-lease",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "分布式滑动窗口限流：中心协调器心跳租约 + Worker 配额预分配（零依赖，Node 内置测试）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test test/*.test.ts",
+    "demo": "node --experimental-strip-types --no-warnings src/demo.ts"
+  }
+}
