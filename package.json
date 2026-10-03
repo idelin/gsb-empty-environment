@@ -1,0 +1,13 @@
+{
+  "name": "aries-recovery",
+  "version": "1.0.0",
+  "description": "ARIES write-ahead logging analysis and crash recovery Redo/Undo engine (TypeScript)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types src/demo.ts"
+  }
+}
