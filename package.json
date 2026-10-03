@@ -1,0 +1,19 @@
+{
+  "name": "temporal-kpi-ledger",
+  "version": "1.0.0",
+  "description": "员工绩效考评时态指标账本：跨考评周期 KPI 目标/权重版本化管理与历史快照推演",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "example": "node --experimental-strip-types examples/q1-retroactive.ts",
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}
