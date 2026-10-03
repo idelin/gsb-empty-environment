@@ -1,0 +1,14 @@
+{
+  "name": "multi-paxos-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-Paxos majority consensus with hole-free log commit engine (core protocol state machine)",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
