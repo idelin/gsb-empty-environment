@@ -1,0 +1,13 @@
+{
+  "name": "xa-resource-manager",
+  "version": "1.0.0",
+  "description": "XA-compliant local resource manager (RM) for distributed transactions with crash-safe prepare promises",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types demo/demo.ts"
+  }
+}
