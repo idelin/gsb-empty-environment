@@ -1,0 +1,13 @@
+{
+  "name": "allen-temporal-scheduler",
+  "version": "1.0.0",
+  "description": "时区与日历排程的时间区间代数约束求解器（Allen 区间代数 + STN）",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "example": "node examples/schedule.ts"
+  }
+}
