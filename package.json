@@ -1,0 +1,14 @@
+{
+  "name": "hierarchical-hash-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "双层层次化哈希聚合路由网关：租户级 + 设备级红黑树一致性哈希环",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
