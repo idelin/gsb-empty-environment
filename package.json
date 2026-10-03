@@ -1,0 +1,24 @@
+{
+  "name": "diffserv-priority-mapper",
+  "version": "1.0.0",
+  "description": "DiffServ priority mapper: DSCP/TOS classification with strict-priority EF and WRR AF scheduling",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idelin/gsb-empty-environment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/idelin/gsb-empty-environment/issues"
+  },
+  "homepage": "https://github.com/idelin/gsb-empty-environment#readme"
+}
