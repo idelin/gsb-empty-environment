@@ -1,0 +1,8 @@
+{
+  "name": "trivalent-query-engine",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-loader ./tools/ts-loader.mjs test/run.ts"
+  }
+}
