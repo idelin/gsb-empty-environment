@@ -1,0 +1,10 @@
+{
+  "name": "tx-outbox-simulator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Transactional outbox simulator: in-memory WAL, crash recovery, fault injection at every persistence boundary",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node dist/simulator.js"
+  }
+}
