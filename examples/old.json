@@ -1,0 +1,10 @@
+{
+  "nodes": [
+    { "id": "root", "generation": 1, "type": "dir", "parentId": null, "name": "root", "digest": null },
+    { "id": "src", "generation": 1, "type": "dir", "parentId": "root", "name": "src", "digest": null },
+    { "id": "a", "generation": 1, "type": "file", "parentId": "src", "name": "a.ts", "digest": "h1" },
+    { "id": "b", "generation": 1, "type": "file", "parentId": "src", "name": "b.ts", "digest": "h2" },
+    { "id": "tmp", "generation": 1, "type": "dir", "parentId": "root", "name": "tmp", "digest": null },
+    { "id": "junk", "generation": 1, "type": "file", "parentId": "tmp", "name": "junk.txt", "digest": "h3" }
+  ]
+}

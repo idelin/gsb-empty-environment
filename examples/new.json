@@ -1,0 +1,9 @@
+{
+  "nodes": [
+    { "id": "root", "generation": 1, "type": "dir", "parentId": null, "name": "root", "digest": null },
+    { "id": "src", "generation": 1, "type": "dir", "parentId": "root", "name": "source", "digest": null },
+    { "id": "a", "generation": 1, "type": "file", "parentId": "src", "name": "a.ts", "digest": "h1" },
+    { "id": "b", "generation": 1, "type": "file", "parentId": "root", "name": "b.ts", "digest": "h2b" },
+    { "id": "lock", "generation": 1, "type": "file", "parentId": "root", "name": "lock.json", "digest": "h4" }
+  ]
+}

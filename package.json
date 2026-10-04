@@ -1,0 +1,14 @@
+{
+  "name": "snapdiff",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Directory snapshot diff: detects add/delete/rename/move/content changes and emits a topologically applicable plan with a standalone verifying applier.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "cli": "node src/cli.ts"
+  }
+}
