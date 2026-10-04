@@ -1,0 +1,11 @@
+{
+  "name": "interface-compat-checker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "有限类型系统上的接口兼容（子类型）检查器：记录/联合/函数，逆变与协变，可缺省≠可空，递归类型共归纳终止",
+  "type": "module",
+  "scripts": {
+    "demo": "bun run src/demo.ts",
+    "test": "bun run src/demo.ts"
+  }
+}
