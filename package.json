@@ -1,0 +1,11 @@
+{
+  "name": "join-order-optimizer",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "基于子集 DP 的稠密二叉连接树枚举查询计划器（精确有理数成本）",
+  "scripts": {
+    "optimize": "node src/cli.ts",
+    "test": "node --test test/"
+  }
+}

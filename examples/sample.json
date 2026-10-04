@@ -1,0 +1,15 @@
+{
+  "tables": [
+    { "name": "customer", "cardinality": "15000" },
+    { "name": "orders", "cardinality": "150000" },
+    { "name": "lineitem", "cardinality": "600000" },
+    { "name": "part", "cardinality": "20000" }
+  ],
+  "edges": [
+    { "tables": ["customer", "orders"], "selectivity": "1/15000" },
+    { "tables": ["orders", "lineitem"], "selectivity": "1/150000" },
+    { "tables": ["lineitem", "part"], "selectivity": "1/20000" }
+  ],
+  "allowCrossProducts": false,
+  "materialization": { "perRow": "1/20" }
+}
