@@ -1,0 +1,17 @@
+{
+  "name": "module-lifecycle",
+  "version": "0.1.0",
+  "description": "可重复装载、引用计数、依赖逆序清理的模块生命周期库",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "license": "MIT"
+}
