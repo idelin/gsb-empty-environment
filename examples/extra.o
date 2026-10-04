@@ -1,0 +1,3 @@
+# 普通目标文件：弱定义 log（会被强定义覆盖，但不触发归档加载）
+module extra
+def weak log

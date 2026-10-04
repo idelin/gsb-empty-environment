@@ -1,0 +1,23 @@
+archive libutil.a
+
+# util1 提供 helper，但自身引入新引用 log2 -> 需要迭代
+member util1
+def strong helper
+undef log2
+end
+
+# util2 提供 log2，在第二轮被加载
+member util2
+def strong log2
+end
+
+# 归档中的弱定义不触发加载；log 已由 extra.o 弱定义满足
+member weaklog
+def weak log
+end
+
+# log 已有（弱）定义，不构成未定义引用，故该成员不会被加载
+member logstrong
+def strong log
+end
+end

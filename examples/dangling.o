@@ -1,0 +1,3 @@
+module dangling
+def strong start
+undef missing

@@ -1,0 +1,5 @@
+# 主模块：强定义 main，引用 helper / log
+module main
+def strong main
+undef helper
+undef log
