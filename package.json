@@ -1,0 +1,14 @@
+{
+  "name": "byte-radix-tree",
+  "version": "0.1.0",
+  "description": "Compressed radix tree (Patricia trie) over byte-string keys with versioned iterators",
+  "type": "module",
+  "main": "src/radix-tree.ts",
+  "exports": {
+    ".": "./src/radix-tree.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\""
+  },
+  "license": "MIT"
+}
