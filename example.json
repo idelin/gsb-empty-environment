@@ -1,0 +1,13 @@
+{
+  "budget": 70,
+  "limits": {"timeout_ms": 2000, "max_expanded": 1000000},
+  "blocks": [
+    {"id": "base",   "download": {"size": 10}, "temp": {"size": 22}, "final": {"size": 8}},
+    {"id": "mid",    "deps": ["base"], "download": {"size": 12}, "temp": {"size": 18}, "final": {"size": 9}},
+    {"id": "app",    "deps": ["mid"], "download": {"size": 8}, "temp": {"size": 25}, "final": {"size": 7}},
+    {"id": "assets", "download": {"size": 6}, "temp": {"size": 10},
+     "final": {"chunks": [{"name": "shared-assets", "size": 30}]}},
+    {"id": "assets-ui", "deps": ["assets"], "download": {"size": 4}, "temp": {"size": 6},
+     "final": {"chunks": [{"name": "shared-assets", "size": 30}, {"name": "assets-ui-delta", "size": 3}]}}
+  ]
+}
