@@ -1,0 +1,18 @@
+{
+  "periods": 3,
+  "batches": [
+    {"id": "b-cc-1",   "source": "creditcard", "amount": 600, "expire_period": 1},
+    {"id": "b-mall-1", "source": "mall",       "amount": 400, "expire_period": 2},
+    {"id": "b-cc-2",   "source": "creditcard", "amount": 300, "expire_period": 3}
+  ],
+  "offers": [
+    {"id": "coffee", "period": 1, "cost": 100, "value": 130, "rebate": 20,
+     "rebate_expire_period": 3, "inventory": 5,
+     "allowed_sources": ["creditcard", "rebate"]},
+    {"id": "movie",  "period": 1, "cost": 80,  "value": 90,  "inventory": 4},
+    {"id": "meal",   "period": 2, "cost": 150, "value": 200, "rebate": 30,
+     "rebate_expire_period": 3, "inventory": 3,
+     "allowed_sources": ["mall", "creditcard", "rebate"]},
+    {"id": "gift",   "period": 3, "cost": 120, "value": 150, "inventory": 5}
+  ]
+}
