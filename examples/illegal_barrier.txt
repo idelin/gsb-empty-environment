@@ -1,0 +1,9 @@
+# 非法重排：xor 被移到屏障之前（违反屏障顺序）
+r1 = load [0, 4)
+r2 = load [4, 8)
+r3 = add r1, r2
+[8, 12) = store r3
+r4 = load [16, 20)
+r5 = mov r4
+r6 = xor r1, r2
+barrier

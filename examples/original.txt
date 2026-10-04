@@ -1,0 +1,9 @@
+# 原始序列：寄存器与内存区间混合
+r1 = load [0, 4)
+r2 = load [4, 8)
+r3 = add r1, r2
+[8, 12) = store r3
+r4 = load [16, 20)
+r5 = mov r4
+barrier
+r6 = xor r1, r2

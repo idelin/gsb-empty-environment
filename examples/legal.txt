@@ -1,0 +1,9 @@
+# 合法重排：交换两条独立 load；store 与 r4 的 load 互换（区间不相交）
+r2 = load [4, 8)
+r1 = load [0, 4)
+r3 = add r1, r2
+r4 = load [16, 20)
+[8, 12) = store r3
+r5 = mov r4
+barrier
+r6 = xor r1, r2
