@@ -1,0 +1,16 @@
+{
+  "name": "chunked-sentence-segmenter",
+  "version": "0.1.0",
+  "description": "Streaming sentence segmentation driven by abbreviation dictionaries, quote pairing and terminal punctuation",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/segmenter.test.ts"
+  },
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "license": "MIT"
+}
