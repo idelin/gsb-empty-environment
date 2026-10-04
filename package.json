@@ -1,0 +1,13 @@
+{
+  "name": "role-grant-solver",
+  "version": "1.0.0",
+  "description": "Exact solver for minimal role grants: fewest roles, then fewest excess permissions, avoiding sensitive permissions, with role inheritance.",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test \"tests/**/*.test.ts\"",
+    "solve": "node --disable-warning=ExperimentalWarning src/cli.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT"
+}
