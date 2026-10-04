@@ -1,0 +1,13 @@
+{
+  "name": "seam-solver",
+  "version": "1.0.0",
+  "description": "Exact min-cut seam solver for the overlap of two aligned images",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/seamSolver.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
