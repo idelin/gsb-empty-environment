@@ -1,0 +1,12 @@
+{
+  "name": "org-permission-diff",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "组织权限差异工具：比较用户迁入新组织树前后的权限变化",
+  "scripts": {
+    "test": "node --test 'tests/*.test.ts'",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit --allowImportingTsExtensions --module nodenext --target es2022 --strict src/*.ts tests/*.ts examples/*.ts"
+  }
+}
