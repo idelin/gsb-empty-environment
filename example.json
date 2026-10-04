@@ -1,0 +1,15 @@
+[
+  {"id": "add_email", "kind": "add_column", "table": "users", "column": "email",
+   "rollback": "column is nullable; safe to keep"},
+  {"id": "idx_orders", "kind": "create_index", "table": "orders",
+   "rollback": "drop index concurrently"},
+  {"id": "backfill_email", "kind": "backfill", "table": "users", "column": "email",
+   "rollback": "set email back to null"},
+  {"id": "email_not_null", "kind": "add_constraint", "table": "users", "column": "email",
+   "needs_write_stop": true, "rollback": "drop constraint"},
+  {"id": "swap_reads", "kind": "custom", "table": "users",
+   "requires": ["email_not_null"], "needs_write_stop": true,
+   "rollback": "feature flag off"},
+  {"id": "drop_old_email", "kind": "drop_column", "table": "users", "column": "old_email",
+   "requires": ["swap_reads"]}
+]
