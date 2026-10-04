@@ -1,0 +1,15 @@
+{
+  "name": "backup-rule-interpreter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Backup policy rule interpreter with tri-state conditions, static conflict checks, and incremental update planning",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  }
+}
