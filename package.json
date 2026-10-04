@@ -1,0 +1,11 @@
+{
+  "name": "columnar-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Late-materializing columnar query pipeline: filter -> stable sort -> project, with versioned batches, cancellable async wide-column loads and load statistics.",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/run.js",
+    "example": "tsc -p tsconfig.json && node dist/examples/demo.js"
+  }
+}
