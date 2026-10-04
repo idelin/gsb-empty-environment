@@ -1,0 +1,18 @@
+{
+  "rules": {"start_pattern": "^2026", "continuation_indent": true, "max_record_bytes": 0},
+  "script": [
+    {"op": "line", "source": "app", "epoch": 1, "seq": 1, "line_no": 1, "text": "2026-10-04 ERROR boom"},
+    {"op": "line", "source": "app", "epoch": 1, "seq": 3, "line_no": 3, "text": "2026-10-04 INFO next"},
+    {"op": "line", "source": "app", "epoch": 1, "seq": 2, "line_no": 2, "text": "    at com.example.Foo"},
+    {"op": "correct", "source": "app", "epoch": 1, "corrects_line_no": 1, "text": "2026-10-04 ERROR boom (corrected)"},
+    {"op": "flush"}
+  ],
+  "expect_events": [
+    "seq_gap",
+    "record_emitted",
+    "record_emitted",
+    "record_revised",
+    "flush_incomplete",
+    "record_emitted"
+  ]
+}
