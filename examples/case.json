@@ -1,0 +1,20 @@
+{
+  "asOf": "2026-10-04",
+  "maxEvidence": 25,
+  "evidence": [
+    {"id": "E1", "cost": 120, "validUntil": "2027-03-31"},
+    {"id": "E2", "cost": 80,  "validUntil": "2027-01-15", "mutexWith": ["E3"]},
+    {"id": "E3", "cost": 60,  "validUntil": "2027-06-30"},
+    {"id": "E4", "cost": 200, "validUntil": "2026-09-30"},
+    {"id": "E5", "cost": 45,  "validUntil": "2028-01-01"},
+    {"id": "E6", "cost": 90,  "validFrom": "2026-11-01", "validUntil": "2027-11-01"},
+    {"id": "E7", "cost": 70,  "validUntil": "2027-02-28", "group": "disk-image"},
+    {"id": "E8", "cost": 65,  "validUntil": "2027-02-28", "group": "disk-image"}
+  ],
+  "criteria": [
+    {"id": "AC1", "expr": "(E1 AND E3) OR E4"},
+    {"id": "AC2", "expr": "E2 OR E3"},
+    {"id": "AC3", "expr": "E5 AND (E7 OR E8) AND NOT E4"},
+    {"id": "AC4", "expr": "E6 OR E3"}
+  ]
+}
