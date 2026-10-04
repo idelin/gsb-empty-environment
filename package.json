@@ -1,0 +1,11 @@
+{
+  "name": "diagnostic-version-vector",
+  "version": "0.1.0",
+  "description": "Editor diagnostics manager with multi-file version vector validation",
+  "type": "module",
+  "main": "src/diagnostic-manager.ts",
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
