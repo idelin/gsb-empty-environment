@@ -1,0 +1,10 @@
+{
+  "name": "causal-gap-handler",
+  "version": "0.1.0",
+  "description": "Causal gap handling with reset boundaries and gap proofs",
+  "type": "module",
+  "main": "src/causal-gap.ts",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\""
+  }
+}
