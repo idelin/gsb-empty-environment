@@ -1,0 +1,13 @@
+{
+  "name": "aries-recovery-engine",
+  "version": "1.0.0",
+  "description": "ARIES write-ahead logging analysis & crash recovery Redo/Undo engine with formal constraint inspector (TypeScript)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test"
+  }
+}
