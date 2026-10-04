@@ -1,0 +1,20 @@
+{
+  "capacity": 8,
+  "initial_battery": 6,
+  "start": 0,
+  "goal": 4,
+  "names": ["Home", "Downtown", "Mall", "Depot", "Office"],
+  "edges": [
+    {"from": 0, "to": 1, "energy": 3, "time": 25},
+    {"from": 1, "to": 2, "energy": 4, "time": 40},
+    {"from": 2, "to": 4, "energy": 5, "time": 35},
+    {"from": 1, "to": 3, "energy": 2, "time": 15},
+    {"from": 3, "to": 4, "energy": 6, "time": 50},
+    {"from": 3, "to": 1, "energy": 2, "time": 15},
+    {"from": 0, "to": 4, "energy": 9, "time": 240}
+  ],
+  "stations": [
+    {"node": 2, "fee": 12, "swap_time": 6, "open": 480, "close": 1200},
+    {"node": 3, "fee": 5,  "swap_time": 4, "open": 0,   "close": 1440}
+  ]
+}
