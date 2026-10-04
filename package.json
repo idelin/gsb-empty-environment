@@ -1,0 +1,15 @@
+{
+  "name": "exact-rasterizer",
+  "version": "0.1.0",
+  "description": "Exact rational-arithmetic rasterizer for possibly self-intersecting closed polylines (even-odd & non-zero fill rules)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node test/run-tests.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "license": "MIT"
+}
