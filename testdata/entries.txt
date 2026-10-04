@@ -1,0 +1,11 @@
+D Docs
+D DOCS
+F Docs/Alpha/readme.txt
+F docs/ALPHA/README.TXT
+F Report
+F report/summary.txt
+F notes 
+F notes
+F CON.txt
+F STRASSE.md
+F straße.md
