@@ -1,0 +1,14 @@
+{
+  "name": "batch-picking-planner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "合单拣货规划器：多订单共用货位与车次，最小化总行走距离 + 拆单成本（精确求解，≤12 拣货项）",
+  "scripts": {
+    "demo": "node --experimental-strip-types src/demo.ts",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
