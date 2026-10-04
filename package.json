@@ -1,0 +1,14 @@
+{
+  "name": "order-saga-executor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Persistent saga executor for local order flow (reserve -> charge -> deliver) with journaled recovery",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "replay": "node scripts/replay-faults.ts"
+  }
+}

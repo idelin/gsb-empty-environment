@@ -1,0 +1,8 @@
+fault-replay run at 2026-10-04T09:49:11.346Z (deterministic fault scripts)
+PASS S1 lost-receipt-on-charge :: terminal=completed chargeCalls=1 stock=8 balance=850 shipment=scheduled
+PASS S2 lost-receipt-on-refund :: terminal=compensated refundCalls=1 stock=10 balance=1000 shipment=none
+PASS S3 transient-refund-then-recover :: terminal=compensated releaseCalls=1 stock=10 balance=1000 shipment=none
+PASS S4 crash-at-every-boundary :: boundaries=8 all terminal=completed
+PASS S5 cancel-vs-success-race :: cancel-first=cancelled(terminals=1) success-first=completed(terminals=1)
+PASS S6 repeated-cancel :: terminal=cancelled cancelRecords=1 terminalRecords=1 stock=10 balance=1000 shipment=none
+ALL 6 SCENARIOS PASSED
