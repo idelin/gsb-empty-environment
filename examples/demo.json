@@ -1,0 +1,31 @@
+{
+  "channels": [
+    {
+      "name": "sensor-A",
+      "drift_bounds": {"min": "9/10", "max": "11/10"},
+      "calibration": [
+        {"id": "A0", "local": "0", "global": {"min": "10", "max": "12"}},
+        {"id": "A1", "local": "100", "global": {"min": "110", "max": "114"}},
+        {"id": "A2", "local": "200", "global": {"min": "212", "max": "216"}}
+      ],
+      "events": [
+        {"id": "boot", "local": "2"},
+        {"id": "sample-1", "local": "57"},
+        {"id": "sample-2", "local": "143"}
+      ]
+    },
+    {
+      "name": "sensor-B",
+      "calibration": [
+        {"id": "B0", "local": "0", "global": {"min": "60", "max": "61"}},
+        {"id": "B1", "local": "0", "global": {"min": "121/2", "max": "62"}},
+        {"id": "B2", "local": "10", "global": {"min": "70", "max": "71"}},
+        {"id": "B-outlier", "local": "0", "global": {"min": "1000", "max": "1001"}}
+      ],
+      "events": [
+        {"id": "ping", "local": "5"},
+        {"id": "pong", "local": "8"}
+      ]
+    }
+  ]
+}
