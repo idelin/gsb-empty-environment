@@ -1,0 +1,15 @@
+{
+  "name": "threshold-clustering",
+  "version": "0.1.0",
+  "description": "可撤销的阈值聚类库：按边权递增分批合并连通分量，支持任意阈值查询与末批撤销",
+  "type": "module",
+  "main": "src/threshold-clustering.ts",
+  "exports": {
+    ".": "./src/threshold-clustering.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT"
+}
