@@ -1,0 +1,14 @@
+{
+  "attributes": [
+    { "name": "color", "cost": 1 },
+    { "name": "size", "cost": 1 },
+    { "name": "shape", "cost": 1 }
+  ],
+  "candidates": [
+    { "name": "A", "values": { "color": "red",  "size": "big",   "shape": "circle" } },
+    { "name": "B", "values": { "color": "red",  "size": "small", "shape": "circle" } },
+    { "name": "C", "values": { "color": "blue", "size": "big",   "shape": "circle" } },
+    { "name": "D", "values": { "color": "blue", "size": "big",   "shape": "square" } },
+    { "name": "E", "values": { "color": "blue", "size": "big",   "shape": "triangle" } }
+  ]
+}

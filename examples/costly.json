@@ -1,0 +1,18 @@
+{
+  "attributes": [
+    { "name": "xray",  "cost": 10 },
+    { "name": "bit0",  "cost": 2 },
+    { "name": "bit1",  "cost": 2 },
+    { "name": "bit2",  "cost": 2 }
+  ],
+  "candidates": [
+    { "name": "c0", "values": { "xray": "v0", "bit0": 0, "bit1": 0, "bit2": 0 } },
+    { "name": "c1", "values": { "xray": "v1", "bit0": 0, "bit1": 0, "bit2": 1 } },
+    { "name": "c2", "values": { "xray": "v2", "bit0": 0, "bit1": 1, "bit2": 0 } },
+    { "name": "c3", "values": { "xray": "v3", "bit0": 0, "bit1": 1, "bit2": 1 } },
+    { "name": "c4", "values": { "xray": "v4", "bit0": 1, "bit1": 0, "bit2": 0 } },
+    { "name": "c5", "values": { "xray": "v5", "bit0": 1, "bit1": 0, "bit2": 1 } },
+    { "name": "c6", "values": { "xray": "v6", "bit0": 1, "bit1": 1, "bit2": 0 } },
+    { "name": "c7", "values": { "xray": "v7", "bit0": 1, "bit1": 1, "bit2": 1 } }
+  ]
+}

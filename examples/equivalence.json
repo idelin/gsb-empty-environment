@@ -1,0 +1,11 @@
+{
+  "attributes": [
+    { "name": "color", "cost": 2 },
+    { "name": "weight", "cost": 1 }
+  ],
+  "candidates": [
+    { "name": "P", "values": { "color": "red",  "weight": "heavy" } },
+    { "name": "Q", "values": { "color": "red",  "weight": "heavy" } },
+    { "name": "R", "values": { "color": "blue", "weight": "light" } }
+  ]
+}

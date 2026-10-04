@@ -1,0 +1,11 @@
+{
+  "name": "costly-decision-tree",
+  "version": "1.0.0",
+  "description": "Adaptive optimal decision tree solver for discrete attributes with query costs (worst-case cost minimization, up to 18 candidates)",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node test/solver.test.mjs",
+    "solve": "node dist/cli.js"
+  }
+}
