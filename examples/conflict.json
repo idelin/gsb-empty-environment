@@ -1,0 +1,12 @@
+{
+  "rules": [
+    { "id": "allow-x", "action": "allow", "pattern": "x" },
+    { "id": "deny-x", "action": "deny", "pattern": "x" },
+    { "id": "allow-y", "action": "allow", "pattern": "y" }
+  ],
+  "samples": [
+    { "id": "ok1", "input": "y", "expect": "allow" },
+    { "id": "bad1", "input": "x", "expect": "allow" },
+    { "id": "bad2", "input": "x", "expect": "deny" }
+  ]
+}

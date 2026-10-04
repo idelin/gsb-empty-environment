@@ -1,0 +1,10 @@
+{
+  "name": "perm-rule-sorter",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --experimental-strip-types --test 'tests/*.test.ts'",
+    "solve": "node --experimental-strip-types src/cli.ts"
+  }
+}

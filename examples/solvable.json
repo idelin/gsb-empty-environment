@@ -1,0 +1,12 @@
+{
+  "rules": [
+    { "id": "allow-all", "action": "allow", "pattern": "*" },
+    { "id": "deny-admin-del", "action": "deny", "pattern": "admin:delete" },
+    { "id": "deny-evil", "action": "deny", "pattern": "evil:*" }
+  ],
+  "samples": [
+    { "id": "s1", "input": "evil:bot", "expect": "deny" },
+    { "id": "s2", "input": "admin:delete", "expect": "deny" },
+    { "id": "s3", "input": "user:42", "expect": "allow" }
+  ]
+}
