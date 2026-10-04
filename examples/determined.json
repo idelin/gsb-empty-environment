@@ -1,0 +1,6 @@
+[
+  {"id": "e1", "source": "billing", "timestamp": "2026-01-03T10:00:05Z", "object": "order-42", "op": "create", "fields": {"status": "new", "amount": "100"}},
+  {"id": "e2", "source": "billing", "timestamp": "2026-01-03T10:00:01Z", "object": "order-42", "op": "set", "fields": {"status": "paid"}, "causes": ["e1"]},
+  {"id": "e2", "source": "ledger", "timestamp": "2026-01-03T10:00:02Z", "object": "order-42", "op": "set", "fields": {"status": "paid"}, "causes": ["e1"]},
+  {"id": "e3", "source": "shipping", "timestamp": "2026-01-03T10:00:03Z", "object": "order-42", "op": "set", "fields": {"tracking": "TRK-1"}, "causes": ["e2", "e0-missing"]}
+]

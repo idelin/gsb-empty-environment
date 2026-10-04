@@ -1,0 +1,6 @@
+[
+  {"id": "a", "object": "acct-1", "op": "create", "causes": ["c"]},
+  {"id": "b", "object": "acct-1", "op": "set", "fields": {"tier": "gold"}, "causes": ["a"]},
+  {"id": "c", "object": "acct-1", "op": "set", "fields": {"tier": "platinum"}, "causes": ["b"]},
+  {"id": "d", "object": "acct-2", "op": "create", "fields": {"tier": "free"}}
+]

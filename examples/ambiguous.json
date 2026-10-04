@@ -1,0 +1,5 @@
+[
+  {"id": "e1", "object": "order-7", "op": "create", "fields": {"status": "new"}},
+  {"id": "e2", "object": "order-7", "op": "set", "fields": {"status": "paid"}, "causes": ["e1"]},
+  {"id": "e3", "object": "order-7", "op": "set", "fields": {"status": "refunded"}, "causes": ["e1"]}
+]
