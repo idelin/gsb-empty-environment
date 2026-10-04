@@ -1,0 +1,9 @@
+{
+  "events": [
+    { "id": "A", "object": "o1", "op": "create" },
+    { "id": "B", "object": "o1", "op": "delete" },
+    { "id": "C", "object": "o2", "op": "update" },
+    { "id": "D", "object": "o2", "op": "delete" }
+  ],
+  "precedence": [["D", "C"], ["A", "B"]]
+}

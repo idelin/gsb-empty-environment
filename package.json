@@ -1,0 +1,9 @@
+{
+  "name": "event-reorderer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "solve": "node src/cli.ts",
+    "test": "node --test test/reorderer.test.ts"
+  }
+}
