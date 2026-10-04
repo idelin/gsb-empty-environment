@@ -1,0 +1,15 @@
+{
+  "name": "reactive-store",
+  "version": "0.1.0",
+  "description": "可重入的版本化状态观察库：观察器可在通知回调中安全地再次修改状态",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
