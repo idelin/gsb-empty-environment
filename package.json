@@ -1,0 +1,13 @@
+{
+  "name": "commission-dag",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "沿有向无环归属图分账的佣金分配库：多路径去重、月封顶、撤单更正与补发、逐月守恒",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}
