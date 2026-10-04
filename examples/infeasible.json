@@ -1,0 +1,7 @@
+{
+  "intervals": [[1, 2], [10, 12]],
+  "candidates": [
+    {"point": 1, "cost": 3},
+    {"point": 2, "cost": 8}
+  ]
+}
