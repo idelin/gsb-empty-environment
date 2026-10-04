@@ -1,0 +1,11 @@
+{
+  "name": "persistent-multiset",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Branchable persistent ordered multiset (insert / remove-one / rank / select) with structural sharing and reference-counted GC",
+  "main": "dist/src/persistent-multiset.js",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/model-test.js"
+  }
+}
