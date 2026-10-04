@@ -1,0 +1,14 @@
+{
+  "name": "installment-calc",
+  "version": "1.0.0",
+  "description": "分期计算库：月初计息、按分舍入、先息后本，支持提前还款（缩期/减额）、费率变更与结清金额反算",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --experimental-strip-types --test 'test/*.test.ts'",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
