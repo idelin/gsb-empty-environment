@@ -1,0 +1,12 @@
+{
+  "name": "cache-key-auditor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Audits build cache keys against actually-used inputs; finds minimal counterexamples where output changes but the key does not.",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/run-tests.js",
+    "audit": "tsc -p tsconfig.json && node dist/src/cli.js dist/examples/demo.build.js"
+  },
+  "license": "MIT"
+}
