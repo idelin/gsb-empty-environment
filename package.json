@@ -1,0 +1,14 @@
+{
+  "name": "liveness-probe-sim",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Discrete-event liveness probe simulator with adaptive suspicion windows",
+  "scripts": {
+    "start": "node src/main.ts",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}
