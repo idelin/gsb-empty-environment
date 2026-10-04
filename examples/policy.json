@@ -1,0 +1,82 @@
+{
+  "baseEffect": "deny",
+  "domain": {
+    "role": ["admin", "dev", "intern", "guest"],
+    "action": ["read", "write", "delete"],
+    "resource": ["public", "internal", "secret"]
+  },
+  "property": [
+    {
+      "id": "no-secret-delete",
+      "match": { "resource": "secret", "action": "delete" },
+      "must": "deny",
+      "description": "secret resources must never be deletable"
+    },
+    {
+      "id": "no-guest-internal",
+      "match": { "role": "guest", "resource": ["internal", "secret"] },
+      "must": "deny",
+      "description": "guests must never reach internal or secret resources"
+    },
+    {
+      "id": "no-intern-secret",
+      "match": { "role": "intern", "resource": "secret" },
+      "must": "deny",
+      "description": "interns must never reach secret resources"
+    }
+  ],
+  "exceptions": [
+    {
+      "id": "temp-emergency-allow-all",
+      "effect": "allow",
+      "priority": 1,
+      "cost": 3,
+      "match": {},
+      "description": "expired emergency break-glass rule, matches everything"
+    },
+    {
+      "id": "admin-full-access",
+      "effect": "allow",
+      "priority": 5,
+      "cost": 40,
+      "match": { "role": "admin" }
+    },
+    {
+      "id": "dev-internal-write",
+      "effect": "allow",
+      "priority": 10,
+      "cost": 10,
+      "match": { "role": "dev", "resource": ["public", "internal"], "action": ["read", "write"] }
+    },
+    {
+      "id": "intern-secret-read-temp",
+      "effect": "allow",
+      "priority": 12,
+      "cost": 4,
+      "match": { "role": "intern", "resource": "secret", "action": "read" },
+      "description": "temporary audit access that should have expired"
+    },
+    {
+      "id": "guest-public-read",
+      "effect": "allow",
+      "priority": 15,
+      "cost": 8,
+      "match": { "role": "guest", "resource": "public", "action": "read" }
+    },
+    {
+      "id": "everyone-public-read",
+      "effect": "allow",
+      "priority": 20,
+      "cost": 6,
+      "match": { "resource": "public", "action": "read" }
+    },
+    {
+      "id": "secret-delete-always-deny",
+      "effect": "deny",
+      "priority": 2,
+      "cost": 50,
+      "match": { "resource": "secret", "action": "delete" },
+      "description": "safety net that outranks the emergency allow"
+    }
+  ]
+}
