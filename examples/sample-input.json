@@ -1,0 +1,15 @@
+{
+  "boxTypes": [
+    { "id": "S", "capacity": 6,  "purchaseCost": 30,  "transportCost": 4 },
+    { "id": "M", "capacity": 12, "purchaseCost": 55,  "transportCost": 6 },
+    { "id": "L", "capacity": 24, "purchaseCost": 100, "transportCost": 8,
+      "transportCostByStore": { "E5": 20 } }
+  ],
+  "stores": [
+    { "id": "E1", "demand": 50,  "shortagePenaltyPerUnit": 6 },
+    { "id": "E2", "demand": 37,  "shortagePenaltyPerUnit": 5 },
+    { "id": "E3", "demand": 23,  "shortagePenaltyPerUnit": 12 },
+    { "id": "E4", "demand": 100, "shortagePenaltyPerUnit": 5, "maxShortage": 4 },
+    { "id": "E5", "demand": 41,  "shortagePenaltyPerUnit": 8 }
+  ]
+}

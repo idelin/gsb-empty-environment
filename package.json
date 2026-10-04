@@ -1,0 +1,11 @@
+{
+  "name": "store-replenishment-planner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "门店补货规划器：混合整箱配送，允许付罚金的少量欠供，最小化采购+运输+欠供总成本",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "start": "node dist/src/cli.js",
+    "test": "npm run build && node dist/test/solver.test.js"
+  }
+}
