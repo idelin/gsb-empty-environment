@@ -1,0 +1,42 @@
+{
+  "config": {
+    "days": 5,
+    "mealsPerDay": 3,
+    "nutrientBounds": {
+      "protein": {"min": 40, "max": 120},
+      "carb":    {"min": 120, "max": 320},
+      "fat":     {"min": 10, "max": 90}
+    },
+    "allergens": ["花生"],
+    "maxConsecutiveRepeat": 1,
+    "maxDishes": 20
+  },
+  "dishes": [
+    {"id": "rice",   "name": "米饭",     "tiers": [
+      {"name": "小份", "nutrition": {"protein": 4,  "carb": 60,  "fat": 1},  "cost": 200},
+      {"name": "大份", "nutrition": {"protein": 6,  "carb": 90,  "fat": 1},  "cost": 300}]},
+    {"id": "noodle", "name": "面条",     "tiers": [
+      {"name": "标准", "nutrition": {"protein": 8,  "carb": 70,  "fat": 2},  "cost": 400}]},
+    {"id": "corn",   "name": "玉米",     "tiers": [
+      {"name": "标准", "nutrition": {"protein": 4,  "carb": 45,  "fat": 2},  "cost": 250}]},
+    {"id": "chicken","name": "鸡腿肉",   "tiers": [
+      {"name": "小份", "nutrition": {"protein": 20, "carb": 0,   "fat": 4},  "cost": 600},
+      {"name": "大份", "nutrition": {"protein": 32, "carb": 0,   "fat": 8},  "cost": 900}]},
+    {"id": "pork",   "name": "猪里脊",   "tiers": [
+      {"name": "标准", "nutrition": {"protein": 28, "carb": 0,   "fat": 7},  "cost": 800}]},
+    {"id": "beef",   "name": "牛肉",     "tiers": [
+      {"name": "标准", "nutrition": {"protein": 26, "carb": 0,   "fat": 12}, "cost": 1200}]},
+    {"id": "shrimp", "name": "虾仁",     "tiers": [
+      {"name": "标准", "nutrition": {"protein": 24, "carb": 2,   "fat": 2},  "cost": 1100}]},
+    {"id": "fish",   "name": "清蒸鱼",   "tiers": [
+      {"name": "标准", "nutrition": {"protein": 22, "carb": 0,   "fat": 6},  "cost": 1000}]},
+    {"id": "tofu",   "name": "麻婆豆腐", "tiers": [
+      {"name": "标准", "nutrition": {"protein": 12, "carb": 6,   "fat": 8},  "cost": 500}]},
+    {"id": "veg",    "name": "炒时蔬",   "tiers": [
+      {"name": "标准", "nutrition": {"protein": 3,  "carb": 8,   "fat": 5},  "cost": 300}]},
+    {"id": "egg",    "name": "煎蛋",     "tiers": [
+      {"name": "标准", "nutrition": {"protein": 7,  "carb": 1,   "fat": 6},  "cost": 200}]},
+    {"id": "peanut", "name": "花生拌菜", "allergens": ["花生"], "tiers": [
+      {"name": "标准", "nutrition": {"protein": 15, "carb": 10,  "fat": 20}, "cost": 100}]}
+  ]
+}
