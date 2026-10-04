@@ -1,0 +1,25 @@
+# 5 变量, 8 个指令位置, 3 个寄存器
+positions 8
+regs 3
+costs 1 2 2        # move / load / store
+
+# var 名字 起点 终点 权重(每次使用的溢出代价)
+var a 0 5 10
+var b 0 3 6
+var c 1 6 8
+var d 3 7 7
+var e 5 7 5
+
+use a 0
+use a 2
+use a 4
+use b 1
+use b 3
+use c 2
+use c 5
+use d 3
+use d 6
+use e 5
+use e 7
+
+fix c 2 0           # c 在位置 2 必须在 R0
