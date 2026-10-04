@@ -1,0 +1,10 @@
+{
+  "name": "provenance-text",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Text composition library that tracks per-character source reader sets",
+  "scripts": {
+    "test": "node tests/run.ts"
+  }
+}
