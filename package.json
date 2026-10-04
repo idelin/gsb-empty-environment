@@ -1,0 +1,14 @@
+{
+  "name": "aries-recovery-metrics",
+  "version": "1.0.0",
+  "description": "ARIES write-ahead-log crash recovery (Analysis/Redo/Undo) with fine-grained metrics, statistical aggregation and export. Zero-dependency TypeScript.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts"
+  },
+  "license": "MIT"
+}
