@@ -1,0 +1,20 @@
+{
+  "prep": 1,
+  "rooms": [
+    {"name": "A", "capacity": 4},
+    {"name": "B", "capacity": 4},
+    {"name": "C", "capacity": 4}
+  ],
+  "meetings": [
+    {"id": "m1", "start": 9,  "end": 10, "size": 3,  "weight": 2},
+    {"id": "m2", "start": 9,  "end": 10, "size": 3,  "weight": 2},
+    {"id": "m3", "start": 9,  "end": 10, "size": 3,  "weight": 2},
+    {"id": "m4", "start": 10, "end": 12, "size": 8,  "weight": 10},
+    {"id": "m5", "start": 12, "end": 13, "size": 3,  "weight": 1},
+    {"id": "m6", "start": 12, "end": 13, "size": 3,  "weight": 1},
+    {"id": "m7", "start": 13, "end": 14, "size": 12, "weight": 20},
+    {"id": "m8", "start": 15, "end": 16, "size": 2,  "weight": 3},
+    {"id": "m9", "start": 15, "end": 16, "size": 2,  "weight": 3},
+    {"id": "m10","start": 15, "end": 16, "size": 2,  "weight": 3}
+  ]
+}
