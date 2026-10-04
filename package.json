@@ -1,0 +1,11 @@
+{
+  "name": "reactive-store",
+  "version": "0.1.0",
+  "description": "Reentrant-safe observable state store with versioned, queued notifications",
+  "type": "module",
+  "main": "src/store.ts",
+  "scripts": {
+    "test": "node --test",
+    "typecheck": "tsc --noEmit"
+  }
+}
