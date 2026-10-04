@@ -1,0 +1,10 @@
+{
+  "name": "interval-topk",
+  "version": "0.1.0",
+  "description": "Top-K sorting over providers that only yield monotonically tightening rational intervals",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "bun test"
+  }
+}
