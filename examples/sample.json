@@ -1,0 +1,13 @@
+{
+  "periods": 3,
+  "batches": [
+    {"id": "B1", "source": "signup", "amount": 100, "expiry": 1, "categories": ["gift"]},
+    {"id": "B2", "source": "promo", "amount": 200, "expiry": 2},
+    {"id": "B3", "source": "vip", "amount": 150, "expiry": 3, "categories": ["coupon", "gift"]}
+  ],
+  "rewards": [
+    {"id": "gift-card", "category": "gift", "cost": 100, "value": 90, "cashback": 30, "inventory": 1},
+    {"id": "coupon-5", "category": "coupon", "cost": 50, "value": 40, "cashback": 10, "inventory": 2},
+    {"id": "gadget", "category": "gadget", "cost": 300, "value": 320, "cashback": 0, "inventory": 1}
+  ]
+}
