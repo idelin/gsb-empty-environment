@@ -1,0 +1,14 @@
+{
+  "name": "range-rule-normalizer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/normalize.ts",
+  "scripts": {
+    "test": "node scripts/run-tests.mjs",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
