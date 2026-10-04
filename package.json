@@ -1,0 +1,10 @@
+{
+  "name": "slot-priority-queue",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": "./src/priority-queue.ts",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
