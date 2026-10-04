@@ -1,0 +1,12 @@
+{
+  "name": "utf8-rope-editor",
+  "version": "0.1.0",
+  "description": "Persistent UTF-8 rope text editing library with Unicode-scalar offsets, undo and branching history",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node test/run.mjs"
+  },
+  "license": "MIT"
+}
