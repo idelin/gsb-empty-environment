@@ -1,0 +1,11 @@
+{
+  "version": 3,
+  "root": {
+    "kind": "record",
+    "fields": [
+      { "id": 1, "name": "age", "required": true, "type": { "kind": "int64", "min": "0", "max": "120" } },
+      { "id": 2, "name": "nickname", "required": true, "type": { "kind": "string", "maxLength": 12 } },
+      { "id": 3, "name": "tags", "required": false, "type": { "kind": "array", "items": { "kind": "string", "maxLength": 8 }, "minLength": 0, "maxLength": 4 } }
+    ]
+  }
+}

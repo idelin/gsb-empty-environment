@@ -1,0 +1,13 @@
+{
+  "name": "limited-schema-compat",
+  "version": "0.1.0",
+  "description": "Limited schema compatibility checker and converter (bool/int64/uint64/string/bytes/record/array)",
+  "type": "module",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "cli": "node src/cli.ts"
+  },
+  "bin": { "schema-tool": "src/cli.ts" },
+  "license": "MIT"
+}
