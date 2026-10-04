@@ -1,0 +1,10 @@
+{
+  "inputs": [
+    {"id": "t1", "content": "login happy path", "cost": 4, "coverage": ["e1", "e2", "e3"]},
+    {"id": "t2", "content": "login happy path", "cost": 2, "coverage": ["e4"], "failure_categories": ["flaky-timeout"]},
+    {"id": "t3", "content": "login wrong password", "cost": 3, "coverage": ["e2", "e5"], "failure_category": "auth-error"},
+    {"id": "t4", "content": "password reset", "cost": 6, "coverage": ["e3", "e6"]},
+    {"id": "t5", "content": "session expiry", "cost": 5, "coverage": ["e4", "e6"]},
+    {"id": "t6", "content": "logout", "cost": 1, "coverage": ["e7"]}
+  ]
+}
