@@ -1,0 +1,12 @@
+{
+  "name": "jsonpath-query-engine",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "JSON 树查询编译器：字段/切片/递归下降/谓词，支持流式增量输出、版本化增量结果与查询预算",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "example": "node examples/demo.ts"
+  }
+}
