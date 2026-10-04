@@ -1,0 +1,14 @@
+{
+  "name": "approval-plan",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "审批计划库：前后依赖、或签/会签、运行中加签、计划修订",
+  "exports": {
+    ".": "./src/approval-plan.ts",
+    "./types": "./src/types.ts"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'"
+  }
+}
