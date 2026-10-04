@@ -1,0 +1,17 @@
+# create /a with a file, and /b
+{"seq":1,"op":"create","path":"/a","type":"dir"}
+{"seq":2,"op":"create","path":"/a/f.txt","type":"file"}
+{"seq":3,"op":"create","path":"/b","type":"dir"}
+# move directory /a under /b: identities of the whole subtree survive
+{"seq":4,"op":"rename","src":"/a","dst":"/b/a"}
+# replace an existing file target atomically
+{"seq":5,"op":"create","path":"/tmp","type":"file"}
+{"seq":6,"op":"rename","src":"/tmp","dst":"/b/a/f.txt"}
+# delete then recreate the same path: must get a fresh identity
+{"seq":7,"op":"unlink","path":"/b/a/f.txt"}
+{"seq":8,"op":"create","path":"/b/a/f.txt","type":"file"}
+# cycle attempt: fails atomically, no half rename
+{"seq":9,"op":"rename","src":"/b","dst":"/b/a/sub"}
+# log integrity problems on purpose: duplicate seq, then a gap
+{"seq":9,"op":"create","path":"/c","type":"dir"}
+{"seq":12,"op":"unlink","path":"/c"}
