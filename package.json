@@ -1,0 +1,13 @@
+{
+  "name": "interface-compat-checker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Structural interface replacement (subtyping) checker for a finite type system with records, unions and functions",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "strip": "node scripts/strip-types.mjs",
+    "demo": "node scripts/strip-types.mjs && node .build/src/demo.js",
+    "test": "node scripts/strip-types.mjs && node .build/test/check.test.js"
+  }
+}
