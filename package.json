@@ -1,0 +1,11 @@
+{
+  "name": "dynamic-transitive-closure",
+  "version": "0.1.0",
+  "description": "支持有向边批量增删的动态传递闭包，输出可达关系差量与见证路径",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/"
+  },
+  "license": "MIT"
+}
