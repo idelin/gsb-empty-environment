@@ -1,0 +1,10 @@
+{
+  "name": "fragment-assembler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bounded-memory message fragment assembler with overlap conflict quarantine and generation timeout",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/assembler.test.js"
+  }
+}
