@@ -1,0 +1,12 @@
+{
+  "name": "callback-async-iter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Adapt callback-based data sources into async iterators with bounded buffering, backpressure and exactly-once cleanup",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
+  "scripts": {
+    "build": "node node_modules/typescript/lib/tsc.js -p tsconfig.json",
+    "test": "npm run build && node build/test/adapter.test.js"
+  }
+}
