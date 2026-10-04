@@ -1,0 +1,16 @@
+{
+  "name": "async-resource-transaction",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "异步资源事务作用域：按序获取、失败逆序释放、取消竞态下迟到资源必被接管",
+  "exports": {
+    ".": "./src/transaction.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
