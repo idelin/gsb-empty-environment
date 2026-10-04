@@ -1,0 +1,10 @@
+{
+  "name": "multipaxos-log",
+  "version": "1.0.0",
+  "description": "Multi-Paxos majority consensus with gap-free commit engine and zero-copy persistent binary codec",
+  "type": "module",
+  "scripts": {
+    "test": "node --test 'test/**/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
