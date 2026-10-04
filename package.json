@@ -1,0 +1,12 @@
+{
+  "name": "capability-negotiation",
+  "version": "0.1.0",
+  "description": "Capability negotiation library: solves highest-priority common configuration from two parties' declarations with dependency/mutex constraints, binds results to both original declarations via verifiable transcripts, and reports minimal conflict sets when unsatisfiable.",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/run-tests.js"
+  },
+  "license": "MIT"
+}
