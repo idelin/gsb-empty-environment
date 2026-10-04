@@ -1,0 +1,13 @@
+{
+  "name": "hexgrid-geo-index",
+  "version": "1.0.0",
+  "description": "Icosahedron-based discrete hexagonal hierarchical geospatial index with K-ring topology traversal and fault-tolerant storage",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
