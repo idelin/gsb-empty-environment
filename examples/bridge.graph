@@ -1,0 +1,26 @@
+# clique A
+E 1 2
+E 1 3
+E 1 4
+E 1 5
+E 2 3
+E 2 4
+E 2 5
+E 3 4
+E 3 5
+E 4 5
+# clique B
+E 6 7
+E 6 8
+E 6 9
+E 6 10
+E 7 8
+E 7 9
+E 7 10
+E 8 9
+E 8 10
+E 9 10
+# bridge
+E 1 6
+# isolated node
+N 100
