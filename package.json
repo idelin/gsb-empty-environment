@@ -1,0 +1,10 @@
+{
+  "name": "interval-topk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Top-K sorting over items whose values are only known as monotonically tightening rational intervals",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
