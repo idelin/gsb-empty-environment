@@ -1,0 +1,21 @@
+{
+  "name": "chunked-sentence-segmenter",
+  "version": "0.1.0",
+  "description": "Incremental sentence segmentation with versioned abbreviation dictionaries, quote pairing and a pending region",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --test 'test/**/*.test.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idelin/gsb-empty-environment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/idelin/gsb-empty-environment/issues"
+  },
+  "homepage": "https://github.com/idelin/gsb-empty-environment#readme"
+}
