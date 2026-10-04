@@ -1,0 +1,11 @@
+{
+  "objects": [
+    { "id": "logs", "retentionUntil": "2026-01-01T00:00:00Z" },
+    { "id": "session", "retentionUntil": "2027-06-01T00:00:00Z", "strongRefs": ["user-profile"] },
+    { "id": "user-profile", "retentionUntil": "2026-03-01T00:00:00Z", "weakRefs": ["avatar-cache"] },
+    { "id": "avatar-cache" },
+    { "id": "contract-a", "legalHold": true, "strongRefs": ["contract-b"] },
+    { "id": "contract-b", "strongRefs": ["contract-a", "invoice"] },
+    { "id": "invoice", "retentionUntil": "2026-12-31T00:00:00Z" }
+  ]
+}
