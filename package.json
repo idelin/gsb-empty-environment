@@ -1,0 +1,11 @@
+{
+  "name": "tree-random-stream",
+  "version": "1.0.0",
+  "description": "Deterministic hierarchical random streams derived from tree-structured test names",
+  "type": "module",
+  "exports": "./src/random-stream.ts",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'"
+  },
+  "license": "MIT"
+}
