@@ -1,0 +1,11 @@
+{
+  "name": "causal-broadcast-sim",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Causal broadcast simulation over a finite member set with prefix-vector deps, bounded staging, epoch retirement barriers and checkpoint reclamation",
+  "scripts": {
+    "test": "node --test test/causal-broadcast.test.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
