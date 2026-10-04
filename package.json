@@ -1,0 +1,13 @@
+{
+  "name": "request-dedup",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/dedup.ts",
+    "./clock": "./src/clock.ts"
+  },
+  "scripts": {
+    "test": "node --test 'test/**/*.test.ts'"
+  }
+}
