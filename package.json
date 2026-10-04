@@ -1,0 +1,11 @@
+{
+  "name": "resume-simulator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "断线续传模拟器：游标校验、压缩恢复、快照+增量切换",
+  "scripts": {
+    "simulate": "node src/simulator.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
