@@ -1,0 +1,15 @@
+{
+  "topology": {
+    "links": [
+      {"id": "e1", "from": "A", "to": "B"},
+      {"id": "e2", "from": "B", "to": "C"},
+      {"id": "e3", "from": "C", "to": "D"}
+    ]
+  },
+  "observations": [
+    {"id": "probe-ab", "path": ["e1"], "status": "ok"},
+    {"id": "probe-bc", "path": ["e2"], "status": "ok"},
+    {"id": "probe-cd", "path": ["e3"], "status": "ok"},
+    {"id": "probe-ad", "path": ["e1", "e2", "e3"], "status": "fail"}
+  ]
+}

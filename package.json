@@ -1,0 +1,13 @@
+{
+  "name": "network-fault-explainer",
+  "version": "1.0.0",
+  "description": "Minimum fault-edge explanations for network path probes",
+  "type": "module",
+  "scripts": {
+    "start": "node src/cli.ts",
+    "test": "node --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}
