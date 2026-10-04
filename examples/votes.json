@@ -1,0 +1,44 @@
+[
+  {
+    "issueId": "ISSUE-1",
+    "voterId": "alice",
+    "version": 1,
+    "replicaId": "replica-a",
+    "choice": { "kind": "candidate", "candidateId": "c1" }
+  },
+  {
+    "issueId": "ISSUE-1",
+    "voterId": "alice",
+    "version": 2,
+    "replicaId": "replica-a",
+    "choice": { "kind": "candidate", "candidateId": "c2" }
+  },
+  {
+    "issueId": "ISSUE-1",
+    "voterId": "bob",
+    "version": 1,
+    "replicaId": "replica-a",
+    "choice": { "kind": "candidate", "candidateId": "c1" }
+  },
+  {
+    "issueId": "ISSUE-1",
+    "voterId": "bob",
+    "version": 2,
+    "replicaId": "replica-a",
+    "choice": { "kind": "retract" }
+  },
+  {
+    "issueId": "ISSUE-1",
+    "voterId": "carol",
+    "version": 1,
+    "replicaId": "replica-b",
+    "choice": { "kind": "abstain" }
+  },
+  {
+    "issueId": "ISSUE-1",
+    "voterId": "mallory",
+    "version": 1,
+    "replicaId": "replica-a",
+    "choice": { "kind": "candidate", "candidateId": "c2" }
+  }
+]

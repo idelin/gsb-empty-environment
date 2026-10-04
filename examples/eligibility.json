@@ -1,0 +1,20 @@
+{
+  "versions": [
+    {
+      "version": 1,
+      "weights": {
+        "alice": "5",
+        "bob": "3",
+        "carol": "4"
+      }
+    },
+    {
+      "version": 2,
+      "weights": {
+        "alice": "50",
+        "bob": "30",
+        "carol": "40"
+      }
+    }
+  ]
+}

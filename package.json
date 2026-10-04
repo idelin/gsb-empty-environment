@@ -1,0 +1,11 @@
+{
+  "name": "versioned-vote-ledger",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Versioned vote ledger with per-voter (version, replica) merge, frozen eligibility snapshots and exact bigint tallying.",
+  "scripts": {
+    "test": "node --test",
+    "cli": "node src/cli.ts"
+  }
+}
