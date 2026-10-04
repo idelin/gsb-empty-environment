@@ -1,0 +1,15 @@
+{
+  "name": "file-publish-queue",
+  "version": "0.1.0",
+  "description": "File publish queue: per-path serialization, cross-path parallelism, confirm-point cancellation, idempotent recovery",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
