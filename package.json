@@ -1,0 +1,11 @@
+{
+  "name": "joint-consensus-simulator",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "成员切换模拟器：联合共识（joint consensus）提交判定与配置状态机",
+  "scripts": {
+    "test": "node --test src/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
