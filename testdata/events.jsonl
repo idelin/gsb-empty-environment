@@ -1,0 +1,9 @@
+{"key":"order-1","version":1,"content":"created","is_deleted":false}
+{"key":"order-1","version":2,"content":"paid","is_deleted":false}
+{"key":"order-2","version":1,"content":"created","is_deleted":false}
+{"key":"order-1","version":3,"content":"paid","is_deleted":true}
+{"key":"order-1","version":2,"content":"paid","is_deleted":false}
+{"key":"order-1","version":3,"content":"paid","is_deleted":true}
+{"key":"order-1","version":3,"content":"TAMPERED","is_deleted":true}
+{"key":"order-1","version":4,"content":"restored","is_deleted":false}
+{"key":"order-1","version":3,"content":"paid","is_deleted":true}
