@@ -1,0 +1,78 @@
+# ============================================================
+# 场景一：时钟前跳 —— 持有者失联，时钟越过租约到期点
+# ============================================================
+acquire alice 10s
+write alice 1 req-a1
+expect-write req-a1 Accepted
+
+# alice 正常续租，代次不变
+clock +6s
+renew alice 1 10s
+expect-lease alice 1
+
+# alice 宕机，时钟前跳 30s，租约过期
+clock +30s
+expect-no-lease
+
+# 过期后 alice 的写入被拒（代次仍对，但租约已过期）
+write alice 1 req-a2
+expect-write req-a2 LeaseExpired
+
+# carol 获取租约，代次前进到 2
+acquire carol 10s
+expect-lease carol 2
+
+# alice 恢复后试图续租旧代次 —— 不能复活
+renew alice 1 10s
+write alice 1 req-a3
+expect-write req-a3 StaleGeneration
+
+# ============================================================
+# 场景二：延迟确认 —— 交接后旧请求才返回
+# ============================================================
+clock +20s
+acquire dave 10s
+# dave 的写入 req-d1 已被接纳并应用
+write dave 3 req-d1
+expect-write req-d1 Accepted
+
+# 交接给 erin，代次前进到 4
+transfer dave erin 10s
+expect-lease erin 4
+
+# req-d1 的延迟确认/重试终于返回：识别为重复，幂等成功
+write dave 3 req-d1
+expect-write req-d1 Duplicate
+
+# dave 在交接前发出、交接后才到达的新写入：过期持有者，拒绝
+write dave 3 req-d2
+expect-write req-d2 StaleGeneration
+
+# ============================================================
+# 场景三：交接并发 —— 新旧持有者写入交错
+# ============================================================
+clock +20s
+acquire frank 10s
+write frank 5 req-f1
+expect-write req-f1 Accepted
+
+# frank 与 grace 交接的同时，frank 的在途写入 req-f2 尚未到达
+transfer frank grace 10s
+write grace 6 req-g1
+expect-write req-g1 Accepted
+
+# frank 的在途写入到达：被 fencing 拒绝
+write frank 5 req-f2
+expect-write req-f2 StaleGeneration
+
+# frank 试图续租旧代次：拒绝复活
+renew frank 5 10s
+expect-lease grace 6
+
+# frank 的重试 req-f1 返回：重复，幂等
+write frank 5 req-f1
+expect-write req-f1 Duplicate
+
+# grace 正常续租自己的代次
+renew grace 6 10s
+expect-lease grace 6
