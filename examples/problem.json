@@ -1,0 +1,11 @@
+{
+  "width": 5,
+  "height": 5,
+  "blocked": [[2, 1], [2, 2], [2, 3]],
+  "enterCost": { "1,0": "1/3", "3,4": "1/3", "4,4": "2/5" },
+  "start": [0, 0],
+  "goal": [4, 4],
+  "heuristic": { "type": "manhattan", "scale": "1/3" },
+  "admissible": true,
+  "budget": 1000
+}

@@ -1,0 +1,14 @@
+{
+  "name": "grid-path",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Grid pathfinding with exact rational costs, re-openable A*, caller-supplied heuristics, certified bounds and budget interruption.",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "cli": "node src/cli.ts"
+  }
+}
