@@ -1,0 +1,23 @@
+{
+  "as_of": "2026-10-04",
+  "max_projects": 15,
+  "sources": [
+    {"id": "S_EDU",   "amount": 300000, "purpose": "教育", "expires": "2026-12-31"},
+    {"id": "S_MED",   "amount": 150000, "purpose": "医疗", "expires": "2027-06-30"},
+    {"id": "S_GEN",   "amount": 200000, "purpose": "*"},
+    {"id": "S_OLD",   "amount":  80000, "purpose": "教育", "expires": "2026-09-30"}
+  ],
+  "projects": [
+    {"id": "P_SCHOOL",  "purpose": "教育", "target": 260000, "benefit": 500000},
+    {"id": "P_LIBRARY", "purpose": "教育", "target": 120000, "benefit": 180000},
+    {"id": "P_CLINIC",  "purpose": "医疗", "target": 200000, "benefit": 420000},
+    {"id": "P_VACCINE", "purpose": "医疗", "target":  90000, "benefit": 150000},
+    {"id": "P_PARK",    "purpose": "环保", "target": 100000, "benefit": 120000}
+  ],
+  "match_rules": [
+    {"id": "M_EDU", "funder": "晨曦基金会", "source_id": "S_EDU", "purpose": "教育",
+     "ratio": 0.5, "cap": 100000, "expires": "2026-12-31"},
+    {"id": "M_ANY", "funder": "联合劝募", "source_id": "", "purpose": "",
+     "ratio": 0.2, "cap": 60000}
+  ]
+}
