@@ -1,0 +1,19 @@
+{
+  "asOf": "2026-10-05",
+  "maxItems": 25,
+  "evidence": [
+    {"id": "disk-image",   "cost": 80, "validUntil": "2026-12-31"},
+    {"id": "mem-dump",     "cost": 60, "validUntil": "2026-10-20", "mutexGroup": "live"},
+    {"id": "live-response","cost": 45, "validUntil": "2026-10-20", "mutexGroup": "live"},
+    {"id": "net-flow",     "cost": 30, "validUntil": "2026-11-30"},
+    {"id": "auth-log",     "cost": 20, "validUntil": "2026-09-30"},
+    {"id": "edr-alert",    "cost": 25, "validUntil": "2027-01-31"},
+    {"id": "email-header", "cost": 15, "validUntil": "2026-12-31"}
+  ],
+  "criteria": [
+    {"id": "AC-1", "expr": "disk-image AND (mem-dump OR live-response)"},
+    {"id": "AC-2", "expr": "net-flow OR edr-alert"},
+    {"id": "AC-3", "expr": "auth-log AND email-header"},
+    {"id": "AC-4", "expr": "email-header AND (edr-alert OR net-flow)"}
+  ]
+}
