@@ -1,0 +1,24 @@
+{
+  "variables": ["x", "y"],
+  "bounds": {"x": [0, 10], "y": [0, 10]},
+  "init": [
+    {"expr": {"coeffs": {"x": 1}, "const": 0}, "op": "=="},
+    {"expr": {"coeffs": {"y": 1}, "const": -10}, "op": "=="}
+  ],
+  "guard": [
+    {"expr": {"coeffs": {"x": -1}, "const": 10}, "op": ">"}
+  ],
+  "body": [
+    {"var": "x", "expr": {"coeffs": {"x": 1}, "const": 1}},
+    {"var": "y", "expr": {"coeffs": {"y": 1}, "const": -1}}
+  ],
+  "invariant": [
+    {"expr": {"coeffs": {"x": 1, "y": 1}, "const": -10}, "op": "=="},
+    {"expr": {"coeffs": {"x": 1}, "const": 0}, "op": ">="},
+    {"expr": {"coeffs": {"x": -1}, "const": 10}, "op": ">="}
+  ],
+  "post": [
+    {"expr": {"coeffs": {"x": 1}, "const": -10}, "op": "=="},
+    {"expr": {"coeffs": {"y": 1}, "const": 0}, "op": "=="}
+  ]
+}

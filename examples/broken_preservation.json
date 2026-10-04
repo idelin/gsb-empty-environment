@@ -1,0 +1,9 @@
+{
+  "variables": ["x"],
+  "bounds": {"x": [0, 10]},
+  "init": [{"expr": {"coeffs": {"x": 1}, "const": 0}, "op": "=="}],
+  "guard": [{"expr": {"coeffs": {"x": -1}, "const": 10}, "op": ">"}],
+  "body": [{"var": "x", "expr": {"coeffs": {"x": 1}, "const": 1}}],
+  "invariant": [{"expr": {"coeffs": {"x": -1}, "const": 9}, "op": ">="}],
+  "post": [{"expr": {"coeffs": {"x": 1}, "const": -10}, "op": ">="}]
+}
