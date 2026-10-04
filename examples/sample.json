@@ -1,0 +1,18 @@
+{
+  "entry_buffer_minutes": 10,
+  "exit_buffer_minutes": 10,
+  "spots": [
+    {"id": "P1", "vehicle_types": ["sedan", "suv"]},
+    {"id": "P2", "vehicle_types": ["sedan"]},
+    {"id": "P3", "vehicle_types": ["truck", "suv"]}
+  ],
+  "reservations": [
+    {"id": "R1", "vehicle_type": "sedan", "arrival": 480, "departure": 600, "revenue": 50, "confirmed": true},
+    {"id": "R2", "vehicle_type": "sedan", "arrival": 590, "departure": 720, "revenue": 80},
+    {"id": "R3", "vehicle_type": "suv",   "arrival": 610, "departure": 700, "revenue": 60},
+    {"id": "R4", "vehicle_type": "truck", "arrival": 480, "departure": 540, "revenue": 40},
+    {"id": "R5", "vehicle_type": "truck", "arrival": 550, "departure": 650, "revenue": 45},
+    {"id": "R6", "vehicle_type": "sedan", "arrival": 730, "departure": 800, "revenue": 30},
+    {"id": "R7", "vehicle_type": "bus",   "arrival": 500, "departure": 560, "revenue": 100}
+  ]
+}
