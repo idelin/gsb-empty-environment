@@ -1,0 +1,11 @@
+{
+  "name": "tick-scheduler",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Integer-tick hierarchical packet scheduler: per-class token buckets + DRR, offline network simulator",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
