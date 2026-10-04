@@ -1,0 +1,10 @@
+{
+  "name": "handover-simulator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "带切换栅栏的分片交接模拟：基础复制期间允许更新，增量乱序可重发，切换后甲拒绝新写但旧请求照常返回",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/simulator.js"
+  }
+}
