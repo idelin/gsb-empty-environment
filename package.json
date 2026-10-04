@@ -1,0 +1,14 @@
+{
+  "name": "semantic-token-index",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Versioned semantic token index with minimal incremental replacement patches",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/run.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.2"
+  }
+}
