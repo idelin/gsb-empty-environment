@@ -1,0 +1,5 @@
+{
+  "attributes": ["A", "B", "C"],
+  "fds": ["A->B", "B->C"],
+  "decomposition": [["A", "B"], ["A", "C"]]
+}

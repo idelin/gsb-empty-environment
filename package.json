@@ -1,0 +1,11 @@
+{
+  "name": "decomposition-checker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "关系分解检查器：有限表格追逐判定无损连接 + 依赖保持检验",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node dist/test/run-tests.js",
+    "check": "node dist/src/cli.js"
+  }
+}
