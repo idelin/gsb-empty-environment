@@ -1,0 +1,15 @@
+{
+  "aliases": { "@app/*": "src/*" },
+  "modules": [
+    { "path": "src/Foo.ts", "renameCost": 10 },
+    { "path": "src/foo.ts", "renameCost": 3 },
+    { "path": "src/util/Helper.ts", "renameCost": 8 },
+    { "path": "@app/util/helper.js", "renameCost": 2 },
+    { "path": "src/main.ts" }
+  ],
+  "references": [
+    { "from": "src/main.ts", "specifier": "./foo" },
+    { "from": "src/main.ts", "specifier": "@app/util/helper" },
+    { "from": "src/main.ts", "specifier": "lodash" }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "module-conflict-detector",
+  "version": "0.1.0",
+  "private": true,
+  "description": "资源打包工具的模块命名冲突检测与最小代价改名建议",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "bun test",
+    "check": "bun run src/cli.ts"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "typescript": "5.*"
+  }
+}
