@@ -1,0 +1,24 @@
+{
+  "budget": 60,
+  "projects": [
+    { "name": "core-platform",  "cost": 12, "value": 10 },
+    { "name": "data-pipeline",  "cost": 10, "value": 18, "requires": ["core-platform"] },
+    { "name": "ml-models",      "cost": 14, "value": 25, "requires": ["data-pipeline"] },
+    { "name": "dashboard",      "cost": 8,  "value": 12, "requires": ["core-platform"] },
+    { "name": "mobile-app",     "cost": 15, "value": 22 },
+    { "name": "legacy-migrate", "cost": 9,  "value": 6,  "excludes": ["mobile-app"] },
+    { "name": "security-audit", "cost": 6,  "value": 9 },
+    { "name": "cloud-infra",    "cost": 11, "value": 14 },
+    { "name": "on-prem-infra",  "cost": 11, "value": 15, "excludes": ["cloud-infra"] },
+    { "name": "marketing",      "cost": 7,  "value": 8 }
+  ],
+  "synergies": [
+    { "a": "ml-models",     "b": "data-pipeline", "value": 12 },
+    { "a": "dashboard",     "b": "data-pipeline", "value": 6 },
+    { "a": "mobile-app",    "b": "marketing",     "value": 9 },
+    { "a": "cloud-infra",   "b": "ml-models",     "value": 7 },
+    { "a": "legacy-migrate","b": "core-platform", "value": -14 },
+    { "a": "on-prem-infra", "b": "ml-models",     "value": -5 },
+    { "a": "security-audit","b": "cloud-infra",   "value": 4 }
+  ]
+}
