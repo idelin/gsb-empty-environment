@@ -1,0 +1,15 @@
+{
+  "name": "exact-lp-simplex",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Exact rational (BigInt) two-phase simplex LP solver with verifiable certificates",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/run.js",
+    "solve": "node dist/src/cli.js solve",
+    "check": "node dist/src/cli.js check"
+  },
+  "devDependencies": {
+    "typescript": ">=4.5"
+  }
+}
