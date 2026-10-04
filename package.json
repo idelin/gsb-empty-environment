@@ -1,0 +1,11 @@
+{
+  "name": "seam-solver",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "接缝求解器：图割精确求解两幅已对齐图像重叠区的像素来源分割",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
