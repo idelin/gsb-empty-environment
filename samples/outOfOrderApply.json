@@ -1,0 +1,115 @@
+[
+  {
+    "id": "a1",
+    "kind": "accept",
+    "node": "n1",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 1,
+    "value": "v:A",
+    "causes": []
+  },
+  {
+    "id": "a2",
+    "kind": "accept",
+    "node": "n2",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 1,
+    "value": "v:A",
+    "causes": []
+  },
+  {
+    "id": "a3",
+    "kind": "accept",
+    "node": "n3",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 1,
+    "value": "v:A",
+    "causes": []
+  },
+  {
+    "id": "l1",
+    "kind": "learn",
+    "node": "n1",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 1,
+    "value": "v:A",
+    "causes": [
+      "a1",
+      "a2",
+      "a3"
+    ]
+  },
+  {
+    "id": "a4",
+    "kind": "accept",
+    "node": "n1",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 2,
+    "value": "v:B",
+    "causes": []
+  },
+  {
+    "id": "a5",
+    "kind": "accept",
+    "node": "n2",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 2,
+    "value": "v:B",
+    "causes": []
+  },
+  {
+    "id": "a6",
+    "kind": "accept",
+    "node": "n3",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 2,
+    "value": "v:B",
+    "causes": []
+  },
+  {
+    "id": "l2",
+    "kind": "learn",
+    "node": "n2",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 2,
+    "value": "v:B",
+    "causes": [
+      "a4",
+      "a5",
+      "a6"
+    ]
+  },
+  {
+    "id": "ap1",
+    "kind": "apply",
+    "node": "n1",
+    "epoch": 1,
+    "ballot": 0,
+    "slot": 2,
+    "value": "v:B",
+    "causes": [
+      "l2"
+    ]
+  },
+  {
+    "id": "ap2",
+    "kind": "apply",
+    "node": "n1",
+    "epoch": 1,
+    "ballot": 0,
+    "slot": 1,
+    "value": "v:A",
+    "causes": [
+      "ap1",
+      "l1"
+    ]
+  }
+]

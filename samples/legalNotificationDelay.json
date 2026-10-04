@@ -1,0 +1,94 @@
+[
+  {
+    "id": "a1",
+    "kind": "accept",
+    "node": "n1",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 1,
+    "value": "v:A",
+    "causes": []
+  },
+  {
+    "id": "a2",
+    "kind": "accept",
+    "node": "n2",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 1,
+    "value": "v:A",
+    "causes": []
+  },
+  {
+    "id": "a3",
+    "kind": "accept",
+    "node": "n3",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 1,
+    "value": "v:A",
+    "causes": []
+  },
+  {
+    "id": "l1",
+    "kind": "learn",
+    "node": "n1",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 1,
+    "value": "v:A",
+    "causes": [
+      "a1",
+      "a2",
+      "a3"
+    ]
+  },
+  {
+    "id": "ap1",
+    "kind": "apply",
+    "node": "n1",
+    "epoch": 1,
+    "ballot": 0,
+    "slot": 1,
+    "value": "v:A",
+    "causes": [
+      "l1"
+    ]
+  },
+  {
+    "id": "a4",
+    "kind": "accept",
+    "node": "n4",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 1,
+    "value": "v:A",
+    "causes": []
+  },
+  {
+    "id": "l2",
+    "kind": "learn",
+    "node": "n4",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 1,
+    "value": "v:A",
+    "causes": [
+      "a1",
+      "a2",
+      "a4"
+    ]
+  },
+  {
+    "id": "ap2",
+    "kind": "apply",
+    "node": "n4",
+    "epoch": 1,
+    "ballot": 0,
+    "slot": 1,
+    "value": "v:A",
+    "causes": [
+      "l2"
+    ]
+  }
+]

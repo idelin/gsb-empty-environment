@@ -1,0 +1,36 @@
+[
+  {
+    "id": "a1",
+    "kind": "accept",
+    "node": "n1",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 1,
+    "value": "v:A",
+    "causes": []
+  },
+  {
+    "id": "a2",
+    "kind": "accept",
+    "node": "n2",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 1,
+    "value": "v:A",
+    "causes": []
+  },
+  {
+    "id": "l1",
+    "kind": "learn",
+    "node": "n1",
+    "epoch": 1,
+    "ballot": 1,
+    "slot": 1,
+    "value": "v:A",
+    "causes": [
+      "a1",
+      "a2",
+      "a3"
+    ]
+  }
+]

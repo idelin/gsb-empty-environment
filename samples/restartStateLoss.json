@@ -1,0 +1,48 @@
+[
+  {
+    "id": "p1",
+    "kind": "promise",
+    "node": "n1",
+    "epoch": 1,
+    "ballot": 5,
+    "slot": 0,
+    "value": null,
+    "causes": []
+  },
+  {
+    "id": "pe1",
+    "kind": "persist",
+    "node": "n1",
+    "epoch": 1,
+    "ballot": 5,
+    "slot": 0,
+    "value": null,
+    "causes": [
+      "p1"
+    ]
+  },
+  {
+    "id": "r1",
+    "kind": "restart",
+    "node": "n1",
+    "epoch": 2,
+    "ballot": 0,
+    "slot": 0,
+    "value": null,
+    "causes": [
+      "pe1"
+    ]
+  },
+  {
+    "id": "a1",
+    "kind": "accept",
+    "node": "n1",
+    "epoch": 2,
+    "ballot": 3,
+    "slot": 1,
+    "value": "v:A",
+    "causes": [
+      "r1"
+    ]
+  }
+]

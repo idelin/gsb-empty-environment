@@ -1,0 +1,16 @@
+{
+  "name": "consensus-trace-checker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Safety-trace checker for a fixed 5-member consensus implementation",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node build.mjs && node test/run.mjs",
+    "check": "node bin/tracecheck.mjs",
+    "samples": "node bin/tracecheck.mjs samples samples"
+  },
+  "bin": {
+    "tracecheck": "bin/tracecheck.mjs"
+  }
+}
