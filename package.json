@@ -1,0 +1,17 @@
+{
+  "name": "versioned-vote-ledger",
+  "version": "1.0.0",
+  "description": "Offline-mergeable, versioned voting ledger with frozen eligibility weights",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "cli": "node --experimental-strip-types src/cli.ts"
+  },
+  "bin": {
+    "vote-ledger": "src/cli.ts"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,62 @@
+{
+  "issue": {
+    "issueId": "issue-1",
+    "eligibilityVersion": 2,
+    "candidates": ["alice", "bob"],
+    "participationThreshold": "10"
+  },
+  "eligibility": [
+    {
+      "version": 1,
+      "entries": [
+        { "voterId": "v1", "weight": "5" },
+        { "voterId": "v2", "weight": "7" }
+      ]
+    },
+    {
+      "version": 2,
+      "entries": [
+        { "voterId": "v1", "weight": "5" },
+        { "voterId": "v2", "weight": "9" },
+        { "voterId": "v3", "weight": "4" }
+      ]
+    }
+  ],
+  "votes": [
+    {
+      "issueId": "issue-1",
+      "voterId": "v1",
+      "version": 1,
+      "replicaId": "r1",
+      "payload": { "type": "choice", "choice": "alice" }
+    },
+    {
+      "issueId": "issue-1",
+      "voterId": "v2",
+      "version": 1,
+      "replicaId": "r1",
+      "payload": { "type": "choice", "choice": "bob" }
+    },
+    {
+      "issueId": "issue-1",
+      "voterId": "v2",
+      "version": 2,
+      "replicaId": "r1",
+      "payload": { "type": "abstain" }
+    },
+    {
+      "issueId": "issue-1",
+      "voterId": "v3",
+      "version": 1,
+      "replicaId": "r2",
+      "payload": { "type": "choice", "choice": "bob" }
+    },
+    {
+      "issueId": "issue-1",
+      "voterId": "v3",
+      "version": 2,
+      "replicaId": "r2",
+      "payload": { "type": "withdraw" }
+    }
+  ]
+}
