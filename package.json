@@ -1,0 +1,13 @@
+{
+  "name": "tick-drr-scheduler",
+  "version": "1.0.0",
+  "description": "Integer-tick hierarchical packet scheduler: per-class token buckets + DRR deficit round robin",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
