@@ -1,0 +1,15 @@
+{
+  "name": "patch-rebase",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Rebase a text patch onto another patch sharing the same base version",
+  "scripts": {
+    "test": "node --test test/rebase.test.ts test/exhaustive.test.ts",
+    "verify": "node src/verify.ts",
+    "cli": "node src/cli.ts"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
