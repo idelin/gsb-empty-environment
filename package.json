@@ -1,0 +1,14 @@
+{
+  "name": "single-machine-scheduler",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "单机排程精确求解：方向性换线 + 释放时间 + 交期 + 加权迟交罚金，主目标最小总罚金、次目标最早完工",
+  "scripts": {
+    "solve": "node src/cli.ts",
+    "test": "node src/selftest.ts"
+  },
+  "engines": {
+    "node": ">=22.6"
+  }
+}

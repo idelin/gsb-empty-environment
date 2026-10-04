@@ -1,0 +1,17 @@
+{
+  "jobs": [
+    { "id": "A", "processingTime": 4, "releaseTime": 0, "dueDate": 12, "weight": 3 },
+    { "id": "B", "processingTime": 3, "releaseTime": 6, "dueDate": 10, "weight": 5 },
+    { "id": "C", "processingTime": 5, "releaseTime": 0, "dueDate": 20, "weight": 1 },
+    { "id": "D", "processingTime": 2, "releaseTime": 2, "dueDate": 8,  "weight": 4 },
+    { "id": "E", "processingTime": 6, "releaseTime": 0, "dueDate": 30, "weight": 2 }
+  ],
+  "setup": [
+    [0, 2, 5, 1, 3],
+    [4, 0, 2, 6, 1],
+    [1, 3, 0, 2, 4],
+    [5, 2, 1, 0, 2],
+    [2, 4, 3, 5, 0]
+  ],
+  "initialSetup": [1, 0, 2, 1, 3]
+}
