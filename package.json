@@ -1,0 +1,13 @@
+{
+  "name": "lsdb-router",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "本地链路状态数据库(LSDB)与最短路查询,带版本化边更新与决胜路径选择",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
