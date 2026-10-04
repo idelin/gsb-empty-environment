@@ -1,0 +1,13 @@
+{
+  "name": "event-bus",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test event-bus.test.ts",
+    "example": "node example.ts"
+  }
+}
