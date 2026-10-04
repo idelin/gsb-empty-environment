@@ -1,0 +1,15 @@
+{
+  "tables": {
+    "R": {"cols": ["a"], "rows": [[1]]},
+    "S": {"cols": ["c"], "rows": [[1]]}
+  },
+  "plan": {
+    "op": "filter",
+    "input": {"op": "scan", "table": "R"},
+    "pred": {"kind": "exists", "sub": {
+      "op": "filter",
+      "input": {"op": "scan", "table": "S"},
+      "pred": {"kind": "cmp", "op": "gt", "l": {"kind": "col", "name": "S.c"}, "r": {"kind": "col", "name": "R.a"}}
+    }}
+  }
+}

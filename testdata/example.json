@@ -1,0 +1,19 @@
+{
+  "tables": {
+    "R": {"cols": ["a", "b"], "rows": [[1, "x"], [1, "y"], [null, "z"], [2, "w"]]},
+    "S": {"cols": ["c", "d"], "rows": [[1, 10], [1, null], [null, 5], [3, 7]]}
+  },
+  "plan": {
+    "op": "project",
+    "input": {"op": "scan", "table": "R"},
+    "cols": [
+      {"name": "a", "expr": {"kind": "col", "name": "R.a"}},
+      {"name": "b", "expr": {"kind": "col", "name": "R.b"}},
+      {"name": "cnt", "expr": {"kind": "count", "arg": "S.d", "sub": {
+        "op": "filter",
+        "input": {"op": "scan", "table": "S"},
+        "pred": {"kind": "cmp", "op": "eq", "l": {"kind": "col", "name": "S.c"}, "r": {"kind": "col", "name": "R.a"}}
+      }}}
+    ]
+  }
+}

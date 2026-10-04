@@ -1,0 +1,18 @@
+{
+  "tables": {
+    "R": {"cols": ["a"], "rows": [[1], [1], [null], [3]]},
+    "S": {"cols": ["c", "d"], "rows": [[1, 0], [1, 1], [null, 1], [2, 1]]}
+  },
+  "plan": {
+    "op": "filter",
+    "input": {"op": "scan", "table": "R"},
+    "pred": {"kind": "exists", "sub": {
+      "op": "filter",
+      "input": {"op": "scan", "table": "S"},
+      "pred": {"kind": "and", "args": [
+        {"kind": "cmp", "op": "eq", "l": {"kind": "col", "name": "S.c"}, "r": {"kind": "col", "name": "R.a"}},
+        {"kind": "cmp", "op": "eq", "l": {"kind": "col", "name": "S.d"}, "r": {"kind": "lit", "value": 1}}
+      ]}
+    }}
+  }
+}
