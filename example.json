@@ -1,0 +1,16 @@
+{
+  "facts": [
+    {"name": "ore", "cost": 0},
+    {"name": "energy", "cost": 2}
+  ],
+  "edges": [
+    {"id": "smelt",  "from": ["ore", "energy"], "to": "metal", "cost": 3},
+    {"id": "smelt2", "from": ["ore"],           "to": "metal", "cost": 9},
+    {"id": "gear",   "from": ["metal"],         "to": "gear",  "cost": 2},
+    {"id": "wire",   "from": ["metal"],         "to": "wire",  "cost": 1},
+    {"id": "motor",  "from": ["gear", "wire", "energy"], "to": "motor", "cost": 4},
+    {"id": "spin",   "from": ["motor"],         "to": "rotor", "cost": 1},
+    {"id": "loop1",  "from": ["rotor"],         "to": "gear",  "cost": 1},
+    {"id": "magic",  "from": ["wish"],          "to": "motor", "cost": 0}
+  ]
+}
