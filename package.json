@@ -1,0 +1,13 @@
+{
+  "name": "access-audit",
+  "version": "0.1.0",
+  "description": "Audit actual file/tool accesses against a declared access manifest, with symlink expansion chains.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "audit": "node src/cli.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}

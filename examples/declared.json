@@ -1,0 +1,6 @@
+{
+  "casePolicy": "auto",
+  "files": [],
+  "directories": ["sandbox/allowed"],
+  "executables": []
+}

@@ -1,0 +1,10 @@
+[
+  { "path": "sandbox/allowed/data.txt", "kind": "read" },
+  { "path": "sandbox/allowed/data.txt", "kind": "read" },
+  { "path": "sandbox/allowed/alias", "kind": "read" },
+  { "path": "sandbox/allowed/peek", "kind": "read" },
+  { "path": "sandbox/secret/keys.txt", "kind": "read" },
+  { "path": "sandbox/secret/keys.txt", "kind": "read" },
+  { "path": "sandbox/ghost/missing.log", "kind": "write" },
+  { "path": "/bin/ls", "kind": "exec" }
+]

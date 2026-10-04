@@ -1,0 +1,222 @@
+{
+  "casePolicy": "insensitive",
+  "summary": {
+    "totalEvents": 8,
+    "uniqueAccesses": 6,
+    "duplicateEvents": 2,
+    "declared": 2,
+    "undeclared": 4,
+    "unverifiable": 0,
+    "missingPaths": 1
+  },
+  "accesses": [
+    {
+      "path": "sandbox/allowed/data.txt",
+      "kinds": [
+        "read"
+      ],
+      "count": 2,
+      "resolved": {
+        "input": "sandbox/allowed/data.txt",
+        "absolute": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/allowed/data.txt",
+        "canonical": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/allowed/data.txt",
+        "hops": [],
+        "exists": true,
+        "loop": false
+      },
+      "status": "declared",
+      "matchedBy": {
+        "kind": "directory",
+        "path": "sandbox/allowed"
+      }
+    },
+    {
+      "path": "sandbox/allowed/alias",
+      "kinds": [
+        "read"
+      ],
+      "count": 1,
+      "resolved": {
+        "input": "sandbox/allowed/alias",
+        "absolute": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/allowed/alias",
+        "canonical": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/allowed/data.txt",
+        "hops": [
+          {
+            "at": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/allowed/alias",
+            "target": "data.txt",
+            "resolvedTo": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/allowed/data.txt"
+          }
+        ],
+        "exists": true,
+        "loop": false
+      },
+      "status": "declared",
+      "matchedBy": {
+        "kind": "directory",
+        "path": "sandbox/allowed"
+      }
+    },
+    {
+      "path": "sandbox/allowed/peek",
+      "kinds": [
+        "read"
+      ],
+      "count": 1,
+      "resolved": {
+        "input": "sandbox/allowed/peek",
+        "absolute": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/allowed/peek",
+        "canonical": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/secret/keys.txt",
+        "hops": [
+          {
+            "at": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/allowed/peek",
+            "target": "../secret/keys.txt",
+            "resolvedTo": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/secret/keys.txt"
+          }
+        ],
+        "exists": true,
+        "loop": false
+      },
+      "status": "undeclared",
+      "reason": "symlink chain escapes declared directory \"sandbox/allowed\"; directory declarations do not authorize targets outside the directory"
+    },
+    {
+      "path": "sandbox/secret/keys.txt",
+      "kinds": [
+        "read"
+      ],
+      "count": 2,
+      "resolved": {
+        "input": "sandbox/secret/keys.txt",
+        "absolute": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/secret/keys.txt",
+        "canonical": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/secret/keys.txt",
+        "hops": [],
+        "exists": true,
+        "loop": false
+      },
+      "status": "undeclared",
+      "reason": "no matching declaration"
+    },
+    {
+      "path": "sandbox/ghost/missing.log",
+      "kinds": [
+        "write"
+      ],
+      "count": 1,
+      "resolved": {
+        "input": "sandbox/ghost/missing.log",
+        "absolute": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/ghost/missing.log",
+        "canonical": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/ghost/missing.log",
+        "hops": [],
+        "exists": false,
+        "loop": false,
+        "missingAt": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/ghost"
+      },
+      "status": "undeclared",
+      "reason": "no matching declaration; path does not exist (missing: /Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/ghost)"
+    },
+    {
+      "path": "/bin/ls",
+      "kinds": [
+        "exec"
+      ],
+      "count": 1,
+      "resolved": {
+        "input": "/bin/ls",
+        "absolute": "/bin/ls",
+        "canonical": "/bin/ls",
+        "hops": [],
+        "exists": true,
+        "loop": false
+      },
+      "status": "undeclared",
+      "reason": "no matching declaration"
+    }
+  ],
+  "undeclared": [
+    {
+      "path": "sandbox/allowed/peek",
+      "kinds": [
+        "read"
+      ],
+      "count": 1,
+      "resolved": {
+        "input": "sandbox/allowed/peek",
+        "absolute": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/allowed/peek",
+        "canonical": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/secret/keys.txt",
+        "hops": [
+          {
+            "at": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/allowed/peek",
+            "target": "../secret/keys.txt",
+            "resolvedTo": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/secret/keys.txt"
+          }
+        ],
+        "exists": true,
+        "loop": false
+      },
+      "status": "undeclared",
+      "reason": "symlink chain escapes declared directory \"sandbox/allowed\"; directory declarations do not authorize targets outside the directory"
+    },
+    {
+      "path": "sandbox/secret/keys.txt",
+      "kinds": [
+        "read"
+      ],
+      "count": 2,
+      "resolved": {
+        "input": "sandbox/secret/keys.txt",
+        "absolute": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/secret/keys.txt",
+        "canonical": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/secret/keys.txt",
+        "hops": [],
+        "exists": true,
+        "loop": false
+      },
+      "status": "undeclared",
+      "reason": "no matching declaration"
+    },
+    {
+      "path": "sandbox/ghost/missing.log",
+      "kinds": [
+        "write"
+      ],
+      "count": 1,
+      "resolved": {
+        "input": "sandbox/ghost/missing.log",
+        "absolute": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/ghost/missing.log",
+        "canonical": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/ghost/missing.log",
+        "hops": [],
+        "exists": false,
+        "loop": false,
+        "missingAt": "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/ghost"
+      },
+      "status": "undeclared",
+      "reason": "no matching declaration; path does not exist (missing: /Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/ghost)"
+    },
+    {
+      "path": "/bin/ls",
+      "kinds": [
+        "exec"
+      ],
+      "count": 1,
+      "resolved": {
+        "input": "/bin/ls",
+        "absolute": "/bin/ls",
+        "canonical": "/bin/ls",
+        "hops": [],
+        "exists": true,
+        "loop": false
+      },
+      "status": "undeclared",
+      "reason": "no matching declaration"
+    }
+  ],
+  "supplement": {
+    "files": [
+      "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/ghost/missing.log",
+      "/Users/delin/git/Pair-wise-GSB/workbench/data/artifacts/c7d0a7e172ad4b66ae1a4fd66e8c865e/run/B/attempt-002/workspace/examples/sandbox/secret/keys.txt"
+    ],
+    "directories": [],
+    "executables": [
+      "/bin/ls"
+    ]
+  }
+}
