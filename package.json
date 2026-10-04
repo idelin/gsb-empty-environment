@@ -1,0 +1,17 @@
+{
+  "name": "judge-assignment-solver",
+  "version": "1.0.0",
+  "description": "评委分配器：专业匹配 + 工作量均衡 + 回避关系 + 评委对联合限制（≤12 份作品的精确求解）",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}
