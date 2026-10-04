@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdebugloc.a CMakeFiles/debugloc.dir/src/evaluator.cpp.o
+/usr/bin/ranlib libdebugloc.a

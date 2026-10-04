@@ -1,0 +1,1 @@
+/usr/bin/c++ -fsanitize=address,undefined -fno-sanitize-recover=all -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_evaluator.dir/tests/test_evaluator.cpp.o -o test_evaluator  libdebugloc.a
