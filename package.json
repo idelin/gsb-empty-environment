@@ -1,0 +1,17 @@
+{
+  "name": "bounded-broadcast",
+  "version": "0.1.0",
+  "description": "广播订阅库：每订阅者固定容量缓冲，溢出交付 gap 事件",
+  "type": "module",
+  "main": "src/broadcast.ts",
+  "exports": {
+    ".": "./src/broadcast.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
