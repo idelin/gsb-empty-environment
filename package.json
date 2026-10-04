@@ -1,0 +1,10 @@
+{
+  "name": "versioned-result-cache",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Immutable result cache for expensive computations over versioned array inputs and algorithm params",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "verify": "node scripts/build.mjs && node dist/verify.js"
+  }
+}
