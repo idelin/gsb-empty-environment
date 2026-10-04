@@ -1,0 +1,13 @@
+{
+  "nodes": ["core", "driver", "hal", "firmware", "tests"],
+  "edges": [
+    {"from": "hal", "to": "core"},
+    {"from": "driver", "to": "hal"},
+    {"from": "core", "to": "driver", "cuttable": true, "artifact": "stub-driver", "cost": 4},
+    {"from": "firmware", "to": "driver"},
+    {"from": "driver", "to": "firmware", "cuttable": true, "artifact": "stub-firmware", "cost": 6},
+    {"from": "firmware", "to": "hal", "cuttable": true, "artifact": "prebuilt-hal", "cost": 3},
+    {"from": "tests", "to": "core"},
+    {"from": "tests", "to": "driver"}
+  ]
+}
