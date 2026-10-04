@@ -1,0 +1,10 @@
+{
+  "name": "compressed-radix-tree",
+  "version": "0.1.0",
+  "description": "Compressed radix tree (Patricia trie) over byte-string keys with versioned snapshot iterators",
+  "type": "module",
+  "main": "src/radix-tree.ts",
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/radix-tree.test.ts"
+  }
+}
