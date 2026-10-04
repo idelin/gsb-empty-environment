@@ -1,0 +1,15 @@
+{
+  "name": "edge-cache-simulator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Edge cache simulator: barrier-gated config propagation with out-of-order invalidation/data delivery",
+  "scripts": {
+    "test": "node tools/run-tests.js",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0"
+  }
+}
