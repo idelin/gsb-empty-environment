@@ -1,0 +1,17 @@
+{
+  "edges": [
+    {"from": "s", "to": "a", "weight": 1},
+    {"from": "a", "to": "b", "weight": 1},
+    {"from": "b", "to": "c", "weight": -3},
+    {"from": "c", "to": "b", "weight": 1},
+    {"from": "c", "to": "t", "weight": 1},
+    {"from": "s", "to": "u", "weight": 4},
+    {"from": "u", "to": "t", "weight": 2},
+    {"from": "x", "to": "y", "weight": -5},
+    {"from": "y", "to": "x", "weight": 1},
+    {"from": "a", "to": "z", "weight": 2},
+    {"from": "z", "to": "a", "weight": -2}
+  ],
+  "sources": ["s", "x"],
+  "targets": ["t", "u", "b", "y", "a"]
+}
