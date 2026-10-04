@@ -1,0 +1,40 @@
+{
+  "budget": 120,
+  "recoveryRate": 0.8,
+  "parts": {
+    "电机":   { "stock": 1, "price": 15 },
+    "主板":   { "stock": 1, "price": 10 },
+    "传感器": { "stock": 0, "price": 6 },
+    "电池":   { "stock": 2 }
+  },
+  "devices": [
+    { "id": "D01", "repairCost": 18, "repairedValue": 90,  "residualValue": 12,
+      "needs": { "电机": 1, "主板": 1 }, "contains": { "电池": 1 } },
+    { "id": "D02", "repairCost": 10, "repairedValue": 55,  "residualValue": 8,
+      "needs": { "主板": 1, "传感器": 1 }, "contains": { "电机": 1 } },
+    { "id": "D03", "repairCost": 22, "repairedValue": 120, "residualValue": 20,
+      "needs": { "电机": 2, "传感器": 1 }, "contains": { "主板": 1, "电池": 1 } },
+    { "id": "D04", "repairCost": 6,  "repairedValue": 30,  "residualValue": 5,
+      "needs": { "传感器": 2 }, "contains": { "主板": 1 } },
+    { "id": "D05", "repairCost": 14, "repairedValue": 70,  "residualValue": 10,
+      "needs": { "电池": 1, "主板": 1 }, "contains": { "传感器": 2 } },
+    { "id": "D06", "repairCost": 9,  "repairedValue": 40,  "residualValue": 6,
+      "needs": { "电机": 1 }, "contains": { "传感器": 1, "电池": 1 } },
+    { "id": "D07", "repairCost": 30, "repairedValue": 65,  "residualValue": 4,
+      "needs": { "电机": 1, "电池": 1 }, "contains": { "电机": 2, "主板": 1, "传感器": 1 } },
+    { "id": "D08", "repairCost": 8,  "repairedValue": 35,  "residualValue": 3,
+      "needs": { "主板": 1 }, "contains": { "电机": 1, "传感器": 2 } },
+    { "id": "D09", "repairCost": 12, "repairedValue": 48,  "residualValue": 9,
+      "needs": { "传感器": 1, "电池": 1 }, "contains": { "主板": 2 } },
+    { "id": "D10", "repairCost": 16, "repairedValue": 58,  "residualValue": 7,
+      "needs": { "电机": 1, "传感器": 1 }, "contains": { "电池": 2 } },
+    { "id": "D11", "repairCost": 5,  "repairedValue": 22,  "residualValue": 2,
+      "needs": { "电池": 1 }, "contains": { "传感器": 1 } },
+    { "id": "D12", "repairCost": 20, "repairedValue": 85,  "residualValue": 15,
+      "needs": { "主板": 2 }, "contains": { "电机": 1 } },
+    { "id": "D13", "repairCost": 7,  "repairedValue": 26,  "residualValue": 4,
+      "needs": { "传感器": 1 }, "contains": { "电池": 1, "主板": 1 } },
+    { "id": "D14", "repairCost": 25, "repairedValue": 100, "residualValue": 18,
+      "needs": { "电机": 1, "主板": 1, "电池": 1 }, "contains": { "传感器": 1 } }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "maintenance-planner",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "预算内设备维修/拆解规划器：备件齐套才修复，拆解回收有损耗，输出备件流水",
+  "scripts": {
+    "solve": "node src/cli.ts examples/case.json",
+    "test": "node --test test/solver.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
