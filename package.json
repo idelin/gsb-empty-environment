@@ -1,0 +1,13 @@
+{
+  "name": "pixel-contours",
+  "version": "1.0.0",
+  "description": "从二值掩码提取闭合像素轮廓：前景四邻域、背景八邻域，输出外边界与孔洞层级，全部使用整数像素边坐标",
+  "type": "module",
+  "main": "src/pixel-contours.ts",
+  "scripts": {
+    "build": "node tools/strip-types.mjs",
+    "test": "node tools/strip-types.mjs && node dist/test/pixel-contours.test.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "license": "MIT"
+}
