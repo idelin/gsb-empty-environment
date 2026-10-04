@@ -1,0 +1,14 @@
+{
+  "name": "causal-gap-handler",
+  "version": "0.1.0",
+  "description": "Causal gap handling: reset boundaries with gap proofs so successors of expired predecessors never hang forever",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --no-warnings --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
