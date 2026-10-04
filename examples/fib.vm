@@ -1,0 +1,25 @@
+; recursive fib(10) = 55; exercises call-stack serialization
+func fib 1
+  LOAD 0
+  CONST 2
+  LT
+  JZ rec
+  LOAD 0
+  RET
+rec:
+  LOAD 0
+  CONST 1
+  SUB
+  CALL fib 1
+  LOAD 0
+  CONST 2
+  SUB
+  CALL fib 1
+  ADD
+  RET
+func main 1
+  CONST 10
+  CALL fib 1
+  PRINT
+  CONST 0
+  RET

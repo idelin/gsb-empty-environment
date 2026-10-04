@@ -1,0 +1,11 @@
+; infinite loop wrapped in TRY: out-of-budget must NOT be caught;
+; the catch block printing 999 is unreachable
+func main 1
+  TRY catch
+loop:
+  JMP loop
+catch:
+  CONST 999
+  PRINT
+  CONST 0
+  RET

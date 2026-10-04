@@ -1,0 +1,42 @@
+; exception handling: script THROW caught across frames,
+; runtime div-by-zero caught as value -1
+func maythrow 1
+  LOAD 0
+  JNZ ok
+  CONST 42
+  THROW
+ok:
+  LOAD 0
+  RET
+func main 2
+  TRY catch1
+  CONST 0
+  CALL maythrow 1
+  POP
+  ENDTRY
+  JMP next
+catch1:
+  PRINT          ; prints 42 (thrown value)
+next:
+  TRY catch2
+  CONST 7
+  CALL maythrow 1
+  PRINT          ; prints 7 (normal return)
+  ENDTRY
+  JMP div0
+catch2:
+  CONST 999
+  PRINT          ; unreachable
+div0:
+  TRY catch3
+  CONST 10
+  CONST 0
+  DIV
+  POP
+  ENDTRY
+  JMP done
+catch3:
+  PRINT          ; prints -1 (div-by-zero code)
+done:
+  CONST 0
+  RET

@@ -1,0 +1,9 @@
+; uncaught exception: first error is reported, run halts
+func boom 0
+  CONST 7
+  THROW
+func main 0
+  CALL boom 0
+  POP
+  CONST 0
+  RET

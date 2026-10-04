@@ -1,0 +1,25 @@
+; sum 1..10 with a loop, print result (55)
+func main 2
+  CONST 0
+  STORE 0        ; sum = 0
+  CONST 1
+  STORE 1        ; i = 1
+loop:
+  LOAD 1
+  CONST 10
+  LE
+  JZ end
+  LOAD 0
+  LOAD 1
+  ADD
+  STORE 0        ; sum += i
+  LOAD 1
+  CONST 1
+  ADD
+  STORE 1        ; i += 1
+  JMP loop
+end:
+  LOAD 0
+  PRINT
+  CONST 0
+  RET
