@@ -1,0 +1,14 @@
+{
+  "name": "segmented-regression",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Exact-arithmetic segmented linear regression for integer sequences",
+  "scripts": {
+    "test": "node --test",
+    "fit": "node src/cli.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
