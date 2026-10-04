@@ -1,0 +1,10 @@
+{
+  "name": "compact-segment-index",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Compact offline search index segment: writer, query reader, standalone validator",
+  "scripts": {
+    "test": "node --test test/segment.test.ts"
+  }
+}
