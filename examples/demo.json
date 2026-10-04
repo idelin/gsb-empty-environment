@@ -1,0 +1,29 @@
+{
+  "capacity": 10,
+  "groups": { "A": 4, "B": 4, "C": 2 },
+  "rounds": [
+    { "events": [
+      { "type": "request", "group": "A", "id": "a1" },
+      { "type": "request", "group": "A", "id": "a2" },
+      { "type": "request", "group": "A", "id": "a3" },
+      { "type": "request", "group": "A", "id": "a4" },
+      { "type": "request", "group": "A", "id": "a5" },
+      { "type": "request", "group": "A", "id": "a6" },
+      { "type": "request", "group": "A", "id": "a7" },
+      { "type": "request", "group": "A", "id": "a8" }
+    ]},
+    { "events": [
+      { "type": "request", "group": "B", "id": "b1" },
+      { "type": "request", "group": "B", "id": "b2" },
+      { "type": "request", "group": "B", "id": "b3" },
+      { "type": "request", "group": "B", "id": "b4" },
+      { "type": "request", "group": "B", "id": "b5" },
+      { "type": "request", "group": "C", "id": "c1" },
+      { "type": "cancel", "id": "a8" }
+    ]},
+    { "events": [
+      { "type": "request", "group": "C", "id": "c2" },
+      { "type": "request", "group": "C", "id": "c3" }
+    ]}
+  ]
+}
