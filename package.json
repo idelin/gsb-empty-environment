@@ -1,0 +1,11 @@
+{
+  "name": "segmented-regression",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Exact-arithmetic segmented (piecewise linear) regression over integer sequences",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/run-tests.js",
+    "cli": "node dist/src/cli.js"
+  }
+}
