@@ -1,0 +1,11 @@
+{
+  "ops": [
+    { "op": "readFile", "path": "app/config/settings.json" },
+    { "op": "readFile", "path": "app/config/theme-link" },
+    { "op": "readFile", "path": "app/config/secret-link" },
+    { "op": "readFile", "path": "app/data/input.csv" },
+    { "op": "readFile", "path": "app/data/input.csv" },
+    { "op": "readdir", "path": "app/logs" },
+    { "op": "stat", "path": "app/config/cache.tmp" }
+  ]
+}

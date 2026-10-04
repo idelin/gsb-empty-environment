@@ -1,0 +1,17 @@
+{
+  "name": "access-audit",
+  "version": "0.1.0",
+  "description": "Audit declared file-access manifests against actual tool accesses, with symlink expansion chains",
+  "license": "MIT",
+  "bin": {
+    "access-audit": "dist/src/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "check": "npm run build && node dist/src/cli.js check"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

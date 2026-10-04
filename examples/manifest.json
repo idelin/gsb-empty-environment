@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "case": "auto",
+  "declarations": [
+    { "path": "app/config", "type": "dir" },
+    { "path": "app/data/input.csv", "type": "file" }
+  ]
+}
