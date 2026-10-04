@@ -1,0 +1,17 @@
+{
+  "name": "download-reassembly",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Versioned, crash-safe download reassembly with overlap verification, digest-checked publishing and a hard memory budget.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
