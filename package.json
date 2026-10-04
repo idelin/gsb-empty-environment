@@ -1,0 +1,13 @@
+{
+  "name": "pkg-dependency-solver",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "整数版本包依赖求解器：版本区间、可选特性、跨包冲突、最少升级与可复核冲突子集",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\""
+  }
+}
