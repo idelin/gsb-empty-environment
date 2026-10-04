@@ -1,0 +1,14 @@
+{
+  "name": "protobuf-sharding-engine",
+  "version": "1.0.0",
+  "description": "Zero-dependency protobuf wire-format codec + hierarchical sharding with locality-aware routing (TypeScript, Node built-in test runner)",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --expose-gc --test 'tests/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  }
+}
