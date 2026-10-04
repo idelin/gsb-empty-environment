@@ -1,0 +1,14 @@
+{
+  "name": "dag-executor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Dependency task executor with runtime revocation, reason-chain propagation and primary-cause selection",
+  "scripts": {
+    "test": "node --test tests/*.test.ts",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
