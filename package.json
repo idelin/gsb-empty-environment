@@ -1,0 +1,12 @@
+{
+  "name": "schema-compat",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Limited schema compatibility checker and converter (bool/int64/uint64/string/bytes/record/array, stable numeric field IDs)",
+  "engines": { "node": ">=23.6" },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "cli": "node src/cli.ts"
+  }
+}

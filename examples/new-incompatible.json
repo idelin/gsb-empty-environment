@@ -1,0 +1,8 @@
+{
+  "kind": "record",
+  "fields": [
+    { "id": 1, "name": "userId", "required": true, "type": { "kind": "uint64", "min": 0, "max": "18446744073709551615" } },
+    { "id": 2, "name": "nickname", "required": true, "type": { "kind": "string", "maxLen": 16 } },
+    { "id": 3, "name": "score", "required": false, "default": 0, "type": { "kind": "int64", "min": -100, "max": 50 } }
+  ]
+}
