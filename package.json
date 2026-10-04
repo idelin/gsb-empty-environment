@@ -1,0 +1,14 @@
+{
+  "name": "transactional-outbox-simulator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "事务消息模拟器：事务性发件箱 + 内存事务日志 + 崩溃恢复 + 逐边界故障注入验证",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test \"test/*.test.ts\""
+  }
+}
