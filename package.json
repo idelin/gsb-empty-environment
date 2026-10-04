@@ -1,0 +1,16 @@
+{
+  "name": "offline-request-allocator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline batch request allocator: lexicographic optimization of admitted demand, cross-region cost, and migrations, with an exact search budget.",
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node test/index.mjs",
+    "cli": "node scripts/build.mjs && node dist/cli.js",
+    "typecheck": "tsc --noEmit"
+  }
+}

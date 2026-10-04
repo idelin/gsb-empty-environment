@@ -1,0 +1,27 @@
+{
+  "requests": [
+    { "id": "r-analytics", "region": "cn-north", "demand": 4 },
+    { "id": "r-billing", "region": "cn-south", "demand": 3 },
+    { "id": "r-cache", "region": "cn-north", "demand": 2 },
+    { "id": "r-docs", "region": "cn-south", "demand": 2 },
+    { "id": "r-events", "region": "cn-north", "demand": 5 },
+    { "id": "r-search", "region": "cn-south", "demand": 6 }
+  ],
+  "nodes": [
+    { "id": "node-a", "region": "cn-north", "capacity": 8 },
+    { "id": "node-b", "region": "cn-south", "capacity": 7 },
+    { "id": "node-c", "region": "cn-south", "capacity": 4 }
+  ],
+  "costs": {
+    "cn-north": { "cn-south": 2 },
+    "cn-south": { "cn-north": 3 }
+  },
+  "previous": {
+    "r-analytics": "node-a",
+    "r-billing": "node-retired",
+    "r-cache": "node-a",
+    "r-docs": "node-b",
+    "r-events": "node-a",
+    "r-search": "node-b"
+  }
+}
