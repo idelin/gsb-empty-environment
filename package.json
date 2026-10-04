@@ -1,0 +1,17 @@
+{
+  "name": "sparse-pivot",
+  "version": "0.1.0",
+  "description": "稀疏透视表库：多级行列维度、小计/总计、可撤回指标、空值独立标签、稳定排序",
+  "type": "module",
+  "main": "dist/pivot.mjs",
+  "types": "src/pivot.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node test/pivot.test.mjs"
+  },
+  "keywords": ["pivot", "sparse", "pivot-table", "aggregation"],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
