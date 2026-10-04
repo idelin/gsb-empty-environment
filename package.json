@@ -1,0 +1,11 @@
+{
+  "name": "waitlist-promotion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "互斥场次候补递补引擎：按优先级与报名序号排队，递补至稳定，撤销确认按原候补资格恢复",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "demo": "node dist/src/demo.js",
+    "test": "node dist/test/waitlist.test.js"
+  }
+}
