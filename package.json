@@ -1,0 +1,11 @@
+{
+  "name": "exact-interval-affine",
+  "version": "0.1.0",
+  "description": "Exact-decimal interval and affine arithmetic with outward rounding, certificates and an independent rational checker",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
