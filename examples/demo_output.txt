@@ -1,0 +1,90 @@
+
+====================================================================
+1. Forward-backward + Viterbi (exact, log-space)
+====================================================================
+observations      : ('walk', 'shop', 'clean', 'clean', 'walk')
+kind              : exact
+log-evidence      : -5.625348  (evidence = 3.605e-03)
+  P(S_0 | obs)    : (0.8769, 0.1231)
+  P(S_1 | obs)    : (0.4807, 0.5193)
+  P(S_2 | obs)    : (0.1642, 0.8358)
+  P(S_3 | obs)    : (0.2069, 0.7931)
+  P(S_4 | obs)    : (0.8276, 0.1724)
+viterbi path      : (0, 1, 1, 1, 0)  log-joint = -6.976977
+
+====================================================================
+2. Pointwise MAP != Viterbi path
+====================================================================
+  P(S_0 | obs)    : (0.5114, 0.4886)
+  P(S_1 | obs)    : (0.4545, 0.5455)
+pointwise MAP     : (0, 1)  log-joint = -3.388775
+viterbi path      : (1, 1)  log-joint = -1.702376
+-> the per-time most likely states are NOT the best joint path
+
+====================================================================
+3. Missing observations (MISSING carries no information)
+====================================================================
+observations      : ('walk', None, 'clean')
+log-evidence      : -2.264904
+  P(S_0 | obs)    : (0.8875, 0.1125)
+  P(S_1 | obs)    : (0.5678, 0.4322)
+  P(S_2 | obs)    : (0.2315, 0.7685)
+all-missing evidence = 1.0 (no information)
+
+====================================================================
+4. Constrained state path (state at t=2 forced to 1)
+====================================================================
+log-evidence      : -5.804753
+  P(S_0 | obs)    : (0.8710, 0.1290)
+  P(S_1 | obs)    : (0.4323, 0.5677)
+  P(S_2 | obs)    : (0.0000, 1.0000)
+  P(S_3 | obs)    : (0.1667, 0.8333)
+  P(S_4 | obs)    : (0.8222, 0.1778)
+
+====================================================================
+5. Piecewise (segmented) transition matrices
+====================================================================
+segments          : calm, calm, stormy, stormy
+log-evidence      : -6.568401
+viterbi path      : (0, 0, 0, 1, 0)
+
+====================================================================
+6. Top-3 distinct paths: ranking, then probability accumulation
+====================================================================
+  #0 path=(0, 1, 1, 1, 0)  P(path,obs)=9.331e-04  P(path|obs)=0.2588  cumulative=0.2588
+  #1 path=(0, 0, 1, 1, 0)  P(path,obs)=8.165e-04  P(path|obs)=0.2265  cumulative=0.4853
+  #2 path=(0, 1, 1, 1, 1)  P(path,obs)=2.333e-04  P(path|obs)=0.0647  cumulative=0.5500
+covered mass      : 0.5500  residual (all other paths) <= 0.4500
+
+====================================================================
+7. Incremental revision with immutable versions
+====================================================================
+version 0: log-evidence = -5.625348
+version 1: revised obs[2] -> 'walk', log-evidence = -5.483371
+  P(S_2|obs) v0   : (0.1642, 0.8358)  (old query preserved)
+  P(S_2|obs) v1   : (0.8550, 0.1450)
+
+====================================================================
+8. Zero-probability sequence: explicitly infeasible
+====================================================================
+feasible          : False
+log-evidence      : -inf
+posteriors        : None   (None, never a renormalized fake)
+viterbi path      : None   (no path exists)
+
+====================================================================
+9. Empty sequence (model convention)
+====================================================================
+feasible=True  log-evidence=0.0  posteriors=()  viterbi=()
+
+====================================================================
+10. Sampling: caller-injected RNG, seed + sample size recorded
+====================================================================
+kind=empirical  seed=20261004  n_samples=5
+  states=(0, 0, 1, 0)  obs=('shop', 'walk', 'clean', 'walk')
+  states=(0, 0, 0, 0)  obs=('walk', 'walk', 'walk', 'shop')
+  states=(1, 1, 0, 1)  obs=('shop', 'shop', 'walk', 'clean')
+  states=(0, 0, 0, 0)  obs=('walk', 'walk', 'walk', 'walk')
+  states=(0, 1, 0, 1)  obs=('walk', 'clean', 'walk', 'clean')
+[exact]     P(S_1 | ('walk', 'shop')) = (0.6036, 0.3964)
+[empirical] same, seed=20261004, n=20000, accepted=2624: (0.6075, 0.3925)

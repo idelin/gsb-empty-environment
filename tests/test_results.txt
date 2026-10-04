@@ -1,0 +1,7 @@
+Ran 50 tests in 0.604s
+
+OK
+
+# Reproduce: python3.11 -m unittest discover -s tests -v
+# 50 tests across: tests/test_model.py, tests/test_infer.py,
+# tests/test_topk.py, tests/test_incremental.py, tests/test_sampling.py
