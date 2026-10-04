@@ -1,0 +1,11 @@
+{
+  "name": "backup-policy-interpreter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Backup rule interpreter with static conflict checks, three-valued evaluation and incremental policy updates",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/run.js"
+  },
+  "devDependencies": {}
+}
