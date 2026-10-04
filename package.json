@@ -1,0 +1,13 @@
+{
+  "name": "bv-equiv-checker",
+  "version": "0.1.0",
+  "description": "Fixed-width bit-vector expression equivalence checker (symbolic SAT + independent interpreter, exhaustive verification at small widths)",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node src/cli.ts"
+  }
+}
