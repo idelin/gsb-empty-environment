@@ -1,0 +1,10 @@
+{
+  "name": "persistent-multiset",
+  "version": "1.0.0",
+  "description": "Branchable persistent ordered multiset with insert, remove-one, rank, select and refcount-based node reclamation",
+  "type": "module",
+  "main": "src/multiset.ts",
+  "scripts": {
+    "test": "node --no-warnings test/multiset.test.ts"
+  }
+}
