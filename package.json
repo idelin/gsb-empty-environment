@@ -1,0 +1,16 @@
+{
+  "name": "round-robin-channel",
+  "version": "0.1.0",
+  "description": "生成器轮转库：多个生成器共享输出通道，每轮各取一项，支持暂停/恢复、背压、异常隔离与提前结束",
+  "type": "module",
+  "main": "src/round-robin.ts",
+  "exports": "./src/round-robin.ts",
+  "scripts": {
+    "test": "node --test test/round-robin.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
