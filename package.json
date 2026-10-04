@@ -1,0 +1,14 @@
+{
+  "name": "aries-recovery",
+  "version": "1.0.0",
+  "description": "ARIES write-ahead-log analysis & crash recovery (Redo/Undo) engine with incremental snapshots and checkpoint archiving",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
