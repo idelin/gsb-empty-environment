@@ -1,0 +1,21 @@
+{
+  "costs": {
+    "insert": { "*": 1, "leaf": 2 },
+    "delete": { "*": 1 },
+    "rename": { "*": 1, "draft>final": 0 }
+  },
+  "source": {
+    "label": "root",
+    "children": [
+      { "label": "draft", "children": [ { "label": "leaf" } ] },
+      { "label": "junk" }
+    ]
+  },
+  "target": {
+    "label": "root",
+    "children": [
+      { "label": "final", "children": [ { "label": "leaf" } ] },
+      { "label": "new" }
+    ]
+  }
+}
