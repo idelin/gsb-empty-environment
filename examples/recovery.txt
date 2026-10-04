@@ -1,0 +1,25 @@
+# Leader crash and recovery: the new leader must preserve chosen values.
+tick 1
+campaign 0
+tick 2
+deliver-all
+tick 3
+propose 0 x=1
+propose 0 y=2
+tick 4
+deliver-all
+tick 5
+crash 0
+tick 6
+campaign 1
+tick 7
+deliver-all
+tick 8
+propose 1 z=3
+tick 9
+deliver-all
+expect-chosen 1 x=1
+expect-chosen 2 y=2
+expect-chosen 3 z=3
+expect-applied 1 3
+expect-applied 4 3

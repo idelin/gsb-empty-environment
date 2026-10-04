@@ -1,0 +1,25 @@
+# A hole at slot 1 with an accepted value at slot 2: the new leader fills
+# the hole with no-op and must keep the value behind the hole.
+# (IDs 16-18 are the slot-2 Accept messages to nodes 0,1,2.)
+tick 1
+campaign 0
+tick 2
+deliver-all
+tick 3
+propose 0 first
+propose 0 second
+tick 4
+deliver 16
+deliver 17
+deliver 18
+tick 5
+drop-all
+tick 6
+crash 0
+tick 7
+campaign 3
+tick 8
+deliver-all
+expect-chosen 1 no-op
+expect-chosen 2 second
+expect-applied 2 2
