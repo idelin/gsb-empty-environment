@@ -1,0 +1,15 @@
+{
+  "size": 8,
+  "players": [
+    {"id": 1, "team": "A", "tier": 1},
+    {"id": 2, "team": "B", "tier": 1},
+    {"id": 3, "team": "C", "tier": 1},
+    {"id": 4, "team": "D", "tier": 1},
+    {"id": 5, "team": "A", "tier": 2},
+    {"id": 6, "team": "B", "tier": 2},
+    {"id": 7, "team": "C", "tier": 2},
+    {"id": 8, "team": "D", "tier": 2}
+  ],
+  "slotTiers": [1, 2, 1, 2, 1, 2, 1, 2],
+  "locked": {"0": 1}
+}
