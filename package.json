@@ -1,0 +1,10 @@
+{
+  "name": "barrier-simulator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Barrier simulator: leader settlement with failover, round isolation, exactly-once broadcast",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "simulate": "node dist/simulate.js"
+  }
+}
