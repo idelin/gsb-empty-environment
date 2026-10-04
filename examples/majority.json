@@ -1,0 +1,5 @@
+{
+  "nodes": 5,
+  "read": { "atLeast": 3, "of": "*" },
+  "write": { "atLeast": 3, "of": "*" }
+}

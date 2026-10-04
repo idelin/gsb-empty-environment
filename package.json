@@ -1,0 +1,11 @@
+{
+  "name": "quorum-check",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "法定集合相交性检查：任意读写集合、任意两写集合是否相交",
+  "scripts": {
+    "check": "node src/cli.ts",
+    "test": "node --test test/quorum.test.ts"
+  }
+}
