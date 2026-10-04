@@ -1,0 +1,9 @@
+{
+  "name": "connection-reset-simulator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sim": "node src/simulate.ts",
+    "test": "node --test test/reset.test.ts"
+  }
+}
