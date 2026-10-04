@@ -1,0 +1,10 @@
+{
+  "name": "async-stage-channels",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Bounded async channels linking processing stages with backpressure, failure propagation and ownership-tracked cleanup",
+  "scripts": {
+    "test": "./run-tests.sh"
+  }
+}
