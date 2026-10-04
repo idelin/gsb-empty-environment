@@ -1,0 +1,11 @@
+{
+  "name": "aries-wal-recovery",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ARIES write-ahead logging: analysis/redo/undo crash recovery with compact binary codec and zero-copy restore (TypeScript)",
+  "scripts": {
+    "build": "node tools/typescript/tsc.js -p tsconfig.json",
+    "test": "node tools/typescript/tsc.js -p tsconfig.json && /opt/homebrew/bin/node --test \"dist/test/*.test.js\"",
+    "demo": "node tools/typescript/tsc.js -p tsconfig.json && /opt/homebrew/bin/node dist/demo.js"
+  }
+}
