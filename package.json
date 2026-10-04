@@ -1,0 +1,14 @@
+{
+  "name": "recursive-schema-validator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "JSON instance validator for recursive schemas with shallowest-failure reporting",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/validator.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
