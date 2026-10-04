@@ -1,0 +1,14 @@
+{
+  "name": "multipaxos-zero-alloc",
+  "version": "1.0.0",
+  "description": "Multi-Paxos majority consensus log engine with zero-allocation cache & object pools (TypeScript, Node.js built-in test runner)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  },
+  "license": "MIT"
+}
