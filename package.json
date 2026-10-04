@@ -1,0 +1,15 @@
+{
+  "name": "aries-recovery",
+  "version": "1.0.0",
+  "description": "ARIES write-ahead logging analysis and crash recovery (Redo/Undo) engine in TypeScript",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "demo": "node src/demo.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
