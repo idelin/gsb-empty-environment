@@ -1,0 +1,10 @@
+{
+  "name": "minilang-rename-preflight",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/rename.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
