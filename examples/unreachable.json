@@ -1,0 +1,10 @@
+{
+  "propositions": ["p", "q", "r"],
+  "initial": ["p"],
+  "goal": ["r"],
+  "actions": [
+    {"name": "make-q", "cost": 2, "pre": ["p"], "add": ["q"]},
+    {"name": "toggle-p", "cost": 0, "pre": ["p"], "add": [], "del": ["p"]},
+    {"name": "toggle-p-back", "cost": 0, "pre": ["q"], "pre_neg": ["p"], "add": ["p"]}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "propositions": ["at-home", "has-key", "at-office", "door-open", "inside"],
+  "initial": ["at-home", "has-key"],
+  "goal": ["inside"],
+  "actions": [
+    {"name": "walk-to-office", "cost": 5, "pre": ["at-home"], "add": ["at-office"], "del": ["at-home"]},
+    {"name": "drive-to-office", "cost": 2, "pre": ["at-home", "has-key"], "add": ["at-office"], "del": ["at-home"]},
+    {"name": "unlock-door", "cost": 1, "pre": ["at-office", "has-key"], "add": ["door-open"]},
+    {"name": "enter", "cost": 1, "pre": ["at-office", "door-open"], "add": ["inside"], "del": ["at-office"]}
+  ]
+}

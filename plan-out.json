@@ -1,0 +1,8 @@
+{
+  "steps": [
+    "drive-to-office",
+    "unlock-door",
+    "enter"
+  ],
+  "cost": 4
+}
