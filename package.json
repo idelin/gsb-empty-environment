@@ -1,0 +1,15 @@
+{
+  "name": "interval-regex",
+  "version": "0.1.0",
+  "private": true,
+  "description": "带捕获区间的正则匹配库（分组/并集/连接/星号，最左最长 + 按组序最长捕获）",
+  "main": "dist/src/regex.js",
+  "types": "dist/src/regex.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/regex.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
