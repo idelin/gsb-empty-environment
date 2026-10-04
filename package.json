@@ -1,0 +1,15 @@
+{
+  "name": "exact-lp-simplex",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Exact rational (BigInt) two-phase simplex solver with certificates and an independent checker",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test tests/*.test.ts",
+    "solve": "node --disable-warning=ExperimentalWarning src/cli.ts solve",
+    "check": "node --disable-warning=ExperimentalWarning src/cli.ts check"
+  }
+}
