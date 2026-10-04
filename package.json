@@ -1,0 +1,14 @@
+{
+  "name": "cutting-planner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "一维切割规划器：计入固定锯缝，先最小化采购成本再最小化切割次数",
+  "scripts": {
+    "solve": "node src/cli.ts",
+    "test": "node src/cuttingPlanner.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
