@@ -1,0 +1,11 @@
+{
+  "name": "multi-paxos-consensus",
+  "version": "1.0.0",
+  "description": "Multi-Paxos majority consensus with hole-free commit engine, leader lease and conflict arbitrator (TypeScript, Node built-in test runner)",
+  "type": "module",
+  "scripts": {
+    "test": "./run.sh test",
+    "demo": "./run.sh demo"
+  },
+  "license": "MIT"
+}
