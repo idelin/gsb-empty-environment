@@ -1,0 +1,11 @@
+{
+  "name": "pulse-detector",
+  "version": "0.1.0",
+  "description": "Streaming pulse detection with hysteresis thresholds and cumulative gap merging",
+  "type": "module",
+  "main": "src/pulse-detector.ts",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node build/test/pulse-detector.test.mjs"
+  }
+}
