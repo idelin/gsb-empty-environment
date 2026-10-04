@@ -1,0 +1,11 @@
+{
+  "name": "temporal-connectivity-checker",
+  "version": "1.0.0",
+  "description": "Check whether two nodes stay connected throughout a query interval in a temporal graph with half-open edge activity windows.",
+  "type": "module",
+  "main": "src/temporalConnectivity.ts",
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test test/temporalConnectivity.test.ts"
+  },
+  "license": "MIT"
+}
