@@ -1,0 +1,14 @@
+{
+  "name": "lazy-columnar-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Late-materializing columnar query pipeline: filter -> stable sort -> project, with batch lifecycle, versioned selection vectors and async cancellable column loads.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'tests/*.test.ts'",
+    "example": "node examples/demo.ts"
+  }
+}
