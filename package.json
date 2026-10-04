@@ -1,0 +1,12 @@
+{
+  "name": "resource-constrained-planner",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "资源受限规划器：不可再生资源预算内最大化目标收益，次目标最低动作成本，并识别近距死端",
+  "scripts": {
+    "demo": "node tools/run.mjs src/demo.ts",
+    "test": "node tools/run.mjs test/bruteForce.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
