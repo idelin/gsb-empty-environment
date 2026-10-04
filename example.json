@@ -1,0 +1,18 @@
+{
+  "capacity": 10,
+  "start": "S",
+  "goal": "G",
+  "startTime": 6,
+  "edges": [
+    {"from": "S", "to": "A", "time": 4, "energy": 6},
+    {"from": "A", "to": "G", "time": 3, "energy": 10},
+    {"from": "S", "to": "B", "time": 2, "energy": 3},
+    {"from": "B", "to": "G", "time": 12, "energy": 6},
+    {"from": "A", "to": "B", "time": 0, "energy": 0},
+    {"from": "B", "to": "A", "time": 0, "energy": 0}
+  ],
+  "stations": {
+    "A": {"fee": 5, "windows": [{"open": 8, "close": 20}]},
+    "B": {"fee": 1, "windows": [{"open": 0, "close": 24}]}
+  }
+}
