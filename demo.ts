@@ -1,0 +1,11 @@
+import { GapAwareFilter, formatReport } from './src/gap-aware-filter.ts';
+const filter = new GapAwareFilter({ b: [0.5, 0.3, 0.2], a: [1, -0.4], sampleInterval: 1, maxInterpolationGap: 3 });
+filter.addSample(0, 1);
+filter.addSample(1, 2);
+filter.addSample(10, 5);
+console.log('--- 迟到样本 t=4 ---');
+console.log(formatReport(filter.addSample(4, 3)));
+console.log('--- 迟到样本 t=7（桥接长缺口）---');
+console.log(formatReport(filter.addSample(7, 4)));
+console.log('--- 当前输出 ---');
+for (const o of filter.getOutputs()) console.log(`t=${o.t}\ty=${o.y.toFixed(4)}\tv${o.version}${o.interpolated ? ' [插值]' : ''}`);

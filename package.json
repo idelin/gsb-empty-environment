@@ -1,0 +1,14 @@
+{
+  "name": "gap-aware-filter",
+  "version": "0.1.0",
+  "description": "缺口感知的有理滤波库：短缺口线性插值、长缺口断开状态，支持迟到样本的局部重算与版本化输出",
+  "type": "module",
+  "main": "src/gap-aware-filter.ts",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
