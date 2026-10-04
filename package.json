@@ -1,0 +1,15 @@
+{
+  "name": "resource-constrained-planner",
+  "version": "1.0.0",
+  "description": "资源受限规划器：预算内收益最高的计划（次目标最低成本），含死端识别",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "demo": "npm run build && node dist/examples/demo.js",
+    "test": "npm run build && node dist/test/planner.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "@types/node": "^20.0.0"
+  }
+}
