@@ -1,0 +1,17 @@
+# Delayed ack: alice's write was applied but the ack got lost in the
+# network. A handoff happens, then alice's retry finally arrives.
+lease 10s
+acquire jobs alice            # gen=1
+write jobs alice 1 req-1 charge-card
+expect APPLIED                # applied, but pretend the ack never reached alice
+
+acquire jobs bob              # handoff: gen=2, bob starts working
+write jobs alice 1 req-1 charge-card   # alice's delayed retry of an APPLIED write
+expect DUPLICATE already      # idempotent replay: recorded result, no re-apply
+
+write jobs alice 1 req-2 refund        # alice's NEW write with the old generation
+expect STALE fenced           # not a duplicate: a fenced-off former holder
+
+write jobs bob 2 req-3 notify
+expect APPLIED
+snapshot jobs                 # writes show req-1 applied exactly once

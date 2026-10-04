@@ -1,0 +1,21 @@
+# Clock jump: lease TTL is 10s, the clock leaps 30s forward.
+# The lease lapses silently; the holder discovers it on the next write.
+lease 10s
+acquire orders alice          # gen=1, valid for 10s
+write orders alice 1 req-1 alpha
+expect APPLIED
+
+tick 30s                      # clock jump: no renewals happened in between
+write orders alice 1 req-2 beta
+expect EXPIRED renew          # lease lapsed, must renew first
+
+renew orders alice 1          # gen 1 is still current: re-anchor is legal
+write orders alice 1 req-2 beta
+expect APPLIED
+
+acquire orders bob            # handoff: gen=2, alice is fenced from here on
+renew orders alice 1          # renewal must NOT resurrect gen 1
+expect STALE resurrect
+write orders alice 1 req-3 gamma
+expect STALE fenced
+snapshot orders

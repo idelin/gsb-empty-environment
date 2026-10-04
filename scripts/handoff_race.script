@@ -1,0 +1,17 @@
+# Handoff race: renewals and acquisitions interleave; the generation
+# counter serialises them. Losers are fenced, never resurrected.
+lease 10s
+acquire locks alice           # gen=1
+acquire locks bob             # gen=2: bob wins the handoff race
+renew locks alice 1           # alice's in-flight renew loses
+expect STALE resurrect
+
+acquire locks alice           # gen=3: alice takes it back
+write locks bob 2 req-1 x     # bob's write with his now-old generation
+expect STALE fenced
+renew locks bob 2             # bob cannot resurrect gen 2 either
+expect STALE resurrect
+
+write locks alice 3 req-2 y
+expect APPLIED
+snapshot locks
