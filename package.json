@@ -1,0 +1,12 @@
+{
+  "name": "batch-picking-planner",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "合单拣货规划器: exact DP optimizer for batch picking with shared locations, cart capacity and order-splitting cost",
+  "scripts": {
+    "start": "node src/main.ts",
+    "verify": "node scripts/verify.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
