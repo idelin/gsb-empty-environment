@@ -1,0 +1,10 @@
+{
+  "name": "virtual-periodic-scheduler",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Virtual-clock-driven periodic scheduler with fixed-start grid, coalesced catch-up, and pause/resume.",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'"
+  }
+}
