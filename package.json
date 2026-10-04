@@ -1,0 +1,14 @@
+{
+  "name": "page-txn-log",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ARIES-style local page transaction log: savepoints, CLR, checkpoints, log truncation, crash recovery",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "cli": "node src/cli.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
