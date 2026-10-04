@@ -1,0 +1,12 @@
+{
+  "name": "interval-resource-allocator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/allocator.ts",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node test/run.mjs",
+    "typecheck": "tsc --noEmit"
+  }
+}
