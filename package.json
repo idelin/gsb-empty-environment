@@ -1,0 +1,15 @@
+{
+  "name": "seam-carver",
+  "version": "1.0.0",
+  "description": "Minimum-energy vertical seam carving on integer energy maps with protected points",
+  "type": "module",
+  "main": "src/seam-carver.ts",
+  "scripts": {
+    "test": "node test/run.mjs",
+    "demo": "node examples/demo.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
