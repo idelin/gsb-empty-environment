@@ -1,0 +1,12 @@
+{
+  "or": [
+    {"and": [
+      {"intRange": {"attr": "subject.level", "lo": 5, "hi": 10}},
+      {"labelIn": {"attr": "resource.label", "set": ["public", "internal"]}}
+    ]},
+    {"and": [
+      {"bool": {"attr": "subject.mfa", "value": true}},
+      {"labelIn": {"attr": "resource.label", "set": ["public"]}}
+    ]}
+  ]
+}

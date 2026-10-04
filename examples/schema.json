@@ -1,0 +1,7 @@
+{
+  "attributes": {
+    "subject.level":  {"type": "int", "min": 0, "max": 10},
+    "resource.label": {"type": "label", "values": ["public", "internal", "secret"]},
+    "subject.mfa":    {"type": "bool"}
+  }
+}

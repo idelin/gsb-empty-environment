@@ -1,0 +1,6 @@
+{
+  "and": [
+    {"intRange": {"attr": "subject.level", "lo": 8, "hi": 10}},
+    {"labelIn": {"attr": "resource.label", "set": ["public", "internal"]}}
+  ]
+}
