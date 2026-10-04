@@ -1,0 +1,12 @@
+{
+  "name": "config-merge",
+  "version": "0.1.0",
+  "description": "Layered config merging with provenance, list operations, secrets masking and located validation",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT"
+}
