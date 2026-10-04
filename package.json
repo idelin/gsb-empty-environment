@@ -1,0 +1,14 @@
+{
+  "name": "iso-contours",
+  "version": "0.1.0",
+  "description": "Exact-rational marching squares contour extraction for integer scalar grids",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'"
+  },
+  "license": "MIT"
+}
