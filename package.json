@@ -1,0 +1,12 @@
+{
+  "name": "ccd2d",
+  "version": "1.0.0",
+  "description": "Continuous collision detection for 2D axis-aligned rectangles with exact rational arithmetic",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node --experimental-vm-modules scripts/build.mjs",
+    "test": "node --experimental-vm-modules scripts/build.mjs && node dist/test/run.js",
+    "cli": "node dist/src/cli.js"
+  }
+}
