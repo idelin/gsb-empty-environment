@@ -1,0 +1,100 @@
+{
+  "files": {
+    "src/config.ts": "export const timeout = 30;\nexport const retries = 1;\n",
+    "src/api.ts": "import { timeout } from './config';\n\nexport function call() {\n  return fetchWithTimeout(timeout);\n}\n"
+  },
+  "maxSelected": 25,
+  "suggestions": [
+    {
+      "id": "fix-timeout-60",
+      "description": "把超时从 30 提高到 60",
+      "benefit": 8,
+      "edits": [
+        {
+          "file": "src/config.ts",
+          "range": { "start": { "line": 0, "character": 23 }, "end": { "line": 0, "character": 25 } },
+          "newText": "60"
+        }
+      ],
+      "preconditions": [
+        { "kind": "contains", "file": "src/config.ts", "pattern": "timeout = 30" }
+      ]
+    },
+    {
+      "id": "fix-timeout-120",
+      "description": "把超时从 30 提高到 120（与上一项改同一位置）",
+      "benefit": 5,
+      "edits": [
+        {
+          "file": "src/config.ts",
+          "range": { "start": { "line": 0, "character": 23 }, "end": { "line": 0, "character": 25 } },
+          "newText": "120"
+        }
+      ],
+      "preconditions": [
+        { "kind": "contains", "file": "src/config.ts", "pattern": "timeout = 30" }
+      ]
+    },
+    {
+      "id": "add-retries-doc",
+      "description": "为 retries 添加注释（文本不重叠，但依赖 timeout 保持 30）",
+      "benefit": 4,
+      "edits": [
+        {
+          "file": "src/config.ts",
+          "range": { "start": { "line": 1, "character": 0 }, "end": { "line": 1, "character": 0 } },
+          "newText": "// 重试次数\n"
+        }
+      ],
+      "preconditions": [
+        { "kind": "contains", "file": "src/config.ts", "pattern": "timeout = 30" }
+      ]
+    },
+    {
+      "id": "rename-call",
+      "description": "重命名 call 为 callApi",
+      "benefit": 6,
+      "edits": [
+        {
+          "file": "src/api.ts",
+          "range": { "start": { "line": 2, "character": 16 }, "end": { "line": 2, "character": 20 } },
+          "newText": "callApi"
+        }
+      ],
+      "preconditions": [
+        { "kind": "contains", "file": "src/api.ts", "pattern": "function call(" }
+      ],
+      "conflictKeys": ["rename-call"]
+    },
+    {
+      "id": "rename-call-alt",
+      "description": "另一种命名方案（文本范围不重叠，但语义上与上一项互斥）",
+      "benefit": 3,
+      "edits": [
+        {
+          "file": "src/api.ts",
+          "range": { "start": { "line": 4, "character": 0 }, "end": { "line": 4, "character": 0 } },
+          "newText": "// TODO: 改名为 callRemote\n"
+        }
+      ],
+      "preconditions": [],
+      "conflictKeys": ["rename-call"]
+    },
+    {
+      "id": "add-logging",
+      "description": "在 callApi 内加日志（依赖重命名完成）",
+      "benefit": 7,
+      "edits": [
+        {
+          "file": "src/api.ts",
+          "range": { "start": { "line": 3, "character": 2 }, "end": { "line": 3, "character": 2 } },
+          "newText": "console.log('callApi');\n  "
+        }
+      ],
+      "preconditions": [
+        { "kind": "contains", "file": "src/api.ts", "pattern": "function callApi(" }
+      ],
+      "requires": ["rename-call"]
+    }
+  ]
+}

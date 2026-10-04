@@ -1,0 +1,14 @@
+{
+  "name": "fix-combiner",
+  "version": "0.1.0",
+  "description": "自动修复组合工具：检查修复建议的重叠与前置关系，选出总收益最大的兼容修复集合",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "cli": "node src/cli.ts"
+  },
+  "license": "MIT"
+}
