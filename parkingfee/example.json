@@ -1,0 +1,13 @@
+{
+  "events": [
+    {"time": "2026-01-05T08:00:00+08:00", "type": "enter"},
+    {"time": "2026-01-05T09:00:00+08:00", "type": "exit"},
+    {"time": "2026-01-05T10:00:00+08:00", "type": "enter"},
+    {"time": "2026-01-05T12:00:00+08:00", "type": "enter"},
+    {"time": "2026-01-05T13:00:00+08:00", "type": "exit"}
+  ],
+  "free_minutes": 15,
+  "unit_minutes": 30,
+  "unit_price_cents": 100,
+  "daily_cap_cents": 1000
+}
