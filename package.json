@@ -1,0 +1,11 @@
+{
+  "name": "chunked-file-verifier",
+  "version": "0.1.0",
+  "description": "Chunked hash-tree file commitment and partial (range) verification",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "bun test",
+    "cli": "bun src/cli.ts"
+  }
+}
