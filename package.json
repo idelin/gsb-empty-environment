@@ -1,0 +1,14 @@
+{
+  "name": "protobuf-wire-drr-multitenant",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "零依赖 Protobuf Wire-format 解析器 + 多租户隔离与 DRR 加权公平调度器",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/protobuf.test.ts test/scheduler.test.ts",
+    "demo": "node demo/demo.ts"
+  }
+}
