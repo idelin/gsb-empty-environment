@@ -1,0 +1,22 @@
+{
+  "name": "hash-tree-verifier",
+  "version": "1.0.0",
+  "description": "Chunked Merkle-tree file verification with range proofs",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --test test/hash-tree.test.ts",
+    "cli": "node src/cli.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idelin/gsb-empty-environment.git"
+  },
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/idelin/gsb-empty-environment/issues"
+  },
+  "homepage": "https://github.com/idelin/gsb-empty-environment#readme",
+  "bin": {
+    "hash-tree": "src/cli.ts"
+  }
+}
