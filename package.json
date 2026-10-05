@@ -1,0 +1,13 @@
+{
+  "name": "module-symbol-resolver",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-file module symbol resolution: named exports, explicit imports, re-exports; incremental snapshots with reference validation.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
