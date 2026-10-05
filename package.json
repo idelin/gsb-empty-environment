@@ -1,0 +1,10 @@
+{
+  "name": "export-desensitization-checker",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node src/demo.ts"
+  }
+}
