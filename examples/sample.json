@@ -1,0 +1,28 @@
+{
+  "items": [
+    { "sku": "A", "quantity": 4 },
+    { "sku": "B", "quantity": 2 }
+  ],
+  "warehouses": [
+    {
+      "id": "华东仓",
+      "fixedFee": 8,
+      "perItemFee": 2,
+      "stock": { "A": 10, "B": 3 }
+    },
+    {
+      "id": "华南仓",
+      "fixedFee": 10,
+      "perItemFee": 1,
+      "freeShippingThreshold": 7,
+      "stock": { "A": 10, "B": 5 }
+    },
+    {
+      "id": "西南仓",
+      "fixedFee": 4,
+      "perItemFee": 4,
+      "stock": { "A": 2, "B": 10 }
+    }
+  ],
+  "options": { "allowOverDelivery": true }
+}

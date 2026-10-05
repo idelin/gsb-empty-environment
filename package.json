@@ -1,0 +1,14 @@
+{
+  "name": "order-splitting-solver",
+  "version": "1.0.0",
+  "description": "拆单求解器：多仓订单分配，总运费最低、包裹数最少，支持免运门槛与超发凑单",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "solve": "node src/cli.ts",
+    "test": "node --test 'test/*.test.ts'"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
