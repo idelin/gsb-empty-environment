@@ -1,0 +1,15 @@
+{
+  "name": "region-aware-allocator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline batch request allocator: capacity-safe, region-aware, migration-minimal.",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test",
+    "solve": "node src/cli.ts solve",
+    "demo": "node src/cli.ts demo"
+  }
+}
