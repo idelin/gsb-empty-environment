@@ -1,0 +1,15 @@
+{
+  "name": "monotone-rational-cubic",
+  "version": "1.0.0",
+  "description": "Monotonicity-preserving rational piecewise-cubic Hermite interpolation with exact quadratic derivative-root certificates",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
