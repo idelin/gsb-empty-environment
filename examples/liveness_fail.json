@@ -1,0 +1,15 @@
+{
+  "initial": "idle",
+  "states": [
+    { "name": "idle",      "labels": [] },
+    { "name": "requested", "labels": ["request"] },
+    { "name": "waiting",   "labels": [] },
+    { "name": "polling",   "labels": [] }
+  ],
+  "transitions": [
+    { "from": "idle",      "to": "requested" },
+    { "from": "requested", "to": "waiting" },
+    { "from": "waiting",   "to": "polling" },
+    { "from": "polling",   "to": "waiting" }
+  ]
+}

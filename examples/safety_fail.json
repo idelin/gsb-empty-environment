@@ -1,0 +1,15 @@
+{
+  "initial": "idle",
+  "states": [
+    { "name": "idle",       "labels": [] },
+    { "name": "authorized", "labels": ["authorized"] },
+    { "name": "critical",   "labels": ["danger"] },
+    { "name": "backdoor",   "labels": [] }
+  ],
+  "transitions": [
+    { "from": "idle",       "to": "authorized" },
+    { "from": "authorized", "to": "critical" },
+    { "from": "idle",       "to": "backdoor" },
+    { "from": "backdoor",   "to": "critical" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "initial": "idle",
+  "states": [
+    { "name": "idle",       "labels": [] },
+    { "name": "requested",  "labels": ["request"] },
+    { "name": "responded",  "labels": ["response"] },
+    { "name": "authorized", "labels": ["authorized"] },
+    { "name": "critical",   "labels": ["danger"] }
+  ],
+  "transitions": [
+    { "from": "idle",       "to": "requested" },
+    { "from": "requested",  "to": "responded" },
+    { "from": "responded",  "to": "idle" },
+    { "from": "responded",  "to": "authorized" },
+    { "from": "authorized", "to": "critical" },
+    { "from": "critical",   "to": "idle" }
+  ]
+}
