@@ -1,0 +1,15 @@
+# 共享值跨寄存器类别: x = a*b 计算一次(类别0), 两次使用各付一次 0->1 复制
+classes 2
+copy 0 1 2
+copy 1 0 2
+nodes 4
+node 0 ld
+node 1 ld
+node 2 mul 0 1
+node 3 add 2 2
+outputs 1
+output 3 0
+patterns 3
+pattern 0 2 0 (ld)
+pattern 1 3 0 (mul ?0 ?0)
+pattern 2 1 0 (add ?1 ?1)

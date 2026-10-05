@@ -1,0 +1,15 @@
+# add(mul(a,b), c): 融合模式 madd 与 拆分 mul+add 同价 -> 2 个并列最优
+classes 1
+nodes 5
+node 0 const
+node 1 const
+node 2 mul 0 1
+node 3 const
+node 4 add 2 3
+outputs 1
+output 4 0
+patterns 4
+pattern 0 1 0 (const)
+pattern 1 1 0 (mul ?0 ?0)
+pattern 2 1 0 (add ?0 ?0)
+pattern 3 2 0 (add (mul ?0 ?0) ?0)
