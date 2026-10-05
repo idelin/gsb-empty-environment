@@ -1,0 +1,8 @@
+{
+  "groups": [
+    {"name": "g1", "users": 200, "version": "stable"},
+    {"name": "g2", "users": 400, "version": "stable"},
+    {"name": "g3", "users": 600, "version": "stable"},
+    {"name": "g4", "users": 800, "version": "stable"}
+  ]
+}

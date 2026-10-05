@@ -1,0 +1,12 @@
+{
+  "groups": [
+    {"name": "beta-testers", "users": 1200, "version": "canary"},
+    {"name": "internal",     "users": 800,  "version": "canary"},
+    {"name": "region-cn-1",  "users": 5200, "version": "stable"},
+    {"name": "region-cn-2",  "users": 4700, "version": "stable"},
+    {"name": "region-eu-1",  "users": 6100, "version": "stable"},
+    {"name": "region-us-1",  "users": 7300, "version": "stable"},
+    {"name": "vip",          "users": 300,  "version": "stable"},
+    {"name": "free-tier",    "users": 9400, "version": "stable"}
+  ]
+}
