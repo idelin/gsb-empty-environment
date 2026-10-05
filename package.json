@@ -1,0 +1,20 @@
+{
+  "name": "spatiotemporal-trajectory-index",
+  "version": "1.0.0",
+  "description": "Exact spatiotemporal index for 3D linear trajectory segments (BVH candidate pruning + exact rational intersection)",
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./verifier": "./dist/verifier.js",
+    "./intersect": "./dist/intersect.js",
+    "./geometry": "./dist/geometry.js",
+    "./fraction": "./dist/fraction.js"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node test/run.mjs",
+    "demo": "node scripts/build.mjs && node examples/demo.mjs",
+    "typecheck": "tsc --noEmit"
+  }
+}
