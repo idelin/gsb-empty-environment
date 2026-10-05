@@ -1,0 +1,15 @@
+{
+  "name": "change-interaction-test-planner",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "改动交互测试规划器：在依赖约束与执行预算内选择合法组合，先最大覆盖二阶交互，再最少成本",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "start": "node src/cli.ts",
+    "demo": "node src/cli.ts --demo",
+    "test": "node --test"
+  }
+}

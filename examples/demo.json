@@ -1,0 +1,15 @@
+{
+  "budget": 12,
+  "changes": [
+    { "id": "auth", "cost": 4, "deps": ["db"] },
+    { "id": "db", "cost": 3 },
+    { "id": "cache", "cost": 2 },
+    { "id": "api", "cost": 5, "deps": ["auth"] },
+    { "id": "ui", "cost": 4, "deps": ["api"] },
+    { "id": "search", "cost": 6, "deps": ["db", "cache"] },
+    { "id": "report", "cost": 7 },
+    { "id": "notify", "cost": 3, "deps": ["queue"] },
+    { "id": "queue", "cost": 2 },
+    { "id": "billing", "cost": 9, "deps": ["db", "report"] }
+  ]
+}
