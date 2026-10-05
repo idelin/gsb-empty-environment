@@ -1,0 +1,19 @@
+# 同 tick 多操作：顺序生效
+0 query 1 3
+0 add 1 2
+0 add 2 3
+0 query 1 3
+# 重复边引用计数
+1 add 1 2
+2 del 1 2
+3 query 1 3
+4 del 1 2
+5 query 1 3
+# 边多次开启关闭；另一条分量作割集证据
+6 add 3 4
+6 add 4 5
+7 query 1 5
+8 add 1 2
+9 query 1 5
+10 del 3 4
+11 query 1 5
