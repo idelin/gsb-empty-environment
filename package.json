@@ -1,0 +1,16 @@
+{
+  "name": "anchor-migrate",
+  "version": "0.1.0",
+  "description": "锚点迁移库：基于左右上下文与版本补丁的批注锚点迁移，输出唯一位置/候选/失效，不猜选",
+  "private": true,
+  "type": "commonjs",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/index.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}

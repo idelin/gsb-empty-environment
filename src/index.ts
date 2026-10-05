@@ -1,0 +1,28 @@
+export {
+  Assoc,
+  Op,
+  Patch,
+  Edit,
+  normalize,
+  apply,
+  fromEdits,
+  toEdits,
+  compose,
+  invert,
+  transformPosition,
+} from './patch';
+export {
+  Anchor,
+  AnchorOptions,
+  Bias,
+  Migration,
+  MigrationResult,
+  Tombstone,
+  DEFAULT_CONTEXT_LENGTH,
+  captureContext,
+  createAnchor,
+  contextMatchesAt,
+  findContextPositions,
+  migrateAnchor,
+  migrateAnchors,
+} from './anchor';
