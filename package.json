@@ -1,0 +1,13 @@
+{
+  "name": "batch-spell-replace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Batch word-boundary spelling replacement over a rope, with a finite case-mapping table, priority conflict resolution, and reversible patches.",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  }
+}
