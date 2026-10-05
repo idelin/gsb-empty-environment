@@ -1,0 +1,21 @@
+{
+  "files": [
+    {"id": "base-full", "bytes": 100, "intact": true},
+    {"id": "inc-a", "bytes": 30, "intact": true, "deps": ["base-full"]},
+    {"id": "inc-b", "bytes": 40, "intact": true, "deps": ["base-full"]},
+    {"id": "side-1", "bytes": 90, "intact": true},
+    {"id": "side-2", "bytes": 95, "intact": true}
+  ],
+  "shards": [
+    {"name": "shard-A", "target": 2, "edges": [
+      {"from": 0, "to": 1, "file": "base-full"},
+      {"from": 1, "to": 2, "file": "inc-a"},
+      {"from": 0, "to": 2, "file": "side-1"}
+    ]},
+    {"name": "shard-B", "target": 2, "edges": [
+      {"from": 0, "to": 1, "file": "base-full"},
+      {"from": 1, "to": 2, "file": "inc-b"},
+      {"from": 0, "to": 2, "file": "side-2"}
+    ]}
+  ]
+}

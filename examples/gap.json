@@ -1,0 +1,10 @@
+{
+  "files": [
+    {"id": "seg-0-1", "bytes": 30, "intact": true}
+  ],
+  "shards": [
+    {"name": "shard-A", "target": 3, "edges": [
+      {"from": 0, "to": 1, "file": "seg-0-1"}
+    ]}
+  ]
+}

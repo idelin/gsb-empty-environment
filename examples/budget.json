@@ -1,0 +1,24 @@
+{
+  "files": [
+    {"id": "f0", "bytes": "9223372036854775808", "intact": true},
+    {"id": "f1", "bytes": 8, "intact": true},
+    {"id": "f2", "bytes": 3, "intact": true},
+    {"id": "f3", "bytes": 5, "intact": true},
+    {"id": "f4", "bytes": 2, "intact": true}
+  ],
+  "shards": [
+    {"name": "s0", "target": 1, "edges": [
+      {"from": 0, "to": 1, "file": "f1"},
+      {"from": 0, "to": 1, "file": "f2"},
+      {"from": 0, "to": 1, "file": "f3"}
+    ]},
+    {"name": "s1", "target": 1, "edges": [
+      {"from": 0, "to": 1, "file": "f2"},
+      {"from": 0, "to": 1, "file": "f4"}
+    ]},
+    {"name": "s2", "target": 1, "edges": [
+      {"from": 0, "to": 1, "file": "f3"},
+      {"from": 0, "to": 1, "file": "f4"}
+    ]}
+  ]
+}
