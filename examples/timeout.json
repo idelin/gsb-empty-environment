@@ -1,0 +1,33 @@
+{
+  "name": "lock wait timeout: abort vs continue",
+  "tasks": [
+    {
+      "id": "T1",
+      "priority": 1,
+      "segments": [
+        { "type": "acquire", "lock": "A" },
+        { "type": "compute", "duration": 6 },
+        { "type": "release", "lock": "A" }
+      ]
+    },
+    {
+      "id": "T2",
+      "priority": 5,
+      "releaseTime": 1,
+      "segments": [
+        { "type": "acquire", "lock": "A", "timeout": 3, "onTimeout": "abort" },
+        { "type": "compute", "duration": 1 },
+        { "type": "release", "lock": "A" }
+      ]
+    },
+    {
+      "id": "T3",
+      "priority": 2,
+      "releaseTime": 1,
+      "segments": [
+        { "type": "acquire", "lock": "A", "timeout": 3, "onTimeout": "continue" },
+        { "type": "compute", "duration": 1 }
+      ]
+    }
+  ]
+}

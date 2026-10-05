@@ -1,0 +1,30 @@
+{
+  "name": "lock wait cycle (AB-BA deadlock)",
+  "tasks": [
+    {
+      "id": "T1",
+      "priority": 2,
+      "segments": [
+        { "type": "acquire", "lock": "A" },
+        { "type": "compute", "duration": 2 },
+        { "type": "acquire", "lock": "B" },
+        { "type": "compute", "duration": 1 },
+        { "type": "release", "lock": "B" },
+        { "type": "release", "lock": "A" }
+      ]
+    },
+    {
+      "id": "T2",
+      "priority": 3,
+      "releaseTime": 1,
+      "segments": [
+        { "type": "acquire", "lock": "B" },
+        { "type": "compute", "duration": 2 },
+        { "type": "acquire", "lock": "A" },
+        { "type": "compute", "duration": 1 },
+        { "type": "release", "lock": "A" },
+        { "type": "release", "lock": "B" }
+      ]
+    }
+  ]
+}

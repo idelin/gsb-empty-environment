@@ -1,0 +1,37 @@
+{
+  "name": "transitive priority inheritance (TH -> TL -> TM)",
+  "tasks": [
+    {
+      "id": "TL",
+      "priority": 1,
+      "segments": [
+        { "type": "acquire", "lock": "A" },
+        { "type": "compute", "duration": 2 },
+        { "type": "acquire", "lock": "B" },
+        { "type": "compute", "duration": 1 },
+        { "type": "release", "lock": "B" },
+        { "type": "release", "lock": "A" }
+      ]
+    },
+    {
+      "id": "TM",
+      "priority": 2,
+      "releaseTime": 1,
+      "segments": [
+        { "type": "acquire", "lock": "B" },
+        { "type": "compute", "duration": 4 },
+        { "type": "release", "lock": "B" }
+      ]
+    },
+    {
+      "id": "TH",
+      "priority": 3,
+      "releaseTime": 2,
+      "segments": [
+        { "type": "acquire", "lock": "A" },
+        { "type": "compute", "duration": 1 },
+        { "type": "release", "lock": "A" }
+      ]
+    }
+  ]
+}

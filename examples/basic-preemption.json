@@ -1,0 +1,22 @@
+{
+  "name": "basic preemption + idle fast-forward",
+  "tasks": [
+    {
+      "id": "T1",
+      "priority": 1,
+      "segments": [{ "type": "compute", "duration": 3 }]
+    },
+    {
+      "id": "T2",
+      "priority": 5,
+      "releaseTime": 2,
+      "segments": [{ "type": "compute", "duration": 1 }]
+    },
+    {
+      "id": "T3",
+      "priority": 1,
+      "releaseTime": 8,
+      "segments": [{ "type": "compute", "duration": 1 }]
+    }
+  ]
+}
