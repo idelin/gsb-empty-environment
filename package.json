@@ -1,0 +1,14 @@
+{
+  "name": "token-move-diff",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Token-level diff with block-move detection, distinguishing moves from delete+insert.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "cli": "node --experimental-strip-types src/cli.ts"
+  }
+}
