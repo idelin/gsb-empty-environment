@@ -1,0 +1,14 @@
+{
+  "name": "gsb-random-stream",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "按树状测试名称派生子流的确定性随机流库",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  }
+}
