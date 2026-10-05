@@ -1,0 +1,10 @@
+{
+  "name": "metric-ledger",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "本地指标账本：整数分数精确算术 + 双时点季度考核查询",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'"
+  }
+}
