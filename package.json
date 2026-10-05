@@ -1,0 +1,11 @@
+{
+  "name": "gain-interpolator",
+  "version": "0.1.0",
+  "description": "Fixed-point multi-speaker gain interpolation with certified energy-error enclosure",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "bun test",
+    "demo": "bun examples/demo.ts"
+  }
+}
