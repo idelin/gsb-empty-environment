@@ -1,0 +1,11 @@
+{
+  "name": "callback-async-iterator",
+  "version": "1.0.0",
+  "description": "Adapt callback-based data sources into AsyncIterableIterator with bounded buffering and backpressure",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  },
+  "license": "ISC"
+}
