@@ -1,0 +1,15 @@
+{
+  "name": "plugin-loader",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/planner.test.ts test/loader.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
