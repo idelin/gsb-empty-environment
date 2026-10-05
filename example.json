@@ -1,0 +1,19 @@
+{
+  "resources": { "machine": 2, "technician": 1 },
+  "jobs": [
+    { "id": "cut",   "duration": 3, "demands": { "machine": 1 }, "deps": [] },
+    { "id": "bend",  "duration": 2, "demands": { "machine": 1 }, "deps": [] },
+    { "id": "weld",  "duration": 4, "demands": { "machine": 1, "technician": 1 }, "deps": ["cut", "bend"] },
+    { "id": "paint", "duration": 2, "demands": { "technician": 1 }, "deps": ["weld"] },
+    { "id": "pack",  "duration": 1, "demands": { "machine": 1 }, "deps": ["paint"] }
+  ],
+  "failures": [
+    {
+      "job": "weld",
+      "rework": [
+        { "id": "reweld",    "duration": 2, "demands": { "machine": 1 } },
+        { "id": "reinspect", "duration": 1, "demands": { "technician": 1 } }
+      ]
+    }
+  ]
+}
