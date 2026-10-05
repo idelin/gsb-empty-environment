@@ -1,0 +1,12 @@
+{
+  "name": "stream-escape-codec",
+  "version": "0.1.0",
+  "description": "Streaming escape codec: backslash/hex escapes and length-prefixed raw blocks, with per-byte input ranges.",
+  "main": "dist/src/codec.js",
+  "types": "dist/src/codec.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/codec.test.js"
+  },
+  "license": "MIT"
+}
