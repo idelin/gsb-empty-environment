@@ -1,0 +1,10 @@
+{
+  "applicants": [
+    {"name": "a1", "preferences": [["j1"], ["j2"]]},
+    {"name": "a2", "preferences": [["j1"]]}
+  ],
+  "jobs": [
+    {"name": "j1", "capacity": 1, "preferences": [["a1", "a2"]]},
+    {"name": "j2", "capacity": 1, "preferences": [["a1"]]}
+  ]
+}

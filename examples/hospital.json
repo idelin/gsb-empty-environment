@@ -1,0 +1,14 @@
+{
+  "applicants": [
+    {"name": "a1", "preferences": [["h1"], ["h2", "h3"]]},
+    {"name": "a2", "preferences": [["h1", "h2"]]},
+    {"name": "a3", "preferences": [["h2"], ["h1"]]},
+    {"name": "a4", "preferences": [["h3"], ["h2"]]},
+    {"name": "a5", "preferences": [["h1"], ["h3"]]}
+  ],
+  "jobs": [
+    {"name": "h1", "capacity": 2, "preferences": [["a1", "a3"], ["a2"], ["a5"]]},
+    {"name": "h2", "capacity": 1, "preferences": [["a3"], ["a1", "a4"]]},
+    {"name": "h3", "capacity": 1, "preferences": [["a4", "a5"], ["a1"]]}
+  ]
+}
