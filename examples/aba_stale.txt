@@ -1,0 +1,12 @@
+# ABA 反例：地址 a 被复用（代次 1 -> 2），
+# op4 却弹出旧代次 a:1 —— 栈顶实为 a:2。
+# 正确检查器判 NOT LINEARIZABLE；
+# --ignore-gen 朴素模式会误认旧地址而判合法。
+call 1 push a:1
+ret 1 ok
+call 2 pop
+ret 2 a:1
+call 3 push a:2
+ret 3 ok
+call 4 pop
+ret 4 a:1

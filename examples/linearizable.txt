@@ -1,0 +1,10 @@
+# 可线性化：含并发与 pending 操作
+call 1 push x:1
+ret 1 ok
+call 2 push y:1
+call 3 pop
+ret 3 y:1
+ret 2 ok
+call 4 pop
+ret 4 x:1
+call 5 pop

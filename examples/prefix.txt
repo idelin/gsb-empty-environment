@@ -1,0 +1,7 @@
+# 矛盾出现在历史中段：op2 弹出 y:1，但栈顶是 x:1
+call 1 push x:1
+ret 1 ok
+call 2 pop
+ret 2 y:1
+call 3 push z:1
+ret 3 ok

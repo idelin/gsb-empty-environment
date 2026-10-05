@@ -1,0 +1,4 @@
+# pending 的 push 允许“已生效”：op1 未返回，但 op2 弹出了它压入的值
+call 1 push b:1
+call 2 pop
+ret 2 b:1
