@@ -1,0 +1,11 @@
+{
+  "coverage_start": "2025-01-01",
+  "coverage_end": "2025-12-31",
+  "waiting_days": 30,
+  "deductible": { "scope": "aggregate", "amount": 20000 },
+  "limits": [
+    { "id": "per-event", "scope": "per_event", "amount": 100000 },
+    { "id": "medical-shared", "scope": "aggregate", "amount": 150000, "categories": ["outpatient", "inpatient"] },
+    { "id": "global", "scope": "aggregate", "amount": 500000 }
+  ]
+}

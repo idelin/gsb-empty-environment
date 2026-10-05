@@ -1,0 +1,7 @@
+[
+  { "id": "c1", "incident_date": "2025-03-10", "amount": 120000, "category": "outpatient" },
+  { "id": "c2", "incident_date": "2025-05-20", "amount": 250000, "category": "inpatient" },
+  { "id": "c3", "incident_date": "2025-01-10", "amount": 50000, "category": "outpatient" },
+  { "id": "c4", "incident_date": "2025-02-15", "amount": 80000, "category": "outpatient" },
+  { "id": "c5", "incident_date": "2025-07-01", "amount": 200000, "category": "dental" }
+]
