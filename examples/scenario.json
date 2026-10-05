@@ -1,0 +1,26 @@
+{
+  "positions": [
+    {"id": "guard", "requiredQuals": ["license"]},
+    {"id": "medic", "requiredQuals": ["cpr", "firstaid"]}
+  ],
+  "shifts": [
+    {"id": "amy-night", "employee": "amy", "position": "guard", "start": 1320, "end": 1800},
+    {"id": "amy-day", "employee": "amy", "position": "medic", "start": 300, "end": 700},
+    {"id": "ben-day", "employee": "ben", "position": "guard", "start": 0, "end": 1440}
+  ],
+  "events": [
+    {"seq": 1, "kind": "issue", "cert": "c1", "employee": "amy", "qual": "license", "start": 0, "end": 1440},
+    {"seq": 2, "kind": "issue", "cert": "c2", "employee": "amy", "qual": "license", "start": 1440, "end": 2000},
+    {"seq": 3, "kind": "issue", "cert": "c3", "employee": "amy", "qual": "cpr", "start": 0, "end": 700},
+    {"seq": 4, "kind": "issue", "cert": "c4", "employee": "amy", "qual": "firstaid", "start": 0, "end": 700},
+    {"seq": 5, "kind": "revoke", "cert": "c3", "employee": "amy", "qual": "cpr", "start": 400, "end": 500},
+    {"seq": 6, "kind": "revoke", "cert": "c3", "employee": "amy", "qual": "cpr", "start": 450, "end": 600},
+    {"seq": 7, "kind": "issue", "cert": "c5", "employee": "ben", "qual": "license", "start": 0, "end": 1440},
+    {"seq": 8, "kind": "issue", "cert": "c6", "employee": "amy", "qual": "cpr", "start": 400, "end": 600}
+  ],
+  "queries": [
+    {"name": "before-revocations-known", "asOfSeq": 5},
+    {"name": "revocations-known", "asOfSeq": 7},
+    {"name": "after-retroactive-reissue", "asOfSeq": 9}
+  ]
+}
