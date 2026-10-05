@@ -1,0 +1,13 @@
+{
+  "name": "cond-prune",
+  "version": "0.1.0",
+  "description": "Conditional source pruning with bidirectional line mapping",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "prune": "node src/cli.ts"
+  }
+}
