@@ -1,0 +1,10 @@
+{
+  "name": "release-planner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "多项目发布规划器：依赖同步发布、依赖环同批、容量约束下的最少批次",
+  "scripts": {
+    "cli": "node scripts/tsrun.js src/cli.ts",
+    "test": "node scripts/tsrun.js test/run-all.ts"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "capacity": 2,
+  "projects": [
+    { "id": "core", "deps": [] },
+    { "id": "auth", "deps": ["core"] },
+    { "id": "api", "deps": ["auth"] },
+    { "id": "web", "deps": ["api"] },
+    { "id": "report", "deps": [] },
+    { "id": "search", "deps": [] },
+    { "id": "cache", "deps": ["search"] },
+    { "id": "billing", "deps": ["ledger"] },
+    { "id": "ledger", "deps": ["billing"] }
+  ]
+}
