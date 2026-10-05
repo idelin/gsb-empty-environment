@@ -1,0 +1,16 @@
+{
+  "name": "split-brain-repro",
+  "nodes": ["A", "B", "C"],
+  "seed": 42,
+  "steps": [
+    { "type": "delay", "ms": 30 },
+    { "type": "packet-loss", "node": "C", "rate": 0.2 },
+    { "type": "delay", "ms": 120 },
+    { "type": "restart", "node": "C" },
+    { "type": "delay", "ms": 200 },
+    { "type": "packet-loss", "node": "C", "rate": 0 },
+    { "type": "packet-loss", "node": "A", "rate": 1.0 },
+    { "type": "delay", "ms": 200 },
+    { "type": "delay", "ms": 100 }
+  ]
+}
