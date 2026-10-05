@@ -1,0 +1,11 @@
+{
+  "name": "decomposition-checker",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "关系分解检查器：tableau chase 判无损连接 + 依赖保持检查",
+  "scripts": {
+    "test": "node tests/run.ts",
+    "check": "node src/cli.ts"
+  }
+}
