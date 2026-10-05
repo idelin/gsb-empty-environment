@@ -1,0 +1,13 @@
+{
+  "name": "batch-inventory-fefo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Event-sourced batch inventory with FEFO allocation, cancellable reservations, as-of historical stock and late-inbound safety",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
