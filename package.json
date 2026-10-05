@@ -1,0 +1,15 @@
+{
+  "name": "async-task-scope",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/task-scope.ts"
+  },
+  "scripts": {
+    "test": "node --test test/task-scope.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
