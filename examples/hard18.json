@@ -1,0 +1,13 @@
+{
+  "capacity": "120",
+  "positions": ["0", "10", "20", "30", "40", "50", "60"],
+  "safe_interval": ["24", "36"],
+  "items": [
+    {"id":"i01","weight":"58"}, {"id":"i02","weight":"44"}, {"id":"i03","weight":"37"},
+    {"id":"i04","weight":"31"}, {"id":"i05","weight":"26"}, {"id":"i06","weight":"23"},
+    {"id":"i07","weight":"19"}, {"id":"i08","weight":"17"}, {"id":"i09","weight":"14"},
+    {"id":"i10","weight":"12"}, {"id":"i11","weight":"11"}, {"id":"i12","weight":"9"},
+    {"id":"i13","weight":"8"},  {"id":"i14","weight":"7"},  {"id":"i15","weight":"6"},
+    {"id":"i16","weight":"5"},  {"id":"i17","weight":"4"},  {"id":"i18","weight":"3"}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "capacity": "100",
+  "positions": ["0", "10", "20", "30", "40", "50"],
+  "safe_interval": ["18", "32"],
+  "items": [
+    {"id": "engine",  "weight": "55"},
+    {"id": "crate-a", "weight": "30"},
+    {"id": "crate-b", "weight": "25"},
+    {"id": "crate-c", "weight": "20"},
+    {"id": "crate-d", "weight": "15"},
+    {"id": "tools",   "weight": "10"}
+  ]
+}
