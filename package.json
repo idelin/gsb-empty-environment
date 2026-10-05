@@ -1,0 +1,10 @@
+{
+  "name": "st-trajectory-index",
+  "version": "1.0.0",
+  "description": "Spatiotemporal BVH index for 3D linear trajectory segments with exact rational-time intersection",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
