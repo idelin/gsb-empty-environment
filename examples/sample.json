@@ -1,0 +1,19 @@
+{
+  "max_projects": 15,
+  "sources": [
+    {"id": "S1", "name": "教育专项基金", "amount": 100000, "categories": ["教育"], "expires": "2026-12-31"},
+    {"id": "S2", "name": "通用公益资金", "amount": 80000},
+    {"id": "S3", "name": "临期企业捐赠", "amount": 50000, "expires": "2026-09-30"},
+    {"id": "M1", "name": "基金会配捐池", "amount": 60000, "categories": ["教育", "医疗"], "expires": "2026-10-31",
+     "match": {"ratio": 1.0, "per_project_cap": 30000}},
+    {"id": "M2", "name": "企业配捐池", "amount": 40000, "categories": ["医疗"],
+     "match": {"ratio": 0.5, "per_project_cap": 20000}}
+  ],
+  "projects": [
+    {"id": "P1", "name": "乡村图书馆", "category": "教育", "goal": 90000, "benefit": 800, "deadline": "2026-11-30"},
+    {"id": "P2", "name": "流动医疗站", "category": "医疗", "goal": 70000, "benefit": 900, "deadline": "2026-10-15"},
+    {"id": "P3", "name": "净水工程", "category": "环保", "goal": 60000, "benefit": 700, "deadline": "2027-01-31"},
+    {"id": "P4", "name": "助学金计划", "category": "教育", "goal": 40000, "benefit": 500, "deadline": "2026-09-30"},
+    {"id": "P5", "name": "社区食堂", "category": "养老", "goal": 30000, "benefit": 200, "deadline": "2026-12-31"}
+  ]
+}
