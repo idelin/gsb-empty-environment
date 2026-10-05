@@ -1,0 +1,13 @@
+{
+  "name": "tx-state-container",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Transactional, versioned, branchable JSON state container with a node-accurate memory ledger",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/store.test.ts"
+  }
+}

@@ -1,0 +1,3255 @@
+{
+  "summary": {
+    "seed": 7,
+    "ops": 466,
+    "commits": 103,
+    "notifications": 103,
+    "crossChecks": 3547,
+    "ledger": {
+      "capacity": 150,
+      "retained": 150,
+      "allocatedTotal": 449,
+      "freedTotal": 299,
+      "liveCommits": 35,
+      "evictedCommits": 69,
+      "pinnedVersions": [],
+      "headVersion": 103,
+      "lastVersion": 103
+    }
+  },
+  "log": [
+    {
+      "op": "begin",
+      "tx": "tx0",
+      "base": 0
+    },
+    {
+      "op": "set",
+      "tx": "tx0",
+      "path": [
+        "cart"
+      ],
+      "value": null
+    },
+    {
+      "op": "delete",
+      "tx": "tx0",
+      "path": [
+        "inventory",
+        "stock"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx0",
+      "path": [
+        "cart"
+      ],
+      "value": [
+        {
+          "session1": 481,
+          "cart2": 178
+        }
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx0",
+      "path": [
+        "cart",
+        0,
+        "session1"
+      ],
+      "value": []
+    },
+    {
+      "op": "commit",
+      "tx": "tx0"
+    },
+    {
+      "op": "begin",
+      "tx": "tx1",
+      "base": 1
+    },
+    {
+      "op": "set",
+      "tx": "tx1",
+      "path": [
+        "cart",
+        0,
+        "cart2"
+      ],
+      "value": {}
+    },
+    {
+      "op": "set",
+      "tx": "tx1",
+      "path": [
+        "cart",
+        0
+      ],
+      "value": [
+        null,
+        {
+          "session2": null
+        }
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx1",
+      "path": [
+        "a"
+      ],
+      "value": 178
+    },
+    {
+      "op": "commit",
+      "tx": "tx1"
+    },
+    {
+      "op": "snapshot",
+      "id": "snap0"
+    },
+    {
+      "op": "begin",
+      "tx": "tx2",
+      "base": 2
+    },
+    {
+      "op": "set",
+      "tx": "tx2",
+      "path": [
+        "meta",
+        "n1"
+      ],
+      "value": [
+        [
+          true
+        ],
+        {}
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx2"
+    },
+    {
+      "op": "begin",
+      "tx": "tx3",
+      "base": 3
+    },
+    {
+      "op": "delete",
+      "tx": "tx3",
+      "path": [
+        "cart"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx3",
+      "path": [
+        "items",
+        "n2"
+      ],
+      "value": {
+        "ui1": true
+      }
+    },
+    {
+      "op": "set",
+      "tx": "tx3",
+      "path": [
+        "meta",
+        "n1",
+        0
+      ],
+      "value": "s33"
+    },
+    {
+      "op": "commit",
+      "tx": "tx3"
+    },
+    {
+      "op": "release",
+      "id": "snap0"
+    },
+    {
+      "op": "begin",
+      "tx": "tx4",
+      "base": 4
+    },
+    {
+      "op": "set",
+      "tx": "tx4",
+      "path": [
+        "inventory"
+      ],
+      "value": []
+    },
+    {
+      "op": "set",
+      "tx": "tx4",
+      "path": [
+        "a"
+      ],
+      "value": "s43"
+    },
+    {
+      "op": "set",
+      "tx": "tx4",
+      "path": [
+        "inventory"
+      ],
+      "value": {
+        "meta2": true,
+        "meta0": {
+          "b1": null,
+          "cart0": true
+        }
+      }
+    },
+    {
+      "op": "set",
+      "tx": "tx4",
+      "path": [
+        "items",
+        "n2",
+        "ui1"
+      ],
+      "value": "s50"
+    },
+    {
+      "op": "commit",
+      "tx": "tx4"
+    },
+    {
+      "op": "begin",
+      "tx": "tx5",
+      "base": 5
+    },
+    {
+      "op": "delete",
+      "tx": "tx5",
+      "path": [
+        "meta",
+        "n1",
+        0
+      ]
+    },
+    {
+      "op": "delete",
+      "tx": "tx5",
+      "path": [
+        "a"
+      ]
+    },
+    {
+      "op": "delete",
+      "tx": "tx5",
+      "path": [
+        "items"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx5"
+    },
+    {
+      "op": "begin",
+      "tx": "tx6",
+      "base": 6
+    },
+    {
+      "op": "delete",
+      "tx": "tx6",
+      "path": [
+        "meta",
+        "n1",
+        0
+      ]
+    },
+    {
+      "op": "delete",
+      "tx": "tx6",
+      "path": [
+        "inventory",
+        "meta0",
+        "cart0"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx6"
+    },
+    {
+      "op": "begin",
+      "tx": "tx7",
+      "base": 7
+    },
+    {
+      "op": "set",
+      "tx": "tx7",
+      "path": [
+        "inventory",
+        "meta0"
+      ],
+      "value": 682
+    },
+    {
+      "op": "set",
+      "tx": "tx7",
+      "path": [
+        "meta"
+      ],
+      "value": [
+        {
+          "ui0": true
+        }
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx7",
+      "path": [
+        "inventory"
+      ],
+      "value": [
+        true,
+        {}
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx7",
+      "path": [
+        "inventory"
+      ],
+      "value": {}
+    },
+    {
+      "op": "commit",
+      "tx": "tx7"
+    },
+    {
+      "op": "begin",
+      "tx": "tx8",
+      "base": 8
+    },
+    {
+      "op": "set",
+      "tx": "tx8",
+      "path": [
+        "meta",
+        0
+      ],
+      "value": {
+        "cart2": []
+      }
+    },
+    {
+      "op": "commit",
+      "tx": "tx8"
+    },
+    {
+      "op": "begin",
+      "tx": "tx9",
+      "base": 9
+    },
+    {
+      "op": "set",
+      "tx": "tx9",
+      "path": [
+        "meta",
+        0
+      ],
+      "value": {
+        "a0": null,
+        "meta1": {
+          "b0": null,
+          "cart2": 868
+        }
+      }
+    },
+    {
+      "op": "set",
+      "tx": "tx9",
+      "path": [
+        "inventory"
+      ],
+      "value": false
+    },
+    {
+      "op": "set",
+      "tx": "tx9",
+      "path": [
+        "meta",
+        0,
+        "meta1",
+        "cart2"
+      ],
+      "value": true
+    },
+    {
+      "op": "commit",
+      "tx": "tx9"
+    },
+    {
+      "op": "begin",
+      "tx": "tx10",
+      "base": 10
+    },
+    {
+      "op": "set",
+      "tx": "tx10",
+      "path": [
+        "meta",
+        0,
+        "meta1",
+        "b0"
+      ],
+      "value": {
+        "ui0": 714
+      }
+    },
+    {
+      "op": "set",
+      "tx": "tx10",
+      "path": [
+        "inventory"
+      ],
+      "value": [
+        [
+          false,
+          337
+        ]
+      ]
+    },
+    {
+      "op": "delete",
+      "tx": "tx10",
+      "path": [
+        "inventory",
+        0,
+        1
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx10",
+      "path": [
+        "meta",
+        0,
+        "meta1"
+      ],
+      "value": false
+    },
+    {
+      "op": "commit",
+      "tx": "tx10"
+    },
+    {
+      "op": "begin",
+      "tx": "tx11",
+      "base": 11
+    },
+    {
+      "op": "set",
+      "tx": "tx11",
+      "path": [
+        "inventory"
+      ],
+      "value": 151
+    },
+    {
+      "op": "commit",
+      "tx": "tx11"
+    },
+    {
+      "op": "begin",
+      "tx": "tx12",
+      "base": 12
+    },
+    {
+      "op": "delete",
+      "tx": "tx12",
+      "path": [
+        "meta",
+        0
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx12",
+      "path": [
+        "meta"
+      ],
+      "value": "s7"
+    },
+    {
+      "op": "commit",
+      "tx": "tx12"
+    },
+    {
+      "op": "begin",
+      "tx": "tx13",
+      "base": 13
+    },
+    {
+      "op": "set",
+      "tx": "tx13",
+      "path": [
+        "inventory"
+      ],
+      "value": false
+    },
+    {
+      "op": "set",
+      "tx": "tx13",
+      "path": [
+        "inventory"
+      ],
+      "value": "s85"
+    },
+    {
+      "op": "commit",
+      "tx": "tx13"
+    },
+    {
+      "op": "begin",
+      "tx": "tx14",
+      "base": 14
+    },
+    {
+      "op": "set",
+      "tx": "tx14",
+      "path": [
+        "meta"
+      ],
+      "value": [
+        "s93"
+      ]
+    },
+    {
+      "op": "delete",
+      "tx": "tx14",
+      "path": [
+        "meta"
+      ]
+    },
+    {
+      "op": "delete",
+      "tx": "tx14",
+      "path": [
+        "inventory"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx14",
+      "path": [
+        "ui",
+        "n3"
+      ],
+      "value": 774
+    },
+    {
+      "op": "commit",
+      "tx": "tx14"
+    },
+    {
+      "op": "begin",
+      "tx": "tx15",
+      "base": 15
+    },
+    {
+      "op": "set",
+      "tx": "tx15",
+      "path": [
+        "inventory"
+      ],
+      "value": [
+        null
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx15",
+      "path": [
+        "inventory"
+      ],
+      "value": false
+    },
+    {
+      "op": "commit",
+      "tx": "tx15"
+    },
+    {
+      "op": "snapshot",
+      "id": "snap1"
+    },
+    {
+      "op": "begin",
+      "tx": "tx16",
+      "base": 16
+    },
+    {
+      "op": "set",
+      "tx": "tx16",
+      "path": [
+        "ui"
+      ],
+      "value": [
+        [
+          null,
+          null
+        ]
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx16",
+      "path": [
+        "session",
+        "n0"
+      ],
+      "value": {
+        "ui1": [
+          "s51"
+        ],
+        "meta0": "s92"
+      }
+    },
+    {
+      "op": "commit",
+      "tx": "tx16"
+    },
+    {
+      "op": "begin",
+      "tx": "tx17",
+      "base": 17
+    },
+    {
+      "op": "delete",
+      "tx": "tx17",
+      "path": [
+        "inventory"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx17",
+      "path": [
+        "ui",
+        0
+      ],
+      "value": "s56"
+    },
+    {
+      "op": "commit",
+      "tx": "tx17"
+    },
+    {
+      "op": "release",
+      "id": "snap1"
+    },
+    {
+      "op": "begin",
+      "tx": "tx18",
+      "base": 18
+    },
+    {
+      "op": "set",
+      "tx": "tx18",
+      "path": [
+        "ui",
+        0
+      ],
+      "value": "s52"
+    },
+    {
+      "op": "commit",
+      "tx": "tx18"
+    },
+    {
+      "op": "begin",
+      "tx": "tx19",
+      "base": 19
+    },
+    {
+      "op": "delete",
+      "tx": "tx19",
+      "path": [
+        "session"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx19"
+    },
+    {
+      "op": "begin",
+      "tx": "tx20",
+      "base": 20
+    },
+    {
+      "op": "set",
+      "tx": "tx20",
+      "path": [
+        "ui"
+      ],
+      "value": [
+        []
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx20"
+    },
+    {
+      "op": "begin",
+      "tx": "tx21",
+      "base": 21
+    },
+    {
+      "op": "set",
+      "tx": "tx21",
+      "path": [
+        "ui",
+        0
+      ],
+      "value": true
+    },
+    {
+      "op": "delete",
+      "tx": "tx21",
+      "path": [
+        "ui"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx21"
+    },
+    {
+      "op": "snapshot",
+      "id": "snap2"
+    },
+    {
+      "op": "snapshot",
+      "id": "snap3"
+    },
+    {
+      "op": "release",
+      "id": "snap2"
+    },
+    {
+      "op": "begin",
+      "tx": "tx22",
+      "base": 22
+    },
+    {
+      "op": "set",
+      "tx": "tx22",
+      "path": [
+        "meta",
+        "n0"
+      ],
+      "value": []
+    },
+    {
+      "op": "delete",
+      "tx": "tx22",
+      "path": [
+        "meta",
+        "n0"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx22"
+    },
+    {
+      "op": "begin",
+      "tx": "tx23",
+      "base": 22
+    },
+    {
+      "op": "set",
+      "tx": "tx23",
+      "path": [
+        "items",
+        "n2"
+      ],
+      "value": [
+        {
+          "b2": null,
+          "cart0": false
+        },
+        [
+          115,
+          null
+        ]
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx23",
+      "path": [
+        "meta"
+      ],
+      "value": {
+        "session1": {}
+      }
+    },
+    {
+      "op": "commit",
+      "tx": "tx23"
+    },
+    {
+      "op": "begin",
+      "tx": "tx24",
+      "base": 24
+    },
+    {
+      "op": "delete",
+      "tx": "tx24",
+      "path": [
+        "items",
+        "n2",
+        1,
+        1
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx24",
+      "path": [
+        "items"
+      ],
+      "value": [
+        [
+          607,
+          292
+        ],
+        null
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx24",
+      "path": [
+        "meta"
+      ],
+      "value": 660
+    },
+    {
+      "op": "delete",
+      "tx": "tx24",
+      "path": [
+        "items",
+        0,
+        1
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx24"
+    },
+    {
+      "op": "snapshot",
+      "id": "snap4"
+    },
+    {
+      "op": "begin",
+      "tx": "tx25",
+      "base": 25
+    },
+    {
+      "op": "set",
+      "tx": "tx25",
+      "path": [
+        "meta"
+      ],
+      "value": {
+        "items0": {
+          "b0": "s7",
+          "meta0": 436
+        }
+      }
+    },
+    {
+      "op": "set",
+      "tx": "tx25",
+      "path": [
+        "items"
+      ],
+      "value": null
+    },
+    {
+      "op": "commit",
+      "tx": "tx25"
+    },
+    {
+      "op": "begin",
+      "tx": "tx26",
+      "base": 26
+    },
+    {
+      "op": "set",
+      "tx": "tx26",
+      "path": [
+        "cart",
+        "n3"
+      ],
+      "value": 642
+    },
+    {
+      "op": "set",
+      "tx": "tx26",
+      "path": [
+        "cart"
+      ],
+      "value": "s36"
+    },
+    {
+      "op": "set",
+      "tx": "tx26",
+      "path": [
+        "meta",
+        "items0",
+        "b0"
+      ],
+      "value": []
+    },
+    {
+      "op": "delete",
+      "tx": "tx26",
+      "path": [
+        "cart"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx26"
+    },
+    {
+      "op": "begin",
+      "tx": "tx27",
+      "base": 25
+    },
+    {
+      "op": "set",
+      "tx": "tx27",
+      "path": [
+        "meta"
+      ],
+      "value": [
+        true
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx27"
+    },
+    {
+      "op": "release",
+      "id": "snap3"
+    },
+    {
+      "op": "snapshot",
+      "id": "snap5"
+    },
+    {
+      "op": "begin",
+      "tx": "tx28",
+      "base": 28
+    },
+    {
+      "op": "set",
+      "tx": "tx28",
+      "path": [
+        "a"
+      ],
+      "value": {
+        "session2": [
+          null
+        ]
+      }
+    },
+    {
+      "op": "commit",
+      "tx": "tx28"
+    },
+    {
+      "op": "begin",
+      "tx": "tx29",
+      "base": 29
+    },
+    {
+      "op": "set",
+      "tx": "tx29",
+      "path": [
+        "items",
+        1
+      ],
+      "value": 102
+    },
+    {
+      "op": "set",
+      "tx": "tx29",
+      "path": [
+        "inventory"
+      ],
+      "value": {
+        "session2": "s65"
+      }
+    },
+    {
+      "op": "set",
+      "tx": "tx29",
+      "path": [
+        "items",
+        1
+      ],
+      "value": null
+    },
+    {
+      "op": "set",
+      "tx": "tx29",
+      "path": [
+        "inventory",
+        "session2"
+      ],
+      "value": []
+    },
+    {
+      "op": "commit",
+      "tx": "tx29"
+    },
+    {
+      "op": "begin",
+      "tx": "tx30",
+      "base": 30
+    },
+    {
+      "op": "delete",
+      "tx": "tx30",
+      "path": [
+        "a"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx30"
+    },
+    {
+      "op": "begin",
+      "tx": "tx31",
+      "base": 31
+    },
+    {
+      "op": "delete",
+      "tx": "tx31",
+      "path": [
+        "meta",
+        0
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx31",
+      "path": [
+        "cart",
+        "n3"
+      ],
+      "value": true
+    },
+    {
+      "op": "delete",
+      "tx": "tx31",
+      "path": [
+        "inventory"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx31",
+      "path": [
+        "items"
+      ],
+      "value": []
+    },
+    {
+      "op": "commit",
+      "tx": "tx31"
+    },
+    {
+      "op": "snapshot",
+      "id": "snap6"
+    },
+    {
+      "op": "begin",
+      "tx": "tx32",
+      "base": 32
+    },
+    {
+      "op": "delete",
+      "tx": "tx32",
+      "path": [
+        "items"
+      ]
+    },
+    {
+      "op": "delete",
+      "tx": "tx32",
+      "path": [
+        "meta"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx32",
+      "path": [
+        "b"
+      ],
+      "value": null
+    },
+    {
+      "op": "commit",
+      "tx": "tx32"
+    },
+    {
+      "op": "begin",
+      "tx": "tx33",
+      "base": 25
+    },
+    {
+      "op": "delete",
+      "tx": "tx33",
+      "path": [
+        "items",
+        0,
+        0
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx33"
+    },
+    {
+      "op": "begin",
+      "tx": "tx34",
+      "base": 34
+    },
+    {
+      "op": "set",
+      "tx": "tx34",
+      "path": [
+        "a"
+      ],
+      "value": null
+    },
+    {
+      "op": "commit",
+      "tx": "tx34"
+    },
+    {
+      "op": "begin",
+      "tx": "tx35",
+      "base": 32
+    },
+    {
+      "op": "set",
+      "tx": "tx35",
+      "path": [
+        "meta"
+      ],
+      "value": [
+        false,
+        970
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx35",
+      "path": [
+        "cart"
+      ],
+      "value": "s80"
+    },
+    {
+      "op": "set",
+      "tx": "tx35",
+      "path": [
+        "items"
+      ],
+      "value": [
+        728,
+        []
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx35",
+      "path": [
+        "cart"
+      ],
+      "value": 455
+    },
+    {
+      "op": "commit",
+      "tx": "tx35"
+    },
+    {
+      "op": "begin",
+      "tx": "tx36",
+      "base": 36
+    },
+    {
+      "op": "set",
+      "tx": "tx36",
+      "path": [
+        "items"
+      ],
+      "value": [
+        null
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx36",
+      "path": [
+        "items"
+      ],
+      "value": []
+    },
+    {
+      "op": "commit",
+      "tx": "tx36"
+    },
+    {
+      "op": "begin",
+      "tx": "tx37",
+      "base": 32
+    },
+    {
+      "op": "set",
+      "tx": "tx37",
+      "path": [
+        "inventory"
+      ],
+      "value": 593
+    },
+    {
+      "op": "commit",
+      "tx": "tx37"
+    },
+    {
+      "op": "begin",
+      "tx": "tx38",
+      "base": 38
+    },
+    {
+      "op": "set",
+      "tx": "tx38",
+      "path": [
+        "meta"
+      ],
+      "value": [
+        "s92"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx38",
+      "path": [
+        "meta"
+      ],
+      "value": {
+        "session1": null
+      }
+    },
+    {
+      "op": "delete",
+      "tx": "tx38",
+      "path": [
+        "meta",
+        "session1"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx38",
+      "path": [
+        "meta"
+      ],
+      "value": []
+    },
+    {
+      "op": "commit",
+      "tx": "tx38"
+    },
+    {
+      "op": "begin",
+      "tx": "tx39",
+      "base": 39
+    },
+    {
+      "op": "set",
+      "tx": "tx39",
+      "path": [
+        "cart"
+      ],
+      "value": [
+        [
+          740,
+          null
+        ],
+        "s80"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx39"
+    },
+    {
+      "op": "begin",
+      "tx": "tx40",
+      "base": 40
+    },
+    {
+      "op": "set",
+      "tx": "tx40",
+      "path": [
+        "meta"
+      ],
+      "value": true
+    },
+    {
+      "op": "set",
+      "tx": "tx40",
+      "path": [
+        "b"
+      ],
+      "value": [
+        null
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx40",
+      "path": [
+        "items"
+      ],
+      "value": []
+    },
+    {
+      "op": "set",
+      "tx": "tx40",
+      "path": [
+        "items"
+      ],
+      "value": {
+        "b2": []
+      }
+    },
+    {
+      "op": "commit",
+      "tx": "tx40"
+    },
+    {
+      "op": "begin",
+      "tx": "tx41",
+      "base": 41
+    },
+    {
+      "op": "set",
+      "tx": "tx41",
+      "path": [
+        "items"
+      ],
+      "value": "s0"
+    },
+    {
+      "op": "commit",
+      "tx": "tx41"
+    },
+    {
+      "op": "release",
+      "id": "snap4"
+    },
+    {
+      "op": "begin",
+      "tx": "tx42",
+      "base": 42
+    },
+    {
+      "op": "set",
+      "tx": "tx42",
+      "path": [
+        "cart",
+        1
+      ],
+      "value": null
+    },
+    {
+      "op": "set",
+      "tx": "tx42",
+      "path": [
+        "b"
+      ],
+      "value": true
+    },
+    {
+      "op": "commit",
+      "tx": "tx42"
+    },
+    {
+      "op": "begin",
+      "tx": "tx43",
+      "base": 28
+    },
+    {
+      "op": "delete",
+      "tx": "tx43",
+      "path": [
+        "meta"
+      ]
+    },
+    {
+      "op": "delete",
+      "tx": "tx43",
+      "path": [
+        "items",
+        1
+      ]
+    },
+    {
+      "op": "delete",
+      "tx": "tx43",
+      "path": [
+        "items",
+        0,
+        0
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx43",
+      "path": [
+        "items"
+      ],
+      "value": [
+        [
+          "s43",
+          false
+        ],
+        "s34"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx43"
+    },
+    {
+      "op": "snapshot",
+      "id": "snap7"
+    },
+    {
+      "op": "begin",
+      "tx": "tx44",
+      "base": 44
+    },
+    {
+      "op": "set",
+      "tx": "tx44",
+      "path": [
+        "items"
+      ],
+      "value": 797
+    },
+    {
+      "op": "set",
+      "tx": "tx44",
+      "path": [
+        "items"
+      ],
+      "value": 373
+    },
+    {
+      "op": "commit",
+      "tx": "tx44"
+    },
+    {
+      "op": "begin",
+      "tx": "tx45",
+      "base": 45
+    },
+    {
+      "op": "set",
+      "tx": "tx45",
+      "path": [
+        "inventory"
+      ],
+      "value": []
+    },
+    {
+      "op": "commit",
+      "tx": "tx45"
+    },
+    {
+      "op": "begin",
+      "tx": "tx46",
+      "base": 28
+    },
+    {
+      "op": "set",
+      "tx": "tx46",
+      "path": [
+        "meta"
+      ],
+      "value": [
+        null,
+        "s36"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx46",
+      "path": [
+        "items"
+      ],
+      "value": 196
+    },
+    {
+      "op": "set",
+      "tx": "tx46",
+      "path": [
+        "meta"
+      ],
+      "value": 741
+    },
+    {
+      "op": "commit",
+      "tx": "tx46"
+    },
+    {
+      "op": "begin",
+      "tx": "tx47",
+      "base": 32
+    },
+    {
+      "op": "delete",
+      "tx": "tx47",
+      "path": [
+        "items"
+      ]
+    },
+    {
+      "op": "delete",
+      "tx": "tx47",
+      "path": [
+        "cart",
+        "n3"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx47"
+    },
+    {
+      "op": "begin",
+      "tx": "tx48",
+      "base": 48
+    },
+    {
+      "op": "set",
+      "tx": "tx48",
+      "path": [
+        "cart"
+      ],
+      "value": null
+    },
+    {
+      "op": "commit",
+      "tx": "tx48"
+    },
+    {
+      "op": "begin",
+      "tx": "tx49",
+      "base": 49
+    },
+    {
+      "op": "set",
+      "tx": "tx49",
+      "path": [
+        "ui",
+        "n0"
+      ],
+      "value": {}
+    },
+    {
+      "op": "set",
+      "tx": "tx49",
+      "path": [
+        "ui"
+      ],
+      "value": "s98"
+    },
+    {
+      "op": "commit",
+      "tx": "tx49"
+    },
+    {
+      "op": "begin",
+      "tx": "tx50",
+      "base": 50
+    },
+    {
+      "op": "set",
+      "tx": "tx50",
+      "path": [
+        "b",
+        "n0"
+      ],
+      "value": true
+    },
+    {
+      "op": "set",
+      "tx": "tx50",
+      "path": [
+        "cart"
+      ],
+      "value": [
+        [
+          "s61"
+        ]
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx50"
+    },
+    {
+      "op": "begin",
+      "tx": "tx51",
+      "base": 51
+    },
+    {
+      "op": "delete",
+      "tx": "tx51",
+      "path": [
+        "ui"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx51",
+      "path": [
+        "a",
+        "n3"
+      ],
+      "value": null
+    },
+    {
+      "op": "commit",
+      "tx": "tx51"
+    },
+    {
+      "op": "begin",
+      "tx": "tx52",
+      "base": 32
+    },
+    {
+      "op": "set",
+      "tx": "tx52",
+      "path": [
+        "items"
+      ],
+      "value": 76
+    },
+    {
+      "op": "set",
+      "tx": "tx52",
+      "path": [
+        "session"
+      ],
+      "value": {
+        "items0": null
+      }
+    },
+    {
+      "op": "delete",
+      "tx": "tx52",
+      "path": [
+        "items"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx52",
+      "path": [
+        "meta"
+      ],
+      "value": true
+    },
+    {
+      "op": "commit",
+      "tx": "tx52"
+    },
+    {
+      "op": "begin",
+      "tx": "tx53",
+      "base": 53
+    },
+    {
+      "op": "set",
+      "tx": "tx53",
+      "path": [
+        "cart",
+        "n3"
+      ],
+      "value": [
+        [],
+        null
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx53",
+      "path": [
+        "meta"
+      ],
+      "value": 457
+    },
+    {
+      "op": "commit",
+      "tx": "tx53"
+    },
+    {
+      "op": "begin",
+      "tx": "tx54",
+      "base": 54
+    },
+    {
+      "op": "delete",
+      "tx": "tx54",
+      "path": [
+        "cart",
+        "n3",
+        1
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx54",
+      "path": [
+        "session",
+        "items0"
+      ],
+      "value": [
+        [
+          true,
+          true
+        ]
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx54"
+    },
+    {
+      "op": "begin",
+      "tx": "tx55",
+      "base": 28
+    },
+    {
+      "op": "delete",
+      "tx": "tx55",
+      "path": [
+        "items",
+        1
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx55",
+      "path": [
+        "items",
+        0
+      ],
+      "value": null
+    },
+    {
+      "op": "commit",
+      "tx": "tx55"
+    },
+    {
+      "op": "begin",
+      "tx": "tx56",
+      "base": 56
+    },
+    {
+      "op": "set",
+      "tx": "tx56",
+      "path": [
+        "items",
+        0
+      ],
+      "value": false
+    },
+    {
+      "op": "set",
+      "tx": "tx56",
+      "path": [
+        "items",
+        0
+      ],
+      "value": {}
+    },
+    {
+      "op": "set",
+      "tx": "tx56",
+      "path": [
+        "meta",
+        0
+      ],
+      "value": [
+        null
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx56"
+    },
+    {
+      "op": "begin",
+      "tx": "tx57",
+      "base": 57
+    },
+    {
+      "op": "delete",
+      "tx": "tx57",
+      "path": [
+        "items"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx57",
+      "path": [
+        "meta"
+      ],
+      "value": null
+    },
+    {
+      "op": "commit",
+      "tx": "tx57"
+    },
+    {
+      "op": "snapshot",
+      "id": "snap8"
+    },
+    {
+      "op": "begin",
+      "tx": "tx58",
+      "base": 58
+    },
+    {
+      "op": "set",
+      "tx": "tx58",
+      "path": [
+        "meta"
+      ],
+      "value": 72
+    },
+    {
+      "op": "set",
+      "tx": "tx58",
+      "path": [
+        "meta"
+      ],
+      "value": {
+        "cart1": {}
+      }
+    },
+    {
+      "op": "commit",
+      "tx": "tx58"
+    },
+    {
+      "op": "begin",
+      "tx": "tx59",
+      "base": 58
+    },
+    {
+      "op": "set",
+      "tx": "tx59",
+      "path": [
+        "a"
+      ],
+      "value": 572
+    },
+    {
+      "op": "commit",
+      "tx": "tx59"
+    },
+    {
+      "op": "begin",
+      "tx": "tx60",
+      "base": 60
+    },
+    {
+      "op": "set",
+      "tx": "tx60",
+      "path": [
+        "a"
+      ],
+      "value": {}
+    },
+    {
+      "op": "commit",
+      "tx": "tx60"
+    },
+    {
+      "op": "begin",
+      "tx": "tx61",
+      "base": 58
+    },
+    {
+      "op": "delete",
+      "tx": "tx61",
+      "path": [
+        "meta"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx61"
+    },
+    {
+      "op": "begin",
+      "tx": "tx62",
+      "base": 44
+    },
+    {
+      "op": "delete",
+      "tx": "tx62",
+      "path": [
+        "items"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx62",
+      "path": [
+        "cart",
+        "n2"
+      ],
+      "value": true
+    },
+    {
+      "op": "set",
+      "tx": "tx62",
+      "path": [
+        "cart",
+        "n2"
+      ],
+      "value": "s1"
+    },
+    {
+      "op": "commit",
+      "tx": "tx62"
+    },
+    {
+      "op": "release",
+      "id": "snap7"
+    },
+    {
+      "op": "begin",
+      "tx": "tx63",
+      "base": 63
+    },
+    {
+      "op": "set",
+      "tx": "tx63",
+      "path": [
+        "cart"
+      ],
+      "value": true
+    },
+    {
+      "op": "delete",
+      "tx": "tx63",
+      "path": [
+        "cart"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx63",
+      "path": [
+        "b"
+      ],
+      "value": [
+        "s38"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx63",
+      "path": [
+        "b",
+        0
+      ],
+      "value": {
+        "meta0": [
+          "s74"
+        ]
+      }
+    },
+    {
+      "op": "commit",
+      "tx": "tx63"
+    },
+    {
+      "op": "begin",
+      "tx": "tx64",
+      "base": 64
+    },
+    {
+      "op": "delete",
+      "tx": "tx64",
+      "path": [
+        "b",
+        0
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx64",
+      "path": [
+        "items",
+        "n3"
+      ],
+      "value": {}
+    },
+    {
+      "op": "set",
+      "tx": "tx64",
+      "path": [
+        "items"
+      ],
+      "value": {}
+    },
+    {
+      "op": "commit",
+      "tx": "tx64"
+    },
+    {
+      "op": "begin",
+      "tx": "tx65",
+      "base": 65
+    },
+    {
+      "op": "set",
+      "tx": "tx65",
+      "path": [
+        "items"
+      ],
+      "value": [
+        "s17",
+        "s57"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx65",
+      "path": [
+        "items",
+        1
+      ],
+      "value": 622
+    },
+    {
+      "op": "delete",
+      "tx": "tx65",
+      "path": [
+        "items"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx65",
+      "path": [
+        "b"
+      ],
+      "value": {
+        "ui1": [
+          null
+        ]
+      }
+    },
+    {
+      "op": "commit",
+      "tx": "tx65"
+    },
+    {
+      "op": "begin",
+      "tx": "tx66",
+      "base": 66
+    },
+    {
+      "op": "set",
+      "tx": "tx66",
+      "path": [
+        "b",
+        "ui1"
+      ],
+      "value": [
+        []
+      ]
+    },
+    {
+      "op": "delete",
+      "tx": "tx66",
+      "path": [
+        "b"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx66"
+    },
+    {
+      "op": "begin",
+      "tx": "tx67",
+      "base": 67
+    },
+    {
+      "op": "set",
+      "tx": "tx67",
+      "path": [
+        "inventory",
+        "n3"
+      ],
+      "value": []
+    },
+    {
+      "op": "set",
+      "tx": "tx67",
+      "path": [
+        "inventory"
+      ],
+      "value": false
+    },
+    {
+      "op": "set",
+      "tx": "tx67",
+      "path": [
+        "inventory"
+      ],
+      "value": [
+        null
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx67"
+    },
+    {
+      "op": "snapshot",
+      "id": "snap9"
+    },
+    {
+      "op": "begin",
+      "tx": "tx68",
+      "base": 68
+    },
+    {
+      "op": "set",
+      "tx": "tx68",
+      "path": [
+        "inventory"
+      ],
+      "value": {}
+    },
+    {
+      "op": "delete",
+      "tx": "tx68",
+      "path": [
+        "inventory"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx68",
+      "path": [
+        "inventory"
+      ],
+      "value": {}
+    },
+    {
+      "op": "set",
+      "tx": "tx68",
+      "path": [
+        "inventory"
+      ],
+      "value": {
+        "b0": "s44",
+        "session0": []
+      }
+    },
+    {
+      "op": "commit",
+      "tx": "tx68"
+    },
+    {
+      "op": "begin",
+      "tx": "tx69",
+      "base": 69
+    },
+    {
+      "op": "set",
+      "tx": "tx69",
+      "path": [
+        "b"
+      ],
+      "value": {}
+    },
+    {
+      "op": "set",
+      "tx": "tx69",
+      "path": [
+        "inventory"
+      ],
+      "value": null
+    },
+    {
+      "op": "commit",
+      "tx": "tx69"
+    },
+    {
+      "op": "begin",
+      "tx": "tx70",
+      "base": 70
+    },
+    {
+      "op": "set",
+      "tx": "tx70",
+      "path": [
+        "b"
+      ],
+      "value": {
+        "inventory2": {
+          "meta2": true,
+          "items2": 6
+        },
+        "a2": [
+          null,
+          true
+        ]
+      }
+    },
+    {
+      "op": "delete",
+      "tx": "tx70",
+      "path": [
+        "b",
+        "inventory2"
+      ]
+    },
+    {
+      "op": "delete",
+      "tx": "tx70",
+      "path": [
+        "b"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx70",
+      "path": [
+        "inventory"
+      ],
+      "value": []
+    },
+    {
+      "op": "commit",
+      "tx": "tx70"
+    },
+    {
+      "op": "begin",
+      "tx": "tx71",
+      "base": 71
+    },
+    {
+      "op": "set",
+      "tx": "tx71",
+      "path": [
+        "b"
+      ],
+      "value": [
+        {}
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx71",
+      "path": [
+        "inventory"
+      ],
+      "value": {
+        "b2": {
+          "inventory0": null,
+          "a2": null
+        }
+      }
+    },
+    {
+      "op": "set",
+      "tx": "tx71",
+      "path": [
+        "inventory"
+      ],
+      "value": []
+    },
+    {
+      "op": "commit",
+      "tx": "tx71"
+    },
+    {
+      "op": "begin",
+      "tx": "tx72",
+      "base": 28
+    },
+    {
+      "op": "set",
+      "tx": "tx72",
+      "path": [
+        "items",
+        0,
+        0
+      ],
+      "value": [
+        {
+          "ui1": null,
+          "meta2": false
+        }
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx72",
+      "path": [
+        "items",
+        0,
+        0,
+        0
+      ],
+      "value": [
+        "s86"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx72"
+    },
+    {
+      "op": "begin",
+      "tx": "tx73",
+      "base": 28
+    },
+    {
+      "op": "delete",
+      "tx": "tx73",
+      "path": [
+        "items"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx73"
+    },
+    {
+      "op": "begin",
+      "tx": "tx74",
+      "base": 74
+    },
+    {
+      "op": "set",
+      "tx": "tx74",
+      "path": [
+        "meta"
+      ],
+      "value": {
+        "ui2": []
+      }
+    },
+    {
+      "op": "set",
+      "tx": "tx74",
+      "path": [
+        "meta",
+        "ui2"
+      ],
+      "value": null
+    },
+    {
+      "op": "set",
+      "tx": "tx74",
+      "path": [
+        "meta"
+      ],
+      "value": 645
+    },
+    {
+      "op": "set",
+      "tx": "tx74",
+      "path": [
+        "meta"
+      ],
+      "value": {}
+    },
+    {
+      "op": "commit",
+      "tx": "tx74"
+    },
+    {
+      "op": "begin",
+      "tx": "tx75",
+      "base": 75
+    },
+    {
+      "op": "set",
+      "tx": "tx75",
+      "path": [
+        "b"
+      ],
+      "value": [
+        []
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx75"
+    },
+    {
+      "op": "begin",
+      "tx": "tx76",
+      "base": 76
+    },
+    {
+      "op": "set",
+      "tx": "tx76",
+      "path": [
+        "meta"
+      ],
+      "value": [
+        null,
+        false
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx76"
+    },
+    {
+      "op": "begin",
+      "tx": "tx77",
+      "base": 77
+    },
+    {
+      "op": "set",
+      "tx": "tx77",
+      "path": [
+        "meta",
+        0
+      ],
+      "value": [
+        [
+          "s17"
+        ]
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx77"
+    },
+    {
+      "op": "begin",
+      "tx": "tx78",
+      "base": 78
+    },
+    {
+      "op": "set",
+      "tx": "tx78",
+      "path": [
+        "cart",
+        "n0"
+      ],
+      "value": null
+    },
+    {
+      "op": "set",
+      "tx": "tx78",
+      "path": [
+        "meta",
+        1
+      ],
+      "value": {
+        "a0": {
+          "a2": "s41",
+          "a0": 785
+        }
+      }
+    },
+    {
+      "op": "set",
+      "tx": "tx78",
+      "path": [
+        "meta",
+        0
+      ],
+      "value": 28
+    },
+    {
+      "op": "commit",
+      "tx": "tx78"
+    },
+    {
+      "op": "begin",
+      "tx": "tx79",
+      "base": 79
+    },
+    {
+      "op": "set",
+      "tx": "tx79",
+      "path": [
+        "meta",
+        1,
+        "a0",
+        "a0"
+      ],
+      "value": "s9"
+    },
+    {
+      "op": "set",
+      "tx": "tx79",
+      "path": [
+        "a"
+      ],
+      "value": 766
+    },
+    {
+      "op": "commit",
+      "tx": "tx79"
+    },
+    {
+      "op": "begin",
+      "tx": "tx80",
+      "base": 80
+    },
+    {
+      "op": "delete",
+      "tx": "tx80",
+      "path": [
+        "a"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx80",
+      "path": [
+        "b",
+        0
+      ],
+      "value": 446
+    },
+    {
+      "op": "commit",
+      "tx": "tx80"
+    },
+    {
+      "op": "begin",
+      "tx": "tx81",
+      "base": 81
+    },
+    {
+      "op": "set",
+      "tx": "tx81",
+      "path": [
+        "meta"
+      ],
+      "value": []
+    },
+    {
+      "op": "set",
+      "tx": "tx81",
+      "path": [
+        "session",
+        "n0"
+      ],
+      "value": null
+    },
+    {
+      "op": "set",
+      "tx": "tx81",
+      "path": [
+        "cart"
+      ],
+      "value": false
+    },
+    {
+      "op": "set",
+      "tx": "tx81",
+      "path": [
+        "meta"
+      ],
+      "value": null
+    },
+    {
+      "op": "commit",
+      "tx": "tx81"
+    },
+    {
+      "op": "begin",
+      "tx": "tx82",
+      "base": 82
+    },
+    {
+      "op": "set",
+      "tx": "tx82",
+      "path": [
+        "b"
+      ],
+      "value": [
+        [],
+        [
+          null
+        ]
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx82"
+    },
+    {
+      "op": "begin",
+      "tx": "tx83",
+      "base": 83
+    },
+    {
+      "op": "set",
+      "tx": "tx83",
+      "path": [
+        "b"
+      ],
+      "value": []
+    },
+    {
+      "op": "set",
+      "tx": "tx83",
+      "path": [
+        "cart"
+      ],
+      "value": null
+    },
+    {
+      "op": "commit",
+      "tx": "tx83"
+    },
+    {
+      "op": "begin",
+      "tx": "tx84",
+      "base": 28
+    },
+    {
+      "op": "set",
+      "tx": "tx84",
+      "path": [
+        "cart"
+      ],
+      "value": {}
+    },
+    {
+      "op": "delete",
+      "tx": "tx84",
+      "path": [
+        "items",
+        0,
+        0
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx84",
+      "path": [
+        "meta"
+      ],
+      "value": {
+        "items0": {
+          "session2": 835
+        },
+        "items1": 954
+      }
+    },
+    {
+      "op": "commit",
+      "tx": "tx84"
+    },
+    {
+      "op": "begin",
+      "tx": "tx85",
+      "base": 85
+    },
+    {
+      "op": "set",
+      "tx": "tx85",
+      "path": [
+        "items",
+        1
+      ],
+      "value": [
+        null
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx85"
+    },
+    {
+      "op": "begin",
+      "tx": "tx86",
+      "base": 86
+    },
+    {
+      "op": "set",
+      "tx": "tx86",
+      "path": [
+        "inventory"
+      ],
+      "value": "s27"
+    },
+    {
+      "op": "set",
+      "tx": "tx86",
+      "path": [
+        "meta",
+        "items0"
+      ],
+      "value": true
+    },
+    {
+      "op": "set",
+      "tx": "tx86",
+      "path": [
+        "meta",
+        "items0"
+      ],
+      "value": {}
+    },
+    {
+      "op": "commit",
+      "tx": "tx86"
+    },
+    {
+      "op": "begin",
+      "tx": "tx87",
+      "base": 87
+    },
+    {
+      "op": "set",
+      "tx": "tx87",
+      "path": [
+        "a"
+      ],
+      "value": 402
+    },
+    {
+      "op": "set",
+      "tx": "tx87",
+      "path": [
+        "a"
+      ],
+      "value": {
+        "a2": 993,
+        "a1": null
+      }
+    },
+    {
+      "op": "commit",
+      "tx": "tx87"
+    },
+    {
+      "op": "begin",
+      "tx": "tx88",
+      "base": 88
+    },
+    {
+      "op": "delete",
+      "tx": "tx88",
+      "path": [
+        "items",
+        0
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx88",
+      "path": [
+        "inventory"
+      ],
+      "value": 175
+    },
+    {
+      "op": "set",
+      "tx": "tx88",
+      "path": [
+        "items"
+      ],
+      "value": []
+    },
+    {
+      "op": "commit",
+      "tx": "tx88"
+    },
+    {
+      "op": "begin",
+      "tx": "tx89",
+      "base": 68
+    },
+    {
+      "op": "delete",
+      "tx": "tx89",
+      "path": [
+        "inventory",
+        0
+      ]
+    },
+    {
+      "op": "delete",
+      "tx": "tx89",
+      "path": [
+        "inventory"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx89",
+      "path": [
+        "session"
+      ],
+      "value": {
+        "cart0": false,
+        "cart2": null
+      }
+    },
+    {
+      "op": "commit",
+      "tx": "tx89"
+    },
+    {
+      "op": "begin",
+      "tx": "tx90",
+      "base": 90
+    },
+    {
+      "op": "set",
+      "tx": "tx90",
+      "path": [
+        "session",
+        "cart0"
+      ],
+      "value": {}
+    },
+    {
+      "op": "set",
+      "tx": "tx90",
+      "path": [
+        "session"
+      ],
+      "value": {
+        "cart1": {},
+        "items0": 314
+      }
+    },
+    {
+      "op": "commit",
+      "tx": "tx90"
+    },
+    {
+      "op": "begin",
+      "tx": "tx91",
+      "base": 91
+    },
+    {
+      "op": "delete",
+      "tx": "tx91",
+      "path": [
+        "session",
+        "cart1"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx91",
+      "path": [
+        "cart",
+        "n1"
+      ],
+      "value": []
+    },
+    {
+      "op": "set",
+      "tx": "tx91",
+      "path": [
+        "session"
+      ],
+      "value": []
+    },
+    {
+      "op": "set",
+      "tx": "tx91",
+      "path": [
+        "cart",
+        "n1"
+      ],
+      "value": [
+        [],
+        [
+          666,
+          false
+        ]
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx91"
+    },
+    {
+      "op": "begin",
+      "tx": "tx92",
+      "base": 28
+    },
+    {
+      "op": "set",
+      "tx": "tx92",
+      "path": [
+        "items",
+        0,
+        0
+      ],
+      "value": {
+        "a0": 445
+      }
+    },
+    {
+      "op": "delete",
+      "tx": "tx92",
+      "path": [
+        "items",
+        1
+      ]
+    },
+    {
+      "op": "delete",
+      "tx": "tx92",
+      "path": [
+        "items"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx92"
+    },
+    {
+      "op": "begin",
+      "tx": "tx93",
+      "base": 93
+    },
+    {
+      "op": "delete",
+      "tx": "tx93",
+      "path": [
+        "meta"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx93",
+      "path": [
+        "meta",
+        "n3"
+      ],
+      "value": []
+    },
+    {
+      "op": "delete",
+      "tx": "tx93",
+      "path": [
+        "meta",
+        "n3"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx93"
+    },
+    {
+      "op": "begin",
+      "tx": "tx94",
+      "base": 94
+    },
+    {
+      "op": "set",
+      "tx": "tx94",
+      "path": [
+        "a"
+      ],
+      "value": {}
+    },
+    {
+      "op": "set",
+      "tx": "tx94",
+      "path": [
+        "a"
+      ],
+      "value": {
+        "inventory2": true
+      }
+    },
+    {
+      "op": "commit",
+      "tx": "tx94"
+    },
+    {
+      "op": "begin",
+      "tx": "tx95",
+      "base": 58
+    },
+    {
+      "op": "set",
+      "tx": "tx95",
+      "path": [
+        "meta"
+      ],
+      "value": [
+        {
+          "b2": 286
+        },
+        true
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx95",
+      "path": [
+        "meta"
+      ],
+      "value": true
+    },
+    {
+      "op": "set",
+      "tx": "tx95",
+      "path": [
+        "meta"
+      ],
+      "value": {}
+    },
+    {
+      "op": "commit",
+      "tx": "tx95"
+    },
+    {
+      "op": "begin",
+      "tx": "tx96",
+      "base": 32
+    },
+    {
+      "op": "set",
+      "tx": "tx96",
+      "path": [
+        "cart",
+        "n3"
+      ],
+      "value": {
+        "session0": [
+          null
+        ],
+        "ui1": {
+          "inventory2": "s22"
+        }
+      }
+    },
+    {
+      "op": "commit",
+      "tx": "tx96"
+    },
+    {
+      "op": "begin",
+      "tx": "tx97",
+      "base": 97
+    },
+    {
+      "op": "set",
+      "tx": "tx97",
+      "path": [
+        "b",
+        "n3"
+      ],
+      "value": 606
+    },
+    {
+      "op": "set",
+      "tx": "tx97",
+      "path": [
+        "b"
+      ],
+      "value": null
+    },
+    {
+      "op": "commit",
+      "tx": "tx97"
+    },
+    {
+      "op": "begin",
+      "tx": "tx98",
+      "base": 98
+    },
+    {
+      "op": "set",
+      "tx": "tx98",
+      "path": [
+        "inventory",
+        "n3"
+      ],
+      "value": []
+    },
+    {
+      "op": "commit",
+      "tx": "tx98"
+    },
+    {
+      "op": "begin",
+      "tx": "tx99",
+      "base": 68
+    },
+    {
+      "op": "delete",
+      "tx": "tx99",
+      "path": [
+        "inventory"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx99",
+      "path": [
+        "ui"
+      ],
+      "value": null
+    },
+    {
+      "op": "commit",
+      "tx": "tx99"
+    },
+    {
+      "op": "begin",
+      "tx": "tx100",
+      "base": 100
+    },
+    {
+      "op": "set",
+      "tx": "tx100",
+      "path": [
+        "ui"
+      ],
+      "value": true
+    },
+    {
+      "op": "delete",
+      "tx": "tx100",
+      "path": [
+        "ui"
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx100"
+    },
+    {
+      "op": "begin",
+      "tx": "tx101",
+      "base": 58
+    },
+    {
+      "op": "set",
+      "tx": "tx101",
+      "path": [
+        "meta"
+      ],
+      "value": null
+    },
+    {
+      "op": "commit",
+      "tx": "tx101"
+    },
+    {
+      "op": "begin",
+      "tx": "tx102",
+      "base": 58
+    },
+    {
+      "op": "set",
+      "tx": "tx102",
+      "path": [
+        "meta"
+      ],
+      "value": {}
+    },
+    {
+      "op": "delete",
+      "tx": "tx102",
+      "path": [
+        "meta"
+      ]
+    },
+    {
+      "op": "set",
+      "tx": "tx102",
+      "path": [
+        "a",
+        "n0"
+      ],
+      "value": [
+        {},
+        {
+          "items0": 614
+        }
+      ]
+    },
+    {
+      "op": "commit",
+      "tx": "tx102"
+    },
+    {
+      "op": "release",
+      "id": "snap9"
+    },
+    {
+      "op": "release",
+      "id": "snap5"
+    },
+    {
+      "op": "release",
+      "id": "snap6"
+    },
+    {
+      "op": "release",
+      "id": "snap8"
+    }
+  ]
+}
