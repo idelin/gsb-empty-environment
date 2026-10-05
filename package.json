@@ -1,0 +1,15 @@
+{
+  "name": "config-merge",
+  "version": "0.1.0",
+  "description": "Layered config merging (defaults/file/env/argv) with list ops, provenance tracking and secret masking",
+  "type": "module",
+  "main": "src/index.ts",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT"
+}
