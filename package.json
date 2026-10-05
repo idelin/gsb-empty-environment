@@ -1,0 +1,11 @@
+{
+  "name": "pmap-diff",
+  "version": "0.1.0",
+  "description": "Paginated diff for persistent ordered maps with subtree skipping and an explicit hash-trust model",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  },
+  "license": "MIT"
+}
