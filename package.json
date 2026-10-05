@@ -1,0 +1,14 @@
+{
+  "name": "tournament-ranking",
+  "version": "0.1.0",
+  "description": "赛事排名库：积分相同先比相互战绩，拆出部分名次后对剩余子组重新决胜，最终仍同分保留并列",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node scripts/run-tests.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
