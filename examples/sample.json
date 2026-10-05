@@ -1,0 +1,33 @@
+{
+  "channels": [
+    {
+      "name": "A",
+      "points": [
+        {"id": "a0", "ref": "0",  "lo": "3",  "hi": "7"},
+        {"id": "a1", "ref": "10", "lo": "22", "hi": "28"},
+        {"id": "a2", "ref": "20", "lo": "43", "hi": "47"}
+      ]
+    },
+    {
+      "name": "B",
+      "points": [
+        {"id": "b0", "ref": "0",  "lo": "0",   "hi": "2"},
+        {"id": "b1", "ref": "10", "lo": "100", "hi": "102"},
+        {"id": "b2", "ref": "20", "lo": "103", "hi": "105"}
+      ]
+    },
+    {
+      "name": "C",
+      "points": [
+        {"id": "c0", "ref": "0",  "lo": "-1", "hi": "1"},
+        {"id": "c1", "ref": "10", "lo": "9",  "hi": "11"}
+      ]
+    }
+  ],
+  "events": [
+    {"id": "e1", "channel": "A", "reading": "30"},
+    {"id": "e2", "channel": "C", "reading": "5"},
+    {"id": "e3", "channel": "A", "reading": "12"},
+    {"id": "e4", "channel": "C", "reading": "15"}
+  ]
+}
