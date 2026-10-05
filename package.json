@@ -1,0 +1,11 @@
+{
+  "name": "interval-resource-allocator",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "半开区间资源分配器：保留固定绑定，最小化资源总数，输出逐资源时间表",
+  "main": "src/interval-allocator.ts",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
