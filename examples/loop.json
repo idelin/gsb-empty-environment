@@ -1,0 +1,11 @@
+{
+  "queue_field": "queue",
+  "fields": [
+    {"name": "queue", "values": ["triage", "ops", "support"]}
+  ],
+  "rules": [
+    {"name": "triage-to-ops", "when": {"queue": "triage"}, "set": {"queue": "ops"}},
+    {"name": "ops-to-support", "when": {"queue": "ops"}, "set": {"queue": "support"}},
+    {"name": "support-to-ops", "when": {"queue": "support"}, "set": {"queue": "ops"}}
+  ]
+}

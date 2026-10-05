@@ -1,0 +1,11 @@
+{
+  "queue_field": "queue",
+  "fields": [
+    {"name": "queue", "values": ["intake", "billing", "tech"]},
+    {"name": "topic", "values": ["invoice", "outage"]}
+  ],
+  "rules": [
+    {"name": "route-billing", "when": {"queue": "intake", "topic": "invoice"}, "set": {"queue": "billing"}},
+    {"name": "route-tech", "when": {"queue": "intake", "topic": "outage"}, "set": {"queue": "tech"}}
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "queue_field": "queue",
+  "fields": [
+    {"name": "queue", "values": ["intake", "review", "done"]},
+    {"name": "attempt", "values": [0, 1]}
+  ],
+  "rules": [
+    {"name": "send-to-review", "when": {"queue": "intake"}, "set": {"queue": "review"}},
+    {"name": "retry-intake", "when": {"queue": "review", "attempt": 0}, "set": {"queue": "intake", "attempt": 1}},
+    {"name": "finish", "when": {"queue": "review", "attempt": 1}, "set": {"queue": "done"}}
+  ]
+}

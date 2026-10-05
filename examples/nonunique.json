@@ -1,0 +1,11 @@
+{
+  "queue_field": "queue",
+  "fields": [
+    {"name": "queue", "values": ["intake", "vip", "standard"]},
+    {"name": "customer", "values": ["gold", "silver"]}
+  ],
+  "rules": [
+    {"name": "gold-to-vip", "when": {"queue": "intake", "customer": "gold"}, "set": {"queue": "vip"}},
+    {"name": "any-to-standard", "when": {"queue": "intake"}, "set": {"queue": "standard"}}
+  ]
+}
