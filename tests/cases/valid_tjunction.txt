@@ -1,0 +1,10 @@
+# T-junction: vertex (1,1) of triangles 1,2 lies in the interior of triangle 0's edge
+polygon 4
+0 0
+2 0
+2 2
+0 2
+triangles 3
+0 0  2 0  0 2
+2 0  2 2  1 1
+2 2  0 2  1 1

@@ -1,0 +1,10 @@
+# polygon with collinear consecutive edges; one triangle edge covers two polygon edges
+polygon 5
+0 0
+2 0
+4 0
+4 4
+0 4
+triangles 2
+0 0  4 0  0 4
+4 0  4 4  0 4

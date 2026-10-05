@@ -1,0 +1,10 @@
+# two triangles whose edges properly cross
+# expect: overlap
+polygon 4
+0 0
+4 0
+4 4
+0 4
+triangles 2
+0 0  4 0  2 4
+0 4  4 4  2 0

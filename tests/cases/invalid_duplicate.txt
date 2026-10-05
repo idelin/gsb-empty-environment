@@ -1,0 +1,14 @@
+# Same triangle listed twice: area sum still equals polygon area (4),
+# but the upper-right half of the square is uncovered.
+# expect: overlap
+# expect: hole
+# expect: boundary-gap
+# expect-absent: area-mismatch
+polygon 4
+0 0
+2 0
+2 2
+0 2
+triangles 2
+0 0  2 0  0 2
+0 0  2 0  0 2

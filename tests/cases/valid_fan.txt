@@ -1,0 +1,13 @@
+# fan triangulation of a convex hexagon
+polygon 6
+0 0
+3 0
+5 2
+4 5
+1 5
+-1 2
+triangles 4
+0 0  3 0  5 2
+0 0  5 2  4 5
+0 0  4 5  1 5
+0 0  1 5  -1 2

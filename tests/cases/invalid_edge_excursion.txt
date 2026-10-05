@@ -1,0 +1,13 @@
+# All triangle vertices are on the polygon boundary and no edge properly
+# crosses a polygon edge, yet the triangle cuts outside across the reflex
+# corner of the L-shape.
+# expect: outside
+polygon 6
+0 0
+3 0
+3 1
+1 1
+1 3
+0 3
+triangles 1
+3 0  3 1  1 3

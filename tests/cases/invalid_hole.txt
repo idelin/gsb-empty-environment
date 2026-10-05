@@ -1,0 +1,11 @@
+# Missing triangle: half the square uncovered.
+# expect: hole
+# expect: boundary-gap
+# expect: area-mismatch
+polygon 4
+0 0
+2 0
+2 2
+0 2
+triangles 1
+0 0  2 0  0 2

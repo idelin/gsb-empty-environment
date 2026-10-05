@@ -1,0 +1,16 @@
+# Pseudo-triangulation: triangle area sum equals polygon area (16), so a pure
+# area check would accept it. But triangle 0 overlaps triangle 2 (its apex
+# (3,2) lies strictly inside triangle 2) and an uncovered hole remains.
+# expect: overlap
+# expect: hole
+# expect-absent: area-mismatch
+polygon 4
+0 0
+4 0
+4 4
+0 4
+triangles 4
+0 0  4 0  3 2
+0 0  2 2  0 4
+4 0  4 4  2 2
+0 4  2 2  4 4
