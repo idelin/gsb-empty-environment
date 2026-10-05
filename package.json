@@ -1,0 +1,11 @@
+{
+  "name": "cond-trim",
+  "version": "0.1.0",
+  "description": "Trim source files by boolean #if conditions with a bidirectional line mapping",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "cli": "node src/cli.ts"
+  }
+}
