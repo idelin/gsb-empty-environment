@@ -1,0 +1,35 @@
+{
+  "budget": 60,
+  "projects": [
+    {"id": "CORE",  "name": "核心平台升级",   "cost": 18, "value": 30},
+    {"id": "DATA",  "name": "数据管道",       "cost": 10, "value": 14, "requires": ["CORE"]},
+    {"id": "ML",    "name": "推荐模型",       "cost": 12, "value": 16, "requires": ["DATA"]},
+    {"id": "APP",   "name": "移动App重构",    "cost": 14, "value": 20},
+    {"id": "WEB",   "name": "Web门户改版",    "cost": 9,  "value": 12, "excludes": ["APP"]},
+    {"id": "CRM",   "name": "CRM集成",        "cost": 8,  "value": 9},
+    {"id": "SEC",   "name": "安全合规",       "cost": 7,  "value": 6},
+    {"id": "CLOUD", "name": "云迁移",         "cost": 15, "value": 18, "requires": ["SEC"]},
+    {"id": "SEO",   "name": "SEO推广",        "cost": 5,  "value": 7},
+    {"id": "ADS",   "name": "广告投放",       "cost": 6,  "value": 8,  "excludes": ["SEO"]},
+    {"id": "LAB",   "name": "创新实验室",     "cost": 11, "value": 4},
+    {"id": "DOCS",  "name": "文档体系",       "cost": 3,  "value": 2},
+    {"id": "IOT",   "name": "物联网试点",     "cost": 13, "value": 15},
+    {"id": "LEG",   "name": "遗留系统维护",   "cost": 4,  "value": -2}
+  ],
+  "synergies": [
+    {"a": "CORE",  "b": "DATA",  "value": 6},
+    {"a": "DATA",  "b": "ML",    "value": 8},
+    {"a": "CORE",  "b": "ML",    "value": 3},
+    {"a": "APP",   "b": "CRM",   "value": 5},
+    {"a": "WEB",   "b": "SEO",   "value": 4},
+    {"a": "CLOUD", "b": "IOT",   "value": 7},
+    {"a": "ML",    "b": "APP",   "value": 4},
+    {"a": "SEC",   "b": "CLOUD", "value": 3},
+    {"a": "LAB",   "b": "ML",    "value": 9},
+    {"a": "LAB",   "b": "CORE",  "value": -6},
+    {"a": "ADS",   "b": "WEB",   "value": -3},
+    {"a": "LEG",   "b": "CLOUD", "value": -5},
+    {"a": "DOCS",  "b": "DATA",  "value": 2},
+    {"a": "IOT",   "b": "SEC",   "value": -2}
+  ]
+}
