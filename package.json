@@ -1,0 +1,15 @@
+{
+  "name": "grouped-aggregator",
+  "version": "1.0.0",
+  "description": "Grouped aggregation with insert/retract, atomic group moves, bounded index, count/sum/min/top-2.",
+  "type": "module",
+  "main": "dist/grouped-aggregator.js",
+  "types": "src/grouped-aggregator.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node test/grouped-aggregator.test.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
