@@ -1,0 +1,12 @@
+{
+  "events": [
+    { "id": 1, "kind": "const", "writes": { "name": "limit", "version": 0 }, "reads": [], "control": [], "op": null, "value": 100 },
+    { "id": 2, "kind": "const", "writes": { "name": "x", "version": 0 }, "reads": [], "control": [], "op": null, "value": 40 },
+    { "id": 3, "kind": "const", "writes": { "name": "y", "version": 0 }, "reads": [], "control": [], "op": null, "value": 3 },
+    { "id": 4, "kind": "op", "writes": { "name": "total", "version": 0 }, "reads": [{ "name": "x", "version": 0 }, { "name": "y", "version": 0 }], "control": [], "op": "mul", "value": 120 },
+    { "id": 5, "kind": "const", "writes": { "name": "x", "version": 1 }, "reads": [], "control": [], "op": null, "value": 7 },
+    { "id": 6, "kind": "branch", "writes": null, "reads": [{ "name": "total", "version": 0 }, { "name": "limit", "version": 0 }], "control": [], "op": "gt", "value": true },
+    { "id": 7, "kind": "op", "writes": { "name": "total", "version": 1 }, "reads": [{ "name": "total", "version": 0 }, { "name": "x", "version": 0 }], "control": [6], "op": "sub", "value": 80 },
+    { "id": 8, "kind": "assert", "writes": null, "reads": [{ "name": "total", "version": 1 }, { "name": "limit", "version": 0 }], "control": [6], "op": "gt", "value": false }
+  ]
+}

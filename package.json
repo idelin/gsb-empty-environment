@@ -1,0 +1,16 @@
+{
+  "name": "log-slicer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Backward slicer for event logs with versioned variables and control dependencies",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/run-tests.js",
+    "slice": "node dist/src/cli.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0"
+  }
+}
