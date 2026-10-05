@@ -1,0 +1,12 @@
+{
+  "principals": ["alice", "bob", "carol"],
+  "actions": ["read", "write"],
+  "rules": [
+    {"name": "admin-read", "principal": "alice", "action": "*", "path": "/**"},
+    {"name": "bob-read", "principal": "bob", "action": "read", "path": "/data/**"},
+    {"name": "carol-read", "principal": "carol", "action": "read", "path": "/data/public"},
+    {"name": "all-read-data", "principal": "*", "action": "read", "path": "/data/**"},
+    {"name": "all-read-public", "principal": "*", "action": "read", "path": "/data/public"},
+    {"name": "bob-write", "principal": "bob", "action": "write", "path": "/data/bob/*"}
+  ]
+}
