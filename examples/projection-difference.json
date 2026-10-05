@@ -1,0 +1,22 @@
+{
+  "domain": [0, 1],
+  "relations": [
+    { "name": "R", "attrs": ["a", "b"] },
+    { "name": "S", "attrs": ["a", "b"] }
+  ],
+  "maxRows": 4,
+  "left": {
+    "kind": "project",
+    "attrs": ["a"],
+    "input": {
+      "kind": "difference",
+      "left": { "kind": "relation", "name": "R" },
+      "right": { "kind": "relation", "name": "S" }
+    }
+  },
+  "right": {
+    "kind": "difference",
+    "left": { "kind": "project", "attrs": ["a"], "input": { "kind": "relation", "name": "R" } },
+    "right": { "kind": "project", "attrs": ["a"], "input": { "kind": "relation", "name": "S" } }
+  }
+}

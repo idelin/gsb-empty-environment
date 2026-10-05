@@ -1,0 +1,30 @@
+{
+  "domain": [0, 1],
+  "relations": [
+    { "name": "R", "attrs": ["a", "b"] },
+    { "name": "S", "attrs": ["a", "b"] }
+  ],
+  "maxRows": 3,
+  "left": {
+    "kind": "select",
+    "where": { "op": "eq", "left": { "attr": "a" }, "right": { "const": 0 } },
+    "input": {
+      "kind": "union",
+      "left": { "kind": "relation", "name": "R" },
+      "right": { "kind": "relation", "name": "S" }
+    }
+  },
+  "right": {
+    "kind": "union",
+    "left": {
+      "kind": "select",
+      "where": { "op": "eq", "left": { "attr": "a" }, "right": { "const": 0 } },
+      "input": { "kind": "relation", "name": "R" }
+    },
+    "right": {
+      "kind": "select",
+      "where": { "op": "eq", "left": { "attr": "a" }, "right": { "const": 0 } },
+      "input": { "kind": "relation", "name": "S" }
+    }
+  }
+}
