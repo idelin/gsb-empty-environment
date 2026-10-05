@@ -1,0 +1,11 @@
+{
+  "vars": ["z"],
+  "eliminate": ["z"],
+  "budget": 2,
+  "constraints": [
+    {"id": "l1", "coeffs": {"z": "-1"}, "op": "<=", "rhs": "0"},
+    {"id": "l2", "coeffs": {"z": "-1"}, "op": "<=", "rhs": "1"},
+    {"id": "u1", "coeffs": {"z": "1"}, "op": "<=", "rhs": "3"},
+    {"id": "u2", "coeffs": {"z": "1"}, "op": "<=", "rhs": "4"}
+  ]
+}
