@@ -1,0 +1,15 @@
+{
+  "name": "regular-path-query",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Regular path queries on labeled directed graphs via product-graph BFS",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/rpq.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  }
+}
