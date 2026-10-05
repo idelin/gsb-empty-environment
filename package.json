@@ -1,0 +1,11 @@
+{
+  "name": "constrained-topo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "\u5e26\u56fa\u5b9a\u4f4d\u7f6e\u7ea6\u675f\u7684\u62d3\u6251\u6392\u5e8f\u5668\uff1a\u5b57\u5178\u5e8f\u6700\u5c0f\u89e3\u3001\u53ef\u9a8c\u8bc1\u4e0d\u53ef\u884c\u8bc1\u636e\u3001\u9884\u7b97\u5185\u672a\u77e5\u72b6\u6001",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "stress": "node scripts/stress.ts"
+  }
+}
