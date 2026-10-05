@@ -1,0 +1,21 @@
+# Demo: chosen value survives lost notifications and a leader crash.
+tick 1
+leader 0
+deliverall
+propose 0 x
+# Acceptors 0,1,2 durably accept x at slot 0 (a majority -> chosen),
+# but every reply is dropped, so leader 0 never learns it.
+deliverto 0
+deliverto 1
+deliverto 2
+dropall
+state
+tick 2
+crash 0
+# Node 3 becomes leader, re-adopts x at slot 0, then proposes y at slot 1.
+leader 3
+deliverall
+propose 3 y
+deliverall
+state
+check
