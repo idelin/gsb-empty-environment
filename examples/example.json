@@ -1,0 +1,104 @@
+{
+  "maxOverbuyRatio": 0.1,
+  "maxSuppliers": 6,
+  "demands": [
+    {
+      "materialId": "螺丝M6",
+      "demand": 1200
+    },
+    {
+      "materialId": "螺母M6",
+      "demand": 1000
+    },
+    {
+      "materialId": "垫片M6",
+      "demand": 500
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "甲五金",
+      "capacity": 2800,
+      "freight": {
+        "fixed": 60,
+        "freeAboveSubtotal": 900
+      },
+      "discountTiers": [
+        {
+          "minSubtotal": 800,
+          "discountRate": 0.04
+        },
+        {
+          "minSubtotal": 1500,
+          "discountRate": 0.09
+        }
+      ],
+      "items": [
+        {
+          "materialId": "螺丝M6",
+          "unitPrice": 0.45,
+          "moq": 200,
+          "packSize": 100
+        },
+        {
+          "materialId": "螺母M6",
+          "unitPrice": 0.4,
+          "moq": 200,
+          "packSize": 100
+        },
+        {
+          "materialId": "垫片M6",
+          "unitPrice": 0.1,
+          "packSize": 50
+        }
+      ]
+    },
+    {
+      "id": "乙标准件",
+      "capacity": 1200,
+      "freight": {
+        "fixed": 30,
+        "perUnit": 0.01
+      },
+      "discountTiers": [
+        {
+          "minSubtotal": 800,
+          "discountRate": 0.05
+        }
+      ],
+      "items": [
+        {
+          "materialId": "螺丝M6",
+          "unitPrice": 0.46,
+          "packSize": 50
+        },
+        {
+          "materialId": "螺母M6",
+          "unitPrice": 0.42,
+          "packSize": 50
+        }
+      ]
+    },
+    {
+      "id": "丙工厂店",
+      "capacity": 900,
+      "freight": {
+        "fixed": 20
+      },
+      "items": [
+        {
+          "materialId": "螺母M6",
+          "unitPrice": 0.38,
+          "moq": 500,
+          "packSize": 250,
+          "maxQty": 750
+        },
+        {
+          "materialId": "垫片M6",
+          "unitPrice": 0.12,
+          "packSize": 100
+        }
+      ]
+    }
+  ]
+}

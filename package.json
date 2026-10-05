@@ -1,0 +1,10 @@
+{
+  "name": "procurement-planner",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Multi-supplier procurement planner: MOQ, pack multiples, order-level tiered discounts, capacity caps, capped overbuy, freight-included minimal cost.",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "plan": "node src/cli.ts"
+  }
+}
