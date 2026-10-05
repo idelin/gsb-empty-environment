@@ -1,0 +1,13 @@
+# 并发栈：两个 push 重叠，pop 与 peek 重叠
+call 1 push 1:0
+call 2 push 2:0
+ret 2 ok
+ret 1 ok
+call 3 pop
+ret 3 2:0
+call 4 pop
+call 5 peek
+ret 5 1:0
+ret 4 1:0
+call 6 pop
+ret 6 empty

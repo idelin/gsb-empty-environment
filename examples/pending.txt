@@ -1,0 +1,6 @@
+# 含未返回操作：#3 的 pop 一直未返回（pending）
+call 1 push 5:0
+ret 1 ok
+call 2 push 6:0
+call 3 pop
+ret 2 ok

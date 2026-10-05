@@ -1,0 +1,10 @@
+# ABA 反例：地址 7 被复用（代次 0 -> 1），#4 弹出的却是旧代次 7:0
+# 代次感知检查应拒绝；--ignore-gen 的朴素检查会错误接受
+call 1 push 7:0
+ret 1 ok
+call 2 pop
+ret 2 7:0
+call 3 push 7:1
+ret 3 ok
+call 4 pop
+ret 4 7:0

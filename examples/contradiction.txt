@@ -1,0 +1,5 @@
+# 矛盾：栈非空却返回 empty
+call 1 push 3:0
+ret 1 ok
+call 2 pop
+ret 2 empty
