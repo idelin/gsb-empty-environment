@@ -1,0 +1,14 @@
+{
+  "name": "incremental-attr-eval",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Teaching compiler: incremental attribute evaluation (name binding, constant values, types) over a small AST",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "replay": "node examples/replay.ts"
+  }
+}

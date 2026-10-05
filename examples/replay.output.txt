@@ -1,0 +1,92 @@
+== step 0: initial check
+   diagnostics: (none)
+   b = 3, d = 3, c = unknown (x is a parameter)
+   dependency graph below value@n17 (the reference in "const d = b"):
+   value@n17
+     bind@n17
+       env@n17
+         env@n18
+           envOut@n14
+             cell@n26:f
+             env@n14
+               envOut@n6
+       cell@n26:b
+     value@n6
+       value@n5
+         type@n5
+           type@n3
+             bind@n3
+               env@n3
+               cell@n26:a
+             type@n2
+               type@n1
+           type@n4
+         value@n3
+           bind@n3
+           value@n2
+             value@n1
+         value@n4
+   concrete value path: value@n17 -> value@n6 -> value@n5 -> value@n3 -> value@n2
+   concrete scope path: bind@n3 -> env@n3 -> env@n6 -> envOut@n2 -> env@n2 -> scopeBase@n26
+   note: envOut@decl depends on cell/env only, never on value@decl,
+   so the inherited<->synthesized chain above cannot close a cycle.
+   reference match: OK
+
+== step 1: move "const a" after "const b" (declaration crosses its reference)
+   edit: {"op":"move","stmtId":"n2","targetBlockId":"n26","index":2}
+   invalidated=76 recomputed=62 verified-clean=2
+   diagnostics: n3.type: unbound reference 'a'
+   reference match: OK
+
+== step 2: move "const a" back to the top
+   edit: {"op":"move","stmtId":"n2","targetBlockId":"n26","index":0}
+   invalidated=76 recomputed=62 verified-clean=2
+   diagnostics: (none)
+   reference match: OK
+
+== step 3: insert shadowing "const b = 10" at the top of f's body
+   edit: {"op":"insert","blockId":"n13","index":0,"stmt":"<const n29>"}
+   invalidated=30 recomputed=27 verified-clean=4
+   diagnostics: (none)
+   reference match: OK
+
+   bind of b-reference inside f: n29 (shadows outer n6)
+
+== step 4: delete the outer "const b"
+   edit: {"op":"remove","stmtId":"n6"}
+   invalidated=65 recomputed=50 verified-clean=6
+   diagnostics: n17.type: unbound reference 'b'
+   reference match: OK
+
+   inner shadow still binds: true
+
+== step 5: insert "const b = 100" before "const d" (repairs the unbound reference)
+   edit: {"op":"insert","blockId":"n26","index":2,"stmt":"<const n31>"}
+   invalidated=65 recomputed=56 verified-clean=6
+   diagnostics: (none)
+   reference match: OK
+
+   d = 100
+
+== step 6: rename parameter x -> z (reference to x becomes unbound)
+   edit: {"op":"renameParam","paramId":"n15","newName":"z"}
+   invalidated=34 recomputed=29 verified-clean=1
+   diagnostics: n7.type: unbound reference 'x'
+   reference match: OK
+
+== step 7: rename parameter z -> x (reference repaired)
+   edit: {"op":"renameParam","paramId":"n15","newName":"x"}
+   invalidated=35 recomputed=28 verified-clean=1
+   diagnostics: (none)
+   reference match: OK
+
+== step 8: batch edit: append "const e = d + 1" and remove the trailing "d;"
+   edit: {"op":"insert","blockId":"n26","index":6,"stmt":"<const n35>"}
+   edit: {"op":"remove","stmtId":"n25"}
+   invalidated=62 recomputed=57 verified-clean=8
+   diagnostics: (none)
+   reference match: OK
+
+   e = 101
+
+all steps match the from-scratch reference implementation
