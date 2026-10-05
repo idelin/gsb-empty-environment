@@ -1,0 +1,14 @@
+{
+  "name": "session-read-router",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Session read routing with monotonic version watermarks over partitioned, lagging replicas",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/simulation.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.10"
+  }
+}
