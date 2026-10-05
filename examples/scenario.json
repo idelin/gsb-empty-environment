@@ -1,0 +1,227 @@
+{
+  "name": "demo: temporary exceptions around a secrets store",
+  "domains": {
+    "role": [
+      "admin",
+      "staff",
+      "guest"
+    ],
+    "network": [
+      "internal",
+      "vpn",
+      "public"
+    ],
+    "resource": [
+      "dashboard",
+      "docs",
+      "billing",
+      "secrets"
+    ]
+  },
+  "policy": {
+    "defaultEffect": "deny",
+    "baseRules": [
+      {
+        "id": "base-admin",
+        "effect": "allow",
+        "priority": 100,
+        "when": {
+          "role": [
+            "admin"
+          ]
+        }
+      },
+      {
+        "id": "base-staff-work",
+        "effect": "allow",
+        "priority": 50,
+        "when": {
+          "role": [
+            "staff"
+          ],
+          "network": [
+            "internal",
+            "vpn"
+          ],
+          "resource": [
+            "dashboard",
+            "docs",
+            "billing"
+          ]
+        }
+      },
+      {
+        "id": "base-guest-docs",
+        "effect": "allow",
+        "priority": 40,
+        "when": {
+          "role": [
+            "guest"
+          ],
+          "network": [
+            "internal"
+          ],
+          "resource": [
+            "docs"
+          ]
+        }
+      }
+    ],
+    "exceptions": [
+      {
+        "id": "ex-incident-77",
+        "effect": "allow",
+        "priority": 95,
+        "when": {
+          "network": [
+            "public"
+          ],
+          "resource": [
+            "secrets"
+          ]
+        },
+        "cost": 3,
+        "note": "emergency access opened during incident 77"
+      },
+      {
+        "id": "ex-secrets-guard",
+        "effect": "deny",
+        "priority": 92,
+        "when": {
+          "resource": [
+            "secrets"
+          ],
+          "network": [
+            "internal"
+          ]
+        },
+        "cost": 2,
+        "note": "compensating control, still needed"
+      },
+      {
+        "id": "ex-audit-temp",
+        "effect": "allow",
+        "priority": 90,
+        "when": {
+          "role": [
+            "staff"
+          ],
+          "resource": [
+            "secrets"
+          ]
+        },
+        "cost": 4,
+        "note": "temporary audit access, expired"
+      },
+      {
+        "id": "ex-deny-guest-public",
+        "effect": "deny",
+        "priority": 88,
+        "when": {
+          "role": [
+            "guest"
+          ],
+          "network": [
+            "public"
+          ]
+        },
+        "cost": 2
+      },
+      {
+        "id": "ex-legacy-admin-api",
+        "effect": "allow",
+        "priority": 85,
+        "when": {
+          "role": [
+            "admin"
+          ]
+        },
+        "cost": 1
+      },
+      {
+        "id": "ex-vendor-access",
+        "effect": "allow",
+        "priority": 80,
+        "when": {
+          "role": [
+            "guest"
+          ],
+          "resource": [
+            "secrets",
+            "billing"
+          ]
+        },
+        "cost": 6,
+        "note": "vendor integration, contract ended"
+      },
+      {
+        "id": "ex-docs-preview",
+        "effect": "allow",
+        "priority": 70,
+        "when": {
+          "resource": [
+            "docs"
+          ],
+          "role": [
+            "guest"
+          ]
+        },
+        "cost": 2
+      },
+      {
+        "id": "ex-billing-read",
+        "effect": "allow",
+        "priority": 65,
+        "when": {
+          "resource": [
+            "billing"
+          ],
+          "network": [
+            "internal",
+            "vpn"
+          ]
+        },
+        "cost": 3
+      },
+      {
+        "id": "ex-dashboard-beta",
+        "effect": "allow",
+        "priority": 60,
+        "when": {
+          "resource": [
+            "dashboard"
+          ]
+        },
+        "cost": 5
+      },
+      {
+        "id": "ex-contractor-docs",
+        "effect": "allow",
+        "priority": 55,
+        "when": {
+          "role": [
+            "guest"
+          ],
+          "resource": [
+            "docs",
+            "dashboard"
+          ]
+        },
+        "cost": 2
+      }
+    ]
+  },
+  "property": {
+    "when": {
+      "resource": [
+        "secrets"
+      ],
+      "role": [
+        "staff",
+        "guest"
+      ]
+    },
+    "mustBe": "deny",
+    "description": "staff and guests must never reach the secrets store"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "exception-revocation-solver",
+  "version": "1.0.0",
+  "description": "Minimum-cost revocation of temporary policy exceptions with exhaustive finite-domain verification",
+  "type": "module",
+  "scripts": {
+    "solve": "node --disable-warning=ExperimentalWarning src/cli.ts",
+    "test": "node --disable-warning=ExperimentalWarning --test \"test/*.test.ts\""
+  },
+  "license": "ISC"
+}
