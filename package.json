@@ -1,0 +1,10 @@
+{
+  "name": "fragment-permission-text",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "文本拼接库：追踪各来源片段的读者集合，维护逐字符来源权限交集",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'"
+  }
+}
