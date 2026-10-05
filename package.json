@@ -1,0 +1,14 @@
+{
+  "name": "weekly-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "七天员工排班器：技能 / 每日工时 / 跨日连续休息硬约束 + 带权偏好优化，含最小不可解集合解释",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/scheduler.test.ts"
+  }
+}
