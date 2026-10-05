@@ -1,0 +1,11 @@
+{
+  "name": "uniform-generalization-anonymizer",
+  "version": "1.0.0",
+  "description": "k-匿名统一列级泛化工具：在有限层级属性上搜索总泛化损失最小的统一方案",
+  "type": "module",
+  "scripts": {
+    "start": "node src/cli.ts",
+    "test": "node --test test/"
+  },
+  "license": "MIT"
+}
