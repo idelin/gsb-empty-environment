@@ -1,0 +1,13 @@
+{
+  "capacity": 3,
+  "projects": [
+    { "name": "core" },
+    { "name": "utils" },
+    { "name": "auth", "dependsOn": ["core"] },
+    { "name": "api", "dependsOn": ["auth", "utils"] },
+    { "name": "web", "dependsOn": ["api"] },
+    { "name": "plugin-a", "dependsOn": ["plugin-b"] },
+    { "name": "plugin-b", "dependsOn": ["plugin-a", "core"] },
+    { "name": "docs", "dependsOn": ["api"] }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "release-planner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "多项目发布规划器：处理依赖同步发布与同批依赖环，求容量约束下的最少批次计划",
+  "scripts": {
+    "plan": "node src/cli.ts",
+    "demo": "node src/cli.ts examples/release.json",
+    "verify": "node test/verify.ts"
+  }
+}
