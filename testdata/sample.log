@@ -1,0 +1,9 @@
+2026-10-05 09:15:01 INFO server starting on :8080
+2026-10-05 09:15:02 ERROR request failed
+	java.lang.IllegalStateException: queue full
+		at com.example.Queue.push(Queue.java:42)
+		at com.example.Worker.run(Worker.java:17)
+2026-10-05 09:15:03 INFO recovered, draining backlog
+2026-10-05 09:15:04 WARN cache miss storm
+	fallback engaged for tenant=acme
+2026-10-05 09:15:05 INFO shutdown complete

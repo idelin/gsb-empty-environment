@@ -1,0 +1,12 @@
+# Replayable fixture: gaps, late correction, hot rule swap, checkpoint.
+{"do":"line","source":"svc","epoch":3,"seq":1,"text":"2026-10-05 09:15:01 ERROR boot failed"}
+{"do":"line","source":"svc","epoch":3,"seq":2,"text":"\tat com.example.Boot.main(Boot.java:10)"}
+{"do":"line","source":"svc","epoch":3,"seq":4,"text":"2026-10-05 09:15:02 INFO retrying"}
+{"do":"line","source":"svc","epoch":3,"seq":3,"text":"\tat com.example.Init.run(Init.java:5)"}
+{"do":"line","source":"svc","epoch":3,"seq":2,"text":"\tat com.example.Boot.main(Boot.java:11)"}
+{"do":"rules","source":"svc","epoch":3,"rules":"^\\d{4}-\\d{2}-\\d{2}.*(ERROR|FATAL)"}
+{"do":"line","source":"svc","epoch":3,"seq":5,"text":"2026-10-05 09:15:03 INFO quiet under new rules"}
+{"do":"snapshot"}
+{"do":"line","source":"svc","epoch":3,"seq":6,"text":"2026-10-05 09:15:04 FATAL giving up"}
+{"do":"chunk","source":"svc","epoch":3,"data":"\tfinal frame, no newline at eof"}
+{"do":"close","source":"svc","epoch":3}
