@@ -1,0 +1,13 @@
+{
+  "name": "query-differ",
+  "version": "0.1.0",
+  "description": "集合语义下选择/投影/并/差查询的差异搜索器(最小反例数据库)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "diff": "node src/cli.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}

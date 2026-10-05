@@ -1,0 +1,29 @@
+{
+  "relations": [
+    { "name": "R", "attributes": [
+      { "name": "a", "domain": [0, 1] },
+      { "name": "b", "domain": [0, 1] }
+    ]}
+  ],
+  "maxRows": 4,
+  "queries": {
+    "Q1": {
+      "op": "select",
+      "input": {
+        "op": "select",
+        "input": { "op": "rel", "name": "R" },
+        "predicate": { "kind": "cmp", "attr": "b", "cmp": "eq", "value": 0 }
+      },
+      "predicate": { "kind": "cmp", "attr": "a", "cmp": "eq", "value": 1 }
+    },
+    "Q2": {
+      "op": "select",
+      "input": {
+        "op": "select",
+        "input": { "op": "rel", "name": "R" },
+        "predicate": { "kind": "cmp", "attr": "a", "cmp": "eq", "value": 1 }
+      },
+      "predicate": { "kind": "cmp", "attr": "b", "cmp": "eq", "value": 0 }
+    }
+  }
+}

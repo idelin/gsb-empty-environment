@@ -1,0 +1,25 @@
+{
+  "relations": [
+    { "name": "R", "attributes": [
+      { "name": "a", "domain": [0, 1] },
+      { "name": "b", "domain": [0, 1] }
+    ]},
+    { "name": "S", "attributes": [
+      { "name": "a", "domain": [0, 1] },
+      { "name": "b", "domain": [0, 1] }
+    ]}
+  ],
+  "maxRows": 4,
+  "queries": {
+    "Q1": {
+      "op": "project",
+      "input": { "op": "minus", "left": { "op": "rel", "name": "R" }, "right": { "op": "rel", "name": "S" } },
+      "attributes": ["a"]
+    },
+    "Q2": {
+      "op": "minus",
+      "left": { "op": "project", "input": { "op": "rel", "name": "R" }, "attributes": ["a"] },
+      "right": { "op": "project", "input": { "op": "rel", "name": "S" }, "attributes": ["a"] }
+    }
+  }
+}
