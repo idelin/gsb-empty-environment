@@ -1,0 +1,18 @@
+{
+  "name": "heading-numbering",
+  "version": "0.1.0",
+  "private": true,
+  "description": "目录编号库：标题移动/改级别/重命名，编号随树变化，外部引用绑定稳定 ID，增量编号与悬空引用检测",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test \"dist/test/*.test.js\""
+  },
+  "devDependencies": {
+    "typescript": "5.2.2"
+  }
+}
