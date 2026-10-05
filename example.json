@@ -1,0 +1,7 @@
+{
+  "taps": [0, 98, 201, 302, 410, 450, 505, 700, 803, 905],
+  "periodMin": 90,
+  "periodMax": 110,
+  "missPenalty": 40,
+  "extraPenalty": 35
+}
