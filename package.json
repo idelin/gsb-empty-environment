@@ -1,0 +1,22 @@
+{
+  "name": "colored-graph-isomorphism",
+  "version": "1.0.0",
+  "description": "带节点颜色的多重图同构检测：颜色细化 + 个体化-细化搜索 + 规范编码",
+  "type": "module",
+  "main": "src/graphiso.ts",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idelin/gsb-empty-environment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/idelin/gsb-empty-environment/issues"
+  },
+  "homepage": "https://github.com/idelin/gsb-empty-environment#readme"
+}
