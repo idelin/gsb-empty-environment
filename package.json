@@ -1,0 +1,11 @@
+{
+  "name": "annotation-intervals",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Layered annotation interval library with sticky-boundary edit mapping, tombstones, undo and per-segment active-set output",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "typecheck": "node node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node dist/verify.js"
+  }
+}
