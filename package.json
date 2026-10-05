@@ -1,0 +1,17 @@
+{
+  "name": "capability-negotiation",
+  "version": "0.1.0",
+  "description": "Capability negotiation library: solves the highest-priority common configuration from two parties' declarations, binds results to the original declarations, and detects replayed transcripts.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
