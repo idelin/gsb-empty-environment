@@ -1,0 +1,10 @@
+{
+  "name": "image-pyramid",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "分块图像金字塔：局部编辑精确失效、跨块滤波、镜像边缘、版本化增量更新",
+  "scripts": {
+    "test": "node --test test/pyramid.test.ts"
+  }
+}
