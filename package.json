@@ -1,0 +1,11 @@
+{
+  "name": "delivery-window",
+  "version": "1.0.0",
+  "description": "Notification delivery library: bounded sliding window, contiguous watermark, epoch-guarded acks, redelivery",
+  "main": "src/delivery-window.ts",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  },
+  "type": "module",
+  "license": "ISC"
+}
