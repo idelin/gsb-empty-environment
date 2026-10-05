@@ -1,0 +1,11 @@
+{
+  "name": "assignment-solver",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Min-cost perfect bipartite assignment with local cost updates, forbidden edges, BigInt costs, and primal/dual/Hall certificates",
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  }
+}
