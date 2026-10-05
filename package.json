@@ -1,0 +1,18 @@
+{
+  "name": "bv-equiv-checker",
+  "version": "0.1.0",
+  "description": "Equivalence checker for fixed-width bit-vector expressions (bit-blasted SAT + independent interpreter)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
