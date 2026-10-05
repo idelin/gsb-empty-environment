@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblockmgr.a CMakeFiles/lockmgr.dir/src/lock_manager.cpp.o
+/usr/bin/ranlib liblockmgr.a

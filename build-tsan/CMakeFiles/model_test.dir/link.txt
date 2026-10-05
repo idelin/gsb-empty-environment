@@ -1,0 +1,1 @@
+/usr/bin/c++ -fsanitize=thread -g -O2 -g -DNDEBUG -Wl,-search_paths_first -Wl,-headerpad_max_install_names -fsanitize=thread CMakeFiles/model_test.dir/tests/model_test.cpp.o -o model_test  liblockmgr.a

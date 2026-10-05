@@ -1,0 +1,1 @@
+/usr/bin/c++ -fsanitize=thread -g -O2 -g -DNDEBUG -Wl,-search_paths_first -Wl,-headerpad_max_install_names -fsanitize=thread CMakeFiles/interleaving_test.dir/tests/interleaving_test.cpp.o -o interleaving_test  liblockmgr.a
