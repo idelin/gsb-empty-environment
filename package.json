@@ -1,0 +1,14 @@
+{
+  "name": "grid-path-rational",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Grid pathfinding with exact rational costs and caller-supplied heuristics",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/",
+    "cli": "node src/cli.ts"
+  }
+}
