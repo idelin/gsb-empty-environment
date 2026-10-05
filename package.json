@@ -1,0 +1,11 @@
+{
+  "name": "procurement-planner",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "solve": "node src/main.ts",
+    "demo": "node src/main.ts examples/demo.json",
+    "test": "node src/selftest.ts"
+  }
+}

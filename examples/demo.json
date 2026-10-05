@@ -1,0 +1,77 @@
+{
+  "maxOverbuyRatio": 0.1,
+  "materials": [
+    { "id": "芯片A", "demand": 40 },
+    { "id": "电阻B", "demand": 200 },
+    { "id": "电容C", "demand": 120 },
+    { "id": "外壳D", "demand": 30 }
+  ],
+  "suppliers": [
+    {
+      "id": "S1", "name": "华强电子", "freight": 60,
+      "tiers": [
+        { "minSubtotal": 800, "discountPct": 5 },
+        { "minSubtotal": 2000, "discountPct": 10 }
+      ],
+      "items": [
+        { "materialId": "芯片A", "unitPrice": 15.0, "moq": 20, "packMultiple": 10 },
+        { "materialId": "电阻B", "unitPrice": 0.8, "moq": 100, "packMultiple": 50 },
+        { "materialId": "电容C", "unitPrice": 1.2, "moq": 50, "packMultiple": 25 }
+      ]
+    },
+    {
+      "id": "S2", "name": "立创供应链", "freight": 0, "freeFreightMinSubtotal": 500,
+      "tiers": [
+        { "minSubtotal": 1200, "discountPct": 8 }
+      ],
+      "items": [
+        { "materialId": "芯片A", "unitPrice": 14.2, "moq": 10, "packMultiple": 10, "maxQty": 30 },
+        { "materialId": "电容C", "unitPrice": 1.35, "packMultiple": 10 },
+        { "materialId": "外壳D", "unitPrice": 6.5, "moq": 20, "packMultiple": 10 }
+      ]
+    },
+    {
+      "id": "S3", "name": "远东元件", "freight": 120,
+      "maxTotalQty": 250,
+      "tiers": [
+        { "minSubtotal": 500, "discountPct": 6 },
+        { "minSubtotal": 1000, "discountPct": 12 }
+      ],
+      "items": [
+        { "materialId": "电阻B", "unitPrice": 0.72, "moq": 150, "packMultiple": 25, "maxQty": 175 },
+        { "materialId": "电容C", "unitPrice": 1.1, "moq": 60, "packMultiple": 20 },
+        { "materialId": "外壳D", "unitPrice": 6.0, "packMultiple": 5, "maxQty": 25 }
+      ]
+    },
+    {
+      "id": "S4", "name": "芯联科技", "freight": 30,
+      "tiers": [
+        { "minSubtotal": 600, "discountPct": 4 }
+      ],
+      "items": [
+        { "materialId": "芯片A", "unitPrice": 13.8, "moq": 30, "packMultiple": 15, "maxQty": 45 },
+        { "materialId": "外壳D", "unitPrice": 7.2, "packMultiple": 2 }
+      ]
+    },
+    {
+      "id": "S5", "name": "百亿电子", "freight": 200,
+      "tiers": [
+        { "minSubtotal": 1500, "discountPct": 15 }
+      ],
+      "items": [
+        { "materialId": "芯片A", "unitPrice": 14.5, "packMultiple": 5 },
+        { "materialId": "电阻B", "unitPrice": 0.75, "packMultiple": 25 },
+        { "materialId": "电容C", "unitPrice": 1.15, "packMultiple": 10 },
+        { "materialId": "外壳D", "unitPrice": 6.8, "packMultiple": 5 }
+      ]
+    },
+    {
+      "id": "S6", "name": "快捷小批量", "freight": 15,
+      "items": [
+        { "materialId": "电阻B", "unitPrice": 0.95, "packMultiple": 10 },
+        { "materialId": "电容C", "unitPrice": 1.5, "packMultiple": 5 },
+        { "materialId": "外壳D", "unitPrice": 7.5, "packMultiple": 2 }
+      ]
+    }
+  ]
+}

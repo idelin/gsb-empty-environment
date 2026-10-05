@@ -1,0 +1,23 @@
+{
+  "maxOverbuyRatio": 0,
+  "materials": [
+    { "id": "传感器", "demand": 10, "maxOverbuy": 2 }
+  ],
+  "suppliers": [
+    {
+      "id": "S1", "name": "平价稳定商", "freight": 0,
+      "items": [
+        { "materialId": "传感器", "unitPrice": 9.5, "packMultiple": 1 }
+      ]
+    },
+    {
+      "id": "S2", "name": "阶梯大户", "freight": 0,
+      "tiers": [
+        { "minSubtotal": 110, "discountPct": 25 }
+      ],
+      "items": [
+        { "materialId": "传感器", "unitPrice": 10.0, "packMultiple": 1 }
+      ]
+    }
+  ]
+}
