@@ -1,0 +1,14 @@
+{
+  "name": "persistent-order-saga",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Persistent order-flow saga executor with synthetic injectable adapters (no real payment/logistics)",
+  "engines": {
+    "node": ">=23.0.0"
+  },
+  "scripts": {
+    "test": "node --test test/saga.test.ts",
+    "fault-replay": "node scripts/fault-replay.ts"
+  }
+}

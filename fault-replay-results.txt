@@ -1,0 +1,9 @@
+PASS  clean-run  | terminal=completed reserved=2 balance=500 delivery=scheduled consistent=true
+PASS  restart-at-every-boundary  | 8/8 boundaries recovered to completed
+PASS  lost-receipt-charge  | first=running terminal=completed reserved=2 balance=500 delivery=scheduled consistent=true chargeApplies=1
+PASS  lost-receipt-compensation  | first=compensating terminal=failed reserved=0 balance=0 delivery=none consistent=true releaseApplies=1
+PASS  compensation-failure-then-recovery  | first=compensating reservedWhileCompensating=2 terminal=failed reserved=0 balance=0 delivery=none consistent=true
+PASS  duplicate-cancel-and-race  | cancelledFlow={terminal=cancelled terminals=1} completedFlow={terminal=completed terminals=1 cancelResult=completed}
+PASS  torn-tail-truncated  | truncatedBytes=21 terminal=completed reserved=2 balance=500 delivery=scheduled consistent=true
+PASS  corrupt-complete-record-errors  | JournalCorruptionError=true
+ALL SCENARIOS PASSED
