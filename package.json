@@ -1,0 +1,12 @@
+{
+  "name": "scoped-event-bus",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --test event-bus.test.ts",
+    "example": "node example.ts"
+  }
+}
