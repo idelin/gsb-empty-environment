@@ -1,0 +1,14 @@
+{
+  "name": "approval-checker",
+  "version": "1.0.0",
+  "description": "Code approval checker: path-rule owners, per-file thresholds, minimum additional approver set",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "check": "node src/cli.ts",
+    "test": "node --test test/*.test.ts"
+  },
+  "license": "MIT"
+}

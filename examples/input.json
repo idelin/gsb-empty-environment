@@ -1,0 +1,15 @@
+{
+  "author": "alice",
+  "approvals": ["bob"],
+  "candidates": ["carol", "dave", "erin", "frank"],
+  "files": [
+    { "path": "src/core/engine.ts" },
+    { "path": "src/utils/helper.ts" },
+    { "path": "docs/guide.md", "oldPath": "docs/tutorial.md" }
+  ],
+  "rules": [
+    { "pattern": "src/**", "owners": ["bob", "carol"] },
+    { "pattern": "src/core/**", "owners": ["dave"], "mode": "append", "threshold": 2 },
+    { "pattern": "docs/**", "owners": ["erin", "frank"] }
+  ]
+}
