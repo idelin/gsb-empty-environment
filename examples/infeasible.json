@@ -1,0 +1,9 @@
+{
+  "items": [
+    {"id": "A", "price": 0, "locked": true},
+    {"id": "B", "price": 3, "locked": true}
+  ],
+  "bounds": [
+    {"from": "A", "to": "B", "max": 2}
+  ]
+}

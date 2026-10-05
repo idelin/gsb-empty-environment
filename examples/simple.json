@@ -1,0 +1,11 @@
+{
+  "items": [
+    {"id": "apple", "price": 10, "locked": true},
+    {"id": "banana", "price": 12},
+    {"id": "cherry", "price": 20}
+  ],
+  "bounds": [
+    {"from": "apple", "to": "banana", "min": 5},
+    {"from": "banana", "to": "cherry", "min": 3, "max": 6}
+  ]
+}

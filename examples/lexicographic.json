@@ -1,0 +1,13 @@
+{
+  "items": [
+    {"id": "L", "price": 0, "locked": true},
+    {"id": "X", "price": 0},
+    {"id": "Y", "price": 0},
+    {"id": "Z", "price": 0}
+  ],
+  "bounds": [
+    {"from": "Y", "to": "X", "min": 6},
+    {"from": "Y", "to": "Z", "min": 6},
+    {"from": "L", "to": "Y", "min": -3}
+  ]
+}
