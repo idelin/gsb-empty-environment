@@ -1,0 +1,16 @@
+{
+  "name": "charging-scheduler",
+  "version": "0.1.0",
+  "description": "Min-cost EV charging scheduler over integer time slots with TOU power limits, prices and charge-start limits",
+  "type": "module",
+  "private": true,
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "build": "bun build ./src/index.ts --outdir dist --target node"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
