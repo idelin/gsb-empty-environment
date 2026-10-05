@@ -1,0 +1,12 @@
+{
+  "name": "patch-rebase",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Rebase text patches: transplant one patch past another with explicit overlap policies",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "npm run build && node dist/tests.js && VERIFY_MAX_LEN=3 node dist/verify.js",
+    "verify:full": "npm run build && node dist/verify.js",
+    "demo": "npm run build && node dist/demo.js"
+  }
+}
