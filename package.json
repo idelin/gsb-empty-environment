@@ -1,0 +1,15 @@
+{
+  "name": "ssidb",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Read-only sharded uint32 set files with streaming paged queries, cursors, quotas and an independent validator",
+  "type": "commonjs",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node scripts/run-tests.mjs",
+    "cli": "node dist/cli.js"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
