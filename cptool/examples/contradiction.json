@@ -1,0 +1,6 @@
+{
+  "origin": { "lo": 0, "hi": 0 },
+  "tasks": [
+    { "id": "build", "ready": { "lo": 0, "hi": 1 }, "start": { "lo": 9, "hi": 10 }, "end": { "lo": 3, "hi": 5 }, "deps": [] }
+  ]
+}

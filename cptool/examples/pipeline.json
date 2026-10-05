@@ -1,0 +1,9 @@
+{
+  "origin": { "lo": 0, "hi": 0 },
+  "tasks": [
+    { "id": "fetch",   "ready": { "lo": 0, "hi": 0.5 },  "start": { "lo": 0.2, "hi": 1 },  "end": { "lo": 2, "hi": 4 },   "deps": [] },
+    { "id": "compile", "ready": { "lo": 2, "hi": 4.5 },  "start": { "lo": 3, "hi": 6 },    "end": { "lo": 9, "hi": 13 },  "deps": ["fetch"] },
+    { "id": "lint",    "ready": { "lo": 2, "hi": 4.5 },  "start": { "lo": 2.5, "hi": 5 },  "end": { "lo": 5, "hi": 8 },   "deps": ["fetch"] },
+    { "id": "test",    "ready": { "lo": 9, "hi": 13 },   "start": { "lo": 10, "hi": 15 },  "end": { "lo": 18, "hi": 26 }, "deps": ["compile", "lint"] }
+  ]
+}
