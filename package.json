@@ -1,0 +1,15 @@
+{
+  "name": "pkg-dep-solver",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Dependency solver: integer versions, ranges, optional features, cross-package conflicts; minimal-change install plans with reviewable conflict cores.",
+  "main": "dist/src/solver.js",
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/run.js && node dist/test/fuzz.js",
+    "solve": "node dist/src/cli.js"
+  }
+}

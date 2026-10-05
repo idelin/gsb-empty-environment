@@ -1,0 +1,14 @@
+{
+  "repository": [
+    { "name": "web", "versions": [
+      { "version": 1 },
+      { "version": 2, "dependencies": [{ "name": "http", "range": ">=2" }] },
+      { "version": 3, "dependencies": [{ "name": "http", "range": ">=3" }],
+        "features": { "tls": [{ "name": "cert", "range": ">=1" }] } }
+    ]},
+    { "name": "http", "versions": [{ "version": 1 }, { "version": 2 }, { "version": 3 }] },
+    { "name": "cert", "versions": [{ "version": 1 }] }
+  ],
+  "installed": { "web": 2, "http": 2 },
+  "request": [{ "name": "web", "range": ">=2", "features": ["tls"] }]
+}

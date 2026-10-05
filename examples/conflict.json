@@ -1,0 +1,14 @@
+{
+  "repository": [
+    { "name": "app", "versions": [
+      { "version": 1, "dependencies": [{ "name": "db", "range": ">=2" }] }
+    ]},
+    { "name": "legacy", "versions": [
+      { "version": 1, "dependencies": [{ "name": "db", "range": "<2" }] }
+    ]},
+    { "name": "db", "versions": [{ "version": 1 }, { "version": 2 }] },
+    { "name": "cache", "versions": [{ "version": 1 }] }
+  ],
+  "installed": { "legacy": 1, "db": 1 },
+  "request": [{ "name": "app" }, { "name": "legacy" }, { "name": "cache" }]
+}
