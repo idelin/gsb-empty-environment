@@ -1,0 +1,10 @@
+{
+  "name": "membership-benefit-ledger",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "会员权益账本：按套餐有效区间管理次数额度，支持叠加/取最大规则、确定性扣减、撤销返还与追溯更正审计",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'"
+  }
+}
