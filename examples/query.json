@@ -1,0 +1,17 @@
+{
+  "relations": [
+    { "name": "A", "cardinality": 1000 },
+    { "name": "B", "cardinality": 1000 },
+    { "name": "C", "cardinality": 1000 },
+    { "name": "D", "cardinality": 1000 }
+  ],
+  "predicates": [
+    { "left": "A", "right": "B", "selectivity": 0.001 },
+    { "left": "C", "right": "D", "selectivity": 0.001 },
+    { "left": "B", "right": "C", "selectivity": 0.01 }
+  ],
+  "options": {
+    "allowCrossProducts": false,
+    "materialization": { "perTuple": 0.1, "flat": 5 }
+  }
+}

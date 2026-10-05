@@ -1,0 +1,17 @@
+{
+  "name": "join-order-optimizer",
+  "version": "1.0.0",
+  "description": "Bushy join-order optimizer: DP over subsets, up to 12 relations, configurable cross products and materialization cost",
+  "type": "module",
+  "main": "dist/optimizer.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "demo": "node dist/cli.js",
+    "run": "node dist/cli.js examples/query.json",
+    "test": "node test/verify.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0"
+  }
+}
