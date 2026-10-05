@@ -1,0 +1,24 @@
+{
+  "variables": ["x", "y"],
+  "bounds": {"min": -20, "max": 20},
+  "init": [
+    {"coeffs": {"x": 1}, "op": "==", "const": 0},
+    {"coeffs": {"y": 1}, "op": "==", "const": 10}
+  ],
+  "guard": [
+    {"coeffs": {"x": 1}, "op": "<", "const": 10}
+  ],
+  "assign": [
+    {"var": "x", "coeffs": {"x": 1}, "const": 1},
+    {"var": "y", "coeffs": {"y": 1}, "const": -1}
+  ],
+  "invariant": [
+    {"coeffs": {"x": 1, "y": 1}, "op": "==", "const": 10},
+    {"coeffs": {"x": 1}, "op": ">=", "const": 0},
+    {"coeffs": {"x": 1}, "op": "<=", "const": 10}
+  ],
+  "post": [
+    {"coeffs": {"x": 1}, "op": "==", "const": 10},
+    {"coeffs": {"y": 1}, "op": "==", "const": 0}
+  ]
+}

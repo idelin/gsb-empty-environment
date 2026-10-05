@@ -1,0 +1,12 @@
+{
+  "variables": ["x"],
+  "bounds": {"min": 0, "max": 10},
+  "init": [{"coeffs": {"x": 1}, "op": "==", "const": 0}],
+  "guard": [{"coeffs": {"x": 1}, "op": "<=", "const": 10}],
+  "assign": [{"var": "x", "coeffs": {"x": 1}, "const": 1}],
+  "invariant": [
+    {"coeffs": {"x": 1}, "op": ">=", "const": 0},
+    {"coeffs": {"x": 1}, "op": "<=", "const": 10}
+  ],
+  "post": [{"coeffs": {"x": 1}, "op": ">=", "const": 0}]
+}
