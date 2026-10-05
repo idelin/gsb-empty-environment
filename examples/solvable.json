@@ -1,0 +1,13 @@
+{
+  "events": [
+    { "id": "audit", "object": "order", "op": "update" },
+    { "id": "begin", "object": "order", "op": "create" },
+    { "id": "close", "object": "order", "op": "delete" },
+    { "id": "pack", "object": "parcel", "op": "update" },
+    { "id": "ship", "object": "parcel", "op": "delete" }
+  ],
+  "precedence": [
+    ["pack", "audit"],
+    ["audit", "close"]
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "events": [
+    { "id": "create-order", "object": "order", "op": "create" },
+    { "id": "archive-order", "object": "order", "op": "delete" },
+    { "id": "audit-order", "object": "order", "op": "update" }
+  ],
+  "precedence": [
+    ["archive-order", "audit-order"]
+  ]
+}

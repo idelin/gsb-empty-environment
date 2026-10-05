@@ -1,0 +1,19 @@
+{
+  "name": "event-reorderer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Lexicographically smallest event total order under precedence + create/update/delete state constraints",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/solver.test.ts",
+    "cli": "node --experimental-strip-types src/cli.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
