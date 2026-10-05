@@ -1,0 +1,14 @@
+{
+  "name": "hex-lease",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Transactional region leases on a finite axial-coordinate hex map, with journaled intents/resolutions, recovery, and a serial reference oracle. Zero dependencies.",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test test/",
+    "cli": "node --disable-warning=ExperimentalWarning src/cli.ts"
+  }
+}
