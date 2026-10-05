@@ -1,0 +1,9 @@
+{
+  "variables": { "a": true, "b": true, "c": false },
+  "mutable": { "c": 1 },
+  "rules": [
+    { "id": "r1", "if": [{ "var": "a", "value": true }], "then": { "var": "b", "value": true } },
+    { "id": "r2", "if": [{ "var": "a", "value": true }], "then": { "var": "b", "value": false } },
+    { "id": "r3", "if": [{ "var": "b", "value": true }], "then": { "var": "c", "value": true } }
+  ]
+}

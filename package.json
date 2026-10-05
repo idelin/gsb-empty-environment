@@ -1,0 +1,13 @@
+{
+  "name": "boolean-rule-fixer",
+  "version": "1.0.0",
+  "description": "Minimum-cost repair of boolean implication rules by flipping mutable variables",
+  "type": "module",
+  "scripts": {
+    "fix": "node src/cli.ts",
+    "test": "node --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
