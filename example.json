@@ -1,0 +1,25 @@
+{
+  "vehicle": {"weight_capacity": 100, "seat_capacity": 3},
+  "depot_departure": 0,
+  "orders": [
+    {"id": "alice", "weight": 10, "passengers": 1,
+     "pickup_window": {"earliest": 0, "latest": 20},
+     "delivery_window": {"earliest": 0, "latest": 60}},
+    {"id": "bob", "weight": 20, "passengers": 2,
+     "pickup_window": {"earliest": 5, "latest": 25},
+     "delivery_window": {"earliest": 0, "latest": 70}},
+    {"id": "crate-7", "weight": 60, "passengers": 0,
+     "pickup_window": {"earliest": 0, "latest": 40},
+     "delivery_window": {"earliest": 30, "latest": 90},
+     "pickup_service": 5, "delivery_service": 5}
+  ],
+  "travel_time": [
+    [0,  8, 10, 12, 18, 20, 14],
+    [8,  0,  4,  6, 12, 14, 10],
+    [10, 4,  0,  8, 10, 12,  8],
+    [12, 6,  8,  0,  9, 11,  7],
+    [18, 12, 10, 9,  0,  4,  6],
+    [20, 14, 12, 11, 4,  0,  8],
+    [14, 10, 8,  7,  6,  8,  0]
+  ]
+}
