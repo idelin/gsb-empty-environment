@@ -1,0 +1,14 @@
+{
+  "name": "publish-queue",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "文件发布队列：同路径串行、跨路径并行、确认点前可取消、幂等恢复",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "typecheck": "tsc --noEmit"
+  }
+}
