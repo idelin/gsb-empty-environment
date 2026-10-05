@@ -1,0 +1,43 @@
+{
+  "old": {
+    "symbols": [
+      {"name": "app.TestCheckout", "test": true},
+      {"name": "app.TestSearch", "test": true},
+      {"name": "app.checkout"},
+      {"name": "app.price"},
+      {"name": "app.discount"},
+      {"name": "app.search"},
+      {"name": "app.Handler"},
+      {"name": "app.Render"},
+      {"name": "plugin.Render"}
+    ],
+    "edges": [
+      {"from": "app.TestCheckout", "to": "app.checkout"},
+      {"from": "app.checkout", "to": "app.price"},
+      {"from": "app.price", "to": "app.discount"},
+      {"from": "app.TestSearch", "to": "app.search"},
+      {"from": "app.Handler", "dynamic": true, "candidates": ["app.Render", "plugin.Render"]},
+      {"from": "app.checkout", "to": "app.Handler"}
+    ]
+  },
+  "new": {
+    "symbols": [
+      {"name": "app.TestCheckout", "test": true},
+      {"name": "app.TestSearch", "test": true},
+      {"name": "app.checkout"},
+      {"name": "app.price"},
+      {"name": "app.search"},
+      {"name": "app.Handler"},
+      {"name": "app.Render"},
+      {"name": "plugin.Render"}
+    ],
+    "edges": [
+      {"from": "app.TestCheckout", "to": "app.checkout"},
+      {"from": "app.checkout", "to": "app.price"},
+      {"from": "app.TestSearch", "to": "app.search"},
+      {"from": "app.Handler", "dynamic": true, "candidates": ["app.Render", "plugin.Render"]},
+      {"from": "app.checkout", "to": "app.Handler"}
+    ]
+  },
+  "modified": ["plugin.Render"]
+}
