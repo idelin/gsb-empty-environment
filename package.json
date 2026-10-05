@@ -1,0 +1,13 @@
+{
+  "name": "maintenance-planner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "维修/拆解规划器：预算内恢复总价值最高，输出备件来源到用途流水",
+  "scripts": {
+    "start": "node --experimental-strip-types src/cli.ts",
+    "solve": "node --experimental-strip-types src/cli.ts",
+    "test": "node --experimental-strip-types test/solver.test.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
