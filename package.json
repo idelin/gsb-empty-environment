@@ -1,0 +1,16 @@
+{
+  "name": "ordered-tree-diff",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minimal-edit-cost diff for ordered trees with stable ids, moves, budget interruption, and an independent validating patch applier.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node dist/exhaustive.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
