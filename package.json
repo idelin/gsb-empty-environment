@@ -1,0 +1,10 @@
+{
+  "name": "versioned-merge-store",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "三副本版本归并库：向量时钟标记事件，支持支配判断、并发版本保留与显式解决",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
