@@ -1,0 +1,11 @@
+{
+  "comment": "h1 对 a1/a2 并列。若任意打破并列(如 h1: a1>a2)再求稳定匹配,只能得到规模 1 的 {a1-h1};真正的最大规模弱稳定匹配是规模 2 的 {a1-h2, a2-h1}。",
+  "applicants": [
+    {"name": "a1", "prefs": [["h1"], ["h2"]]},
+    {"name": "a2", "prefs": [["h1"]]}
+  ],
+  "hospitals": [
+    {"name": "h1", "capacity": 1, "prefs": [["a1", "a2"]]},
+    {"name": "h2", "capacity": 1, "prefs": [["a1"]]}
+  ]
+}
