@@ -1,0 +1,21 @@
+{
+  "initial": "idle",
+  "states": [
+    {"name": "idle",       "props": []},
+    {"name": "pending",    "props": ["request"]},
+    {"name": "served",     "props": ["response"]},
+    {"name": "auth",       "props": ["authorized"]},
+    {"name": "hazard",     "props": ["danger"]},
+    {"name": "hazard_work","props": ["danger", "authorized"]},
+    {"name": "dead",       "props": ["request"]}
+  ],
+  "transitions": [
+    ["idle", "pending"],
+    ["pending", "served"],
+    ["served", "idle"],
+    ["idle", "auth"],
+    ["auth", "hazard"],
+    ["hazard", "hazard_work"],
+    ["hazard_work", "idle"]
+  ]
+}

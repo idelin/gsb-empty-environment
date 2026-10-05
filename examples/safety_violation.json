@@ -1,0 +1,14 @@
+{
+  "initial": "idle",
+  "states": [
+    {"name": "idle",   "props": []},
+    {"name": "hazard", "props": ["danger"]},
+    {"name": "auth",   "props": ["authorized"]}
+  ],
+  "transitions": [
+    ["idle", "hazard"],
+    ["idle", "auth"],
+    ["auth", "hazard"],
+    ["hazard", "idle"]
+  ]
+}

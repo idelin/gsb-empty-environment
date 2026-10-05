@@ -1,0 +1,18 @@
+{
+  "initial": "idle",
+  "states": [
+    {"name": "idle",    "props": []},
+    {"name": "pending", "props": ["request"]},
+    {"name": "spin_a",  "props": []},
+    {"name": "spin_b",  "props": []},
+    {"name": "served",  "props": ["response"]}
+  ],
+  "transitions": [
+    ["idle", "pending"],
+    ["pending", "spin_a"],
+    ["spin_a", "spin_b"],
+    ["spin_b", "spin_a"],
+    ["pending", "served"],
+    ["served", "idle"]
+  ]
+}
