@@ -1,0 +1,11 @@
+{
+  "topology": {
+    "edges": [["A", "B"], ["B", "C"], ["C", "D"], ["A", "D"], ["B", "D"]]
+  },
+  "observations": [
+    { "id": "ok1", "path": ["A", "B"], "result": "ok" },
+    { "id": "ok2", "path": ["C", "D"], "result": "ok" },
+    { "id": "bad1", "path": ["A", "B", "C", "D"], "result": "fail" },
+    { "id": "bad2", "path": ["A", "D"], "result": "fail" }
+  ]
+}
