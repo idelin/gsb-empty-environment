@@ -1,0 +1,15 @@
+{
+  "name": "quota-protocol",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Tick-driven leased-quota protocol: center issues windowed grants, edge nodes spend idempotently, unused quota is reissued only after confirmed return.",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "replay": "node src/cli.ts replay",
+    "audit": "node src/cli.ts audit"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
