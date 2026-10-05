@@ -1,0 +1,13 @@
+{
+  "name": "ccd2d",
+  "version": "1.0.0",
+  "description": "Exact continuous collision detection for 2D axis-aligned rectangles with BigInt rationals",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --disable-warning=ExperimentalWarning --test",
+    "cli": "node --disable-warning=ExperimentalWarning src/cli.ts"
+  }
+}
