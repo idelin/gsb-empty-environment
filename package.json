@@ -1,0 +1,11 @@
+{
+  "name": "tree-rewriter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Term rewriter: patterns with variables, priorities, leftmost-innermost, DAG-safe, trace/cycle/budget, cross-checked by a naive interpreter",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "demo": "node dist/demo.js",
+    "test": "npm run build && npm run demo"
+  }
+}
