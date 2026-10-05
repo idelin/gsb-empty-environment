@@ -1,0 +1,14 @@
+{
+  "name": "hex-lease",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Transactional region leases on a finite axial-coordinate hex map, with journaled recovery and a serial reference model",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "bash scripts/run-tests.sh",
+    "cli": "bash bin/hexlease"
+  }
+}
