@@ -1,0 +1,15 @@
+{
+  "name": "task-priority-queue",
+  "version": "1.0.0",
+  "description": "Min-priority queue with revocable slot+generation handles, FIFO tie-breaking, and atomic batch priority updates.",
+  "type": "module",
+  "main": "src/priority-queue.ts",
+  "exports": {
+    ".": "./src/priority-queue.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/priority-queue.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT"
+}
