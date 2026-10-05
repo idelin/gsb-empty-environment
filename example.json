@@ -1,0 +1,21 @@
+{
+  "depot": 0,
+  "vehicle": {"weight_capacity": 50, "seat_capacity": 2},
+  "orders": [
+    {"id": "A", "pickup": 1, "delivery": 2, "weight": 10, "seats": 1,
+     "pickup_window": {"open": 0, "close": 60}, "delivery_window": {"open": 0, "close": 200}, "service_time": 5},
+    {"id": "B", "pickup": 3, "delivery": 4, "weight": 20, "seats": 1,
+     "pickup_window": {"open": 15, "close": 90}, "delivery_window": {"open": 0, "close": 200}, "service_time": 5},
+    {"id": "C", "pickup": 5, "delivery": 6, "weight": 30, "seats": 1,
+     "pickup_window": {"open": 0, "close": 120}, "delivery_window": {"open": 0, "close": 300}, "service_time": 5}
+  ],
+  "travel_time": [
+    [0, 10, 20, 15, 25, 12, 30],
+    [10, 0, 10, 5, 15, 8, 22],
+    [20, 10, 0, 8, 6, 10, 12],
+    [15, 5, 8, 0, 10, 6, 18],
+    [25, 15, 6, 10, 0, 14, 8],
+    [12, 8, 10, 6, 14, 0, 18],
+    [30, 22, 12, 18, 8, 18, 0]
+  ]
+}
