@@ -1,0 +1,12 @@
+{
+  "objects": [
+    {"id": "logs-2024", "retention_until": "2025-01-01T00:00:00Z"},
+    {"id": "report-q1", "retention_until": "2026-04-01T00:00:00Z", "strong_refs": ["logs-2024"]},
+    {"id": "cache-entry", "weak_refs": ["report-q1"]},
+    {"id": "node-a", "retention_until": "2026-01-01T00:00:00Z", "strong_refs": ["node-b"]},
+    {"id": "node-b", "retention_until": "2028-01-01T00:00:00Z", "strong_refs": ["node-a"]},
+    {"id": "contract", "legal_hold": true, "strong_refs": ["invoice"]},
+    {"id": "invoice"},
+    {"id": "subpoenaed-mail", "legal_hold": true, "hold_until": "2030-12-31T00:00:00Z"}
+  ]
+}
