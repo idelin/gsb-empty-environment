@@ -1,0 +1,13 @@
+{
+  "name": "contour-extract",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Iso-contour extraction for integer scalar grids with exact rational coordinates",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "bun test"
+  }
+}
