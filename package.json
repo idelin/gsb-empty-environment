@@ -1,0 +1,8 @@
+{
+  "name": "symexec-int8",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.ts"
+  }
+}
