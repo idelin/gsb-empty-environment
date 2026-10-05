@@ -1,0 +1,18 @@
+{
+  "subjects": ["alice", "bob", "service"],
+  "actions": ["read", "write"],
+  "segments": ["home", "etc", "var", "tmp", "secret", "public", "alice", "bob"],
+  "maxDepth": 3,
+  "rules": [
+    {"effect": "deny",  "subjects": ["*"],       "actions": ["*"],             "path": "etc/secret/**"},
+    {"effect": "allow", "subjects": ["alice"],   "actions": ["read"],          "path": "**"},
+    {"effect": "allow", "subjects": ["bob"],     "actions": ["read", "write"], "path": "home/bob/**"},
+    {"effect": "deny",  "subjects": ["*"],       "actions": ["write"],         "path": "tmp/*"},
+    {"effect": "allow", "subjects": ["bob"],     "actions": ["write"],         "path": "tmp/secret"},
+    {"effect": "deny",  "subjects": ["alice"],   "actions": ["*"],             "path": "var/**"},
+    {"effect": "deny",  "subjects": ["bob"],     "actions": ["*"],             "path": "var/**"},
+    {"effect": "deny",  "subjects": ["service"], "actions": ["*"],             "path": "var/**"},
+    {"effect": "deny",  "subjects": ["*"],       "actions": ["*"],             "path": "var/**"},
+    {"effect": "allow", "subjects": ["service"], "actions": ["read"],          "path": "etc/secret/public"}
+  ]
+}
