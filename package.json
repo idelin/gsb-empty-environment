@@ -1,0 +1,14 @@
+{
+  "name": "finite-attr-evaluator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "教学编译器：AST 上的有限属性求值器（名称绑定/常量/类型，显式依赖 + 增量重算）",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "replay": "node examples/replay.ts"
+  }
+}
