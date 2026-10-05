@@ -1,0 +1,15 @@
+# Nothing ever adds "done", so the goal cannot be reached.
+props ready done
+init ready
+goal done
+
+action wait
+  pre ready
+  add ready
+  cost 0
+
+action spin
+  pre ready
+  del ready
+  add ready
+  cost 1

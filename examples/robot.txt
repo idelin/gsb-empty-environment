@@ -1,0 +1,33 @@
+# Robot must fetch a package and deliver it home.
+# Contains a zero-cost look/return cycle to show termination.
+props at_home at_store has_pkg delivered
+init at_home
+goal delivered
+
+action go_store
+  pre at_home
+  add at_store
+  del at_home
+  cost 2
+
+action go_home
+  pre at_store
+  add at_home
+  del at_store
+  cost 2
+
+action look_around        # zero-cost self-information step
+  pre at_store
+  add at_store
+  cost 0
+
+action pick_pkg
+  pre at_store
+  add has_pkg
+  cost 1
+
+action deliver
+  pre at_home has_pkg
+  add delivered
+  del has_pkg
+  cost 1
