@@ -1,0 +1,12 @@
+{
+  "files": [
+    {"id": "base-0-10", "bytes": 10},
+    {"id": "inc-20-30", "bytes": 10}
+  ],
+  "shards": [
+    {"name": "shardA", "target": 30, "edges": [
+      {"from": 0, "to": 10, "file": "base-0-10"},
+      {"from": 20, "to": 30, "file": "inc-20-30"}
+    ]}
+  ]
+}

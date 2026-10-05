@@ -1,0 +1,26 @@
+{
+  "files": [
+    {"id": "f00", "bytes": 12}, {"id": "f01", "bytes": 7},
+    {"id": "f02", "bytes": 0}, {"id": "f03", "bytes": 25},
+    {"id": "f04", "bytes": 3, "dependencies": ["f01"]},
+    {"id": "f05", "bytes": 40}, {"id": "f06", "bytes": 9},
+    {"id": "f07", "bytes": 18, "dependencies": ["f00"]},
+    {"id": "f08", "bytes": 5}, {"id": "f09", "bytes": 11}
+  ],
+  "shards": [
+    {"name": "shardA", "target": 30, "edges": [
+      {"from": 0, "to": 10, "file": "f00"},
+      {"from": 10, "to": 20, "file": "f04"},
+      {"from": 20, "to": 30, "file": "f08"},
+      {"from": 0, "to": 30, "file": "f05"},
+      {"from": 0, "to": 15, "file": "f06"},
+      {"from": 15, "to": 30, "file": "f09"}
+    ]},
+    {"name": "shardB", "target": 20, "edges": [
+      {"from": 0, "to": 10, "file": "f00"},
+      {"from": 10, "to": 20, "file": "f04"},
+      {"from": 0, "to": 20, "file": "f03"},
+      {"from": 0, "to": 20, "file": "f07"}
+    ]}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "files": [
+    {"id": "common-base", "bytes": 60},
+    {"id": "shard-a-full", "bytes": 50},
+    {"id": "shard-b-full", "bytes": 50}
+  ],
+  "shards": [
+    {"name": "shardA", "target": 20, "edges": [
+      {"from": 0, "to": 20, "file": "common-base"},
+      {"from": 0, "to": 20, "file": "shard-a-full"}
+    ]},
+    {"name": "shardB", "target": 20, "edges": [
+      {"from": 0, "to": 20, "file": "common-base"},
+      {"from": 0, "to": 20, "file": "shard-b-full"}
+    ]}
+  ]
+}

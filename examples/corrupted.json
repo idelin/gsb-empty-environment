@@ -1,0 +1,15 @@
+{
+  "files": [
+    {"id": "base", "bytes": 10},
+    {"id": "mid", "bytes": 5, "corrupted": true},
+    {"id": "top", "bytes": 10, "dependencies": ["mid"]},
+    {"id": "clean-full", "bytes": 100}
+  ],
+  "shards": [
+    {"name": "shardA", "target": 20, "edges": [
+      {"from": 0, "to": 10, "file": "base"},
+      {"from": 10, "to": 20, "file": "top"},
+      {"from": 0, "to": 20, "file": "clean-full"}
+    ]}
+  ]
+}
