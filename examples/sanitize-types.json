@@ -1,0 +1,15 @@
+{
+  "name": "sanitizer only removes the listed taint types",
+  "entry": "n1",
+  "nodes": [
+    { "id": "n1", "kind": "source", "var": "input", "taints": ["sql", "xss"] },
+    { "id": "n2", "kind": "sanitize", "dst": "safe", "src": "input", "types": ["xss"] },
+    { "id": "n3", "kind": "sink", "var": "safe", "accepts": ["xss"], "label": "renderHtml" },
+    { "id": "n4", "kind": "sink", "var": "safe", "accepts": ["sql"], "label": "db.query" }
+  ],
+  "edges": [
+    { "from": "n1", "to": "n2" },
+    { "from": "n2", "to": "n3" },
+    { "from": "n3", "to": "n4" }
+  ]
+}

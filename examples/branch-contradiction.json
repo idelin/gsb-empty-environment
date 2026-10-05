@@ -1,0 +1,20 @@
+{
+  "name": "contradictory boolean branches are infeasible",
+  "entry": "n1",
+  "nodes": [
+    { "id": "n1", "kind": "source", "var": "input", "taints": ["cmd"] },
+    { "id": "n2", "kind": "branch" },
+    { "id": "n3", "kind": "branch" },
+    { "id": "n4", "kind": "assign", "dst": "cmd", "src": "input" },
+    { "id": "n5", "kind": "sink", "var": "cmd", "accepts": ["cmd"], "label": "exec" },
+    { "id": "n6", "kind": "const", "var": "cmd" }
+  ],
+  "edges": [
+    { "from": "n1", "to": "n2" },
+    { "from": "n2", "to": "n3", "cond": { "var": "flag", "value": true } },
+    { "from": "n3", "to": "n4", "cond": { "var": "flag", "value": false } },
+    { "from": "n4", "to": "n5" },
+    { "from": "n2", "to": "n6", "cond": { "var": "flag", "value": false } },
+    { "from": "n6", "to": "n5" }
+  ]
+}

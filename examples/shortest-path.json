@@ -1,0 +1,22 @@
+{
+  "name": "shortest of two feasible flows is reported",
+  "entry": "n1",
+  "nodes": [
+    { "id": "n1", "kind": "source", "var": "input", "taints": ["sql"] },
+    { "id": "n2", "kind": "branch" },
+    { "id": "n3", "kind": "assign", "dst": "a", "src": "input" },
+    { "id": "n4", "kind": "assign", "dst": "b", "src": "a" },
+    { "id": "n5", "kind": "assign", "dst": "q", "src": "b" },
+    { "id": "n6", "kind": "assign", "dst": "q", "src": "input" },
+    { "id": "n7", "kind": "sink", "var": "q", "accepts": ["sql"], "label": "db.query" }
+  ],
+  "edges": [
+    { "from": "n1", "to": "n2" },
+    { "from": "n2", "to": "n3", "cond": { "var": "long", "value": true } },
+    { "from": "n3", "to": "n4" },
+    { "from": "n4", "to": "n5" },
+    { "from": "n5", "to": "n7" },
+    { "from": "n2", "to": "n6", "cond": { "var": "long", "value": false } },
+    { "from": "n6", "to": "n7" }
+  ]
+}

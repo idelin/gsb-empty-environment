@@ -1,0 +1,15 @@
+{
+  "name": "cfg-taint-analyzer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Path-sensitive taint analyzer over a control-flow graph: assignment, merge, sanitization, alias and dangerous-call rules, with shortest feasible source-to-sink path output.",
+  "type": "module",
+  "scripts": {
+    "analyze": "node --experimental-strip-types src/cli.ts",
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}

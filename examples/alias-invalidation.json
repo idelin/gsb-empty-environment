@@ -1,0 +1,19 @@
+{
+  "name": "alias write invalidates sanitization",
+  "entry": "n1",
+  "nodes": [
+    { "id": "n1", "kind": "source", "var": "input", "taints": ["sql"] },
+    { "id": "n2", "kind": "assign", "dst": "a", "src": "input" },
+    { "id": "n3", "kind": "sanitize", "dst": "a", "src": "a", "types": ["sql"] },
+    { "id": "n4", "kind": "alias", "dst": "p", "src": "a" },
+    { "id": "n5", "kind": "assign", "dst": "p", "src": "input" },
+    { "id": "n6", "kind": "sink", "var": "a", "accepts": ["sql"], "label": "db.query" }
+  ],
+  "edges": [
+    { "from": "n1", "to": "n2" },
+    { "from": "n2", "to": "n3" },
+    { "from": "n3", "to": "n4" },
+    { "from": "n4", "to": "n5" },
+    { "from": "n5", "to": "n6" }
+  ]
+}

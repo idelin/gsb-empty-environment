@@ -1,0 +1,13 @@
+{
+  "name": "basic propagation",
+  "entry": "n1",
+  "nodes": [
+    { "id": "n1", "kind": "source", "var": "input", "taints": ["sql"] },
+    { "id": "n2", "kind": "assign", "dst": "query", "src": "input" },
+    { "id": "n3", "kind": "sink", "var": "query", "accepts": ["sql"], "label": "db.query" }
+  ],
+  "edges": [
+    { "from": "n1", "to": "n2" },
+    { "from": "n2", "to": "n3" }
+  ]
+}
