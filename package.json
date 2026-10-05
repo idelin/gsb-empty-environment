@@ -1,0 +1,11 @@
+{
+  "name": "trace-diff",
+  "version": "0.1.0",
+  "private": true,
+  "description": "轨迹差分工具：比较两个执行器轨迹，定位首次语义分歧并还原内部窗口",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/run-tests.js"
+  }
+}
