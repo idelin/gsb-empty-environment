@@ -1,0 +1,17 @@
+{
+  "name": "persistent-map-diff",
+  "version": "0.1.0",
+  "description": "Paginated diff for persistent ordered maps with structural sharing, resumable cursors and an explicit hash-trust model",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
