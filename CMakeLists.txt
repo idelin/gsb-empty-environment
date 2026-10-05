@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.16)
+project(stroke_rasterizer LANGUAGES CXX)
+
+add_library(stroke_rasterizer INTERFACE)
+target_include_directories(stroke_rasterizer INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_compile_features(stroke_rasterizer INTERFACE cxx_std_17)
+
+option(STROKE_RASTERIZER_BUILD_TESTS "Build the stroke rasterizer tests" ON)
+if(STROKE_RASTERIZER_BUILD_TESTS)
+    enable_testing()
+    add_executable(stroke_tests tests/test_stroke_rasterizer.cpp)
+    target_link_libraries(stroke_tests PRIVATE stroke_rasterizer)
+    if(CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
+        target_compile_options(stroke_tests PRIVATE -Wall -Wextra)
+    endif()
+    add_test(NAME stroke_tests COMMAND stroke_tests)
+endif()
