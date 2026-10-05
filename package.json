@@ -1,0 +1,11 @@
+{
+  "name": "election-model-checker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "三节点投票选主协议的有界状态枚举模型检查器",
+  "scripts": {
+    "check": "node src/main.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}
