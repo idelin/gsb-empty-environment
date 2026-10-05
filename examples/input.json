@@ -1,0 +1,33 @@
+{
+  "policy": {
+    "coverages": [
+      {
+        "id": "outpatient",
+        "window": {"start": "2025-01-01", "end": "2025-12-31"},
+        "waiting_days": 30,
+        "deductible_cents": 100000,
+        "per_event_limit_cents": 5000000,
+        "aggregate_limit_cents": 20000000,
+        "shared_limit_group": "total"
+      },
+      {
+        "id": "inpatient",
+        "window": {"start": "2025-01-01", "end": "2025-12-31"},
+        "waiting_days": 60,
+        "deductible_cents": 0,
+        "per_event_limit_cents": 0,
+        "aggregate_limit_cents": 50000000,
+        "shared_limit_group": "total"
+      }
+    ],
+    "shared_limits": [
+      {"id": "total", "limit_cents": 60000000}
+    ]
+  },
+  "events": [
+    {"id": "e1", "coverage": "outpatient", "service_date": "2025-01-10", "seq": 1, "amount_cents": 300000},
+    {"id": "e2", "coverage": "outpatient", "service_date": "2025-03-01", "seq": 2, "amount_cents": 250000},
+    {"id": "e3", "coverage": "inpatient", "service_date": "2025-04-01", "seq": 3, "amount_cents": 10000000},
+    {"id": "e4", "coverage": "outpatient", "service_date": "2025-02-01", "seq": 4, "amount_cents": 150000}
+  ]
+}
