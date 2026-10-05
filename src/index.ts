@@ -1,0 +1,10 @@
+export { ScalarText } from './scalar-text.ts';
+export type { Position } from './scalar-text.ts';
+export { lex } from './lexer.ts';
+export type { LexKind, LexToken } from './lexer.ts';
+export { TokenType, analyzeSource, assertValidTokens } from './analyzer.ts';
+export type { SemanticToken } from './analyzer.ts';
+export { computePatches, applyPatches, tokenKey } from './diff.ts';
+export type { TokenPatch } from './diff.ts';
+export { SemanticTokenIndex } from './semantic-token-index.ts';
+export type { VersionDelta } from './semantic-token-index.ts';

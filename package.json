@@ -1,0 +1,10 @@
+{
+  "name": "semantic-token-index",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Versioned semantic token index with minimal incremental replacement patches",
+  "scripts": {
+    "test": "bash scripts/test.sh"
+  }
+}
