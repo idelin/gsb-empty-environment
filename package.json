@@ -1,0 +1,13 @@
+{
+  "name": "bitemporal-file-history",
+  "version": "0.1.0",
+  "description": "Bitemporal file attribute history store: valid-time intervals x knowledge versions",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
