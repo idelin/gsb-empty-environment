@@ -1,0 +1,8 @@
+{
+  "name": "ls-sync-simulator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sim": "node src/main.ts"
+  }
+}
