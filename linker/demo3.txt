@@ -1,0 +1,11 @@
+# 场景3：弱定义 vs 强定义；弱定义满足未定义引用后不再从归档提取
+object main.o
+  strong main
+  weak malloc
+  undef malloc
+  undef puts
+archive libm.a
+  member malloc.o
+    strong malloc
+  member puts.o
+    strong puts

@@ -1,0 +1,10 @@
+# 场景2：强定义冲突 —— 交换输入顺序也必须报出同一冲突
+object a.o
+  strong foo
+  strong main
+object b.o
+  strong foo
+  undef helper
+archive libh.a
+  member h.o
+    strong helper

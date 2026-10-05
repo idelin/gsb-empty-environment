@@ -1,0 +1,9 @@
+object b.o
+  strong foo
+  undef helper
+object a.o
+  strong foo
+  strong main
+archive libh.a
+  member h.o
+    strong helper

@@ -1,0 +1,17 @@
+# 场景1：归档按需加载，新成员引出新引用，迭代到稳定
+object main.o
+  strong main
+  undef printf
+  weakundef optional_trace
+
+archive libc.a
+  member printf.o
+    strong printf
+    undef memcpy
+  member memcpy.o
+    strong memcpy
+    undef cache_flush
+  member cache.o
+    strong cache_flush
+  member unused.o
+    strong never_needed
