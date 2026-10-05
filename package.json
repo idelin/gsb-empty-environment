@@ -1,0 +1,10 @@
+{
+  "name": "regular-path-query",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Regular path queries on labeled directed graphs: shortest-first, edge-id ordered, with replay evidence and independent product-graph verification.",
+  "scripts": {
+    "test": "node test/run.ts"
+  }
+}
