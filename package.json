@@ -1,0 +1,11 @@
+{
+  "name": "broadcast-sub",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Broadcast subscription library with per-subscriber fixed-capacity buffers and gap events",
+  "main": "dist/src/broadcast.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node dist/test/broadcast.test.js"
+  }
+}
