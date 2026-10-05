@@ -1,0 +1,9 @@
+# 示例：饱和减法（结果截断到 >= 0）
+input a, b
+d = a - b
+if d < 0 {
+    r = 0
+} else {
+    r = d
+}
+return r
