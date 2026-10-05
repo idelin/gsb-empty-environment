@@ -1,0 +1,14 @@
+{
+  "name": "ad-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Discrete-slot ad scheduling with rolling frequency caps and adjacent brand exclusion",
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test src/"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  }
+}
