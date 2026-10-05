@@ -1,0 +1,14 @@
+{
+  "name": "cse-optimizer",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Common subexpression elimination for a small language with memory and trapping instructions, validated by differential testing",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node src/tests.ts && node src/difftest.ts",
+    "difftest": "node src/difftest.ts"
+  }
+}
