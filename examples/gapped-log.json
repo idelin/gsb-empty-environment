@@ -1,0 +1,20 @@
+{
+  "events": [
+    { "kind": "write", "id": 1, "target": { "name": "a", "version": 1 },
+      "expr": { "op": "lit", "value": 10 }, "value": 10, "reads": [], "control": [] },
+    { "kind": "write", "id": 2, "target": { "name": "b", "version": 1 },
+      "expr": { "op": "lit", "value": 3 }, "value": 3, "reads": [], "control": [] },
+    { "kind": "write", "id": 4, "target": { "name": "c", "version": 1 },
+      "expr": { "op": "add", "lhs": { "op": "ref", "ref": { "name": "a", "version": 1 } }, "rhs": { "op": "ref", "ref": { "name": "b", "version": 1 } } },
+      "value": 13,
+      "reads": [ { "name": "a", "version": 1 }, { "name": "b", "version": 1 } ], "control": [] },
+    { "kind": "write", "id": 7, "target": { "name": "d", "version": 1 },
+      "expr": { "op": "sub", "lhs": { "op": "ref", "ref": { "name": "a", "version": 2 } }, "rhs": { "op": "ref", "ref": { "name": "c", "version": 1 } } },
+      "value": 7,
+      "reads": [ { "name": "a", "version": 2 }, { "name": "c", "version": 1 } ], "control": [] },
+    { "kind": "assert", "id": 8, "label": "d should be 8",
+      "expr": { "op": "eq", "lhs": { "op": "ref", "ref": { "name": "d", "version": 1 } }, "rhs": { "op": "lit", "value": 8 } },
+      "expected": true, "value": false, "passed": false,
+      "reads": [ { "name": "d", "version": 1 } ], "control": [] }
+  ]
+}

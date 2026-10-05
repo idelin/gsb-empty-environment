@@ -1,0 +1,14 @@
+{
+  "name": "log-slicer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Backward slicer for versioned event logs with causal provenance, gap reporting and replay verification",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "slice": "node src/cli.ts"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
