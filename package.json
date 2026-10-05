@@ -1,0 +1,13 @@
+{
+  "name": "alias-resolver",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Object alias resolution library with hop limits, atomic batch updates, and dependency-tracked caching (including negative dependencies).",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
