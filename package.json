@@ -1,0 +1,13 @@
+{
+  "name": "async-channel-pipeline",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Bounded async channels chaining capacity-limited stages with ownership-tracked cleanup",
+  "scripts": {
+    "test": "node --test test/pipeline.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
