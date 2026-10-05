@@ -1,0 +1,12 @@
+{
+  "name": "coupon-settlement",
+  "version": "1.0.0",
+  "description": "优惠结算库：组合满减、折扣、单品券，支持互斥组与先后依赖，求最优合法组合",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/run-tests.js"
+  },
+  "license": "MIT"
+}
