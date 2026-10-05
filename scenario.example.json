@@ -1,0 +1,19 @@
+{
+  "nodes": 6,
+  "numShards": 8,
+  "maxRespBytes": 128,
+  "forceFullEvery": 4,
+  "rounds": 80,
+  "seed": 7,
+  "recordsPerNode": 6,
+  "updatesPerRound": 2,
+  "updateUntil": 6,
+  "configChange": {"round": 30, "numShards": 16},
+  "faults": {
+    "corruptPage": true,
+    "forgeDigest": true,
+    "duplicatePage": true,
+    "cancelPull": true,
+    "untilRound": 12
+  }
+}
