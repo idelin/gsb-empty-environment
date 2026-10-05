@@ -1,0 +1,11 @@
+{
+  "name": "annotation-intervals",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "多层叠加批注区间库:黏附位边界扩展、编辑映射、失效记录与恢复、分段覆盖查询",
+  "main": "src/annotation-store.ts",
+  "scripts": {
+    "test": "bun test"
+  }
+}
