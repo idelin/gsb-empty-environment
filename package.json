@@ -1,0 +1,19 @@
+{
+  "name": "coverage-migrate",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Migrate statement coverage data across refactors using explicit, provable statement mappings",
+  "type": "commonjs",
+  "main": "dist/src/migrate.js",
+  "bin": {
+    "coverage-migrate": "dist/src/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/migrate.test.js",
+    "migrate": "node dist/src/cli.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

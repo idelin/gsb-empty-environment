@@ -1,0 +1,16 @@
+{
+  "statements": [
+    { "id": "n1", "file": "src/calc.ts",
+      "range": { "start": { "line": 3, "column": 2 }, "end": { "line": 3, "column": 18 } },
+      "text": "total += price" },
+    { "id": "n2", "file": "src/calc.ts",
+      "range": { "start": { "line": 4, "column": 2 }, "end": { "line": 4, "column": 26 } },
+      "text": "round(total + tax())" },
+    { "id": "n3", "file": "src/pricing.ts",
+      "range": { "start": { "line": 12, "column": 2 }, "end": { "line": 12, "column": 30 } },
+      "text": "applyDiscount(total, user)" },
+    { "id": "n4", "file": "src/calc.ts",
+      "range": { "start": { "line": 5, "column": 2 }, "end": { "line": 5, "column": 20 } },
+      "text": "audit(total)" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "rules": [
+    { "kind": "merge", "from": ["s2", "s3"], "to": "n2",
+      "reason": "tax() and round() fused into one expression statement" },
+    { "kind": "move", "from": "s5", "to": "n3",
+      "reason": "applyDiscount extracted to src/pricing.ts" }
+  ]
+}

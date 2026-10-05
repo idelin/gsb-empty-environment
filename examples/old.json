@@ -1,0 +1,19 @@
+{
+  "statements": [
+    { "id": "s1", "file": "src/calc.ts",
+      "range": { "start": { "line": 3, "column": 2 }, "end": { "line": 3, "column": 18 } },
+      "text": "total += price", "hits": 41 },
+    { "id": "s2", "file": "src/calc.ts",
+      "range": { "start": { "line": 4, "column": 2 }, "end": { "line": 4, "column": 12 } },
+      "text": "tax()", "hits": 40 },
+    { "id": "s3", "file": "src/calc.ts",
+      "range": { "start": { "line": 5, "column": 2 }, "end": { "line": 5, "column": 14 } },
+      "text": "round(total)", "hits": 40 },
+    { "id": "s4", "file": "src/calc.ts",
+      "range": { "start": { "line": 6, "column": 2 }, "end": { "line": 6, "column": 22 } },
+      "text": "log.debug(total)", "hits": 0 },
+    { "id": "s5", "file": "src/calc.ts",
+      "range": { "start": { "line": 8, "column": 2 }, "end": { "line": 8, "column": 30 } },
+      "text": "applyDiscount(total, user)", "hits": 17 }
+  ]
+}
