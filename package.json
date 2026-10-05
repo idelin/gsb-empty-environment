@@ -1,0 +1,11 @@
+{
+  "name": "store-replenishment-planner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "门店补货规划器：混合整箱配送下的箱型数量与门店分配优化",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "test": "tsc -p tsconfig.json && node dist/test/verify.js"
+  }
+}

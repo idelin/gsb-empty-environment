@@ -1,0 +1,16 @@
+{
+  "transportCostPerBox": 2,
+  "boxTypes": [
+    { "id": "S", "capacity": 6, "unitCost": 10 },
+    { "id": "M", "capacity": 12, "unitCost": 18 },
+    { "id": "L", "capacity": 20, "unitCost": 28 },
+    { "id": "XL", "capacity": 30, "unitCost": 40 }
+  ],
+  "stores": [
+    { "id": "A", "demand": 45, "shortagePenalty": 3 },
+    { "id": "B", "demand": 23, "shortagePenalty": 8 },
+    { "id": "C", "demand": 60, "shortagePenalty": 1 },
+    { "id": "D", "demand": 14, "shortagePenalty": 5, "transportCostPerBox": 4 },
+    { "id": "E", "demand": 31, "shortagePenalty": 6 }
+  ]
+}
