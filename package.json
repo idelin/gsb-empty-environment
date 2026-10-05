@@ -1,0 +1,13 @@
+{
+  "name": "metric-ledger",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "本地指标账本：整数分数精确计分、可追溯修订的规则版本、双时点季度查询",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.18 || >=23.6"
+  }
+}
