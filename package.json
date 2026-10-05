@@ -1,0 +1,14 @@
+{
+  "name": "decision-table-analyzer",
+  "version": "0.1.0",
+  "description": "Hit-witness and coverage analyzer for priority-ordered decision tables",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "analyze": "node src/cli.ts",
+    "test": "node --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "name": "discounts",
+  "fields": [
+    { "name": "age", "kind": "int", "min": 0, "max": 120 },
+    { "name": "tier", "kind": "enum", "values": ["standard", "silver", "gold", "platinum"] },
+    { "name": "region", "kind": "enum", "values": ["NA", "EU", "APAC", "LATAM"] },
+    { "name": "spend", "kind": "int", "min": 0, "max": 10000 }
+  ],
+  "rules": [
+    {
+      "id": "R1-vip",
+      "priority": 100,
+      "action": "discount-20",
+      "conditions": {
+        "tier": { "op": "in", "values": ["gold", "platinum"] },
+        "spend": { "op": "range", "min": 1000 }
+      }
+    },
+    {
+      "id": "R2-promo",
+      "priority": 90,
+      "action": "discount-15",
+      "conditions": {
+        "spend": { "op": "range", "min": 500, "max": 9999 },
+        "region": { "op": "not", "cond": { "op": "eq", "value": "LATAM" } }
+      }
+    },
+    {
+      "id": "R3-apac",
+      "priority": 90,
+      "action": "discount-apac",
+      "conditions": {
+        "region": { "op": "eq", "value": "APAC" },
+        "spend": { "op": "range", "min": 500 }
+      }
+    },
+    {
+      "id": "R4-youth",
+      "priority": 80,
+      "action": "discount-10",
+      "conditions": {
+        "age": { "op": "range", "min": 18, "max": 25 },
+        "tier": { "op": "eq", "value": "standard" }
+      }
+    },
+    {
+      "id": "R5-youth-dup",
+      "priority": 70,
+      "action": "discount-5",
+      "conditions": {
+        "age": { "op": "range", "min": 20, "max": 25 },
+        "tier": { "op": "eq", "value": "standard" }
+      }
+    },
+    {
+      "id": "R6-broken",
+      "priority": 60,
+      "action": "discount-1",
+      "conditions": {
+        "tier": {
+          "op": "and",
+          "conds": [
+            { "op": "eq", "value": "gold" },
+            { "op": "not", "cond": { "op": "in", "values": ["gold", "silver"] } }
+          ]
+        }
+      }
+    },
+    {
+      "id": "R7-fallback",
+      "priority": 0,
+      "action": "no-discount"
+    }
+  ]
+}
