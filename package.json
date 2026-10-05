@@ -1,0 +1,12 @@
+{
+  "name": "leftmost-longest-regex",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Regex engine with capture groups: union, concatenation, Kleene star; leftmost-longest match with group-priority captures",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "node ${TSC:-/Users/delin/git/onlinehub-web/node_modules/typescript/bin/tsc} -p tsconfig.json",
+    "test": "npm run build && node dist/test/run.js"
+  }
+}
