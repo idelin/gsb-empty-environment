@@ -1,0 +1,61 @@
+# 操作日志回放
+# 初始状态: {"cart":{"items":[{"id":"a","qty":1}]},"inventory":{"a":5}}
+# 容量上限: 12 个树节点
+# --- 操作日志 ---
+op[0] {"op":"subscribe","id":"A","spec":{"recommitOnce":{"path":["cart","stamp"],"value":"from-A"}}}
+op[1] {"op":"subscribe","id":"B","spec":{"throwOnCall":true}}
+op[2] {"op":"subscribe","id":"C","spec":{"unsubscribeOnFirst":["D"]}}
+op[3] {"op":"subscribe","id":"D"}
+op[4] {"op":"begin","tx":"t1"}
+op[5] {"op":"set","tx":"t1","path":["cart","items",0,"qty"],"value":3}
+op[6] {"op":"set","tx":"t1","path":["inventory","a"],"value":2}
+op[7] {"op":"commit","tx":"t1"}
+op[8] {"op":"checkout","id":"s2","version":2}
+op[9] {"op":"begin","tx":"t2"}
+op[10] {"op":"set","tx":"t2","path":["inventory","b"],"value":8}
+op[11] {"op":"commit","tx":"t2"}
+op[12] {"op":"begin","tx":"t3","from":2}
+op[13] {"op":"set","tx":"t3","path":["cart","items"],"value":[{"id":"b","qty":7}]}
+op[14] {"op":"delete","tx":"t3","path":["inventory","a"]}
+op[15] {"op":"commit","tx":"t3"}
+op[16] {"op":"release","id":"s2"}
+op[17] {"op":"begin","tx":"t4"}
+op[18] {"op":"set","tx":"t4","path":["inventory","a"],"value":0}
+op[19] {"op":"set","tx":"t4","path":["cart","items",0,"qty"],"value":8}
+op[20] {"op":"commit","tx":"t4"}
+op[21] {"op":"begin","tx":"t5"}
+op[22] {"op":"set","tx":"t5","path":["cart","junk"],"value":true}
+op[23] {"op":"abort","tx":"t5"}
+op[24] {"op":"checkout","id":"head","version":6}
+# --- 回放事件流 ---
+notify:A:v2:{"cart":{"items":[{"id":"a","qty":3}]},"inventory":{"a":2}}
+recommit-by:A:v3
+notify:B:v2:{"cart":{"items":[{"id":"a","qty":3}]},"inventory":{"a":2}}
+notify:C:v2:{"cart":{"items":[{"id":"a","qty":3}]},"inventory":{"a":2}}
+unsub-by:C:D
+notify:A:v3:{"cart":{"items":[{"id":"a","qty":3}],"stamp":"from-A"},"inventory":{"a":2}}
+notify:B:v3:{"cart":{"items":[{"id":"a","qty":3}],"stamp":"from-A"},"inventory":{"a":2}}
+notify:C:v3:{"cart":{"items":[{"id":"a","qty":3}],"stamp":"from-A"},"inventory":{"a":2}}
+commit:t1:v2
+checkout:s2:v2:{"cart":{"items":[{"id":"a","qty":3}]},"inventory":{"a":2}}
+notify:A:v4:{"cart":{"items":[{"id":"a","qty":3}],"stamp":"from-A"},"inventory":{"a":2,"b":8}}
+notify:B:v4:{"cart":{"items":[{"id":"a","qty":3}],"stamp":"from-A"},"inventory":{"a":2,"b":8}}
+notify:C:v4:{"cart":{"items":[{"id":"a","qty":3}],"stamp":"from-A"},"inventory":{"a":2,"b":8}}
+commit:t2:v4
+notify:A:v5:{"cart":{"items":[{"id":"b","qty":7}]},"inventory":{}}
+notify:B:v5:{"cart":{"items":[{"id":"b","qty":7}]},"inventory":{}}
+notify:C:v5:{"cart":{"items":[{"id":"b","qty":7}]},"inventory":{}}
+commit:t3:v5
+release:s2
+notify:A:v6:{"cart":{"items":[{"id":"b","qty":8}]},"inventory":{"a":0}}
+notify:B:v6:{"cart":{"items":[{"id":"b","qty":8}]},"inventory":{"a":0}}
+notify:C:v6:{"cart":{"items":[{"id":"b","qty":8}]},"inventory":{"a":0}}
+commit:t4:v6
+abort:t5
+checkout:head:v6:{"cart":{"items":[{"id":"b","qty":8}]},"inventory":{"a":0}}
+ledger:10:[5,6]
+# --- 终态 ---
+head: v6
+state: {"cart":{"items":[{"id":"b","qty":8}]},"inventory":{"a":0}}
+ledger: retainedNodes=10 versions=[5,6]
+listenerErrors: 5 (listener B boom; listener B boom; listener B boom; listener B boom; listener B boom)

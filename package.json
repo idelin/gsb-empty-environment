@@ -1,0 +1,9 @@
+{
+  "name": "tx-state-store",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/store.test.ts test/replay.test.ts",
+    "replay": "node scripts/replay.ts"
+  }
+}
