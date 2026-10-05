@@ -1,0 +1,11 @@
+{
+  "name": "stream-escape-codec",
+  "version": "0.1.0",
+  "description": "Streaming escape codec: backslash/hex escapes + length-prefixed raw blocks, with per-byte input ranges",
+  "type": "module",
+  "main": "build/codec.js",
+  "scripts": {
+    "build": "node scripts/strip-types.mjs",
+    "test": "node scripts/strip-types.mjs && node test/run.mjs"
+  }
+}
