@@ -1,0 +1,10 @@
+{
+  "name": "expr-syntax-repairer",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Min-cost (insert/delete) syntax repairer for integer/call/array/arithmetic expressions",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "cli": "node src/cli.ts"
+  }
+}
