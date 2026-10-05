@@ -1,0 +1,14 @@
+{
+  "name": "bundle-guard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "资源打包工具：模块命名冲突检测、最小改名建议与引用同步更新",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:local": "node scripts/build.mjs",
+    "test": "node scripts/run-tests.mjs",
+    "cli": "node scripts/cli.mjs"
+  }
+}
