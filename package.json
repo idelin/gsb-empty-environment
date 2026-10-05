@@ -1,0 +1,8 @@
+{
+  "name": "batch-spell-replace",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "bun test"
+  }
+}
