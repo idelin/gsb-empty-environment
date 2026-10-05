@@ -1,0 +1,35 @@
+{
+  "options": {
+    "observable": ["navigate", "click", "type", "read"],
+    "ignoreKeys": ["ts"],
+    "maxWindow": 10
+  },
+  "left": {
+    "segments": [
+      { "kind": "run", "events": [
+        { "action": "navigate", "args": { "url": "/home" }, "result": "ok" },
+        { "action": "think", "meta": { "note": "plan next step" } }
+      ] },
+      { "kind": "loop", "times": 2, "body": [
+        { "action": "click", "args": { "x": 10, "y": 20 }, "result": { "ts": 1, "hit": true } },
+        { "action": "wait", "args": { "ms": 50 } }
+      ] },
+      { "kind": "run", "events": [
+        { "action": "read", "args": { "selector": "#total" }, "result": "¥128.00" }
+      ] }
+    ]
+  },
+  "right": {
+    "segments": [
+      { "kind": "run", "events": [
+        { "action": "navigate", "args": { "url": "/home" }, "result": "ok" },
+        { "action": "click", "args": { "x": 10, "y": 20 }, "result": { "ts": 2, "hit": true } },
+        { "action": "wait", "args": { "ms": 50 } },
+        { "action": "click", "args": { "x": 10, "y": 20 }, "result": { "ts": 3, "hit": true } },
+        { "action": "wait", "args": { "ms": 50 } },
+        { "action": "snapshot" },
+        { "action": "read", "args": { "selector": "#total" }, "result": "¥136.00" }
+      ] }
+    ]
+  }
+}

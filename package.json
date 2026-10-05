@@ -1,0 +1,20 @@
+{
+  "name": "trace-diff",
+  "version": "0.1.0",
+  "description": "Semantic diff of two executor trajectories with internal-step alignment and loop-compressed segments",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "bin": {
+    "trace-diff": "dist/src/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node scripts/run-tests.mjs",
+    "transpile": "node scripts/run-tests.mjs --emit-only"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.4.0"
+  }
+}
