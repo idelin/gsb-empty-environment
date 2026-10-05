@@ -1,0 +1,14 @@
+{
+  "name": "resource-migration-planner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "层级资源迁移规划器：最小移动次数、次目标最少权限例外，输出迁移前后引用解析",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "start": "node src/main.ts",
+    "test": "node --test tests/*.test.ts"
+  }
+}
