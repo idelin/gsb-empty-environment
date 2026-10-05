@@ -1,0 +1,14 @@
+{
+  "name": "role-grant-solver",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Exact solver for least-privilege role grant combinations",
+  "main": "dist/src/solver.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/solver.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.10"
+  }
+}
