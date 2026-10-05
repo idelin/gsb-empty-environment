@@ -1,0 +1,11 @@
+{
+  "name": "temporal-connectivity-checker",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Check whether two nodes stay connected over a whole query interval in a temporal graph with half-open edge activity windows.",
+  "scripts": {
+    "test": "bun test",
+    "check": "bun run src/cli.ts"
+  }
+}
