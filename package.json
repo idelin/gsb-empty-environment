@@ -1,0 +1,15 @@
+{
+  "name": "combinatorial-auction-solver",
+  "version": "1.0.0",
+  "description": "Combinatorial auction winner-determination solver with XOR bids and VCG settlement support",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --experimental-strip-types --test",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
