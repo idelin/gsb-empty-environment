@@ -1,0 +1,14 @@
+{
+  "name": "remote-exec-acceptance",
+  "version": "0.1.0",
+  "private": true,
+  "description": "远程执行产物验收与缺失补取状态机",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/acceptance.test.js",
+    "simulate": "npm run build && node dist/src/simulate.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
