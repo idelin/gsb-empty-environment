@@ -1,0 +1,12 @@
+{
+  "name": "annotation-coords",
+  "version": "0.1.0",
+  "description": "标注坐标库：裁剪/缩放/翻转/90°旋转的复合变换与原图区域反查",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "ISC"
+}
