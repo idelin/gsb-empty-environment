@@ -1,0 +1,14 @@
+{
+  "name": "request-dedup",
+  "version": "0.1.0",
+  "description": "Request deduplication with an explicit generation protocol, bounded record retention, and merged waiting",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/**/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
