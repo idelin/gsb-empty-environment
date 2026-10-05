@@ -1,0 +1,4 @@
+{"and": [
+  {"intRange": {"attr": "clearance", "min": 2, "max": 10}},
+  {"subsetOf": {"attr": "roles", "set": ["dev", "ops", "contractor"]}}
+]}

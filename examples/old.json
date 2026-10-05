@@ -1,0 +1,5 @@
+{"and": [
+  {"intRange": {"attr": "clearance", "min": 4, "max": 10}},
+  {"bool": {"attr": "mfa", "value": true}},
+  {"subsetOf": {"attr": "roles", "set": ["dev", "ops"]}}
+]}
