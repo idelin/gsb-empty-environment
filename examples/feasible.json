@@ -1,0 +1,41 @@
+{
+  "minRestMinutes": 660,
+  "employees": [
+    { "id": "张三", "skills": ["收银"], "maxDailyMinutes": 480,
+      "preferences": [{ "day": 6, "weight": 3 }] },
+    { "id": "李四", "skills": ["收银"], "maxDailyMinutes": 480 },
+    { "id": "王五", "skills": ["收银", "安保"], "maxDailyMinutes": 480,
+      "preferences": [{ "start": 1200, "end": 360, "weight": 5 }] },
+    { "id": "赵六", "skills": ["收银"], "maxDailyMinutes": 480,
+      "unavailable": [{ "day": 2, "start": 0, "end": 1439 }] },
+    { "id": "孙七", "skills": ["安保"], "maxDailyMinutes": 480,
+      "preferences": [{ "day": 5, "weight": 2 }, { "day": 6, "weight": 2 }] },
+    { "id": "周八", "skills": ["安保"], "maxDailyMinutes": 480 },
+    { "id": "吴九", "skills": ["收银", "安保"], "maxDailyMinutes": 480,
+      "preferences": [{ "shiftId": "夜班-安保-周一", "weight": 8 }] },
+    { "id": "郑十", "skills": ["收银"], "maxDailyMinutes": 480 }
+  ],
+  "shifts": [
+    { "id": "早班-收银-周一", "day": 0, "start": 480, "end": 960, "skill": "收银" },
+    { "id": "晚班-收银-周一", "day": 0, "start": 960, "end": 0, "skill": "收银" },
+    { "id": "夜班-安保-周一", "day": 0, "start": 1320, "end": 360, "skill": "安保" },
+    { "id": "早班-收银-周二", "day": 1, "start": 480, "end": 960, "skill": "收银" },
+    { "id": "晚班-收银-周二", "day": 1, "start": 960, "end": 0, "skill": "收银" },
+    { "id": "夜班-安保-周二", "day": 1, "start": 1320, "end": 360, "skill": "安保" },
+    { "id": "早班-收银-周三", "day": 2, "start": 480, "end": 960, "skill": "收银" },
+    { "id": "晚班-收银-周三", "day": 2, "start": 960, "end": 0, "skill": "收银" },
+    { "id": "夜班-安保-周三", "day": 2, "start": 1320, "end": 360, "skill": "安保" },
+    { "id": "早班-收银-周四", "day": 3, "start": 480, "end": 960, "skill": "收银" },
+    { "id": "晚班-收银-周四", "day": 3, "start": 960, "end": 0, "skill": "收银" },
+    { "id": "夜班-安保-周四", "day": 3, "start": 1320, "end": 360, "skill": "安保" },
+    { "id": "早班-收银-周五", "day": 4, "start": 480, "end": 960, "skill": "收银" },
+    { "id": "晚班-收银-周五", "day": 4, "start": 960, "end": 0, "skill": "收银" },
+    { "id": "夜班-安保-周五", "day": 4, "start": 1320, "end": 360, "skill": "安保" },
+    { "id": "早班-收银-周六", "day": 5, "start": 480, "end": 960, "skill": "收银" },
+    { "id": "晚班-收银-周六", "day": 5, "start": 960, "end": 0, "skill": "收银" },
+    { "id": "夜班-安保-周六", "day": 5, "start": 1320, "end": 360, "skill": "安保" },
+    { "id": "早班-收银-周日", "day": 6, "start": 480, "end": 960, "skill": "收银" },
+    { "id": "晚班-收银-周日", "day": 6, "start": 960, "end": 0, "skill": "收银" },
+    { "id": "夜班-安保-周日", "day": 6, "start": 1320, "end": 360, "skill": "安保" }
+  ]
+}

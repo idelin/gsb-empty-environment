@@ -1,0 +1,17 @@
+{
+  "minRestMinutes": 660,
+  "employees": [
+    { "id": "守卫甲", "skills": ["安保"], "maxDailyMinutes": 480 },
+    { "id": "收银乙", "skills": ["收银"], "maxDailyMinutes": 480 }
+  ],
+  "shifts": [
+    { "id": "夜班-安保-周一", "day": 0, "start": 1320, "end": 480, "skill": "安保" },
+    { "id": "夜班-安保-周二", "day": 1, "start": 1320, "end": 480, "skill": "安保" },
+    { "id": "夜班-安保-周三", "day": 2, "start": 1320, "end": 480, "skill": "安保" },
+    { "id": "夜班-安保-周四", "day": 3, "start": 1320, "end": 480, "skill": "安保" },
+    { "id": "夜班-安保-周五", "day": 4, "start": 1320, "end": 480, "skill": "安保" },
+    { "id": "夜班-安保-周六", "day": 5, "start": 1320, "end": 480, "skill": "安保" },
+    { "id": "夜班-安保-周日", "day": 6, "start": 1320, "end": 480, "skill": "安保" },
+    { "id": "早班-收银-周一", "day": 0, "start": 480, "end": 960, "skill": "收银" }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "weekly-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "七天员工排班器：技能 / 每日工时 / 跨日连续休息硬约束 + 带权偏好最小化",
+  "main": "dist/src/scheduler.js",
+  "bin": {
+    "weekly-scheduler": "dist/src/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/run-tests.js",
+    "cli": "node dist/src/cli.js"
+  },
+  "license": "MIT"
+}
