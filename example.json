@@ -1,0 +1,14 @@
+{
+  "items": [
+    {"id": "engine",   "weight": "5"},
+    {"id": "battery",  "weight": "7/2"},
+    {"id": "tank",     "weight": "3"},
+    {"id": "avionics", "weight": "3/2"},
+    {"id": "cargo-a",  "weight": "4/3"},
+    {"id": "cargo-b",  "weight": "5/6"},
+    {"id": "sensor",   "weight": "1/3"}
+  ],
+  "positions": ["0", "1/2", "1", "3/2", "2", "5/2", "3"],
+  "capacity": "8",
+  "safe_interval": ["4/3", "5/3"]
+}
