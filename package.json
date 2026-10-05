@@ -1,0 +1,14 @@
+{
+  "name": "connection-reset-simulator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "connection reset simulator: mutually-acknowledged generation handshake with bounded buffering",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node src/demo.ts"
+  }
+}
