@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "statements": [
+    {
+      "id": "st-1",
+      "range": {
+        "file": "src/app.ts",
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 20
+        }
+      },
+      "hits": 120,
+      "fingerprint": "55394d693d030323"
+    },
+    {
+      "id": "st-2",
+      "range": {
+        "file": "src/app.ts",
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 20
+        }
+      },
+      "hits": 85,
+      "fingerprint": "47d2255a360780fa"
+    },
+    {
+      "id": "st-3",
+      "range": {
+        "file": "src/app.ts",
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 20
+        }
+      },
+      "hits": 40,
+      "fingerprint": "13b2bf685676ba4d"
+    },
+    {
+      "id": "st-4",
+      "range": {
+        "file": "src/app.ts",
+        "start": {
+          "line": 12,
+          "column": 0
+        },
+        "end": {
+          "line": 12,
+          "column": 20
+        }
+      },
+      "hits": 60,
+      "fingerprint": "3952c415947cf686"
+    },
+    {
+      "id": "st-5",
+      "range": {
+        "file": "src/app.ts",
+        "start": {
+          "line": 13,
+          "column": 0
+        },
+        "end": {
+          "line": 13,
+          "column": 20
+        }
+      },
+      "hits": 15,
+      "fingerprint": "f6aef97f87335f9a"
+    },
+    {
+      "id": "st-6",
+      "range": {
+        "file": "src/app.ts",
+        "start": {
+          "line": 16,
+          "column": 0
+        },
+        "end": {
+          "line": 16,
+          "column": 20
+        }
+      },
+      "hits": 7,
+      "fingerprint": "07e789af92ab4ea3"
+    },
+    {
+      "id": "st-7",
+      "range": {
+        "file": "src/app.ts",
+        "start": {
+          "line": 18,
+          "column": 0
+        },
+        "end": {
+          "line": 18,
+          "column": 20
+        }
+      },
+      "hits": 99,
+      "fingerprint": "2714bb0bc7042f9a"
+    },
+    {
+      "id": "st-8",
+      "range": {
+        "file": "src/app.ts",
+        "start": {
+          "line": 19,
+          "column": 0
+        },
+        "end": {
+          "line": 19,
+          "column": 20
+        }
+      },
+      "hits": 0,
+      "fingerprint": "2714bb0bc7042f9a"
+    }
+  ]
+}

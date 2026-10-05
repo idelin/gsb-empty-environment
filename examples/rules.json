@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "kind": "identity",
+      "oldId": "st-2",
+      "newId": "st-total"
+    },
+    {
+      "kind": "split",
+      "oldId": "st-3",
+      "newIds": [
+        "st-3a",
+        "st-3b"
+      ],
+      "reason": "复合语句拆分为两条独立语句"
+    },
+    {
+      "kind": "merge",
+      "oldIds": [
+        "st-4",
+        "st-5"
+      ],
+      "newId": "st-45",
+      "reason": "两条语句合并为一行"
+    }
+  ]
+}
