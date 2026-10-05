@@ -1,0 +1,10 @@
+2 1
+const 0
+neg 1 0
+0
+2
+5 0 OP const 0
+1 0 OP neg 1 WILD 0
+2
+1 0
+0 0

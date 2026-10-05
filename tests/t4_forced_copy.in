@@ -1,0 +1,16 @@
+5 2
+const 0
+neg 1 0
+neg 1 0
+add 2 1 2
+use1 1 3
+0 2
+2 0
+5
+5 0 OP const 0
+1 0 OP neg 1 WILD 0
+1 1 OP neg 1 WILD 1
+1 0 OP add 2 WILD 0 WILD 0
+0 0 OP use1 1 WILD 1
+1
+4 0
