@@ -1,0 +1,11 @@
+{
+  "name": "versioned-result-cache",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Immutable result cache keyed by input-array buffer version and algorithm params",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/run.js",
+    "demo": "npm run build && node dist/src/demo.js"
+  }
+}
