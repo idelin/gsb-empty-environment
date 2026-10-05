@@ -1,0 +1,11 @@
+{
+  "name": "order-splitting-solver",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "拆单求解器：多仓发货分配，最低运费优先、包裹数次之，支持免运门槛凑单",
+  "scripts": {
+    "test": "bun test",
+    "demo": "bun run src/demo.ts"
+  }
+}
