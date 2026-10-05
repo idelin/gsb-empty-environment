@@ -1,0 +1,14 @@
+{
+  "materials": [
+    {"name": "ore", "packageSize": 4, "packageCost": "6"},
+    {"name": "ingot", "packageSize": 1, "packageCost": "100"},
+    {"name": "part", "packageSize": 1, "packageCost": "100"}
+  ],
+  "demands": [
+    {"material": "part", "quantity": 3}
+  ],
+  "rules": [
+    {"name": "smelt", "input": {"material": "ore", "quantity": 1}, "output": {"material": "ingot", "quantity": 2}},
+    {"name": "machine", "input": {"material": "ingot", "quantity": 1}, "output": {"material": "part", "quantity": 1}}
+  ]
+}

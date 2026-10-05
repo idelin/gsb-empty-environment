@@ -1,0 +1,16 @@
+{
+  "materials": [
+    {"name": "alloy", "packageSize": 2, "packageCost": "5"},
+    {"name": "catalyst", "packageSize": 1, "packageCost": "1"},
+    {"name": "widget", "packageSize": 1, "packageCost": "50"}
+  ],
+  "demands": [
+    {"material": "widget", "quantity": 2}
+  ],
+  "rules": [
+    {"name": "cast",
+     "input": {"material": "alloy", "quantity": 1},
+     "output": {"material": "widget", "quantity": 1},
+     "aux": [{"material": "catalyst", "quantity": 1}]}
+  ]
+}

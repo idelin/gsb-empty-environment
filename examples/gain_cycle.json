@@ -1,0 +1,13 @@
+{
+  "materials": [
+    {"name": "a", "packageSize": 1, "packageCost": "1"},
+    {"name": "b", "packageSize": 1, "packageCost": "1"}
+  ],
+  "demands": [
+    {"material": "b", "quantity": 3}
+  ],
+  "rules": [
+    {"name": "a2b", "input": {"material": "a", "quantity": 2}, "output": {"material": "b", "quantity": 3}},
+    {"name": "b2a", "input": {"material": "b", "quantity": 3}, "output": {"material": "a", "quantity": 4}}
+  ]
+}
