@@ -1,0 +1,12 @@
+{
+  "name": "incremental-indent-parser",
+  "version": "0.1.0",
+  "description": "Incremental indentation-based block parser with stable node ids and subtree reuse",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\""
+  }
+}
