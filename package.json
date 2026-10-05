@@ -1,0 +1,11 @@
+{
+  "name": "stream-pattern-matcher",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
