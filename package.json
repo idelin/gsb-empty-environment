@@ -1,0 +1,10 @@
+{
+  "name": "edge-cache-barrier-simulator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "边缘缓存模拟器：更新后允许读旧值，直到屏障发布；此后只能读新版本或等待",
+  "scripts": {
+    "test": "node --test"
+  }
+}
