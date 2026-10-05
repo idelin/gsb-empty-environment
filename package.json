@@ -1,0 +1,17 @@
+{
+  "name": "rational-monotone-cubic",
+  "version": "1.0.0",
+  "description": "Monotonicity-preserving rational piecewise cubic interpolation (Delbourgo-Gregory form) with analytic non-negativity certificates and exact derivative-root analysis",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
