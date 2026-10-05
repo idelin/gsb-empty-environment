@@ -1,0 +1,10 @@
+{
+  "name": "utf8-rope-editor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Persistent UTF-8 rope text editing library with scalar-value offsets, undo and branching history",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/run.js"
+  }
+}
