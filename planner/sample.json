@@ -1,0 +1,11 @@
+{
+  "days": 7,
+  "demand": [30, 25, 20, 20, 15, 15, 10],
+  "transferCapacity": [40, 40, 35, 35, 30, 30, 30],
+  "batches": [
+    {"id": "B1", "quantity": 40, "expiryDay": 3, "transferCost": 2},
+    {"id": "B2", "quantity": 30, "expiryDay": 5, "transferCost": 3},
+    {"id": "B3", "quantity": 50, "expiryDay": 9, "transferCost": 1},
+    {"id": "B4", "quantity": 20, "expiryDay": 2, "transferCost": 4}
+  ]
+}
