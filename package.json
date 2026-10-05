@@ -1,0 +1,13 @@
+{
+  "name": "protocol-compat-checker",
+  "version": "1.0.0",
+  "description": "有限状态协议兼容检查器：新版协议 vs 旧版对端，容量受限 FIFO 队列",
+  "type": "module",
+  "scripts": {
+    "check": "node src/cli.ts",
+    "test": "node --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "old-peer",
+  "initial": "p0",
+  "finals": ["p4"],
+  "transitions": [
+    { "from": "p0", "to": "p1", "recv": "hello" },
+    { "from": "p1", "to": "p2", "send": "ack" },
+    { "from": "p2", "to": "p3", "recv": "data" },
+    { "from": "p3", "to": "p2", "send": "done" },
+    { "from": "p2", "to": "p4", "recv": "quit" }
+  ]
+}

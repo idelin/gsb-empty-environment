@@ -1,0 +1,11 @@
+{
+  "name": "new-unexpected",
+  "initial": "s0",
+  "finals": ["s3"],
+  "transitions": [
+    { "from": "s0", "to": "s1", "send": "hello" },
+    { "from": "s1", "to": "s2", "recv": "ack" },
+    { "from": "s2", "to": "s2", "send": "ping" },
+    { "from": "s2", "to": "s3", "send": "quit" }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "new-ok",
+  "initial": "s0",
+  "finals": ["s4"],
+  "transitions": [
+    { "from": "s0", "to": "s1", "send": "hello" },
+    { "from": "s1", "to": "s2", "recv": "ack" },
+    { "from": "s2", "to": "s3", "send": "data" },
+    { "from": "s3", "to": "s2", "recv": "done" },
+    { "from": "s2", "to": "s4", "send": "quit" }
+  ]
+}

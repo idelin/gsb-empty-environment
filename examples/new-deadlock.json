@@ -1,0 +1,11 @@
+{
+  "name": "new-deadlock",
+  "initial": "s0",
+  "finals": ["s4"],
+  "transitions": [
+    { "from": "s0", "to": "s1", "send": "hello" },
+    { "from": "s1", "to": "s2", "recv": "ack" },
+    { "from": "s2", "to": "s3", "recv": "ready" },
+    { "from": "s3", "to": "s4", "send": "quit" }
+  ]
+}
