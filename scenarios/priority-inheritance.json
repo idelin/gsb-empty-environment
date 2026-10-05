@@ -1,0 +1,14 @@
+{
+  "name": "priority inversion + inheritance (from JSON)",
+  "tasks": [
+    {
+      "id": "L", "priority": 1, "releaseTime": 0,
+      "segments": [ { "lock": "A" }, { "run": 3 }, { "unlock": "A" }, { "run": 1 } ]
+    },
+    { "id": "M", "priority": 5, "releaseTime": 1, "segments": [ { "run": 6 } ] },
+    {
+      "id": "H", "priority": 9, "releaseTime": 2,
+      "segments": [ { "lock": "A" }, { "run": 1 }, { "unlock": "A" } ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "deadlock (from JSON)",
+  "tasks": [
+    {
+      "id": "A", "priority": 5, "releaseTime": 0,
+      "segments": [
+        { "lock": "L1" }, { "run": 2 }, { "lock": "L2" }, { "run": 1 },
+        { "unlock": "L2" }, { "unlock": "L1" }
+      ]
+    },
+    {
+      "id": "B", "priority": 6, "releaseTime": 1,
+      "segments": [
+        { "lock": "L2" }, { "run": 1 }, { "lock": "L1" }, { "run": 1 },
+        { "unlock": "L1" }, { "unlock": "L2" }
+      ]
+    }
+  ]
+}

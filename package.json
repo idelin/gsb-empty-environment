@@ -1,0 +1,13 @@
+{
+  "name": "preemptive-scheduler-sim",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Single-core preemptive scheduling simulator with transitive priority inheritance, lock timeouts and deadlock detection",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
