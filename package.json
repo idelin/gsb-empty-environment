@@ -1,0 +1,15 @@
+{
+  "name": "alias-resolver",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Object alias resolution: versioned targets, alias chains, atomic batch updates, dependency-tracked cache",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/run-tests.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
