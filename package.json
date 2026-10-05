@@ -1,0 +1,15 @@
+{
+  "name": "annotation-geometry",
+  "version": "0.1.0",
+  "description": "标注坐标库：复合裁剪/缩放/翻转/90度旋转，支持反查原图区域；像素边界坐标，取整仅发生在最终栅格化",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
