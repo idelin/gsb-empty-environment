@@ -1,0 +1,14 @@
+{
+  "name": "rule-coverage-analyzer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Ordered first-match rule coverage analyzer over finite int intervals and enum attributes",
+  "scripts": {
+    "test": "node tests/run.ts",
+    "demo": "node src/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
