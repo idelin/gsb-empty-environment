@@ -1,0 +1,30 @@
+{
+  "days": 5,
+  "nutrients": {
+    "protein": { "min": 50, "max": 120 },
+    "carbs":   { "min": 60, "max": 150 },
+    "fat":     { "min": 20, "max": 70 }
+  },
+  "bannedAllergens": ["peanut"],
+  "maxConsecutiveDays": 2,
+  "maxServingsPerDay": 5,
+  "maxTotalServings": 20,
+  "dishes": [
+    { "name": "鸡胸肉沙拉", "unitCost": 12, "tiers": [0.5, 1.0, 1.5],
+      "nutrition": { "protein": 25, "carbs": 8, "fat": 5 } },
+    { "name": "牛肉意面", "unitCost": 18, "tiers": [0.5, 1.0],
+      "nutrition": { "protein": 22, "carbs": 45, "fat": 12 } },
+    { "name": "清蒸鱼", "unitCost": 20, "tiers": [1.0],
+      "nutrition": { "protein": 30, "carbs": 2, "fat": 8 }, "maxTimes": 3 },
+    { "name": "花生酱三明治", "unitCost": 6, "allergens": ["peanut"], "tiers": [1.0],
+      "nutrition": { "protein": 12, "carbs": 30, "fat": 14 } },
+    { "name": "蔬菜炒饭", "unitCost": 8, "tiers": [0.5, 1.0, 1.5],
+      "nutrition": { "protein": 8, "carbs": 40, "fat": 9 } },
+    { "name": "虾仁蒸蛋", "unitCost": 10, "allergens": ["shellfish"], "tiers": [1.0, 1.5],
+      "nutrition": { "protein": 15, "carbs": 3, "fat": 6 } },
+    { "name": "燕麦牛奶", "unitCost": 5, "tiers": [1.0, 2.0],
+      "nutrition": { "protein": 9, "carbs": 28, "fat": 5 } },
+    { "name": "豆腐青菜", "unitCost": 7, "tiers": [1.0, 1.5],
+      "nutrition": { "protein": 11, "carbs": 6, "fat": 4 } }
+  ]
+}

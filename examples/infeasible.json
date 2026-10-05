@@ -1,0 +1,17 @@
+{
+  "days": 5,
+  "nutrients": {
+    "protein": { "min": 200, "max": 400 }
+  },
+  "bannedAllergens": ["soy"],
+  "maxConsecutiveDays": 2,
+  "maxTotalServings": 20,
+  "dishes": [
+    { "name": "鸡胸肉", "unitCost": 10, "tiers": [1.0],
+      "nutrition": { "protein": 30 } },
+    { "name": "豆腐", "unitCost": 4, "allergens": ["soy"], "tiers": [1.0],
+      "nutrition": { "protein": 25 } },
+    { "name": "米饭", "unitCost": 2, "tiers": [1.0],
+      "nutrition": { "protein": 4 } }
+  ]
+}
