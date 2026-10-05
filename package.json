@@ -1,0 +1,11 @@
+{
+  "name": "staged-job-executor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Staged job executor (prepare/submit/cleanup) with a phase state machine, serializable recovery record, and cancellation-safety guarantees.",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/executor.test.js"
+  }
+}
