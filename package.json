@@ -1,0 +1,11 @@
+{
+  "name": "tournament-ranking",
+  "version": "1.0.0",
+  "description": "赛事排名库：积分相同比较组内相互战绩，递归拆组决胜，最终同分保留并列，附解释树",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test 'tests/*.test.ts'",
+    "typecheck": "tsc --noEmit"
+  }
+}
