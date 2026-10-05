@@ -1,0 +1,44 @@
+{
+  "source_schema": {
+    "fields": [
+      {"name": "id", "kind": "int"},
+      {"name": "amount", "kind": "decimal", "scale": 3},
+      {"name": "note", "kind": "string"},
+      {"name": "created", "kind": "timestamp"}
+    ]
+  },
+  "target_schema": {
+    "fields": [
+      {"name": "id", "kind": "int", "required": true, "min": 0},
+      {"name": "total", "kind": "decimal", "scale": 2},
+      {"name": "note", "kind": "string", "max_bytes": 8, "default": "n/a"},
+      {"name": "created", "kind": "timestamp"}
+    ]
+  },
+  "mapping": {"total": "amount"},
+  "config": {"decimal_mode": "half_even", "timestamp_mode": "reject"},
+  "rows": [
+    {
+      "id": 7,
+      "amount": {"$decimal": {"coef": "12345", "scale": 3}},
+      "created": {"$ts": "2024-03-01T00:30:00+05:30"}
+    },
+    {
+      "id": 8,
+      "amount": {"$decimal": {"coef": "-25005", "scale": 3}},
+      "note": null,
+      "created": {"$ts": "1969-12-31T23:59:59.999999Z"}
+    },
+    {
+      "id": -3,
+      "amount": {"$decimal": {"coef": "100", "scale": 3}},
+      "created": {"$ts": "2024-02-29T10:00:00Z"}
+    },
+    {
+      "id": 9,
+      "amount": {"$decimal": {"coef": "555", "scale": 3}},
+      "note": "ok",
+      "created": {"$ts": "2024-01-01T00:00:00.1234567Z"}
+    }
+  ]
+}
