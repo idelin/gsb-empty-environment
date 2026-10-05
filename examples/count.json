@@ -1,0 +1,38 @@
+{
+  "tables": {
+    "R": [
+      {"k": 1, "v": 10},
+      {"k": 1, "v": 10},
+      {"k": 2, "v": 20},
+      {"k": null, "v": 30}
+    ],
+    "S": [
+      {"k": 1, "w": 5},
+      {"k": 1, "w": null},
+      {"k": null, "w": 7}
+    ]
+  },
+  "plan": {
+    "op": "project",
+    "input": {"op": "scan", "table": "R"},
+    "exprs": [
+      {"expr": {"kind": "col", "name": "k"}, "as": "k"},
+      {"expr": {"kind": "col", "name": "v"}, "as": "v"},
+      {"expr": {
+        "kind": "count", "col": "*",
+        "plan": {
+          "op": "filter",
+          "input": {"op": "scan", "table": "S"},
+          "pred": {"kind": "and", "args": [
+            {"kind": "cmp", "op": "eq",
+             "l": {"kind": "outer", "name": "k"},
+             "r": {"kind": "col", "name": "k"}},
+            {"kind": "cmp", "op": "gt",
+             "l": {"kind": "col", "name": "w"},
+             "r": {"kind": "lit", "value": 0}}
+          ]}
+        }
+      }, "as": "c"}
+    ]
+  }
+}

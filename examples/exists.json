@@ -1,0 +1,28 @@
+{
+  "tables": {
+    "R": [
+      {"k": 1, "v": 10},
+      {"k": 1, "v": 10},
+      {"k": 2, "v": 20},
+      {"k": null, "v": 30}
+    ],
+    "S": [
+      {"k": 1, "w": 5},
+      {"k": null, "w": 7}
+    ]
+  },
+  "plan": {
+    "op": "filter",
+    "input": {"op": "scan", "table": "R"},
+    "pred": {
+      "kind": "exists",
+      "plan": {
+        "op": "filter",
+        "input": {"op": "scan", "table": "S"},
+        "pred": {"kind": "cmp", "op": "eq",
+          "l": {"kind": "outer", "name": "k"},
+          "r": {"kind": "col", "name": "k"}}
+      }
+    }
+  }
+}
