@@ -1,0 +1,11 @@
+export { TermFactory, canon, termEq, show, v, p, termToJSON, termFromJSON } from "./term.ts";
+export type { Term, Pat } from "./term.ts";
+export type { TermJSON } from "./term.ts";
+export { match, matchPattern, instantiate } from "./match.ts";
+export type { Bindings } from "./match.ts";
+export { Engine, replaceAt } from "./engine.ts";
+export type { Rule, StepRecord, Status, CycleInfo, RunResult } from "./engine.ts";
+export { runNaive, ncanon } from "./naive.ts";
+export type { NTree, NRunResult } from "./naive.ts";
+export { runEngine, runNaiveComparable, crossCheck, toTerm, toNTree } from "./verify.ts";
+export type { ComparableRun, TraceLine } from "./verify.ts";

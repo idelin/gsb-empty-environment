@@ -1,0 +1,13 @@
+{
+  "name": "tree-rewriter",
+  "version": "1.0.0",
+  "description": "Term tree rewriter with patterns, priorities, leftmost-innermost evaluation, cycle detection, resumable budgets, and a naive cross-check interpreter",
+  "type": "module",
+  "scripts": {
+    "test": "node test/run.ts",
+    "demo": "node src/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
