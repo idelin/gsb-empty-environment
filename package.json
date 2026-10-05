@@ -1,0 +1,11 @@
+{
+  "name": "constrained-topo-sort",
+  "version": "1.0.0",
+  "description": "Lexicographically smallest topological order under fixed-position constraints, with verifiable infeasibility evidence and a search budget.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node tools/stripTypes.mjs",
+    "test": "node tools/stripTypes.mjs && node build/test/runTests.js"
+  }
+}
