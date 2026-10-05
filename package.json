@@ -1,0 +1,14 @@
+{
+  "name": "remote-exec-acceptance",
+  "version": "1.0.0",
+  "private": true,
+  "description": "远程执行产物验收模块：清单匹配、缺块补取状态机、代次防护",
+  "type": "module",
+  "scripts": {
+    "simulate": "node --experimental-strip-types src/simulate.ts",
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
