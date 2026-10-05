@@ -1,0 +1,12 @@
+{
+  "packages": [
+    {"name": "app",  "version": "1.0.0", "source": "registry", "size": 1200, "deps": {"web": ">=1.0.0, <2.0.0"}},
+    {"name": "app",  "version": "2.0.0", "source": "registry", "size": 1500, "deps": {"web": ">=2.0.0"}},
+    {"name": "web",  "version": "1.4.0", "source": "registry", "size": 800,  "deps": {"util": "*"}},
+    {"name": "web",  "version": "2.1.0", "source": "registry", "size": 900,  "deps": {"util": ">=2.0.0"}},
+    {"name": "util", "version": "1.2.0", "source": "registry", "size": 300},
+    {"name": "util", "version": "2.0.0", "source": "registry", "size": 250},
+    {"name": "util", "version": "2.0.0", "source": "git",      "size": 2000},
+    {"name": "old",  "version": "0.9.0", "source": "registry", "size": 100}
+  ]
+}
