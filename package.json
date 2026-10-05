@@ -1,0 +1,14 @@
+{
+  "name": "quota-protocol-sim",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "bash tools/node23.sh --test \"test/*.test.ts\"",
+    "replay": "bash tools/node23.sh src/cli.ts replay",
+    "demo": "bash tools/node23.sh src/cli.ts replay --verbose --check"
+  }
+}

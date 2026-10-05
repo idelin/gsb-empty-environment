@@ -1,0 +1,231 @@
+{
+  "ticks": 260,
+  "windowLength": 100,
+  "windowBudget": 400,
+  "nodes": [
+    "n1",
+    "n2"
+  ],
+  "ops": [
+    {
+      "tick": 0,
+      "op": "issue",
+      "node": "n1",
+      "amount": 150
+    },
+    {
+      "tick": 1,
+      "op": "drop",
+      "to": "n2",
+      "kind": "grant",
+      "count": 1
+    },
+    {
+      "tick": 1,
+      "op": "issue",
+      "node": "n2",
+      "amount": 100
+    },
+    {
+      "tick": 5,
+      "op": "spend",
+      "node": "n1",
+      "requestId": "r1",
+      "cost": 60
+    },
+    {
+      "tick": 6,
+      "op": "spend",
+      "node": "n1",
+      "requestId": "r1",
+      "cost": 60
+    },
+    {
+      "tick": 7,
+      "op": "spend",
+      "node": "n1",
+      "requestId": "r1",
+      "cost": 70
+    },
+    {
+      "tick": 10,
+      "op": "partition",
+      "from": "center",
+      "to": "n1"
+    },
+    {
+      "tick": 10,
+      "op": "partition",
+      "from": "n1",
+      "to": "center"
+    },
+    {
+      "tick": 10,
+      "op": "partition",
+      "from": "center",
+      "to": "n2"
+    },
+    {
+      "tick": 10,
+      "op": "partition",
+      "from": "n2",
+      "to": "center"
+    },
+    {
+      "tick": 12,
+      "op": "issue",
+      "node": "n2",
+      "amount": 50
+    },
+    {
+      "tick": 15,
+      "op": "spend",
+      "node": "n1",
+      "requestId": "r2",
+      "cost": 40
+    },
+    {
+      "tick": 20,
+      "op": "restart",
+      "node": "n1"
+    },
+    {
+      "tick": 20,
+      "op": "spend",
+      "node": "n1",
+      "requestId": "r1",
+      "cost": 60
+    },
+    {
+      "tick": 21,
+      "op": "spend",
+      "node": "n1",
+      "requestId": "r3",
+      "cost": 30
+    },
+    {
+      "tick": 22,
+      "op": "spend",
+      "node": "n1",
+      "requestId": "r4",
+      "cost": 200
+    },
+    {
+      "tick": 30,
+      "op": "return",
+      "node": "n1",
+      "grantId": "G1"
+    },
+    {
+      "tick": 40,
+      "op": "heal"
+    },
+    {
+      "tick": 41,
+      "op": "drop",
+      "to": "n1",
+      "kind": "return-confirm",
+      "count": 1
+    },
+    {
+      "tick": 41,
+      "op": "returnAll",
+      "node": "n1"
+    },
+    {
+      "tick": 45,
+      "op": "returnAll",
+      "node": "n1"
+    },
+    {
+      "tick": 50,
+      "op": "issue",
+      "node": "n1",
+      "amount": 120
+    },
+    {
+      "tick": 52,
+      "op": "spend",
+      "node": "n1",
+      "requestId": "r5",
+      "cost": 100
+    },
+    {
+      "tick": 99,
+      "op": "spend",
+      "node": "n1",
+      "requestId": "r6",
+      "cost": 20
+    },
+    {
+      "tick": 100,
+      "op": "spend",
+      "node": "n1",
+      "requestId": "r7",
+      "cost": 1
+    },
+    {
+      "tick": 101,
+      "op": "issue",
+      "node": "n1",
+      "amount": 200
+    },
+    {
+      "tick": 101,
+      "op": "issue",
+      "node": "n2",
+      "amount": 100,
+      "delay": 150
+    },
+    {
+      "tick": 105,
+      "op": "spend",
+      "node": "n1",
+      "requestId": "r8",
+      "cost": 150
+    },
+    {
+      "tick": 110,
+      "op": "restart",
+      "node": "center"
+    },
+    {
+      "tick": 111,
+      "op": "issue",
+      "node": "n2",
+      "amount": 100
+    },
+    {
+      "tick": 120,
+      "op": "spend",
+      "node": "n2",
+      "requestId": "r9",
+      "cost": 60
+    },
+    {
+      "tick": 130,
+      "op": "returnAll",
+      "node": "n2"
+    },
+    {
+      "tick": 135,
+      "op": "issue",
+      "node": "n2",
+      "amount": 40
+    },
+    {
+      "tick": 140,
+      "op": "spend",
+      "node": "n2",
+      "requestId": "r10",
+      "cost": 40
+    },
+    {
+      "tick": 252,
+      "op": "spend",
+      "node": "n2",
+      "requestId": "r11",
+      "cost": 20
+    }
+  ]
+}
