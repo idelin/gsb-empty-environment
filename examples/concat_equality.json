@@ -1,0 +1,11 @@
+{
+  "alphabet": "ab",
+  "variables": [
+    {"name": "X", "minLen": 1, "maxLen": 2},
+    {"name": "Y", "minLen": 0, "maxLen": 2},
+    {"name": "Z", "minLen": 1, "maxLen": 2},
+    {"name": "W", "minLen": 0, "maxLen": 2}
+  ],
+  "equalities": [{"left": ["X", "Y"], "right": ["Z", "W"]}],
+  "budget": 100000
+}

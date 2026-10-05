@@ -1,0 +1,8 @@
+{
+  "alphabet": "a",
+  "variables": [
+    {"name": "X", "minLen": 1, "maxLen": 3}
+  ],
+  "forbidden": ["a"],
+  "budget": 100000
+}
