@@ -1,0 +1,14 @@
+{
+  "name": "logistics-transshipment-planner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "物流中转规划器：计入固定装卸时间、多批合车不超载、有限班次表下求全部货物送达的最小总费用方案",
+  "scripts": {
+    "build": "node tools/compile.js",
+    "test": "node tools/compile.js && node dist/test/planner.test.js",
+    "demo": "node tools/compile.js && node dist/src/demo.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

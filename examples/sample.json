@@ -1,0 +1,16 @@
+{
+  "handling": { "loadTime": 30, "unloadTime": 20 },
+  "batches": [
+    { "id": "B1", "origin": "杭州", "destination": "北京", "readyTime": 1080, "size": 4 },
+    { "id": "B2", "origin": "杭州", "destination": "北京", "readyTime": 1080, "size": 3 },
+    { "id": "B3", "origin": "杭州", "destination": "北京", "readyTime": 1260, "size": 4 },
+    { "id": "B4", "origin": "杭州", "destination": "上海", "readyTime": 1080, "size": 2 }
+  ],
+  "trips": [
+    { "id": "T1", "from": "杭州", "to": "上海", "depart": 1200, "arrive": 1380, "capacity": 10, "fixedCost": 120, "perUnitCost": 2 },
+    { "id": "T2", "from": "杭州", "to": "上海", "depart": 1410, "arrive": 1560, "capacity": 6, "fixedCost": 90, "perUnitCost": 2 },
+    { "id": "T3", "from": "上海", "to": "北京", "depart": 1420, "arrive": 1700, "capacity": 8, "fixedCost": 200, "perUnitCost": 3 },
+    { "id": "T4", "from": "上海", "to": "北京", "depart": 1920, "arrive": 2220, "capacity": 12, "fixedCost": 200, "perUnitCost": 3 },
+    { "id": "T5", "from": "杭州", "to": "北京", "depart": 1500, "arrive": 2100, "capacity": 5, "fixedCost": 260, "perUnitCost": 4 }
+  ]
+}
