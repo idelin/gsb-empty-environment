@@ -1,0 +1,14 @@
+{
+  "name": "config-migrator",
+  "version": "0.1.0",
+  "description": "Rule-based config key migration: split/merge keys, preconditions, priorities, reversible transforms with loss tracking, conflict rejection, provenance and unconsumed-key reporting.",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/run.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
