@@ -1,0 +1,15 @@
+{
+  "name": "sparse-pixel-collision",
+  "version": "1.0.0",
+  "description": "Sparse pixel collision library with incremental indexing and atomic shape updates",
+  "main": "src/sparse-collision.ts",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\""
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    ".": "./src/sparse-collision.ts"
+  }
+}
