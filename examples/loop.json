@@ -1,0 +1,9 @@
+{
+  "queues": ["triage", "support"],
+  "fields": [{"name": "priority", "values": ["low", "high"]}],
+  "rules": [
+    {"name": "to-support", "when": {"queue": "triage"}, "set": {"queue": "support"}},
+    {"name": "bounce-back", "when": {"queue": "support", "fields": {"priority": "low"}}, "set": {"queue": "triage"}},
+    {"name": "escalate", "when": {"queue": "support", "fields": {"priority": "high"}}, "set": {"fields": {"priority": "low"}}}
+  ]
+}

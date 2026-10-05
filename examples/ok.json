@@ -1,0 +1,10 @@
+{
+  "queues": ["triage", "billing", "tech", "resolved"],
+  "fields": [{"name": "vip", "values": ["no", "yes"]}],
+  "rules": [
+    {"name": "invoice-to-billing", "when": {"queue": "triage"}, "set": {"queue": "billing"}},
+    {"name": "vip-fast-lane", "when": {"queue": "triage", "fields": {"vip": "yes"}}, "set": {"queue": "tech"}},
+    {"name": "billing-resolve", "when": {"queue": "billing"}, "set": {"queue": "resolved"}},
+    {"name": "tech-resolve", "when": {"queue": "tech"}, "set": {"queue": "resolved"}}
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "queues": ["triage", "billing", "tech"],
+  "fields": [{"name": "topic", "values": ["invoice", "outage"]}],
+  "rules": [
+    {"name": "to-billing", "when": {"queue": "triage"}, "set": {"queue": "billing"}},
+    {"name": "to-tech", "when": {"queue": "triage"}, "set": {"queue": "tech"}}
+  ]
+}
