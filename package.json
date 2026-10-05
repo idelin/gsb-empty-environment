@@ -1,0 +1,13 @@
+{
+  "name": "cutting-planner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "一维切割规划器：固定锯缝、多规格原料、最低采购成本 + 最少刀数",
+  "scripts": {
+    "start": "node src/cli.ts",
+    "sample": "node src/cli.ts examples/sample.json",
+    "test": "node test/brute-force-check.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}

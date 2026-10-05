@@ -1,0 +1,14 @@
+{
+  "kerf": 5,
+  "stocks": [
+    { "length": 6000, "price": 100 },
+    { "length": 4000, "price": 72 },
+    { "length": 2500, "price": 50 }
+  ],
+  "demands": [
+    { "length": 2100, "count": 3 },
+    { "length": 1500, "count": 4 },
+    { "length": 900, "count": 6 },
+    { "length": 600, "count": 5 }
+  ]
+}
