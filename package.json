@@ -1,0 +1,10 @@
+{
+  "name": "minilang-rename-preflight",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Rename preflight tool for a small language with block scopes, sequential declarations and closures",
+  "scripts": {
+    "test": "node --test 'tests/*.test.ts'"
+  }
+}
