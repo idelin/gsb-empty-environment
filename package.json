@@ -1,0 +1,15 @@
+{
+  "name": "commission-dag",
+  "version": "1.0.0",
+  "description": "Commission distribution over a DAG attribution graph with monthly caps, cancellation correction and back-pay",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "license": "MIT"
+}
