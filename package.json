@@ -1,0 +1,10 @@
+{
+  "name": "outline-numbering",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "目录编号库：标题移动/改级别/重命名，增量编号与稳定 ID 引用解析",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
