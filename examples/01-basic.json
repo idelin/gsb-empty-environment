@@ -1,0 +1,18 @@
+{
+  "name": "basic source-to-sink flow",
+  "entry": "n0",
+  "rules": {
+    "sources": [{ "id": "user_input", "type": "string" }],
+    "sanitizers": [{ "id": "escape_str", "types": ["string"] }],
+    "sinks": [{ "id": "exec", "dangerTypes": ["string"] }]
+  },
+  "nodes": [
+    { "id": "n0", "op": "source", "source": "user_input", "var": "u" },
+    { "id": "n1", "op": "assign", "var": "q", "expr": ["u", "prefix"] },
+    { "id": "n2", "op": "sink", "sink": "exec", "args": ["q"] }
+  ],
+  "edges": [
+    { "from": "n0", "to": "n1" },
+    { "from": "n1", "to": "n2" }
+  ]
+}

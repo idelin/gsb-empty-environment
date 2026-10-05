@@ -1,0 +1,27 @@
+{
+  "name": "sanitizer only effective on declared types",
+  "entry": "n0",
+  "rules": {
+    "sources": [{ "id": "user_input", "type": "string" }],
+    "sanitizers": [
+      { "id": "to_int", "types": ["int"] },
+      { "id": "escape_str", "types": ["string"] }
+    ],
+    "sinks": [{ "id": "exec", "dangerTypes": ["string"] }]
+  },
+  "nodes": [
+    { "id": "n0", "op": "source", "source": "user_input", "var": "u" },
+    { "id": "n1", "op": "assign", "var": "q", "expr": ["u"] },
+    { "id": "n2", "op": "sanitize", "sanitizer": "to_int", "var": "q" },
+    { "id": "n3", "op": "sanitize", "sanitizer": "escape_str", "var": "q" },
+    { "id": "n4", "op": "sink", "sink": "exec", "args": ["q"] },
+    { "id": "n5", "op": "sink", "sink": "exec", "args": ["q"] }
+  ],
+  "edges": [
+    { "from": "n0", "to": "n1" },
+    { "from": "n1", "to": "n2" },
+    { "from": "n1", "to": "n3" },
+    { "from": "n2", "to": "n4" },
+    { "from": "n3", "to": "n5" }
+  ]
+}

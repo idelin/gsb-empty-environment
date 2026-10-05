@@ -1,0 +1,24 @@
+{
+  "name": "contradictory boolean guards are excluded",
+  "entry": "n0",
+  "rules": {
+    "sources": [{ "id": "user_input", "type": "string" }],
+    "sanitizers": [],
+    "sinks": [{ "id": "exec", "dangerTypes": ["string"] }]
+  },
+  "nodes": [
+    { "id": "n0", "op": "source", "source": "user_input", "var": "u" },
+    { "id": "n1", "op": "nop" },
+    { "id": "n2", "op": "assign", "var": "q", "expr": ["u"] },
+    { "id": "n3", "op": "sink", "sink": "exec", "args": ["q"] },
+    { "id": "n4", "op": "assign", "var": "q", "expr": ["u"] },
+    { "id": "n5", "op": "sink", "sink": "exec", "args": ["q"] }
+  ],
+  "edges": [
+    { "from": "n0", "to": "n1" },
+    { "from": "n1", "to": "n2", "cond": "flag == true" },
+    { "from": "n2", "to": "n3", "cond": "flag == false" },
+    { "from": "n1", "to": "n4", "cond": "flag != true" },
+    { "from": "n4", "to": "n5" }
+  ]
+}

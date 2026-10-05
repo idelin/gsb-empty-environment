@@ -1,0 +1,12 @@
+{
+  "name": "cfg-taint-analyzer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Path-sensitive taint analyzer over a control-flow graph with type-directed sanitizers, alias invalidation and boolean path feasibility.",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "npm run build && node dist/tests/run.js",
+    "analyze": "npm run build && node dist/src/cli.js"
+  },
+  "devDependencies": {}
+}
