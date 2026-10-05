@@ -1,0 +1,10 @@
+{
+  "name": "expr-repair",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "demo": "node src/main.ts",
+    "test": "node test/verify.ts"
+  }
+}
