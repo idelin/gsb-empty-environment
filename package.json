@@ -1,0 +1,13 @@
+{
+  "name": "rga-list-crdt",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Replicated list CRDT (RGA-style) with tombstone anchors, deterministic ordering and causal buffering",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/rga-list.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  }
+}
