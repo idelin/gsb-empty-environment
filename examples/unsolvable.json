@@ -1,0 +1,17 @@
+{
+  "variables": ["a", "x", "y"],
+  "assignment": {
+    "a": true,
+    "x": false,
+    "y": false
+  },
+  "modifiable": {
+    "x": 1,
+    "y": 2
+  },
+  "rules": [
+    { "name": "r1", "premise": ["a"], "conclusion": "x" },
+    { "name": "r2", "premise": ["x"], "conclusion": "!a" },
+    { "name": "r3", "premise": ["a"], "conclusion": "y" }
+  ]
+}

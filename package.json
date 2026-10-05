@@ -1,0 +1,19 @@
+{
+  "name": "boolean-rule-fixer",
+  "version": "1.0.0",
+  "description": "布尔规则修复器：前提蕴含结论约束下的最低成本变量翻转修复",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/cli.ts",
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}

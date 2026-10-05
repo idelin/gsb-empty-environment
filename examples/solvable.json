@@ -1,0 +1,22 @@
+{
+  "variables": ["a", "b", "c", "d", "e"],
+  "assignment": {
+    "a": true,
+    "b": false,
+    "c": false,
+    "d": true,
+    "e": false
+  },
+  "modifiable": {
+    "b": 2,
+    "c": 1,
+    "d": 4,
+    "e": 3
+  },
+  "rules": [
+    { "name": "r1", "premise": ["a", "!b"], "conclusion": "c" },
+    { "name": "r2", "premise": ["c"], "conclusion": "d" },
+    { "name": "r3", "premise": ["b", "d"], "conclusion": "e" },
+    { "name": "r4", "premise": ["!e"], "conclusion": "!a" }
+  ]
+}
