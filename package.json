@@ -1,0 +1,14 @@
+{
+  "name": "liveness-probe-simulator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "探活模拟器：离散事件模型 + 自适应等待窗口的节点存活检测",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "start": "node src/main.ts",
+    "test": "node --test"
+  }
+}
