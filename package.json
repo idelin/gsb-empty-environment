@@ -1,0 +1,19 @@
+{
+  "name": "exact-rasterize",
+  "version": "0.1.0",
+  "description": "Exact rasterization of possibly self-intersecting closed polylines into pixel masks (even-odd & non-zero winding rules)",
+  "license": "MIT",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist/src"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/rasterize.test.js",
+    "demo": "npm run build && node dist/examples/demo.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
