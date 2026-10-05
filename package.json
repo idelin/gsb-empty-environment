@@ -1,0 +1,9 @@
+{
+  "name": "expr-edit",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Config expression editing tool: parse, edit AST nodes, print back to parseable text",
+  "scripts": {
+    "test": "node --test"
+  }
+}
