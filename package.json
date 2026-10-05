@@ -1,0 +1,19 @@
+{
+  "name": "cache-key-auditor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "构建缓存键审计器：找出输出变化但键不变的最小输入对",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "audit": "node src/cli.ts",
+    "audit:sound": "node src/cli.ts --build sound",
+    "test": "node --test 'test/*.test.ts'"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.8.0"
+  }
+}
