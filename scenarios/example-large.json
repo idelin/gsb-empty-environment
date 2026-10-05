@@ -1,0 +1,27 @@
+{
+  "name": "全城八站夜间调度",
+  "stations": [
+    { "name": "S1", "capacity": 12, "initial": 2, "target": 8 },
+    { "name": "S2", "capacity": 12, "initial": 9, "target": 4 },
+    { "name": "S3", "capacity": 10, "initial": 1, "target": 5 },
+    { "name": "S4", "capacity": 14, "initial": 11, "target": 6 },
+    { "name": "S5", "capacity": 10, "initial": 4, "target": 6 },
+    { "name": "S6", "capacity": 12, "initial": 7, "target": 5 },
+    { "name": "S7", "capacity": 10, "initial": 8, "target": 3 },
+    { "name": "S8", "capacity": 12, "initial": 2, "target": 7 }
+  ],
+  "vehicle": { "capacity": 12, "initialLoad": 0 },
+  "depot": { "canUnload": true },
+  "costs": { "perKm": 2, "shortagePerBike": 50 },
+  "distanceMatrix": [
+    [0.0, 4.0, 6.5, 3.2, 7.1, 5.4, 2.8, 5.9, 4.6],
+    [4.0, 0.0, 3.0, 2.6, 5.0, 4.4, 3.9, 2.9, 5.1],
+    [6.5, 3.0, 0.0, 4.1, 2.2, 6.0, 5.5, 4.7, 6.8],
+    [3.2, 2.6, 4.1, 0.0, 4.8, 2.1, 1.7, 3.5, 2.4],
+    [7.1, 5.0, 2.2, 4.8, 0.0, 3.3, 6.2, 5.6, 7.0],
+    [5.4, 4.4, 6.0, 2.1, 3.3, 0.0, 2.4, 1.9, 3.0],
+    [2.8, 3.9, 5.5, 1.7, 6.2, 2.4, 0.0, 3.1, 2.2],
+    [5.9, 2.9, 4.7, 3.5, 5.6, 1.9, 3.1, 0.0, 2.7],
+    [4.6, 5.1, 6.8, 2.4, 7.0, 3.0, 2.2, 2.7, 0.0]
+  ]
+}

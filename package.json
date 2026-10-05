@@ -1,0 +1,15 @@
+{
+  "name": "bike-rebalancing-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "共享单车调度器：缺车罚金 + 里程成本最小的搬运路线（最多 8 站，允许多次访问，必须回仓）",
+  "scripts": {
+    "start": "node src/cli.ts",
+    "solve": "node src/cli.ts",
+    "test": "node test/run.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
