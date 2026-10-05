@@ -1,0 +1,24 @@
+{
+  "events": [
+    {"name": "build.req",   "time": 100.0, "err": 0.5},
+    {"name": "build.acq",   "time": 101.0, "err": 0.5},
+    {"name": "build.start", "time": 101.5, "err": 0.5},
+    {"name": "build.end",   "time": 105.0, "err": 0.5},
+    {"name": "test.req",    "time": 105.5, "err": 0.5},
+    {"name": "test.acq",    "time": 107.0, "err": 0.5},
+    {"name": "test.start",  "time": 107.5, "err": 0.5},
+    {"name": "test.end",    "time": 112.0, "err": 0.5},
+    {"name": "deploy.start","time": 112.5, "err": 0.5},
+    {"name": "deploy.end",  "time": 113.5, "err": 0.5}
+  ],
+  "tasks": [
+    {"name": "build",  "request": "build.req", "acquire": "build.acq", "start": "build.start", "end": "build.end"},
+    {"name": "test",   "request": "test.req",  "acquire": "test.acq",  "start": "test.start",  "end": "test.end"},
+    {"name": "deploy", "start": "deploy.start", "end": "deploy.end"}
+  ],
+  "dependencies": [
+    {"after": "build.end", "before": "test.req",   "label": "build->test"},
+    {"after": "test.end",  "before": "deploy.start", "label": "test->deploy"}
+  ],
+  "span": {"begin": "build.req", "end": "deploy.end"}
+}

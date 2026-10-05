@@ -1,0 +1,9 @@
+{
+  "events": [
+    {"name": "job.start", "interval": [105.0, 106.0]},
+    {"name": "job.end",   "interval": [100.0, 101.0]}
+  ],
+  "tasks": [],
+  "dependencies": [],
+  "span": {"begin": "job.start", "end": "job.end"}
+}

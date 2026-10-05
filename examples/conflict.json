@@ -1,0 +1,16 @@
+{
+  "events": [
+    {"name": "build.start", "interval": [101.0, 102.0]},
+    {"name": "build.end",   "interval": [100.0, 100.5]},
+    {"name": "test.start",  "interval": [103.0, 104.0]},
+    {"name": "test.end",    "interval": [108.0, 109.0]}
+  ],
+  "tasks": [
+    {"name": "build", "start": "build.start", "end": "build.end"},
+    {"name": "test",  "start": "test.start",  "end": "test.end"}
+  ],
+  "dependencies": [
+    {"after": "build.end", "before": "test.start", "label": "build->test"}
+  ],
+  "span": {"begin": "build.start", "end": "test.end"}
+}
