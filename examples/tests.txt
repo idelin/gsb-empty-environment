@@ -1,0 +1,4 @@
+# One test per line: named or positional values, # starts a comment.
+a=3, b=5
+a=5, b=3
+a=0, b=0

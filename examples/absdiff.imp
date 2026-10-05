@@ -1,0 +1,9 @@
+# Absolute difference of two int8 inputs, computed with wraparound.
+input a, b
+d = a - b
+if d < 0
+  r = 0 - d
+else
+  r = d
+end
+return r
