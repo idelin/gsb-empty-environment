@@ -1,0 +1,17 @@
+{
+  "name": "colored-multigraph-isomorphism",
+  "version": "1.0.0",
+  "description": "带节点颜色的多重图同构检测器：颜色细化 + 个体化-细化规范形搜索",
+  "type": "module",
+  "exports": {
+    ".": "./src/isomorphic.ts",
+    "./graph": "./src/graph.ts",
+    "./refine": "./src/refine.ts",
+    "./canonical": "./src/canonical.ts"
+  },
+  "scripts": {
+    "test": "node --test \"tests/*.test.ts\"",
+    "test:node22": "node --experimental-strip-types --test \"tests/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  }
+}
