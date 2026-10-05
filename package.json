@@ -1,0 +1,13 @@
+{
+  "name": "resource-migration-planner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "层级资源迁移规划器：最少移动节点，次目标最少权限例外，输出迁移前后引用解析",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "demo": "node dist/main.js",
+    "test": "node dist/selftest.js"
+  },
+  "license": "UNLICENSED"
+}
