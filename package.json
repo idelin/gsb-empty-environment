@@ -1,0 +1,12 @@
+{
+  "name": "anchor-migrate",
+  "version": "0.1.0",
+  "description": "基于左右上下文与版本补丁的批注锚点迁移库",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.test.json && node dist-test/test/run.js"
+  },
+  "license": "MIT"
+}
