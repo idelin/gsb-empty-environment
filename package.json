@@ -1,0 +1,28 @@
+{
+  "name": "dynamic-transitive-closure",
+  "version": "0.1.0",
+  "description": "Fully dynamic transitive closure for directed multigraphs: batch edge insertions/removals, reachability deltas and witness paths",
+  "type": "module",
+  "main": "dist/dynamic-transitive-closure.js",
+  "types": "src/dynamic-transitive-closure.ts",
+  "exports": {
+    ".": {
+      "types": "./src/dynamic-transitive-closure.ts",
+      "default": "./dist/dynamic-transitive-closure.js"
+    }
+  },
+  "files": [
+    "src",
+    "dist",
+    "scripts"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:tsc": "tsc -p tsconfig.json",
+    "test": "node scripts/build.mjs && node test/run.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  },
+  "license": "MIT"
+}
