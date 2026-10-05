@@ -1,0 +1,13 @@
+{
+  "name": "compact-segment-index",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Compact offline index segment: writer, querier and standalone validator (zero dependencies)",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}
