@@ -1,0 +1,11 @@
+{
+  "name": "rental-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "租赁排程器: 同型号设备互换 + 累计工时阈值触发工位维护, 最小化拒单损失",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/src/main.js",
+    "test": "node dist/tests/run-tests.js"
+  }
+}
