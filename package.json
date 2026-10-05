@@ -1,0 +1,13 @@
+{
+  "name": "incremental-indent-parser",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Incremental indentation-based block parser for editors (TypeScript)",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
