@@ -1,0 +1,11 @@
+{
+  "nodes": ["A", "B"],
+  "steps": [
+    { "id": "warmup", "type": "delay", "ms": 3 },
+    { "id": "noise-drop", "type": "drop", "from": "A", "to": "B", "count": 1 },
+    { "id": "queue", "type": "delay", "ms": 2, "dependsOn": ["warmup"] },
+    { "id": "restart-a", "type": "restart", "node": "A", "dependsOn": ["queue"] },
+    { "id": "cooldown", "type": "delay", "ms": 6, "dependsOn": ["restart-a"] },
+    { "id": "trailing-drop", "type": "drop", "from": "B", "to": "A", "count": 1 }
+  ]
+}

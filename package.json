@@ -1,0 +1,15 @@
+{
+  "name": "protocol-script-shrinker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shrink delay/drop/restart protocol scripts while preserving the assertion failure they trigger",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "shrink": "node src/cli.ts shrink examples/failing-script.json",
+    "replay": "node src/cli.ts replay examples/failing-script.json"
+  }
+}
