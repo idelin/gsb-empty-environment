@@ -1,0 +1,12 @@
+{
+  "depot": { "x": 0, "y": 0 },
+  "vehicleCapacity": 10,
+  "costPerKm": 1,
+  "penaltyPerBike": 50,
+  "stations": [
+    { "id": "A", "x": 3, "y": 0, "capacity": 20, "initial": 18, "demand": 6 },
+    { "id": "B", "x": 6, "y": 0, "capacity": 20, "initial": 2, "demand": 10 },
+    { "id": "C", "x": 0, "y": 4, "capacity": 15, "initial": 1, "demand": 7 },
+    { "id": "D", "x": 0, "y": -5, "capacity": 12, "initial": 9, "demand": 4 }
+  ]
+}

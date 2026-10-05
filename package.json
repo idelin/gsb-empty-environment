@@ -1,0 +1,14 @@
+{
+  "name": "bike-rebalancing-scheduler",
+  "version": "1.0.0",
+  "description": "共享单车调度器：在站点容量与次日需求约束下，求缺车罚金加里程成本最小的搬运路线",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/cli.js",
+    "test": "npm run build && node test/verify.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
