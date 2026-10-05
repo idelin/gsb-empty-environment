@@ -1,0 +1,12 @@
+{
+  "system1": {
+    "states": ["s0", "s1"],
+    "initial": "s0",
+    "transitions": [["s0", "a", "s1"]]
+  },
+  "system2": {
+    "states": ["t0", "t1", "t2", "t3"],
+    "initial": "t0",
+    "transitions": [["t0", "tau", "t1"], ["t1", "a", "t2"], ["t2", "tau", "t3"]]
+  }
+}
