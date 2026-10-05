@@ -1,0 +1,19 @@
+{
+  "symbols": [
+    {"id": "app.main", "kind": "func"},
+    {"id": "app.handler", "kind": "func"},
+    {"id": "app.legacy", "kind": "func"},
+    {"id": "store.Get", "kind": "func"},
+    {"id": "store.Put", "kind": "func"},
+    {"id": "app.TestHandler", "kind": "test"},
+    {"id": "store.TestGet", "kind": "test"}
+  ],
+  "edges": [
+    {"caller": "app.main", "callee": "app.handler"},
+    {"caller": "app.handler", "callee": "app.legacy"},
+    {"caller": "app.handler", "callee": "store.Get"},
+    {"caller": "app.handler", "dynamic": true, "candidates": ["store.Get", "store.Put"]},
+    {"caller": "app.TestHandler", "callee": "app.handler"},
+    {"caller": "store.TestGet", "callee": "store.Get"}
+  ]
+}
