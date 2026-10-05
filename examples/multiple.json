@@ -1,0 +1,6 @@
+{
+  "matrix": [[1, 1, 1]],
+  "observations": [6],
+  "lower": [0, 0, 0],
+  "upper": [10, 10, 10]
+}
