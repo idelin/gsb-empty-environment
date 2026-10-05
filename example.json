@@ -1,0 +1,34 @@
+{
+  "tables": [
+    {
+      "name": "users",
+      "unique_keys": [["id"], ["email"]],
+      "rows": [
+        {"id": "u1", "weight": 10, "values": {"id": 1, "email": "a@x"}},
+        {"id": "u2", "weight": 1,  "values": {"id": 2, "email": "a@x"}},
+        {"id": "u3", "weight": 4,  "values": {"id": 3, "email": "b@x"}}
+      ]
+    },
+    {
+      "name": "orders",
+      "unique_keys": [["id"]],
+      "rows": [
+        {"id": "o1", "weight": 100, "values": {"id": 10, "user_id": 1}},
+        {"id": "o2", "weight": 2,   "values": {"id": 11, "user_id": 3}},
+        {"id": "o3", "weight": 6,   "values": {"id": 12, "user_id": 99}}
+      ]
+    },
+    {
+      "name": "flags",
+      "rows": [
+        {"id": "f1", "weight": 5, "values": {"note": "fraud-freeze"}}
+      ]
+    }
+  ],
+  "foreign_keys": [
+    {"child_table": "orders", "child_column": "user_id", "parent_table": "users", "parent_column": "id"}
+  ],
+  "conflicts": [
+    {"a": {"table": "orders", "row": "o1"}, "b": {"table": "flags", "row": "f1"}, "reason": "风控冻结与待支付订单互斥"}
+  ]
+}
