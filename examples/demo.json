@@ -1,0 +1,13 @@
+{
+  "materials": [
+    {"name": "steel",  "packageSize": 10, "packageCost": 42},
+    {"name": "beam",   "packageSize": 4,  "packageCost": 25},
+    {"name": "rivet",  "packageSize": 50, "packageCost": 9},
+    {"name": "girder"}
+  ],
+  "demands": {"girder": 6, "beam": 3},
+  "rules": [
+    {"name": "weld",    "inputs": {"steel": 2, "rivet": 5}, "outputs": {"girder": 1}},
+    {"name": "reshape", "inputs": {"girder": 1},            "outputs": {"beam": "3/2"}}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "materials": [
+    {"name": "A", "packageSize": 1, "packageCost": 1},
+    {"name": "B", "packageSize": 1, "packageCost": 1}
+  ],
+  "demands": {"B": 2},
+  "rules": [
+    {"name": "r1", "inputs": {"A": 1}, "outputs": {"B": 2}},
+    {"name": "r2", "inputs": {"B": 1}, "outputs": {"A": 1}}
+  ]
+}
