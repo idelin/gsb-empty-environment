@@ -1,0 +1,11 @@
+{
+  "name": "exact-compositing",
+  "version": "1.0.0",
+  "description": "Exact-rational 8-bit alpha compositing: one-shot vs group-then-quantize, with minimal counterexample search",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.ts",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
