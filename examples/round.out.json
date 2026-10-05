@@ -1,0 +1,37 @@
+{
+  "results": [
+    {
+      "index": 0,
+      "ok": true,
+      "row": {
+        "price": {
+          "coefficient": "12346",
+          "scale": 2
+        },
+        "ts": 1704067200000002
+      }
+    },
+    {
+      "index": 1,
+      "ok": true,
+      "row": {
+        "price": {
+          "coefficient": "-12346",
+          "scale": 2
+        },
+        "ts": 1704067200000000
+      }
+    },
+    {
+      "index": 2,
+      "ok": true,
+      "row": {
+        "price": {
+          "coefficient": "-12344",
+          "scale": 2
+        },
+        "ts": 1704067200000002
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "sourceSchema": {
+    "fields": [
+      {"name": "id", "type": "int", "bits": 64},
+      {"name": "price", "type": "decimal", "scale": 4},
+      {"name": "name", "type": "string"},
+      {"name": "blob", "type": "bytes"},
+      {"name": "ts", "type": "timestamp"},
+      {"name": "nick", "type": "string"}
+    ]
+  },
+  "targetSchema": {
+    "fields": [
+      {"name": "id", "type": "int", "bits": 32, "required": true},
+      {"name": "price", "type": "decimal", "precision": 12, "scale": 2, "required": true},
+      {"name": "name", "type": "string", "maxBytes": 10, "required": true},
+      {"name": "blob", "type": "bytes", "maxBytes": 4, "nullable": true},
+      {"name": "ts", "type": "timestamp", "required": true},
+      {"name": "nick", "type": "string", "maxBytes": 10, "nullable": true, "default": "anonymous"}
+    ]
+  },
+  "mapping": {"id": "id", "price": "price", "name": "name", "blob": "blob", "ts": "ts", "nick": "nick"},
+  "options": {"rounding": "reject"},
+  "rows": [
+    {"id": 7, "price": {"coefficient": "1234500", "scale": 4}, "name": "alice",
+     "blob": "AAEC", "ts": "2024-02-29T23:30:00.123456+05:30", "nick": null},
+    {"id": 8, "price": {"coefficient": "1234567", "scale": 4}, "name": "bob",
+     "blob": null, "ts": "2024-03-01T00:00:00Z"},
+    {"id": 5000000000, "price": {"coefficient": "100", "scale": 4}, "name": "carol",
+     "ts": "2024-03-01T00:00:00Z"},
+    {"id": 9, "price": {"coefficient": "100", "scale": 4},
+     "ts": "2024-03-01T00:00:00Z"},
+    {"id": 10, "price": {"coefficient": "100", "scale": 4}, "name": "dave",
+     "ts": "2024-03-01T00:00:00.0000005Z"},
+    {"id": 11, "price": {"coefficient": "100", "scale": 4}, "name": "erin",
+     "blob": "AQIDBAU=", "ts": "2023-02-29T00:00:00Z"}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "sourceSchema": {
+    "fields": [
+      {"name": "price", "type": "decimal", "scale": 4},
+      {"name": "ts", "type": "timestamp"}
+    ]
+  },
+  "targetSchema": {
+    "fields": [
+      {"name": "price", "type": "decimal", "precision": 12, "scale": 2, "required": true},
+      {"name": "ts", "type": "timestamp", "required": true}
+    ]
+  },
+  "mapping": {"price": "price", "ts": "ts"},
+  "options": {"rounding": "ties-to-even"},
+  "rows": [
+    {"price": {"coefficient": "1234567", "scale": 4}, "ts": "2024-01-01T00:00:00.0000015Z"},
+    {"price": {"coefficient": "-1234550", "scale": 4}, "ts": "2024-01-01T00:00:00.0000005Z"},
+    {"price": {"coefficient": "-1234450", "scale": 4}, "ts": "2024-01-01T00:00:00.0000025Z"}
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "results": [
+    {
+      "index": 0,
+      "ok": true,
+      "row": {
+        "blob": "AAEC",
+        "id": 7,
+        "name": "alice",
+        "nick": "anonymous",
+        "price": {
+          "coefficient": "12345",
+          "scale": 2
+        },
+        "ts": 1709229600123456
+      }
+    },
+    {
+      "index": 1,
+      "ok": false,
+      "error": "field \"price\": decimal 1234567 cannot be represented exactly at scale 2 (remainder 67/10^2)"
+    },
+    {
+      "index": 2,
+      "ok": false,
+      "error": "field \"id\": integer 5000000000 overflows int32 range [-2147483648, 2147483647]"
+    },
+    {
+      "index": 3,
+      "ok": false,
+      "error": "field \"name\": required field missing"
+    },
+    {
+      "index": 4,
+      "ok": false,
+      "error": "field \"ts\": decode: timestamp \"2024-03-01T00:00:00.0000005Z\" has sub-microsecond precision (500 ns remainder)"
+    },
+    {
+      "index": 5,
+      "ok": false,
+      "error": "field \"ts\": decode: invalid timestamp \"2023-02-29T00:00:00Z\" (need RFC3339 with explicit offset): parsing time \"2023-02-29T00:00:00Z\": day out of range"
+    }
+  ]
+}
