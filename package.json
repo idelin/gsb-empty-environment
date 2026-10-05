@@ -1,0 +1,13 @@
+{
+  "name": "combinatorial-auction",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": "./src/combinatorial-auction.ts",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
