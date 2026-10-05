@@ -1,0 +1,13 @@
+{
+  "name": "causal-broadcast-sim",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "有限成员集合的因果广播模拟: (node,epoch,counter) 身份、连续前缀依赖、有界暂存背压、epoch 退休屏障与稳定前缀回收",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test test/broadcast.test.ts test/permutations.test.ts"
+  }
+}
