@@ -1,0 +1,12 @@
+{
+  "nodes": ["core", "util", "net", "http", "db"],
+  "edges": [
+    {"from": "core", "to": "util", "cuttable": true, "cost": 5, "artifact": "bootstrap-util-v2"},
+    {"from": "util", "to": "net"},
+    {"from": "net", "to": "core", "cuttable": true, "cost": 3, "artifact": "bootstrap-core-v1"},
+    {"from": "util", "to": "http"},
+    {"from": "http", "to": "core", "cuttable": true, "cost": 3, "artifact": "bootstrap-core-v2"},
+    {"from": "db", "to": "core"},
+    {"from": "core", "to": "db", "cuttable": true, "cost": 4, "artifact": "bootstrap-db-v1"}
+  ]
+}
