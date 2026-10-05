@@ -1,0 +1,59 @@
+{
+  "fields": [
+    { "name": "age", "type": "int", "min": 0, "max": 120 },
+    { "name": "income", "type": "int", "min": 0, "max": 1000000 },
+    { "name": "tier", "type": "enum", "values": ["free", "pro", "enterprise"] },
+    { "name": "region", "type": "enum", "values": ["us", "eu", "apac"] }
+  ],
+  "rules": [
+    {
+      "name": "vip",
+      "priority": 100,
+      "when": { "tier": "enterprise", "income": { "range": [500000, null] } }
+    },
+    {
+      "name": "minor-deny",
+      "priority": 90,
+      "when": { "age": { "range": [0, 17] } }
+    },
+    {
+      "name": "high-roller",
+      "priority": 50,
+      "when": { "income": { "range": [200000, null] }, "region": { "notIn": ["apac"] } }
+    },
+    {
+      "name": "pro-mid",
+      "priority": 50,
+      "when": { "tier": "pro", "income": { "range": [50000, 250000] } }
+    },
+    {
+      "name": "pro-us-high",
+      "priority": 50,
+      "when": { "tier": "pro", "region": "us", "income": { "range": [100000, 300000] } }
+    },
+    {
+      "name": "eu-low",
+      "priority": 45,
+      "when": { "region": "eu", "income": { "range": [0, 199999] } }
+    },
+    {
+      "name": "pro-us",
+      "priority": 40,
+      "when": { "tier": "pro", "region": "us", "income": { "range": [100000, 150000] } }
+    },
+    {
+      "name": "eu-any",
+      "priority": 30,
+      "when": { "region": "eu", "income": { "range": [0, 300000] } }
+    },
+    {
+      "name": "impossible",
+      "priority": 80,
+      "when": { "tier": { "notIn": ["free", "pro", "enterprise"] } }
+    },
+    {
+      "name": "default",
+      "priority": 0
+    }
+  ]
+}

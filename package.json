@@ -1,0 +1,14 @@
+{
+  "name": "decision-table-analyzer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Hit-witness analysis for priority-ordered decision tables with range, enum and negation conditions.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "analyze": "node src/cli.ts",
+    "test": "node --test"
+  }
+}
