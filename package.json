@@ -1,0 +1,15 @@
+{
+  "name": "gap-tolerant-filter",
+  "version": "0.1.0",
+  "description": "缺口感知的信号滤波库：短缺口线性插值、长缺口断开状态，支持迟到样本的局部重算与版本化输出",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
