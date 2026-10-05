@@ -1,0 +1,10 @@
+{
+  "source": "s",
+  "target": "t",
+  "budget": 6,
+  "edges": [
+    {"id": 1, "from": "s", "to": "a", "cost": 1, "risk": 6},
+    {"id": 2, "from": "s", "to": "a", "cost": 5, "risk": 1},
+    {"id": 3, "from": "a", "to": "t", "cost": 1, "risk": 5}
+  ]
+}
