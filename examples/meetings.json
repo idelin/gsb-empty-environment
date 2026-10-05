@@ -1,0 +1,15 @@
+{
+  "numRooms": 4,
+  "mergeTime": 1,
+  "splitTime": 1,
+  "meetings": [
+    {"id": "A", "start": 1, "end": 6, "rooms": 2, "weight": 5},
+    {"id": "B", "start": 2, "end": 4, "rooms": 1, "weight": 2},
+    {"id": "C", "start": 3, "end": 9, "rooms": 3, "weight": 9},
+    {"id": "D", "start": 5, "end": 7, "rooms": 1, "weight": 1},
+    {"id": "E", "start": 7, "end": 11, "rooms": 2, "weight": 4},
+    {"id": "F", "start": 10, "end": 13, "rooms": 4, "weight": 8},
+    {"id": "G", "start": 12, "end": 14, "rooms": 1, "weight": 2},
+    {"id": "H", "start": 8, "end": 10, "rooms": 1, "weight": 3}
+  ]
+}
