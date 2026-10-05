@@ -1,0 +1,12 @@
+{
+  "ratio": 0.30,
+  "tolerance": 0.01,
+  "groups": [
+    {"id": "vip",      "size": 500,  "on_new": true},
+    {"id": "internal", "size": 300,  "on_new": true},
+    {"id": "region-a", "size": 1200, "on_new": false},
+    {"id": "region-b", "size": 900,  "on_new": false},
+    {"id": "region-c", "size": 700,  "on_new": false},
+    {"id": "beta",     "size": 400,  "on_new": true}
+  ]
+}
