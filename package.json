@@ -1,0 +1,15 @@
+{
+  "name": "pulse-detector",
+  "version": "0.1.0",
+  "description": "Streaming pulse detection with hysteresis thresholds and gap bridging",
+  "main": "dist/src/pulse-detector.js",
+  "types": "dist/src/pulse-detector.d.ts",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "node node_modules/typescript/bin/tsc -p tsconfig.json && node dist/test/pulse-detector.test.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "5.2.2"
+  }
+}
