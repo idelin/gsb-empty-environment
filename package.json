@@ -1,0 +1,15 @@
+{
+  "name": "coupon-settlement",
+  "version": "1.0.0",
+  "description": "优惠结算库：组合满减/折扣/单品券，互斥组与先后关系，求最优合法组合",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --test test/engine.test.ts test/bruteforce.test.ts",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
