@@ -1,0 +1,12 @@
+{
+  "rules": [
+    { "id": "r1-deny-alice", "action": "deny", "when": { "user": "alice" } },
+    { "id": "r2-allow-doc1", "action": "allow", "when": { "res": "doc1" } },
+    { "id": "r3-deny-all", "action": "deny", "when": {} }
+  ],
+  "samples": [
+    { "id": "s1", "expect": "allow", "attrs": { "user": "alice", "res": "doc1" } },
+    { "id": "s2", "expect": "deny", "attrs": { "user": "alice", "res": "doc1" } },
+    { "id": "s3", "expect": "deny", "attrs": { "user": "bob", "res": "doc2" } }
+  ]
+}

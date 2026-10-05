@@ -1,0 +1,13 @@
+{
+  "rules": [
+    { "id": "r1-allow-any", "action": "allow", "when": {} },
+    { "id": "r2-deny-admin-delete", "action": "deny", "when": { "role": "admin", "op": "delete" } },
+    { "id": "r3-deny-guest", "action": "deny", "when": { "role": "guest" } }
+  ],
+  "samples": [
+    { "id": "s1", "expect": "deny", "attrs": { "role": "admin", "op": "delete" } },
+    { "id": "s2", "expect": "allow", "attrs": { "role": "admin", "op": "read" } },
+    { "id": "s3", "expect": "deny", "attrs": { "role": "guest", "op": "read" } },
+    { "id": "s4", "expect": "deny", "attrs": { "role": "guest", "op": "delete" } }
+  ]
+}

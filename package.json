@@ -1,0 +1,14 @@
+{
+  "name": "permission-rule-sorter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "权限规则排序器：仅交换相邻规则，求满足全部允许/拒绝样例的最少交换次数（首次匹配，最多 15 条规则）",
+  "scripts": {
+    "solve": "node src/cli.ts",
+    "test": "node test/verify.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
