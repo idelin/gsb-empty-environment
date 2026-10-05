@@ -1,0 +1,14 @@
+{
+  "name": "judge-assignment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "评委分配器：每份作品三名评委，兼顾专业、工作量与回避关系，任意评委对最多共评两份，最小化工作量最大差",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/solver.test.js",
+    "demo": "tsc -p tsconfig.json && node dist/examples/demo.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
