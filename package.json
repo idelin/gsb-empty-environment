@@ -1,0 +1,12 @@
+{
+  "name": "rule-ast-interpreter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "test": "node --test test/interpreter.test.ts"
+  }
+}
