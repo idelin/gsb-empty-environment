@@ -1,0 +1,14 @@
+{
+  "name": "rotation-pool",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "生成器轮转池：多个生成器共享输出通道，按轮调度，支持暂停/恢复、消费者背压、异常隔离与提前结束",
+  "main": "src/rotation-pool.ts",
+  "scripts": {
+    "test": "node --test test/rotation-pool.test.ts"
+  },
+  "engines": {
+    "node": ">=22.18.0 || >=23.6.0"
+  }
+}
