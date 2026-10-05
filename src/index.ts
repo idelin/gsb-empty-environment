@@ -1,0 +1,13 @@
+export { RgbaImage, GrayImage } from './image.ts';
+export { makeSE, SQUARE3, CROSS, LINE3_RIGHT, seRadius } from './se.ts';
+export type { StructuringElement } from './se.ts';
+export { dilate, erode, open, close } from './ops.ts';
+export type { LocalOpOptions } from './ops.ts';
+export { reconstructDilation } from './reconstruct.ts';
+export type { ReconstructOptions, ReconstructResult } from './reconstruct.ts';
+export { TileCache, TiledGray } from './tiles.ts';
+export type { CacheStats } from './tiles.ts';
+export { Engine, compileGraph } from './graph.ts';
+export type { StageDef, LocalStageDef, ReconstructStageDef, StageReport, EngineOptions } from './graph.ts';
+export { runReference } from './reference.ts';
+export type { BoundaryMode, Rect } from './types.ts';

@@ -1,0 +1,12 @@
+{
+  "name": "incremorph",
+  "version": "0.1.0",
+  "description": "Incremental grayscale morphology (custom SE, geodesic reconstruction) over a bounded tile cache, no image libraries",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=22.6.0" },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/demo.ts"
+  }
+}
