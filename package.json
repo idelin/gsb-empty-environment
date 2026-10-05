@@ -1,0 +1,14 @@
+{
+  "name": "conn-migration-sim",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "连接迁移模拟器：新旧链路并存、连续序号、确认合并、双向重传、恰好一次交付与有界内存验证",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "sim": "node src/main.ts",
+    "start": "node src/main.ts"
+  }
+}
