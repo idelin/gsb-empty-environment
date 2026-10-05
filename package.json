@@ -1,0 +1,14 @@
+{
+  "name": "waitlist-promotion-engine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "互斥场次候补递补引擎：按优先级与报名序号排队，级联递补至稳定，撤销按原候补资格恢复",
+  "scripts": {
+    "demo": "node src/demo.ts",
+    "test": "node --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
