@@ -1,0 +1,9 @@
+{
+  "blocks": [
+    {"id": "a", "compressed": 5, "temp": 10, "final": 4},
+    {"id": "b", "compressed": 3, "temp": 6, "final": 2, "deps": ["a"]},
+    {"id": "c", "compressed": 3, "temp": 6, "final": 2, "deps": ["a"]},
+    {"id": "d", "compressed": 2, "temp": 4, "final": 8, "deps": ["b", "c"]}
+  ],
+  "quota": 15
+}

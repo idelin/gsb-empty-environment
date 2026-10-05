@@ -1,0 +1,140 @@
+{
+ "blocks": [
+  {
+   "id": "b0",
+   "compressed": 7,
+   "temp": 8,
+   "final": 8,
+   "deps": []
+  },
+  {
+   "id": "b1",
+   "compressed": 11,
+   "temp": 6,
+   "final": 12,
+   "deps": []
+  },
+  {
+   "id": "b2",
+   "compressed": 8,
+   "temp": 11,
+   "final": 6,
+   "deps": [
+    "b0"
+   ]
+  },
+  {
+   "id": "b3",
+   "compressed": 11,
+   "temp": 16,
+   "final": 5,
+   "deps": []
+  },
+  {
+   "id": "b4",
+   "compressed": 4,
+   "temp": 6,
+   "final": 5,
+   "deps": [
+    "b0",
+    "b1"
+   ]
+  },
+  {
+   "id": "b5",
+   "compressed": 11,
+   "temp": 16,
+   "final": 9,
+   "deps": [
+    "b2",
+    "b3"
+   ]
+  },
+  {
+   "id": "b6",
+   "compressed": 6,
+   "temp": 19,
+   "final": 6,
+   "deps": [
+    "b5"
+   ]
+  },
+  {
+   "id": "b7",
+   "compressed": 12,
+   "temp": 17,
+   "final": 12,
+   "deps": [
+    "b0"
+   ]
+  },
+  {
+   "id": "b8",
+   "compressed": 9,
+   "temp": 7,
+   "final": 6,
+   "deps": [
+    "b0",
+    "b1",
+    "b3",
+    "b4"
+   ]
+  },
+  {
+   "id": "b9",
+   "compressed": 6,
+   "temp": 4,
+   "final": 7,
+   "deps": [
+    "b2",
+    "b3",
+    "b7",
+    "b8"
+   ]
+  },
+  {
+   "id": "b10",
+   "compressed": 7,
+   "temp": 5,
+   "final": 7,
+   "deps": [
+    "b2",
+    "b9"
+   ]
+  },
+  {
+   "id": "b11",
+   "compressed": 6,
+   "temp": 16,
+   "final": 9,
+   "deps": [
+    "b0",
+    "b1",
+    "b5",
+    "b6",
+    "b9"
+   ]
+  },
+  {
+   "id": "b12",
+   "compressed": 8,
+   "temp": 20,
+   "final": 7,
+   "deps": [
+    "b10",
+    "b11"
+   ]
+  },
+  {
+   "id": "b13",
+   "compressed": 15,
+   "temp": 19,
+   "final": 3,
+   "deps": [
+    "b1",
+    "b4",
+    "b7"
+   ]
+  }
+ ]
+}
