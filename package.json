@@ -1,0 +1,11 @@
+{
+  "name": "jsonq",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "JSON-compatible tree query engine: field/slice/recursive-descent/predicate compiler with streaming, incremental diffs and stable cursors",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "example": "node examples/demo.ts"
+  }
+}
