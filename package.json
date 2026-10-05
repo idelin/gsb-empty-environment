@@ -1,0 +1,10 @@
+{
+  "name": "alpha-compositing-exact",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "8-bit alpha compositing with exact rational arithmetic; one-shot vs group-quantized comparison",
+  "scripts": {
+    "start": "node src/main.ts"
+  }
+}
