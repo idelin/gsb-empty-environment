@@ -1,0 +1,11 @@
+{
+  "name": "ev-charging-scheduler",
+  "version": "1.0.0",
+  "description": "整数时间格上的最低费用充电调度器（最小费用流 + 启动次数限制 + 无解缺口诊断）",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "demo": "node examples/demo.ts"
+  }
+}
