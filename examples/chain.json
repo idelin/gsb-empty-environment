@@ -1,0 +1,8 @@
+{
+  "features": ["A", "B", "C", "D"],
+  "constraints": [
+    { "type": "implies", "from": "A", "to": "C" },
+    { "type": "implies", "from": "B", "to": "D" },
+    { "type": "mutex", "a": "C", "b": "D" }
+  ]
+}

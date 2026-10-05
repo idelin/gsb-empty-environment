@@ -1,0 +1,13 @@
+{
+  "name": "feature-pairwise-generator",
+  "version": "1.0.0",
+  "description": "布尔特性两两覆盖测试配置生成器（互斥/蕴含约束，最小配置数证明）",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/cli.ts",
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.ts"
+  }
+}

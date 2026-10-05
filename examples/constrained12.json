@@ -1,0 +1,13 @@
+{
+  "features": ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"],
+  "constraints": [
+    { "type": "mutex", "a": "F1", "b": "F2" },
+    { "type": "mutex", "a": "F3", "b": "F4" },
+    { "type": "implies", "from": "F5", "to": "F6" },
+    { "type": "implies", "from": "F7", "to": "F8" },
+    { "type": "implies", "from": "F9", "to": "F10" },
+    { "type": "mutex", "a": "F11", "b": "F12" },
+    { "type": "implies", "from": "F2", "to": "F5" },
+    { "type": "mutex", "a": "F6", "b": "F8" }
+  ]
+}
