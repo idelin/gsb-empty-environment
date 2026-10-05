@@ -1,0 +1,12 @@
+{
+  "name": "old",
+  "initial": "Idle",
+  "finals": ["Done"],
+  "transitions": [
+    { "from": "Idle", "label": "?login", "to": "Ready" },
+    { "from": "Ready", "label": "!welcome", "to": "Serving" },
+    { "from": "Serving", "label": "?query", "to": "Replying" },
+    { "from": "Replying", "label": "!result", "to": "Serving" },
+    { "from": "Serving", "label": "?bye", "to": "Done" }
+  ]
+}

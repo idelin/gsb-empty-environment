@@ -1,0 +1,9 @@
+{
+  "name": "new",
+  "initial": "C0",
+  "finals": ["C2"],
+  "transitions": [
+    { "from": "C0", "label": "!bye", "to": "C1" },
+    { "from": "C1", "label": "?welcome", "to": "C2" }
+  ]
+}

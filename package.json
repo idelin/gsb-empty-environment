@@ -1,0 +1,12 @@
+{
+  "name": "protocol-compat-checker",
+  "version": "1.0.0",
+  "description": "有限状态协议兼容检查器：新版协议能否与旧版对端完成全部会话（队列容量 2）",
+  "type": "module",
+  "scripts": {
+    "demo": "bun src/main.ts",
+    "check": "bun src/main.ts",
+    "test": "bun test"
+  },
+  "license": "ISC"
+}

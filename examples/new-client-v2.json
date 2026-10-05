@@ -1,0 +1,13 @@
+{
+  "name": "new",
+  "initial": "C0",
+  "finals": ["C4"],
+  "transitions": [
+    { "from": "C0", "label": "!login", "to": "C1" },
+    { "from": "C1", "label": "?welcome", "to": "C2" },
+    { "from": "C2", "label": "tau", "to": "C2p" },
+    { "from": "C2p", "label": "!query", "to": "C3" },
+    { "from": "C3", "label": "?result", "to": "C2p" },
+    { "from": "C2p", "label": "!bye", "to": "C4" }
+  ]
+}
