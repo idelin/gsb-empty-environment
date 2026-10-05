@@ -1,0 +1,15 @@
+{
+  "name": "async-resource-transaction",
+  "version": "0.1.0",
+  "private": true,
+  "description": "异步资源事务作用域：顺序获取、失败逆序释放、取消安全（迟到资源必被接管释放）",
+  "main": "dist/src/transaction.js",
+  "types": "dist/src/transaction.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/transaction.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
