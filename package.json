@@ -1,0 +1,14 @@
+{
+  "name": "lzh1-archive",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "自定义 LZ77 + 规范霍夫曼的独立块压缩格式（LZH1），含流式解码器、CLI 与测试",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "sh scripts/test.sh",
+    "cli": "node src/cli.ts"
+  }
+}
