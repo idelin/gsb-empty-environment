@@ -1,0 +1,6 @@
+# a.b + a.c  (choice made before b/c is visible)
+5 0
+0 a 1
+1 b 2
+0 a 3
+3 c 4

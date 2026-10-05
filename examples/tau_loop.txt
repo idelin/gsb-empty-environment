@@ -1,0 +1,4 @@
+# internal loop must not count as visible progress
+2 0
+0 tau 0
+0 a 1

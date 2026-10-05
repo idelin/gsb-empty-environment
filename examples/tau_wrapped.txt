@@ -1,0 +1,8 @@
+# same chain, each visible step wrapped in internal steps
+7 0
+0 tau 3
+3 a 4
+4 tau 5
+5 tau 1
+1 b 6
+6 tau 2
