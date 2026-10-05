@@ -1,0 +1,8 @@
+{
+  "roots": [{"name": "web", "constraint": ">=1.0.0"}, {"name": "logger", "constraint": "*"}],
+  "entries": [
+    {"name": "web", "version": "1.0.0", "source": "cdn"},
+    {"name": "util", "version": "1.0.0", "source": "cdn"},
+    {"name": "logger", "version": "1.0.0", "source": "cdn"}
+  ]
+}

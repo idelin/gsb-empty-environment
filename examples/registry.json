@@ -1,0 +1,20 @@
+{
+  "packages": [
+    {"name": "web", "version": "1.0.0", "sources": [{"id": "cdn", "url": "https://cdn.example.com/web-1.0.0.tgz", "size": 1200, "available": true}],
+     "deps": [{"name": "util", "constraint": "^1.0.0"}]},
+    {"name": "web", "version": "2.0.0", "sources": [{"id": "cdn", "url": "https://cdn.example.com/web-2.0.0.tgz", "size": 1500, "available": true}],
+     "deps": [{"name": "util", "constraint": "^2.0.0"}]},
+    {"name": "util", "version": "1.0.0", "sources": [{"id": "cdn", "url": "https://cdn.example.com/util-1.0.0.tgz", "size": 300, "available": true}]},
+    {"name": "util", "version": "2.0.0", "sources": [{"id": "cdn", "url": "https://cdn.example.com/util-2.0.0.tgz", "size": 500, "available": true}]},
+    {"name": "auth", "version": "1.0.0", "sources": [{"id": "cdn", "url": "https://cdn.example.com/auth-1.0.0.tgz", "size": 800, "available": true}],
+     "deps": [{"name": "crypto", "constraint": ">=1.0.0"}]},
+    {"name": "crypto", "version": "1.0.0", "sources": [{"id": "cdn", "url": "https://cdn.example.com/crypto-1.0.0.tgz", "size": 400, "available": true}],
+     "deps": [{"name": "auth", "constraint": ">=1.0.0"}]},
+    {"name": "logger", "version": "1.0.0",
+     "sources": [{"id": "cdn", "url": "https://cdn.example.com/logger-1.0.0.tgz", "size": 200, "available": false}]},
+    {"name": "logger", "version": "1.0.0",
+     "sources": [{"id": "mirror", "url": "https://mirror.example.com/logger-1.0.0.tgz", "size": 260, "available": true}]},
+    {"name": "logger", "version": "1.1.0",
+     "sources": [{"id": "cdn", "url": "https://cdn.example.com/logger-1.1.0.tgz", "size": 900, "available": true}]}
+  ]
+}
