@@ -1,0 +1,11 @@
+{
+  "name": "symex8",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "8-bit 整数小语言的符号执行器（赋值/条件/有界循环，状态合并保留路径条件）",
+  "scripts": {
+    "demo": "node src/main.ts",
+    "test": "node test/run-tests.ts"
+  }
+}
