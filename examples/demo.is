@@ -1,0 +1,64 @@
+; sum of fib(i) for i in 1..7, with a catchable fault every 3rd iteration
+func main 0 3
+	push 0
+	store 2          ; sum = 0
+	push 1
+	store 0          ; i = 1
+loop:
+	load 0
+	push 8
+	lt
+	jz done
+	pause
+	load 0
+	call fib
+	load 2
+	add
+	store 2          ; sum += fib(i)
+	try caught
+	load 0
+	push 3
+	mod
+	push 0
+	eq
+	jz nocatch
+	push 100
+	push 0
+	div               ; fault every 3rd iteration
+nocatch:
+	untry
+	jmp next
+caught:
+	load 2
+	add
+	store 2          ; sum += error code
+next:
+	load 0
+	push 1
+	add
+	store 0
+	jmp loop
+done:
+	load 2
+	print
+	halt
+func fib 1 2
+	load 0
+	push 2
+	lt
+	jz rec
+	load 0
+	ret
+rec:
+	load 0
+	push 1
+	sub
+	call fib
+	store 1
+	load 0
+	push 2
+	sub
+	call fib
+	load 1
+	add
+	ret
