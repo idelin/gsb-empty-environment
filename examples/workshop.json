@@ -1,0 +1,18 @@
+{
+  "resources": { "machine": 2, "inspector": 1 },
+  "tasks": [
+    { "id": "cut",     "duration": 3, "resources": { "machine": 1 } },
+    { "id": "mill",    "duration": 4, "resources": { "machine": 1 }, "predecessors": ["cut"],
+      "inspection": "fail",
+      "rework": [
+        { "id": "mill-repair",  "duration": 2, "resources": { "machine": 1 } },
+        { "id": "mill-recheck", "duration": 1, "resources": { "inspector": 1 } }
+      ] },
+    { "id": "drill",   "duration": 2, "resources": { "machine": 1 }, "predecessors": ["cut"],
+      "inspection": "pass" },
+    { "id": "grind",   "duration": 3, "resources": { "machine": 1 }, "predecessors": ["drill"] },
+    { "id": "inspect", "duration": 2, "resources": { "inspector": 1 },
+      "predecessors": ["mill", "grind"] },
+    { "id": "pack",    "duration": 1, "resources": { "machine": 1 }, "predecessors": ["inspect"] }
+  ]
+}
