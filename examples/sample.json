@@ -1,0 +1,16 @@
+{
+  "defaults": {"entry_buffer": 5, "exit_buffer": 5},
+  "spots": [
+    {"id": "P1", "vehicle_types": ["sedan", "suv"]},
+    {"id": "P2", "vehicle_types": ["sedan"]},
+    {"id": "P3", "vehicle_types": ["sedan", "suv", "truck"]}
+  ],
+  "reservations": [
+    {"id": "R1", "vehicle_type": "sedan", "start": 480, "end": 540, "profit": 120, "confirmed": true},
+    {"id": "R2", "vehicle_type": "suv",   "start": 500, "end": 560, "profit": 200},
+    {"id": "R3", "vehicle_type": "sedan", "start": 545, "end": 600, "profit": 90},
+    {"id": "R4", "vehicle_type": "truck", "start": 470, "end": 620, "profit": 500},
+    {"id": "R5", "vehicle_type": "sedan", "start": 610, "end": 660, "profit": 80},
+    {"id": "R6", "vehicle_type": "suv",   "start": 610, "end": 700, "profit": 150, "entry_buffer": 0, "exit_buffer": 10}
+  ]
+}
