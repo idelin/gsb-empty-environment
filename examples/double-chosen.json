@@ -1,0 +1,13 @@
+{
+  "members": ["n1", "n2", "n3", "n4", "n5"],
+  "events": [
+    { "id": "a1", "kind": "accept", "node": "n1", "epoch": 1, "ballot": { "round": 1, "node": "n1" }, "slot": 1, "value": "va", "causes": [] },
+    { "id": "a2", "kind": "accept", "node": "n2", "epoch": 1, "ballot": { "round": 1, "node": "n1" }, "slot": 1, "value": "va", "causes": [] },
+    { "id": "a3", "kind": "accept", "node": "n3", "epoch": 1, "ballot": { "round": 1, "node": "n1" }, "slot": 1, "value": "va", "causes": [] },
+    { "id": "l1", "kind": "learn", "node": "n1", "epoch": 1, "ballot": { "round": 1, "node": "n1" }, "slot": 1, "value": "va", "causes": ["a1", "a2", "a3"] },
+    { "id": "a4", "kind": "accept", "node": "n3", "epoch": 1, "ballot": { "round": 2, "node": "n5" }, "slot": 1, "value": "vb", "causes": [] },
+    { "id": "a5", "kind": "accept", "node": "n4", "epoch": 1, "ballot": { "round": 2, "node": "n5" }, "slot": 1, "value": "vb", "causes": [] },
+    { "id": "a6", "kind": "accept", "node": "n5", "epoch": 1, "ballot": { "round": 2, "node": "n5" }, "slot": 1, "value": "vb", "causes": [] },
+    { "id": "l2", "kind": "learn", "node": "n5", "epoch": 1, "ballot": { "round": 2, "node": "n5" }, "slot": 1, "value": "vb", "causes": ["a4", "a5", "a6"] }
+  ]
+}
