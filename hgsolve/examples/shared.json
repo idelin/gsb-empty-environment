@@ -1,0 +1,10 @@
+{
+  "facts": ["a", "b"],
+  "edges": [
+    {"id": "mk-c", "from": ["a", "b"], "to": "c", "cost": 5},
+    {"id": "mk-d", "from": ["c"], "to": "d", "cost": 1},
+    {"id": "mk-e", "from": ["c"], "to": "e", "cost": 1},
+    {"id": "mk-f", "from": ["d", "e"], "to": "f", "cost": 1}
+  ],
+  "targets": ["f", "c", "ghost"]
+}
