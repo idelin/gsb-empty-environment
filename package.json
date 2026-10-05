@@ -1,0 +1,14 @@
+{
+  "name": "rule-coverage-analyzer",
+  "version": "1.0.0",
+  "description": "Ordered rule coverage analyzer: exact symbolic analysis of unreachable rules, shadowed ranges and uncovered inputs over finite int/enum domains.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/analyzer.test.ts",
+    "demo": "node examples/demo.ts"
+  },
+  "engines": {
+    "node": ">=23.6"
+  },
+  "license": "MIT"
+}

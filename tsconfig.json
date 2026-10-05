@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "strict": true,
+    "noUncheckedIndexedAccess": false,
+    "exactOptionalPropertyTypes": false,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts", "examples/**/*.ts"]
+}
