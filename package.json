@@ -1,0 +1,11 @@
+{
+  "name": "vote-leader-election-model-checker",
+  "version": "1.0.0",
+  "description": "Explicit-state model checker for a 3-node majority-vote leader election protocol",
+  "scripts": {
+    "check": "bun model-checker.ts",
+    "check:exhaustive": "bun model-checker.ts --exhaustive",
+    "check:buggy": "bun model-checker.ts --buggy",
+    "check:bounded": "bun model-checker.ts --bounded 4"
+  }
+}
