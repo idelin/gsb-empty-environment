@@ -1,0 +1,12 @@
+{
+  "name": "approval-plan",
+  "version": "0.1.0",
+  "description": "审批计划库：前后依赖、或签/会签、运行中加签与计划修订",
+  "type": "module",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "node scripts/strip-types.mjs",
+    "test": "npm run build && node test/run.mjs",
+    "demo": "npm run build && node examples/demo.mjs"
+  }
+}
