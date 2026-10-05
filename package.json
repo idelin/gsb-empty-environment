@@ -1,0 +1,14 @@
+{
+  "name": "membership-switch-simulator",
+  "version": "1.0.0",
+  "description": "Joint-consensus membership change simulator: commit decision + config state machine",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "demo": "node src/counterexample.ts",
+    "test": "node --test \"test/*.test.ts\""
+  }
+}
