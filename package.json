@@ -1,0 +1,17 @@
+{
+  "name": "sparse-pixel-collision",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sparse pixel collision world with an incremental inverted index and atomic shape updates.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
