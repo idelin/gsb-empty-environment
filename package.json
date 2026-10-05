@@ -1,0 +1,16 @@
+{
+  "name": "single-machine-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "单机排程精确求解: 释放时间 + 有向换线 + 迟交罚金, n <= 18, 主目标总罚金最小, 次目标最早完工",
+  "main": "dist/scheduler.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js",
+    "solve": "node dist/main.js",
+    "test": "node dist/selfcheck.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

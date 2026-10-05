@@ -1,0 +1,16 @@
+{
+  "anticipatorySetup": true,
+  "initialSetup": [1, 1, 1, 1],
+  "jobs": [
+    { "id": "早班", "release": 0,  "proc": 3, "due": 8,  "weight": 2 },
+    { "id": "午料", "release": 12, "proc": 4, "due": 20, "weight": 5 },
+    { "id": "晚料", "release": 25, "proc": 2, "due": 30, "weight": 8 },
+    { "id": "加急", "release": 5,  "proc": 2, "due": 9,  "weight": 10 }
+  ],
+  "setup": [
+    [0, 2, 5, 1],
+    [3, 0, 2, 4],
+    [1, 6, 0, 2],
+    [2, 3, 1, 0]
+  ]
+}
