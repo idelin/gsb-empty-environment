@@ -1,0 +1,15 @@
+{
+  "budget": 20,
+  "changes": [
+    { "id": "auth-refactor", "cost": 4 },
+    { "id": "token-cache", "cost": 3, "requires": ["auth-refactor"] },
+    { "id": "legacy-sso", "cost": 5, "conflicts": ["token-cache"] },
+    { "id": "db-migration", "cost": 6 },
+    { "id": "read-replica", "cost": 4, "requires": ["db-migration"] },
+    { "id": "api-v2", "cost": 5 },
+    { "id": "rate-limit", "cost": 2, "requires": ["api-v2"] },
+    { "id": "ui-overhaul", "cost": 7, "conflicts": ["legacy-sso"] },
+    { "id": "feature-flags", "cost": 2 },
+    { "id": "audit-log", "cost": 3, "requires": ["db-migration", "auth-refactor"] }
+  ]
+}

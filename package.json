@@ -1,0 +1,11 @@
+{
+  "name": "change-interaction-test-planner",
+  "version": "1.0.0",
+  "description": "改动交互测试规划器：依赖约束与执行预算下的二阶交互覆盖（精确解 + 贪心对照）",
+  "type": "module",
+  "scripts": {
+    "demo": "bun run src/main.ts",
+    "plan": "bun run src/main.ts",
+    "test": "bun test"
+  }
+}
