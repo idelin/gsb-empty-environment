@@ -1,0 +1,8 @@
+{
+  "name": "focus-manager",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/focus-manager.test.ts"
+  }
+}
