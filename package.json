@@ -1,0 +1,13 @@
+{
+  "name": "keymap-dispatcher",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-key sequence shortcut dispatcher driven by an explicit logical clock",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
