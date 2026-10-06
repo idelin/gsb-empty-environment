@@ -1,0 +1,14 @@
+{
+  "name": "snapshot-rule-engine",
+  "version": "0.1.0",
+  "description": "快照语义优先级规则引擎：条件同时判定、逐字段优先级仲裁、同优先级异值冲突、字段级证据树、排序无关性核对",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "license": "MIT"
+}
