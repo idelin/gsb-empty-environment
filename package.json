@@ -1,0 +1,13 @@
+{
+  "name": "adt-match-checker",
+  "version": "0.1.0",
+  "description": "ADT 模式匹配穷尽性/冗余分支检查（Maranget 有用性算法 + 最小深度见证 + 深度受限枚举交叉验证）",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "test": "node test/run.mjs",
+    "demo": "node examples/demo.js"
+  }
+}
