@@ -1,0 +1,12 @@
+{
+  "name": "resettable-counter-crdt",
+  "version": "0.1.0",
+  "description": "多副本计数器 CRDT：递增 + 显式重置（操作集语义），按操作 id 去重合并",
+  "type": "module",
+  "main": "dist/counter.mjs",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "npm run build && node test/counter.test.mjs"
+  },
+  "license": "MIT"
+}
