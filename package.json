@@ -1,0 +1,15 @@
+{
+  "name": "ts-unify",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Hindley-Milner style first-order unification with occurs check and transitive substitution",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsc -p tsconfig.json && node dist/test/run.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
