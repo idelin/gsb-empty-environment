@@ -1,0 +1,16 @@
+{
+  "name": "drag-snap",
+  "version": "0.1.0",
+  "description": "Drag snapping to guide lines with hysteresis, integer subpixel input and zoom-aware thresholds",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
