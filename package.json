@@ -1,0 +1,15 @@
+{
+  "name": "marker-overlay",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Overlay half-open ranges from multiple analyzers by priority into minimal disjoint styled segments.",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/run.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
