@@ -1,0 +1,11 @@
+{
+  "name": "scroll-chain-model",
+  "version": "1.0.0",
+  "description": "Layered scroll model: innermost-first consumption, bounded layers, chain-blocking, anchor-preserving zoom",
+  "private": true,
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/scroll-chain.test.js"
+  },
+  "license": "ISC"
+}
