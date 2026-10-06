@@ -1,0 +1,21 @@
+{
+  "name": "小实例：4 物品 / 3 仓位 / 3 场景（全策略枚举核对用）",
+  "items": 4,
+  "bins": 3,
+  "capacity": [16, 16, 16],
+  "handle": [
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3]
+  ],
+  "moveCost": [2, 2, 2, 2],
+  "moveLimit": 3,
+  "moveCostLimit": 6,
+  "observe": [0],
+  "scenarios": [
+    {"name": "s0", "volumes": [ 4, 12,  8, 4]},
+    {"name": "s1", "volumes": [ 4,  8, 12, 4]},
+    {"name": "s2", "volumes": [12,  8,  8, 4]}
+  ]
+}
