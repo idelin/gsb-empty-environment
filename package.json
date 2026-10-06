@@ -1,0 +1,11 @@
+{
+  "name": "bytecode-verifier",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Stack-height bytecode verifier with witness-path evidence",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node dist/tests.js && node dist/explore.js",
+    "demo": "node dist/demo.js"
+  }
+}
