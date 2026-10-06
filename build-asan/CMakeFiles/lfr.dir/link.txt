@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblfr.a CMakeFiles/lfr.dir/src/reader.cpp.o
+/usr/bin/ranlib liblfr.a
