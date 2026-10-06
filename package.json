@@ -1,0 +1,10 @@
+{
+  "name": "ts-unify",
+  "version": "0.1.0",
+  "description": "Unification over type variables, function types and lists with occurs check and transitive substitution",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node test/run.mjs"
+  }
+}
