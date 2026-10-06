@@ -1,0 +1,10 @@
+{
+  "name": "provenance-template-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TypeScript template engine with variables, conditionals, loops, scoped bindings, provenance-tracked output and a dual-engine (interpreter + compiler) verification model",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node dist/test/run.js"
+  }
+}
