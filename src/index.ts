@@ -1,0 +1,10 @@
+export { lex, LexError } from './lexer.ts';
+export type { Token, TokenKind } from './lexer.ts';
+export { parse, ParseError } from './parser.ts';
+export type { Program, Stmt, Expr, Span } from './ast.ts';
+export { bind } from './binder.ts';
+export type { BindingGraph, Declaration, RefRecord } from './binder.ts';
+export { checkIsomorphic } from './verify.ts';
+export type { IsomorphismResult } from './verify.ts';
+export { rename } from './rename.ts';
+export type { RenameResult, TextEdit } from './rename.ts';
