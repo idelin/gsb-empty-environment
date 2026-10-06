@@ -1,0 +1,17 @@
+{
+  "name": "query-ast",
+  "version": "0.1.0",
+  "description": "SQL query AST with identity-based parameter binding, deterministic placeholder numbering, and render-reparse verification",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
