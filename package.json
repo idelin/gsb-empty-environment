@@ -1,0 +1,13 @@
+{
+  "name": "time-aligned-stack",
+  "version": "0.1.0",
+  "description": "Time-aligned stacking with missing/zero distinction, signed stacking, percent mode, and barrier-synchronized revision dataflow",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  },
+  "license": "MIT"
+}
