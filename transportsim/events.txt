@@ -1,0 +1,15 @@
+# t=<time> <op> [args]   ops: send N | ack SEQ | dupack SEQ | drop SEQ | timeout SEQ | tick
+t=0   send 4        # initial cwnd=4: seq 1..4 in flight
+t=10  ack 1         # RTT sample = 10
+t=12  ack 2
+t=15  drop 3        # network drops packet 3, sender unaware
+t=16  ack 4
+t=18  dupack 4      # duplicate ACK: must NOT release credit again
+t=19  dupack 4
+t=20  dupack 4      # 3rd consecutive dup -> fast retransmit of seq 3
+t=30  ack 3         # ACK of retransmitted packet: no RTT sample (Karn)
+t=31  send 2        # window allows seq 5..6
+t=40  drop 5
+t=45  timeout 5     # RTO fires: retransmit 5, cwnd=1
+t=60  ack 5         # retransmitted: no RTT sample
+t=61  ack 6
