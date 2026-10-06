@@ -1,0 +1,13 @@
+{
+  "name": "chat-layout",
+  "version": "0.1.0",
+  "description": "Variable-height chat list layout with lazy measurement and scroll anchoring",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\""
+  }
+}
