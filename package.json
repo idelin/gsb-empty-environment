@@ -1,0 +1,11 @@
+{
+  "name": "versioned-workflow",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Event-sourced workflow engine with versioned graph migration",
+  "type": "commonjs",
+  "scripts": {
+    "build": "node toolchain/typescript/bin/tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/run.js"
+  }
+}
