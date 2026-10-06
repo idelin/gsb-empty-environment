@@ -1,0 +1,13 @@
+{
+  "name": "adt-match-checker",
+  "version": "1.0.0",
+  "description": "Exhaustiveness and redundancy checker for pattern matching over algebraic data types",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "demo": "npm run build && node dist/demo.js",
+    "test": "npm run build && node test/run.mjs"
+  },
+  "license": "MIT"
+}
