@@ -1,0 +1,11 @@
+{
+  "name": "ir-opt",
+  "version": "0.1.0",
+  "private": true,
+  "description": "整数中间码优化库：溢出/除零为可见错误的安全常量传播与差分测试",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "test": "node tools/build.mjs && node dist/main.js",
+    "fuzz": "node dist/main.js"
+  }
+}
