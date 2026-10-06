@@ -1,0 +1,16 @@
+{
+  "name": "route-compose",
+  "version": "0.1.0",
+  "description": "TypeScript route construction library: composable parent/child paths with round-trip-safe URL building and parsing",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "license": "MIT"
+}
