@@ -1,0 +1,14 @@
+{
+  "name": "prefix-policy-engine",
+  "version": "0.1.0",
+  "description": "Path-prefix permission decision library with group inheritance, atomic config updates and shadowed-rule reporting",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
