@@ -1,0 +1,27 @@
+{
+  "resources": [
+    {
+      "name": "lock",
+      "states": ["free", "held", "broken"],
+      "initial": "free",
+      "final": ["free"],
+      "transitions": [
+        {"from": "free", "op": "acquire", "to": "held"},
+        {"from": "held", "op": "acquire", "to": "held", "result": "fail"},
+        {"from": "held", "op": "release", "to": "free"},
+        {"from": "free", "op": "release", "to": "broken", "result": "fail"}
+      ]
+    }
+  ],
+  "scripts": [
+    {"name": "worker_a", "actions": [
+      {"resource": "lock", "op": "acquire"},
+      {"resource": "lock", "op": "release"}
+    ]},
+    {"name": "worker_b", "actions": [
+      {"resource": "lock", "op": "acquire"},
+      {"resource": "lock", "op": "release"}
+    ]}
+  ],
+  "budget": 100000
+}

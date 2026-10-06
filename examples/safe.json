@@ -1,0 +1,20 @@
+{
+  "resources": [
+    {
+      "name": "conn",
+      "states": ["idle", "open"],
+      "initial": "idle",
+      "final": ["idle"],
+      "transitions": [
+        {"from": "idle", "op": "open", "to": "open"},
+        {"from": "open", "op": "close", "to": "idle"}
+      ]
+    }
+  ],
+  "scripts": [
+    {"name": "client", "actions": [
+      {"resource": "conn", "op": "open"},
+      {"resource": "conn", "op": "close"}
+    ]}
+  ]
+}
