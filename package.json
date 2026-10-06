@@ -1,0 +1,9 @@
+{
+  "name": "tag-narrowing-analyzer",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "小语言类型系统：对象/字面值/联合，tag 等值收窄、未知字段报错、分支合流取联合、不可达分支标记，并以有限值集核对静态剩余类型精度",
+  "scripts": {
+    "test": "node test/run.js"
+  }
+}
