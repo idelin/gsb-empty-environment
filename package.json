@@ -1,0 +1,13 @@
+{
+  "name": "canvas-paste",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Canvas subgraph copy/paste with transactional id allocation, typed reference fixup and undo/redo.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
