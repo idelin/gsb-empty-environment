@@ -1,0 +1,10 @@
+{
+  "name": "tab-edit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Multi-selection indent/outdent editing library with tab-stop semantics and byte-exact undo",
+  "scripts": {
+    "test": "node scripts/strip.js && node test/verify.js",
+    "typecheck": "tsc --noEmit"
+  }
+}
