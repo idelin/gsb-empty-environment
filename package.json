@@ -1,0 +1,13 @@
+{
+  "name": "guarded-navigator",
+  "version": "0.1.0",
+  "description": "Navigation state library with sequential async guards, redirects, and stale-navigation invalidation",
+  "type": "module",
+  "exports": "./src/navigation.ts",
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
