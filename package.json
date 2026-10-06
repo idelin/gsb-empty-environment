@@ -1,0 +1,17 @@
+{
+  "name": "or-counter-crdt",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Observed-reset multi-replica counter CRDT with id-based dedup merge",
+  "type": "module",
+  "main": ".build/src/counter.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test .build/test/",
+    "test:node16": "node --experimental-loader=./scripts/node16-loader.mjs scripts/run-tests-node16.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0"
+  }
+}
