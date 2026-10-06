@@ -1,0 +1,11 @@
+{
+  "name": "ts-lex",
+  "version": "0.1.0",
+  "description": "Streaming, checkpointable and incremental lexer for TypeScript-like syntax",
+  "main": "src/index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "node test/run.js"
+  },
+  "license": "MIT"
+}
