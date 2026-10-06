@@ -1,0 +1,12 @@
+{
+  "name": "layered-rect-geometry",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Visible-fragment decomposition and exact rational compositing for layered axis-aligned rectangles",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc",
+    "test": "node node_modules/typescript/bin/tsc && node dist/test/run.js"
+  }
+}
