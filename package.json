@@ -1,0 +1,13 @@
+{
+  "name": "staged-source-mapping",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "两轮转换的段式来源映射：组合、正向来源片段查询与多值反向查询",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test test/mapping.test.ts"
+  }
+}
