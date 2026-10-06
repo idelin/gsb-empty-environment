@@ -1,0 +1,16 @@
+{
+  "name": "affine-hit-test",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Scene-graph hit testing with invertible 2D affine transforms, ancestor clipping and a world-bbox spatial index.",
+  "exports": {
+    ".": "./src/mod.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}
