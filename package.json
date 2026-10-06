@@ -1,0 +1,13 @@
+{
+  "name": "ts-segment-downsample",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Segment-aware min/max-per-pixel-column downsampling for time series with missing values",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}
