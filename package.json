@@ -1,0 +1,14 @@
+{
+  "name": "suggest-merge",
+  "version": "0.1.0",
+  "description": "Merge suggestion candidates from asynchronous sources with canonical-key dedupe, max-score winners, provenance tracking, and stable highlighting.",
+  "type": "module",
+  "private": true,
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
