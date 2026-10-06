@@ -1,0 +1,10 @@
+{
+  "name": "ime-aware-editor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "IME-aware edit-control state machine (composition/input/selection events, code-point length cap, composition-scoped undo)",
+  "scripts": {
+    "test": "sh scripts/test.sh"
+  }
+}
