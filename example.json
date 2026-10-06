@@ -1,0 +1,34 @@
+{
+  "versions": [
+    {"id": "v1", "features": ["core"]},
+    {"id": "v2", "features": ["core", "audit-log"]},
+    {"id": "v3", "features": ["core", "audit-log", "metrics"]},
+    {"id": "v4", "features": ["core", "audit-log", "metrics", "tracing"]},
+    {"id": "v5", "features": ["core", "audit-log", "metrics", "tracing", "exp-cache"]}
+  ],
+  "edges": [
+    {"from": "v2", "to": "v1", "cost": 1, "undoes": ["audit-log"]},
+    {"from": "v3", "to": "v2", "cost": 1, "undoes": ["metrics"]},
+    {"from": "v4", "to": "v3", "cost": 1, "undoes": ["tracing"]},
+    {"from": "v5", "to": "v4", "cost": 2, "undoes": ["exp-cache"]},
+    {"from": "v5", "to": "v3", "cost": 4, "undoes": ["tracing", "exp-cache"]},
+    {"from": "v4", "to": "v2", "cost": 2, "undoes": ["metrics", "tracing"]}
+  ],
+  "nodes": [
+    {"id": "A", "version": "v5"},
+    {"id": "B", "version": "v4", "forbidden": ["v2"]},
+    {"id": "C", "version": "v3"}
+  ],
+  "budget": 6,
+  "compatibility": [
+    {
+      "nodeA": "A",
+      "nodeB": "B",
+      "allowedPairs": [
+        ["v5", "v4"], ["v5", "v3"], ["v5", "v2"],
+        ["v4", "v4"], ["v4", "v2"],
+        ["v3", "v4"], ["v3", "v3"], ["v3", "v2"]
+      ]
+    }
+  ]
+}
