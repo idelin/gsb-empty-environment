@@ -1,0 +1,10 @@
+{
+  "name": "debug-variable-model",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Debug-time variable inspection model: shared/cyclic objects, stable reference ids, pause generations, paginated sorted children, lazy getters",
+  "scripts": {
+    "test": "node --experimental-strip-types --test 'test/*.test.ts'"
+  }
+}
