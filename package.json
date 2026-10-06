@@ -1,0 +1,13 @@
+{
+  "name": "bidi-line-layout",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "sh scripts/test.sh"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
