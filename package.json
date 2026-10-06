@@ -1,0 +1,14 @@
+{
+  "name": "controlled-value",
+  "version": "0.1.0",
+  "description": "事件溯源式的受控/非受控值状态库：区分受控属性与内部默认值，带版本确认与撤销",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "license": "MIT"
+}
