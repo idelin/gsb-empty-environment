@@ -1,0 +1,11 @@
+{
+  "name": "range-mapping",
+  "version": "0.1.0",
+  "description": "Composable half-open range mappings for multi-round source transformations",
+  "type": "module",
+  "main": "dist/mapping.mjs",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node test/run-tests.mjs"
+  }
+}
