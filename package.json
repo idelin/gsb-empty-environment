@@ -1,0 +1,13 @@
+{
+  "name": "indented-config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Indentation-based config language: full-fidelity CST parser, validated edits, incremental reprint",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node tests/run.ts"
+  }
+}
