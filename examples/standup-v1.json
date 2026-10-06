@@ -1,0 +1,8 @@
+{
+  "rule_id": "standup",
+  "start_date": "2026-01-05",
+  "weeks": 6,
+  "revisions": [
+    {"from_seq": 0, "rev": 1, "weekday": "Monday", "minute": 540, "duration_min": 30, "offset_min": 480}
+  ]
+}
