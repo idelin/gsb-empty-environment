@@ -1,0 +1,26 @@
+{
+  "name": "explicit-time-anim",
+  "version": "0.1.0",
+  "description": "Explicit-time animation sampling: delay, finite repeats, yoyo, negative playback rates, piecewise time mapping",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node test/run-tests.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "license": "MIT"
+}
