@@ -1,0 +1,16 @@
+{
+  "name": "schema-compat",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "判定旧模式的所有合法记录能否被新模式接受；不兼容时返回最小具体反例",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --test test/compat.test.ts"
+  }
+}
