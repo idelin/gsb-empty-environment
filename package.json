@@ -1,0 +1,20 @@
+{
+  "name": "layered-settings",
+  "version": "0.1.0",
+  "description": "三层（default/project/session）设置库：null 即值、unset 仅撤当前层、对象按叶合并、数组整体替换、事务统一发布",
+  "type": "module",
+  "exports": {
+    ".": "./src/settings.ts"
+  },
+  "scripts": {
+    "test": "node --test test/",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.8.0"
+  }
+}
