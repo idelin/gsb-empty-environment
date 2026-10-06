@@ -1,0 +1,10 @@
+{
+  "name": "ordinal-weekly-calendar",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Weekly recurrence over explicit integer date ordinals with count, exdates and rescheduling",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/verify.js"
+  }
+}
