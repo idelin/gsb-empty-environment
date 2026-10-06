@@ -1,0 +1,24 @@
+{
+  "resources": ["lock"],
+  "initial": {"lock": "free"},
+  "terminals": {"lock": ["free"]},
+  "actions": {
+    "acquire": {
+      "transitions": [
+        {"outcome": "ok", "when": {"lock": "free"}, "set": {"lock": "held"}},
+        {"outcome": "fail", "when": {"lock": "held"}, "set": {}}
+      ]
+    },
+    "release": {
+      "transitions": [
+        {"outcome": "ok", "when": {"lock": "held"}, "set": {"lock": "free"}},
+        {"outcome": "fail", "when": {"lock": "free"}, "set": {}}
+      ]
+    }
+  },
+  "scripts": [
+    {"name": "A", "actions": ["acquire", "release"]},
+    {"name": "B", "actions": ["acquire"]}
+  ],
+  "budget": {"max_states": 10000, "max_depth": 64}
+}
