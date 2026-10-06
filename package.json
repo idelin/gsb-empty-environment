@@ -1,0 +1,10 @@
+{
+  "name": "tree-alias-mounts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tree with stable node ids, bounded-hop path aliases, and read-only virtual mounts",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc",
+    "test": "node node_modules/typescript/bin/tsc && node dist/tests/run.js"
+  }
+}
