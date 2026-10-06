@@ -1,0 +1,11 @@
+{
+  "name": "bytecode-verifier",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Stack-height bytecode verifier with path evidence and differential exploration",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "demo": "node examples/demo.ts"
+  }
+}
