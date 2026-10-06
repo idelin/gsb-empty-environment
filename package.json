@@ -1,0 +1,13 @@
+{
+  "name": "binding-rename",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Binding-identity-based rename refactoring for a small let/block language, verified by re-parse binding-graph isomorphism.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/rename.test.ts"
+  }
+}
