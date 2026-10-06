@@ -1,0 +1,10 @@
+{
+  "name": "ts-lexer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Streaming TypeScript-like lexer with checkpoints and incremental re-lexing",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc",
+    "test": "npm run build && node dist/test/run.js"
+  }
+}
