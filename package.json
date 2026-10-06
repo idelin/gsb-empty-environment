@@ -1,0 +1,11 @@
+{
+  "name": "closure-boxing-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Small language with nested functions, mutable locals and escaping closures; compiler boxes captured mutable variables.",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/tests/run.js"
+  },
+  "license": "ISC"
+}
