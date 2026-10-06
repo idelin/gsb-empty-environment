@@ -1,0 +1,13 @@
+{
+  "name": "tail-call-interpreter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TypeScript interpreter with tail-call frame reuse and bounded error-report summaries",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/verify.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
