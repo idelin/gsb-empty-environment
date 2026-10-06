@@ -1,0 +1,12 @@
+{
+  "name": "fixed-height-paginator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/paginate.ts"
+  },
+  "scripts": {
+    "test": "node test/verify.ts"
+  }
+}
