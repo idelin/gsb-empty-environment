@@ -1,0 +1,10 @@
+{
+  "name": "anchor-document",
+  "version": "0.1.0",
+  "description": "Document model with annotation anchors, selection transformation, batch edits and undo",
+  "type": "module",
+  "exports": "./src/document.ts",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
