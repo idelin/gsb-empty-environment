@@ -1,0 +1,14 @@
+{
+  "name": "chat-list-layout",
+  "version": "0.1.0",
+  "description": "Variable-height chat list layout with scroll anchoring, measured on demand",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT"
+}
