@@ -1,0 +1,19 @@
+{
+  "name": "bytebucket-flags",
+  "version": "0.1.0",
+  "description": "Feature flag library: FNV-1a byte-hash mod-10000 bucketing, versioned config snapshots, flag dependencies, evaluation cache.",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "src/index.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node test/run.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
