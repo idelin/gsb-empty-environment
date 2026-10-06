@@ -1,0 +1,10 @@
+{
+  "name": "coroutine-interpreter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Small interpreter with yield, try/finally and cooperative cancellation",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/interpreter.test.js"
+  }
+}
