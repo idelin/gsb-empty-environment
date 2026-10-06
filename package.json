@@ -1,0 +1,11 @@
+{
+  "name": "utc-work-calendar",
+  "version": "0.1.0",
+  "description": "在 UTC 开放区间上累加工作时长（支持重叠区间并集、暂停日、负向倒推与经过区间证据）",
+  "type": "module",
+  "main": "src/calendar.ts",
+  "scripts": {
+    "test": "bun test"
+  },
+  "license": "ISC"
+}
