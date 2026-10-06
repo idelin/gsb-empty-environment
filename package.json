@@ -1,0 +1,13 @@
+{
+  "name": "template-engine",
+  "version": "0.1.0",
+  "description": "A small template engine with variables, conditionals and loops, implemented as a direct AST interpreter.",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.ts"
+  },
+  "license": "MIT"
+}
