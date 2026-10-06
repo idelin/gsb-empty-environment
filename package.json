@@ -1,0 +1,10 @@
+{
+  "name": "ts-debug-interpreter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A small tree-walking interpreter written in TypeScript with a step/continue/conditional-breakpoint debugger.",
+  "scripts": {
+    "test": "sh scripts/test.sh"
+  }
+}
