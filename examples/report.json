@@ -1,0 +1,478 @@
+{
+  "mapping": {
+    "kind": "单调分段线性：压缩段斜率∈(0,1)，其余斜率=1；所有压缩段共享同一映射，全程严格递增可逆",
+    "knots": [
+      {
+        "t": "0",
+        "m": "0"
+      },
+      {
+        "t": "10",
+        "m": "1"
+      },
+      {
+        "t": "55",
+        "m": "11/2"
+      },
+      {
+        "t": "65",
+        "m": "31/2"
+      },
+      {
+        "t": "100",
+        "m": "19"
+      },
+      {
+        "t": "110",
+        "m": "20"
+      },
+      {
+        "t": "150",
+        "m": "24"
+      },
+      {
+        "t": "160",
+        "m": "34"
+      },
+      {
+        "t": "200",
+        "m": "38"
+      }
+    ],
+    "inverse_knots": [
+      {
+        "t": "0",
+        "m": "0"
+      },
+      {
+        "t": "1",
+        "m": "10"
+      },
+      {
+        "t": "11/2",
+        "m": "55"
+      },
+      {
+        "t": "31/2",
+        "m": "65"
+      },
+      {
+        "t": "19",
+        "m": "100"
+      },
+      {
+        "t": "20",
+        "m": "110"
+      },
+      {
+        "t": "24",
+        "m": "150"
+      },
+      {
+        "t": "34",
+        "m": "160"
+      },
+      {
+        "t": "38",
+        "m": "200"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "start": "0",
+      "end": "10",
+      "mapped_start": "0",
+      "mapped_end": "1",
+      "reason": "空闲 10/1 超过阈值 5，斜率 1/10，10/1 -\u003e 1/1，节省 9/1"
+    },
+    {
+      "start": "10",
+      "end": "55",
+      "mapped_start": "1",
+      "mapped_end": "11/2",
+      "reason": "空闲 45/1 超过阈值 5，斜率 1/10，45/1 -\u003e 9/2，节省 81/2；已避开受保护段（audio-continuous(连续配乐)）"
+    },
+    {
+      "start": "65",
+      "end": "100",
+      "mapped_start": "31/2",
+      "mapped_end": "19",
+      "reason": "空闲 35/1 超过阈值 5，斜率 1/10，35/1 -\u003e 7/2，节省 63/2；已避开受保护段（audio-continuous(连续配乐)）"
+    },
+    {
+      "start": "100",
+      "end": "110",
+      "mapped_start": "19",
+      "mapped_end": "20",
+      "reason": "空闲 10/1 超过阈值 5，斜率 1/10，10/1 -\u003e 1/1，节省 9/1"
+    },
+    {
+      "start": "110",
+      "end": "150",
+      "mapped_start": "20",
+      "mapped_end": "24",
+      "reason": "空闲 40/1 超过阈值 5，斜率 1/10，40/1 -\u003e 4/1，节省 36/1；已避开受保护段（mouse-drag(拖拽操作)）"
+    },
+    {
+      "start": "160",
+      "end": "200",
+      "mapped_start": "34",
+      "mapped_end": "38",
+      "reason": "空闲 40/1 超过阈值 5，斜率 1/10，40/1 -\u003e 4/1，节省 36/1；已避开受保护段（mouse-drag(拖拽操作)）"
+    }
+  ],
+  "skipped": [],
+  "tracks": [
+    {
+      "id": "video",
+      "start": "0",
+      "interval": "1/30",
+      "mapped_start": "0",
+      "evidence": [
+        {
+          "point": "t=0",
+          "orig_time": "0",
+          "orig_frame_pos": "0",
+          "orig_frame": "0",
+          "mapped_time": "0",
+          "mapped_frame_pos": "0",
+          "mapped_frame": "0",
+          "frame_shift": "0"
+        },
+        {
+          "point": "t=1/2",
+          "orig_time": "1/2",
+          "orig_frame_pos": "15",
+          "orig_frame": "15",
+          "mapped_time": "1/20",
+          "mapped_frame_pos": "3/2",
+          "mapped_frame": "2",
+          "frame_shift": "-13"
+        },
+        {
+          "point": "t=10",
+          "orig_time": "10",
+          "orig_frame_pos": "300",
+          "orig_frame": "300",
+          "mapped_time": "1",
+          "mapped_frame_pos": "30",
+          "mapped_frame": "30",
+          "frame_shift": "-270"
+        },
+        {
+          "point": "t=55",
+          "orig_time": "55",
+          "orig_frame_pos": "1650",
+          "orig_frame": "1650",
+          "mapped_time": "11/2",
+          "mapped_frame_pos": "165",
+          "mapped_frame": "165",
+          "frame_shift": "-1485"
+        },
+        {
+          "point": "t=65",
+          "orig_time": "65",
+          "orig_frame_pos": "1950",
+          "orig_frame": "1950",
+          "mapped_time": "31/2",
+          "mapped_frame_pos": "465",
+          "mapped_frame": "465",
+          "frame_shift": "-1485"
+        },
+        {
+          "point": "t=100",
+          "orig_time": "100",
+          "orig_frame_pos": "3000",
+          "orig_frame": "3000",
+          "mapped_time": "19",
+          "mapped_frame_pos": "570",
+          "mapped_frame": "570",
+          "frame_shift": "-2430"
+        },
+        {
+          "point": "t=110",
+          "orig_time": "110",
+          "orig_frame_pos": "3300",
+          "orig_frame": "3300",
+          "mapped_time": "20",
+          "mapped_frame_pos": "600",
+          "mapped_frame": "600",
+          "frame_shift": "-2700"
+        },
+        {
+          "point": "t=150",
+          "orig_time": "150",
+          "orig_frame_pos": "4500",
+          "orig_frame": "4500",
+          "mapped_time": "24",
+          "mapped_frame_pos": "720",
+          "mapped_frame": "720",
+          "frame_shift": "-3780"
+        },
+        {
+          "point": "t=160",
+          "orig_time": "160",
+          "orig_frame_pos": "4800",
+          "orig_frame": "4800",
+          "mapped_time": "34",
+          "mapped_frame_pos": "1020",
+          "mapped_frame": "1020",
+          "frame_shift": "-3780"
+        },
+        {
+          "point": "t=175",
+          "orig_time": "175",
+          "orig_frame_pos": "5250",
+          "orig_frame": "5250",
+          "mapped_time": "71/2",
+          "mapped_frame_pos": "1065",
+          "mapped_frame": "1065",
+          "frame_shift": "-4185"
+        },
+        {
+          "point": "t=200",
+          "orig_time": "200",
+          "orig_frame_pos": "6000",
+          "orig_frame": "6000",
+          "mapped_time": "38",
+          "mapped_frame_pos": "1140",
+          "mapped_frame": "1140",
+          "frame_shift": "-4860"
+        }
+      ]
+    },
+    {
+      "id": "audio",
+      "start": "1/2",
+      "interval": "1/48000",
+      "mapped_start": "1/20",
+      "evidence": [
+        {
+          "point": "t=0",
+          "orig_time": "0",
+          "orig_frame_pos": "-24000",
+          "orig_frame": "-24000",
+          "mapped_time": "0",
+          "mapped_frame_pos": "-2400",
+          "mapped_frame": "-2400",
+          "frame_shift": "21600"
+        },
+        {
+          "point": "t=1/2",
+          "orig_time": "1/2",
+          "orig_frame_pos": "0",
+          "orig_frame": "0",
+          "mapped_time": "1/20",
+          "mapped_frame_pos": "0",
+          "mapped_frame": "0",
+          "frame_shift": "0"
+        },
+        {
+          "point": "t=10",
+          "orig_time": "10",
+          "orig_frame_pos": "456000",
+          "orig_frame": "456000",
+          "mapped_time": "1",
+          "mapped_frame_pos": "45600",
+          "mapped_frame": "45600",
+          "frame_shift": "-410400"
+        },
+        {
+          "point": "t=55",
+          "orig_time": "55",
+          "orig_frame_pos": "2616000",
+          "orig_frame": "2616000",
+          "mapped_time": "11/2",
+          "mapped_frame_pos": "261600",
+          "mapped_frame": "261600",
+          "frame_shift": "-2354400"
+        },
+        {
+          "point": "t=65",
+          "orig_time": "65",
+          "orig_frame_pos": "3096000",
+          "orig_frame": "3096000",
+          "mapped_time": "31/2",
+          "mapped_frame_pos": "741600",
+          "mapped_frame": "741600",
+          "frame_shift": "-2354400"
+        },
+        {
+          "point": "t=100",
+          "orig_time": "100",
+          "orig_frame_pos": "4776000",
+          "orig_frame": "4776000",
+          "mapped_time": "19",
+          "mapped_frame_pos": "909600",
+          "mapped_frame": "909600",
+          "frame_shift": "-3866400"
+        },
+        {
+          "point": "t=110",
+          "orig_time": "110",
+          "orig_frame_pos": "5256000",
+          "orig_frame": "5256000",
+          "mapped_time": "20",
+          "mapped_frame_pos": "957600",
+          "mapped_frame": "957600",
+          "frame_shift": "-4298400"
+        },
+        {
+          "point": "t=150",
+          "orig_time": "150",
+          "orig_frame_pos": "7176000",
+          "orig_frame": "7176000",
+          "mapped_time": "24",
+          "mapped_frame_pos": "1149600",
+          "mapped_frame": "1149600",
+          "frame_shift": "-6026400"
+        },
+        {
+          "point": "t=160",
+          "orig_time": "160",
+          "orig_frame_pos": "7656000",
+          "orig_frame": "7656000",
+          "mapped_time": "34",
+          "mapped_frame_pos": "1629600",
+          "mapped_frame": "1629600",
+          "frame_shift": "-6026400"
+        },
+        {
+          "point": "t=175",
+          "orig_time": "175",
+          "orig_frame_pos": "8376000",
+          "orig_frame": "8376000",
+          "mapped_time": "71/2",
+          "mapped_frame_pos": "1701600",
+          "mapped_frame": "1701600",
+          "frame_shift": "-6674400"
+        },
+        {
+          "point": "t=200",
+          "orig_time": "200",
+          "orig_frame_pos": "9576000",
+          "orig_frame": "9576000",
+          "mapped_time": "38",
+          "mapped_frame_pos": "1821600",
+          "mapped_frame": "1821600",
+          "frame_shift": "-7754400"
+        }
+      ]
+    }
+  ],
+  "sync_points": [
+    {
+      "sync_time": "10",
+      "mapped_time": "1",
+      "reverse_lo": "10",
+      "reverse_hi": "10",
+      "round_trip_ok": true,
+      "windows": [
+        {
+          "track": "video",
+          "frame": "30",
+          "orig_window_lo": "59/6",
+          "orig_window_hi": "61/6",
+          "contains_sync": true
+        },
+        {
+          "track": "audio",
+          "frame": "45600",
+          "orig_window_lo": "95999/9600",
+          "orig_window_hi": "96001/9600",
+          "contains_sync": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "sync_time": "100",
+      "mapped_time": "19",
+      "reverse_lo": "100",
+      "reverse_hi": "100",
+      "round_trip_ok": true,
+      "windows": [
+        {
+          "track": "video",
+          "frame": "570",
+          "orig_window_lo": "599/6",
+          "orig_window_hi": "601/6",
+          "contains_sync": true
+        },
+        {
+          "track": "audio",
+          "frame": "909600",
+          "orig_window_lo": "959999/9600",
+          "orig_window_hi": "960001/9600",
+          "contains_sync": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "sync_time": "175",
+      "mapped_time": "71/2",
+      "reverse_lo": "175",
+      "reverse_hi": "175",
+      "round_trip_ok": true,
+      "windows": [
+        {
+          "track": "video",
+          "frame": "1065",
+          "orig_window_lo": "1049/6",
+          "orig_window_hi": "1051/6",
+          "contains_sync": true
+        },
+        {
+          "track": "audio",
+          "frame": "1701600",
+          "orig_window_lo": "1679999/9600",
+          "orig_window_hi": "1680001/9600",
+          "contains_sync": true
+        }
+      ],
+      "ok": true
+    }
+  ],
+  "verification": {
+    "key_points": {
+      "name": "key_points",
+      "ok": true,
+      "detail": "9 个关键点：原时间与映射时间均严格递增，各段斜率\u003e0，可逆范围覆盖全时间轴"
+    },
+    "overlap_checks": [
+      {
+        "name": "compressed_pairwise",
+        "ok": true,
+        "detail": "压缩段两两无内部重叠"
+      },
+      {
+        "name": "compressed_vs_protected",
+        "ok": true,
+        "detail": "压缩段与全部受保护段（鼠标拖动/音频连续段）无内部重叠"
+      },
+      {
+        "name": "mapped_compressed_vs_protected",
+        "ok": true,
+        "detail": "映射后的压缩段像与受保护段像仍无内部重叠"
+      }
+    ],
+    "event_order": {
+      "name": "event_order",
+      "ok": true,
+      "detail": "事件次序保持=true，同刻关系保持=true（同刻必同像，异刻必异像）"
+    },
+    "round_trip": {
+      "name": "round_trip",
+      "ok": true,
+      "detail": "关键点、事件时刻、同步点、轨道起点均满足 逆(正(t))=t 且 正(逆(m))=m"
+    },
+    "sync_summary": {
+      "name": "sync_summary",
+      "ok": true,
+      "detail": "3 个跨轨同步点：反向定位区间均覆盖原同步时刻，各轨帧窗口一致"
+    },
+    "ok": true
+  }
+}

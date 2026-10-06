@@ -1,0 +1,24 @@
+{
+  "config": {
+    "min_idle": "5",
+    "ratio": "1/10",
+    "min_keep": "1"
+  },
+  "events": [
+    {"t": "0", "track": "video", "kind": "cut", "label": "开场"},
+    {"t": "10", "track": "video", "kind": "cut"},
+    {"t": "10", "track": "audio", "kind": "marker", "label": "同刻标记"},
+    {"t": "100", "track": "video", "kind": "cut"},
+    {"t": "110", "track": "video", "kind": "cut"},
+    {"t": "200", "track": "video", "kind": "cut", "label": "结尾"}
+  ],
+  "protected": [
+    {"start": "55", "end": "65", "kind": "audio-continuous", "label": "连续配乐"},
+    {"start": "150", "end": "160", "kind": "mouse-drag", "label": "拖拽操作"}
+  ],
+  "tracks": [
+    {"id": "video", "start": "0", "interval": "1/30"},
+    {"id": "audio", "start": "1/2", "interval": "1/48000"}
+  ],
+  "sync_points": ["10", "100", "175"]
+}
