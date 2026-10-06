@@ -1,0 +1,14 @@
+{
+  "name": "search-session",
+  "version": "0.1.0",
+  "description": "Generation-aware paginated search state library",
+  "type": "module",
+  "exports": {
+    ".": "./src/searchController.ts",
+    "./tokenize": "./src/tokenize.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  },
+  "license": "MIT"
+}
