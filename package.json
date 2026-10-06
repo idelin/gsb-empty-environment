@@ -1,0 +1,13 @@
+{
+  "name": "plugin-host",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/plugin-host.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
