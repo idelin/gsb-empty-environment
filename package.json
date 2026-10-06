@@ -1,0 +1,14 @@
+{
+  "name": "convergent-field-store",
+  "version": "0.1.0",
+  "description": "Field-level last-writer-wins CRDT store with tombstones, logical versions and client ids",
+  "type": "module",
+  "exports": "./src/store.ts",
+  "scripts": {
+    "test": "node --test test/store.test.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "license": "MIT"
+}
