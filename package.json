@@ -1,0 +1,10 @@
+{
+  "name": "tri-filter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Offline row filtering with three-valued logic: AND/OR/NOT, comparisons, IS NULL. Compiled predicates short-circuit while preserving left-to-right type-error precedence.",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "node node_modules/typescript/bin/tsc -p tsconfig.json && node dist/test/run-tests.js"
+  }
+}
