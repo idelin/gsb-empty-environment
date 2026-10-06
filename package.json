@@ -1,0 +1,16 @@
+{
+  "name": "form-state-engine",
+  "version": "0.1.0",
+  "description": "Dependency-driven dynamic form state engine with fixpoint propagation and versioned async validation",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/form-engine.test.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
