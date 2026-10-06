@@ -1,0 +1,14 @@
+{
+  "name": "utc-work-calendar",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Accumulate working durations over UTC open intervals with pause days",
+  "main": "src/calendar.ts",
+  "scripts": {
+    "test": "node --test test/calendar.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
