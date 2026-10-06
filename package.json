@@ -1,0 +1,15 @@
+{
+  "name": "exact-leaderboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Event-sourced leaderboard with revocable events, exact bigint scores and top-k diffs",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/leaderboard.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
