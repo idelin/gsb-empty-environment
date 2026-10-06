@@ -1,0 +1,18 @@
+{
+  "name": "breakpoint-anchor",
+  "version": "0.1.0",
+  "description": "Statement-identity anchored breakpoints for TypeScript/JavaScript sources, tracked across edit chains.",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./src/index.js"
+    }
+  },
+  "scripts": {
+    "test": "node test/run.js"
+  },
+  "license": "MIT"
+}
