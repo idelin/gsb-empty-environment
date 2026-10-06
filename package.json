@@ -1,0 +1,11 @@
+{
+  "name": "outline-move",
+  "version": "0.1.0",
+  "description": "Multi-select drag-and-drop moves for outline trees",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  }
+}
