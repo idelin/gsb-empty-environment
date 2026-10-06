@@ -1,0 +1,10 @@
+{
+  "name": "tsbuild-cache",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Incremental build cache for TypeScript modules keyed by source + dependency export signatures",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test/build.test.js"
+  }
+}
