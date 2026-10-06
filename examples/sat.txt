@@ -1,0 +1,6 @@
+var a = 0..5
+var b = 0..5
+
+sum: a + b <= 7
+diff: a - b >= 1
+prod: a * b >= 6
