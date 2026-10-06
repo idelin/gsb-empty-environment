@@ -1,0 +1,13 @@
+{
+  "name": "bidi-line-layout",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Simplified single-line bidi text layout: hit testing and selection geometry over directed glyph runs.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
