@@ -1,0 +1,12 @@
+{
+  "name": "label-layout",
+  "version": "1.0.0",
+  "description": "Weighted label placement: max total weight, then min displacement, no overlaps, inside canvas",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "node node_modules/typescript/bin/tsc -p tsconfig.json && node dist/test/run.js"
+  },
+  "license": "ISC"
+}
