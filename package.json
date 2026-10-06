@@ -1,0 +1,9 @@
+{
+  "name": "shortcut-dispatcher",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "\"$HOME/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node\" --test \"test/**/*.test.ts\""
+  }
+}
