@@ -1,0 +1,12 @@
+{
+  "horizon": 5,
+  "resources": [
+    {"name": "crew", "capacity": 2},
+    {"name": "crane", "capacity": 1}
+  ],
+  "jobs": [
+    {"id": "a", "duration": 3, "demand": {"crew": 2, "crane": 1}},
+    {"id": "b", "duration": 3, "demand": {"crew": 1, "crane": 1}},
+    {"id": "c", "duration": 2, "preds": ["a", "b"], "demand": {"crew": 1}}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "horizon": 10,
+  "resources": [
+    {"name": "crew", "capacity": 3},
+    {"name": "crane", "capacity": 1}
+  ],
+  "jobs": [
+    {"id": "dig",    "duration": 3, "demand": {"crew": 2}},
+    {"id": "pour",   "duration": 2, "preds": ["dig"], "demand": {"crew": 1, "crane": 1}},
+    {"id": "frame",  "duration": 3, "preds": ["pour"], "demand": {"crew": 2, "crane": 1}},
+    {"id": "wire",   "duration": 2, "preds": ["pour"], "demand": {"crew": 1}},
+    {"id": "inspect","duration": 0, "preds": ["frame", "wire"]}
+  ]
+}

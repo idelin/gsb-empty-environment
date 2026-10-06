@@ -1,0 +1,10 @@
+{
+  "horizon": 6,
+  "resources": [{"name": "machine", "capacity": 1}],
+  "jobs": [
+    {"id": "build",  "duration": 2, "demand": {"machine": 1}},
+    {"id": "gate",   "duration": 0, "preds": ["build"]},
+    {"id": "ship",   "duration": 1, "preds": ["gate"], "demand": {"machine": 1}},
+    {"id": "notify", "duration": 0, "preds": ["ship"]}
+  ]
+}
