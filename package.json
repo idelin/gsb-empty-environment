@@ -1,0 +1,14 @@
+{
+  "name": "suggestion-merge",
+  "version": "0.1.0",
+  "description": "Merge async suggestion sources with normalized-key dedupe, max-score aggregation, source retraction and stable highlighting.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT"
+}
