@@ -1,0 +1,13 @@
+{
+  "name": "focus-traversal",
+  "version": "0.1.0",
+  "description": "Focus traversal computation for virtual node trees (tab order, programmatic focus, hidden/disabled handling)",
+  "type": "module",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test"
+  }
+}
