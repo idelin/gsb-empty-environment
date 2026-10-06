@@ -1,0 +1,14 @@
+{
+  "name": "dim-check",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Dimensional-analysis type checker for formulas (numbers, variables, + * / and integer powers) over base-unit exponent vectors.",
+  "scripts": {
+    "check": "node src/cli.ts",
+    "test": "node --test test/checker.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
