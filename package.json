@@ -1,0 +1,12 @@
+{
+  "name": "anchor-doc",
+  "version": "0.1.0",
+  "description": "Document library with boundary anchors, affinity-aware position transformation, batch edits and undo.",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "node scripts/compile.js",
+    "test": "node scripts/compile.js && node dist/test/run.js"
+  },
+  "license": "MIT"
+}
