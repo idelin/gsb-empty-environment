@@ -1,0 +1,12 @@
+{
+  "name": "mini-union-analyzer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "小语言类型系统(对象/字面值/联合)与 TypeScript 风格判别联合收窄分析器",
+  "scripts": {
+    "test": "node test/run.js",
+    "demo": "node examples/demo.js",
+    "typecheck": "tsc --noEmit"
+  }
+}
