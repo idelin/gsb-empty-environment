@@ -1,0 +1,14 @@
+{
+  "name": "state-history",
+  "version": "0.1.0",
+  "description": "Append-only state history with a persistent version tree: view old versions without moving the head, fork explicitly to edit the past.",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test tests/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
