@@ -1,0 +1,14 @@
+{
+  "name": "flagstone",
+  "version": "0.1.0",
+  "description": "Feature flag library: byte-polynomial hash bucketing, versioned snapshots, flag dependencies",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "node node_modules/typescript/bin/tsc -p tsconfig.json && node dist/test/index.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
