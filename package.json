@@ -1,0 +1,13 @@
+{
+  "name": "debug-object-model",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Debugger object model with stable reference handles, pause generations, paged key-sorted expansion, and lazy getters",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  }
+}
