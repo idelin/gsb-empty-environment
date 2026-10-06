@@ -1,0 +1,16 @@
+{
+  "name": "amount-input-core",
+  "version": "0.1.0",
+  "description": "金额输入核心库：保留原始小数语义，千位分隔显示，任意编辑后精确映射光标",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
