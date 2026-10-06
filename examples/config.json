@@ -1,0 +1,16 @@
+{
+  "variables": [
+    {"name": "mode", "domain": ["dev", "prod"]},
+    {"name": "cache", "domain": ["on", "off"]},
+    {"name": "db", "domain": ["mysql", "pg"]}
+  ],
+  "constraints": [
+    {"name": "db-mysql", "vars": ["db"], "allowed": [["mysql"]]},
+    {"name": "db-pg", "vars": ["db"], "allowed": [["pg"]]},
+    {"name": "prod-needs-cache", "vars": ["mode", "cache"],
+     "allowed": [["dev", "on"], ["dev", "off"], ["prod", "on"]]},
+    {"name": "cache-off", "vars": ["cache"], "allowed": [["off"]]},
+    {"name": "mode-prod", "vars": ["mode"], "allowed": [["prod"]]},
+    {"name": "cache-any", "vars": ["cache"], "allowed": [["on"], ["off"]]}
+  ]
+}
