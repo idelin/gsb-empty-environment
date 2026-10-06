@@ -1,0 +1,12 @@
+{
+  "name": "int-ir-optimizer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "带分支的整数中间码优化库：溢出/除零为可见错误，常量传播只删确定不可达分支",
+  "scripts": {
+    "build": "tsc",
+    "difftest": "node dist/difftest.js",
+    "test": "npm run build && node dist/tests.js && node dist/difftest.js"
+  },
+  "license": "ISC"
+}
