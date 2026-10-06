@@ -1,0 +1,10 @@
+{
+  "name": "boxing-compiler",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Small language with nested functions, mutable locals and escaping closures; compiler boxes captured mutable variables.",
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.ts\""
+  }
+}
