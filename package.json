@@ -1,0 +1,13 @@
+{
+  "name": "doc-marks",
+  "version": "0.1.0",
+  "description": "Document nodes with text and format marks: normalization, range mark operations, batch edits with undo.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\""
+  },
+  "license": "MIT"
+}
