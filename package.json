@@ -1,0 +1,13 @@
+{
+  "name": "ast-bind",
+  "version": "0.1.0",
+  "description": "Query AST library that binds values by parameter-node identity",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  }
+}
