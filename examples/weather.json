@@ -1,0 +1,16 @@
+{
+  "worlds": [
+    {"id": "sun-hot",  "prob": "1/2", "signal": "clear"},
+    {"id": "sun-cold", "prob": "1/4", "signal": "clear"},
+    {"id": "rain",     "prob": "1/4", "signal": "cloudy"}
+  ],
+  "actions": ["tent", "coat", "none"],
+  "losses": {
+    "sun-hot":  {"tent": "1", "coat": "9", "none": "2"},
+    "sun-cold": {"tent": "1", "coat": "3", "none": "8"},
+    "rain":     {"tent": "2", "coat": "6", "none": "12"}
+  },
+  "capacities": [
+    {"name": "tent-stock", "limit": "3/4", "actions": ["tent"]}
+  ]
+}
