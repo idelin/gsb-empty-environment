@@ -1,0 +1,13 @@
+{
+  "name": "tree-table-nav",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Keyboard/cell navigation for tree tables over a flat visible-grid model",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
