@@ -1,0 +1,14 @@
+{
+  "name": "ts-breakpoint-anchor",
+  "version": "0.1.0",
+  "description": "Breakpoint anchoring for TypeScript sources via an explicit statement identity model",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
