@@ -1,0 +1,11 @@
+{
+  "name": "layered-focus-manager",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "TypeScript focus manager: virtual node tree + popup layer stack",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node test/replay.test.mjs"
+  }
+}
