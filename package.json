@@ -1,0 +1,15 @@
+{
+  "name": "prefix-policy-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Path-prefix permission decision library with group inheritance, atomic config updates and shadowed-rule reporting",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node build/test/main.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
