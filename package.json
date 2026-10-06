@@ -1,0 +1,11 @@
+{
+  "name": "log-extractor-regex",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Leftmost-longest regex matcher with ordered capture-group tie-breaking for log extraction",
+  "scripts": {
+    "test": "node test/run.mjs",
+    "check": "tsc --noEmit"
+  }
+}
