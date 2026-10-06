@@ -1,0 +1,13 @@
+{
+  "cooldown": 1,
+  "stage1_end": 1,
+  "candidates": [
+    {"id": "probe", "device": "d1", "slot": 0},
+    {"id": "x", "device": "d1", "slot": 2},
+    {"id": "y", "device": "d2", "slot": 2}
+  ],
+  "scenarios": [
+    {"id": "s1", "profits": {"probe": 0, "x": 10, "y": -5}, "observe": {"probe": 1}},
+    {"id": "s2", "profits": {"probe": 0, "x": -5, "y": 10}, "observe": {"probe": 2}}
+  ]
+}

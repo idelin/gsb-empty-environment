@@ -1,0 +1,11 @@
+{
+  "cooldown": 1,
+  "candidates": [
+    {"id": "a", "device": "d1", "slot": 0, "profit": 5},
+    {"id": "b", "device": "d1", "slot": 1, "profit": 4},
+    {"id": "c", "device": "d1", "slot": 2, "profit": 6},
+    {"id": "d", "device": "d2", "slot": 0, "profit": -2},
+    {"id": "e", "device": "d2", "slot": 1, "profit": 3, "group": "g"},
+    {"id": "f", "device": "d2", "slot": 3, "profit": 4, "group": "g"}
+  ]
+}
