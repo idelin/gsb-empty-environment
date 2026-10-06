@@ -1,0 +1,13 @@
+{
+  "name": "chunked-upload-progress",
+  "version": "1.0.0",
+  "description": "Chunked upload model with confirmed-byte reliable progress and rollbackable temporary transfer progress",
+  "license": "ISC",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/uploadProgress.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}
