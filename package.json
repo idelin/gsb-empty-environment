@@ -1,0 +1,13 @@
+{
+  "name": "history",
+  "version": "1.0.0",
+  "description": "Typed navigation history with push/replace/back/forward, revision-bound async restore, and capacity trimming",
+  "type": "module",
+  "main": "dist/history.js",
+  "types": "dist/history.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "node test/history.test.mjs"
+  },
+  "license": "ISC"
+}
