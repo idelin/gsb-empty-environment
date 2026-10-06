@@ -1,0 +1,10 @@
+{
+  "name": "ime-editor-machine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "IME 组合感知的编辑控件状态机：组合期间不截断不校验，组合结束统一按 Unicode 码点应用长度上限，撤销恢复组合前状态",
+  "scripts": {
+    "test": "bun test"
+  }
+}
