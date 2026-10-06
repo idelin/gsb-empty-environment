@@ -1,0 +1,13 @@
+{
+  "name": "saga-dag-executor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DAG workflow executor with saga compensation, persistent event table and fault injection",
+  "scripts": {
+    "test": "node --test test/executor.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
