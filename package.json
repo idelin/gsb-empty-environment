@@ -1,0 +1,13 @@
+{
+  "name": "async-tree-store",
+  "version": "0.1.0",
+  "description": "Generation-guarded async tree state store with request dedupe and retry",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
