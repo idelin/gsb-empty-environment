@@ -1,0 +1,10 @@
+{
+  "name": "logex",
+  "version": "0.1.0",
+  "private": true,
+  "description": "日志提取器：字面字符 / 连接 / 或 / 星号 / 捕获括号，最左起点 + 最长整体匹配 + 按组序最长",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/run.js"
+  }
+}
