@@ -1,0 +1,11 @@
+{
+  "name": "incremental-highlighter",
+  "version": "0.1.0",
+  "description": "Incremental syntax highlighter for TypeScript-like source with per-line lexical states",
+  "type": "module",
+  "main": "src/highlighter.js",
+  "scripts": {
+    "test": "node test/run-tests.js"
+  },
+  "license": "MIT"
+}
