@@ -1,0 +1,13 @@
+{
+  "name": "doc-format-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "文档节点（文本 + 无序格式集合 + 锚点）的规范化与范围格式操作库",
+  "main": "./dist/index.js",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node test/run.mjs"
+  }
+}
