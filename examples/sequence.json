@@ -1,0 +1,26 @@
+{
+  "root": {
+    "name": "root",
+    "expandCost": 1,
+    "collapseCost": 1,
+    "memory": 1,
+    "groups": [
+      {
+        "name": "A",
+        "expandCost": 2,
+        "collapseCost": 1,
+        "memory": 4,
+        "leaves": [{"name": "t1", "memory": 3}]
+      },
+      {
+        "name": "B",
+        "expandCost": 2,
+        "collapseCost": 1,
+        "memory": 4,
+        "leaves": [{"name": "t2", "memory": 3}]
+      }
+    ]
+  },
+  "targets": ["t1", "t2"],
+  "budget": 11
+}

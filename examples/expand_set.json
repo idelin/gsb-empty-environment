@@ -1,0 +1,32 @@
+{
+  "root": {
+    "name": "root",
+    "expandCost": 4,
+    "groups": [
+      {
+        "name": "src",
+        "expandCost": 3,
+        "groups": [
+          {
+            "name": "cmd",
+            "expandCost": 2,
+            "leaves": [
+              {"name": "main.go", "penalty": 1},
+              {"name": "util.go", "penalty": 6}
+            ]
+          }
+        ],
+        "leaves": [{"name": "go.mod", "penalty": 2}]
+      },
+      {
+        "name": "docs",
+        "expandCost": 5,
+        "leaves": [
+          {"name": "README", "penalty": 3},
+          {"name": "API", "penalty": 2}
+        ]
+      }
+    ]
+  },
+  "targets": ["main.go", "README"]
+}
