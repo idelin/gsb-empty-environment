@@ -1,0 +1,19 @@
+{
+  "name": "state-history-tree",
+  "version": "0.1.0",
+  "description": "Time-travel state history with view-only checkout, explicit branching and a persistent version tree",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node test/run.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  },
+  "license": "MIT"
+}
