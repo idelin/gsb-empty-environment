@@ -1,0 +1,13 @@
+export { VfsError, ERR } from './errors.ts';
+export type { ErrCode } from './errors.ts';
+export { TreeStore } from './tree.ts';
+export type { NodeRec } from './tree.ts';
+export { AliasTable, normalizeAliasPath } from './aliases.ts';
+export type { AliasMatch } from './aliases.ts';
+export { MountGraph } from './mounts.ts';
+export type { Mount, MountSpec } from './mounts.ts';
+export { Resolver } from './resolver.ts';
+export type { Resolved } from './resolver.ts';
+export { VfsStore } from './store.ts';
+export { Transaction } from './txn.ts';
+export { splitPath, joinPath, isValidName } from './pathutil.ts';
