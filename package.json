@@ -1,0 +1,22 @@
+{
+  "name": "path-router",
+  "version": "0.1.0",
+  "description": "TypeScript 路径路由库：字面段、命名段、末尾多段、可选组；编译期同优先级重叠检测（含见证路径与枚举核对）",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "router",
+    "path",
+    "typescript"
+  ],
+  "license": "MIT"
+}
