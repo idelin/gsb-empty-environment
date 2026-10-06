@@ -1,0 +1,17 @@
+# demo log: dup ACK, loss, timeout retransmission, Karn's rule
+send 4
+tick 50
+ack 1
+ack 1          # duplicate ACK: no credit released, cwnd unchanged
+drop 3         # seq 3 lost in the network; sender unaware
+tick 30
+ack 2
+tick 2000      # retransmission timers fire; cwnd halved per timeout
+ack 3          # retransmitted packet: RTT sample skipped (Karn)
+ack 4
+send 2         # cwnd has reopened; both are sent
+tick 100
+ack 5
+send 1
+tick 100
+ack 6          # arrives just after seq 6's spurious timeout: Karn applies
