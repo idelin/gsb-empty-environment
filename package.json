@@ -1,0 +1,16 @@
+{
+  "name": "piecewise-anim",
+  "version": "0.1.0",
+  "description": "Deterministic explicit-time animation sampling with delay, finite repeats, yoyo and negative playback rates",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/animation.test.ts"
+  },
+  "engines": {
+    "node": ">=23.6"
+  }
+}
