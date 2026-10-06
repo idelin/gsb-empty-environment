@@ -1,0 +1,14 @@
+{
+  "name": "stackwise",
+  "version": "0.1.0",
+  "description": "Time-aligned stacking library with missing/zero distinction, signed stacking, percent mode, and a barrier-based revision data flow.",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "node tools/tsc.js",
+    "test": "node tools/tsc.js && node dist/test/index.js"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.10"
+  }
+}
