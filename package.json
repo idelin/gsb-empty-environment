@@ -1,0 +1,10 @@
+{
+  "name": "offset-table-tz",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local<->UTC conversion driven by an explicit offset transition table (no system timezone)",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/enumeration.test.js"
+  }
+}
