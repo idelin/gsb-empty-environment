@@ -1,0 +1,10 @@
+{
+  "name": "label-layout",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Weighted label placement: max total weight, then min displacement, on a canvas with 4 candidate positions per label.",
+  "scripts": {
+    "demo": "bun run src/demo.ts",
+    "test": "bun test"
+  }
+}
