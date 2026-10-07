@@ -1,0 +1,10 @@
+{
+  "name": "frozen-replace",
+  "version": "0.1.0",
+  "description": "Freeze-then-apply regex replace with position mapping and multi-document transactions",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node test/index.mjs"
+  }
+}
