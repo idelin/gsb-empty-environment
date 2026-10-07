@@ -1,0 +1,10 @@
+{
+  "name": "command-context-registry",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Command library with finite boolean context expressions, versioned execution re-checks, and event-sourced state",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
