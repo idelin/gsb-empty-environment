@@ -1,0 +1,5 @@
+# 旧规则：默认全放行，封 a 子树，放行 a.b
+allow .
+deny a
+allow a.b
+deny c.c

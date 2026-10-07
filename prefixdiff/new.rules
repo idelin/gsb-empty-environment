@@ -1,0 +1,5 @@
+# 新规则：默认全放行，封 b 子树，a.c 也封掉，c.c 解封
+allow .
+deny b
+deny a.c
+allow c.c
