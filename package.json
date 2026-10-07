@@ -1,0 +1,10 @@
+{
+  "name": "event-tree",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": "./src/event-tree.ts",
+  "scripts": {
+    "test": "node --test test/event-tree.test.ts"
+  }
+}
