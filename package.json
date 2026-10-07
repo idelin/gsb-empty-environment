@@ -1,0 +1,13 @@
+{
+  "name": "controllable-state",
+  "version": "0.1.0",
+  "description": "Event-sourced controlled/uncontrolled state store with versioned confirmations",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "*"
+  }
+}
