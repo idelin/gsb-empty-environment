@@ -1,0 +1,6 @@
+{
+  "short_writes": [{"on_request": 3, "keep_bytes": 500}],
+  "stale_responses": [{"on_request": 2, "delay_requests": 6}],
+  "version_changes": [{"on_request": 5, "new_seed": 777, "new_version": "v1"}],
+  "crash_on_checkpoint_save": 4
+}
