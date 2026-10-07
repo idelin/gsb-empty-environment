@@ -1,0 +1,6 @@
+{
+  "name": "layered-settings",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "bun test" }
+}
