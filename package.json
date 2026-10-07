@@ -1,0 +1,13 @@
+{
+  "name": "revision-history",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Undo/redo history with stable entry ids, revisions, async restore and capacity trimming",
+  "type": "module",
+  "main": "src/history.ts",
+  "scripts": {
+    "build": "node scripts/strip-types.mjs",
+    "test": "node scripts/strip-types.mjs && node test/history.test.mjs",
+    "typecheck": "tsc --noEmit"
+  }
+}
