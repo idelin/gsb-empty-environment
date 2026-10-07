@@ -1,0 +1,16 @@
+{
+  "name": "optimistic-store",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Optimistic state library: replays pending ops on a confirmed baseline, surgically removes rejected ops, marks dependent ops as failed.",
+  "exports": {
+    ".": "./src/store.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
