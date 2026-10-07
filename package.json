@@ -1,0 +1,10 @@
+{
+  "name": "focus-traversal",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Compute focus traversal order over a virtual node tree",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\""
+  }
+}
