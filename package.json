@@ -1,0 +1,10 @@
+{
+  "name": "local-utc-resolver",
+  "version": "0.1.0",
+  "description": "Local-to-UTC resolution driven by a complete offset transition table (no system timezone).",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "bun test"
+  }
+}
