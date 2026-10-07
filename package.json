@@ -1,0 +1,10 @@
+{
+  "name": "rule-tree-match",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Deterministic rule-tree pattern matching with single-node and tail variables",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
