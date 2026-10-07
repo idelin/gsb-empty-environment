@@ -1,0 +1,10 @@
+{
+  "name": "tree-store",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Async directory-tree state store with generation-based stale response discarding",
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.ts\""
+  }
+}
