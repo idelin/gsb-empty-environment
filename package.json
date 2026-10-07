@@ -1,0 +1,14 @@
+{
+  "name": "offline-replay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/replay.ts",
+    "./storage": "./src/storage.ts",
+    "./rewrite": "./src/rewrite.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
