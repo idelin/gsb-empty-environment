@@ -1,0 +1,16 @@
+{
+  "name": "graph-collapse-view",
+  "version": "0.1.0",
+  "description": "Graph layout preprocessing: collapse subtrees to visible ancestors, aggregate cross-subtree edges preserving original edge ids, restore exactly on expand.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/collapse.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
