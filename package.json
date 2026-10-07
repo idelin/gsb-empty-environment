@@ -1,0 +1,11 @@
+{
+  "name": "lww-field-store",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Field-wise last-writer-wins document store with logical versions, client ids and tombstones",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "node /Users/delin/git/aidp-imageToCode/www.brightoncollege.org.uk/testbed/node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/lww.test.js"
+  }
+}
