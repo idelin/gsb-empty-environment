@@ -1,0 +1,10 @@
+{
+  "name": "marker-overlay",
+  "version": "0.1.0",
+  "description": "Overlay half-open marker ranges from multiple analyzers into minimal non-overlapping styled segments",
+  "type": "module",
+  "main": "src/markers.ts",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\""
+  }
+}
