@@ -1,0 +1,13 @@
+{
+  "name": "frozen-submit-form",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Form store that submits frozen value snapshots and reconciles late server responses",
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test 'tests/*.test.ts'"
+  },
+  "engines": {
+    "node": ">=22.6"
+  }
+}
