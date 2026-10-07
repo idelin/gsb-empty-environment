@@ -1,0 +1,14 @@
+{
+  "name": "exact-leaderboard",
+  "version": "0.1.0",
+  "description": "Leaderboard with revocable score events, pending revocations, exact integer totals and top-k diffs",
+  "type": "module",
+  "main": "src/leaderboard.ts",
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
