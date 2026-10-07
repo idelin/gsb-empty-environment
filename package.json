@@ -1,0 +1,12 @@
+{
+  "name": "paginate",
+  "version": "0.1.0",
+  "description": "固定页高、保序的段落分页库：先最少页，再最小剩余高度平方和",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
