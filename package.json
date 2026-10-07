@@ -1,0 +1,16 @@
+{
+  "name": "rational-scale-ticks",
+  "version": "0.1.0",
+  "description": "Exact rational-domain scales (linear/log) with unique tick labels",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/run-tests.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "license": "MIT"
+}
