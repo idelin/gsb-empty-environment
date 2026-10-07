@@ -1,0 +1,14 @@
+{
+  "name": "snap-drag",
+  "version": "0.1.0",
+  "description": "Drag snapping to reference lines with hysteresis, subpixel input and dual-axis support",
+  "type": "module",
+  "main": "src/snap.ts",
+  "exports": {
+    ".": "./src/snap.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\""
+  },
+  "license": "MIT"
+}
