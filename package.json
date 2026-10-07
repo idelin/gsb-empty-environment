@@ -1,0 +1,11 @@
+{
+  "name": "tab-stop-editor",
+  "version": "0.1.0",
+  "description": "Multi-selection indent/unindent library with tab-stop semantics and byte-exact undo",
+  "type": "module",
+  "main": "src/editor.ts",
+  "scripts": {
+    "test": "node --no-warnings --test test/*.test.ts"
+  },
+  "license": "MIT"
+}
