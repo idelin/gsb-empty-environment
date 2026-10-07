@@ -1,0 +1,14 @@
+{
+  "name": "workflow-versioned",
+  "version": "0.1.0",
+  "description": "Event-sourced workflow engine with versioned graph migration",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test 'test/*.test.ts'",
+    "typecheck": "tsc --noEmit"
+  }
+}
