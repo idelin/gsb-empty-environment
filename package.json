@@ -1,0 +1,10 @@
+{
+  "name": "frozen-replace",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Replace library: frozen-text non-overlapping matching, simultaneous application, position mapping, multi-document transactions",
+  "scripts": {
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "node node_modules/typescript/bin/tsc -p tsconfig.json && node dist/test/run.js"
+  }
+}
