@@ -1,0 +1,10 @@
+{
+  "name": "bezier-constraint-projection",
+  "version": "0.1.0",
+  "description": "Exact rational weighted least-squares projection of edited cubic Bezier control points onto endpoint/C0/C1 constraints",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\""
+  }
+}
