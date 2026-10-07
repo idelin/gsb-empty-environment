@@ -1,0 +1,20 @@
+{
+  "name": "expr-engine",
+  "version": "1.0.0",
+  "description": "Expression engine: interpreter + safe CSE optimizer with differential fuzzing",
+  "type": "module",
+  "scripts": {
+    "test": "bun run src/fuzz.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idelin/gsb-empty-environment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/idelin/gsb-empty-environment/issues"
+  },
+  "homepage": "https://github.com/idelin/gsb-empty-environment#readme"
+}
