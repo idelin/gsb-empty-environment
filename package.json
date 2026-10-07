@@ -1,0 +1,13 @@
+{
+  "name": "drawing-history",
+  "version": "0.1.0",
+  "description": "Transaction-based undo/redo history with label merging, branching, capacity eviction and save-point dirty tracking",
+  "main": "dist/history.js",
+  "types": "src/history.ts",
+  "scripts": {
+    "test": "node test/run-tests.js",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "license": "MIT"
+}
