@@ -1,0 +1,16 @@
+{
+  "name": "form-state",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Dynamic form state: dependency-driven visibility, stable-point propagation, atomic rule updates, version-guarded async validation.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/store.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
