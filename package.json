@@ -1,0 +1,14 @@
+{
+  "name": "frozen-submit-form",
+  "version": "0.1.0",
+  "description": "Form state store with frozen submit snapshots and version-scoped server responses",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./testing": "./src/testing.ts"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
