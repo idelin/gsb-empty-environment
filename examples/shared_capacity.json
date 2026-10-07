@@ -1,0 +1,14 @@
+{
+  "worlds": [
+    {"name": "rain",    "prob": "1/4", "signal": "cloudy"},
+    {"name": "drizzle", "prob": "1/4", "signal": "cloudy"},
+    {"name": "sun",     "prob": "1/2", "signal": "clear"}
+  ],
+  "actions": ["umbrella", "picnic"],
+  "losses": {
+    "rain":    {"umbrella": "1", "picnic": "9"},
+    "drizzle": {"umbrella": "1", "picnic": "4"},
+    "sun":     {"umbrella": "2", "picnic": "0"}
+  },
+  "capacity": {"umbrella": "3/5"}
+}
