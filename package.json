@@ -1,0 +1,13 @@
+{
+  "name": "async-di-container",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Async singleton container with cycle detection, shared construction, generational retry and reverse-order disposal",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=23.6.0"
+  }
+}
