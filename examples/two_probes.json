@@ -1,0 +1,17 @@
+{
+  "worlds": [
+    {"name": "w0", "prob": "1/3"},
+    {"name": "w1", "prob": "1/3"},
+    {"name": "w2", "prob": "1/3"}
+  ],
+  "actions": [
+    {"name": "a0", "losses": [0, 9, 9], "symbols": ["s0", "s1", "s2"]},
+    {"name": "a1", "losses": [9, 0, 9], "symbols": ["s0", "s1", "s2"]},
+    {"name": "a2", "losses": [9, 9, 0], "symbols": ["s0", "s1", "s2"]}
+  ],
+  "probes": [
+    {"name": "screen", "cost": 1, "outcomes": ["x", "y", "y"]},
+    {"name": "biopsy", "cost": 1, "outcomes": ["z", "z", "v"]}
+  ],
+  "maxProbes": 2
+}

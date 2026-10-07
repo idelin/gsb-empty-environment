@@ -1,0 +1,14 @@
+{
+  "worlds": [
+    {"name": "healthy", "prob": "3/4"},
+    {"name": "sick", "prob": "1/4"}
+  ],
+  "actions": [
+    {"name": "wait", "losses": [0, 20], "symbols": ["fine", "bad"]},
+    {"name": "surgery", "losses": [20, 1], "symbols": ["risk", "cured"]}
+  ],
+  "probes": [
+    {"name": "test", "cost": 1, "outcomes": ["neg", "pos"]}
+  ],
+  "maxProbes": 2
+}
