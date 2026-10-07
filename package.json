@@ -1,0 +1,15 @@
+{
+  "name": "tree-events",
+  "version": "0.1.0",
+  "description": "DOM-style capture/target/bubble event dispatch over a virtual tree",
+  "license": "MIT",
+  "main": "dist/src/event-tree.js",
+  "types": "dist/src/event-tree.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/event-tree.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
