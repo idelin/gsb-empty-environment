@@ -1,0 +1,15 @@
+{
+  "name": "non-overlapping-repeat",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Find the longest substring with at least k pairwise non-overlapping occurrences",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/run.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
