@@ -1,0 +1,16 @@
+{
+  "name": "atomic-doc-edits",
+  "version": "0.1.0",
+  "description": "Multi-document batch text edits with version checks, atomic publish, and guarded undo",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
