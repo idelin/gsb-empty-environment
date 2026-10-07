@@ -1,0 +1,14 @@
+{
+  "name": "outline-dnd",
+  "version": "0.1.0",
+  "description": "Outline tree drag-and-drop: multi-node moves with pre-removal target coordinates and undo",
+  "type": "module",
+  "exports": "./src/outline.ts",
+  "scripts": {
+    "test": "node --test test/outline.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
