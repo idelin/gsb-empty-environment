@@ -1,0 +1,13 @@
+{
+  "name": "schema-compat",
+  "version": "0.1.0",
+  "description": "Check whether every record valid under an old schema is accepted by a new schema, with minimal counterexamples.",
+  "type": "module",
+  "exports": {
+    ".": "./src/compat.ts",
+    "./schema": "./src/schema.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
