@@ -1,0 +1,10 @@
+{
+  "name": "saga-dag-executor",
+  "private": true,
+  "version": "0.1.0",
+  "description": "DAG step executor with persistent event table, compensation and fault injection",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node dist/test/run-tests.js"
+  }
+}
