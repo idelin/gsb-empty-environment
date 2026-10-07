@@ -1,0 +1,13 @@
+{
+  "name": "amount-input-core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "金额输入核心库：raw 保留原始小数语义，display 千位分隔，受控光标映射",
+  "type": "module",
+  "main": "dist/amount.mjs",
+  "types": "src/amount.ts",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node test/amount.test.mjs && node test/simulation.test.mjs"
+  }
+}
