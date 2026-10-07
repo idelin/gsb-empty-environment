@@ -1,0 +1,10 @@
+{
+  "name": "line-pagination",
+  "version": "0.1.0",
+  "description": "Line-height based table pagination with repeating headers, unbreakable merged-cell row groups, and last-page footnotes",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
