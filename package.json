@@ -1,0 +1,14 @@
+{
+  "name": "canvas-paste",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Canvas subgraph paste library: id reallocation, reference rewiring, undo/redo",
+  "engines": {
+    "node": ">=23.6.0"
+  },
+  "scripts": {
+    "test": "node --no-warnings --test 'test/*.test.ts'",
+    "typecheck": "tsc --noEmit"
+  }
+}
