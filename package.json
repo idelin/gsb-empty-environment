@@ -1,0 +1,23 @@
+{
+  "name": "tree-grid-nav",
+  "version": "0.1.0",
+  "description": "Tree-table keyboard navigation over a flat visible grid model",
+  "type": "module",
+  "main": "index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  },
+  "keywords": [
+    "tree-table",
+    "grid",
+    "keyboard-navigation",
+    "focus"
+  ],
+  "license": "MIT"
+}
