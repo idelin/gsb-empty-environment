@@ -1,0 +1,14 @@
+{
+  "name": "hit-test-lib",
+  "version": "0.1.0",
+  "description": "Scene-graph hit testing with affine transforms, ancestor clipping and a world-AABB spatial index",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "MIT"
+}
