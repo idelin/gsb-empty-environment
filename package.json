@@ -1,0 +1,14 @@
+{
+  "name": "chunked-upload-progress",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chunk-confirmed upload progress model with tentative transfer bytes, retry rollback, and pause/resume",
+  "main": "dist/src/upload-progress.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node dist/test/upload-progress.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
