@@ -1,0 +1,12 @@
+{
+  "name": "pair-router",
+  "version": "0.1.0",
+  "description": "Composable route construction with guaranteed build/match round-trip",
+  "type": "module",
+  "exports": {
+    ".": "./src/route.ts"
+  },
+  "scripts": {
+    "test": "node --test tests/route.test.ts"
+  }
+}
