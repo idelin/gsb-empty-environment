@@ -1,0 +1,11 @@
+{
+  "name": "completion-range-mapper",
+  "version": "0.1.0",
+  "description": "把语言补全的替换范围沿版本编辑链映射到当前文档，并作为一次可撤销事务应用",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
