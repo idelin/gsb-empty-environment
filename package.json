@@ -1,0 +1,10 @@
+{
+  "name": "drawing-history",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Drawing editor history library: transaction merging, undo branching, capacity eviction, save-point dirty tracking",
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  }
+}
