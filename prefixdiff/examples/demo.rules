@@ -1,0 +1,17 @@
+# Demo: alphabet {a,b,c}, paths are all strings of length 3.
+alphabet abc
+maxdepth 3
+
+# Old policy: allow everything under "a", except "ab*";
+# deny "ca"; everything else denied by default.
+old allow a
+old deny ab
+old deny ca
+
+# New policy: keep "a" allowed but re-allow "aba";
+# allow "b" except "bb"; deny "c" entirely.
+new allow a
+new allow aba
+new allow b
+new deny bb
+new deny c
