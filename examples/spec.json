@@ -1,0 +1,23 @@
+{
+  "min_idle_gap": "30",
+  "compressed_duration": "2",
+  "events": [
+    {"id": "cut-a", "t": "0"},
+    {"id": "mark-1", "t": "5"},
+    {"id": "mark-1-dup", "t": "5"},
+    {"id": "end", "t": "100"}
+  ],
+  "protected": [
+    {"id": "drag-1", "kind": "drag", "start": "10", "end": "20"},
+    {"id": "audio-1", "kind": "audio", "start": "60", "end": "80"}
+  ],
+"tracks": [
+    {"id": "video", "start": "0", "interval": "1/30"},
+    {"id": "audio", "start": "1/2", "interval": "1/48000"}
+  ],
+  "sync_points": ["5", "100"],
+  "reverse_queries": [
+    {"track": "video", "frame": 60},
+    {"track": "audio", "frame": 48000}
+  ]
+}
