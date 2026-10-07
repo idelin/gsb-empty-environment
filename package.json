@@ -1,0 +1,11 @@
+{
+  "name": "ts-interpreter-debugger",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A small TypeScript-subset interpreter with a step/continue/conditional-breakpoint debugger",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node demo/main.ts"
+  }
+}
