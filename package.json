@@ -1,0 +1,11 @@
+{
+  "name": "weekly-recurrence",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Weekly recurrence expansion over explicit integer date serials",
+  "scripts": {
+    "test": "node --test",
+    "typecheck": "tsc --noEmit"
+  }
+}
