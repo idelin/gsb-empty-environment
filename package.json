@@ -1,0 +1,12 @@
+{
+  "name": "priority-rules-engine",
+  "version": "0.1.0",
+  "description": "Priority-based rule engine: snapshot condition evaluation, per-field priority resolution, conflict detection, evidence trees, order-independence checking.",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "node node_modules/typescript/lib/tsc.js -p tsconfig.json",
+    "test": "npm run build && node dist/tests/run.js"
+  },
+  "license": "ISC"
+}
