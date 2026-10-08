@@ -1,0 +1,16 @@
+{
+  "name": "segmented-downsample",
+  "version": "0.1.0",
+  "description": "Segmented per-pixel-column time-series downsampling with shared LOD summaries and version-guarded async zoom",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "license": "MIT"
+}
