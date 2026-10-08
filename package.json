@@ -1,0 +1,16 @@
+{
+  "name": "footnote-doc",
+  "version": "0.1.0",
+  "description": "Markdown-like document library: headings, footnote references and definitions with incremental updates",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "license": "ISC"
+}
