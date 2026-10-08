@@ -1,0 +1,10 @@
+{
+  "name": "guarded-navigation",
+  "version": "0.1.0",
+  "description": "Navigation state library with sequential async guards, redirects and history",
+  "type": "module",
+  "exports": "./src/navigation.ts",
+  "scripts": {
+    "test": "node --test 'test/**/*.test.ts'"
+  }
+}
