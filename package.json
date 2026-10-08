@@ -1,0 +1,10 @@
+{
+  "name": "offline-replay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline edit replay engine: dependency-topological execution, failure isolation, recursive temp-id rewriting, journaled recovery",
+  "scripts": {
+    "test": "node --test 'tests/*.test.ts'"
+  }
+}
