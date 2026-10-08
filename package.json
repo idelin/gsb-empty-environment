@@ -1,0 +1,10 @@
+{
+  "name": "rule-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sandboxed rule AST interpreter with per-request budgets and per-tenant space quotas",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  }
+}
