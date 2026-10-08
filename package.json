@@ -1,0 +1,8 @@
+{
+  "name": "indent-config",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "bun test"
+  }
+}
