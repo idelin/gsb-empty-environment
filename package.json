@@ -1,0 +1,14 @@
+{
+  "name": "doc-symbols",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Incremental parser for headings, footnote references and definitions with diagnostics.",
+  "scripts": {
+    "test": "node --test test/parser.test.ts test/incremental.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  }
+}
