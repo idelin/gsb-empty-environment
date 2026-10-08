@@ -1,0 +1,11 @@
+{
+  "budget": 6,
+  "facilities": [
+    {"id": 0, "parent": -1, "cost": 2},
+    {"id": 1, "parent": 0, "cost": 3},
+    {"id": 2, "parent": 1, "cost": 1},
+    {"id": 3, "parent": -1, "cost": 4}
+  ],
+  "demands": [10, 5, 7],
+  "coverage": {"0": [0], "1": [0, 1], "2": [2], "3": [1]}
+}
