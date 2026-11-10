@@ -1,0 +1,42 @@
+# Full capabilities(7) transition walkthrough for an ordinary non-root thread.
+# Sets use cap names, "none" or "all".
+
+# 1) Privileged file with file permitted caps and the file-effective flag.
+#    P' = (I & fI) | (B & fP) | A ; fE=1 means E' = P'.
+exec /usr/bin/tool-a fp=cap_net_raw,cap_setpcap fe=1
+
+# 2) capset: cap_setpcap is now effective, so inheritable may pull in caps
+#    that exist in the current permitted set. Move cap_net_raw into I.
+capset p=cap_net_raw,cap_setpcap i=cap_net_raw e=cap_setpcap
+
+# 3) Raise cap_net_raw into the ambient set (must be in both P and I).
+ambient raise cap_net_raw
+
+# 4) Exec an ordinary (unprivileged) binary: ambient survives, fE=0 so
+#    E' = A — cap_net_raw stays effective without any file capability.
+exec /usr/bin/plain-tool
+
+# 5) Ambient also survives an exec on a nosuid mount where a file happens to
+#    carry file caps: they are ignored, the file is treated as unprivileged.
+exec /mnt/nosuid/plain-tool fp=cap_chown fe=1 nosuid
+
+# 6) Ambient raise must fail: cap_chown is neither permitted nor inheritable.
+ambient raise cap_chown
+
+# 7) Re-exec the privileged tool to get cap_setpcap back, then trim the
+#    bounding set with PR_CAPBSET_DROP.
+exec /usr/bin/tool-a fp=cap_net_raw,cap_setpcap,cap_bpf fe=1
+bset drop cap_bpf
+
+# 8) A file capability outside the bounding set is now clipped: B & fP drops
+#    cap_bpf, so it never reaches P' or E' even though fE=1.
+exec /usr/bin/tool-b fp=cap_net_raw,cap_bpf fe=1
+
+# 9) Privileged exec clears the ambient set: A' = 0.
+exec /usr/bin/tool-c fp=cap_chown fe=0 suid
+
+# 10) capset rejection: new effective cannot contain a cap absent from new P.
+capset p=cap_chown i=none e=cap_chown,cap_net_admin
+
+# 11) Allowed capset that only drops bits (P' must be subset of old P).
+capset p=cap_chown i=none e=cap_chown
