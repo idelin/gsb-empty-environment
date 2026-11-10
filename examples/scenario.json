@@ -1,0 +1,123 @@
+{
+  "query_time": "2026-11-10T08:00:00Z",
+  "user": {
+    "name": "alice@EXAMPLE.ORG",
+    "delegation_disallowed": false
+  },
+  "tickets": [
+    {
+      "id": "T1-tgt",
+      "subject": "alice@EXAMPLE.ORG",
+      "service": "krbtgt/EXAMPLE.ORG",
+      "kind": "tgt",
+      "forwardable": true,
+      "not_before": "2026-11-10T06:00:00Z",
+      "expires_at": "2026-11-10T16:00:00Z"
+    },
+    {
+      "id": "T2-web",
+      "subject": "alice@EXAMPLE.ORG",
+      "service": "HTTP/web.example.org",
+      "kind": "tgs",
+      "forwardable": true,
+      "not_before": "2026-11-10T07:00:00Z",
+      "expires_at": "2026-11-10T12:00:00Z"
+    },
+    {
+      "id": "T3-print-nonfwd",
+      "subject": "alice@EXAMPLE.ORG",
+      "service": "print/printsvc.example.org",
+      "kind": "tgs",
+      "forwardable": false,
+      "not_before": "2026-11-10T07:00:00Z",
+      "expires_at": "2026-11-10T12:00:00Z"
+    },
+    {
+      "id": "T4-db-expired",
+      "subject": "alice@EXAMPLE.ORG",
+      "service": "db/dbsvc.example.org",
+      "kind": "tgs",
+      "forwardable": true,
+      "not_before": "2026-11-10T05:00:00Z",
+      "expires_at": "2026-11-10T07:30:00Z"
+    },
+    {
+      "id": "T5-other-user",
+      "subject": "bob@EXAMPLE.ORG",
+      "service": "HTTP/web.example.org",
+      "kind": "tgs",
+      "forwardable": true,
+      "not_before": "2026-11-10T07:00:00Z",
+      "expires_at": "2026-11-10T12:00:00Z"
+    },
+    {
+      "id": "T6-future",
+      "subject": "alice@EXAMPLE.ORG",
+      "service": "host/future.example.org",
+      "kind": "tgs",
+      "forwardable": true,
+      "not_before": "2026-11-10T09:00:00Z",
+      "expires_at": "2026-11-10T18:00:00Z"
+    }
+  ],
+  "services": {
+    "krbtgt/EXAMPLE.ORG": {
+      "mode": "constrained",
+      "delegate_to": []
+    },
+    "HTTP/web.example.org": {
+      "mode": "constrained",
+      "delegate_to": [
+        "api/apisvc.example.org",
+        "db/dbsvc.example.org",
+        "backup/baksvc.example.org"
+      ]
+    },
+    "api/apisvc.example.org": {
+      "mode": "constrained",
+      "delegate_to": [
+        "HTTP/web.example.org",
+        "files/fssvc.example.org"
+      ]
+    },
+    "db/dbsvc.example.org": {
+      "mode": "constrained",
+      "delegate_to": [
+        "files/fssvc.example.org"
+      ]
+    },
+    "files/fssvc.example.org": {
+      "mode": "constrained",
+      "delegate_to": [
+        "api/apisvc.example.org"
+      ]
+    },
+    "print/printsvc.example.org": {
+      "mode": "constrained",
+      "delegate_to": [
+        "files/fssvc.example.org"
+      ]
+    },
+    "backup/baksvc.example.org": {
+      "mode": "unconstrained",
+      "delegate_to": []
+    },
+    "host/future.example.org": {
+      "mode": "constrained",
+      "delegate_to": []
+    }
+  },
+  "resource_allow": {
+    "api/apisvc.example.org": [
+      "HTTP/web.example.org",
+      "backup/baksvc.example.org"
+    ],
+    "files/fssvc.example.org": [
+      "api/apisvc.example.org",
+      "backup/baksvc.example.org"
+    ],
+    "db/dbsvc.example.org": [
+      "HTTP/web.example.org"
+    ]
+  }
+}
