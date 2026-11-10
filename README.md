@@ -1,0 +1,3 @@
+# sessionjar
+
+爬虫遇到登录续期会在多个并行请求间串用Cookie。用Go实现可直接接入http.Client的分区CookieJar，按顶层站点与会话代次隔离，同时处理host-only、Domain、Path与过期；刷新后迟到的旧响应不得污染新代。用两个测试站点模拟跨域跳转、相同名字不同路径和续期竞态，核对实际请求头。
