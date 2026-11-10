@@ -1,0 +1,43 @@
+{
+  "roots": {
+    "acme-auth": ">=1.0.0",
+    "acme-secret": ">=1.0.0",
+    "crypto": ">=1.0.0",
+    "util": ">=1.0.0"
+  },
+  "private_packages": ["acme-auth", "acme-log", "acme-secret"],
+  "sources": {
+    "private": {
+      "packages": {
+        "acme-auth": {
+          "1.2.0": { "deps": { "acme-log": ">=1.0.0 <2.0.0" } }
+        },
+        "acme-log": {
+          "1.1.0": { "deps": {} }
+        },
+        "acme-secret": {
+          "1.0.0": { "deps": {} }
+        }
+      }
+    },
+    "public": {
+      "packages": {
+        "acme-auth": {
+          "1.2.0": { "deps": { "acme-log": ">=1.0.0 <2.0.0" } },
+          "9.9.9": { "deps": { "acme-log": ">=2.0.0" } }
+        },
+        "acme-log": {
+          "2.0.0": { "deps": {} }
+        },
+        "crypto": {
+          "3.0.0": { "deps": { "nonexistent": ">=1.0.0" } },
+          "2.0.0": { "deps": {} }
+        },
+        "util": {
+          "2.1.0": { "deps": { "acme-log": ">=1.0.0 <1.5.0" } },
+          "2.0.0": { "deps": {} }
+        }
+      }
+    }
+  }
+}
