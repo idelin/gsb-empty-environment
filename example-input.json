@@ -1,0 +1,346 @@
+{
+  "preflight_enforcement": "modern",
+  "routes": [
+    {
+      "id": "public-api",
+      "origin": "https://api.target.example",
+      "path": "/public",
+      "preflight": {
+        "status": 204,
+        "headers": {
+          "Access-Control-Allow-Headers": "*",
+          "Access-Control-Allow-Methods": "GET, POST, PUT",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Max-Age": "600"
+        }
+      },
+      "reply": {
+        "status": 200,
+        "headers": {
+          "Access-Control-Allow-Origin": "*"
+        },
+        "body": "public payload"
+      }
+    },
+    {
+      "id": "null-echo",
+      "origin": "https://api.target.example",
+      "path": "/null-echo",
+      "reply": {
+        "status": 200,
+        "headers": {
+          "Access-Control-Allow-Origin": "null"
+        }
+      }
+    },
+    {
+      "id": "orders",
+      "origin": "https://api.target.example",
+      "path": "/orders",
+      "preflight": {
+        "status": 204,
+        "headers": {
+          "Access-Control-Allow-Credentials": "true",
+          "Access-Control-Allow-Headers": "content-type, x-custom",
+          "Access-Control-Allow-Methods": "PUT",
+          "Access-Control-Allow-Origin": "https://shop.example",
+          "Access-Control-Max-Age": "10"
+        },
+        "changes": [
+          {
+            "after_seconds": 30,
+            "headers": {
+              "Access-Control-Allow-Credentials": "true",
+              "Access-Control-Allow-Headers": "content-type",
+              "Access-Control-Allow-Methods": "PUT",
+              "Access-Control-Allow-Origin": "https://shop.example",
+              "Access-Control-Max-Age": "10"
+            },
+            "replace": true
+          }
+        ]
+      },
+      "reply": {
+        "status": 200,
+        "headers": {
+          "Access-Control-Allow-Credentials": "true",
+          "Access-Control-Allow-Origin": "https://shop.example"
+        }
+      }
+    },
+    {
+      "id": "orders-details",
+      "origin": "https://api.target.example",
+      "path": "/orders/details",
+      "preflight": {
+        "status": 204,
+        "headers": {
+          "Access-Control-Allow-Credentials": "true",
+          "Access-Control-Allow-Headers": "content-type",
+          "Access-Control-Allow-Methods": "PUT",
+          "Access-Control-Allow-Origin": "https://shop.example",
+          "Access-Control-Max-Age": "120"
+        }
+      },
+      "reply": {
+        "status": 200,
+        "headers": {
+          "Access-Control-Allow-Credentials": "true",
+          "Access-Control-Allow-Origin": "https://shop.example"
+        }
+      }
+    },
+    {
+      "id": "edge-start",
+      "origin": "https://edge.example",
+      "path": "/start",
+      "reply": {
+        "status": 302,
+        "location": "https://cdn.partner.example/assets/a.json"
+      }
+    },
+    {
+      "id": "edge-upload",
+      "origin": "https://edge.example",
+      "path": "/upload-redirect",
+      "preflight": {
+        "status": 204,
+        "headers": {
+          "Access-Control-Allow-Headers": "x-custom",
+          "Access-Control-Allow-Methods": "PUT",
+          "Access-Control-Allow-Origin": "https://app.example",
+          "Access-Control-Max-Age": "60"
+        }
+      },
+      "reply": {
+        "status": 307,
+        "location": "https://cdn.partner.example/upload"
+      }
+    },
+    {
+      "id": "edge-form",
+      "origin": "https://edge.example",
+      "path": "/form",
+      "preflight": {
+        "status": 204,
+        "headers": {
+          "Access-Control-Allow-Headers": "content-type",
+          "Access-Control-Allow-Methods": "POST",
+          "Access-Control-Allow-Origin": "https://app.example"
+        }
+      },
+      "reply": {
+        "status": 303,
+        "location": "https://cdn.partner.example/assets/a.json"
+      }
+    },
+    {
+      "id": "cdn-asset",
+      "origin": "https://cdn.partner.example",
+      "path": "/assets/*",
+      "reply": {
+        "status": 200,
+        "headers": {
+          "Access-Control-Allow-Origin": "https://app.example"
+        }
+      }
+    },
+    {
+      "id": "cdn-upload",
+      "origin": "https://cdn.partner.example",
+      "path": "/upload",
+      "reply": {
+        "status": 201,
+        "headers": {
+          "Access-Control-Allow-Origin": "https://app.example"
+        }
+      }
+    }
+  ],
+  "requests": [
+    {
+      "id": "w1",
+      "at_seconds": 0,
+      "source": "https://shop.example",
+      "url": "https://api.target.example/public",
+      "method": "GET",
+      "note": "简单 GET + 通配 ACAO：请求发出且可读"
+    },
+    {
+      "id": "w2",
+      "at_seconds": 1,
+      "source": "https://shop.example",
+      "url": "https://api.target.example/public",
+      "method": "PUT",
+      "headers": {
+        "X-Custom": "1"
+      },
+      "credentials": "include",
+      "note": "带凭据的非简单请求：预检见 ACAO:* 直接失败，请求未发出"
+    },
+    {
+      "id": "w3",
+      "at_seconds": 2,
+      "source": "https://shop.example",
+      "url": "https://api.target.example/public",
+      "method": "GET",
+      "credentials": "include",
+      "note": "带凭据的简单 GET：无预检、请求已发出，但 ACAO:* 导致响应不透明"
+    },
+    {
+      "id": "w4",
+      "at_seconds": 3,
+      "source": "null",
+      "url": "https://api.target.example/null-echo",
+      "method": "GET",
+      "note": "不透明源需要显式回显 null：可读"
+    },
+    {
+      "id": "w5",
+      "at_seconds": 4,
+      "source": "null",
+      "url": "https://api.target.example/public",
+      "method": "GET",
+      "note": "通配符不匹配不透明源：响应不透明"
+    },
+    {
+      "id": "p1",
+      "at_seconds": 10,
+      "source": "https://shop.example",
+      "url": "https://api.target.example/orders",
+      "method": "PUT",
+      "headers": {
+        "Content-Type": "application/json",
+        "X-Custom": "1"
+      },
+      "credentials": "include",
+      "note": "首次预检通过并缓存（Max-Age=10）"
+    },
+    {
+      "id": "p2",
+      "at_seconds": 12,
+      "source": "https://shop.example",
+      "url": "https://api.target.example/orders",
+      "method": "PUT",
+      "headers": {
+        "Content-Type": "application/json",
+        "X-Custom": "1"
+      },
+      "credentials": "include",
+      "note": "缓存命中，不发预检"
+    },
+    {
+      "id": "p3",
+      "at_seconds": 22,
+      "source": "https://shop.example",
+      "url": "https://api.target.example/orders",
+      "method": "PUT",
+      "headers": {
+        "Content-Type": "application/json",
+        "X-Custom": "1"
+      },
+      "credentials": "include",
+      "note": "t=20 缓存过期，重新预检；服务端尚未变脸，再次通过并刷新到 t=32"
+    },
+    {
+      "id": "p4",
+      "at_seconds": 40,
+      "source": "https://shop.example",
+      "url": "https://api.target.example/orders",
+      "method": "PUT",
+      "headers": {
+        "Content-Type": "application/json",
+        "X-Custom": "1"
+      },
+      "credentials": "include",
+      "note": "t=32 再次过期后预检：服务端已在 t=30 变脸撤权 x-custom，预检失败、请求未发出"
+    },
+    {
+      "id": "p5",
+      "at_seconds": 42,
+      "source": "https://other.example",
+      "url": "https://api.target.example/orders",
+      "method": "PUT",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "credentials": "include",
+      "note": "发起源不同 → 独立缓存键，必然重新预检并因 ACAO 不匹配失败"
+    },
+    {
+      "id": "p6",
+      "at_seconds": 44,
+      "source": "https://shop.example",
+      "url": "https://api.target.example/orders",
+      "method": "PUT",
+      "headers": {
+        "Content-Type": "application/json",
+        "X-Custom": "1"
+      },
+      "note": "同目标但凭据模式 omit → 与 include 分属不同缓存条目，同样独立预检"
+    },
+    {
+      "id": "p7",
+      "at_seconds": 46,
+      "source": "https://shop.example",
+      "url": "https://api.target.example/orders",
+      "method": "PUT",
+      "headers": {
+        "Content-Type": "application/json",
+        "X-Admin": "1"
+      },
+      "credentials": "include",
+      "note": "新头不在缓存授权集合内 → 重新预检，x-admin 未被允许而失败（含通配凭据规则）"
+    },
+    {
+      "id": "p8",
+      "at_seconds": 48,
+      "source": "https://shop.example",
+      "url": "https://api.target.example/orders/details",
+      "method": "PUT",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "credentials": "include",
+      "note": "不同目标 URL → 独立缓存键；该条目在终态快照中仍存活，便于对比隔离与过期"
+    },
+    {
+      "id": "r1",
+      "at_seconds": 50,
+      "source": "https://app.example",
+      "url": "https://edge.example/start",
+      "method": "GET",
+      "note": "简单请求跟随 302 到 CDN：中间跳转不做 CORS，终态 ACAO 匹配 → 可读"
+    },
+    {
+      "id": "r2",
+      "at_seconds": 51,
+      "source": "https://app.example",
+      "url": "https://edge.example/upload-redirect",
+      "method": "PUT",
+      "headers": {
+        "X-Custom": "1"
+      },
+      "note": "307 保留方法与头：edge 预检通过后，CDN 一跳仍需独立预检，缺失即阻断"
+    },
+    {
+      "id": "r3",
+      "at_seconds": 52,
+      "source": "https://app.example",
+      "url": "https://edge.example/form",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "note": "303 改 GET 但保留请求头：CDN 上 GET+content-type 仍触发预检，失败阻断"
+    },
+    {
+      "id": "r4",
+      "at_seconds": 53,
+      "source": "https://edge.example",
+      "url": "https://edge.example/start",
+      "method": "GET",
+      "note": "首跳同源免 CORS；换源后发起源仍是 edge，CDN 的 ACAO 不匹配 → 不透明"
+    }
+  ]
+}
