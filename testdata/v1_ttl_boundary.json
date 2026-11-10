@@ -1,0 +1,21 @@
+{
+  "forbidden_cidrs": ["10.0.0.0/8"],
+  "hosts": {
+    "svc.internal": {
+      "port": 8080,
+      "ttl": 10,
+      "resolution_steps": [
+        ["172.16.0.10"],
+        ["10.20.30.40"]
+      ]
+    }
+  },
+  "requests": [
+    {
+      "id": "r1",
+      "host": "svc.internal",
+      "validate_at": 5,
+      "dial_at": 15
+    }
+  ]
+}

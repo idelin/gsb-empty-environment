@@ -1,0 +1,27 @@
+{
+  "forbidden_cidrs": ["10.0.0.0/8", "169.254.169.254/32"],
+  "hosts": {
+    "svc.internal": {
+      "port": 8080,
+      "ttl": 10,
+      "resolution_steps": [
+        ["169.254.169.254"],
+        ["172.16.0.10"]
+      ]
+    }
+  },
+  "requests": [
+    {
+      "id": "blocked-check",
+      "host": "svc.internal",
+      "validate_at": 0,
+      "dial_at": 0
+    },
+    {
+      "id": "safe-after-expiry",
+      "host": "svc.internal",
+      "validate_at": 10,
+      "dial_at": 10
+    }
+  ]
+}
