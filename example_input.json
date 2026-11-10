@@ -1,0 +1,31 @@
+{
+  "fragments": [
+    {
+      "id": "frag-a",
+      "key_id": "000102030405060708090a0b0c0d0e0f",
+      "nonce": "aa000000000000000000000000000000",
+      "start_block": 0,
+      "block_offset": 0,
+      "ciphertext": "1020304050607080",
+      "known_plaintext": [
+        {"offset": 0, "data": "deadbeefcafebabe"}
+      ]
+    },
+    {
+      "id": "frag-b",
+      "key_id": "000102030405060708090a0b0c0d0e0f",
+      "nonce": "aa000000000000000000000000000000",
+      "start_block": 0,
+      "block_offset": 4,
+      "ciphertext": "aabbccddeeff0011"
+    },
+    {
+      "id": "frag-c",
+      "key_id": "99999999999999999999999999999999",
+      "nonce": "aa000000000000000000000000000000",
+      "start_block": 0,
+      "block_offset": 0,
+      "ciphertext": "0102030405060708"
+    }
+  ]
+}
