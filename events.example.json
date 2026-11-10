@@ -1,0 +1,19 @@
+{
+  "initial_capacity": 120,
+  "max_entries": 4,
+  "events": [
+    {"seq": 1, "type": "insert", "name": "a0", "value": "v", "size": 40},
+    {"seq": 2, "type": "insert", "name": "a1", "value": "v", "size": 40},
+    {
+      "seq": 3,
+      "type": "header_block",
+      "stream_id": 7,
+      "encoded_ric": 7,
+      "sign": 0,
+      "delta_base": 6,
+      "references": [{"kind": "name", "index": 0}]
+    },
+    {"seq": 4, "type": "duplicate", "abs_index": 1},
+    {"seq": 5, "type": "capacity", "capacity": 40}
+  ]
+}
