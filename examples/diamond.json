@@ -1,0 +1,31 @@
+{
+  "rootTypes": ["Session"],
+  "dangerFields": ["primary", "backup"],
+  "maxObjects": 8,
+  "triggeredOnly": true,
+  "types": [
+    {
+      "name": "Session",
+      "fields": [
+        {"name": "primary", "type": "Handler"},
+        {"name": "backup", "type": "Handler"}
+      ]
+    },
+    {
+      "name": "Handler",
+      "fields": [
+        {"name": "next", "type": "Handler"}
+      ]
+    },
+    {
+      "name": "EvilHandler",
+      "triggers": ["readObject"],
+      "fields": [
+        {"name": "next", "type": "Handler"}
+      ]
+    }
+  ],
+  "subtypes": {
+    "Handler": ["Handler", "EvilHandler"]
+  }
+}

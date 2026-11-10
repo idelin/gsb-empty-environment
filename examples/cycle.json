@@ -1,0 +1,16 @@
+{
+  "rootTypes": ["Node"],
+  "dangerFields": ["p", "q"],
+  "maxObjects": 8,
+  "triggeredOnly": true,
+  "types": [
+    {
+      "name": "Node",
+      "triggers": ["readObject"],
+      "fields": [
+        {"name": "p", "type": "Node"},
+        {"name": "q", "type": "Node"}
+      ]
+    }
+  ]
+}

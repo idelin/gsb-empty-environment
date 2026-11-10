@@ -1,0 +1,33 @@
+{
+  "rootTypes": ["Root"],
+  "dangerFields": ["a", "b"],
+  "maxObjects": 8,
+  "types": [
+    {
+      "name": "Root",
+      "fields": [
+        {"name": "a", "type": "IA"},
+        {"name": "b", "type": "IB"}
+      ]
+    },
+    {
+      "name": "IA",
+      "fields": [
+        {"name": "x", "type": "LeafA"}
+      ]
+    },
+    {
+      "name": "IB",
+      "fields": [
+        {"name": "y", "type": "LeafB"}
+      ]
+    },
+    {
+      "name": "LeafA",
+      "triggers": ["readObject"]
+    },
+    {
+      "name": "LeafB"
+    }
+  ]
+}
