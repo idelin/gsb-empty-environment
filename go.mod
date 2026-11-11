@@ -1,3 +1,3 @@
-module example.org/offlinecli
+module example.org/tablegrid
 
 go 1.24.2
