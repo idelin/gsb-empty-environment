@@ -1,3 +1,3 @@
-module example.org/offlinecli
+module example.org/hartransport
 
 go 1.24.2

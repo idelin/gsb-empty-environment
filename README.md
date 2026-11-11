@@ -1,0 +1,3 @@
+# hartransport
+
+爬虫测试依赖线上站点，结果不稳定。给Go爬虫实现可传给http.Client的HAR回放Transport：按方法、规范化URL、选定请求头和请求体匹配记录，同一请求多次出现时按顺序消费，重定向和Set-Cookie按记录生效；未匹配时返回含最接近候选及差异的错误。录制端写成RoundTripper包装并输出合法HAR，两端做往返测试。
