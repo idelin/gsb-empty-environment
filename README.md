@@ -1,0 +1,3 @@
+# deltacrl
+
+证书校验服务每天拉取完整CRL，每小时只拉增量CRL。给Go校验服务实现吊销状态组件：增量CRL引用的BaseCRLNumber不能晚于当前基础CRL，removeFromCRL能解除基础中的certificateHold，签发者和分发点范围必须一致，任一份过期都判为状态未知。用自建CA签出基础与增量CRL序列，核对乱序到达、基础更新后的旧增量和暂停解除的结果。
