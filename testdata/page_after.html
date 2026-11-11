@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><title>订单中心</title></head>
+<body>
+<header><h1>订单中心</h1></header>
+<main>
+  <div class="toolbar">
+    <button id="refresh-all" type="button">全部刷新</button>
+    <button id="purge" type="button" class="danger">清空所有订单</button>
+  </div>
+  <article class="card" data-order="1024">
+    <h3>订单 #1024</h3>
+    <p>商品：机械键盘 × 1</p>
+    <footer class="ops">
+      <a role="button" class="danger" href="/orders/1024/delete">删除订单</a>
+      <a role="button" class="primary" href="/orders/1024/pay">立即支付</a>
+    </footer>
+  </article>
+  <article class="card" data-order="1025">
+    <h3>订单 #1025</h3>
+    <p>商品：显示器 × 2</p>
+    <footer class="ops">
+      <a role="button" class="danger" href="/orders/1025/delete">删除订单</a>
+    </footer>
+  </article>
+</main>
+</body>
+</html>
