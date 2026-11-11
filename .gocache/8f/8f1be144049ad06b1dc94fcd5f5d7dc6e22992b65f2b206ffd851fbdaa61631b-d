@@ -1,0 +1,378 @@
+//line /Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/1246/workspace/reservoir/reservoir.go:1:1
+// Package reservoir implements a memory-bounded, stratified reservoir
+// sampler for intrusion-detection alert streams.
+//
+// Each alert class keeps a configurable minimum quota of retained
+// records; the remaining capacity is contested by priority derived from
+// a keyed hash (HMAC-SHA-256) of the event ID. Repeated event IDs count
+// once. Shards produced with the same key merge exactly: merging shards
+// yields the same retained set as sampling the union of the original
+// de-duplicated events. Rotating the key starts a fresh window so an
+// adversary cannot correlate priorities with the previous window.
+//
+// Memory stays bounded by keeping, per class, only the highest-priority
+// distinct candidates that class could ever need: its minimum quota
+// plus the shared pool of remaining capacity. With m observed classes
+// the total candidate set is at most (m-1)*Capacity - (m-2)*sum(quotas),
+// i.e. linear in capacity and independent of stream length. Selection
+// itself is a deterministic global rule (quota holders first, then the
+// globally highest-priority leftovers), recomputed from that bounded
+// candidate set. This avoids the drift of greedy streaming eviction,
+// where a high-frequency class could fill every slot before a protected
+// class arrived.
+package reservoir
+
+import (
+	"bytes"
+	"crypto/hmac"
+	"crypto/sha256"
+	"errors"
+	"sort"
+)
+
+// ErrInsufficientCapacity is returned when the configured capacity
+// cannot hold the sum of the per-class minimum quotas.
+var ErrInsufficientCapacity = errors.New("reservoir: capacity smaller than sum of minimum quotas")
+
+// ErrWindowMismatch is returned when merging samplers from different
+// sampling windows (different key, window id, or configuration).
+var ErrWindowMismatch = errors.New("reservoir: cannot merge samplers from different windows")
+
+// Event is one alert observation handed in by a Go probe.
+type Event struct {
+	// Class is the alert class/category.
+	Class string
+	// ID uniquely identifies an event; repeated IDs are deduped.
+	ID string
+	// Payload is the alert content. It does not influence priority.
+	Payload []byte
+}
+
+// Record is a retained event together with its sampling metadata.
+type Record struct {
+	Event    Event
+	Priority []byte
+}
+
+// Config configures a Sampler.
+type Config struct {
+	// Capacity is the maximum number of distinct events retained.
+	Capacity int
+	// MinQuota is the minimum number of records kept per alert class
+	// whenever that many distinct events of the class were observed.
+	MinQuota map[string]int
+}
+
+// Stats reports counters for the current window.
+type Stats struct {
+	// EventsSeen counts Add calls, including repeated IDs.
+	EventsSeen int
+	// DistinctIDs is the number of unique event IDs currently buffered
+	// (the bounded candidate set, which may be larger than Capacity).
+	DistinctIDs int
+	// Duplicates counts Add calls whose ID was already known.
+	Duplicates int
+	// ContentConflicts counts repeated IDs whose payload/class differed.
+	ContentConflicts int
+	// Evictions counts distinct events dropped from the bounded buffers.
+	Evictions int
+	// Rejections counts distinct Add calls that did not enter a buffer
+	// because they lost to an already-buffered higher-priority event.
+	Rejections int
+}
+
+// Sampler is a single-window stratified reservoir. It is safe for use
+// by a single goroutine; use separate Samplers per shard and Merge to
+// combine them concurrently.
+type Sampler struct {
+	cfg      Config
+	key      []byte
+	windowID uint64
+
+	// candidates maps class -> distinct buffered entries, ordered from
+	// highest to lowest priority. Each class keeps at most classLimit
+	// entries, so total buffered entries never exceed Capacity.
+	candidates map[string][]*entry
+	index      map[string]*entry
+
+	seen      int
+	dupes     int
+	conflicts int
+	evicted   int
+	rejected  int
+}
+
+type entry struct {
+	id       string
+	class    string
+	payload  []byte
+	priority []byte
+}
+
+// New validates cfg and creates a sampler for window 0 keyed by key.
+func New(cfg Config, key []byte) (*Sampler, error) {goCover_85de2afa1c50__0[0] = 9 ; goCover_85de2afa1c50__0[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__0[2] = 0 ; goCover_85de2afa1c50__0[3] = 1;
+	if cfg.Capacity < 0 {goCover_85de2afa1c50__0[7] = 1;
+		return nil, ErrInsufficientCapacity
+	}
+	goCover_85de2afa1c50__0[4] = 1;quotaSum := 0
+	for _, q := range cfg.MinQuota {goCover_85de2afa1c50__0[8] = 1;
+		if q < 0 {goCover_85de2afa1c50__0[10] = 1;
+			return nil, ErrInsufficientCapacity
+		}
+		goCover_85de2afa1c50__0[9] = 1;quotaSum += q
+	}
+	goCover_85de2afa1c50__0[5] = 1;if quotaSum > cfg.Capacity {goCover_85de2afa1c50__0[11] = 1;
+		return nil, ErrInsufficientCapacity
+	}
+	goCover_85de2afa1c50__0[6] = 1;return newSampler(cfg, key, 0), nil
+}
+
+func newSampler(cfg Config, key []byte, windowID uint64) *Sampler {goCover_85de2afa1c50__1[0] = 3 ; goCover_85de2afa1c50__1[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__1[2] = 1 ; goCover_85de2afa1c50__1[3] = 1;
+	quotas := make(map[string]int, len(cfg.MinQuota))
+	for class, q := range cfg.MinQuota {goCover_85de2afa1c50__1[5] = 1;
+		quotas[class] = q
+	}
+	goCover_85de2afa1c50__1[4] = 1;return &Sampler{
+		cfg:        Config{Capacity: cfg.Capacity, MinQuota: quotas},
+		key:        append([]byte(nil), key...),
+		windowID:   windowID,
+		candidates: make(map[string][]*entry),
+		index:      make(map[string]*entry),
+	}
+}
+
+// classLimit is the maximum number of candidates a class may buffer:
+// its protected quota plus every globally contested slot.
+func (s *Sampler) classLimit(class string) int {goCover_85de2afa1c50__2[0] = 3 ; goCover_85de2afa1c50__2[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__2[2] = 2 ; goCover_85de2afa1c50__2[3] = 1;
+	limit := s.cfg.Capacity
+	if q := s.cfg.MinQuota[class]; q > 0 {goCover_85de2afa1c50__2[5] = 1;
+		limit = s.cfg.Capacity - sumQuotasExcept(s.cfg.MinQuota, class)
+	}
+	goCover_85de2afa1c50__2[4] = 1;return limit
+}
+
+// Add ingests one event. Repeated IDs are counted but never stored a
+// second time; a payload or class mismatch on a repeated ID increments
+// the content-conflict counter and keeps the first-seen content.
+func (s *Sampler) Add(ev Event) {goCover_85de2afa1c50__3[0] = 13 ; goCover_85de2afa1c50__3[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__3[2] = 3 ; goCover_85de2afa1c50__3[3] = 1;
+	s.seen++
+	if existing, ok := s.index[ev.ID]; ok {goCover_85de2afa1c50__3[8] = 1;
+		s.dupes++
+		if existing.class != ev.Class || !bytes.Equal(existing.payload, ev.Payload) {goCover_85de2afa1c50__3[10] = 1;
+			s.conflicts++
+		}
+		goCover_85de2afa1c50__3[9] = 1;return
+	}
+
+	goCover_85de2afa1c50__3[4] = 1;candidate := &entry{
+		id:       ev.ID,
+		class:    ev.Class,
+		payload:  append([]byte(nil), ev.Payload...),
+		priority: s.priority(ev.ID),
+	}
+
+	buf := s.candidates[ev.Class]
+	limit := s.classLimit(ev.Class)
+	if limit == 0 {goCover_85de2afa1c50__3[11] = 1;
+		s.rejected++
+		return
+	}
+	goCover_85de2afa1c50__3[5] = 1;if len(buf) >= limit {goCover_85de2afa1c50__3[12] = 1;
+		// The class buffer is full: only a higher-priority event can
+		// displace the current lowest-priority candidate.
+		weakest := buf[len(buf)-1]
+		if !higher(candidate, weakest) {goCover_85de2afa1c50__3[14] = 1;
+			s.rejected++
+			return
+		}
+		goCover_85de2afa1c50__3[13] = 1;buf = removeAt(buf, len(buf)-1)
+		delete(s.index, weakest.id)
+		s.evicted++
+	}
+
+	goCover_85de2afa1c50__3[6] = 1;pos := sort.Search(len(buf), func(i int) bool {goCover_85de2afa1c50__3[15] = 1; return higher(candidate, buf[i]) })
+	goCover_85de2afa1c50__3[7] = 1;buf = insertAt(buf, pos, candidate)
+	s.candidates[ev.Class] = buf
+	s.index[ev.ID] = candidate
+}
+
+// Merge folds other into s. Both samplers must use the same key and
+// window id and have identical capacity and quotas. The result equals
+// sampling the union of the two shards' original de-duplicated events.
+func (s *Sampler) Merge(other *Sampler) error {goCover_85de2afa1c50__4[0] = 15 ; goCover_85de2afa1c50__4[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__4[2] = 4 ; goCover_85de2afa1c50__4[3] = 1;
+	if s.windowID != other.windowID || !hmac.Equal(s.key, other.key) {goCover_85de2afa1c50__4[9] = 1;
+		return ErrWindowMismatch
+	}
+	goCover_85de2afa1c50__4[4] = 1;if s.cfg.Capacity != other.cfg.Capacity || !sameQuotas(s.cfg.MinQuota, other.cfg.MinQuota) {goCover_85de2afa1c50__4[10] = 1;
+		return ErrWindowMismatch
+	}
+
+	// Replay in ascending ID order so first-seen conflict resolution and
+	// all counters are reproducible regardless of shard layout.
+	goCover_85de2afa1c50__4[5] = 1;var incoming []*entry
+	for _, buf := range other.candidates {goCover_85de2afa1c50__4[11] = 1;
+		incoming = append(incoming, buf...)
+	}
+	goCover_85de2afa1c50__4[6] = 1;sort.Slice(incoming, func(i, j int) bool {goCover_85de2afa1c50__4[12] = 1; return incoming[i].id < incoming[j].id })
+
+	goCover_85de2afa1c50__4[7] = 1;for _, e := range incoming {goCover_85de2afa1c50__4[13] = 1;
+		ev := Event{Class: e.class, ID: e.id, Payload: append([]byte(nil), e.payload...)}
+		if existing, ok := s.index[e.id]; ok {goCover_85de2afa1c50__4[15] = 1;
+			s.dupes++
+			if existing.class != e.class || !bytes.Equal(existing.payload, e.payload) {goCover_85de2afa1c50__4[17] = 1;
+				s.conflicts++
+			}
+			goCover_85de2afa1c50__4[16] = 1;continue
+		}
+		goCover_85de2afa1c50__4[14] = 1;s.Add(ev)
+	}
+
+	goCover_85de2afa1c50__4[8] = 1;s.seen += other.seen
+	s.evicted += other.evicted
+	s.rejected += other.rejected
+	return nil
+}
+
+// RotateKey starts a new sampling window with newKey, clearing every
+// buffered record and counter while keeping the same configuration.
+// It returns the previous window id; the new id is previous + 1.
+func (s *Sampler) RotateKey(newKey []byte) uint64 {goCover_85de2afa1c50__5[0] = 1 ; goCover_85de2afa1c50__5[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__5[2] = 5 ; goCover_85de2afa1c50__5[3] = 1;
+	previous := s.windowID
+	fresh := newSampler(s.cfg, newKey, previous+1)
+	*s = *fresh
+	return previous
+}
+
+// Snapshot returns the retained records ordered from highest to lowest
+// priority. The returned slices are independent copies.
+func (s *Sampler) Snapshot() []Record {goCover_85de2afa1c50__6[0] = 3 ; goCover_85de2afa1c50__6[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__6[2] = 6 ; goCover_85de2afa1c50__6[3] = 1;
+	selected := s.selectWinners()
+	records := make([]Record, len(selected))
+	for i, e := range selected {goCover_85de2afa1c50__6[5] = 1;
+		records[i] = Record{
+			Event: Event{
+				Class:   e.class,
+				ID:      e.id,
+				Payload: append([]byte(nil), e.payload...),
+			},
+			Priority: append([]byte(nil), e.priority...),
+		}
+	}
+	goCover_85de2afa1c50__6[4] = 1;return records
+}
+
+// selectWinners applies the deterministic global sampling rule: each
+// class contributes its top MinQuota candidates first, then the unused
+// capacity goes to the globally highest-priority remaining candidates.
+func (s *Sampler) selectWinners() []*entry {goCover_85de2afa1c50__7[0] = 18 ; goCover_85de2afa1c50__7[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__7[2] = 7 ; goCover_85de2afa1c50__7[3] = 1;
+	chosen := make(map[string]bool, s.cfg.Capacity)
+	var winners []*entry
+
+	// Classes with a quota are handled in a fixed (sorted) order so the
+	// result does not depend on map iteration.
+	quotaClasses := make([]string, 0, len(s.cfg.MinQuota))
+	for class := range s.cfg.MinQuota {goCover_85de2afa1c50__7[10] = 1;
+		quotaClasses = append(quotaClasses, class)
+	}
+	goCover_85de2afa1c50__7[4] = 1;sort.Strings(quotaClasses)
+
+	for _, class := range quotaClasses {goCover_85de2afa1c50__7[11] = 1;
+		q := s.cfg.MinQuota[class]
+		buf := s.candidates[class]
+		if q > len(buf) {goCover_85de2afa1c50__7[13] = 1;
+			q = len(buf)
+		}
+		goCover_85de2afa1c50__7[12] = 1;for i := 0; i < q; i++ {goCover_85de2afa1c50__7[14] = 1;
+			chosen[buf[i].id] = true
+			winners = append(winners, buf[i])
+		}
+	}
+
+	goCover_85de2afa1c50__7[5] = 1;var leftovers []*entry
+	for _, buf := range s.candidates {goCover_85de2afa1c50__7[15] = 1;
+		for _, e := range buf {goCover_85de2afa1c50__7[16] = 1;
+			if !chosen[e.id] {goCover_85de2afa1c50__7[17] = 1;
+				leftovers = append(leftovers, e)
+			}
+		}
+	}
+	goCover_85de2afa1c50__7[6] = 1;sort.Slice(leftovers, func(i, j int) bool {goCover_85de2afa1c50__7[18] = 1; return higher(leftovers[i], leftovers[j]) })
+
+	goCover_85de2afa1c50__7[7] = 1;slots := s.cfg.Capacity - len(winners)
+	for i := 0; i < slots && i < len(leftovers); i++ {goCover_85de2afa1c50__7[19] = 1;
+		winners = append(winners, leftovers[i])
+	}
+	goCover_85de2afa1c50__7[8] = 1;sort.Slice(winners, func(i, j int) bool {goCover_85de2afa1c50__7[20] = 1; return higher(winners[i], winners[j]) })
+	goCover_85de2afa1c50__7[9] = 1;return winners
+}
+
+// Stats returns a copy of the current window counters.
+func (s *Sampler) Stats() Stats {goCover_85de2afa1c50__8[0] = 1 ; goCover_85de2afa1c50__8[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__8[2] = 8 ; goCover_85de2afa1c50__8[3] = 1;
+	return Stats{
+		EventsSeen:       s.seen,
+		DistinctIDs:      len(s.index),
+		Duplicates:       s.dupes,
+		ContentConflicts: s.conflicts,
+		Evictions:        s.evicted,
+		Rejections:       s.rejected,
+	}
+}
+
+// WindowID identifies the sampling window; it increments on RotateKey.
+func (s *Sampler) WindowID() uint64 {goCover_85de2afa1c50__9[0] = 1 ; goCover_85de2afa1c50__9[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__9[2] = 9 ; goCover_85de2afa1c50__9[3] = 1; return s.windowID }
+
+// Key returns a copy of the current window key.
+func (s *Sampler) Key() []byte {goCover_85de2afa1c50__10[0] = 1 ; goCover_85de2afa1c50__10[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__10[2] = 10 ; goCover_85de2afa1c50__10[3] = 1; return append([]byte(nil), s.key...) }
+
+// Capacity returns the configured maximum number of retained records.
+func (s *Sampler) Capacity() int {goCover_85de2afa1c50__11[0] = 1 ; goCover_85de2afa1c50__11[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__11[2] = 11 ; goCover_85de2afa1c50__11[3] = 1; return s.cfg.Capacity }
+
+func (s *Sampler) priority(id string) []byte {goCover_85de2afa1c50__12[0] = 1 ; goCover_85de2afa1c50__12[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__12[2] = 12 ; goCover_85de2afa1c50__12[3] = 1;
+	mac := hmac.New(sha256.New, s.key)
+	mac.Write([]byte(id))
+	return mac.Sum(nil)
+}
+
+// higher reports whether a outranks b: larger HMAC first, then the
+// smaller ID as a deterministic tiebreaker.
+func higher(a, b *entry) bool {goCover_85de2afa1c50__13[0] = 3 ; goCover_85de2afa1c50__13[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__13[2] = 13 ; goCover_85de2afa1c50__13[3] = 1;
+	if c := bytes.Compare(a.priority, b.priority); c != 0 {goCover_85de2afa1c50__13[5] = 1;
+		return c > 0
+	}
+	goCover_85de2afa1c50__13[4] = 1;return a.id < b.id
+}
+
+func sumQuotasExcept(quotas map[string]int, skip string) int {goCover_85de2afa1c50__14[0] = 4 ; goCover_85de2afa1c50__14[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__14[2] = 14 ; goCover_85de2afa1c50__14[3] = 1;
+	total := 0
+	for class, q := range quotas {goCover_85de2afa1c50__14[5] = 1;
+		if class != skip {goCover_85de2afa1c50__14[6] = 1;
+			total += q
+		}
+	}
+	goCover_85de2afa1c50__14[4] = 1;return total
+}
+
+func sameQuotas(a, b map[string]int) bool {goCover_85de2afa1c50__15[0] = 6 ; goCover_85de2afa1c50__15[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__15[2] = 15 ; goCover_85de2afa1c50__15[3] = 1;
+	if len(a) != len(b) {goCover_85de2afa1c50__15[6] = 1;
+		return false
+	}
+	goCover_85de2afa1c50__15[4] = 1;for class, qa := range a {goCover_85de2afa1c50__15[7] = 1;
+		if qb, ok := b[class]; !ok || qa != qb {goCover_85de2afa1c50__15[8] = 1;
+			return false
+		}
+	}
+	goCover_85de2afa1c50__15[5] = 1;return true
+}
+
+func insertAt(buf []*entry, pos int, e *entry) []*entry {goCover_85de2afa1c50__16[0] = 1 ; goCover_85de2afa1c50__16[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__16[2] = 16 ; goCover_85de2afa1c50__16[3] = 1;
+	buf = append(buf, nil)
+	copy(buf[pos+1:], buf[pos:])
+	buf[pos] = e
+	return buf
+}
+
+func removeAt(buf []*entry, pos int) []*entry {goCover_85de2afa1c50__17[0] = 1 ; goCover_85de2afa1c50__17[1] = goCover_85de2afa1c50_P ; goCover_85de2afa1c50__17[2] = 17 ; goCover_85de2afa1c50__17[3] = 1;
+	copy(buf[pos:], buf[pos+1:])
+	buf[len(buf)-1] = nil
+	return buf[:len(buf)-1]
+}

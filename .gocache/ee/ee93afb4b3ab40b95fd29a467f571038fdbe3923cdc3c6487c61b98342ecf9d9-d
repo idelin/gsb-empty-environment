@@ -1,0 +1,4 @@
+covervars.go
+reservoir.cover.go
+./reservoir_shard_test.go
+./reservoir_test.go
