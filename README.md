@@ -1,0 +1,3 @@
+# pgoutput
+
+数据同步服务通过PostgreSQL逻辑复制读取变更。给Go同步服务实现pgoutput消息解码与事务组装包：维护Relation缓存和类型信息，处理未变更的TOAST列；支持协议版本2的流式大事务，包括Stream Start、Stop、Commit、Abort和子事务中止；只在提交后按提交顺序发布事务，确认的LSN不越过未发布的事务。用构造的消息序列测试交错的流式事务和子事务回滚。
