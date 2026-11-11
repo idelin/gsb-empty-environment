@@ -1,3 +1,3 @@
-module example.org/offlinecli
+module example.org/tsdemux
 
 go 1.24.2
