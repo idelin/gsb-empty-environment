@@ -2,8 +2,12 @@
   "name": "netsec-uid1231",
   "private": true,
   "type": "module",
+  "main": "./index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test test/*.test.ts"
   },
   "engines": {
     "node": ">=23.9.0"
