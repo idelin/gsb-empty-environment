@@ -1,0 +1,3 @@
+# ocspcheck
+
+TLS客户端信任服务端装订的OCSP响应，伪造或过期的响应会让已吊销证书继续通过。给Go客户端实现可挂到tls.Config.VerifyConnection的OCSP校验组件：确认响应对应叶子证书的序列号和签发者哈希，签名者必须是签发CA或带OCSPSigning用途的委派证书，按thisUpdate、nextUpdate和允许偏差判断时效，unknown与缺失响应按调用方策略处理。用自建CA构造委派越权、时间越界和序列号不符的响应测试。
