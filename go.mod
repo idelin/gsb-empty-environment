@@ -1,3 +1,3 @@
-module example.org/netsec/uid1309
+module controlflow
 
-go 1.24.0
+go 1.24
