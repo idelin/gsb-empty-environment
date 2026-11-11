@@ -1,0 +1,11 @@
+{
+  "name": "netsec-uid1304",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  },
+  "engines": {
+    "node": ">=23.9.0"
+  }
+}
