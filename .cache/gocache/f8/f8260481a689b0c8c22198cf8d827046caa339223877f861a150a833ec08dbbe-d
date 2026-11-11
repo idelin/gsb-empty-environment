@@ -1,0 +1,3 @@
+./scenario.go
+./inline_test.go
+./scenario_test.go

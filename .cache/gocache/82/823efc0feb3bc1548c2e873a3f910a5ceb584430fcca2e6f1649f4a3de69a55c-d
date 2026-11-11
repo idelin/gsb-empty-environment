@@ -1,0 +1,4 @@
+=== RUN   TestTwoPeersDeterministic
+--- PASS: TestTwoPeersDeterministic (0.00s)
+PASS
+ok  	example.org/rollback/netcode	0.380s

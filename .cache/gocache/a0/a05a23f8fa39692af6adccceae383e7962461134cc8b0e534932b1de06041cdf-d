@@ -1,0 +1,17 @@
+=== RUN   TestTraceRollback
+    trace_test.go:16: after 6: frame=6 oldest=1
+    trace_test.go:17: snap2 before rb rng=7806831264735756412
+    trace_test.go:27: post-rb frame=3 predictedRemote=4 known=true
+    trace_test.go:27: post-rb frame=4 predictedRemote=4 known=false
+    trace_test.go:27: post-rb frame=5 predictedRemote=4 known=false
+    trace_test.go:27: post-rb frame=6 predictedRemote=4 known=false
+    trace_test.go:30: after rb3: frame=6 oldest=1
+    trace_test.go:35: snap f=1 rng=1
+    trace_test.go:35: snap f=2 rng=7806831264735756412
+    trace_test.go:35: snap f=3 rng=9396908728118811419
+    trace_test.go:35: snap f=4 rng=11960119808228829710
+    trace_test.go:35: snap f=5 rng=7062582979898595269
+    trace_test.go:35: snap f=6 rng=14673421054488193520
+--- PASS: TestTraceRollback (0.00s)
+PASS
+ok  	example.org/rollback/netcode	0.321s

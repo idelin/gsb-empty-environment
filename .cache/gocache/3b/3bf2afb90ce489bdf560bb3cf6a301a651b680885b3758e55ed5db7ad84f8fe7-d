@@ -1,0 +1,4 @@
+=== RUN   TestPauseOutsideWindow
+--- PASS: TestPauseOutsideWindow (0.00s)
+PASS
+ok  	example.org/rollback/netcode	0.338s

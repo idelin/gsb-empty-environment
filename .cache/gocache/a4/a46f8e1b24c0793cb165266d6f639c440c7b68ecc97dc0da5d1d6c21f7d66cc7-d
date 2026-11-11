@@ -1,0 +1,4 @@
+=== RUN   TestPlayerSlotMapping
+--- PASS: TestPlayerSlotMapping (0.00s)
+PASS
+ok  	example.org/rollback/netcode	0.344s

@@ -1,0 +1,8 @@
+=== RUN   TestSlidingWindow
+--- PASS: TestSlidingWindow (0.00s)
+=== RUN   TestRewriteAfterSlide
+--- PASS: TestRewriteAfterSlide (0.00s)
+=== RUN   TestNoAliasingAcrossCapacity
+--- PASS: TestNoAliasingAcrossCapacity (0.00s)
+PASS
+ok  	example.org/rollback/ring	0.373s

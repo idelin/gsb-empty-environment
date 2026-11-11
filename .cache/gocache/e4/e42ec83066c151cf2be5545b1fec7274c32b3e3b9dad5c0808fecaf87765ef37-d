@@ -1,0 +1,4 @@
+=== RUN   TestTwoPeersViaRelay
+--- PASS: TestTwoPeersViaRelay (0.00s)
+PASS
+ok  	example.org/rollback/netcode	0.332s

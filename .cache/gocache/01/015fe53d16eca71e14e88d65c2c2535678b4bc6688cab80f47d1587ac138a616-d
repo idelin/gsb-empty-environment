@@ -1,0 +1,4 @@
+=== RUN   TestConvergenceConstantInputs
+--- PASS: TestConvergenceConstantInputs (0.00s)
+PASS
+ok  	example.org/rollback/scenario	0.352s

@@ -1,0 +1,4 @@
+=== RUN   TestConvergenceNoLoss
+--- PASS: TestConvergenceNoLoss (0.00s)
+PASS
+ok  	example.org/rollback/scenario	0.366s

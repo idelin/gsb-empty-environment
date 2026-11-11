@@ -1,0 +1,4 @@
+=== RUN   TestInlineDriverBypassesRelay
+--- PASS: TestInlineDriverBypassesRelay (0.00s)
+PASS
+ok  	example.org/rollback/scenario	0.331s

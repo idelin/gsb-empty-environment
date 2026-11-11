@@ -1,0 +1,12 @@
+=== RUN   TestTraceRollback
+    trace_test.go:16: after 6: frame=6 oldest=2
+    trace_test.go:17: snap2 before rb rng=1
+    trace_test.go:26: after rb3: frame=6 oldest=2
+    trace_test.go:31: snap f=2 rng=1
+    trace_test.go:31: snap f=3 rng=7806831264735756412
+    trace_test.go:31: snap f=4 rng=9396908728118811419
+    trace_test.go:31: snap f=5 rng=11960119808228829710
+    trace_test.go:31: snap f=6 rng=7062582979898595269
+--- PASS: TestTraceRollback (0.00s)
+PASS
+ok  	example.org/rollback/netcode	0.507s
