@@ -1,0 +1,3 @@
+# wsupgrade
+
+反向代理看到客户端带Upgrade头就直接转成双向隧道，上游实际返回非101时，攻击者借此走私请求。给Go反向代理实现WebSocket升级处理器：只有上游返回101，且Upgrade、Connection与Sec-WebSocket-Accept都匹配时才切换为隧道，否则按普通HTTP响应处理后关闭；升级前后已缓冲的字节不能丢失或错发给另一方。用伪造的上游测试200、426、错误的Accept和半关闭。
