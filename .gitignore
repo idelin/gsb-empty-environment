@@ -5,3 +5,5 @@ dist/
 *.key
 *.pem
 .DS_Store
+.cover.out
+.gopath/
