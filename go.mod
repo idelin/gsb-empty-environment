@@ -1,3 +1,3 @@
-module example.org/netsec/q0094
+module wafdecision
 
-go 1.24.0
+go 1.24.2
