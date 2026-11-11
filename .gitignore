@@ -1,3 +1,6 @@
 .env
 *.key
 /bin/
+
+# local Go build cache
+/.gocache/
