@@ -2,8 +2,20 @@
   "name": "netsec-uid1242",
   "private": true,
   "type": "module",
+  "description": "Differential verdict package for comparing two protocol parser implementations",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./compare": "./src/compare.ts",
+    "./types": "./src/types.ts"
+  },
+  "files": [
+    "index.ts",
+    "src"
+  ],
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test test/diff.test.ts"
   },
   "engines": {
     "node": ">=23.9.0"
