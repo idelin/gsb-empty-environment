@@ -1,1 +1,11 @@
-{"name": "netsec-20261111-0098", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "netsec-20261111-0098",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
