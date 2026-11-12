@@ -1,0 +1,3 @@
+# SharedWorker租户隔离
+
+同源下不同租户的页面可用同名SharedWorker互相连接。为TypeScript多租户前端实现可导入的SharedWorker连接代理：worker名由认证租户和脚本URL摘要派生，不接受页面提供的裸名称；connect得到的port无来源信息，须先完成带租户令牌的握手才分配消息通道，同名不同脚本URL的请求拒绝。用两个租户、复用名称和令牌重放样例测试。
