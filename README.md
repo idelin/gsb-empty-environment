@@ -1,0 +1,3 @@
+# SBOM可达依赖许可门禁
+
+供应商可把运行时依赖在CycloneDX清单里标成excluded，躲过许可门禁。为Go发布门禁实现可导入的范围推导包：沿dependencies边从根求可达集合，忽略自报scope；bom-ref重复或同purl不同版本冲突即拒；SPDX的AND、OR、WITH按语义求值，OR有一支被允许即可。用重复ref、隐藏GPL依赖和OR分支样例测试。
