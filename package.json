@@ -1,1 +1,14 @@
-{"name": "netnew-20261112-0621", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "netnew-20261112-0621",
+  "private": true,
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./conflict-resolution": "./conflict-resolution.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
