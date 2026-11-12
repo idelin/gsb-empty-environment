@@ -1,1 +1,20 @@
-{"name": "netsec-20261111-0171", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "netsec-20261111-0171",
+  "private": true,
+  "type": "module",
+  "description": "结构化来源（origin）库：普通来源元组 + 不透明随机身份，授权只比较结构，序列化仅用于显示",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./origin": "./src/origin.ts",
+    "./sandbox": "./src/sandbox.ts",
+    "./messaging": "./src/messaging.ts"
+  },
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
