@@ -1,1 +1,18 @@
-{"name": "netsec-20261111-0181", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "sandbox-blob-address-registry",
+  "version": "1.0.0",
+  "description": "Tenant-bound, lease-based blob address registry for security sandboxes",
+  "private": true,
+  "type": "module",
+  "main": "index.ts",
+  "types": "index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test 'test/**/*.test.ts'"
+  }
+}
