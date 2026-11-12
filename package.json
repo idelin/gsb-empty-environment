@@ -1,1 +1,19 @@
-{"name": "netsec-20261111-0403", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "contract-guard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Path-wise contract verification for annotated sanitization declarations over finite control-flow models.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./model": "./src/model.ts",
+    "./verifier": "./src/verifier.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/sanitizer.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
