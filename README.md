@@ -1,0 +1,3 @@
+# SOME/IP服务发现伪造防护
+
+SOME/IP-SD里攻击者发伪造Offer抢占服务，或让Subscribe的端点选项指向受害者以反射流量。给Go车载网关写供SD报文处理调用的准入包：Offer只接受调用方登记的服务ID、实例、主版本对应的提供者地址，TTL为0的StopOffer只能来自当前提供者；Subscribe端点选项地址须等于报文源地址，选项索引越界的条目丢弃。用抢占Offer、伪造StopOffer和反射订阅验证。
