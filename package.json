@@ -1,1 +1,1 @@
-{"name": "netnew-20261112-0524", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{"name": "openid-federation-trust-chain", "version": "1.0.0", "description": "OpenID Federation 1.0 trust chain validation for TypeScript relying parties", "private": true, "type": "module", "main": "index.ts", "exports": {".": "./index.ts"}, "scripts": {"test": "node --experimental-strip-types --test 'test/**/*.test.ts'"}}
