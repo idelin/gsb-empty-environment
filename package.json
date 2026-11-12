@@ -1,1 +1,18 @@
-{"name": "netnew-20261112-0457", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "conditional-diff-gate",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./resolver": "./src/resolver.ts",
+    "./gate": "./src/gate.ts",
+    "./types": "./src/types.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test",
+    "typecheck": "tsc --noEmit"
+  }
+}
