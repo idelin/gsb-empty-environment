@@ -1,0 +1,3 @@
+# ECH内外ClientHello重建
+
+支持ECH的前端服务器收到外层ClientHello后解密内层，攻击者可在外层扩展引用里制造环、乱序或引用ECH自身，让路由和握手看到不同的ClientHello。给Go前端写供TLS握手前置处理调用的ClientHelloInner重建包：按draft-ietf-tls-esni展开ech_outer_extensions，被引用扩展须按外层顺序出现且不得引用ech或自身，内层必须带类型为inner的ech扩展，展开后不得有重复扩展类型；后端只按内层SNI选择，解密失败时只用公共名并返回retry配置。用循环引用、乱序引用、内外SNI不同和解密失败验证。
