@@ -1,0 +1,3 @@
+# WebUSB与WebHID设备过滤
+
+攻击者页面用宽松过滤器诱使用户授权键盘或安全密钥等敏感设备。为TypeScript浏览器宿主实现可导入的设备选择过滤包：filters与exclusionFilters按vendorId、productId、classCode和usagePage组合，空过滤器拒绝；受保护用法页（含FIDO 0xF1D0）及键盘、存储接口设备不得列出。用宽过滤和排除过滤测试。
