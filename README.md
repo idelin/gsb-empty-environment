@@ -1,0 +1,3 @@
+# Electron桥接参数消毒
+
+攻击者控制的渲染页可借预加载桥传入Proxy、getter或__proto__对象调用特权IPC。为TypeScript Electron应用实现可导入的contextBridge封装：只暴露登记名称的方法，参数在主进程克隆后按schema校验，拒绝函数、getter和污染键；处理器核对event.senderFrame的URL。用恶意对象和未登记通道测试。
