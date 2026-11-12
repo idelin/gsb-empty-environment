@@ -1,1 +1,17 @@
-{"name": "netnew-20261112-0506", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "sdjwt-disclosure-validator",
+  "version": "1.0.0",
+  "description": "RFC 9812 SD-JWT disclosure and holder-binding verification (signature verification is the caller's responsibility)",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/**/*.test.ts\""
+  }
+}
