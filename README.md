@@ -1,0 +1,3 @@
+# NNTP取消消息授权
+
+新闻服务器接收的文章带Control头，攻击者借折叠头里的换行注入伪造的cancel，或取消他人文章。给Go服务器写供POST处理调用的控制消息授权包：头部折叠后重新规范化，重复的Control和出现在折叠续行里的Control拒绝；cancel与supersedes必须带Cancel-Key，按RFC 8315的方案计算哈希后须出现在原文章的Cancel-Lock中，原文章没有Cancel-Lock时只允许调用方配置的管理员发送者；Path已含本站标识的文章视为回环丢弃。用折叠注入、错误密钥、无锁原文和合法取消验证。
