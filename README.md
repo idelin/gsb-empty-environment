@@ -1,0 +1,3 @@
+# NTLM MIC与AV_PAIR校验
+
+NTLM中继攻击者会剥离AUTHENTICATE消息的MIC或篡改AV_PAIR。为Go服务认证包实现AUTHENTICATE校验，供HTTP或SMB接入层调用：MsvAvFlags含MIC位或含MsvAvTimestamp时，MIC必须存在且等于以SessionBaseKey对三条消息算的HMAC-MD5（MIC字段清零），目标SPN须匹配本服务。用删MIC、改协商消息和合法握手验证。
