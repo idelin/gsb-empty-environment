@@ -6,3 +6,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_library(netsec netsec.cpp)
 target_include_directories(netsec PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 enable_testing()
+
+add_executable(pin_invariant_tests tests/pin_invariant_tests.cpp)
+target_link_libraries(pin_invariant_tests PRIVATE netsec)
+add_test(NAME pin_invariant_tests COMMAND pin_invariant_tests)
