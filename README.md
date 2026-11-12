@@ -1,0 +1,3 @@
+# UPnP描述地址与控制URL校验
+
+局域网内的攻击者可伪造SSDP响应，把LOCATION指向内部管理接口，或在设备描述里放绝对controlURL，让控制点替他发起SOAP请求。给TypeScript媒体控制点写供设备发现流程调用的描述获取包：LOCATION主机必须等于SSDP应答来源地址且仅限私有地址的http端口，重定向不得换主机，URLBase和controlURL解析后的主机仍须等于该主机；XML大小有上限且禁用外部实体，SOAPAction只接受设备描述里声明的服务类型。用换主机重定向、指向其他内网地址的绝对controlURL、超大XML和合法设备验证。
