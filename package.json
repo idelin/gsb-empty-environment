@@ -2,8 +2,13 @@
   "name": "domain-20261112-075",
   "private": true,
   "type": "module",
+  "main": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./src/*": "./src/*"
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test test/*.test.ts"
   },
   "engines": {
     "node": ">=23.9.0"
