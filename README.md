@@ -1,0 +1,3 @@
+# 媒体轨替换守卫
+
+攻击者在用户同意共享窗口后，用replaceTrack换成整屏或摄像头轨道。为TypeScript会议应用实现可导入的发送轨道守卫：同意记录绑定kind、deviceId和displaySurface，replaceTrack只许同一记录内轨道，设置变化或readyState异常时暂停发送。用伪造MediaStreamTrack测试窗口换整屏。
