@@ -1,1 +1,16 @@
-{"name": "netsec-20261111-0174", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "netsec-20261111-0174",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./url": "./src/url.ts",
+    "./scope": "./src/scope.ts",
+    "./planner": "./src/planner.ts",
+    "./lifecycle": "./src/lifecycle.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\""
+  }
+}
