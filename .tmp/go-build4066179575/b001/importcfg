@@ -1,0 +1,7 @@
+# import config
+packagefile os=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/run-1/gsb-single-ufzef5bo/build/6f/6fb1f06c0b95c9f1d677f4df4256a5d2268840dcb1f5ea69c5cb706aa88e382f-d
+packagefile reflect=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/run-1/gsb-single-ufzef5bo/build/ca/ca00f301db06e80a32b035a44fd541ff0deac4727ac9afd48eb8a6dc8954b2a1-d
+packagefile testing=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/run-1/gsb-single-ufzef5bo/build/6a/6a5d41c068ac18bb5bca00a9494a7e263583187a850efc1ab0b5619661377557-d
+packagefile testing/internal/testdeps=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/run-1/gsb-single-ufzef5bo/build/32/32b47d23decbad89fe43035fc9786a4a121bb93bc6b7c28ae89aec975476a3f1-d
+packagefile runtime=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/run-1/gsb-single-ufzef5bo/build/e0/e0d0243fe544bb80026ffda6e63c5ebf56cb7b1722fad8f9da590a71b4674ba8-d
+packagefile example.org/netsec/q0098/dad=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build4066179575/b117/_pkg_.a

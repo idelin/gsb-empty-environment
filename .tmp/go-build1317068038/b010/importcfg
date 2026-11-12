@@ -1,0 +1,18 @@
+# import config
+packagefile internal/abi=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b006/_pkg_.a
+packagefile internal/bytealg=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b011/_pkg_.a
+packagefile internal/byteorder=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b013/_pkg_.a
+packagefile internal/chacha8rand=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b014/_pkg_.a
+packagefile internal/coverage/rtcov=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b015/_pkg_.a
+packagefile internal/cpu=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b012/_pkg_.a
+packagefile internal/goarch=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b007/_pkg_.a
+packagefile internal/godebugs=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b016/_pkg_.a
+packagefile internal/goexperiment=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b017/_pkg_.a
+packagefile internal/goos=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b018/_pkg_.a
+packagefile internal/profilerecord=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b019/_pkg_.a
+packagefile internal/runtime/atomic=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b020/_pkg_.a
+packagefile internal/runtime/exithook=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b021/_pkg_.a
+packagefile internal/runtime/maps=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b022/_pkg_.a
+packagefile internal/runtime/math=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b026/_pkg_.a
+packagefile internal/runtime/sys=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b027/_pkg_.a
+packagefile internal/stringslite=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b028/_pkg_.a

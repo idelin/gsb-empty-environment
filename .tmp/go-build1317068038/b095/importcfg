@@ -1,0 +1,8 @@
+# import config
+packagefile crypto/internal/fips140/drbg=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b090/_pkg_.a
+packagefile crypto/internal/fips140/sha256=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b082/_pkg_.a
+packagefile crypto/internal/fips140/sha3=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b086/_pkg_.a
+packagefile crypto/internal/fips140/sha512=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b088/_pkg_.a
+packagefile hash=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b073/_pkg_.a
+packagefile internal/godebug=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b043/_pkg_.a
+packagefile io=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b032/_pkg_.a

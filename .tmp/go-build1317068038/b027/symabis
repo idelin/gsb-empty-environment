@@ -1,0 +1,3 @@
+def internal/runtime/sys.EnableDIT ABI0
+def internal/runtime/sys.DITEnabled ABI0
+def internal/runtime/sys.DisableDIT ABI0

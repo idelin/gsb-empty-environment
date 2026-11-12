@@ -1,0 +1,6 @@
+# import config
+packagefile errors=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b004/_pkg_.a
+packagefile internal/byteorder=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b013/_pkg_.a
+packagefile internal/chacha8rand=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b014/_pkg_.a
+packagefile math=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b052/_pkg_.a
+packagefile math/bits=/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0098/workspace/.tmp/go-build1317068038/b041/_pkg_.a

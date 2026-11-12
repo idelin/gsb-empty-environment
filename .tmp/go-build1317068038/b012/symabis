@@ -1,0 +1,3 @@
+def internal/cpu.getisar0 ABI0
+def internal/cpu.getpfr0 ABI0
+def internal/cpu.getMIDR ABI0

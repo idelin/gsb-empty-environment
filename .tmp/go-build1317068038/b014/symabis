@@ -1,0 +1,5 @@
+def internal/chacha8rand.block ABIInternal
+ref internal/chacha8rand.chachaConst ABI0
+ref internal/chacha8rand.chachaIncRot ABI0
+ref internal/chacha8rand.chachaConst ABI0
+ref internal/chacha8rand.chachaIncRot ABI0

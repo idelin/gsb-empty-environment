@@ -1,0 +1,11 @@
+def internal/bytealg.Compare ABIInternal
+def runtime.cmpstring ABIInternal
+def internal/bytealg.Count ABI0
+def internal/bytealg.CountString ABI0
+def runtime.memequal_varlen ABIInternal
+ref runtime.memequal ABIInternal
+def runtime.memequal ABIInternal
+def internal/bytealg.Index ABI0
+def internal/bytealg.IndexString ABI0
+def internal/bytealg.IndexByte ABI0
+def internal/bytealg.IndexByteString ABI0
