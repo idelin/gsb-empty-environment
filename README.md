@@ -1,3 +1,15 @@
 # Shared Storage选择预算
 
 追踪方想用 Shared Storage 的 selectURL 在多个 URL 间反复选择，逐步泄露跨站标识。为TypeScript浏览器宿主写可导入的选择预算组件：从 n 个候选里选一个耗 log2(n) 比特，n 须在2至8之间，否则抛错；每个（顶层站点，worklet 源）24 小时滑动窗口内最多12比特；余额不足时返回第0个候选且不扣费；窗口按毫秒精确到期，并发调用按到达顺序结算。测边界时刻、n 非法、浮点误差和并发（隐私泄露预算）。
+
+## 用法
+
+```ts
+import { SelectionBudget } from "./selection-budget.ts";
+
+const budget = new SelectionBudget(); // 可注入 { windowMs, maxBits, now }
+const index = budget.select(topLevelSite, workletOrigin, urls.length);
+// 余额充足：返回 [0, n) 内的下标并扣 log2(n) 比特；不足：返回 0 且不扣费。
+```
+
+记账用候选数乘积与 `2^12` 比较（`sum(log2(ni)) <= 12` ⟺ `product(ni) <= 4096`），避免浮点累加误差。测试：`npm test`。
