@@ -1,0 +1,3 @@
+# MySQL本地文件请求应答绑定
+
+恶意MySQL服务器可在查询应答里发0xFB本地文件请求，让客户端上传本机文件。给Go驱动写供应答读取循环调用的准入包：仅当客户端刚发出LOAD DATA LOCAL语句且请求的文件名与语句一致时才读取，其余0xFB拒绝并回空包；AuthSwitchRequest(0xFE)要求mysql_clear_password时，仅在调用方开启且通道为TLS时响应。用中途0xFB、改路径和明文切换验证。
