@@ -1,0 +1,3 @@
+# RADIUS应答认证符校验
+
+RADIUS客户端在不受保护的网络上向服务器发Access-Request，攻击者可借可控的User-Name让代理插入Proxy-State，再伪造Access-Accept。给Go网络接入服务写供请求发送与应答校验调用的RADIUS报文包，按RFC 2869和RFC 3579的算法：每个Access-Request把Message-Authenticator放在属性首位，应答须同时通过Response Authenticator和以请求认证符计算的Message-Authenticator检查，缺失、位置错误或重复都拒绝；应答里的Proxy-State须逐字节回显我方发出的值。用无Message-Authenticator的应答、附加Proxy-State、改动ID和合法应答验证。
