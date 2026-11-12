@@ -1,0 +1,3 @@
+# SAE防阻塞令牌
+
+WPA3-SAE接入点遇到洪泛commit会耗尽曲线计算，攻击者还可反射接入点自己的commit。为Go接入点控制面实现前置过滤包，供Authentication帧处理调用：未完成事务超阈值后只回anti-clogging token（轮换密钥对站点MAC和群编号做HMAC）；scalar在2到r-1之间，element是非无穷曲线点且不等于己方值。用洪泛、重放token、反射和合法握手验证。
