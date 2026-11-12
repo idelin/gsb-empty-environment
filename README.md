@@ -1,0 +1,3 @@
+# Trusted Types策略合成
+
+攻击者可控字符串经多个Trusted Types策略转手后可能被当成可信HTML。为TypeScript前端实现可导入的策略合成库：策略带名称和输出品牌，sink只收许可来源策略创建的值；TrustedHTML字符串化后不得重铸品牌，default策略不能扩大许可。用字符串拼接、重复策略名和default回退测试，非许可值不得到达模拟innerHTML。
