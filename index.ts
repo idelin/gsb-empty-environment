@@ -1,1 +1,31 @@
-export {};
+export {
+  DISCRIMINATOR,
+  MAX_POLYMORPHIC_DEPTH,
+  PolymorphicBase,
+  PolymorphicDecodeError,
+  PolymorphicRegistrationError,
+  arrayField,
+  booleanField,
+  createPolymorphicBase,
+  literalField,
+  nullableField,
+  numberField,
+  objectField,
+  optionalField,
+  parseStrictJson,
+  polymorphic,
+  strictJsonParse,
+  stringField,
+  f,
+} from "./src/polymorphic.ts";
+
+export type {
+  DecodeContext,
+  DecodeErrorCode,
+  Decoder,
+  FieldSpec,
+  FieldValue,
+  FieldValues,
+  RegistrationErrorCode,
+  VariantDefinition,
+} from "./src/polymorphic.ts";
