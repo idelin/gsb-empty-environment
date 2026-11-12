@@ -1,0 +1,3 @@
+# CAA issuewild查找冲突
+
+签发服务查询CAA时，通配名、父域层级和CNAME会改变授权结果，攻击者可借子域记录绕开上级限制。为Go签发前检查包实现RFC 8659查找，供订单授权调用：沿CNAME向上取首个非空记录集，通配名优先issuewild并回退issue，空issue值禁止签发，未识别的critical标记拒绝。用多层域名、CNAME链、issuewild与issue冲突验证。
