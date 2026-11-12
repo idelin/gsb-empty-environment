@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test",
+    "verify:enumeration": "cd tools/enumerate && go run ."
   },
   "engines": {
     "node": ">=23.9.0"
