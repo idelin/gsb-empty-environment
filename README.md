@@ -1,0 +1,3 @@
+# CORP同站判定阻断
+
+攻击者页面想读取受CORP保护的跨源图片，并借同注册域下的不受信子域绕过same-site判断。为TypeScript网络栈实现可导入的CORP判定包：same-site按公共后缀表的可注册域比较且scheme一致，same-origin精确比较，非法头值视为无策略。用github.io式私有后缀、http到https和异端口测试，被阻断响应体不得交付。
