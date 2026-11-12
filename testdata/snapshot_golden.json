@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "version": 1,
+      "input": {
+        "action": "read",
+        "resource": 40,
+        "identity_policy": {
+          "name": "identity",
+          "statements": [
+            {
+              "name": "read-allow",
+              "effect": "allow",
+              "actions": [
+                "read"
+              ],
+              "resources": [
+                {
+                  "low": 1,
+                  "high": 100
+                }
+              ]
+            }
+          ]
+        },
+        "resource_policy": {
+          "name": "resource",
+          "statements": null
+        },
+        "layers": [
+          {
+            "node_id": "root",
+            "effect": "allow",
+            "resources": [
+              {
+                "low": 0,
+                "high": 1000
+              }
+            ]
+          },
+          {
+            "node_id": "ou-a",
+            "effect": "allow",
+            "resources": [
+              {
+                "low": 10,
+                "high": 80
+              }
+            ]
+          },
+          {
+            "node_id": "acct-1",
+            "effect": "allow",
+            "resources": [
+              {
+                "low": 20,
+                "high": 60
+              }
+            ]
+          }
+        ]
+      },
+      "decision": {
+        "action": "read",
+        "resource": 40,
+        "allowed": true,
+        "policy_allow": [
+          {
+            "low": 1,
+            "high": 100
+          }
+        ],
+        "effective_allow": [
+          {
+            "low": 20,
+            "high": 60
+          }
+        ],
+        "allow_contributors": [
+          "identity/read-allow"
+        ],
+        "layers": [
+          {
+            "depth": 0,
+            "node_id": "root",
+            "effect": "allow",
+            "boundary": [
+              {
+                "low": 0,
+                "high": 1000
+              }
+            ],
+            "allowed_after": [
+              {
+                "low": 1,
+                "high": 100
+              }
+            ],
+            "point_inside": true
+          },
+          {
+            "depth": 1,
+            "node_id": "ou-a",
+            "effect": "allow",
+            "boundary": [
+              {
+                "low": 10,
+                "high": 80
+              }
+            ],
+            "allowed_after": [
+              {
+                "low": 10,
+                "high": 80
+              }
+            ],
+            "point_inside": true
+          },
+          {
+            "depth": 2,
+            "node_id": "acct-1",
+            "effect": "allow",
+            "boundary": [
+              {
+                "low": 20,
+                "high": 60
+              }
+            ],
+            "allowed_after": [
+              {
+                "low": 20,
+                "high": 60
+              }
+            ],
+            "point_inside": true
+          }
+        ],
+        "earliest_deny": null
+      }
+    },
+    {
+      "version": 1,
+      "input": {
+        "action": "read",
+        "resource": 5,
+        "identity_policy": {
+          "name": "identity",
+          "statements": [
+            {
+              "name": "read-allow",
+              "effect": "allow",
+              "actions": [
+                "read"
+              ],
+              "resources": [
+                {
+                  "low": 1,
+                  "high": 100
+                }
+              ]
+            }
+          ]
+        },
+        "resource_policy": {
+          "name": "resource",
+          "statements": null
+        },
+        "layers": [
+          {
+            "node_id": "root",
+            "effect": "allow",
+            "resources": [
+              {
+                "low": 0,
+                "high": 1000
+              }
+            ]
+          },
+          {
+            "node_id": "ou-empty",
+            "effect": "allow",
+            "resources": []
+          },
+          {
+            "node_id": "acct-1",
+            "effect": "allow",
+            "resources": [
+              {
+                "low": 0,
+                "high": 1000
+              }
+            ]
+          }
+        ]
+      },
+      "decision": {
+        "action": "read",
+        "resource": 5,
+        "allowed": false,
+        "policy_allow": [
+          {
+            "low": 1,
+            "high": 100
+          }
+        ],
+        "effective_allow": [],
+        "allow_contributors": [
+          "identity/read-allow"
+        ],
+        "layers": [
+          {
+            "depth": 0,
+            "node_id": "root",
+            "effect": "allow",
+            "boundary": [
+              {
+                "low": 0,
+                "high": 1000
+              }
+            ],
+            "allowed_after": [
+              {
+                "low": 1,
+                "high": 100
+              }
+            ],
+            "point_inside": true
+          },
+          {
+            "depth": 1,
+            "node_id": "ou-empty",
+            "effect": "allow",
+            "boundary": [],
+            "allowed_after": [],
+            "point_inside": false
+          },
+          {
+            "depth": 2,
+            "node_id": "acct-1",
+            "effect": "allow",
+            "boundary": [
+              {
+                "low": 0,
+                "high": 1000
+              }
+            ],
+            "allowed_after": [],
+            "point_inside": false
+          }
+        ],
+        "earliest_deny": {
+          "reason": "no_matching_allow",
+          "source": "ou-empty",
+          "depth": 1,
+          "effect": "allow",
+          "resource": 5,
+          "action": "read"
+        }
+      }
+    }
+  ]
+}
