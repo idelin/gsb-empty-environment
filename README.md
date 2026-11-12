@@ -1,0 +1,3 @@
+# Storage Access手势绑定
+
+攻击者的跨站iframe想不经用户手势拿到第一方存储。为TypeScript浏览器宿主实现可导入的Storage Access授权组件：requestStorageAccess须由嵌入文档的瞬时用户激活触发，授权键为（嵌入站点，顶层站点）；sandbox缺对应令牌时拒绝；顶层换站即失效。用激活过期测试。
