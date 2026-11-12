@@ -1,0 +1,3 @@
+# PROFINET设备名劫持防护
+
+攻击者在PROFINET网段广播DCP Set改设备站名，或在Identify应答里抢答同名。给Go控制器写供二层收包调用的DCP守卫：EtherType 0x8892，FrameID 0xFEFD的Set只接受调用方登记的工程站MAC；站名被两个不同MAC应答时不得连接并上报冲突；应答的VendorID与DeviceID须与工程配置一致；块长度越界、选项重复的帧丢弃。用改站名、抢答和畸形块验证。
