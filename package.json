@@ -1,1 +1,17 @@
-{"name": "netnew-20261112-0529", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "netnew-20261112-0529",
+  "private": true,
+  "type": "module",
+  "description": "FedCM 身份提供方端点请求校验包（accounts / client_metadata / id_assertion）",
+  "main": "index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test",
+    "start:example": "node --experimental-strip-types examples/server.ts"
+  }
+}
