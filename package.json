@@ -1,1 +1,1 @@
-{"name": "netsec-20261111-0191", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{"name": "netsec-20261111-0191", "private": true, "type": "module", "exports": "./index.ts", "scripts": {"test": "node --experimental-strip-types --test test/url.test.ts test/plan.test.ts test/request.test.ts test/submit.test.ts test/dom.test.ts test/integration.test.ts", "typecheck": "tsc --noEmit"}, "devDependencies": {"@types/node": "^22.9.0", "typescript": "^5.7.0"}}
