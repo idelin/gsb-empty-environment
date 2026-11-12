@@ -1,0 +1,3 @@
+# CTAPHID通道抢占防护
+
+攻击者在FIDO认证器交互中途发INIT抢占通道，或乱序续包扰乱组装。给Go固件写供HID回调调用的CTAPHID组装包：广播通道0xFFFFFFFF只收8字节随机数的INIT；消息未完成时其他通道回ERR_CHANNEL_BUSY，续包序号错回ERR_INVALID_SEQ，500ms超时回ERR_MSG_TIMEOUT并丢弃；BCNT超过7609拒绝。用抢占INIT、乱序续包和超时验证。
