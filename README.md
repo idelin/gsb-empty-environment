@@ -1,3 +1,36 @@
 # TCC责任进程归属与授权匹配
 
-macOS 的隐私授权按责任进程归属，辅助程序或解释器启动的子进程算在启动它的应用头上，攻击者借带授权的应用启动恶意子进程读取相册，或用标识相同、团队不同的二进制冒领授权。为 Go 安全代理写供授权决策模拟调用的责任判定包：输入进程树（启动关系、是否声明放弃责任、签名标识与团队 ID、是否为应用包内辅助程序）和授权表（服务、客户端标识加团队 ID、允许与否）；沿启动链找到责任进程，声明放弃责任的子进程自己承担；授权表命中须标识与团队 ID 同时一致；责任进程被调试或被注入未签名动态库时不继承授权；无签名进程不得因父进程授权而放行。用放弃责任、同标识异团队、注入动态库和包内辅助程序验证。
+`netsec` 提供纯内存的 macOS 隐私授权模拟。它根据进程启动关系解析责任进程，再按
+责任进程的签名标识和团队 ID 查询授权表，适合单元测试、策略回归和授权决策演练。
+
+```go
+processes := []netsec.Process{
+    {PID: 100, SigningID: "com.example.photoapp", TeamID: "TEAMAAAAAA"},
+    {
+        PID:             200,
+        ParentPID:       100,
+        SigningID:       "com.example.photoapp.helper",
+        TeamID:          "TEAMAAAAAA",
+        AppBundleHelper: true,
+    },
+}
+table := []netsec.Authorization{
+    {Service: "kTCCServicePhotos", ClientID: "com.example.photoapp", TeamID: "TEAMAAAAAA", Allowed: true},
+}
+
+decision := netsec.Check(processes, table, 200, "kTCCServicePhotos")
+if decision.Allowed {
+    // 辅助程序使用应用的责任进程身份获得相册授权。
+}
+```
+
+判定顺序：
+
+1. 从请求进程沿 `ParentPID` 向上查找。`DisclaimsResponsibility` 为真的进程自行承担
+   责任，不再继承祖先授权。
+2. 应用包内辅助程序必须归属到其应用祖先；没有可归属应用时拒绝。
+3. 请求进程未签名，或责任链上存在调试器/未签名动态库时拒绝。
+4. 仅当服务、责任进程签名标识、团队 ID 三项完全一致且条目允许时放行；精确匹配的
+   拒绝条目优先，默认拒绝。
+
+未命中的授权、同标识异团队、无签名进程以及责任链被调试或注入的场景都有回归测试。
