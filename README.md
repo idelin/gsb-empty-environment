@@ -1,0 +1,3 @@
+# PKCS#11会话对象导出禁止
+
+PKCS#11代理要保证不可导出的密钥，包括会话对象，不能经包装、复制或属性读取泄漏。为Go HSM网关实现调用拦截包，供代理转发前调用：CKA_SENSITIVE为真时GetAttributeValue不返回CKA_VALUE；CKA_EXTRACTABLE为假的对象不得被C_WrapKey导出；CopyObject与SetAttributeValue不能把它由假改真。用会话对象、复制、包装验证。
