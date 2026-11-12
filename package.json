@@ -1,1 +1,14 @@
-{"name": "netsec-20261111-0173", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "partitioned-broadcast-router",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Partition-aware broadcast channel router for browser test hosts",
+  "main": "index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"test/**/*.test.ts\""
+  }
+}
