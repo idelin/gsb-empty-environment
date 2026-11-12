@@ -1,3 +1,75 @@
-# JAR请求对象嵌套与覆盖
+# RFC 9101 Request Object Parser
 
-授权请求用 JWT 封装（RFC 9101）后，攻击者可以把 request 参数嵌进请求对象自身、让 URL 查询参数覆盖已签名内容，或套一层未签名的外壳。为Go授权服务器写供授权端点调用的请求对象解析包：request 的值须为 JWS，或外层 JWE 内层 JWS（先解密再验签），JWE 嵌套超过一层拒绝；请求对象的声明里出现 request 或 request_uri 一律拒绝；请求对象有效时，URL 查询里除 client_id 与 request（或 request_uri）外的授权参数全部忽略，不得覆盖对象内容；client_id 在查询与对象里必须相同，iss 等于该 client_id，aud 包含本服务器颁发者标识；alg 为 none 或不在该客户端登记的算法内拒绝。用嵌套 request、查询参数覆盖、client_id 不一致、alg=none 和双层 JWE 验证。
+This module implements a Go request-object parser for an OAuth 2.0 /
+OpenID Connect authorization endpoint. It treats the outer query as
+untrusted and returns authorization parameters only from the verified JOSE
+object.
+
+## Security policy
+
+- `request` must be a compact JWS, or a compact JWE whose plaintext is a
+  compact JWS. A JWE inside a JWE is rejected before any second decryption.
+- A verified request object that contains a top-level `request` or
+  `request_uri` claim is rejected.
+- Only `client_id`, `request`, and `request_uri` are read from the outer
+  query. Every other query authorization parameter is ignored, so a query
+  value can never override a signed claim.
+- The query `client_id` must be present exactly once and must equal the
+  request object's `client_id`.
+- `iss` must equal that same client id.
+- `aud` must be a string or array containing the configured issuer identifier.
+- `alg=none` is always rejected. The JWS `alg` must be listed in the
+  client's `RequestObjectSigningAlgorithms`; an empty allow-list rejects every
+  algorithm.
+- Duplicate JSON member names are rejected in headers and claims. Duplicate
+  query parameters for `client_id`, `request`, and `request_uri` are rejected.
+- Optional `exp` and `nbf` claims are checked against the configured clock and
+  leeway.
+
+Supported JWS algorithms: `HS256`, `HS384`, `HS512`, `RS256`, `RS384`,
+`RS512`, `PS256`, `PS384`, `PS512`, `ES256`, `ES384`, `ES512`, and `EdDSA`.
+
+Supported JWE key-management algorithms: `RSA-OAEP`, `RSA-OAEP-256`, `dir`,
+`A128KW`, `A192KW`, and `A256KW`.
+
+Supported JWE content-encryption algorithms: `A128GCM`, `A192GCM`,
+`A256GCM`, `A128CBC-HS256`, and `A256CBC-HS512`.
+
+## Usage
+
+```go
+parser, err := netsec.NewParser(netsec.Config{
+	Issuer: "https://as.example",
+	Clients: netsec.StaticClients{
+		"client-a": {
+			ClientID:                       "client-a",
+			RequestObjectSigningAlgorithms: []string{"RS256"},
+			RequestObjectSigningKeys:       []any{clientAPublicKey},
+		},
+	},
+	DecryptionKeys: []any{authorizationServerPrivateKey},
+})
+if err != nil {
+	return err
+}
+
+object, err := parser.ParseAuthorizationRequest(r.Context(), r)
+if err != nil {
+	// Map the sentinel errors in errors.go to the appropriate OAuth error.
+	return err
+}
+
+// These parameters come from the verified JOSE object, never from the query.
+scope := object.EffectiveParameters().Get("scope")
+```
+
+For `request_uri`, configure `Config.RequestURIFetcher`. The included
+`HTTPRequestURIFetcher` is HTTPS-only, disables redirects, and limits the
+response body. Applications with additional SSRF controls should provide their
+own implementation.
+
+Run the test suite with:
+
+```sh
+go test ./...
+```
