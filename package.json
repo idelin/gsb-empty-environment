@@ -1,0 +1,1 @@
+{"name": "netnew-20261112-0356", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
