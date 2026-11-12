@@ -1,0 +1,3 @@
+# BLE配对方法降级拒绝
+
+攻击者在BLE配对中报NoInputNoOutput迫使Just Works，或清掉SC位走传统配对。给Go主机栈写供SMP配对请求调用的方法选择包：按IO能力、OOB和AuthReq（MITM位0x04、SC位0x08）推导方法；调用方要求的安全等级高于推导结果时回Authentication Requirements；密钥长度低于下限拒绝。用IO能力降级、清SC位和短密钥验证。
