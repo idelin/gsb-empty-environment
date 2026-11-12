@@ -1,0 +1,3 @@
+# CI联邦主体仓库匹配
+
+仓库改名或删除重建后，攻击者可注册同名仓库换取云角色。为Go凭据换发服务实现可导入的联邦主体匹配包：调用方已验签的claims中，repository_id与repository_owner_id须等于绑定记录；sub通配只匹配完整段，job_workflow_ref须在许可表，pull_request不得取发布角色。用同名新仓库和fork请求测试。
