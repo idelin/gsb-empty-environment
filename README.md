@@ -1,0 +1,3 @@
+# postMessage发送目标强制
+
+攻击者可在页面向iframe发消息前导航它，窃取随postMessage发出的令牌。为TypeScript前端实现可导入的消息发送组件：targetOrigin须为显式精确来源，禁用*；目标来源为opaque时不发敏感数据，改为先握手再传MessagePort，握手含随机挑战且只接受一次。用导航换站、无来源sandbox iframe和重复握手样例测试。
