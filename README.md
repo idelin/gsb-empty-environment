@@ -1,0 +1,3 @@
+# NTS扩展字段与Cookie一次性
+
+NTP服务器应用NTS时，攻击者可重放旧请求或篡改扩展字段拨回时钟。为Go时间服务实现扩展字段校验包，供UDP请求处理调用：Unique Identifier至少32字节且响应原样回显，NTS Cookie只用一次并随响应补发，NTS Authenticator覆盖完整报文头及其前所有扩展，认证失败不回复时间。用重放请求、复用Cookie、改UID和合法请求验证。
