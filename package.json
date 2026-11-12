@@ -1,1 +1,19 @@
-{"name": "netnew-20261112-0356", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "nostr-nip01-validate",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "NIP-01 event validation and replaceable-event arbitration for a Nostr relay ingestion pipeline.",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.6"
+  },
+  "license": "MIT"
+}
