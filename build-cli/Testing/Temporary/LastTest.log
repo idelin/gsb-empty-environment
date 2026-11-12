@@ -1,0 +1,20 @@
+Start testing: Nov 12 23:30 CST
+----------------------------------------------------------
+1/1 Testing: netsec_padding
+1/1 Test: netsec_padding
+Command: "/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0300/workspace/build-cli/test_netsec"
+Directory: /Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0300/workspace/build-cli
+"netsec_padding" start time: Nov 12 23:30 CST
+Output:
+----------------------------------------------------------
+[ SKIP ] timing smoke test (set NETSEC_TIMING_TEST=1)
+89546 checks, 0 failures
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"netsec_padding" end time: Nov 12 23:30 CST
+"netsec_padding" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 12 23:30 CST
