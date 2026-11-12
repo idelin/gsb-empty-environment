@@ -1,0 +1,3 @@
+# SLSA构建器身份比对
+
+提交者可控的构建参数能让产物证明冒用受信构建器。为Go准入服务实现可导入的SLSA v1 provenance比对包：builder.id须精确命中受信表且buildType一致，externalParameters只许登记键，出现internalParameters即拒，依赖摘要须含声明源提交。用多余参数、同前缀builder.id和缺摘要样例测试。
