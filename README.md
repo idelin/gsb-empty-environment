@@ -1,0 +1,3 @@
+# 镜像层与证明主体匹配
+
+攻击者复用其他镜像的attestation，或把subject写成层或配置摘要。为Go准入控制器实现可导入的OCI镜像核对包：in-toto subject须含所部署manifest的sha256；config.rootfs.diff_ids须与逐层解压后摘要一一对应，layers压缩摘要同样核对。用换subject、少层、层序互换和伪造gzip样例测试。
