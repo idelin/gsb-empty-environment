@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test test/virtual-list.test.ts test/extractor.test.ts"
   },
   "engines": {
     "node": ">=23.9.0"
