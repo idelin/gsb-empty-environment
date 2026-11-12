@@ -1,0 +1,3 @@
+# BACnet写属性优先级准入
+
+攻击者经BACnet/IP网关以高优先级写Present_Value，或发DeviceCommunicationControl、ReinitializeDevice停设备。给Go网关写供转发循环调用的准入包：只放行调用方登记的对象与属性，优先级须在许可区间（1、2级保留），控制类服务默认拒绝，WritePropertyMultiple任一项违规整条拒绝。用越权优先级、批量夹带验证。
