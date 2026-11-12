@@ -1,0 +1,3 @@
+# OPC UA用户令牌策略校验
+
+攻击者在无加密通道提交OPC UA口令，或让policyId指向未声明策略。给Go服务器写供ActivateSession调用的准入包：policyId须在端点的UserTokenPolicies内；口令令牌的加密算法同策略securityPolicyUri（空取通道策略），均为None即拒绝；证书令牌签名覆盖服务器证书与nonce且不复用。用明文口令、假policyId、nonce复用验证。
