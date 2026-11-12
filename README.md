@@ -1,0 +1,3 @@
+# Import Map注入准入
+
+攻击者经用户内容注入第二份import map，把模块说明符重映射到自己的地址。为TypeScript页面渲染服务实现可导入的import map准入包：模块加载前只许一份map，imports与scopes目标须在许可来源内，scopes按最长前缀匹配，尾斜杠规范化后不得越界；重复键与__proto__拒绝。用scope覆盖、尾斜杠逃逸和第二份map测试。
