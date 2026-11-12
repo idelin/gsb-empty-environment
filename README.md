@@ -1,0 +1,3 @@
+# MQTT会话继承授权
+
+MQTT 5 Broker在Clean Start为0时恢复旧会话，攻击者用别人的ClientID配合自己的凭据连接，想继承订阅和排队消息。给Go Broker写供CONNECT处理调用的会话恢复包：会话绑定首次认证主体，主体不同时丢弃旧会话并返回Session Present为0；同主体接管会通知旧连接Session Taken Over并让其在途发布失效；恢复后每个订阅和排队的QoS 1消息投递前按当前ACL重新授权，被撤销的直接丢弃。用主体不一致、撤权后重连和接管竞态验证。
