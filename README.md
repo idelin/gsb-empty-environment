@@ -1,0 +1,3 @@
+# Clipboard消毒往返稳定
+
+攻击者构造的剪贴板HTML清理后再解析，会变成可执行结构。为TypeScript编辑器实现可导入的粘贴消毒组件，输入已解析节点树：只留白名单元素与属性，URL仅允许http、https、mailto；遇svg、math命名空间切换、foreignObject或style一律移除，序列化再解析须得同一棵树，否则整段丢弃。用命名空间混淆和往返不稳定样例测试。
