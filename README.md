@@ -1,0 +1,3 @@
+# WS-Federation回复地址校验
+
+WS-Federation请求里的wreply可被攻击者改成自己的站点，令牌就会送到第三方。为TypeScript身份提供方实现回复地址校验包，供wsignin1.0请求处理调用：wreply须与wtrealm注册的回复列表在协议、主机、端口上精确匹配并受路径前缀约束，拒绝userinfo、反斜杠、编码路径穿越；令牌受众取注册值。用开放重定向样例和合法回复验证。
