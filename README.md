@@ -1,0 +1,3 @@
+# MLS群epoch密钥推进
+
+被移除的群成员保留旧epoch密钥并重放旧Commit。为Go群消息服务实现MLS式epoch推进包，供Commit处理调用：epoch_secret由init_secret与commit_secret经HKDF-SHA256提取，GroupContext哈希绑定epoch、树哈希和确认转录，epoch须加一，被移除成员的叶不贡献commit_secret。用旧epoch重放与分叉Commit验证。
