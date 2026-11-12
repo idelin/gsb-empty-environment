@@ -1,1 +1,20 @@
-{"name": "netnew-20261112-0535", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "ws-subprotocol-negotiation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "RFC 6455 §4.2 Sec-WebSocket-Protocol 握手协商与消息类型门控（零运行时依赖）",
+  "exports": {
+    ".": "./index.ts",
+    "./negotiate": "./src/negotiate.ts",
+    "./gate": "./src/gate.ts",
+    "./server": "./src/server.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test tests/negotiate.test.ts tests/gate.test.ts tests/integration.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "engines": {
+    "node": ">=22.6"
+  }
+}
