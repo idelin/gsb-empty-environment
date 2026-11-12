@@ -1,1 +1,17 @@
-{"name": "netnew-20261112-0340", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "netnew-20261112-0340",
+  "version": "1.0.0",
+  "description": "Signed, tenant-bound SSE Last-Event-ID continuation helpers",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "import": "./index.ts"
+    }
+  },
+  "types": "./index.ts",
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
