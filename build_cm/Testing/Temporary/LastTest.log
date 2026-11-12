@@ -1,0 +1,19 @@
+Start testing: Nov 12 22:13 CST
+----------------------------------------------------------
+1/1 Testing: spec_index
+1/1 Test: spec_index
+Command: "/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0158/workspace/build_cm/test_spec_index"
+Directory: /Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0158/workspace/build_cm
+"spec_index" start time: Nov 12 22:13 CST
+Output:
+----------------------------------------------------------
+ALL TESTS PASSED (1060 assertions)
+<end of output>
+Test time =   0.37 sec
+----------------------------------------------------------
+Test Passed.
+"spec_index" end time: Nov 12 22:13 CST
+"spec_index" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 12 22:13 CST
