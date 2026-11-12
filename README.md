@@ -1,0 +1,3 @@
+# Cosign证书时间落点
+
+攻击者持过期Fulcio证书并想伪造签名时间。为Go验证服务实现可导入的Cosign bundle时间校验包：SET由日志公钥验签，覆盖body、integratedTime、logIndex、logID的规范JSON；integratedTime须落在证书有效期内，且不晚于当前时间加允许偏差。用过期证书、篡改时间和换logID的bundle测试。
