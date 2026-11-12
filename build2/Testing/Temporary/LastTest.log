@@ -1,0 +1,19 @@
+Start testing: Nov 13 00:30 CST
+----------------------------------------------------------
+1/1 Testing: netsec_rights
+1/1 Test: netsec_rights
+Command: "/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0461/workspace/build2/test_netsec"
+Directory: /Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0461/workspace/build2
+"netsec_rights" start time: Nov 13 00:30 CST
+Output:
+----------------------------------------------------------
+41 checks, 0 failures
+<end of output>
+Test time =   0.30 sec
+----------------------------------------------------------
+Test Passed.
+"netsec_rights" end time: Nov 13 00:30 CST
+"netsec_rights" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 13 00:30 CST
