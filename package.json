@@ -1,1 +1,18 @@
-{"name": "netnew-20261112-0033", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "netnew-20261112-0033",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Derive effective iframe sandbox flags, origins, and popup inheritance",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    }
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
