@@ -1,0 +1,3 @@
+# RTSP会话与传输目标绑定
+
+RTSP媒体服务器在SETUP里接受Transport头，攻击者可把destination指向受害者地址做反射，或猜测Session编号去控制他人的播放。给Go服务器写供会话管理调用的RTSP状态包：Session为128位随机值，绑定认证主体且只能由创建者使用，其他主体的PLAY和TEARDOWN返回454；destination与client_port只能等于请求来源地址和偶数起始端口对；CSeq在同一会话内必须递增。用destination改写、跨主体使用、CSeq倒退和合法点播验证没有媒体包发往他人地址。
