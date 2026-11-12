@@ -1,0 +1,40 @@
+Start testing: Nov 12 23:29 CST
+----------------------------------------------------------
+1/1 Testing: netsec_test
+1/1 Test: netsec_test
+Command: "/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0076/workspace/build-make/netsec_test"
+Directory: /Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0076/workspace/build-make
+"netsec_test" start time: Nov 12 23:29 CST
+Output:
+----------------------------------------------------------
+[ PASS ] legal write-register buffer
+[ PASS ] legal jump chain to external range
+[ PASS ] zero length packet rejected
+[ PASS ] payload out of bounds rejected
+[ PASS ] truncated header rejected
+[ PASS ] privileged register rejected
+[ PASS ] privileged register reports address
+[ PASS ] circular chain rejected
+[ PASS ] self loop rejected
+[ PASS ] packet budget exceeded rejected
+[ PASS ] jump depth budget rejected
+[ PASS ] jump out of registered range rejected
+[ PASS ] misaligned jump target rejected
+[ PASS ] unknown opcode rejected
+[ PASS ] jump into packet body rejected
+[ PASS ] empty buffer rejected
+[ PASS ] odd write payload rejected
+[ PASS ] unaligned buffer base rejected
+[ PASS ] zero size range registration refused
+[ PASS ] jump without valid range rejected
+
+All submission buffer validator tests passed.
+<end of output>
+Test time =   0.26 sec
+----------------------------------------------------------
+Test Passed.
+"netsec_test" end time: Nov 12 23:29 CST
+"netsec_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 12 23:29 CST

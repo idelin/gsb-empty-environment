@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/clang++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/netsec_test.dir/tests/netsec_test.cpp.o -o netsec_test  libnetsec.a
