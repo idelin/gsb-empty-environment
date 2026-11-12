@@ -1,0 +1,3 @@
+# Helm钩子权限收缩
+
+不受信的Helm chart可借hook资源在安装前取得集群级权限。为Go部署服务实现可导入的hook收缩包，输入渲染后的对象列表：helm.sh/hook注解按逗号拆分去空白，hook限release命名空间，禁ClusterRole、ClusterRoleBinding、hostPath和特权容器，账户须已登记。用多值注解和跨命名空间样例测试。
