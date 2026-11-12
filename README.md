@@ -1,0 +1,3 @@
+# Payment Handler来源绑定
+
+攻击者想为他人的支付方式URL注册自己的Payment Handler。为TypeScript浏览器宿主实现可导入的注册校验包：支付方式清单须由方式URL所属源直接获取，不跟随跨源重定向；handler来源须被default_applications或supported_origins列出；清单撤销后handler不再响应。用跨源重定向、缺项和撤销测试。
