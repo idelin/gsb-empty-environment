@@ -1,0 +1,3 @@
+# 签名属性必需集校验
+
+SignedData里，攻击者可追加未签名内容，或让缺少message-digest的签名属性被接受。为Go文件验签包实现RFC 5652签名者校验，供归档导入调用：signedAttrs存在时须含content-type与message-digest各一次，验签输入把隐式标签A0换成SET标签31后重新DER编码，content-type须与封装内容类型一致。用缺属性、重复属性和改摘要验证。
