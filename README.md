@@ -1,0 +1,3 @@
+# SCIM补丁属性越权
+
+租户管理员通过SCIM PATCH修改用户，攻击者在无path的replace值里夹带roles、groups或meta，也用带过滤器的路径和不同大小写的属性名绕过只读保护。给TypeScript SCIM服务写供PATCH处理器调用的补丁校验包，按RFC 7644第3.5.2节解析path及过滤器，属性名大小写不敏感，依据调用方提供的schema可变性和调用者可写属性集逐项检查；无path时把值对象展开后同样检查，任一项越权整批不应用。用roles、active、emails[type eq work].value和企业扩展URN前缀路径验证。
