@@ -6,3 +6,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_library(netsec netsec.cpp)
 target_include_directories(netsec PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 enable_testing()
+
+add_executable(test_netsec test_netsec.cpp)
+target_link_libraries(test_netsec PRIVATE netsec)
+add_test(NAME test_netsec COMMAND test_netsec)
