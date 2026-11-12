@@ -1,0 +1,3 @@
+# CardDAV多取与同步令牌隔离
+
+CardDAV服务的addressbook-multiget由客户端提供一组href，sync-collection又返回同步令牌，攻击者可在href里夹带他人通讯录路径，或拿别的集合的令牌换取删除记录。给TypeScript服务写供REPORT处理器调用的集合隔离包：href规范化（百分号解码一次、拒绝点段）后须是请求集合的直接成员且调用者有读权限，越界与不存在的href都在207里返回相同的404；同步令牌绑定集合、主体和版本，其他集合的令牌返回valid-sync-token错误。用编码斜杠、跨集合href、已删除成员和令牌互换验证。
