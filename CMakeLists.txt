@@ -6,3 +6,11 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_library(netsec netsec.cpp)
 target_include_directories(netsec PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 enable_testing()
+
+add_executable(glyf_budget_test glyf_budget_test.cpp)
+target_link_libraries(glyf_budget_test PRIVATE netsec)
+add_test(NAME glyf_budget_test COMMAND glyf_budget_test)
+
+add_executable(glyf_fuzz_smoke glyf_fuzz_smoke.cpp)
+target_link_libraries(glyf_fuzz_smoke PRIVATE netsec)
+add_test(NAME glyf_fuzz_smoke COMMAND glyf_fuzz_smoke)
