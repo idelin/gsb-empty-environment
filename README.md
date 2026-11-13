@@ -1,0 +1,3 @@
+# 兼容CCS不进转录
+
+ChangeCipherSpec被算进握手转录，绑定值因此可以被人摆布。这条兼容报文不进入转录、不改变密钥；出现在非法位置则失败。夹在正确位置的一条CCS不影响Finished。可导入的Go库供TLS栈调用。在Finished之后再放一条CCS。
