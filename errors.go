@@ -1,0 +1,43 @@
+package netsec
+
+import "errors"
+
+var (
+	ErrInvalidAccountID      = errors.New("netsec: invalid account ID")
+	ErrInvalidDeviceID       = errors.New("netsec: invalid device ID")
+	ErrInvalidIdentityKey    = errors.New("netsec: invalid Ed25519 identity key")
+	ErrInvalidDigest         = errors.New("netsec: invalid digest")
+	ErrInvalidVersion        = errors.New("netsec: invalid list version")
+	ErrInvalidAddedVersion   = errors.New("netsec: invalid device added version")
+	ErrInvalidRemovedVersion = errors.New("netsec: invalid device removed version")
+	ErrUnsortedDevices       = errors.New("netsec: devices are not sorted by device ID")
+	ErrDuplicateDeviceID     = errors.New("netsec: duplicate device ID")
+	ErrMissingDevice         = errors.New("netsec: previously known device tombstone is missing")
+	ErrDeviceKeyChanged      = errors.New("netsec: active device identity key changed")
+	ErrDeviceIDReuse         = errors.New("netsec: removed device ID was reused")
+	ErrVersionJump           = errors.New("netsec: list version is not exactly the previous version plus one")
+	ErrListRollback          = errors.New("netsec: device list version moved backwards")
+	ErrPreviousDigest        = errors.New("netsec: previous list digest does not match")
+	ErrAccountMismatch       = errors.New("netsec: device list belongs to another account")
+	ErrInvalidSignature      = errors.New("netsec: invalid device list signature")
+
+	ErrPendingUpdate      = errors.New("netsec: another list update is awaiting a log proof")
+	ErrProofMismatch      = errors.New("netsec: inclusion proof is for another list leaf")
+	ErrProofPending       = errors.New("netsec: inclusion proof is not yet verifiable")
+	ErrProofInvalid       = errors.New("netsec: invalid transparency-log inclusion proof")
+	ErrCheckpointRollback = errors.New("netsec: transparency-log checkpoint rolled back")
+	ErrCheckpointConflict = errors.New("netsec: transparency-log checkpoint conflicted")
+	ErrLogMismatch        = errors.New("netsec: transparency-log identity changed")
+	ErrLogUnavailable     = errors.New("netsec: transparency-log proof verifier is not configured")
+
+	ErrDeviceNotFound       = errors.New("netsec: device is not in the committed list")
+	ErrDeviceRemoved        = errors.New("netsec: device has been removed")
+	ErrDeviceNotAuthorized  = errors.New("netsec: device is not authorized yet")
+	ErrSessionClosed        = errors.New("netsec: session is closed")
+	ErrForkFrozen           = errors.New("netsec: device-list fork detected; new sessions are frozen")
+	ErrForkDetected         = errors.New("netsec: conflicting device-list observations")
+	ErrObservationSignature = errors.New("netsec: invalid observation receipt signature")
+	ErrObservationAccount   = errors.New("netsec: observation receipt is for another account")
+	ErrEvidenceInvalid      = errors.New("netsec: invalid fork evidence")
+	ErrStaleObservation     = errors.New("netsec: observation is stale")
+)
