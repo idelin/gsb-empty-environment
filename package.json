@@ -1,1 +1,29 @@
-{"name": "netnew-20261112-0753", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "protection-class-inference",
+  "version": "1.0.0",
+  "description": "iOS 数据保护类降级静态推导包：回放文件操作序列并对照路径规则报告降级违规",
+  "private": true,
+  "type": "module",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "index.ts",
+    "src"
+  ],
+  "scripts": {
+    "test": "node --experimental-strip-types --test \"src/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "keywords": [
+    "ios",
+    "data-protection",
+    "nsfileprotection",
+    "static-analysis",
+    "security"
+  ],
+  "license": "UNLICENSED"
+}
