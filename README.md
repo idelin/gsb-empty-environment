@@ -1,0 +1,3 @@
+# EAT标识长度
+
+ueid长度随意，或sueid被拿来代替ueid通过策略。ueid只能是规定的几种字节长度；策略要求ueid时sueid不能顶替，nonce必须与挑战相同。长度正确且nonce匹配的证明接受。可导入的Go库供验证组件调用。用错误长度的ueid和只提供sueid各一次。
