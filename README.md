@@ -1,0 +1,3 @@
+# MSI中断重映射把向量送到别的虚拟机
+
+直通设备可写MSI-X表，若中断重映射项只按向量查找，租户能把中断投递到宿主或另一虚拟机vCPU。给Go虚拟化宿主实现可导入的中断重映射包：设备身份由不可伪造requesterID和设备代次组成，每个domain登记vCPU集合及允许vector范围。映射项键为(requesterID,deviceGeneration,tableIndex)，值为domainID、vCPU代次、vector、deliveryMode和present；安装请求必须来自设备所属domain，vCPU在集合且代次当前，vector在范围，模式只许Fixed。更新先置present=false并等待该项所有在途中断回执，再写新目标并发布present=true；设备重置或转租递增代次并撤销旧项，旧请求不得命中。中断到达携requesterID、代次、tableIndex和消息vector，先匹配项再要求消息vector等于登记vector，投递回调前重验domain/vCPU代次。批量表更新先全部置为不可投递，全部验证后逐项走失效屏障，任何失败保持失败项关闭且不回滚已安全关闭的项。用可控设备伪造vector、旧代请求、转租竞态、vCPU热移除和在途投递，搜索待审实现中非所属domain收到中断的最短轨迹。
