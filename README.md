@@ -1,3 +1,28 @@
 # signify校验和清单文件名绑定
 
-signify 签名的 SHA256 校验和清单被用来确认下载的一批文件，攻击者可在清单里写带路径的名字、重复条目，或拿别的密钥签的清单冒充。给Go更新库写供下载完成回调使用的清单验证包：签名文件第一行 untrusted comment 不被信任；第二行 Base64 解码后须是算法标识 Ed、8 字节 keynum 与 64 字节签名，keynum 与调用方预置公钥的 keynum 不符直接拒绝；对内嵌的消息正文验签后才解析清单，每行形如 SHA256 (名字) = 十六进制；名字含 /、\、NUL 或为 . 与 .. 的行使整份清单无效，同名条目摘要不同也无效；下载文件只按名字与清单比对，清单未列出的文件不得放行。用换密钥、改注释、带路径名字、重复条目和未列出文件验证。
+`netsec` 验证 signify 内嵌签名的 SHA256 清单，并供下载完成回调检查已下载文件。
+
+```go
+publicKey, err := netsec.LoadPublicKey("release.pub")
+if err != nil {
+	// handle error
+}
+
+manifest, err := netsec.LoadSignedManifest(publicKey, "SHA256.sig")
+if err != nil {
+	// reject the whole update
+}
+
+// In a download completion callback:
+if err := manifest.VerifyDownloadFile("update.tar.gz", downloadedPath); err != nil {
+	// reject this download
+}
+```
+
+Verification rules:
+
+- The signature file's first line is an untrusted comment and is ignored.
+- The decoded signature record must be `Ed` + 8-byte key number + 64-byte Ed25519 signature. The key number must match the configured public key.
+- The embedded manifest body is verified before parsing. Every non-empty body line must have the form `SHA256 (name) = hex`.
+- Names containing `/`, `\`, or NUL, and `.` or `..`, invalidate the manifest. Conflicting duplicate entries also invalidate it.
+- Download lookups use the exact logical name only. Files absent from the manifest are never accepted.
