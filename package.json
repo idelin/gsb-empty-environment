@@ -1,1 +1,25 @@
-{"name": "netnew-20261112-0855", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "sealed-sender-validator",
+  "version": "1.0.0",
+  "description": "Constant-time Unidentified-Access-Key and sealed-sender certificate validation",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.7.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./src": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --experimental-strip-types --test test/timing.test.ts test/access-key.test.ts test/certificate.test.ts test/sealed-sender.test.ts"
+  }
+}
