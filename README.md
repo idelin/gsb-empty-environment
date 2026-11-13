@@ -1,0 +1,3 @@
+# TLS13禁止重协商
+
+应用数据阶段又出现ClientHello，被当成重协商。TLS1.3不接受重协商；此时的ClientHello按失败处理，不能开始新的嵌套握手。首次握手的ClientHello放行。可导入的Go状态机接TLS栈送来的状态。在Finished之后再送一条ClientHello。
