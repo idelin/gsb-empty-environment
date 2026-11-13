@@ -1,0 +1,3 @@
+# PTP主时钟选举夺取防护
+
+时间同步网络里，攻击者发出 priority1 为 0 的 Announce 报文，就能在最佳主时钟选举中胜出，把整个网络的时钟拨走。为Go边界时钟写可导入的主时钟选举与准入包，输入 Announce 报文字段（grandmasterPriority1、grandmasterClockClass、grandmasterClockAccuracy、offsetScaledLogVariance、grandmasterPriority2、grandmasterIdentity、stepsRemoved、源端口标识）、调用方的授权主时钟标识集合和认证回调：先过准入，源端口认证失败、grandmasterIdentity 不在授权集合内、stepsRemoved 大于等于 255 的报文丢弃，不参与选举；其余报文依次按 priority1、clockClass、clockAccuracy、offsetScaledLogVariance、priority2 数值小者胜，最后以 grandmasterIdentity 的字节序小者决胜；同一主时钟经不同路径到达时，stepsRemoved 小者优先，再比较源端口标识；4 秒内未收到 Announce 的主时钟移出候选。用未授权的 priority1=0、认证失败、stepsRemoved 越界、并列决胜和超时淘汰验证。
