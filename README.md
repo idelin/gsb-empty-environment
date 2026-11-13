@@ -1,0 +1,3 @@
+# 孤儿inode回收误删仍有硬链接的文件
+
+崩溃恢复时扫描孤儿列表，若链接计数和目录更新不是同一事务，可能回收仍能通过另一路径访问的文件或留下已撤权内容。给Go文件宿主实现可导入的inode链接事务包：inode含inodeID/代次、linkCount、openCount、策略代次和状态Live/Orphan/Deleting；目录项绑定目录ID/代次、规范名和inode身份。Link先验证源策略及目标目录权限，在同一日志事务中新增目录项并递增linkCount；Unlink删除精确目录项并递减，降到0时加入Orphan但openCount>0仍保留数据；Open/Close持代次租约，最后Close后且没有未决Open时才可Deleting。恢复从认证日志重建目录引用集合，逐inode比较实际目录项数与linkCount：不一致时隔离并禁止回收，不以较小值修正；只有linkCount=0、openCount=0、无目录项且所有未决事务已判定回滚后才清零数据并释放inode，释放后代次递增。策略撤权立即阻止新Open，但已有租约按配置结束。用两个硬链接、rename交换、unlink/close交错、日志撕裂、目录项重复和inode号复用测试，回收回调前独立全目录扫描必须证明零引用。
