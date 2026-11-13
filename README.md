@@ -1,0 +1,3 @@
+# annotation-xml编码
+
+math里的annotation-xml若把encoding当成html，会在公式中间插入可执行片段。只有encoding为text/html或application/xhtml+xml时才按HTML集成点解析，其余当文本。encoding为text/plain的注释不得生成元素。文档管线调用可导入的TypeScript库做这次裁决。交换encoding大小写和引号，核对子树。
