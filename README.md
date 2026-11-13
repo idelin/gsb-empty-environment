@@ -1,0 +1,3 @@
+# 抑制anyPolicy
+
+inhibit_any_policy已经生效，anyPolicy节点仍被映射成具体策略。到达抑制深度后，anyPolicy不能再产生新的具体策略节点。未到抑制深度前的合法映射保留。可导入的Go库供证书路径调用。在抑制深度之后放一张带anyPolicy的证书。
