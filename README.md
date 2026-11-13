@@ -1,0 +1,3 @@
+# SVG外来点回流
+
+HTML里的svg子树若按XML结束再流回HTML，攻击载荷会在集成点重新变成脚本。进入svg或math后只在对应结束标签回到HTML命名空间，外来点中间出现的script不执行。纯HTML里的合法svg图形元素要保留。文档管线调用可导入的TypeScript库做这次裁决。构造在svg中闭合再写script的片段，核对脚本元素数量。
