@@ -1,0 +1,3 @@
+# 新窗口切断opener
+
+target为_blank且没有noopener时，新文档能通过opener改写来源页。这种链接和window.open的第三参都要带上noopener；已有noopener的不重复加别的权限。显式命名窗口且调用方要求保留opener时按调用方标记。文档管线调用可导入的TypeScript库做这次裁决。打开_blank和命名窗口各一次，看opener是否为空。
