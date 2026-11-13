@@ -1,1 +1,26 @@
-{"name": "netnew-20261112-0765", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "jwe-header-admission",
+  "version": "1.0.0",
+  "description": "JWE 受保护头准入控制：PBES2 p2c/p2s 预算、zip 压缩比、crit 与重复键校验，全部在密钥派生之前完成",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "development": "./src/index.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "test": "node --experimental-strip-types --test src/index.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}
