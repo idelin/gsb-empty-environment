@@ -1,0 +1,3 @@
+# 装订响应的nonce
+
+OCSP装订里的nonce和ClientHello里请求的nonce不同。请求了nonce时，装订响应必须带回同一nonce；不符或缺失则不用这份装订。nonce一致且响应时间有效时可以采用。由TLS栈调用可导入的Go库。翻转装订响应中的nonce。
