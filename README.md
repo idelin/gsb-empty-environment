@@ -1,0 +1,3 @@
+# 混合内容活动请求
+
+https页面上的脚本、XHR和ws仍可能落到http。安全文档发起的脚本、获取、模块和WebSocket必须是https或wss；图片升级失败则当失败，不回退明文。安全文档请求https资源放行。请求组装调用可导入的TypeScript库做这次裁决。在安全文档上请求http脚本和ws。
