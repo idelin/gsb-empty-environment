@@ -1,0 +1,3 @@
+# 前置长度夹带分块
+
+前端按Content-Length截断、后端按分块读取时，块后面还能再放一个请求。同一请求同时出现Content-Length和Transfer-Encoding就拒绝；不选择其中一边。只有Content-Length且长度与正文一致时转发。协议网关调用可导入的Go库做这次裁决。构造长度覆盖到第一个块为止的双头请求。
