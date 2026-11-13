@@ -1,0 +1,3 @@
+# 被移除成员继续使用发送者密钥发群消息
+
+群聊采用每发送者一条对称链，成员移除后如果接收端仍接受旧epoch链消息，被移除者可继续发言。给Go消息宿主实现可导入的发送者密钥状态包：群状态含groupID、严格递增epoch、当前成员设备公钥集合及每个senderDevice的chainID、chainKey句柄和nextIndex和成员集合摘要和成员集合摘要。分发消息由群管理员Ed25519签名，覆盖groupID、epoch、成员集合摘要、senderDevice、chainID、初始chainKey密文摘要和起始index；只有sender在当前成员集合且epoch等于当前才安装，chainID在该group全局不复用。数据消息头含groupID、epoch、senderDevice、chainID、index，消息密钥按HMAC-SHA256(chainKey,'msg'||index)派生，下一chainKey按'chain'||index派生；AEAD附加数据绑定完整头和成员集合摘要。接收可缓存最多128个跳过密钥，每个只用一次，认证失败不推进。成员集合变化必须epoch加一并撤销全部旧发送链，旧epoch消息永久拒绝；未变成员需接收新分发后才能发送。实现乱序、重复和并发epoch更新，测试被移除设备旧链、管理员分叉成员摘要、chainID重用、巨大index及认证失败，任何成功回调的sender必须在该消息epoch的签名成员集合中。
