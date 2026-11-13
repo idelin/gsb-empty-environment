@@ -6,3 +6,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_library(netsec netsec.cpp)
 target_include_directories(netsec PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 enable_testing()
+
+add_executable(test_isotp test_isotp.cpp)
+target_link_libraries(test_isotp PRIVATE netsec)
+add_test(NAME isotp_reassembly COMMAND test_isotp)
