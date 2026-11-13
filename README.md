@@ -1,0 +1,3 @@
+# 逻辑复制行过滤漏出旧值
+
+数据库发布只允许复制tenant=A的行，但UPDATE把行从A改到B时，旧元组、新元组和未变TOAST列处理不一致会泄漏B数据或漏发删除。给Go复制宿主实现可导入的行过滤器：Relation版本定义列ID、类型、主键和哪些列可用UNCHANGED标记；事务事件含Insert、Update(oldKey,oldTuple,newTuple)、Delete(oldTuple)及Relation变更。过滤谓词由宿主给确定性无副作用确定性无副作用纯函数，分别在重建后的旧行和新行求值；Update old=true,new=true发送Update，true→false发送Delete仅携旧主键，false→true发送Insert完整新行，false→false不发送。UNCHANGED列只能从同一Relation版本、同一主键的已认证行缓存补齐；缓存缺失或主键改变而值未提供时返回需补取，不能用另一租户或旧Relation位置。事务内事件按顺序更新私有缓存，只有Commit后发布输出和缓存；Abort全部丢弃。Relation版本变化按列ID迁移，删除/重用列ID拒绝自动迁移。用两个租户、跨边界Update、主键改变、TOAST未变、流式事务交错和Abort测试，输出回调永不看到谓词为false的完整行，仅Delete携带允许的旧主键。
