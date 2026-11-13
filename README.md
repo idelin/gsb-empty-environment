@@ -1,0 +1,3 @@
+# 可信类型按汇分派
+
+createHTML的返回值若被拿去赋给脚本地址，类型标记就失去意义。HTML、Script、ScriptURL三种结果不能互换；ScriptURL拒绝javascript和data，默认策略只在没有具名策略时参与。createHTML的结果写入innerHTML且不含事件属性时放行。文档管线调用可导入的TypeScript库做这次裁决。把ScriptURL的产物传给innerHTML接口，核对拒绝。
