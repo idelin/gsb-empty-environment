@@ -1,3 +1,7 @@
 # SSH主机密钥轮换通告的证明
 
 已通过认证的恶意服务器能经 hostkeys-00@openssh.com 通告一串公钥，想让客户端把它们写进 known_hosts。为Go SSH 客户端写可导入的通告处理包：仅在主机认证已成功且 known_hosts 已有该主机条目时处理；新密钥须经 hostkeys-prove-00@openssh.com 返回的签名（覆盖会话标识与公钥）证明持有后才记录；旧条目只在服务器不再列出且证明成功时移除；任何一个证明失败则整批不写入。用无证明、签名属于别的会话和部分失败验证。
+
+实现位于 `hostkeys/`（包 `example.org/netsec/q0814/hostkeys`），
+依赖 `golang.org/x/crypto/ssh` 与 `golang.org/x/crypto/ssh/knownhosts`。
+当前沙箱无网络且无模块缓存，`go test ./...` 需在能拉取依赖的环境执行。
