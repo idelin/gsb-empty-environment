@@ -1,1 +1,12 @@
-{"name": "netnew-20261112-0848", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "netnew-20261112-0848",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./private-token": "./src/private-token/index.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  }
+}
