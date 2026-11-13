@@ -1,0 +1,3 @@
+# 注册OID约束
+
+registeredID约束被DNS名满足。只有同型的registeredID可以匹配该约束；DNS、邮箱和URI都不能顶替。OID完全相同的注册标识匹配。可导入的Go库供证书路径调用。用一个DNS名去满足OID约束。
