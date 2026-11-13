@@ -1,3 +1,53 @@
-# 门限解密份额里的恶意贡献者
+# P-256 门限 ElGamal 解密验证
 
-解密协调方收集门限ElGamal份额时，恶意参与者可提交让最终明文错误的份额。给Go密码宿主实现本题P-256门限解密验证包：成员i的公开份额Y_i=x_iG及唯一非零标识i由固定清单给出，密文为(C1,C2=M+kY)，成员标识映射为域内非零且互异横坐标；聚合公钥Y应等于按这些横坐标、门限t计算的成员公钥拉格朗日组合，否则输入拒绝；成员返回D_i=x_iC1及Chaum-Pedersen等离散对数证明。证明承诺A=rG、B=rC1，挑战为SHA256对固定域标签、清单摘要、密文摘要、i、Y_i、D_i、A、B的定长规范编码取模阶，响应z=r+c*x_i，验证zG=A+cY_i且zC1=B+cD_i。所有点须规范、在曲线上且非无穷，标量规范；C1无穷拒绝。选任意至少t份有效且标识互异的份额，按标识在群阶中的拉格朗日系数恢复D=xC1，再得M=C2-D；若不同t子集产生不同M，返回参与者冲突证据而不是任取一组。至多16成员、t不超过8，枚举所有t子集用于一致性，预算耗尽不交付明文。用本地多项式分发生成真实份额，注入错误D、搬运另一密文证明、重复标识及一名份额对不同协调方双发，核对明文只在全部有效子集一致时发布。
+该包实现加性 ElGamal 密文 `(C1, C2) = (kG, M + kY)` 的门限份额验证与
+协调重建，最多支持 16 名成员和门限 8。
+
+## 使用方式
+
+```go
+import (
+    "math/big"
+
+    netsec "example.org/netsec/q0054"
+)
+
+secret, _ := netsec.ScalarFromBig(big.NewInt(123456))
+manifest, memberSecrets, _ := netsec.GenerateDealer(
+    secret, 3, []uint32{1, 2, 3, 4, 5, 6}, nil,
+)
+
+messageScalar, _ := netsec.ScalarFromBig(big.NewInt(42))
+message, _ := netsec.ScalarBaseMult(messageScalar)
+ciphertext, _ := netsec.Encrypt(manifest, message, nil)
+
+shares := make([]netsec.DecryptionShare, 0, len(memberSecrets))
+for _, secretShare := range memberSecrets {
+    share, _ := secretShare.Decrypt(manifest, ciphertext, nil)
+    shares = append(shares, share)
+}
+
+result, err := netsec.Decrypt(manifest, ciphertext, shares, netsec.Budget{})
+// err == nil 时 result.Plaintext == message。
+```
+
+非法或证明失败的份额会被忽略；重复成员标识最多计一份。协调方必须枚举
+所有有效 `t` 子集并得到同一个 `M` 才返回明文。不同子集结果不一致时返回
+`*netsec.ConflictError`，可通过 `errors.As` 读取两个子集的成员标识、`D`
+和冲突明文。超过 `Budget.MaxSubsets` 时返回 `ErrBudgetExhausted`，且结果中
+不含部分明文。
+
+## 编码与校验
+
+- 点只能是 65 字节未压缩 SEC1 编码，必须位于 P-256 上且不是无穷点。
+- 标量固定为 32 字节大端序，必须小于 P-256 群阶 `n`。
+- 清单标识为非零、互异的 `uint32`，直接作为域元素参与拉格朗日插值。
+- `ValidateManifest` 要求 `Y` 等于清单全部公开份额在零点的拉格朗日组合。
+- 证明挑战使用固定域标签、清单摘要、密文摘要、成员标识、`Y_i`、`D_i`、
+  `A`、`B` 的定长规范编码后做 SHA-256 并模 `n`。
+
+运行测试：
+
+```sh
+go test ./...
+```
