@@ -1,0 +1,3 @@
+# foreignObject嵌HTML
+
+svg的foreignObject里可以再嵌一套未过滤的HTML。foreignObject内部按HTML走同一套元素和URL限制，不能因为外层是svg而跳过。foreignObject里的普通段落保留。文档管线调用可导入的TypeScript库做这次裁决。在foreignObject内外各放一个事件属性，核对残留。
