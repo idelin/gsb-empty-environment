@@ -1,0 +1,3 @@
+# mdoc设备认证会话转录与摘要核对
+
+移动驾照的验证端收到的响应里，攻击者可以转发另一个验证端会话中拿到的响应（中继），或夹带发行方没签过的数据项。给Go验证端实现可导入的 mdoc 响应校验包，输入已解码的 IssuerSigned（MSO 的 valueDigests 与摘要算法、validityInfo、DocType，以及各命名空间下每个数据项的 digestID、random、elementIdentifier、elementValue）、DeviceSigned（deviceNameSpaces 与设备签名）、验证端自己的 SessionTranscript 字节和请求的数据项集合，签名与哈希由回调提供：每个返回的数据项都要在 MSO 里按 digestID 找到摘要，且与重算结果相等；返回项必须是请求项的子集；validityInfo 的 validFrom 与 validUntil 须包含当前时刻；设备签名的待签内容是数组 ["DeviceAuthentication", SessionTranscript, DocType, DeviceNameSpacesBytes] 的规范编码，其中的 SessionTranscript 必须是本端自己的；MSO 里的 DocType 须与响应中的一致；同一 digestID 重复出现、random 短于 16 字节时拒绝。用中继他人转录、夹带未签名数据项、超出请求集合、过期 MSO 和重复摘要标识验证。
