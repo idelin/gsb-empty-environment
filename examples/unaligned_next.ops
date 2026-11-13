@@ -1,0 +1,7 @@
+# 场景 2：攻击者通过悬空指针把 a 的 next 改为未对齐地址
+alloc a
+alloc b
+free b
+free a
+write a 0xdeadbeef4
+alloc c

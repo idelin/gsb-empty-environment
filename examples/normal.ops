@@ -1,0 +1,9 @@
+# 场景 3：正常 alloc/free 交替
+alloc a
+alloc b
+free a
+alloc c
+free c
+free b
+alloc d
+alloc e

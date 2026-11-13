@@ -1,0 +1,4 @@
+# 场景 1：重复释放同一块
+alloc a
+free a
+free a
