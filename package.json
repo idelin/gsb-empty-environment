@@ -1,0 +1,1 @@
+{"name": "sec-20261113-0206", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
