@@ -1,0 +1,3 @@
+# 前端不收令牌
+
+response_type含token时，访问令牌出现在片段里被推荐来源读走。拒绝任何把token放进前端的response_type；code可以返回，id_token只在已登记的混合模式出现。单独的code响应放行。可导入的Go状态机接授权服务送来的状态。请求code token和单独code。
