@@ -1,0 +1,3 @@
+# 触发器重入扩大定义者权限
+
+表更新触发高权限审计触发器，恶意触发器链若重入原表或切换主体，可能借定义者上下文执行未授权写。实现供Go数据库测试宿主调用的触发器执行栈：事件为Insert、Update、Delete，每表可登记有序BEFORE/AFTER触发器；触发器声明invoker或definer安全上下文、可写表集合、最大递归深度及唯一triggerID。每次DML先按当前主体通过表策略，再压入(frame:触发器ID、事件表、行ID、effectiveSubject、originSubject、statementID)；definer仅在其声明可写表内生效，调用另一个触发器时originSubject保持最初调用者。任何触发器对原(event表,rowID,statementID)再次执行同类DML视为重入并拒绝；不同事件也受全局深度与同一statement内每triggerID对同一行最多一次规则。BEFORE可返回修改行或拒绝，全部成功后才写基础表；AFTER失败使整条statement回滚，包括审计表。触发器不能更改会话主体或提交事务。实现正确模型和待审模型的差分BFS，搜索origin无权但某表最终被写的最短触发链，输出每帧上下文。覆盖两表环、同表不同行、BEFORE修改触发策略变化、AFTER失败和嵌套definer/invoker。
