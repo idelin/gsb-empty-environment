@@ -1,0 +1,3 @@
+# 应用链接过滤器的路径模式语义与接管范围
+
+应用链接的 intent-filter 用 pathPattern 描述哪些路径由应用处理，其中 * 只对紧邻的前一个字符重复，.* 才匹配任意序列，开发者按通配符习惯写成 /callback/*，实际语义与预期不同，攻击者构造路径，让应用在不该处理的地方接管登录回调。为Go静态审查服务写可导入的路径模式匹配包，输入 intent-filter 的 data 元素（scheme、host、path、pathPrefix、pathPattern、pathSuffix；同一 filter 内所有 data 元素的 scheme、host、path 取笛卡尔积组合）、一组被要求保护的路径和一组攻击者可构造的 URL：path 为全等比较，pathPrefix 为前缀比较，pathSuffix 为后缀比较，pathPattern 取简化的语义：. 匹配任意单字符，* 表示前一个字符（或 .）重复零次或多次，反斜杠转义下一个字符，其余按字面，匹配须覆盖整个路径；scheme 与 host 比较不分大小写，host 以 *. 开头时匹配任意前缀子域；对每个被保护路径，判断它会被哪些 filter 匹配；对每个攻击者 URL，判断是否被匹配；预期只由一个 host 处理的路径若另一个 host 也匹配，报告冲突。用 /callback/* 的真实语义、.* 的过宽匹配、转义点号、多 data 元素组合和 *. 主机验证。
