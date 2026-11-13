@@ -1,0 +1,31 @@
+package netsec
+
+import "errors"
+
+var (
+	ErrInvalidArgument        = errors.New("netsec: invalid argument")
+	ErrInvalidPolicy          = errors.New("netsec: invalid policy")
+	ErrWeakPolicy             = errors.New("netsec: policy threshold must be at least two")
+	ErrInvalidRegistration    = errors.New("netsec: invalid administrator registration")
+	ErrCredentialNotFound     = errors.New("netsec: credential not found")
+	ErrCredentialRevoked      = errors.New("netsec: credential revoked")
+	ErrCredentialImmutable    = errors.New("netsec: credential entry is immutable")
+	ErrPersonIDImmutable      = errors.New("netsec: credential person ID is immutable")
+	ErrPublicKeyConflict      = errors.New("netsec: public key already belongs to another person")
+	ErrInvalidSignature       = errors.New("netsec: invalid signature")
+	ErrInvalidApproval        = errors.New("netsec: invalid approval")
+	ErrApprovalRoleNotAllowed = errors.New("netsec: approval role is not allowed")
+	ErrDuplicatePerson        = errors.New("netsec: person already voted")
+	ErrDuplicateShare         = errors.New("netsec: person already submitted a share")
+	ErrMissingRequiredRole    = errors.New("netsec: required approval role is missing")
+	ErrNotReady               = errors.New("netsec: ceremony has not reached its requirements")
+	ErrCeremonyNotFound       = errors.New("netsec: ceremony not found")
+	ErrCeremonyClosed         = errors.New("netsec: ceremony is no longer accepting input")
+	ErrCeremonyExpired        = errors.New("netsec: ceremony deadline passed")
+	ErrPolicyChanged          = errors.New("netsec: ceremony policy generation changed")
+	ErrEnvelopeMismatch       = errors.New("netsec: share envelope is bound to another ceremony or person")
+	ErrImportUncertain        = errors.New("netsec: HSM import outcome is uncertain")
+	ErrImportMismatch         = errors.New("netsec: HSM import result does not match the ceremony")
+	ErrImportFailed           = errors.New("netsec: HSM import failed")
+	ErrReceiptNotFound        = errors.New("netsec: HSM receipt not found")
+)
