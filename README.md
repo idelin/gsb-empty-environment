@@ -1,0 +1,3 @@
+# 切根后旧根目录句柄仍可逃逸
+
+容器完成pivot_root后若保留旧根目录句柄或传播挂载，进程仍能走回宿主文件系统。给Go初始化宿主实现可导入的虚拟挂载与句柄模型：挂载节点有mountID、父挂载、挂载点对象、传播类型Private/Shared/Slave、peerGroup及所属UserNS；目录句柄绑定mountID、对象ID、代次和O_PATH标志。PivotRoot(newRoot,putOld)要求两者是同一挂载中的目录、newRoot为独立挂载点且putOld在其下，成功后切进程根并把旧根挂到putOld。随后必须Chdir新根、UnmountOld(非lazy方式)、把根递归设Private，并关闭所有指向旧根或其后代挂载的句柄；句柄白名单只能保留新根内、不可经父边到旧根的对象。任一Shared peer可能把后续挂载传播到宿主视图，初始化前须转换Private并核对所有peer。动作失败时不得启动容器。实现路径解析从根和目录句柄分别出发，..在进程根封顶但从旧句柄按其挂载父关系解析；搜索初始化后仍能解析到宿主哨兵对象的最短句柄/传播见证。覆盖lazy detach、已打开当前工作目录、共享peer、句柄编号复用和putOld删除失败。
