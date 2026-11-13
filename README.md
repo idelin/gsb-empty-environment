@@ -1,0 +1,3 @@
+# 加密目录名规范化碰撞覆盖文件
+
+加密目录同时启用大小写折叠，若加密前后的规范化顺序不唯一，两个不同名字可能落到同一目录项并覆盖敏感文件。给Go文件系统宿主实现题内文件名加密包：明文名须为有效UTF-8、非空、不含斜杠/NUL且不是点段；目录策略含directoryID、密钥代次、32字节目录nonce、caseMode{Sensitive,FoldASCII}和最大原始名和规范名字节数。Sensitive使用原始UTF-8；FoldASCII只把A-Z映射a-z，其他字节不变，规范名不得与已有另一原名冲突。派生名密钥=HMAC-SHA256(masterHandle,'name'||directoryID||keyGeneration||directoryNonce)，每个目录项随机16字节entryNonce，密文用AEAD封装原始名，附加数据绑定目录策略摘要、规范名SHA256、inodeID和inode代次；磁盘查找键=HMAC(nameKey,'lookup'||规范名)前20字节。创建先原子检查查找键桶中全部候选的规范名，摘要碰撞可共存但规范名相同原名不同拒绝；rename跨目录须解密后按目标策略重新封装，失败不移除源项。目录nonce/策略创建后不可变，轮换仅换keyGeneration并逐项事务迁移。用碰撞HMAC替身、ASCII大小写、非ASCII、同inode硬链接、rename交换及轮换中断测试，任何成功查找都解密并核对inode身份。
