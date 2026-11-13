@@ -1,0 +1,3 @@
+# 优雅重启保留了已撤权邻居路由
+
+BGP邻居重启期间路由器会暂留旧路由，若安全策略或ROA已变化，攻击者可借stale路由继续引流。给Go路由宿主实现可导入的优雅重启账本：会话身份绑定neighborAS、routerID、transport代次和策略版本；断线时只有对端此前协商重启能力且未发生认证失败的会话可把路由标Stale，并记录每条routeID、前缀、属性摘要、原策略/VRP版本和stale截止。重连必须同一neighborAS/routerID且新transport代次，收到End-of-RIB前逐条重新公告可刷新routeID；新公告重新跑当前导入策略和当前VRP，成功才替换Stale。策略/VRP更新时立即重验全部Stale，失效者撤销，不等计时器；截止或End-of-RIB到达后未刷新的全部撤销。任何Stale路由只能在配置的restart时限内在配置的restart时限内继续转发，不能作为向其他邻居导出的新依据，也不能参与FlowSpec验证。实现虚拟时钟和路由选择回调，交错断线、策略更新、重连和EOR，搜索待审实现在撤权后仍转发或再导出Stale路由的最短轨迹。覆盖routerID复用、认证失败断线、重复EOR和计时边界。
