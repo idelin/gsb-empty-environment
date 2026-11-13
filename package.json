@@ -1,1 +1,22 @@
-{"name": "netnew-20261112-0755", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "netnew-20261112-0755",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser-safe IDN display policy for mixed-script and homograph-resistant hostnames",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    }
+  },
+  "types": "./index.ts",
+  "sideEffects": false,
+  "files": [
+    "index.ts",
+    "src"
+  ],
+  "scripts": {
+    "test": "node --experimental-strip-types --test index.test.ts"
+  }
+}

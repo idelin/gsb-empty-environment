@@ -1,3 +1,54 @@
-# 国际化域名展示策略的混合脚本判定
+# IDN display policy
 
-全西里尔的 аррӏе.com 肉眼与 apple.com 无异，地址栏直接显示 Unicode 就等于帮攻击者伪装。为TypeScript浏览器组件写可导入的 IDN 展示判定包：先转成 A-label 再判定；标签内拉丁可与 CJK 脚本搭配，但不得与西里尔或希腊混用；全部字符是西里尔且每个字符都有拉丁易混字符时拒绝；以组合标记开头或含不可见字符拒绝；拒绝时展示 punycode。用 paypal 式西里尔混用、全西里尔易混、日文汉字假名和合法德文域名验证。
+All-Cyrillic `аррӏе.com` looks like `apple.com`, so rendering raw Unicode in an
+address bar can help an attacker masquerade. This browser-safe TypeScript
+package converts a hostname to its canonical A-label first, then decides whether
+the Unicode form is safe to display.
+
+## Policy
+
+- A label may contain Latin together with CJK scripts.
+- Latin may not be mixed with Cyrillic or Greek. Other mixed-script labels are
+  rejected too.
+- An all-Cyrillic label is rejected when every character has a known Latin
+  lookalike.
+- A label beginning with a combining mark is rejected.
+- A hostname containing an invisible format/control character is rejected.
+- Rejected hostnames display their canonical Punycode (A-label) form.
+
+## API
+
+```ts
+import {
+  analyzeIdnHostname,
+  hostnameForDisplay,
+  shouldDisplayUnicode,
+  toAsciiHostname,
+} from "netnew-20261112-0755";
+
+const result = analyzeIdnHostname("münchen.de");
+// {
+//   ascii: "xn--mnchen-3ya.de",
+//   unicode: "münchen.de",
+//   display: "münchen.de",
+//   safeForUnicode: true,
+//   rejected: false,
+//   reasons: [],
+//   ...
+// }
+
+hostnameForDisplay("аррӏе.com"); // "xn--80ak6aa92e.com"
+shouldDisplayUnicode("раураl.com"); // false
+toAsciiHostname("日本語.jp"); // "xn--wgv71a119e.jp"
+```
+
+`analyzeIdnHostname` never throws for untrusted hostname input. It records
+`invalid-hostname` when URL/IDNA canonicalization fails. If no fallback A-label
+can be produced, `display` is empty; policy rejections such as a leading
+combining mark still receive an RFC 3492 Punycode fallback.
+
+## Tests
+
+```sh
+npm test
+```
