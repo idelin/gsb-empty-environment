@@ -1,0 +1,3 @@
+# 磁盘扇区密文搬到另一逻辑地址
+
+加密卷若认证标签不绑定逻辑扇区号，攻击者可把一处合法密文复制到权限更敏感的扇区。给Go卷宿主实现可导入的认证扇区层：逻辑扇区固定4096字节，每卷有volumeID、keyGeneration和64位单调writeEpoch，耗尽拒绝写入不回绕；映射表把logicalSector映射到physicalSector及physicalGeneration。每次写先分配或复用物理扇区新代次，nonce=HMAC(nonceKey,volumeID||keyGeneration||logicalSector||writeEpoch)前12字节，AEAD附加数据绑定卷、key代、逻辑/物理扇区、物理代次、writeEpoch和明文长度，写密文并回读摘要后用写时复制映射树提交新根；writeEpoch先可靠预留且不回退。读固定映射根，核对物理代次与AEAD后才交付。后台搬迁到新物理扇区必须解密后用同逻辑扇区、递增writeEpoch重新加密，不复制原密文；key轮换同理。旧物理扇区在所有根引用消失和清零后回收。用块设备替身复制/交换密文、回滚映射根、物理ID复用、搬迁中断和epoch存储撕裂，核对任何成功明文都来自当前逻辑扇区最近提交写。
