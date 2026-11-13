@@ -1,0 +1,3 @@
+# 证明JWT的c_nonce
+
+凭证证明里的nonce不是发行方刚发的c_nonce，证明仍能换到凭证。证明JWT的aud是凭证端点，nonce等于当前c_nonce，且只能成功一次。nonce和aud都匹配的首次证明接受。可导入的Go库供发行服务调用。更换aud并重放同一nonce。
