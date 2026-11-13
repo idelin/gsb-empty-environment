@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libnetsec.a CMakeFiles/netsec.dir/netsec.cpp.o CMakeFiles/netsec.dir/freshness_validator.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libnetsec.a

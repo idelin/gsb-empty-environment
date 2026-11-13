@@ -1,0 +1,26 @@
+Start testing: Nov 13 12:26 CST
+----------------------------------------------------------
+1/1 Testing: freshness_validator
+1/1 Test: freshness_validator
+Command: "/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0724/workspace/build-clt/netsec_freshness_test"
+Directory: /Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-network-20261111/jobs/NETNEW-20261112-0724/workspace/build-clt
+"freshness_validator" start time: Nov 13 12:26 CST
+Output:
+----------------------------------------------------------
+FAIL [T1 wrap boundary / MAC failure no advance]: static_cast<bool>(wrap_to_zero) (line 77)
+FAIL [T1 wrap boundary / MAC failure no advance]: *wrap_to_zero.candidate != 512ULL (line 78)
+FAIL [T1 wrap boundary / MAC failure no advance]: validator.commit(512) (line 79)
+FAIL [T1 wrap boundary / MAC failure no advance]: validator.counter() != 512ULL (line 80)
+FAIL [T1 wrap boundary / MAC failure no advance]: low_byte(validator.counter()) != 0 (line 81)
+FAIL [T7 reject reason cleared]: !static_cast<bool>(rejected) (line 235)
+FAIL [T7 reject reason cleared]: validator.lastReason() != RejectReason::OutOfWindow (line 236)
+7 check(s) failed
+<end of output>
+Test time =   0.36 sec
+----------------------------------------------------------
+Test Failed.
+"freshness_validator" end time: Nov 13 12:26 CST
+"freshness_validator" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 13 12:26 CST

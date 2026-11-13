@@ -1,0 +1,2 @@
+freshness_validator 1 0.428404
+---
