@@ -1,0 +1,3 @@
+# OCSP冲突状态
+
+同一证书的两份SingleResponse一个good一个revoked。同一证书状态冲突则失败，不能挑选good。唯一的revoked状态按吊销处理。可导入的Go库供证书路径调用。放进两条相反的SingleResponse。
