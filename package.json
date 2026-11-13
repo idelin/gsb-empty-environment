@@ -1,1 +1,12 @@
-{"name": "sec-20261113-0056", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "sec-20261113-0056",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test",
+    "demo": "node --experimental-strip-types examples/srcdoc-matrix.ts"
+  }
+}
