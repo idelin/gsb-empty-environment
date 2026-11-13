@@ -1,3 +1,37 @@
 # 证书绑定令牌cnf与刷新换证
 
 证书绑定的访问令牌用 cnf 里的 x5t#S256 绑定客户端证书，攻击者窃得令牌后在自己的连接上使用，或在刷新时换一张证书续期。为Go授权服务器与资源服务器共用的绑定校验包写入口，可导入：令牌（JWT 或内省响应）含 cnf.x5t#S256 时，须等于本连接客户端证书 DER 的 SHA-256 的 base64url（无填充）值，逐字节比较；令牌含 cnf 而连接上没有客户端证书拒绝；令牌无 cnf 而该客户端登记为必须证书绑定拒绝；cnf 同时含 jkt 与 x5t#S256 时两者都须满足；用刷新令牌换新访问令牌时，新令牌的 cnf 取自本次连接的客户端证书，该证书指纹须等于刷新令牌记录的指纹，换证书续期只有当调用方的轮换授权表登记了（旧指纹, 新指纹）对时才允许；元数据 mtls_endpoint_aliases 里的令牌端点才接受证书认证，常规端点收到客户端证书也不得据此认证；x5t#S256 值带填充 = 或含标准 base64 字符 + 与 / 拒绝。用换证书、无证书、登记要求但无 cnf、刷新换证书、常规端点带证书和填充格式验证。
+
+## API
+
+模块为 `example.org/netsec/q0666`，包名为 `netsec`。调用方必须先完成 JWT 签名验证或内省响应可信性检查；本包只校验绑定声明。
+
+```go
+conn := netsec.NewConnection(peerCertificate.Raw)
+reg := netsec.ClientRegistration{RequireCertificateBinding: true}
+
+// JWT 或内省响应均可先解出 claims，再走同一入口。
+err := netsec.ValidateAccessTokenJWT(rawJWT, conn, reg)
+err = netsec.ValidateAccessTokenIntrospection(introspectionJSON, conn, reg)
+```
+
+刷新令牌换发时，返回值就是新访问令牌应写入的 `cnf`：
+
+```go
+grants := netsec.RotationTable{}
+grants.Add(oldFingerprint, newFingerprint)
+
+cnf, err := netsec.ValidateRefreshBinding(
+    netsec.RefreshTokenRecord{CertificateFingerprint: oldFingerprint},
+    netsec.NewConnection(currentPeerCertificate.Raw),
+    grants,
+)
+```
+
+令牌端点证书认证只接受题述 mTLS 别名：
+
+```go
+auth, err := netsec.AuthenticateTokenEndpointCertificate(metadata, requestURL, conn)
+```
+
+`x5t#S256` 与 `jkt` 都必须是 32 字节 SHA-256 摘要的无填充 base64url；`=`、`+`、`/` 和空白都会被拒绝。`cnf` 同时含 `jkt` 与 `x5t#S256` 时两项都校验。
