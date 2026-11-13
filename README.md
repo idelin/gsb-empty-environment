@@ -1,0 +1,3 @@
+# rawtext二次解析
+
+过滤结果再入解析器时，noscript里已转义的起始标签会变回元素。noscript、script、style、textarea、title按rawtext保留字符，二次解析不得冒出新元素。同一段转义文本放进p必须仍是文本节点。文档管线调用可导入的TypeScript库做这次裁决。两份载荷只差父元素，比较元素树。
