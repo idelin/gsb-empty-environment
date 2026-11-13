@@ -1,0 +1,3 @@
+# import map最长前缀
+
+import map的scopes用短前缀盖掉长前缀，或integrity对不上仍去加载。scopes按最长前缀匹配；integrity缺失、算法不明或摘要不符则该说明失败且不回退到无完整性的地址。无scopes时imports的精确匹配应成功。模块加载器调用可导入的TypeScript库做这次裁决。准备长短两个前缀和一份错误摘要。
