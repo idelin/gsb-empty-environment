@@ -1,0 +1,3 @@
+# 凭证无关跨源
+
+COEP为credentialless时，没有CORP的跨源no-cors响应仍带着对方身份信息。这种情况把响应改成不透明且去掉身份；要求require-corp时则直接失败。带CORP same-origin且同源的响应保持原样。资源加载器调用可导入的TypeScript库做这次裁决。切换COEP的两个取值并去掉CORP。
