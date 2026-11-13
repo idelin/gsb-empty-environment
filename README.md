@@ -1,0 +1,3 @@
+# RPKI缓存回滚到旧验证载荷
+
+路由器从RPKI缓存同步验证载荷，攻击者可重放旧session/serial视图，让已撤销ROA再次生效。给Go路由宿主实现题内缓存同步包：每个cacheID有随机sessionID、32位serial和VRP集合(prefix,maxLength,originAS)，路由器持已提交session/serial/集合摘要与更新时间。Reset Query返回完整快照Begin(session,serial)、若干VRP、End(session,serial,rootDigest)；Serial Query返回从旧serial连续到新serial的Add/Remove事件及End。所有消息由缓存Ed25519签名并绑定cacheID、传输连接代次和规范内容；同session内serial按模2^32前向距离1至2^31-1才算更新，跳号、倒退或重复不同内容拒绝。session变化只能走完整Reset，期间旧已提交集合继续服务但标stale，完整root校验后原子切换；增量在私有副本应用，Remove不存在项或Add冲突拒绝。缓存长时间stale后路由策略按宿主配置fail-closed或unknown，不继续称valid。实现断线续传、响应乱序和双缓存各自独立状态；切换优先缓存只接受完整已提交视图，测试旧session重放、serial回绕、缺事件、根不符和切换中途崩溃，任何查询只看到完整旧或完整新集合。
