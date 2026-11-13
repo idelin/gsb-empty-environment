@@ -1,0 +1,3 @@
+# PSK带DHE却无共享
+
+选定psk_dhe_ke却没有对应的key_share，握手退化为纯PSK。选定psk_dhe_ke时必须有与选定组匹配的密钥共享；缺失则失败，不能降成psk_ke。模式为psk_ke且客户端也提供了该模式时可以没有共享。可导入的Go库供TLS栈调用。模式写psk_dhe_ke并删掉key_share。
