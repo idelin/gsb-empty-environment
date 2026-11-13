@@ -1,0 +1,3 @@
+# 未提交消息跨会话改变认证状态
+
+嵌入式设备的登录处理跨数据包保存状态，想找出会在认证失败后仍开放写寄存器的消息序列。写供Go设备测试框架调用的协议状态探索包，协议为自定义模型：状态含phase∈{idle,challenge,authenticated}、2位会话号、一个布尔authFlag；初态idle、会话号0、authFlag=false；消息只有Begin(s)、Proof(s,ok)、Abort(s)、Write(s)、Reset，s为0至3，ok由模拟验签器按消息携带的固定签名位判断。待测处理器由调用方注入，只能读写上述状态并返回是否执行Write；每步均保存前后快照。参考规则是Begin产生该会话的challenge并清authFlag，只有处在challenge且同会话有效Proof进入authenticated并置authFlag；同会话无效Proof清空状态，其他会话Proof不改状态，Abort仅对当前会话清空认证，Reset清空全部，Write只有会话号匹配且当前authenticated才允许，Write不改变状态；Abort及Reset清空时会话号归0；先前authenticated收到同会话Proof也不改变状态。枚举至多12条消息找待测允许而参考拒绝的最短序列，按Begin、Proof无效、Proof有效、Abort、Write、Reset的次序，再按会话号升序作并列排序；不能把内部状态不同但外部同样拒绝算漏洞。待测状态须可序列化且确定，发现同状态同消息不一致则报不确定实现，禁止据此报安全。提供漏清authFlag、跨会话Proof及正确实现作为真实回归夹具，预算耗尽保留搜索前沿。
