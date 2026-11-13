@@ -1,1 +1,19 @@
-{"name": "reissue-20261113-0134", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "reissue-20261113-0134",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Checkpointed governance snapshots with flash-loan resistance",
+  "exports": {
+    ".": "./index.ts",
+    "./checkpoints": "./src/checkpoints.ts",
+    "./delegation": "./src/delegation.ts",
+    "./governance": "./src/governance.ts",
+    "./flash-loan": "./src/flash-loan.ts",
+    "./hash": "./src/hash.ts",
+    "./types": "./src/types.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  }
+}
