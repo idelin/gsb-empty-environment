@@ -1,0 +1,3 @@
+# 解密成功但密钥身份不唯一
+
+存储层只靠AEAD标签判断解密成功，同一密文若在错误密钥下也被接受，会把对象归到错误租户。给Go存储宿主实现带密钥承诺的封装包，AEAD由宿主注入；每个密钥有稳定keyID和32字节原始密钥，封装随机nonce并计算ciphertext=AEAD.Seal(key,nonce,plaintext,aad)，commitKey=HMAC-SHA256(key,固定承诺派生标签)，commit=HMAC-SHA256(commitKey,keyID长度及字节||nonce长度及字节||aad长度及字节||ciphertext)的前16字节。记录规范编码版本、keyID、nonce、commit和ciphertext，长度有上限。解封先按keyID从宿主只读密钥环取唯一密钥，记录中的版本、keyID和长度也纳入commit输入；常量时间验证commit后才调用AEAD.Open；未知或重复keyID、承诺失败、AEAD失败均返回相同外部错误且不交付明文。密钥轮换允许多个keyID，但重加密先完整解封旧记录再用新ID封装并原子发布，失败保留旧记录。用故意接受任意密钥的坏AEAD替身证明承诺仍阻止跨keyID解密，再测改keyID、nonce、AAD、密文、承诺及轮换中断；明确本题承诺依赖HMAC假设，不能把它说成底层AEAD天然key-committing。
