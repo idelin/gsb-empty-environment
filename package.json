@@ -1,1 +1,24 @@
-{"name": "netnew-20261112-0795", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "netnew-20261112-0795",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.ts",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --experimental-strip-types --test index.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6"
+  }
+}
