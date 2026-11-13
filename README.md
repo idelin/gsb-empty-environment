@@ -1,3 +1,28 @@
 # IPsec对端身份写入钩子的转义
 
 IPsec 网关在隧道建立和拆除时把对端身份交给外部钩子，身份可以是证书主题或 IDi 里的 FQDN，攻击者可以在其中放入反引号、$( 或换行，让钩子里的脚本执行额外命令。给Go IPsec 网关写供隧道事件回调调用的钩子调用包：对端身份、虚拟 IP 与流量选择器作为进程参数数组与环境变量传递，不经 shell 拼接；身份中的 NUL 与控制字符使该事件拒绝建立；DN 各分量按 RFC 4514 转义；超过 256 字节拒绝；同时提供给调用方以 shell 包装钩子使用的单引号转义函数，对 ' 使用 '\'' 规则。用 $(touch x)、反引号、换行、含逗号与加号的 DN 分量和 256 边界验证，并确认钩子只收到一份未被改写的身份值。
+
+## Hook contract
+
+`InvokeHook(ctx, path, event)` executes `path` directly with
+`exec.CommandContext`, without a shell. Its arguments are:
+
+```
+<phase> <peer-identity> <virtual-ip> [<traffic-selector> ...]
+```
+
+The same data is available in the hook environment:
+
+```
+IPSEC_EVENT=<phase>
+IPSEC_PEER_IDENTITY=<peer-identity>
+IPSEC_VIRTUAL_IP=<virtual-ip>
+IPSEC_TRAFFIC_SELECTORS=<JSON array>
+```
+
+Non-DN identities are passed byte-for-byte. DN attribute values are
+normalized with RFC 4514 escaping. Identities with NUL/control characters,
+invalid UTF-8, or more than 256 bytes are rejected before the hook starts.
+
+`ShellQuote` is provided only for callers that deliberately wrap a hook in a
+shell; it applies the `'\''` rule to single quotes.
