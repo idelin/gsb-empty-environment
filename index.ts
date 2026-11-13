@@ -1,1 +1,1 @@
-export {};
+export * from './src/largeblob.ts';
