@@ -1,3 +1,67 @@
-# 模型张量区间重叠覆盖权重
+# netsec tensor container
 
-推理服务加载不可信模型时，恶意张量元数据可用整数回绕或重叠区间让一个名字读取另一张量或越出文件。给Go模型宿主实现题内张量容器解析包：文件前8字节为小端uint64元数据长度，随后是UTF-8 JSON对象，数据区紧随元数据；每个张量键唯一，值含dtype{U8,I32,F32,F64}、shape为1至8项非负整数数组和data_offsets[begin,end]，偏移相对数据区。JSON重复键、浮点数字、指数数字和超出uint64整数拒绝。元素数与dtype字节数用数学整数相乘，任一维为0则数据长度须0，否则end-begin须恰等于字节数；begin≤end且数据区绝对起止不溢出并在文件内。非空张量区间不得重叠，完全相同区间也拒绝，元数据按名称字节序规范重编码后计算manifest摘要。解析全部成功才向宿主返回只读ReaderAt切片，切片绑定文件对象代次和manifest；文件替换或截断使后续读失败，不重开路径。用稀疏ReaderAt测试维度乘法溢出、重叠、零维、元数据覆盖数据、短读及解析后文件代次变化，逐字节占用参考核对每个数据字节至多属于一个张量。
+Strict parser for the task's SAFETENSORS-style container:
+
+- little-endian `uint64` metadata length in the first 8 bytes;
+- one UTF-8 JSON object immediately after the header;
+- binary data immediately after the metadata;
+- tensor entries with `dtype`, `shape`, and `data_offsets`.
+
+The parser rejects duplicate object keys, floating-point and exponent number
+syntax, integers outside `uint64`, malformed shapes, overflowing element or
+byte counts, out-of-file ranges, and every pair of overlapping non-empty tensor
+ranges.
+
+## Host API
+
+```go
+model, err := netsec.Open("/models/checkpoint.bin")
+if err != nil {
+    return err
+}
+defer model.Close()
+
+tensor, ok := model.Lookup("weight")
+if !ok {
+    return errors.New("missing weight")
+}
+
+var header [16]byte
+if _, err := tensor.ReadAt(header[:], 0); err != nil {
+    return err
+}
+```
+
+`Open` opens the path exactly once. Tensor views do not reopen it. Every read
+checks the descriptor size/modification time and the path's file identity.
+Replacing, truncating, or modifying the file after a successful parse causes
+later reads to fail with `ErrFileChanged`. `Close` closes the descriptor and
+later reads fail with `ErrClosed`.
+
+For a sparse, in-memory, or otherwise custom `io.ReaderAt`, use:
+
+```go
+model, err := netsec.Parse(reader, size)
+```
+
+`Parse` automatically binds to `Generation() uint64`, `Generation() int64`, or
+`Snapshot() uint64` when present, and checks `Size()` when present. The
+`WithGeneration` and `WithGuard` options can supply equivalent checks for
+other implementations.
+
+## Manifest
+
+Tensor names are sorted by their UTF-8 bytes. The metadata is re-encoded in
+this exact compact form:
+
+```json
+{"a":{"dtype":"F32","shape":[2],"data_offsets":[0,8]},"z":{"dtype":"U8","shape":[3],"data_offsets":[8,11]}}
+```
+
+Field order inside each tensor is `dtype`, `shape`, `data_offsets`. The
+manifest is SHA-256 over those canonical bytes and is available as
+`Model.Manifest` or `Model.ManifestHex()`.
+
+All validation finishes before any `Tensor.Data`/`io.ReaderAt` view is
+returned. A view is limited to its tensor range and is read-only; it never
+exposes the backing file or a writable byte slice.
