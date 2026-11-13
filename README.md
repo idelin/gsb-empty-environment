@@ -1,0 +1,3 @@
+# anyPolicy不能被映射
+
+策略映射把anyPolicy映射成别的OID。映射的两端都不能是anyPolicy；出现则失败。两个具体OID之间的合法映射保留。可导入的Go库供证书路径调用。让issuerDomainPolicy等于anyPolicy。
