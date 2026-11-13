@@ -1,3 +1,50 @@
-# 可验证盲求值的证明换绑
+# P-256 可验证盲求值
 
-隐私查询客户端把输入盲化后交给服务端求值，服务端可能返回来自另一公钥或另一请求的结果。给Go客户端实现本题P-256可验证盲求值包：HashToGroup由可信宿主注入并返回规范非无穷远点P；客户端从宿主随机源取1≤r<q，发送B=rP并保存一次性状态。服务端持私钥1≤k<q及公钥K=kG，返回E=kB和DLEQ证明(c,s)：证明随机数t产生A=tG、D=tB，c=SHA256对固定域标签、宿主上下文、K、B、E、A、D的规范压缩点及大端长度前缀转录后模q，s=t-c*k mod q；验证重建A=sG+cK、D=sB+cE并重算c。客户端验证后计算Z=r^-1E，最终输出SHA256(固定完成标签||上下文||输入原文||规范Z)。所有输入点先验曲线与非无穷远，c、s须规范小于q；一次性状态验证成功或失败后都消费，重复响应拒绝。实现真实服务端与客户端测试，交换两请求的E/证明、换上下文、公钥和盲点均失败；HashToGroup及随机数质量属于宿主边界，包不得接受请求中自报的K；随机数生成失败时不得发送B或保存可用状态。
+这个包实现了 P-256 上的隐私查询盲求值与 DLEQ 换绑保护。服务端返回的
+`E=kB` 和证明同时绑定可信公钥 `K`、盲点 `B`、宿主上下文和本次求值；服务端
+不会接受请求自报的公钥。
+
+## 使用
+
+`HashToGroup` 和随机源都由可信宿主注入。`HashToGroup` 负责把查询输入映射为
+规范、非无穷远的 P-256 点；如果宿主上下文也需要参与映射，可使用
+`NewClientWithContext`。
+
+```go
+privateKey, _ := ecdsa.GenerateKey(elliptic.P256(), rand.Reader)
+server, _ := netsec.NewServer(privateKey, rand.Reader)
+client, _ := netsec.NewClient(hostHashToGroup, rand.Reader, server.Key())
+
+request, state, err := client.Blind(input, hostContext)
+if err != nil {
+    return err
+}
+response, err := server.Evaluate(request, hostContext)
+if err != nil {
+    return err
+}
+digest, err := state.Complete(response) // 状态在这里被消费
+```
+
+`state.Complete` 在成功或失败时都会消费一次性状态。重复调用返回
+`ErrStateConsumed`。随机源失败时 `Blind` 返回 `nil` 请求和 `nil` 状态，不会
+产生可发送的 `B`。
+
+## 转录编码
+
+- DLEQ 挑战为 `SHA256(domain, context, K, B, E, A, D) mod q`。
+- 每个字段前加 4 字节大端长度；点使用 33 字节规范压缩 SEC1 编码。
+- 证明满足 `s=t-c*k mod q`，验证方重建 `A=sG+cK` 和 `D=sB+cE` 后重算 `c`。
+- `c`、`s` 必须非负且严格小于 `q`。
+- 最终摘要为
+  `SHA256(completionLabel || context || input || compressed(Z))`，其中
+  `Z=r^-1E`。
+
+宿主提供的 `HashToGroup` 质量和随机源质量属于包外信任边界；本包不会回退到
+`math/rand` 或其他随机源。
+
+运行测试：
+
+```sh
+go test -race ./...
+```
