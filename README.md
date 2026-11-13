@@ -1,0 +1,3 @@
+# 定义者函数被search_path劫持
+
+高权限存储函数使用未限定对象名，调用者若控制解析路径，就能让函数执行攻击者对象。给Go数据库宿主实现题内SECURITY DEFINER解析包：模式目录包含schemaID、name、owner与对象映射，对象含objectID、kind{table,function,operator}、owner和版本；函数定义记录definerID、固定searchPath列表、引用AST及允许调用者集合。发布定义者函数时，searchPath必须全为schemaID而非可变名称，首项是只读系统目录，后续目录不可由非definer写；AST中安全关键table/function/operator引用须在发布时解析成(objectID,version)，临时模式与调用者路径、临时目录和PUBLIC可写schema禁止出现。执行时切换到definer权限只用于这些冻结对象，参数表达式仍按调用者上下文先求值；动态SQL默认拒绝，只有调用方传入受信AST且重新按冻结目录解析才允许。每次调用重验对象版本、schema写权限和函数未撤销，DROP后同名重建不匹配。实现解析依赖清单与最短劫持证据搜索，恶意目录可在候选位置创建同名函数/operator。覆盖函数遮蔽、operator重载、临时表、参数副作用、嵌套定义者函数及同名重建，执行回调只接冻结objectID。
