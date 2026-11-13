@@ -1,0 +1,3 @@
+# srcdoc沙箱不透明源
+
+带allow-scripts又带allow-same-origin的srcdoc会继承父源并执行脚本。同时出现这两个允许标记则拒绝该组合；只有脚本允许时源必须是不透明的。两个标记都不出现时按不透明源且不执行。文档管线调用可导入的TypeScript库做这次裁决。四种标记组合都建一次srcdoc。
