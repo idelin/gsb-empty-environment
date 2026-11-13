@@ -1,0 +1,3 @@
+# 重试组必须原先提供
+
+HelloRetryRequest指定的组不在最初的ClientHello里。重试选定的组必须来自第一份ClientHello的supported_groups，且新的key_share只替换这一组。按该组重发共享并完成握手时放行。可导入的Go库供TLS栈调用。让服务器选定第一份报文里没有的组。
