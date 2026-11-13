@@ -1,3 +1,46 @@
 # 适配器张量换绑到错误基础模型
 
 模型服务热加载低秩适配器，攻击者可把为一个基础模型制作的张量挂到同名但不同布局的层，产生越界或绕过安全头。给Go推理宿主实现可导入的适配器准入包：基础模型清单由宿主固定，列出modelDigest、层稳定ID、权重摘要、输入/输出维度、dtype和是否securityCritical；适配器清单签名由注入验签器确认，绑定adapterDigest、baseModelDigest、版本、每个目标层ID及A[r,in]、B[out,r]张量摘要、dtype、scale有理数和rank。要求base摘要精确相等、目标层唯一存在、1≤rank≤调用方上限、形状与层维度严格匹配、A/B dtype相同且在白名单、scale用约分有理数表示且分子分母在界内；securityCritical层默认禁止，只有策略列出该adapterDigest才允许。张量容器通过已审核的只读句柄提供，清单摘要与实际字节一致后才构造新模型代次；所有层先验证，失败不部分挂载。热切换原子发布，新请求取新代次，旧请求持旧代次引用直至完成；撤销适配器阻止新请求，最后引用释放后清零增量权重。用同名异布局基础模型、交换A/B、rank为0/超限、dtype与字节长度不符或浮点元素含NaN/无穷、签名换绑、安全层和热切换并发测试，输出回调仅收到已验证完整代次。
+
+## 实现
+
+包入口为 `netsec.New(netsec.Config)`。宿主固定 `BaseModelManifest`，注入
+`SignatureVerifier`、`TensorProvider` 和可选的 `SecurityPolicy`。签名器收到的是
+适配器清单的原始 JSON 字节，准入解析使用同一份字节，并拒绝重复 JSON 键、未知字段
+和尾随数据。
+
+```go
+manager, err := netsec.New(netsec.Config{
+    Base:                   hostBaseManifest,
+    Verifier:               hostSignatureVerifier,
+    Tensors:                auditedTensorProvider,
+    Policy:                 netsec.SecurityPolicySet{adapterDigest: {}},
+    MaxRank:                32,
+    AllowedDTypes:          []netsec.DType{netsec.DTypeFloat16, netsec.DTypeBFloat16},
+    MaxScaleNumerator:      1024,
+    MaxScaleDenominator:    1024,
+})
+if err != nil {
+    return err
+}
+
+if _, err := manager.Load(netsec.AdapterEnvelope{
+    Manifest:  signedManifestBytes,
+    Signature: detachedSignature,
+}); err != nil {
+    return err // 未完整验证时不会发布，也不会产生部分挂载
+}
+
+lease, err := manager.Acquire()
+if err != nil {
+    return err
+}
+defer lease.Release()
+generation := lease.Generation() // 整个请求期间固定该代次
+```
+
+`Load` 只有在验签、base 摘要精确匹配、所有目标层唯一存在、rank/scale/形状/dtype
+校验、张量字节摘要和非有限浮点检查全部通过后才发布新代次。`Generation` 的权重不可
+变，张量访问器返回副本。`Revoke` 永久阻止该 adapterDigest 的新准入和新请求；旧请求
+的 `Lease` 继续持有代次，最后一个引用释放后清零 A/B 增量张量。`PublishHook` 与
+`WithGeneration` 回调只会收到已完整发布的代次。
