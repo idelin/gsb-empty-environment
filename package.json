@@ -1,1 +1,28 @@
-{"name": "netnew-20261112-0771", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "typed-data-relayer",
+  "version": "1.0.0",
+  "description": "EIP-712 typed-data signature verification for off-chain authorized relayer calls, with injected keccak256 and address recovery",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./src": "./src/index.ts"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --experimental-strip-types --loader ./test/ts-loader.mjs --test test/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.6"
+  },
+  "license": "MIT"
+}
