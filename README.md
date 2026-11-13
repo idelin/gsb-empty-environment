@@ -1,0 +1,3 @@
+# 伪造BFD控制包让路由立即撤销
+
+攻击者伪造快速故障检测控制包可把会话打Down，触发路由撤销和流量切换。给Go路由宿主实现题内BFD会话包：会话绑定本地/远端地址、接口ID、本地/远端discriminator、会话代次、检测间隔和认证键代次；控制包含state、flags、detectMult、myDisc、yourDisc、tx/rxInterval、authSeq和截断为16字节的截断为16字节的HMAC-SHA256。HMAC覆盖固定域标签、会话身份和全部字段。初始Down状态只接受yourDisc=0且myDisc非零的建链包；已建链后yourDisc必须等于本地disc、myDisc等于已绑定远端disc。认证先于状态/计时更新，authSeq用64位严格递增窗口并在MAC成功后提交；键轮换可短期接受上一代但各自独立authSeq窗口，上一代只能维持现状态不能触发Up→Down。参数须在策略上下界，detectMult非零；新超时=最后认证包时刻+detectMult*max(localMinRx,remoteTx)，乘法用数学整数。只有认证Down包或计时器真正到期才通知路由回调，重复通知幂等。用虚拟时钟测试伪MAC Down、旧键Down、序号跳回、disc换绑、极大间隔溢出和合法故障，失败包零状态变化。
