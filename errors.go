@@ -1,0 +1,32 @@
+package netsec
+
+import "errors"
+
+var (
+	ErrUnknownCache         = errors.New("netsec: unknown cache")
+	ErrCacheNotTrusted      = errors.New("netsec: cache has no trusted signing key")
+	ErrSignature            = errors.New("netsec: invalid message signature")
+	ErrConnectionGeneration = errors.New("netsec: response is from a different connection generation")
+	ErrUnexpectedResponse   = errors.New("netsec: response does not belong to the active query")
+	ErrResponseReplay       = errors.New("netsec: response has already been consumed")
+	ErrMalformedMessage     = errors.New("netsec: malformed message")
+	ErrDuplicateMessage     = errors.New("netsec: conflicting duplicate message")
+	ErrIncompleteResponse   = errors.New("netsec: incomplete response")
+	ErrSessionMismatch      = errors.New("netsec: session does not match the committed view")
+	ErrSessionRetired       = errors.New("netsec: replayed retired session")
+	ErrSerialRegression     = errors.New("netsec: serial is not a forward update")
+	ErrSerialGap            = errors.New("netsec: serial sequence has a gap")
+	ErrDuplicateSerial      = errors.New("netsec: duplicate serial has different content")
+	ErrMissingEvent         = errors.New("netsec: response does not cover every serial")
+	ErrRootMismatch         = errors.New("netsec: root digest does not match the VRP set")
+	ErrAddConflict          = errors.New("netsec: add conflicts with an existing VRP")
+	ErrRemoveMissing        = errors.New("netsec: remove refers to a missing VRP")
+	ErrDuplicateVRP         = errors.New("netsec: duplicate VRP in a set")
+	ErrNeedReset            = errors.New("netsec: cache must be synchronised with a reset query")
+	ErrNoCommittedView      = errors.New("netsec: cache has no committed view")
+	ErrNotCommitted         = errors.New("netsec: cache does not have a complete committed view")
+	ErrInvalidPolicy        = errors.New("netsec: invalid stale policy")
+	ErrInvalidState         = errors.New("netsec: invalid persisted state")
+	ErrHistoryUnavailable   = errors.New("netsec: requested serial history is unavailable")
+	ErrInvalidOperation     = errors.New("netsec: invalid delta operation")
+)
