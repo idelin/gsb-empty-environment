@@ -1,0 +1,3 @@
+# Trailer参与路由
+
+尾随头里的Host或长度在路由完成之后才被拿来改信。尾随头禁止host、content-length、transfer-encoding和任何伪头；出现则流失败。声明过的自定义尾随头可以在正文结束后到达。协议网关调用可导入的Go库做这次裁决。在尾随部分写入host。
