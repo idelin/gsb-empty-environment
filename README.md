@@ -1,0 +1,3 @@
+# 客户端证书不可省略
+
+服务器要求证书后，客户端跳过Certificate直接发Finished。收到证书请求后必须先有Certificate再有CertificateVerify；跳步失败。按顺序提交证书和验证时放行。可导入的Go状态机接TLS栈送来的状态。删掉Certificate这一条。
