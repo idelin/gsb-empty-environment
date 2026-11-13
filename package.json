@@ -1,1 +1,15 @@
-{"name": "sec-20261113-0068", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "sec-20261113-0068",
+  "private": true,
+  "type": "module",
+  "main": "index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/adjudicator.test.ts test/enforcer.test.ts"
+  },
+  "engines": {
+    "node": ">=23"
+  }
+}
