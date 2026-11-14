@@ -1,0 +1,3 @@
+# 恢复配置后SNMP引擎的boots回退了
+
+网络设备升级后从备份恢复配置，authoritative engine boots随之回退，攻击者重放旧的GetBulk请求被当作新请求。请实现供C++20 SNMP代理调用的可导入重放与引擎身份组件。维护engineID、boots、engineTime和每用户滑动窗口，boots持久化在独立于配置备份的存储，恢复只允许单调前进或触发重新同步；每个请求核对msgAuthoritativeEngineID、boots、时间和认证参数，窗口外的PDU丢弃并计数。USM用户密钥代次与auth/privacy算法绑定，重密钥后旧消息不得通过，错误不得回显可用于探测用户的细节。用boots回滚、时钟偏移、用户密钥轮换、重放同一PDU、合法重同步和窗口内乱序验证旧请求不被接受。
