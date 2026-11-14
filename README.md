@@ -1,0 +1,3 @@
+# FAST装甲cookie被带到另一个Kerberos realm
+
+跨realm KDC前端缓存Kerberos FAST装甲与cookie，若缓存键遗漏目标realm或KDC代次，攻击者可能让预认证状态在错误信任路径上继续。请实现供KDC前端调用的Go FAST会话状态组件，不实现通用Kerberos编码器，而接收已经严格DER解析的AS-REQ/TGS-REQ结构与原始加密字段。状态身份绑定客户端principal规范组件、目标realm、KDC实例与密钥代次、armor ticket会话、请求nonce、选定enctype和cookie随机句柄；cookie内容经AEAD封装这些字段及绝对过期时间，AAD绑定协议版本和前端分区。收到下一请求先验证外层realm、装甲票据、finished校验和与请求体摘要，再原子消费或按明确多步状态迁移；未知字段不回显，失败信息不得区分cookie来自其他realm还是已过期。跨realm referral会创建新状态而非继承cookie。用可控密钥轮换和两个realm测试cookie搬运、armor替换、nonce重放、并发消费、KDC回滚与合法多轮预认证。
