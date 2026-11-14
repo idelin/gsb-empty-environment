@@ -1,0 +1,1 @@
+{"name": "reissue-20261113-0265", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
