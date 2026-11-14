@@ -1,1 +1,12 @@
-{"name": "reissue-20261113-0335", "private": true, "type": "module", "scripts": {"test": "node --experimental-strip-types --test"}}
+{
+  "name": "reissue-20261113-0335",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "sideEffects": false,
+  "scripts": {
+    "test": "\"${npm_node_execpath:-node}\" --experimental-strip-types --test"
+  }
+}
