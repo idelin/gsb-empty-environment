@@ -1,0 +1,3 @@
+# Canonical ABI重分配复活旧资源句柄
+
+WebAssembly组件宿主通过Canonical ABI把资源句柄和字符串交给不可信组件，若realloc期间发生重入并复用表槽，旧lowered值可能操作另一个租户资源。请实现供WebAssembly组件宿主调用的可导入C++20资源桥，建模组件实例代次、resource table槽位与generation、borrow/own类型、调用帧和线性内存版本。lower会生成绑定实例、槽代次和帧的不可伪造32位表示；borrow只能活到当前动态调用结束，own转移原子改变所有权。字符串与list提升/降低先检查对齐、长度乘加溢出和当前memory版本，再调用组件realloc；realloc可重入或增长内存，因此返回后必须重新取memory并验证先前预留仍属于同一事务，失败回滚资源与分配。drop、trap、异步取消和实例销毁恰一次释放，迟到析构不能碰复用槽。用恶意realloc回调触发嵌套lower、memory.grow、trap、槽位复用、borrow逃逸和跨实例句柄注入，另覆盖合法own往返与UTF-8边界，返回最短能力混淆轨迹。
