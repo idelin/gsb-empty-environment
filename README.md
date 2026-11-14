@@ -1,0 +1,3 @@
+# TPM策略会话的cpHash被下一命令覆盖
+
+密钥代理用TPM策略会话授权敏感NV写入，若PolicyCpHash或PolicyNameHash状态可在执行前被另一协程修改，原审批会落到不同命令。请实现供Go TPM宿主调用的可导入策略会话事务层，TPM命令由接口注入。会话绑定TPM启动计数、session handle代次、hash算法、nonceTPM、policyDigest和调用主体；构造授权时从最终命令码、规范句柄Name序列和精确参数区计算cpHash，PolicyCpHash成功后冻结命令模板，后续只允许填充不在摘要外的认证值。PolicyNameHash与PolicyOR分支同样记录已承诺集合，不能用Flush/ContextLoad后的相同数字handle继承。提交占用会话直到命令响应验完，超时状态记未知并在重新Quote/审计前不重放。用两协程交换NV index、ContextSave/Load回滚、TPM reset、PolicyOR错支、参数尾字节变化和合法一次写入验证审批对象与实际命令一致。
