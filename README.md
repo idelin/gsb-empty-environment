@@ -1,0 +1,3 @@
+# Linux keyring加入旧会话后读到他人密钥
+
+多租户守护进程切换线程凭据时复用session keyring，若join、link和revoke的代次不一致，后续请求可能搜索到上一租户的密钥。请实现供C++20服务运行时调用的可导入keyring能力层，建模thread/process/session/user keyring序列号、拥有者凭据、租户代次和每个key的类型/描述/权限。每个请求进入时创建或加入只属于该租户代次的session ring，搜索按Linux层级和权限返回稳定key generation；link/unlink/revoke/timeout原子更新索引，数字serial复用或线程迁移不能复活旧能力。异步request_key回调绑定原请求凭据与callout info摘要，完成前租户切换则结果只销毁；禁止默认用户keyring作为跨租户回退。用相同描述不同租户、serial复用、线程池切换、revoke后迟到实例化、超时与合法同租户共享验证搜索结果不越界。
