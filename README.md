@@ -1,0 +1,3 @@
+# FUSE忘却后旧节点号指向新inode
+
+沙箱文件代理依赖FUSE inode号做访问决策，若FORGET后复用nodeid而迟到请求仍在队列，攻击者可把旧授权施加到新文件。请实现供C++20 FUSE守护进程调用的节点与请求生命周期组件。每个lookup结果绑定mount session、nodeid、generation、内核lookup引用数、后端对象稳定ID和策略代次；FORGET/BATCH_FORGET只减引用，不发送响应，归零后进入隔离期，仍有在途unique请求或通知引用时不得复用。每个请求在接收时快照node generation和调用者凭据，执行副作用前重核；INTERRUPT、连接abort和迟到后端完成只结算原unique，不能影响复用后的请求。RENAME交换、unlink后开放句柄和notify_inval_inode分别更新名字与对象引用而不偷换身份。用延迟后端交错FORGET、nodeid复用、RENAME_EXCHANGE、INTERRUPT unique复用、连接重启和合法缓存命中，返回首次身份冲突见证。
