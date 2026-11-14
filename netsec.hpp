@@ -1,2 +1,4 @@
 #pragma once
-namespace netsec {}
+
+#include "anti_rollback.hpp"
+#include "sha256.hpp"
