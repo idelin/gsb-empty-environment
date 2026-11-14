@@ -1,0 +1,3 @@
+# RELRO生效前的延迟绑定写窗
+
+插件宿主希望在加载不可信ELF共享对象前阻断可写GOT劫持，但现有检查只看PT_GNU_RELRO是否存在，遗漏了延迟绑定与重定位落点。请实现嵌入加载器的C++20 ELF64安全策略模块，只处理little-endian x86-64 ET_DYN并在任何初始化器运行前解析程序头、动态段、字符串/符号表及RELA重定位。模块验证所有表范围和整数运算，计算PT_LOAD映射权限与PT_GNU_RELRO最终页范围；若存在JUMP_SLOT而未设置BIND_NOW/DF_1_NOW，或GLOB_DAT、JUMP_SLOT、COPY及指向函数入口的重定位目标在relocation完成后仍可写，则拒绝。重定位目标必须落入单一可写LOAD且不能覆盖动态元数据、代码或RELRO边界外溢；文本重定位、RWX映射、重叠LOAD产生歧义和构造器数组位于可写非RELRO区分别报告。返回装载前策略决定与精确文件偏移见证，不自行执行文件。用截断表、重叠段、RELRO未页对齐、`-z relro`但lazy、full RELRO和合法无PLT插件测试区分表面标记与真实写窗。
