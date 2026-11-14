@@ -1,0 +1,3 @@
+# idmapped mount让Landlock规则指向错对象
+
+沙箱在进入Landlock后仍可看到idmapped bind mount，若规则缓存按路径字符串或用户态uid判断，攻击者能借挂载替换访问未授权inode。请实现嵌入C++20沙箱启动器的Landlock规则规划与运行时身份组件。调用方给出已打开的规则根fd、允许访问位、mount namespace代次和可选idmap身份；组件在创建ruleset前用稳定mount ID、文件句柄或注入的等价对象身份解析层级，拒绝跨mount的`..`、magic link与后来替换的路径。规则只按内核支持ABI裁剪未知访问位，不能因旧内核静默扩大权限；restrict_self后记录namespace和规则集代次，后续新增mount、move_mount或pivot_root必须经钩子证明仍被某个授权根覆盖，否则拒绝。uid/gid映射只影响属主呈现，不改变规则对象身份。用同路径换mount、idmap前后uid相同、bind子树移入、ABI缺位、并发pivot_root和合法只读子树测试路径文本相同也不会继承错误权限。
