@@ -1,0 +1,3 @@
+# SQLite授权器在虚表重入后沿用旧决定
+
+嵌入式数据库用SQLite authorizer限制不可信查询，但虚拟表xBestIndex或自定义函数可重入准备另一条语句；若授权缓存只按SQL文本，攻击者能让高权限准备结果流入低权限调用。请实现供C++20数据库宿主调用的准备与执行授权层，包装prepare、authorizer回调、虚拟表和函数注册。每次准备绑定租户、schema cookie、attached数据库集合、临时库策略、函数/模块注册代次和不可伪造prepare ID；授权决定覆盖action code及arg1/arg2/database/trigger来源，DENY与IGNORE语义分别保留。回调期间重入使用新的栈帧与权限快照，不能改写外层缓存；schema变化、ATTACH/DETACH、load_extension策略或虚表模块更新使旧statement失效。执行前核对同一身份，触发器、视图展开和虚表隐藏查询仍逐项授权。用恶意xBestIndex重入、同SQL跨租户、schema cookie回绕、ATTACH同名库、IGNORE列读取和合法只读视图验证授权决定不串帧。
