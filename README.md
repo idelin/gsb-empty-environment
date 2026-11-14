@@ -1,0 +1,3 @@
+# PIDFD_GETFD在exec后复制了新凭据文件
+
+调试代理用pidfd_getfd从受控进程复制描述符做检查，若目标在检查与复制间exec并复用fd号，代理可能取得新安全域的敏感文件。请实现供C++20沙箱代理调用的可导入pidfd能力组件。目标身份绑定pidfd对应的启动时间、exec generation、用户/挂载命名空间和策略域；枚举时为每个fd记录file description稳定身份、访问模式和允许操作。复制前后通过注入内核接口核对目标仍是同一exec generation与fd对象，若接口不能原子保证则先冻结目标或拒绝，不用`/proc/pid/fd`路径替代。exec、setns、凭据变化、fd close/reopen及pidfd退出事件撤销快照；迟到复制结果立即关闭。组件返回受限代理句柄而非裸fd，并阻止权限升级。用exec后同号fd、pid复用、跨mount namespace、并发close/reopen、目标退出和合法只读复制验证检查对象与使用对象恒等。
