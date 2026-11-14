@@ -1,0 +1,3 @@
+# 跨站页面通过WebSocket接管了会话
+
+消息服务只在登录时校验Cookie，WebSocket握手不检查Origin，攻击者页面可用受害者Cookie建立连接并收发消息。请实现嵌入TypeScript消息服务的可导入握手鉴权组件。握手时核对Origin白名单、Cookie的SameSite与会话标识，Sec-WebSocket-Protocol必须与请求一致；不支持子协议或来源不符即拒绝升级。连接绑定会话、来源、角色与代次，权限变更后关闭旧连接，消息通道与HTTP接口使用同一授权。用跨站握手、空Origin、子协议替换、Cookie复用、权限撤销和合法同站连接验证未授权来源不能建链。
