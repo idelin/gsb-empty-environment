@@ -1,0 +1,3 @@
+# WireGuard接收索引在旧握手迟到后复活
+
+VPN集中器频繁重建peer会复用WireGuard receiver index，若旧握手响应或cookie reply迟到，新peer可能把它关联到错误密钥对。请实现供Go隧道宿主调用的可导入索引与握手生命周期组件。索引能力绑定设备实例、peer静态公钥、握手generation、临时密钥和创建随机数；分配后经历InitiationSent、ResponseAccepted、KeypairActive、Retired与Quarantine，只有匹配MAC、时间戳和握手哈希的消息能迁移。索引回收须等待旧密钥消息上限、超时和所有异步密码任务结束，cookie reply还绑定原始源地址族及消息摘要但NAT端口变化按明确策略处理。迟到任务只销毁旧材料，不能从数字索引查到新peer。用强制索引碰撞、peer删除重建、cookie迟到、并发response、NAT重绑定和合法rekey验证索引复用不等于身份复用。
