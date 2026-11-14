@@ -1,0 +1,19 @@
+Start testing: Nov 14 19:35 CST
+----------------------------------------------------------
+1/1 Testing: netsec_slice_binding
+1/1 Test: netsec_slice_binding
+Command: "/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-reissue-20261113/jobs/REISSUE-20261113-0435/workspace/build4/netsec_tests"
+Directory: /Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-reissue-20261113/jobs/REISSUE-20261113-0435/workspace/build4
+"netsec_slice_binding" start time: Nov 14 19:35 CST
+Output:
+----------------------------------------------------------
+all slice binding tests passed
+<end of output>
+Test time =   0.29 sec
+----------------------------------------------------------
+Test Passed.
+"netsec_slice_binding" end time: Nov 14 19:35 CST
+"netsec_slice_binding" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 14 19:35 CST
