@@ -1,0 +1,3 @@
+# WebTransport池化把会话交给另一origin
+
+浏览器为降低握手开销复用HTTP/3连接承载WebTransport，若池键只看IP和证书，恶意origin可观察或占用另一origin的session与datagram上下文。请实现供浏览器网络栈调用的TypeScript WebTransport会话池。底层连接身份绑定network partition key、代理链、服务端证书验证身份、ECH结果、ALPN、远端端点和QUIC代次；每个CONNECT会话另绑定请求origin、规范URL、服务器返回的draft/version、session ID和流/datagram配额。只有证书覆盖且ORIGIN frame或同源策略明确允许时才能在同连接新建会话，但session ID、流ID映射、拥塞统计之外的应用状态绝不跨origin共享。GOAWAY、证书更新、网络切换和0-RTT拒绝冻结新分配；迟到datagram按连接代次和session ID路由，未知或已关闭ID丢弃。用同证书两个origin、伪ORIGIN frame、session ID复用、网络切换、GOAWAY竞态及合法授权共连验证池化不等于会话授权。
