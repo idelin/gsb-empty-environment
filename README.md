@@ -1,0 +1,3 @@
+# RPKI ASPA把上游方向判反
+
+路由安全服务开始验证ASPA，路径遍历方向或provider集合代次处理错误会让route leak被标成合法。请实现供BGP决策进程调用的Go ASPA验证包，输入已按接收方向给出的AS_PATH段、邻居关系、AFI及某一RPKI快照中的客户到provider授权集合。明确处理AS_SEQUENCE、AS_SET、confederation段和路径prepend：先按RFC约定归一出可验证的有序AS序列，AS_SET或无法确定邻接时返回Unknown而非Valid；分别从upstream和downstream传播方向检查授权对，检测valley并返回首个冲突及所用VRP/ASPA对象。快照发布原子切换，单条路径全程固定同一serial；撤销或过期对象不会混入旧结果，缓存键含方向、AFI、规范路径和serial。用客户泄漏同级路由、反向遍历、重复AS、AS_SET、快照中途更新及合法provider链验证Valid/Invalid/Unknown三态。
