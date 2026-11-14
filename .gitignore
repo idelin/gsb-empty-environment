@@ -4,4 +4,4 @@ node_modules/
 dist/
 *.pem
 *.key
-build/
+build*/
