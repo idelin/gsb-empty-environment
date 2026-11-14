@@ -1,0 +1,3 @@
+# JARM响应在两个客户端间mix-up
+
+OIDC客户端通过前端接收JARM授权响应，若状态表只按state查找，攻击者可把另一个issuer或client_id签发的响应塞进当前回调。请实现嵌入Web登录服务的TypeScript JARM验证中间件。发起记录绑定浏览器会话代次、issuer、client_id、redirect_uri原始值、response_mode、state哈希、nonce和PKCE交易ID；回调先从固定issuer元数据选择验签配置，JWT只接受签名响应且验证iss、aud唯一包含当前client、exp/iat、允许算法和密钥代次。外层参数除`response`外不得携带code/error/state覆盖；JWT内state必须常量时间匹配并原子消费记录，code或error恰有一种，成功结果与对应PKCE交易一起返回。未知kid刷新元数据只能在同issuer内有界一次，迟到刷新不更新新代配置。用两个issuer共享kid、两个客户端相同state、外层覆盖、aud数组夹带、并发回调和合法错误响应验证mix-up被拒绝。
