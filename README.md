@@ -1,0 +1,3 @@
+# 间接CRL的分发点范围没有核对
+
+证书校验器拿到一张由另一CA签发、只覆盖其他证书集的间接CRL，却把它当作本证书的撤销证明，已撤销证书因此通过。请实现供C++20证书校验服务调用的可导入CRL范围组件。解析issuing distribution point、onlyContainsUserCerts、onlyContainsCACerts、scope与分发点名称，CRL签发者必须是被校验证书的直接签发者或显式委托；间接CRL只在其作用域内生效，base与delta CRL按序号衔接。过期、未知关键扩展与签名无效拒绝。用其他CA的CRL、范围错配、delta缺口、合法同范围CRL和撤销后证书验证范围与结论一致。
