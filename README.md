@@ -1,0 +1,3 @@
+# PKCE方法降级后授权码仍能兑换
+
+授权服务器同时支持`plain`与`S256`，攻击者把S256挑战换成plain并在兑换时提交明文verifier，窃取授权码后换到令牌。请实现供Go授权服务器调用的可导入PKCE校验组件。每个授权请求冻结code_challenge、method、client身份、redirect_uri和nonce；兑换时必须同client、同redirect_uri、未过期且一次性消费，method只按该请求声明的执行，未声明或未知method按拒绝处理。授权码重放、并发兑换和刷新令牌不得延续PKCE结论，错误不区分码无效与verifier错误。用method降级、缺失challenge、换client、重放code、并发兑换和合法S256验证不能绕过证明。
