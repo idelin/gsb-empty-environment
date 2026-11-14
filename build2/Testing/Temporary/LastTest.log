@@ -1,0 +1,19 @@
+Start testing: Nov 14 17:09 CST
+----------------------------------------------------------
+1/1 Testing: estop_integrity
+1/1 Test: estop_integrity
+Command: "/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-reissue-20261113/jobs/REISSUE-20261113-0557/workspace/build2/estop_integrity_test"
+Directory: /Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-reissue-20261113/jobs/REISSUE-20261113-0557/workspace/build2
+"estop_integrity" start time: Nov 14 17:09 CST
+Output:
+----------------------------------------------------------
+all estop integrity scenarios passed
+<end of output>
+Test time =   0.66 sec
+----------------------------------------------------------
+Test Passed.
+"estop_integrity" end time: Nov 14 17:09 CST
+"estop_integrity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 14 17:09 CST
