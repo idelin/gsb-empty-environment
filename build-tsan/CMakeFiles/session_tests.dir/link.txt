@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/clang++ -fsanitize=thread -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX26.4.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -fsanitize=thread CMakeFiles/session_tests.dir/tests/session_tests.cpp.o -o session_tests  libnetsec.a

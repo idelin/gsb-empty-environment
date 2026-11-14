@@ -1,0 +1,19 @@
+Start testing: Nov 14 11:15 CST
+----------------------------------------------------------
+1/1 Testing: session_tests
+1/1 Test: session_tests
+Command: "/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-reissue-20261113/jobs/REISSUE-20261113-0405/workspace/build2/session_tests"
+Directory: /Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/prerun-reissue-20261113/jobs/REISSUE-20261113-0405/workspace/build2
+"session_tests" start time: Nov 14 11:15 CST
+Output:
+----------------------------------------------------------
+all session lifecycle tests passed
+<end of output>
+Test time =   0.48 sec
+----------------------------------------------------------
+Test Passed.
+"session_tests" end time: Nov 14 11:15 CST
+"session_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 14 11:15 CST
