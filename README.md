@@ -1,0 +1,3 @@
+# MLS Welcome把成员带入另一棵树
+
+群聊服务处理MLS Welcome时，攻击者若能替换GroupInfo或ratchet tree，会让新成员在错误群组状态下接受相同加密组秘密。请实现供MLS客户端调用的Go Welcome准入组件，密码操作由接口注入。逐项解密EncryptedGroupSecrets后，将group_id、epoch、cipher suite、joiner secret、psk_ids及key package reference绑定到唯一候选；验证GroupInfo签名者确为树中有签名权限的成员，确认transcript hash、tree hash和extensions与所携或外取ratchet tree一致。外取树回调返回的字节和摘要绑定本次Welcome，不能被并发缓存替换；KeyPackage必须未过期、未消费且叶节点credential与本地私钥匹配。相同Welcome并发只允许一次原子消费，失败不推进持久epoch。用替换树、旧GroupInfo、同KeyPackage跨群、缺PSK、外取树竞态、重复消费和合法外部树加入验证不会接受混合状态。
