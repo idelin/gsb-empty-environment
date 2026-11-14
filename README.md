@@ -1,0 +1,3 @@
+# 容器退出时在宿主执行了release_agent
+
+cgroups v1的release_agent在容器内可写，攻击者设置路径后触发最后一个任务退出，宿主以root执行其指定程序。请实现供C++20容器运行时调用的可导入cgroup配置校验组件。禁止容器内写release_agent、notify_on_release与相关控制文件，层级挂载只暴露允许的控制器；设置项按cgroup所有权与命名空间归属核对。检测到配置变更即告警并拒绝创建，退出事件不执行容器可控路径。用release_agent写入、notify_on_release、挂载覆盖、合法控制器和退出事件验证宿主不执行容器内容。
