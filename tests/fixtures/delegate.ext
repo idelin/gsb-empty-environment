@@ -1,0 +1,4 @@
+basicConstraints=critical,CA:FALSE
+keyUsage=critical,cRLSign
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid,issuer

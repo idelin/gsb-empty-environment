@@ -1,0 +1,5 @@
+basicConstraints=critical,CA:FALSE
+keyUsage=critical,digitalSignature,keyEncipherment
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid,issuer
+crlDistributionPoints=URI:http://ca1.example/crl/leaf.crl
