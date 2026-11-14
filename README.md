@@ -1,0 +1,3 @@
+# 多受众令牌没有核对授权方
+
+身份提供方签发的id_token同时面向多个client，攻击者拿自己client的令牌访问另一client，接收方只查aud包含自己即通过。请实现供TypeScript资源服务调用的可导入令牌受众组件。aud为多值时azp必须存在且等于本client，单值时azp可省略但aud必须精确匹配；issuer、nonce、认证时间与绑定会话逐项核对。令牌交换与刷新不得改变受众，跨租户client映射唯一。用多受众冒用、azp缺失、aud包含、nonce复用和合法单受众令牌验证只接受本client令牌。
