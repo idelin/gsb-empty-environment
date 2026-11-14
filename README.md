@@ -1,3 +1,87 @@
-# HPACK取消流污染后续权限头
+# Transactional HTTP/2 header decoding for tenant-safe gateways
 
-反向代理在HTTP/2流被RST_STREAM取消后仍继续解码残余HEADERS，可能让攻击者把动态表状态带入另一租户的授权请求。请实现嵌入网关的Go头块解码与隔离层，支持HEADERS和连续CONTINUATION直到END_HEADERS，严格执行连接级帧顺序、流状态、最大压缩块和解压后字段预算。HPACK动态表更新只在完整头块逐字节成功解码并通过伪首部顺序、重复规则、名称小写和敏感字段策略后提交；压缩错误、取消、超限或连接错误必须回滚本块全部表变更。连接池复用时，压缩上下文只能属于同一对端连接和安全租户，切换租户必须完成SETTINGS同步后重置；迟到CONTINUATION不能附着到新流。包返回结构化字段或明确连接/流错误，并暴露可重放的表提交记录。用能控制帧分片与RST时序的测试证明取消块中的Authorization索引不会影响后续请求，同时覆盖合法跨帧索引、表大小更新、过大Huffman字符串、伪首部在普通首部之后以及两个租户共用底层套接字。
+`netsec` is an embeddable Go header-block layer for a reverse proxy. It
+implements HPACK decoding, HEADERS/CONTINUATION assembly, connection and stream
+ordering checks, and per-tenant compression isolation.
+
+The attack this package prevents is dynamic-table poisoning across a canceled
+stream: a peer sends an incrementally indexed `Authorization` in a HEADERS
+fragment, cancels the stream with `RST_STREAM`, and later causes another
+tenant's request to reference that entry. Here, HPACK changes are decoded into
+a private table clone and are committed only after the complete block has
+passed every check. Cancellation, budget failure, semantic rejection and
+compression errors discard the clone.
+
+## Invariants
+
+- HEADERS is followed only by same-stream CONTINUATION frames until
+  END_HEADERS. Any other interleaving is a connection error, except RST_STREAM
+  which cancels the block.
+- `MaxCompressedBlockBytes`, `MaxDecompressedBytes`, `MaxHeaderListSize`,
+  `MaxHeaderCount` and `MaxStringLength` are enforced before publication.
+- Pseudo-headers must precede regular headers, must be known and unique.
+  Field names must be lowercase; configured sensitive names cannot use
+  incremental indexing.
+- A compression context belongs to one `(peer connection, tenant)` pair.
+  Switching tenants resets it only after a synchronized SETTINGS generation
+  for the target tenant is present.
+- A late CONTINUATION is consumed as part of the canceled sequence but cannot
+  attach to a new stream. Opening a new stream before the canceled sequence
+  reaches END_HEADERS is a connection error.
+
+## Usage
+
+```go
+decoder := netsec.NewDecoder(netsec.Config{
+    MaxDynamicTableSize:     4096,
+    MaxCompressedBlockBytes: 64 << 10,
+    MaxDecompressedBytes:    128 << 10,
+})
+
+// A gateway binds the peer/tenant context at a stream boundary.
+_ = decoder.BindTenant("conn-42", "tenant-a", settingsGeneration)
+
+for {
+    frame, err := netsec.ReadFrame(conn, 0)
+    // ...
+    result, err := decoder.ProcessFrame(frame)
+    if err != nil {
+        var streamErr *netsec.StreamError
+        if errors.As(err, &streamErr) {
+            // Reset one stream; the connection can continue.
+        }
+        var connErr *netsec.ConnectionError
+        if errors.As(err, &connErr) {
+            // The HPACK context is unusable; close the connection.
+        }
+        continue
+    }
+    if result.Fields != nil {
+        // Complete, validated header list.
+    }
+}
+```
+
+`Decoder.Commits()` exposes `TableCommit` records. Each record contains the
+compressed digest, before/after sizes, evictions, and an ordered operation
+list. `TableCommit.Replay` reproduces the committed dynamic table on a
+`DynamicTable` initialized to `InitialMaxSize`.
+
+`ContextPool` is a convenience layer for connection-pool reuse: it keeps one
+decoder per peer connection and requires a synchronized `SettingsSync` record
+when the same underlying socket changes tenants.
+
+## Tests
+
+`go test ./...` covers:
+
+- a canceled fragmented block that indexes `Authorization`, proving a later
+  request still resolves an older safe entry;
+- legal indexed references split across HEADERS/CONTINUATION boundaries;
+- dynamic table size updates and their rollback;
+- an oversized Huffman string that rolls back earlier fields in the block;
+- pseudo-headers after regular headers, duplicate pseudo-headers and uppercase
+  names;
+- two tenants sharing one peer socket, including the SETTINGS gate and reset;
+- connection ordering, orphan/late CONTINUATION, replayable commit records and
+  RFC 7541 Huffman/request vectors.
