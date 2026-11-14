@@ -1,3 +1,59 @@
-# MLS Welcome把成员带入另一棵树
+# MLS Welcome 准入组件
 
-群聊服务处理MLS Welcome时，攻击者若能替换GroupInfo或ratchet tree，会让新成员在错误群组状态下接受相同加密组秘密。请实现供MLS客户端调用的Go Welcome准入组件，密码操作由接口注入。逐项解密EncryptedGroupSecrets后，将group_id、epoch、cipher suite、joiner secret、psk_ids及key package reference绑定到唯一候选；验证GroupInfo签名者确为树中有签名权限的成员，确认transcript hash、tree hash和extensions与所携或外取ratchet tree一致。外取树回调返回的字节和摘要绑定本次Welcome，不能被并发缓存替换；KeyPackage必须未过期、未消费且叶节点credential与本地私钥匹配。相同Welcome并发只允许一次原子消费，失败不推进持久epoch。用替换树、旧GroupInfo、同KeyPackage跨群、缺PSK、外取树竞态、重复消费和合法外部树加入验证不会接受混合状态。
+群聊服务处理 MLS Welcome 时，如果攻击者可以替换 GroupInfo 或 ratchet
+tree，新成员可能在错误的群组状态下接受同一份加密组秘密。本包实现一个供
+MLS 客户端调用的 Welcome 准入器；解密、签名、摘要、credential 校验等密码
+操作全部通过 `Crypto` 接口注入，持久状态通过 `Store` 接口注入。
+
+## 使用方式
+
+```go
+admitter := netsec.NewAdmitter(crypto,
+    netsec.WithStore(store),
+    netsec.WithTreeFetcher(fetcher),
+)
+
+admission, err := admitter.Admit(ctx, welcome, netsec.LocalParticipant{
+    KeyPackage: keyPackage,
+    PrivateKey: privateKey,
+    PSKs:       map[string][]byte{netsec.PSKKey(pskID): psk},
+})
+if err != nil {
+    // 未提交任何持久状态，可安全拒绝/重试
+}
+
+// admission.JoinerSecret / TreeHash / TranscriptHash / PSKIDs 已绑定到
+// 本次 Welcome 的唯一候选和树状态。
+```
+
+注入的 `Crypto` 必须：
+
+- 认证并解密每个 `EncryptedGroupSecrets`，并在 `GroupSecrets` 中带回
+  `GroupID`、`Epoch`、`CipherSuite`、`KeyPackageRef`、`JoinerSecret` 和
+  `PSKIDs`。
+- 验证 `GroupInfo` 签名覆盖 `TreeHash`、`TranscriptHash`、extensions 和
+  signer credential。
+- 根据本群上下文、树摘要、transcript、PSK 验证 joiner secret 的密钥调度。
+- 验证 KeyPackage 叶 credential 与本地私钥匹配。
+
+## 校验与状态保证
+
+- 逐项解密所有可解密的 `EncryptedGroupSecrets`；每个明文必须与 GroupInfo
+  的 group id、epoch、cipher suite 一致，所有明文必须共享同一 joiner
+  secret 和 PSK 集合。本地 KeyPackage reference 必须恰好对应一个候选。
+- GroupInfo signer 必须是非空树成员，具有 credential 和签名密钥；可通过
+  `WithSignerPolicy` 追加应用层授权策略。
+- 树摘要覆盖实际树字节，树哈希必须等于 GroupInfo 中的 `TreeHash`；树中的
+  group-context extensions 必须等于 GroupInfo extensions；transcript hash
+  由注入的 crypto 按当前/前序状态重新计算后比对。
+- 外取树请求携带 Welcome ID、预期树摘要和绑定 nonce。回调返回的 bytes、
+  digest、binding 必须同时匹配；bytes 会立即复制并在副本上哈希、解码，
+  不读取共享缓存。
+- KeyPackage 必须处于有效期内、未被任何群消费，且树中对应叶子的
+  credential/密钥与 KeyPackage 和本地私钥一致。
+- 相同 Welcome 按 Welcome ID 串行化；`Store.Commit` 必须原子地同时检查
+  Welcome 未消费、KeyPackage 未消费、当前 epoch 未变化，然后一次性写入新
+  state 和两个消费标记。任何校验或提交失败都不会推进持久 epoch。
+
+`MemoryStore` 提供默认的并发安全实现；生产环境可用数据库事务实现
+`Store`，但必须保持 `Commit` 的原子前置条件语义。
