@@ -1,8 +1,22 @@
 cmake_minimum_required(VERSION 3.16)
 project(netsec LANGUAGES CXX)
-set(CMAKE_CXX_STANDARD 17)
+if(APPLE AND EXISTS "/Library/Developer/CommandLineTools/usr/bin/ar")
+  set(CMAKE_AR "/Library/Developer/CommandLineTools/usr/bin/ar"
+      CACHE FILEPATH "" FORCE)
+  set(CMAKE_RANLIB "/Library/Developer/CommandLineTools/usr/bin/ranlib"
+      CACHE FILEPATH "" FORCE)
+endif()
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+find_package(Threads REQUIRED)
 add_library(netsec netsec.cpp)
 target_include_directories(netsec PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
+target_link_libraries(netsec PUBLIC Threads::Threads)
+target_compile_options(netsec PRIVATE -Wall -Wextra -Wpedantic)
 enable_testing()
+
+add_executable(netsec_core_dump_tests tests/test_core_dump_policy.cpp)
+target_link_libraries(netsec_core_dump_tests PRIVATE netsec)
+target_compile_options(netsec_core_dump_tests PRIVATE -Wall -Wextra -Wpedantic)
+add_test(NAME netsec_core_dump_tests COMMAND netsec_core_dump_tests)
