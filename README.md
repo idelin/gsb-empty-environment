@@ -1,0 +1,3 @@
+# HPKE导出上下文在两种套件间碰撞
+
+消息服务把HPKE exporter用作后续流密钥，若缓存遗漏KEM/KDF/AEAD套件或模式，攻击者可让不同封装上下文取得同一应用键身份。请实现供C++20消息宿主调用的HPKE上下文管理组件，密码原语由回调注入并返回opaque句柄。SetupBase、SetupPSK、SetupAuth和SetupAuthPSK分别要求并绑定发送方静态钥、PSK及psk_id的存在性；suite_id、enc原始字节、接收方公钥身份、info、模式和握手代次进入不可变上下文。Export只接受调用方命名空间内的label与原始context，按RFC labeledExpand构造且限制总长度；不同模式不得共享密钥调度或缓存。一次Setup失败、Decap低阶点、PSK输入不完整和异步密钥轮换必须销毁临时secret。用两个suite回调故意返回相同opaque编号，验证组件仍隔离缓存，并覆盖base/auth混淆、空PSK、info差异、并发Export和合法四种模式。
