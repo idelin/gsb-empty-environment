@@ -1,3 +1,35 @@
-# WS-Security Timestamp校验
+# WS-Security Timestamp 校验
 
-SOAP 服务靠 WS-Security 的 Timestamp 与 UsernameToken 限制重放，攻击者拿旧报文重放，或把已签名的 Timestamp 挪走、另放一个新的。为Go的 SOAP 网关写可导入的 WS-Security 头校验包（WS-Security 1.1）：Security 头里恰有一个 Timestamp，Created 不得晚于当前时间超过 60 秒，Expires 须晚于 Created 且二者间隔不超过 300 秒，已过期拒绝；Timestamp 与 Body 的 wsu:Id 须各自恰出现一次，并被调用方注入的 XML 签名校验函数列入已签名引用集合，未被签名或 Id 重复拒绝；UsernameToken 的 Nonce 与 Created 组合在窗口内只能使用一次。测重放、双 Timestamp、未签名 Timestamp、Id 重复。
+`netsec` 是一个无第三方依赖、可导入的 Go 包，用于校验 SOAP 1.1/1.2
+报文中的 WS-Security 1.1 `Security` 头。它负责结构与时间校验、签名引用
+覆盖检查，以及 UsernameToken 重放防护；实际 XML 签名密码学校验由调用方注入。
+
+## 校验规则
+
+- `Security` 头中恰有一个 `Timestamp`，且 `Timestamp` 必须是 `Security` 的直接子元素。
+- `Created` 最多可比当前时间超前 60 秒；`Expires` 必须晚于 `Created`、间隔不超过 300 秒，且不能已过期。
+- `Timestamp` 与 SOAP `Body` 必须各自恰有一个 `wsu:Id`，所有 `wsu:Id` 值在文档中必须唯一。
+- 注入的签名校验器必须返回已签名引用的 `wsu:Id` 集合；`Timestamp` 和 `Body` 的 ID 都必须在该集合中。
+- 默认要求恰有一个 `UsernameToken`。其 `Nonce` 与 `Created` 组合在一次窗口内只能使用一次。
+
+## 用法
+
+```go
+validator := netsec.NewValidator(func(xmlDoc []byte) ([]string, error) {
+    // 在这里完成 XMLDSig 的规范化和密码学校验。
+    // 返回 SignedInfo 中所有引用指向的 wsu:Id，例如 []string{"#TS-1", "#BODY-1"}。
+    return signedIDs, verifyXMLSignature(xmlDoc)
+})
+
+result, err := validator.Validate(soapBody)
+if err != nil {
+    // 拒绝请求
+}
+_ = result
+```
+
+`Validator` 应作为网关级对象复用；默认的内存重放存储跨请求生效。多实例部署时，
+通过 `WithReplayStore` 注入共享存储，并保证 `CheckAndStore` 的原子性。
+
+若网关还接受没有 UsernameToken 的其他认证方式，可显式使用
+`netsec.WithOptionalUsernameToken()`；只要存在 UsernameToken，仍会执行完整校验和重放检查。
