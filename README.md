@@ -1,3 +1,45 @@
-# Client Hints委托与降级
+# Client Hints 委托与降级
 
-第三方 iframe 若能拿到高熵 Client Hints，就能做设备指纹，攻击者会靠伪造的 Accept-CH 或被放宽的 Permissions-Policy 扩大发送范围。为TypeScript浏览器网络栈写供请求发出前调用的 Client Hints 附加包：顶层来源用 Accept-CH 声明想接收的提示；低熵提示（Sec-CH-UA、Sec-CH-UA-Mobile、Sec-CH-UA-Platform）默认发给同源请求；高熵提示（如 Sec-CH-UA-Full-Version-List、Sec-CH-UA-Model）只发给同源，或发给 Permissions-Policy 中对应 ch-ua-* 特性的列表明确包含目标来源的跨源请求（列表为 * 时放行任意来源）；Accept-CH 只在 HTTPS 的顶层导航响应上生效，子资源响应与 HTTP 响应里的声明忽略。用无委托的跨源请求、列表含目标来源、明文页面声明、子资源声明和 * 列表验证。
+无依赖的 TypeScript Client Hints 预请求附加包。它记录 HTTPS 顶层导航响应中的
+`Accept-CH` 与 `Permissions-Policy`，并在发出请求前只返回当前文档允许携带的
+`Sec-CH-*` 头。
+
+```ts
+import { ClientHints } from "./index.ts";
+
+const clientHints = new ClientHints({
+  hints: {
+    "Sec-CH-UA": '"Chromium";v="131"',
+    "Sec-CH-UA-Mobile": "?0",
+    "Sec-CH-UA-Platform": '"macOS"',
+    "Sec-CH-UA-Model": '"MacBookPro18,3"',
+  },
+});
+
+clientHints.observeResponse({
+  url: "https://app.example/",
+  isTopLevelNavigation: true,
+  headers: {
+    "Accept-CH": "Sec-CH-UA-Model",
+    "Permissions-Policy": 'ch-ua-model=(self "https://widget.example")',
+  },
+});
+
+const headers = clientHints.getRequestHeaders({
+  url: "https://widget.example/embed",
+  topLevelOrigin: "https://app.example",
+});
+// { "Sec-CH-UA-Model": '"MacBookPro18,3"' }
+```
+
+规则：
+
+- `Sec-CH-UA`、`Sec-CH-UA-Mobile`、`Sec-CH-UA-Platform` 默认只发同源请求。
+- 其余提示视为高熵提示：同源请求仍需顶层 `Accept-CH` 声明；跨源请求还必须由
+  对应的 `ch-ua-*` Permissions-Policy 特性明确包含目标来源，`*` 表示任意来源。
+- 只有 HTTPS 顶层导航响应可以更新声明。HTTP 顶层导航会清空该来源的旧声明，
+  子资源响应不会改变当前文档。
+- `getRequestHeaders()` / `headersForRequest()` 返回可直接合并到请求头中的普通对象，
+  不修改原请求。`attachClientHints(instance, request)` 是便捷包装。
+
+运行测试：`npm test`。
