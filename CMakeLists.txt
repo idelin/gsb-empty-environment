@@ -6,3 +6,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_library(netsec netsec.cpp)
 target_include_directories(netsec PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 enable_testing()
+
+add_executable(test_mailbox_validator test_mailbox_validator.cpp)
+target_link_libraries(test_mailbox_validator PRIVATE netsec)
+add_test(NAME mailbox_validator COMMAND test_mailbox_validator)

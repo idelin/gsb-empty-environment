@@ -1,0 +1,32 @@
+Start testing: Nov 16 09:36 CST
+----------------------------------------------------------
+1/1 Testing: mailbox_validator
+1/1 Test: mailbox_validator
+Command: "/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/artifacts/reczz28ZOZloA0VG/workspace/build-make/test_mailbox_validator"
+Directory: /Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/artifacts/reczz28ZOZloA0VG/workspace/build-make
+"mailbox_validator" start time: Nov 16 09:36 CST
+Output:
+----------------------------------------------------------
+[ RUN  ] valid frame
+[ RUN  ] length exceeds sync manager
+[ RUN  ] length exceeds received bytes
+[ RUN  ] frame shorter than header
+[ RUN  ] counter zero reserved
+[ RUN  ] retransmit discarded
+[ RUN  ] counter gap logged not rejected
+[ RUN  ] unregistered mailbox type
+[ RUN  ] FoE write filename hardening
+[ RUN  ] CoE toggle alternation
+[ RUN  ] CoE orphan first segment
+[ RUN  ] CoE too short
+
+60 checks, 0 failures
+<end of output>
+Test time =   2.15 sec
+----------------------------------------------------------
+Test Passed.
+"mailbox_validator" end time: Nov 16 09:36 CST
+"mailbox_validator" time elapsed: 00:00:02
+----------------------------------------------------------
+
+End testing: Nov 16 09:36 CST
