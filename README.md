@@ -1,3 +1,3 @@
 # crate审计增量链与违规区间
 
-依赖门禁用审计记录判断 crate 版本能否部署，攻击者发布的版本落在 violation 区间，或借 delta 审计链接到一个未被完整审计的起点。为Go门禁实现可导入的审计链解析包：完整审计给出 version，增量审计给出 from->to；一个版本通过当且仅当存在从某完整审计出发、沿同一 criteria 的增量边可达它的路径；violation 的 semver 区间内的任何版本一律不通过，且 violation 优先于审计；safe-to-deploy 蕴含 safe-to-run，反向不成立；预发布版本按 semver 排序，+ 构建元数据忽略。用环、断链、区间边界和 criteria 蕴含验证。
+依赖门禁用审计记录判断 crate 版本能否部署，攻击者发布的版本落在 violation 区间，或借 delta 审计链指向未被完整审计的起点，也可能用成环的 delta 让可达性自证。为 Go 门禁写可导入的审计链解析包：完整审计给出 version，增量审计给出 from→to 并带该边 criteria 集合；版本可部署当且仅当存在从某完整审计出发、沿各边 criteria 覆盖调用方要求集每一项的路径，且相邻边首尾版本一致；violation 的 semver 区间内版本一律不可部署且优先于审计。除结论外返回边数最少的一条见证路径（并列时取起点 version 字典序最小），不可部署时返回首个命中的 violation 区间与其来源审计；预发布按 semver 排序、构建元数据忽略。用环、断链、criteria 缺项、区间边界与并列最短路径对照。
