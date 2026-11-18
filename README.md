@@ -1,3 +1,80 @@
-# SD-JWT披露摘要与持有者绑定
+# SD-JWT disclosure verifier
 
-攻击者作为持有者出示签发者没签过的披露，或改写披露里的值。为TypeScript验证库写可导入的 SD-JWT 披露校验包：披露是 base64url(JSON [salt, 名, 值])，其 SHA-256 摘要必须出现在已验签载荷的 _sd 数组（含嵌套）里且只出现一次；嵌套披露的父级必须先已出示，salt 缺失或重复拒绝；_sd_alg 决定摘要算法且不得混用；披露名不得是 _sd 或 ...，不得与载荷明文名冲突；KB-JWT 的 sd_hash 须等于所出示 SD-JWT 串的摘要，nonce、aud 匹配且未过期；任一披露失败整条拒绝，不得部分接受。用替换披露、未出示父级、salt 重复、算法混用、KB-JWT 过期与部分接受验证。
+Dependency-free TypeScript validation for SD-JWT disclosures and holder
+key-binding JWTs.
+
+## Install / import
+
+The package is local and ESM-only:
+
+```ts
+import {
+  verifySdJwt,
+  verifySdJwtDisclosures,
+  validateKeyBindingJwt,
+} from "./index.ts";
+```
+
+## Disclosure validation
+
+`verifySdJwtDisclosures(issuerPayload, disclosures, options?)` assumes that
+`issuerPayload` has already passed issuer JWT signature verification. It
+validates the complete disclosure set atomically and returns the reconstructed
+claims only when every disclosure is valid.
+
+```ts
+const result = verifySdJwtDisclosures(issuerPayload, presentationDisclosures);
+
+console.log(result.claims);       // _sd arrays removed
+console.log(result.disclosures);  // decoded salt/name/value entries
+```
+
+Validation rules:
+
+- Every disclosure is exactly `base64url(JSON.stringify([salt, name, value]))`.
+- Its hash must occur exactly once in an authenticated `_sd` array.
+- `_sd_alg` controls `sha-256`, `sha-384`, or `sha-512` for the whole tree.
+- A nested disclosure is accepted only after its parent disclosure is expanded.
+- Salts must be non-empty and unique among presented disclosures.
+- Names `_sd` and `...` are reserved; plaintext name collisions are rejected.
+- One invalid, duplicate, or unreachable disclosure rejects the whole input.
+
+## Full presentation and KB-JWT
+
+`verifySdJwt(presentation, options)` parses the compact issuer JWT, validates
+all disclosures, and then validates an optional KB-JWT. Supply
+`issuerPayload` (already signature-verified by the caller), or `issuerKey` /
+`verifyIssuerJwt` to verify the issuer signature inside this module.
+
+```ts
+const result = verifySdJwt(sdJwtWithKb, {
+  issuerPayload,
+  expectedNonce: "server-nonce",
+  expectedAudience: "https://verifier.example",
+  now: Math.floor(Date.now() / 1000),
+  holderKey, // optional when issuer payload cnf.jwk is available
+  requireKbJwt: true,
+});
+```
+
+The KB-JWT is checked against the exact SD-JWT serialization that was
+presented:
+
+- `sd_hash` must equal the `_sd_alg` digest of that string.
+- `nonce` and `aud` must match the verifier's expected values.
+- `exp` is mandatory and the token must not be expired.
+- If a holder key, `cnf.jwk`, or `verifyKbJwt` callback is supplied, its
+  signature is verified as well.
+
+`validateKeyBindingJwt(kbJwt, sdJwtWithoutKb, options)` is exported for callers
+that split the presentation themselves.
+
+All failures throw `SdJwtValidationError` with a stable `code`, for example
+`DISCLOSURE_NOT_SIGNED_OR_PARENT_WITHHELD`, `DUPLICATE_SALT`,
+`ALGORITHM_MIXING`, or `KB_EXPIRED`.
+
+## Tests
+
+```sh
+npm test
+```
