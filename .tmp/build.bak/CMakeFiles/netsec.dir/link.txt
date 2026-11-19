@@ -1,0 +1,2 @@
+/usr/bin/ar qc libnetsec.a CMakeFiles/netsec.dir/netsec.cpp.o
+/usr/bin/ranlib libnetsec.a

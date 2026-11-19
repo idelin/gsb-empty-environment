@@ -1,0 +1,5 @@
+/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/artifacts/reczz28ZOZloAxnk/workspace/build/CMakeFiles/netsec.dir
+/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/artifacts/reczz28ZOZloAxnk/workspace/build/CMakeFiles/connection_id_manager_test.dir
+/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/artifacts/reczz28ZOZloAxnk/workspace/build/CMakeFiles/test.dir
+/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/artifacts/reczz28ZOZloAxnk/workspace/build/CMakeFiles/edit_cache.dir
+/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/artifacts/reczz28ZOZloAxnk/workspace/build/CMakeFiles/rebuild_cache.dir
