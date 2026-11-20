@@ -1,0 +1,8 @@
+{
+  "name": "ddd-5376-v4",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
