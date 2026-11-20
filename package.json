@@ -1,0 +1,8 @@
+{
+  "name": "ps-ec414cee13",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
