@@ -1,0 +1,5 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/wide_table_query_authTargets.cmake")
+
+check_required_components(wide_table_query_auth)
