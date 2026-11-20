@@ -1,0 +1,10 @@
+{
+  "name": "webtransport-session-pool",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "WebTransport-over-HTTP/3 session pool with origin isolation for browser network stacks",
+  "scripts": {
+    "test": "node --test"
+  }
+}
