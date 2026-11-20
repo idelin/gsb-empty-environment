@@ -1,0 +1,8 @@
+{
+  "name": "ddd-first-pass-location-budget",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
