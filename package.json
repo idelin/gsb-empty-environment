@@ -2,7 +2,10 @@
   "name": "ddd-reczz28zozloa6lc",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --loader ./test/ts-loader.mjs --test \"test/**/*.test.ts\""
   }
 }
