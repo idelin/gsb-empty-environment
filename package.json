@@ -2,7 +2,17 @@
   "name": "ddd-first-pass-location-budget",
   "private": true,
   "type": "module",
+  "main": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./src": "./src/index.ts",
+    "./admission": "./src/admission.ts",
+    "./geometry": "./src/geometry.ts",
+    "./rational": "./src/rational.ts",
+    "./package.json": "./package.json"
+  },
+  "types": "./index.ts",
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test test/*.test.ts"
   }
 }
