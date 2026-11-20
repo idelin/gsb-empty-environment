@@ -1,1 +1,1 @@
-{"name":"privacy-admission","private":true,"type":"module","exports":{".":"./src/weight.ts"},"scripts":{"test":"node --experimental-strip-types --test"}}
+{"name":"privacy-admission","private":true,"type":"module","exports":{".":"./src/weight.ts","./admission":"./src/admission.ts"},"scripts":{"test":"node --experimental-strip-types --test"}}
