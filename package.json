@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test test/**/*.test.ts",
+    "typecheck": "node scripts/typecheck.mjs"
   }
 }
