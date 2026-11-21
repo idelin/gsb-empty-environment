@@ -1,1 +1,92 @@
-块存储宿主收到一组虚拟卷更新，底层快照标成只读，但上层多段条带映射可能把同一物理扇区从另一路径暴露为可写。给 Go 宿主写可导入的映射准入包。每个虚拟卷由不重叠的逻辑区间组成，段可线性映射到某个子卷区间，或按给定条带宽度在两个子卷之间交替映射。每一层权限只能收窄；底层租户拥有的物理范围可不连续。要求验证所有虚拟写请求最终只落在本租户的可写扇区，并且两份声明为隔离的卷不能把任何可写逻辑位置映射到同一物理位置。只分析可达段，严格检测偏移溢出和环。卷长度可达 2^48 扇区，条带宽度为 2 的幂，最多 8 层，不允许逐扇区展开。返回可独立复核的分段证明，说明每个可达物理区间或等差类经哪些段映射、权限在哪里被收窄。一次更新涉及多个卷，旧句柄绑定旧图版本并继续按旧证明读取，新版本要在全部卷的隔离关系通过后才发布。用小地址域穷举验证证明和每个写权限，在大地址域测条带首尾残段、扇区溢出、只读别名和两卷只在最后一个条带相交。
+# Block mapping admission
+
+`prescreen.local/ddd-10548-v2` is an importable Go package for validating and
+certifying layered virtual-volume mappings. It does not expand mappings sector
+by sector: every operation works on intervals or arithmetic classes.
+
+```go
+import admission "prescreen.local/ddd-10548-v2"
+```
+
+## Model
+
+- A `Volume` has non-overlapping logical `Segment`s; compilation sorts them.
+- A segment is linear to one child volume, striped between two child volumes
+  with a power-of-two stripe width, or a physical leaf.
+- `PhysicalRange`s are the tenant-owned physical sectors. They may be
+  non-contiguous and carry the tenant's maximum permission.
+- Effective permission is the bitwise intersection of every segment permission,
+  the physical leaf permission, and the covering tenant range. It can only
+  narrow.
+- A path may contain at most eight reachable volume layers including the root
+  and physical leaf, and a volume may be at most `2^48` sectors.
+
+Only volumes reachable from `Graph.Roots` are analysed. If `Roots` is empty,
+every declared volume is treated as a root. Reachable cycles, logical overlap,
+invalid stripe widths, and every offset/stride overflow are rejected.
+
+## Admission and proof
+
+```go
+snap, err := admission.Compile(graph)
+if err != nil {
+    // Nothing was published.
+}
+handle, err := snap.Handle("root")
+proof, err := handle.Proof(0, 1<<20)
+_, writable, err := handle.CheckWrite(0, 1<<20)
+```
+
+A `Proof` is an exact partition of the requested virtual range. Each `Claim`
+contains:
+
+- a virtual `Class` and its physical `Class`;
+- the ordered path through the mapping graph;
+- each segment's complete `Mapping`, declared permission, permission before and
+  after that layer, and whether it narrowed;
+- the effective `Access`, leaf permission, and tenant permission.
+
+`Class` represents equal runs at an arithmetic stride:
+
+```text
+for each repeat combination (Cartesian product):
+    [Start + repeatOffsets + i*Stride, +Run), 0 <= i < Count
+```
+
+`Repeats` make nested stripe intersections compact even when a stripe width is
+one. Sector counts, not width ratios, determine storage; a mapping is never
+unrolled by sector.
+
+`CheckWrite` succeeds only if the whole range is mapped and every claim has
+`PermWrite`.
+
+## Isolation and versions
+
+`Graph.Isolations` (and equal non-empty `Volume.IsolationGroup` values) declare
+volume pairs that must not expose any physical sector through an
+effective-writable logical location. `Compile` checks all such pairs before
+returning a snapshot.
+
+`Store.Publish` compiles and checks the complete graph first, then atomically
+switches the current immutable snapshot. A failed update leaves the old version
+current. Existing `Handle`s keep their old snapshot and proofs:
+
+```go
+store := admission.NewStore()
+v1, err := store.Publish(graphV1)
+old, _ := v1.Handle("root")
+
+v2, err := store.Publish(graphV2) // validated as one multi-volume update
+// old.Proof(...) still uses graphV1; v2.Handle(...) uses graphV2.
+```
+
+## Tests
+
+```sh
+go test ./...
+go test -race ./...
+```
+
+The suite exhaustively checks every sector and write permission in a small
+domain, and exercises `2^48`-adjacent stripe tails, overflow, read-only aliases,
+last-stripe isolation overlap, and old-handle version retention.
