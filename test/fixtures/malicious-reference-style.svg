@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <script id="dead">alert(1)</script>
+  <defs>
+    <linearGradient id="safeGradient">
+      <stop offset="0" stop-color="#4f8"/>
+      <stop offset="1" stop-color="#08f"/>
+    </linearGradient>
+    <path id="safePath" d="M2 2h20"/>
+    <g id="loopA"><use href="#loopB"/></g>
+    <g id="loopB"><use xlink:href="#loopA"/></g>
+  </defs>
+  <style>
+    @import url("https://attacker.invalid/style.css");
+    @font-face { font-family: evil; src: url(https://attacker.invalid/font.woff2); }
+    .safe {
+      fill: url(#safeGradient);
+      stroke: url(https://attacker.invalid/stroke);
+      background-image: image("relative.png");
+    }
+    .vector path { fill: #0b0; }
+  </style>
+  <rect class="safe vector" width="32" height="20"
+        style="fill:url(#safeGradient);stroke:url(javascript:alert(1));opacity:.75;background:u\72l(#missingEscaped)"
+        clip-path="url(#missing)"/>
+  <use href="#safePath"/>
+  <use href="#dead"/>
+  <use href="https://attacker.invalid/sprite.svg#safePath"/>
+  <rect width="4" height="4" fill="url(#safeGradient)"/>
+  <path d="M0 0L4 4" fill="u\72l(https://attacker.invalid/escaped)"/>
+</svg>

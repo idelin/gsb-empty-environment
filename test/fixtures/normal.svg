@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 120 80" role="img" aria-label="status card">
+  <title>Status card</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dff3ff"/>
+      <stop offset="1" stop-color="#8ec5ff"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#fff" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="cardClip"><rect width="120" height="80" rx="8"/></clipPath>
+    <symbol id="dot" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="#19a463"/></symbol>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0 0L6 3L0 6Z" fill="#234"/>
+    </marker>
+    <filter id="soft"><feGaussianBlur stdDeviation=".6"/></filter>
+  </defs>
+  <style>
+    .card { fill: url(#sky); stroke: #234; stroke-width: 2; }
+    .accent { fill: url(#glow); filter: url(#soft); }
+    .label { font-family: sans-serif; font-size: 9px; fill: #123; }
+  </style>
+  <g clip-path="url(#cardClip)">
+    <rect class="card" width="120" height="80"/>
+    <circle class="accent" cx="92" cy="20" r="24"/>
+    <use href="#dot" x="10" y="10"/>
+    <path d="M12 62H86" stroke="#234" marker-end="url(#arrow)"/>
+    <text class="label" x="12" y="36">Rendering is intact</text>
+  </g>
+</svg>
