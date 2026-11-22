@@ -2,7 +2,23 @@
   "name": "ddd-6530-20261122-v2",
   "private": true,
   "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./src": "./src/index.ts",
+    "./src/*.ts": "./src/*.ts",
+    "./src/*": "./src/*.ts",
+    "./migrationAcceptance": "./migrationAcceptance.ts",
+    "./acceptance": "./acceptance.ts",
+    "./keyAgent": "./keyAgent.ts",
+    "./migrationAcceptance.ts": "./migrationAcceptance.ts",
+    "./acceptance.ts": "./acceptance.ts",
+    "./keyAgent.ts": "./keyAgent.ts",
+    "./*": "./*"
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "test:watch": "node --experimental-strip-types --test --watch test/*.test.ts"
   }
 }
