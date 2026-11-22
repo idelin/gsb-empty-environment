@@ -1,0 +1,22 @@
+{
+  "conflicts": [],
+  "digest_alg": "sha256",
+  "format": "gsb.redaction.plan/v1",
+  "input_sha256": "6d801ba08793215375f06dddef30a22156e089096077e81869c5eaaaa9c8d9f8",
+  "policy": {
+    "budget_exhaustion": "undetermined",
+    "masking_domain": "view-definition-interval",
+    "secrecy_domain": "base-byte-identity",
+    "tie_break": "lexicographic-sorted-id-list"
+  },
+  "selected": [
+    1,
+    2
+  ],
+  "solver": {
+    "node_budget": 2000000,
+    "nodes_explored": 8
+  },
+  "status": "optimal",
+  "total_cost": 2
+}
