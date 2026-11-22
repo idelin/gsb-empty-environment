@@ -2,6 +2,15 @@
   "name": "ddd-2008-20261122-v2",
   "private": true,
   "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "import": "./index.ts",
+      "default": "./index.ts"
+    }
+  },
   "scripts": {
     "test": "node --experimental-strip-types --test"
   }
