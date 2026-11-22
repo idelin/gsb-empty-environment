@@ -2,7 +2,14 @@
   "name": "ddd-6508-20261122-v2",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test \"test/*.test.ts\" \"test/**/*.test.ts\"",
+    "replay:reference": "node --experimental-strip-types src/replay/run.ts"
   }
 }
