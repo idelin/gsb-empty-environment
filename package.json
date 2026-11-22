@@ -1,1 +1,12 @@
-{"name":"replica-keylog","private":true,"type":"module","exports":{".":"./src/dot.ts"},"scripts":{"test":"node --experimental-strip-types --test"}}
+{
+  "name": "replica-keylog",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/dot.ts",
+    "./keyadmission": "./src/keyadmission.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
