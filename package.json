@@ -1,0 +1,8 @@
+{
+  "name": "ddd-6508-20261122-v2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
