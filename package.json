@@ -2,6 +2,9 @@
   "name": "ps-d17b48c1bf",
   "private": true,
   "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "scripts": {
     "test": "node --experimental-strip-types --test"
   }
