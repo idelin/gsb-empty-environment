@@ -2,7 +2,14 @@
   "name": "ddd-9531-20261122-v2",
   "private": true,
   "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./src": "./src/index.ts",
+    "./*": "./src/*"
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test test/*.test.ts"
   }
 }
