@@ -1,0 +1,8 @@
+{
+  "name": "ps-26230dacac",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
