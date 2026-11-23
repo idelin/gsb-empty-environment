@@ -1,1 +1,65 @@
-同一对象的分片可由多个受权发送方分段转送，字节相同仍可能属于不同授权。给 C++20 网关写可导入的重组组件，输入为不可变分片记录：对象版本、发送方、半开区间、字节摘要和该发送方获准写的区间，签名检查与主体撤销时间戳由宿主注入。清单将对象划为有序叶片，每片要求指定门槛的不同签名主体，公钥材料相同的别名只算一票，授权可覆盖叶片的部分区间。只有每一字节都有足够多主体对同一内容版本背书，且跨叶拼接能复算受信根时可交付；不一致的签名分片保留冲突证据，不能靠先到先赢。针对一次查询，返回足够核验的最小证书，先最少记录数，再最少引用总字节，最后按记录 ID 破同分；最多 22 条候选记录，坐标为 64 位稀疏区间，不许按最大地址分配。撤销某个主体或变更门槛后，再查询必须自当前信任快照重新判定且禁止混用新旧快照分片，已借出的证书仍可在其原快照查验。用小输入的事件端点切分和所有记录子集作对照，验证跨叶部分授权、相同字节不同版本、别名重复票、嵌套区间及旧租约回读。
+# Gateway Object Reassembly (`gsb::reassembly`)
+
+A C++20 importable reassembly component for a gateway that receives immutable
+fragment records from multiple authorized senders. It decides whether an
+object version is deliverable, retains evidence for every signed-fragment
+inconsistency, and returns the minimum certificate sufficient to verify the
+decision.
+
+## Layout
+
+- `include/gsb/reassembly.hpp` — full implementation, usable as a normal header.
+- `src/gsb/reassembly.cppm` — named module `gsb.reassembly` that re-exports
+  the header as a C++20 header unit, so consumers can `import gsb.reassembly;`.
+- `tests/` — scenario tests plus an independent brute-force subset oracle.
+- `scripts/build_module.sh` — Apple Clang module build (the available
+  Makefile generator does not scan module dependencies).
+
+## Core rules
+
+- Each manifest leaf has its own threshold of **distinct signing principals**.
+  Senders whose public-key material is equal are aliases and count once.
+- A sender's authority interval may cover only part of a leaf. Fragments whose
+  span is not fully inside their authority are rejected with evidence.
+- Endorsement is evaluated on sparse endpoint cells built only from explicit
+  event coordinates (64-bit, half-open). Nothing is allocated by maximum
+  address.
+- Every byte cell must be covered by enough distinct principals endorsing the
+  same object version, and the cross-leaf content root must recompute to the
+  trusted root in the snapshot.
+- Same-version partial overlaps with different digests are hard conflicts and
+  taint the version; nested intervals remain compatible. Different versions
+  over the same bytes are always retained as conflict evidence, even when the
+  byte digest is identical. There is no first-come-first-wins behaviour.
+- A query accepts at most `gsb::max_candidate_records` (22). The minimum
+  certificate is chosen by fewest records, then fewest total referenced bytes,
+  then lexicographic record-id tuple, then version.
+
+## Trust snapshots
+
+`ReassemblyEngine` is stateless. Each `query` is judged entirely against the
+single supplied `TrustSnapshot`. Revoking a principal or changing a threshold
+produces a new snapshot generation; a fresh query cannot mix records across
+snapshots. An issued `Certificate` embeds an immutable copy of its issuing
+snapshot, and `verify_certificate` always re-judges against that embedded
+snapshot, so old leases remain verifiable after the current snapshot changes.
+
+Signature verification, revocation timestamps and key resolution are host
+injected through `HostHooks`. Default implementations read the tables embedded
+in the snapshot.
+
+## Build and test
+
+```sh
+cmake -S . -B build/cmake
+cmake --build build/cmake
+ctest --test-dir build/cmake --output-on-failure
+
+# Named-module import path (Apple Clang):
+./scripts/build_module.sh
+```
+
+The test suite covers sparse endpoint sweeps, cross-leaf partial authority,
+identical bytes under different versions, alias duplicate votes, nested
+intervals, retained hard conflicts, snapshot revocation/threshold changes with
+old-lease readback, the 22-record cap, and an exhaustive all-subset oracle.
