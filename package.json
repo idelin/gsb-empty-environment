@@ -2,7 +2,27 @@
   "name": "ps-26230dacac",
   "private": true,
   "type": "module",
+  "description": "Hardened contextBridge wrapper for Electron: registered methods only, cloned and schema-validated arguments, sender frame verification.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./preload": {
+      "types": "./dist/preload-electron.d.ts",
+      "import": "./dist/preload-electron.js"
+    }
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test test/",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "electron": "^33.0.0",
+    "typescript": "^5.7.0"
   }
 }
