@@ -2,7 +2,13 @@
   "name": "ps-be1c425932",
   "private": true,
   "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "engines": {
+    "node": ">=23"
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test test/admission.test.ts test/verify.test.ts test/edge.test.ts"
   }
 }
