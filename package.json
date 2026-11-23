@@ -1,0 +1,8 @@
+{
+  "name": "ps-be1c425932",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
