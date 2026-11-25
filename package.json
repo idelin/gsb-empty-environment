@@ -1,8 +1,33 @@
 {
   "name": "ps-00e3a4139a",
+  "version": "0.1.0",
   "private": true,
+  "description": "Importable, fail-closed merge acceptance package for multi-vendor signed TypeScript configuration trees.",
   "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "types": "./src/*.ts",
+      "default": "./src/*.ts"
+    }
+  },
+  "files": [
+    "src",
+    "index.ts",
+    "index.js",
+    "USAGE.md"
+  ],
+  "engines": {
+    "node": ">=22.6.0"
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test",
+    "demo": "node --experimental-strip-types examples/truth-demo.ts",
+    "typecheck": "tsc --noEmit"
   }
 }

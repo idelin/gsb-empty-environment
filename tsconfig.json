@@ -1,8 +1,15 @@
 {
   "compilerOptions": {
     "strict": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
     "target": "ES2022",
     "module": "NodeNext",
-    "moduleResolution": "NodeNext"
-  }
+    "moduleResolution": "NodeNext",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts", "examples/**/*.ts", "index.ts"]
 }
