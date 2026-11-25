@@ -1,1 +1,50 @@
-userfaultfd 能让攻击者在内核访问用户内存的瞬间卡住线程，把条件竞争窗口拉长。系统有 vm.unprivileged_userfaultfd 开关，UFFD_USER_MODE_ONLY 标志则只处理用户态触发的缺页。为 Go 沙箱网关写供 userfaultfd 与 ioctl 拦截调用的授权包：输入 sysctl 取值、调用者能力（CAP_SYS_PTRACE）、创建标志（UFFD_USER_MODE_ONLY、O_CLOEXEC、O_NONBLOCK）及随后的 UFFDIO_API、UFFDIO_REGISTER、UFFDIO_UNREGISTER 与 ioctl 拷贝/唤醒请求；沙箱策略为无论内核开关如何，无 CAP_SYS_PTRACE 者必须带 UFFD_USER_MODE_ONLY；REGISTER 的范围须落在调用者自己的匿名私有映射内且长度非零页对齐不溢出，MISSING 之外的模式（WP、MINOR）需要额外许可，且禁止与已有已注册区间部分重叠或跨未映射空洞注册；描述符经 SCM_RIGHTS 传给他人后，已注册范围的权限判定不变，且新持有者不得扩展注册范围或对原进程映射执行未授权写保护。用缺标志创建、范围越到文件映射或跨空洞、WP 模式和传递描述符越权验证。
+# userfaultfd authorization for the Go sandbox gateway
+
+`uffd` is a policy package for the gateway's `userfaultfd()` and `UFFDIO_*`
+interception points. It does not issue syscalls; it decides whether a proposed
+syscall/ioctl may proceed and keeps the registration state needed for later
+decisions, including after a descriptor is passed with `SCM_RIGHTS`.
+
+## Policy
+
+- Without `CAP_SYS_PTRACE`, creation requires `UFFD_USER_MODE_ONLY`, whether
+  or not `vm.unprivileged_userfaultfd` is enabled. A zero sysctl value still
+  denies unprivileged creation.
+- `O_CLOEXEC` and `O_NONBLOCK` are accepted but do not weaken the rule. Other
+  unknown creation flags are rejected.
+- `UFFDIO_REGISTER` ranges must be non-zero, page aligned, overflow-free and
+  fully covered by the caller's own anonymous private mappings. Gaps are
+  rejected; ranges crossing file-backed/shared mappings are rejected.
+- `UFFDIO_REGISTER_MODE_WP` and `UFFDIO_REGISTER_MODE_MINOR` need an explicit
+  extra grant (`PermWriteProtect` / `PermMinor`), at policy level or on the
+  caller's `Capabilities`. `CAP_SYS_PTRACE` alone does not grant them.
+- Partial overlap with a registered range is rejected. An exact duplicate
+  with the same mode is idempotent.
+- Registrations may not span an unregistered gap when copied to, continued,
+  woken or unregistered.
+- After `SCM_RIGHTS`, the receiver shares the exact registration state. It can
+  service already registered ranges, but only the creator can register,
+  extend or unregister ranges. A receiver needs its own WP grant before it can
+  write-protect the creator's mappings.
+
+## Example
+
+```go
+policy := uffd.NewAuthorizer(uffd.UserfaultfdEnabled)
+
+creator := uffd.Caller{Process: 100}
+fd, err := policy.Create(creator, uffd.UserModeOnly|uffd.CloseOnExec)
+
+err = fd.Register(creator, uffd.RegisterRequest{
+	Start:  0x10000,
+	Length: 0x2000,
+	Mode:   uffd.ModeMissing,
+	Mappings: []uffd.Mapping{{
+		Start: 0x10000, End: 0x12000,
+		Kind: uffd.AnonymousPrivate, Owner: 100,
+	}},
+})
+```
+
+See `descriptor.go` for the complete ioctl surface and `uffd_test.go` for the
+abuse cases.
