@@ -1,1 +1,63 @@
-一组前端节点滚动替换握手策略时，单看新旧配置清单都没有弱套件，中间态仍可能优先选择旧认证方式。配置发布器需要一个可导入的 Go 判定包，在接受发布计划时调用它。客户端能力由至多 48 个布尔位表示，合法能力用给定变量序的有序决策图描述；每台节点有新旧两份有序规则，首个满足能力条件的规则给出认证级别或拒绝。客户端沿给定回退序列访问节点，只在拒绝时尝试下一台，且重连复用会话票据时受目标节点当前生效规则重验。对每个能力向量分别取全旧和全新结果，过渡期的实际结果不能比两端都弱，且两端均能连接时中间态不得拒绝。发布前最多 14 个节点要各切换一次，节点间有先后依赖和同批原子切换组，输入还给出每个维护窗口可切换的节点集合。求使用窗口最少的合法方案，同长按每批排序后的节点编号序列取字典序最小；无解须给可核验的阻断依据，有能力反例时返回按位序最小者。不能枚举全部能力向量。用不超过六位的穷举模型验证拒绝回退、同批可行而拆开不可行、等价规则划分和零个合法客户端。
+# handshake prescreen
+
+可导入的 Go 判定包，供配置发布器在接受握手策略滚动发布计划时调用。
+
+## 设计要点
+
+- `bdd`：固定变量序的 ROBDD，变量索引即决策层，唯一表保证句柄相等即函数等价；
+  支持 `And/Or/Not/Xor/Ite/Restrict`、表达式解析、最小满足赋值，全程不枚举
+  2^N 能力向量，最大 48 位。
+- 根包 `handshake`：
+  - `RuleSet` 实现首匹配语义，`Regions/Partitions` 给出互不相交的能力分区和
+    等价规则划分，未命中任何规则视为拒绝。
+  - `Topology` 维护回退序列、每节点新旧规则与合法能力 BDD；`Evaluate` 支持
+    普通连接（start=0）和会话票据重连（从票据目标节点 start=k 开始，受当前
+    生效规则重验），只有拒绝才继续回退。
+  - `SymbolicResult` 用 BDD 计算每个结果对应的能力集合；`CheckStates` 对所有
+    可达中间态和所有回退起点检查两条性质：
+    1. 中间结果不得严格弱于全旧和全新两端；
+    2. 两端都能连接时中间态不得拒绝。
+    反例返回按位序（位 0 为最高位、false<true）最小的合法能力向量。
+  - `Schedule` 在最多 14 节点上做逐层 BFS，处理先后依赖、同批原子组和每个
+    维护窗口的可切换节点集合，优化目标为使用窗口最少，平局按每批排序后的节点
+    编号序列取字典序最小。
+  - 无解时返回结构化 `Blocker`，`VerifyBlocker` 可独立复核；`VerifyPlan` 可
+    独立复核一个方案的窗口、原子组、依赖、单次切换和中间态安全性。
+
+## 最小用法
+
+```go
+manager, _ := bdd.NewManager(4)
+strong, _ := manager.Variable(0)
+
+topology, _ := handshake.NewTopology(
+    manager,
+    []handshake.NodeConfig{{
+        NodeID: 1,
+        Old: handshake.RuleSet{Rules: []handshake.Rule{
+            {When: bdd.One, Outcome: handshake.AuthOutcome(3)},
+        }},
+        New: handshake.RuleSet{Rules: []handshake.Rule{
+            {When: strong, Outcome: handshake.AuthOutcome(3)},
+            {When: bdd.One, Outcome: handshake.RejectOutcome()},
+        }},
+    }},
+    []int{1},
+    bdd.One,
+    nil,
+)
+
+result, _ := handshake.Schedule(handshake.SchedulingInput{
+    Topology:    topology,
+    WindowNodes: [][]int{{1}},
+})
+if result.Blocker != nil {
+    // result.Blocker 是可核验的阻断依据
+}
+```
+
+## 测试
+
+`go test ./...` 包含不超过 6 位的穷举模型，覆盖拒绝回退、同批可行而拆开不可
+行、等价规则划分、零个合法客户端，并额外用 48 位符号模型和 14 节点压力模型
+验证不枚举全部能力向量。
