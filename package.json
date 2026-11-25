@@ -2,7 +2,10 @@
   "name": "ddd-1505-20261122-v2",
   "private": true,
   "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test \"test/**/*.test.ts\""
   }
 }
