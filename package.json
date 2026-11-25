@@ -1,8 +1,15 @@
 {
-  "name": "ddd-10564-v3",
+  "name": "consent-authorization-interpreter",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
+  "description": "Signed email-consent authorization interpreter for a TypeScript delivery host",
+  "exports": {
+    ".": "./src/index.ts",
+    "./reference": "./src/reference-engine.ts",
+    "./incremental": "./src/incremental-engine.ts"
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test test/"
   }
 }
