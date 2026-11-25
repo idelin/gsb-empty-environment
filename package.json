@@ -1,7 +1,34 @@
 {
   "name": "ps-1d8aaecd9e",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./index": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./hsts": {
+      "types": "./src/hsts.ts",
+      "default": "./src/hsts.ts"
+    },
+    "./hsts-policy": {
+      "types": "./src/hsts-policy.ts",
+      "default": "./src/hsts-policy.ts"
+    },
+    "./store": {
+      "types": "./src/store.ts",
+      "default": "./src/store.ts"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "test": "node --experimental-strip-types --test"
   }

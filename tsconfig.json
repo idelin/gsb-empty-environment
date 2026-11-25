@@ -3,6 +3,12 @@
     "strict": true,
     "target": "ES2022",
     "module": "NodeNext",
-    "moduleResolution": "NodeNext"
-  }
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022", "DOM"],
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "skipLibCheck": true
+  },
+  "include": ["index.ts", "src/**/*.ts"],
+  "exclude": ["test", "node_modules"]
 }
