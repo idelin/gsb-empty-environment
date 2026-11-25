@@ -2,6 +2,14 @@
   "name": "ps-c65aaee675",
   "private": true,
   "type": "module",
+  "description": "Two-phase durable action authorization with per-write CAS, verifiable consumption proofs and crash-safe retries.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./testing": "./src/testing/index.ts"
+  },
+  "engines": {
+    "node": ">=22.6.0"
+  },
   "scripts": {
     "test": "node --experimental-strip-types --test"
   }
