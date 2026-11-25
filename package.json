@@ -1,1 +1,1 @@
-{"name":"replica-keylog","private":true,"type":"module","exports":{".":"./src/dot.ts"},"scripts":{"test":"node --experimental-strip-types --test"}}
+{"name":"replica-keylog","private":true,"type":"module","exports":{".":"./src/dot.ts","./keylog":"./src/keylog/index.ts"},"scripts":{"test":"node --experimental-strip-types --test"}}
