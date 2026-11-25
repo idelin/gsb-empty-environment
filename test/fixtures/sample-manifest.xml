@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bank">
+
+    <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="28" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <permission
+        android:name="com.example.bank.PARTNER"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="com.example.bank.LEGACY" />
+
+    <application android:label="Bank">
+
+        <!-- Explicitly exported with no permission guard: an open entry point. -->
+        <activity android:name=".RouterActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="bank" android:host="route" />
+            </intent-filter>
+        </activity>
+
+        <!-- Implicitly exported via intent-filter (targetSdk 28 < 31). -->
+        <activity android:name=".DeepLinkActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="https" android:host="bank.example.com" />
+            </intent-filter>
+        </activity>
+
+        <!-- Exported but signature-protected: not accessible to third parties. -->
+        <service
+            android:name=".PartnerService"
+            android:exported="true"
+            android:permission="com.example.bank.PARTNER" />
+
+        <!-- Exported service guarded by a defaulted 'normal' custom permission. -->
+        <service
+            android:name=".LegacyService"
+            android:exported="true"
+            android:permission="com.example.bank.LEGACY" />
+
+        <!-- Private components reachable only through in-app redirects. -->
+        <activity android:name=".internal.InternalTransferActivity" android:exported="false" />
+        <service android:name=".internal.SecretSyncService" android:exported="false" />
+        <receiver android:name=".internal.AuditReceiver" android:exported="false" />
+        <activity android:name=".internal.CycleA" android:exported="false" />
+        <activity android:name=".internal.CycleB" android:exported="false" />
+
+        <!-- A second private hop behind SecretSyncService. -->
+        <receiver android:name=".internal.DeepAuditReceiver" android:exported="false" />
+
+        <!-- Manifest-level redirect: alias forwards into a private activity. -->
+        <activity-alias
+            android:name=".AliasEntry"
+            android:targetActivity=".internal.InternalTransferActivity">
+            <intent-filter>
+                <action android:name="com.example.bank.action.QUICK_PAY" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Private provider that grants URI permissions through redirects. -->
+        <provider
+            android:name=".internal.FileVaultProvider"
+            android:authorities="com.example.bank.vault"
+            android:exported="false"
+            android:readPermission="com.example.bank.PARTNER"
+            android:grantUriPermissions="true" />
+
+        <!-- Exported provider without any permission guard. -->
+        <provider
+            android:name=".PublicFeedProvider"
+            android:authorities="com.example.bank.feed"
+            android:exported="true" />
+
+        <!-- On targetSdk >= 31 this would be rejected: intent-filter, no exported. -->
+        <receiver android:name=".BootReceiver">
+            <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
