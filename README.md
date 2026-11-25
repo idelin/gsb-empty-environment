@@ -1,1 +1,51 @@
-PHP 站点常把上传的图片放在可访问目录里，攻击者上传内含脚本的 avatar.jpg，再请求 /uploads/avatar.jpg/x.php，网关按路径拆分脚本文件与附加路径信息时会把图片当脚本执行。为Go FastCGI 网关写可导入的路径拆分包，输入 URL 路径、站点根目录的虚拟文件清单（含符号链接目标）、脚本目录白名单和上传目录列表：只有路径中以 .php 结尾的某一段所对应的文件真实存在、位于脚本目录白名单内，且递归解析所有中间及末尾符号链接（检测并拒绝符号链接环）后仍在站点根内且不落入上传目录时，才以它为 SCRIPT_FILENAME，其后的部分作 PATH_INFO；上传目录下的任何路径一律不得拆分执行，即使文件名以 .php 结尾；有多个候选时取最靠前的一段；.php 后缀不分大小写，后缀后紧跟的点与空格及等效百分号编码变体先规范化再判定；PATH_INFO 或前导路径含 %00、.. 段或反斜杠穿越时拒绝。用 avatar.jpg/x.php、上传目录里的 shell.php、符号链接环、符号链接指向上传目录、.PHP 大写、末尾空格和 %00 验证。
+# pathsplit
+
+`pathsplit` 为 Go FastCGI 网关拆分 PHP `SCRIPT_FILENAME` 与 `PATH_INFO`。
+它基于站点根目录的虚拟文件清单工作，不会访问宿主文件系统。
+
+```go
+import "prescreen.local/ps-847c68412f/pathsplit"
+
+s, err := pathsplit.New(pathsplit.Config{
+	Root: "/srv/www",
+	Files: pathsplit.Manifest{
+		"/app":               {Kind: pathsplit.Directory},
+		"/app/index.php":     {Kind: pathsplit.RegularFile},
+		"/uploads":           {Kind: pathsplit.Directory},
+		"/uploads/shell.php": {Kind: pathsplit.RegularFile},
+	},
+	ScriptDirs: []string{"/app"},
+	UploadDirs: []string{"/uploads"},
+})
+if err != nil {
+	// invalid configuration
+}
+
+result, err := s.Split("/app/index.php/users/42")
+// result.ScriptFilename == "/srv/www/app/index.php"
+// result.PathInfo == "/users/42"
+```
+
+清单路径、脚本目录和上传目录都使用站点根相对路径，前导 `/` 可省略。
+未在清单中声明的中间目录视为隐式目录；最终脚本必须显式存在于清单中。
+符号链接使用 `{Kind: pathsplit.Symlink, Target: "..."}` 表示。根相对目标以
+`/` 开头，其他目标相对链接所在目录解析。
+
+拆分时会：
+
+- 对 URL 路径做百分号解码，并拒绝 NUL、反斜杠、非法转义和 `..` 段。
+- 以不区分大小写的方式识别 `.php`，先去掉后缀后的点与空格。
+- 从前往后选择第一个存在、位于 `ScriptDirs` 物理目录内、不在
+  `UploadDirs` 内，且不是符号链接环的普通文件。
+- 递归展开中间和末尾符号链接，拒绝逃出站点根或落到上传目录的路径。
+- 任何位于上传目录下的请求路径都直接拒绝，不会执行其中的 PHP 文件。
+
+失败时返回可与 `errors.Is` 匹配的错误，例如 `ErrUploadPath`、
+`ErrSymlinkLoop`、`ErrUnsafePath`、`ErrOutsideRoot` 和
+`ErrScriptNotAllowed`。
+
+运行测试：
+
+```sh
+go test ./...
+```
