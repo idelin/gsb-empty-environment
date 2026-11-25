@@ -1,0 +1,386 @@
+{
+  "name": "side-branch",
+  "zone_name": "example",
+  "patch": {
+    "zone": "example",
+    "old_root": {
+      "zone": "example",
+      "sequence": 0,
+      "key_id": "56475aa75463474c0285df5dbf2bcab73da651358839e9b77481b2eab107708c",
+      "root_hash": "O1T03zG5z71ME4FjgXPfiKL54dbQ2OQ4mB0QOIK+YFo=",
+      "signature": "m95fk1MPC+17hsLsIWKgIXYOfI4yw7griMtZ9DaelvKfwmte8Vl2jMgwrIHPJixxAZf1j+97Qplrx5/i353YDw=="
+    },
+    "new_root": {
+      "zone": "example",
+      "sequence": 1,
+      "key_id": "56475aa75463474c0285df5dbf2bcab73da651358839e9b77481b2eab107708c",
+      "root_hash": "T1NkePv6IFi1XuW0LRNV34osdOpo9VZTZolk21dNfOs=",
+      "signature": "RIZKJsJtqhFNk+uY8mpYpCZZiEpWGCKDO+2onDvZNdtq5iWat/x1jFe3zDvlFsNt4rq1IvdejZmn/x4hboszCA=="
+    },
+    "new_apex": {
+      "path": [],
+      "children": {
+        "edit": "5mAkDHj2r3pGQVWzsrWRd95hUcDH6/xmT4u0DQ04YSw=",
+        "keep": "lGMzl6FqTlwLJ3GFPkMuY8znEslBrgqkv6TjiMIF6Xo="
+      }
+    },
+    "ops": [
+      {
+        "kind": "add_delegation",
+        "target": [
+          "edit",
+          "cut"
+        ],
+        "old_proof": {
+          "query": [
+            "edit",
+            "cut"
+          ],
+          "nodes": [
+            {
+              "path": [],
+              "children": {
+                "edit": "Y1nlxpKNYkFaLlWTjzVU1V4TFVBBnauEDmVEd/CBCWM=",
+                "keep": "lGMzl6FqTlwLJ3GFPkMuY8znEslBrgqkv6TjiMIF6Xo="
+              }
+            },
+            {
+              "path": [
+                "edit"
+              ],
+              "records": [
+                {
+                  "type": "A",
+                  "value": "10.0.0.2"
+                }
+              ]
+            }
+          ]
+        },
+        "new_proof": {
+          "query": [
+            "edit",
+            "cut"
+          ],
+          "nodes": [
+            {
+              "path": [],
+              "children": {
+                "edit": "5mAkDHj2r3pGQVWzsrWRd95hUcDH6/xmT4u0DQ04YSw=",
+                "keep": "lGMzl6FqTlwLJ3GFPkMuY8znEslBrgqkv6TjiMIF6Xo="
+              }
+            },
+            {
+              "path": [
+                "edit"
+              ],
+              "records": [
+                {
+                  "type": "A",
+                  "value": "10.0.0.2"
+                }
+              ],
+              "children": {
+                "cut": "qK7PkpkSlrCJan1BNacxmWtPgipkU2pMjQPR/o9G30E="
+              }
+            },
+            {
+              "path": [
+                "edit",
+                "cut"
+              ],
+              "delegate": true,
+              "records": [
+                {
+                  "type": "NS",
+                  "value": "ns1.cut.edit"
+                },
+                {
+                  "type": "NS",
+                  "value": "ns2.cut.edit"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "client_proofs": [
+      {
+        "query": [
+          "keep"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "edit": "5mAkDHj2r3pGQVWzsrWRd95hUcDH6/xmT4u0DQ04YSw=",
+              "keep": "lGMzl6FqTlwLJ3GFPkMuY8znEslBrgqkv6TjiMIF6Xo="
+            }
+          },
+          {
+            "path": [
+              "keep"
+            ],
+            "records": [
+              {
+                "type": "A",
+                "value": "10.0.0.1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "query": [
+          "keep",
+          "child"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "edit": "5mAkDHj2r3pGQVWzsrWRd95hUcDH6/xmT4u0DQ04YSw=",
+              "keep": "lGMzl6FqTlwLJ3GFPkMuY8znEslBrgqkv6TjiMIF6Xo="
+            }
+          },
+          {
+            "path": [
+              "keep"
+            ],
+            "records": [
+              {
+                "type": "A",
+                "value": "10.0.0.1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "query": [
+          "edit"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "edit": "5mAkDHj2r3pGQVWzsrWRd95hUcDH6/xmT4u0DQ04YSw=",
+              "keep": "lGMzl6FqTlwLJ3GFPkMuY8znEslBrgqkv6TjiMIF6Xo="
+            }
+          },
+          {
+            "path": [
+              "edit"
+            ],
+            "records": [
+              {
+                "type": "A",
+                "value": "10.0.0.2"
+              }
+            ],
+            "children": {
+              "cut": "qK7PkpkSlrCJan1BNacxmWtPgipkU2pMjQPR/o9G30E="
+            }
+          }
+        ]
+      },
+      {
+        "query": [
+          "kee",
+          "lookalike"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "edit": "5mAkDHj2r3pGQVWzsrWRd95hUcDH6/xmT4u0DQ04YSw=",
+              "keep": "lGMzl6FqTlwLJ3GFPkMuY8znEslBrgqkv6TjiMIF6Xo="
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "old_root": {
+    "zone": "example",
+    "sequence": 0,
+    "key_id": "56475aa75463474c0285df5dbf2bcab73da651358839e9b77481b2eab107708c",
+    "root_hash": "O1T03zG5z71ME4FjgXPfiKL54dbQ2OQ4mB0QOIK+YFo=",
+    "signature": "m95fk1MPC+17hsLsIWKgIXYOfI4yw7griMtZ9DaelvKfwmte8Vl2jMgwrIHPJixxAZf1j+97Qplrx5/i353YDw=="
+  },
+  "new_root": {
+    "zone": "example",
+    "sequence": 1,
+    "key_id": "56475aa75463474c0285df5dbf2bcab73da651358839e9b77481b2eab107708c",
+    "root_hash": "T1NkePv6IFi1XuW0LRNV34osdOpo9VZTZolk21dNfOs=",
+    "signature": "RIZKJsJtqhFNk+uY8mpYpCZZiEpWGCKDO+2onDvZNdtq5iWat/x1jFe3zDvlFsNt4rq1IvdejZmn/x4hboszCA=="
+  },
+  "old_key": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8DoQe/884Qvh1w3RjnS8CZZ+TWMJulDV8d3IZkElUxuA==",
+  "new_key": "8OHSw7Sllod4aVpLPC0eDwARIjNEVWZ3iJmqu8zd7v/3hIdZRirmp6KKpjF/uWjs5648LDWD+S7sWZP+iC3IcA==",
+  "cached": [
+    {
+      "query": [
+        "keep"
+      ],
+      "answer": {
+        "Kind": "nodata",
+        "Records": [
+          {
+            "type": "A",
+            "value": "10.0.0.1"
+          }
+        ],
+        "Cut": null,
+        "Closest": [
+          "keep"
+        ],
+        "ViaWildcard": false
+      },
+      "proof": {
+        "query": [
+          "keep"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "edit": "Y1nlxpKNYkFaLlWTjzVU1V4TFVBBnauEDmVEd/CBCWM=",
+              "keep": "lGMzl6FqTlwLJ3GFPkMuY8znEslBrgqkv6TjiMIF6Xo="
+            }
+          },
+          {
+            "path": [
+              "keep"
+            ],
+            "records": [
+              {
+                "type": "A",
+                "value": "10.0.0.1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query": [
+        "keep",
+        "child"
+      ],
+      "answer": {
+        "Kind": "nxdomain",
+        "Records": null,
+        "Cut": null,
+        "Closest": [
+          "keep"
+        ],
+        "ViaWildcard": false
+      },
+      "proof": {
+        "query": [
+          "keep",
+          "child"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "edit": "Y1nlxpKNYkFaLlWTjzVU1V4TFVBBnauEDmVEd/CBCWM=",
+              "keep": "lGMzl6FqTlwLJ3GFPkMuY8znEslBrgqkv6TjiMIF6Xo="
+            }
+          },
+          {
+            "path": [
+              "keep"
+            ],
+            "records": [
+              {
+                "type": "A",
+                "value": "10.0.0.1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query": [
+        "edit"
+      ],
+      "answer": {
+        "Kind": "nodata",
+        "Records": [
+          {
+            "type": "A",
+            "value": "10.0.0.2"
+          }
+        ],
+        "Cut": null,
+        "Closest": [
+          "edit"
+        ],
+        "ViaWildcard": false
+      },
+      "proof": {
+        "query": [
+          "edit"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "edit": "Y1nlxpKNYkFaLlWTjzVU1V4TFVBBnauEDmVEd/CBCWM=",
+              "keep": "lGMzl6FqTlwLJ3GFPkMuY8znEslBrgqkv6TjiMIF6Xo="
+            }
+          },
+          {
+            "path": [
+              "edit"
+            ],
+            "records": [
+              {
+                "type": "A",
+                "value": "10.0.0.2"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query": [
+        "kee",
+        "lookalike"
+      ],
+      "answer": {
+        "Kind": "nxdomain",
+        "Records": null,
+        "Cut": null,
+        "Closest": [],
+        "ViaWildcard": false
+      },
+      "proof": {
+        "query": [
+          "kee",
+          "lookalike"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "edit": "Y1nlxpKNYkFaLlWTjzVU1V4TFVBBnauEDmVEd/CBCWM=",
+              "keep": "lGMzl6FqTlwLJ3GFPkMuY8znEslBrgqkv6TjiMIF6Xo="
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "expect_kind": {
+    "edit": "reusable",
+    "kee/lookalike": "reusable",
+    "keep": "reusable",
+    "keep/child": "reusable"
+  }
+}

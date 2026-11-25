@@ -1,0 +1,615 @@
+{
+  "name": "handoff",
+  "zone_name": "example",
+  "patch": {
+    "zone": "example",
+    "old_root": {
+      "zone": "example",
+      "sequence": 0,
+      "key_id": "56475aa75463474c0285df5dbf2bcab73da651358839e9b77481b2eab107708c",
+      "root_hash": "SQs3VLAvvq0lOu1hCe8jZMMrhbuj2S0vhfYr1W5gkoI=",
+      "signature": "i1j6y1aPo/nbl8b+we+cTy3kI2/pjYeZrm7QxxCyyC0vC5xOSx9ezcgO6OX/guyG2Q9RdWd9f5vyxYUpoQ7BCQ=="
+    },
+    "new_root": {
+      "zone": "example",
+      "sequence": 1,
+      "key_id": "d1a16f2482990d2b130977740cf1b9a4f2a55e33cb54f84a5778337fb029dc07",
+      "previous_key_id": "56475aa75463474c0285df5dbf2bcab73da651358839e9b77481b2eab107708c",
+      "root_hash": "+GFA2ARn9BBBdXeaTlzHYbm/0kg8ryhPIAayFUhmVKU=",
+      "signature": "rMupAgi2AoxyXx90TCzTFypgKx4Eakf+W9hG+UflGkktNUi7cI5MuKPiFPLQXR/JSwkzaGMhqatCdSVgWstBAg=="
+    },
+    "new_apex": {
+      "path": [],
+      "children": {
+        "net": "iIYRy7O876ZeF7klIl0/QOSjLI487fhdiyxo1/n0EwA=",
+        "org": "Anf8NsmA3rnrTm6GKZktFMH1a7EzDixQfOqApl5zi84="
+      }
+    },
+    "ops": [
+      {
+        "kind": "add_delegation",
+        "target": [
+          "org",
+          "new"
+        ],
+        "old_proof": {
+          "query": [
+            "org",
+            "new"
+          ],
+          "nodes": [
+            {
+              "path": [],
+              "children": {
+                "net": "iIYRy7O876ZeF7klIl0/QOSjLI487fhdiyxo1/n0EwA=",
+                "org": "qlwDGjFoFSxo6blHWZB/LQyQSCEiEb+ZaRWqSuZ3MNI="
+              }
+            },
+            {
+              "path": [
+                "org"
+              ],
+              "records": [
+                {
+                  "type": "A",
+                  "value": "203.0.113.7"
+                }
+              ],
+              "children": {
+                "*": "hgYzNjMnCqXugEnTVKncwbprm7gCDgsylV0pYuTjcFg="
+              }
+            }
+          ],
+          "wildcard_node": {
+            "path": [
+              "org",
+              "*"
+            ],
+            "records": [
+              {
+                "type": "A",
+                "value": "203.0.113.9"
+              }
+            ]
+          }
+        },
+        "new_proof": {
+          "query": [
+            "org",
+            "new"
+          ],
+          "nodes": [
+            {
+              "path": [],
+              "children": {
+                "net": "iIYRy7O876ZeF7klIl0/QOSjLI487fhdiyxo1/n0EwA=",
+                "org": "Anf8NsmA3rnrTm6GKZktFMH1a7EzDixQfOqApl5zi84="
+              }
+            },
+            {
+              "path": [
+                "org"
+              ],
+              "records": [
+                {
+                  "type": "A",
+                  "value": "203.0.113.7"
+                }
+              ],
+              "children": {
+                "*": "hgYzNjMnCqXugEnTVKncwbprm7gCDgsylV0pYuTjcFg=",
+                "new": "RZ9rOt4VvVRzKKe9ebAe0POxEDWxFLPGntc4rosowxc="
+              }
+            },
+            {
+              "path": [
+                "org",
+                "new"
+              ],
+              "delegate": true,
+              "records": [
+                {
+                  "type": "NS",
+                  "value": "ns1.new.org"
+                },
+                {
+                  "type": "NS",
+                  "value": "ns2.new.org"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "handoff": {
+      "zone": "example",
+      "sequence": 1,
+      "old_key_id": "56475aa75463474c0285df5dbf2bcab73da651358839e9b77481b2eab107708c",
+      "new_key_id": "d1a16f2482990d2b130977740cf1b9a4f2a55e33cb54f84a5778337fb029dc07",
+      "old_root_hash": "SQs3VLAvvq0lOu1hCe8jZMMrhbuj2S0vhfYr1W5gkoI=",
+      "new_root_hash": "+GFA2ARn9BBBdXeaTlzHYbm/0kg8ryhPIAayFUhmVKU=",
+      "new_key": "94SHWUYq5qeiiqYxf7lo7OeuPCw1g/ku7FmT/ogtyHA=",
+      "signature": "IqD9dZHYiJq0cWf3RlxwjXEIR0vMAFOm4nnGcSL/Xps/WNR6Wkp1fCg9Gn1tRm5aZqtCMNu83hBN2GPXA0kcCg=="
+    },
+    "client_proofs": [
+      {
+        "query": [
+          "org",
+          "new"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "net": "iIYRy7O876ZeF7klIl0/QOSjLI487fhdiyxo1/n0EwA=",
+              "org": "Anf8NsmA3rnrTm6GKZktFMH1a7EzDixQfOqApl5zi84="
+            }
+          },
+          {
+            "path": [
+              "org"
+            ],
+            "records": [
+              {
+                "type": "A",
+                "value": "203.0.113.7"
+              }
+            ],
+            "children": {
+              "*": "hgYzNjMnCqXugEnTVKncwbprm7gCDgsylV0pYuTjcFg=",
+              "new": "RZ9rOt4VvVRzKKe9ebAe0POxEDWxFLPGntc4rosowxc="
+            }
+          },
+          {
+            "path": [
+              "org",
+              "new"
+            ],
+            "delegate": true,
+            "records": [
+              {
+                "type": "NS",
+                "value": "ns1.new.org"
+              },
+              {
+                "type": "NS",
+                "value": "ns2.new.org"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "query": [
+          "org",
+          "gone"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "net": "iIYRy7O876ZeF7klIl0/QOSjLI487fhdiyxo1/n0EwA=",
+              "org": "Anf8NsmA3rnrTm6GKZktFMH1a7EzDixQfOqApl5zi84="
+            }
+          },
+          {
+            "path": [
+              "org"
+            ],
+            "records": [
+              {
+                "type": "A",
+                "value": "203.0.113.7"
+              }
+            ],
+            "children": {
+              "*": "hgYzNjMnCqXugEnTVKncwbprm7gCDgsylV0pYuTjcFg=",
+              "new": "RZ9rOt4VvVRzKKe9ebAe0POxEDWxFLPGntc4rosowxc="
+            }
+          }
+        ],
+        "wildcard_node": {
+          "path": [
+            "org",
+            "*"
+          ],
+          "records": [
+            {
+              "type": "A",
+              "value": "203.0.113.9"
+            }
+          ]
+        }
+      },
+      {
+        "query": [
+          "org",
+          "new",
+          "sub"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "net": "iIYRy7O876ZeF7klIl0/QOSjLI487fhdiyxo1/n0EwA=",
+              "org": "Anf8NsmA3rnrTm6GKZktFMH1a7EzDixQfOqApl5zi84="
+            }
+          },
+          {
+            "path": [
+              "org"
+            ],
+            "records": [
+              {
+                "type": "A",
+                "value": "203.0.113.7"
+              }
+            ],
+            "children": {
+              "*": "hgYzNjMnCqXugEnTVKncwbprm7gCDgsylV0pYuTjcFg=",
+              "new": "RZ9rOt4VvVRzKKe9ebAe0POxEDWxFLPGntc4rosowxc="
+            }
+          },
+          {
+            "path": [
+              "org",
+              "new"
+            ],
+            "delegate": true,
+            "records": [
+              {
+                "type": "NS",
+                "value": "ns1.new.org"
+              },
+              {
+                "type": "NS",
+                "value": "ns2.new.org"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "query": [
+          "net",
+          "edge"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "net": "iIYRy7O876ZeF7klIl0/QOSjLI487fhdiyxo1/n0EwA=",
+              "org": "Anf8NsmA3rnrTm6GKZktFMH1a7EzDixQfOqApl5zi84="
+            }
+          },
+          {
+            "path": [
+              "net"
+            ],
+            "children": {
+              "edge": "av3+5ckIb/SVVGg4Yn0AF+LrBzlub0yY2eGsQ/hoC2k="
+            }
+          },
+          {
+            "path": [
+              "net",
+              "edge"
+            ],
+            "records": [
+              {
+                "type": "A",
+                "value": "198.51.100.4"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "query": [
+          "com",
+          "alpha"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "net": "iIYRy7O876ZeF7klIl0/QOSjLI487fhdiyxo1/n0EwA=",
+              "org": "Anf8NsmA3rnrTm6GKZktFMH1a7EzDixQfOqApl5zi84="
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "old_root": {
+    "zone": "example",
+    "sequence": 0,
+    "key_id": "56475aa75463474c0285df5dbf2bcab73da651358839e9b77481b2eab107708c",
+    "root_hash": "SQs3VLAvvq0lOu1hCe8jZMMrhbuj2S0vhfYr1W5gkoI=",
+    "signature": "i1j6y1aPo/nbl8b+we+cTy3kI2/pjYeZrm7QxxCyyC0vC5xOSx9ezcgO6OX/guyG2Q9RdWd9f5vyxYUpoQ7BCQ=="
+  },
+  "new_root": {
+    "zone": "example",
+    "sequence": 1,
+    "key_id": "d1a16f2482990d2b130977740cf1b9a4f2a55e33cb54f84a5778337fb029dc07",
+    "previous_key_id": "56475aa75463474c0285df5dbf2bcab73da651358839e9b77481b2eab107708c",
+    "root_hash": "+GFA2ARn9BBBdXeaTlzHYbm/0kg8ryhPIAayFUhmVKU=",
+    "signature": "rMupAgi2AoxyXx90TCzTFypgKx4Eakf+W9hG+UflGkktNUi7cI5MuKPiFPLQXR/JSwkzaGMhqatCdSVgWstBAg=="
+  },
+  "old_key": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8DoQe/884Qvh1w3RjnS8CZZ+TWMJulDV8d3IZkElUxuA==",
+  "new_key": "8OHSw7Sllod4aVpLPC0eDwARIjNEVWZ3iJmqu8zd7v/3hIdZRirmp6KKpjF/uWjs5648LDWD+S7sWZP+iC3IcA==",
+  "cached": [
+    {
+      "query": [
+        "org",
+        "new"
+      ],
+      "answer": {
+        "Kind": "positive",
+        "Records": [
+          {
+            "type": "A",
+            "value": "203.0.113.9"
+          }
+        ],
+        "Cut": null,
+        "Closest": [
+          "org"
+        ],
+        "ViaWildcard": true
+      },
+      "proof": {
+        "query": [
+          "org",
+          "new"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "net": "iIYRy7O876ZeF7klIl0/QOSjLI487fhdiyxo1/n0EwA=",
+              "org": "qlwDGjFoFSxo6blHWZB/LQyQSCEiEb+ZaRWqSuZ3MNI="
+            }
+          },
+          {
+            "path": [
+              "org"
+            ],
+            "records": [
+              {
+                "type": "A",
+                "value": "203.0.113.7"
+              }
+            ],
+            "children": {
+              "*": "hgYzNjMnCqXugEnTVKncwbprm7gCDgsylV0pYuTjcFg="
+            }
+          }
+        ],
+        "wildcard_node": {
+          "path": [
+            "org",
+            "*"
+          ],
+          "records": [
+            {
+              "type": "A",
+              "value": "203.0.113.9"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query": [
+        "org",
+        "gone"
+      ],
+      "answer": {
+        "Kind": "positive",
+        "Records": [
+          {
+            "type": "A",
+            "value": "203.0.113.9"
+          }
+        ],
+        "Cut": null,
+        "Closest": [
+          "org"
+        ],
+        "ViaWildcard": true
+      },
+      "proof": {
+        "query": [
+          "org",
+          "gone"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "net": "iIYRy7O876ZeF7klIl0/QOSjLI487fhdiyxo1/n0EwA=",
+              "org": "qlwDGjFoFSxo6blHWZB/LQyQSCEiEb+ZaRWqSuZ3MNI="
+            }
+          },
+          {
+            "path": [
+              "org"
+            ],
+            "records": [
+              {
+                "type": "A",
+                "value": "203.0.113.7"
+              }
+            ],
+            "children": {
+              "*": "hgYzNjMnCqXugEnTVKncwbprm7gCDgsylV0pYuTjcFg="
+            }
+          }
+        ],
+        "wildcard_node": {
+          "path": [
+            "org",
+            "*"
+          ],
+          "records": [
+            {
+              "type": "A",
+              "value": "203.0.113.9"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query": [
+        "org",
+        "new",
+        "sub"
+      ],
+      "answer": {
+        "Kind": "nxdomain",
+        "Records": null,
+        "Cut": null,
+        "Closest": [
+          "org"
+        ],
+        "ViaWildcard": false
+      },
+      "proof": {
+        "query": [
+          "org",
+          "new",
+          "sub"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "net": "iIYRy7O876ZeF7klIl0/QOSjLI487fhdiyxo1/n0EwA=",
+              "org": "qlwDGjFoFSxo6blHWZB/LQyQSCEiEb+ZaRWqSuZ3MNI="
+            }
+          },
+          {
+            "path": [
+              "org"
+            ],
+            "records": [
+              {
+                "type": "A",
+                "value": "203.0.113.7"
+              }
+            ],
+            "children": {
+              "*": "hgYzNjMnCqXugEnTVKncwbprm7gCDgsylV0pYuTjcFg="
+            }
+          }
+        ],
+        "wildcard_node": {
+          "path": [
+            "org",
+            "*"
+          ],
+          "records": [
+            {
+              "type": "A",
+              "value": "203.0.113.9"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query": [
+        "net",
+        "edge"
+      ],
+      "answer": {
+        "Kind": "nodata",
+        "Records": [
+          {
+            "type": "A",
+            "value": "198.51.100.4"
+          }
+        ],
+        "Cut": null,
+        "Closest": [
+          "net",
+          "edge"
+        ],
+        "ViaWildcard": false
+      },
+      "proof": {
+        "query": [
+          "net",
+          "edge"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "net": "iIYRy7O876ZeF7klIl0/QOSjLI487fhdiyxo1/n0EwA=",
+              "org": "qlwDGjFoFSxo6blHWZB/LQyQSCEiEb+ZaRWqSuZ3MNI="
+            }
+          },
+          {
+            "path": [
+              "net"
+            ],
+            "children": {
+              "edge": "av3+5ckIb/SVVGg4Yn0AF+LrBzlub0yY2eGsQ/hoC2k="
+            }
+          },
+          {
+            "path": [
+              "net",
+              "edge"
+            ],
+            "records": [
+              {
+                "type": "A",
+                "value": "198.51.100.4"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query": [
+        "com",
+        "alpha"
+      ],
+      "answer": {
+        "Kind": "nxdomain",
+        "Records": null,
+        "Cut": null,
+        "Closest": [],
+        "ViaWildcard": false
+      },
+      "proof": {
+        "query": [
+          "com",
+          "alpha"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "net": "iIYRy7O876ZeF7klIl0/QOSjLI487fhdiyxo1/n0EwA=",
+              "org": "qlwDGjFoFSxo6blHWZB/LQyQSCEiEb+ZaRWqSuZ3MNI="
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "expect_kind": {
+    "com/alpha": "reusable",
+    "net/edge": "reusable",
+    "org/gone": "reusable",
+    "org/new": "changed",
+    "org/new/sub": "changed"
+  }
+}

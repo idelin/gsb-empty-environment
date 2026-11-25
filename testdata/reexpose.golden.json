@@ -1,0 +1,397 @@
+{
+  "name": "reexpose",
+  "zone_name": "example",
+  "patch": {
+    "zone": "example",
+    "old_root": {
+      "zone": "example",
+      "sequence": 0,
+      "key_id": "56475aa75463474c0285df5dbf2bcab73da651358839e9b77481b2eab107708c",
+      "root_hash": "Dqrh9WBL5vfGeGCwCZU5VUqyLTO9aaXNv4DKnqPt5NI=",
+      "signature": "9Ar3L1/VAy46qhzAp2/Mdojuc+wjK9nUcdpWlZK6ODbDznZtdjRHCBGOtiHo/XFb9WWMyc2PnzQT4gaGIg1jCw=="
+    },
+    "new_root": {
+      "zone": "example",
+      "sequence": 1,
+      "key_id": "56475aa75463474c0285df5dbf2bcab73da651358839e9b77481b2eab107708c",
+      "root_hash": "2drZSP6D59YQPQJ7DxaskffsJbL9XwhNYum3FeicZXM=",
+      "signature": "YiQMiQ0n7gnrK+TZrfYD8IBN1MJSVOS6odTHgjP1iMZtFFnA6Nrh2WkRX7R12Rn9K1jJuL90agZjRpB1GivhAw=="
+    },
+    "new_apex": {
+      "path": [],
+      "children": {
+        "*": "HeJQLL0xQZKjAklPhnlh4QyrICQKPbyvG0rO0AUkxDg=",
+        "near": "7YP/Wbf/layT3NSjWy1A5oPkvGNb9yS32LfkpTYvp9I="
+      }
+    },
+    "ops": [
+      {
+        "kind": "remove_delegation",
+        "target": [
+          "near"
+        ],
+        "old_proof": {
+          "query": [
+            "near"
+          ],
+          "nodes": [
+            {
+              "path": [],
+              "children": {
+                "*": "HeJQLL0xQZKjAklPhnlh4QyrICQKPbyvG0rO0AUkxDg=",
+                "near": "QITegeuknb0ayYqgyhi3xW6YqLQgKJK7bAEHnOEznYo="
+              }
+            },
+            {
+              "path": [
+                "near"
+              ],
+              "delegate": true,
+              "records": [
+                {
+                  "type": "NS",
+                  "value": "ns1.near"
+                },
+                {
+                  "type": "NS",
+                  "value": "ns2.near"
+                }
+              ]
+            }
+          ]
+        },
+        "new_proof": {
+          "query": [
+            "near"
+          ],
+          "nodes": [
+            {
+              "path": [],
+              "children": {
+                "*": "HeJQLL0xQZKjAklPhnlh4QyrICQKPbyvG0rO0AUkxDg=",
+                "near": "7YP/Wbf/layT3NSjWy1A5oPkvGNb9yS32LfkpTYvp9I="
+              }
+            },
+            {
+              "path": [
+                "near"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "client_proofs": [
+      {
+        "query": [
+          "near",
+          "deep",
+          "leaf"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "*": "HeJQLL0xQZKjAklPhnlh4QyrICQKPbyvG0rO0AUkxDg=",
+              "near": "7YP/Wbf/layT3NSjWy1A5oPkvGNb9yS32LfkpTYvp9I="
+            }
+          },
+          {
+            "path": [
+              "near"
+            ]
+          }
+        ]
+      },
+      {
+        "query": [
+          "near"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "*": "HeJQLL0xQZKjAklPhnlh4QyrICQKPbyvG0rO0AUkxDg=",
+              "near": "7YP/Wbf/layT3NSjWy1A5oPkvGNb9yS32LfkpTYvp9I="
+            }
+          },
+          {
+            "path": [
+              "near"
+            ]
+          }
+        ]
+      },
+      {
+        "query": [
+          "other",
+          "thing"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "*": "HeJQLL0xQZKjAklPhnlh4QyrICQKPbyvG0rO0AUkxDg=",
+              "near": "7YP/Wbf/layT3NSjWy1A5oPkvGNb9yS32LfkpTYvp9I="
+            }
+          }
+        ],
+        "wildcard_node": {
+          "path": [
+            "*"
+          ],
+          "records": [
+            {
+              "type": "TXT",
+              "value": "apex-template"
+            }
+          ]
+        }
+      },
+      {
+        "query": [
+          "fresh"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "*": "HeJQLL0xQZKjAklPhnlh4QyrICQKPbyvG0rO0AUkxDg=",
+              "near": "7YP/Wbf/layT3NSjWy1A5oPkvGNb9yS32LfkpTYvp9I="
+            }
+          }
+        ],
+        "wildcard_node": {
+          "path": [
+            "*"
+          ],
+          "records": [
+            {
+              "type": "TXT",
+              "value": "apex-template"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "old_root": {
+    "zone": "example",
+    "sequence": 0,
+    "key_id": "56475aa75463474c0285df5dbf2bcab73da651358839e9b77481b2eab107708c",
+    "root_hash": "Dqrh9WBL5vfGeGCwCZU5VUqyLTO9aaXNv4DKnqPt5NI=",
+    "signature": "9Ar3L1/VAy46qhzAp2/Mdojuc+wjK9nUcdpWlZK6ODbDznZtdjRHCBGOtiHo/XFb9WWMyc2PnzQT4gaGIg1jCw=="
+  },
+  "new_root": {
+    "zone": "example",
+    "sequence": 1,
+    "key_id": "56475aa75463474c0285df5dbf2bcab73da651358839e9b77481b2eab107708c",
+    "root_hash": "2drZSP6D59YQPQJ7DxaskffsJbL9XwhNYum3FeicZXM=",
+    "signature": "YiQMiQ0n7gnrK+TZrfYD8IBN1MJSVOS6odTHgjP1iMZtFFnA6Nrh2WkRX7R12Rn9K1jJuL90agZjRpB1GivhAw=="
+  },
+  "old_key": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8DoQe/884Qvh1w3RjnS8CZZ+TWMJulDV8d3IZkElUxuA==",
+  "new_key": "8OHSw7Sllod4aVpLPC0eDwARIjNEVWZ3iJmqu8zd7v/3hIdZRirmp6KKpjF/uWjs5648LDWD+S7sWZP+iC3IcA==",
+  "cached": [
+    {
+      "query": [
+        "near",
+        "deep",
+        "leaf"
+      ],
+      "answer": {
+        "Kind": "referral",
+        "Records": [
+          {
+            "type": "NS",
+            "value": "ns1.near"
+          },
+          {
+            "type": "NS",
+            "value": "ns2.near"
+          }
+        ],
+        "Cut": [
+          "near"
+        ],
+        "Closest": [
+          "near"
+        ],
+        "ViaWildcard": false
+      },
+      "proof": {
+        "query": [
+          "near",
+          "deep",
+          "leaf"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "*": "HeJQLL0xQZKjAklPhnlh4QyrICQKPbyvG0rO0AUkxDg=",
+              "near": "QITegeuknb0ayYqgyhi3xW6YqLQgKJK7bAEHnOEznYo="
+            }
+          },
+          {
+            "path": [
+              "near"
+            ],
+            "delegate": true,
+            "records": [
+              {
+                "type": "NS",
+                "value": "ns1.near"
+              },
+              {
+                "type": "NS",
+                "value": "ns2.near"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query": [
+        "near"
+      ],
+      "answer": {
+        "Kind": "referral",
+        "Records": [
+          {
+            "type": "NS",
+            "value": "ns1.near"
+          },
+          {
+            "type": "NS",
+            "value": "ns2.near"
+          }
+        ],
+        "Cut": [
+          "near"
+        ],
+        "Closest": [
+          "near"
+        ],
+        "ViaWildcard": false
+      },
+      "proof": {
+        "query": [
+          "near"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "*": "HeJQLL0xQZKjAklPhnlh4QyrICQKPbyvG0rO0AUkxDg=",
+              "near": "QITegeuknb0ayYqgyhi3xW6YqLQgKJK7bAEHnOEznYo="
+            }
+          },
+          {
+            "path": [
+              "near"
+            ],
+            "delegate": true,
+            "records": [
+              {
+                "type": "NS",
+                "value": "ns1.near"
+              },
+              {
+                "type": "NS",
+                "value": "ns2.near"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "query": [
+        "fresh"
+      ],
+      "answer": {
+        "Kind": "positive",
+        "Records": [
+          {
+            "type": "TXT",
+            "value": "apex-template"
+          }
+        ],
+        "Cut": null,
+        "Closest": [],
+        "ViaWildcard": true
+      },
+      "proof": {
+        "query": [
+          "fresh"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "*": "HeJQLL0xQZKjAklPhnlh4QyrICQKPbyvG0rO0AUkxDg=",
+              "near": "QITegeuknb0ayYqgyhi3xW6YqLQgKJK7bAEHnOEznYo="
+            }
+          }
+        ],
+        "wildcard_node": {
+          "path": [
+            "*"
+          ],
+          "records": [
+            {
+              "type": "TXT",
+              "value": "apex-template"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query": [
+        "other",
+        "thing"
+      ],
+      "answer": {
+        "Kind": "nxdomain",
+        "Records": null,
+        "Cut": null,
+        "Closest": [],
+        "ViaWildcard": false
+      },
+      "proof": {
+        "query": [
+          "other",
+          "thing"
+        ],
+        "nodes": [
+          {
+            "path": [],
+            "children": {
+              "*": "HeJQLL0xQZKjAklPhnlh4QyrICQKPbyvG0rO0AUkxDg=",
+              "near": "QITegeuknb0ayYqgyhi3xW6YqLQgKJK7bAEHnOEznYo="
+            }
+          }
+        ],
+        "wildcard_node": {
+          "path": [
+            "*"
+          ],
+          "records": [
+            {
+              "type": "TXT",
+              "value": "apex-template"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "expect_kind": {
+    "fresh": "reusable",
+    "near": "changed",
+    "near/deep/leaf": "changed",
+    "other/thing": "reusable"
+  }
+}
