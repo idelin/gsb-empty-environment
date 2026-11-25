@@ -2,6 +2,14 @@
   "name": "ddd-6365-20261122-v2",
   "private": true,
   "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
   "scripts": {
     "test": "node --experimental-strip-types --test"
   }
