@@ -1,1 +1,37 @@
-移动应用分发网关面对精心构造的字节级ZIP+DEX多态包（Janus）、伪造Zip64 EOCD评论偏移、重复同名条目遮蔽（Local File Header 与 Central Directory 偏移或CRC矛盾）以及APK签名分块 v2/v3/v3.1 轮换欺骗时，极易错信签名而加载恶意负载。给Go安全分发网关实现直接解析真实原始二进制字节切片的APK结构与签名覆盖准入验证包，严格拒绝仅靠外部传入预设整数偏移的校验方式。组件独立完成二进制解析：校验文件首4字节必须为ZIP本地文件头魔数（明确拦截 `"dex\n"`、`\x7fELF` 等多态前缀且要求首个LFH精确位于偏移 `0`），逐项解析所有LFH与CD条目及尾部EOCD；硬拒绝存在Zip64标识、EOCD注释声称长度与缓冲末尾实际距离不符、尾部残留冗余字节、任意条目出现LFH与CD的名称/CRC32/未压缩长度/压缩大小不一致或存在本地头区间重叠覆盖的文件。对APK Signing Block（位于紧邻CD之前的魔数 `APK Sig Block 42`）验证前后两处8字节区块大小必须相等、总长对齐，并识别其中 v2（`0x7109871a`）、v3（`0xf05368c0`）及 v3.1（`0x1b93ad61`）块、目标 `minSdkVersion` 与轮换证书谱系（lineage）声明：`minSdk >= 24` 缺乏有效v2+块即拒绝。联合调用方注入的签名验证回调核对摘要必须严格覆盖段1 `[0..sigBlockStart)`、段2完整CD及将CD偏移回改为 `sigBlockStart` 的规范化EOCD，用构造字节级别Janus、CD同名藏毒与v3回退攻击集实测拒收。
+# APK 分块签名准入验证
+
+`apkverify` 直接解析调用方提供的原始 APK 字节切片，不接受任何外部预设的
+ZIP 偏移。每个 LFH、CD 条目、EOCD 和 APK Signing Block 位置都由字节内容
+自行推导。
+
+```go
+minSDK := int32(24)
+report, err := apkverify.Validate(apkBytes, apkverify.Options{
+    MinSDKVersion: &minSDK,
+    Verifier: func(ctx context.Context, req apkverify.VerificationRequest) error {
+        // req.Coverage 已严格按 APK Signature Scheme 拼接：
+        // section1 || full central directory || normalized EOCD。
+        return verifyV2V3V31Signatures(req)
+    },
+})
+```
+
+`Parse` 只做结构校验，可用于观测和测试；`Validate` 才是准入入口。存在
+v2、v3 或 v3.1 块时必须提供 `Verifier`，回调必须核对所有已识别签名块的
+签名和内容摘要。缺少 v2+ 块时默认拒绝；仅当 `MinSDKVersion < 24` 且显式
+设置 `AllowV1Only` 时才允许无 v2+ 的旧式 APK。
+
+结构校验拒绝：
+
+- 首 4 字节不是 ZIP LFH，或首个 LFH 不在偏移 `0`，包括 `dex\n`、ELF 等前缀。
+- 任意 ZIP64 EOCD 标识、sentinel、locator 或 `0x0001` extra field。
+- EOCD 注释长度与实际缓冲末尾不符、尾部冗余字节、多个 EOCD 候选。
+- 重复条目名，以及 LFH/CD 的名称、CRC32、压缩大小、未压缩大小、偏移、
+  压缩方法或标志不一致。
+- 本地条目区间重叠、未归属间隙、CD 未精确结束于 EOCD。
+- Signing Block 前后 8 字节大小不一致、块长/ID-value 对齐错误、重复块 ID。
+- v3.1 缺少 v3、v3.1 目标低于 API 33、v3 在 API 33 前截止却无 v3.1 回退。
+
+`VerificationRequest.SigningBlock` 提供 v2/v3/v3.1 signer、目标 SDK 范围和
+proof-of-rotation lineage 的结构化结果，供签名回调执行证书链、摘要和轮换
+策略校验。
