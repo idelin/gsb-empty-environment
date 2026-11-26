@@ -2,7 +2,13 @@
   "name": "h26-c612ec583a",
   "private": true,
   "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./node": "./src/node-crypto.ts"
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test test/privacy-gate.test.ts",
+    "typecheck": "tsc --noEmit"
   }
 }
