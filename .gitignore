@@ -1,0 +1,5 @@
+/build/
+*.o
+*.a
+pmp_tests
+.DS_Store
