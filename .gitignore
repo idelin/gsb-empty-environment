@@ -1,0 +1,3 @@
+# Local Go toolchain caches used for offline builds/tests
+.gocache/
+.gopath/
