@@ -2,7 +2,17 @@
   "name": "w27-d0fe57e7a7",
   "private": true,
   "type": "module",
+  "description": "Cross-origin isolation (COOP/COEP/CORP), CORS and Fetch Metadata policy adjudication plus bounded XS-Leak search — offline, zero-dependency TypeScript",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "engines": {
+    "node": ">=22.6.0"
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "demo": "node --experimental-strip-types examples/demo.ts",
+    "matrix": "node --experimental-strip-types examples/run-matrix.ts"
   }
 }
