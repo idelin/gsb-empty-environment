@@ -2,6 +2,15 @@
   "name": "w3-000a70ea2c",
   "private": true,
   "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./header": "./src/header.ts",
+    "./acceptance": "./src/acceptance.ts",
+    "./header-acceptance": "./src/header-acceptance.ts",
+    "./*": "./*"
+  },
   "scripts": {
     "test": "node --experimental-strip-types --test"
   }
