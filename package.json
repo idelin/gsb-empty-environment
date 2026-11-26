@@ -1,0 +1,8 @@
+{
+  "name": "w3-2af8b60b6c",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
