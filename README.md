@@ -1,1 +1,70 @@
-证书路径验证节点同时订阅全量分区 CRL 与多代增量 Delta-CRL，在发行方进行跨签 `indirectCRL` 委托移交与多分区合分切换时，若错把过期基线下的增量吊销记录拼回新分区或对不同根签发的分区做局部叠加，将导致已吊销证书绕过检验或产生状态伪造。为Go证书验证宿主实现可导入的跨代CRL分区汇聚与状态审计包：每条分区清单通过唯一加密根锚定签发者永久ID、单调递增的吊销纪元（revocationEpoch）、序列号半开区间 `[lo, hi)`、吊销原因掩码、生效时段 `[ValidFrom, ValidUntil)`、`indirectCRL` 授权委托链及基准Delta依赖号；分区拆分或合并必须携带绑定旧根与新根及精确序列/原因交割边界的迁移声明。验证目标证书全生命周期区间 `[Start, End)` 时，只要在任一相容验证路径上存在已证实吊销（排除按同一签发身份与同一挂起凭据规范解除的非阻塞 `certificateHold`）即硬拒绝；任何原因位或时间片既未被吊销又缺乏完整已签分区+匹配Delta连续覆盖时必须返回 `Unknown`，严禁跨纪元拼接不相邻半截覆盖。若检测到同 `(IssuerID, RevocationEpoch)` 存在内容冲突的两份有效分区清单（分区模棱两可分叉），立即锁定签发者并输出双签分叉证据。同时交付随新清单到达仅按 `(签发者, 序列交叉区间, 原因, 时段)` 增量失效 `O(受影响)` 缓存项的验证缓存及独立时间轴逐点参考真值核对全场景。
+# crlstate
+
+`crlstate` is an importable Go package for cross-generation partitioned CRL
+aggregation and certificate status auditing.
+
+It is designed for validation hosts that receive many full partition CRLs and
+multi-generation delta CRLs from multiple roots, including `indirectCRL`
+delegation handovers and partition split/merge transitions.
+
+## Guarantees
+
+- A delta is only applied to the exact full/base or previous delta CRL number it
+  declares, within the same `(issuer, root, epoch, partition, serial, reason)`
+  channel.
+- Coverage cannot combine different roots, non-adjacent epochs, or half-filled
+  partitions. Every required reason bit must be covered for every instant of
+  the certificate lifetime.
+- A proven blocking revocation wins over any coverage gap. A `certificateHold`
+  is non-blocking only when a matching `removeFromCRL` release names the same
+  issuer, serial and suspended credential (`HoldID`).
+- Split and merge migrations must bind old/new roots and describe exactly equal
+  serial×reason regions, with no gaps or overlaps. Both roots sign the
+  declaration.
+- Two valid, content-conflicting manifests under the same
+  `(IssuerID, RevocationEpoch)` lock the issuer and retain both signatures and
+  signing digests as fork evidence.
+
+## Use
+
+```go
+import "formal.local/w3b-e0d5e53855/crlstate"
+
+roots := crlstate.NewEd25519Roots()
+_ = roots.AddRoot("root-2026", publicKey)
+
+agg := crlstate.NewAggregator(roots)
+if err := agg.AddManifest(manifest); err != nil {
+    // Includes ErrBadSignature, ErrEpochRegression, ForkError, ...
+}
+
+res := agg.Check(crlstate.Certificate{
+    IssuerID: "issuer-permanent-id",
+    Serial:   serial,
+    Start:    cert.NotBefore,
+    End:      cert.NotAfter,
+})
+switch res.Status {
+case crlstate.StatusGood:
+case crlstate.StatusRevoked:
+case crlstate.StatusLocked:
+case crlstate.StatusUnknown:
+    // res.Missing describes the uncovered serial/reason/time region.
+}
+
+cache := crlstate.NewCache(agg)
+defer cache.Close()
+res = cache.Check(query)
+```
+
+`CheckAt` evaluates an instantaneous point for timeline audits. `Validate`
+converts the three terminal outcomes into `ErrRevoked`, `ErrIssuerLocked`, or
+`ErrStatusUnknown` for path-validation callers.
+
+## Tests
+
+`go test ./...` exercises full/delta continuity, epoch isolation, reason
+partitioning, cross-root isolation, released holds, split/merge migration,
+dual-root signatures, fork locking, exact 2-D migration boundaries, incremental
+cache invalidation, and an independent point-by-point reference timeline for
+all scenarios.
