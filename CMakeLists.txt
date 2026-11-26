@@ -1,0 +1,4 @@
+cmake_minimum_required(VERSION 3.16)
+project(w3_9df2e52d43 CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
