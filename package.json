@@ -1,0 +1,8 @@
+{
+  "name": "h26-0a9244a63c",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
