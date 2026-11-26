@@ -1,0 +1,49 @@
+{
+  "name": "demo",
+  "edges": [
+    {
+      "id": "trigger-grant",
+      "from": "ci",
+      "to": "pre-node",
+      "pkg": "root-trigger",
+      "digest": "sha256:root",
+      "phase": "fetch",
+      "grants": [
+        {
+          "capability": "credential:temp-publish",
+          "transactionId": "tx-demo",
+          "temporary": true,
+          "signer": "ci",
+          "signature": "example-only"
+        }
+      ]
+    },
+    {
+      "id": "optional-preinstall",
+      "from": "pre-node",
+      "to": "build-node",
+      "pkg": "installer",
+      "digest": "sha256:installer",
+      "phase": "preinstall",
+      "condition": "linux",
+      "optional": true,
+      "sandboxed": false
+    },
+    {
+      "id": "build",
+      "from": "build-node",
+      "to": "publish-input",
+      "pkg": "builder",
+      "digest": "sha256:builder",
+      "phase": "build"
+    },
+    {
+      "id": "publish",
+      "from": "publish-input",
+      "to": "registry",
+      "pkg": "release",
+      "digest": "sha256:release",
+      "phase": "publish"
+    }
+  ]
+}
