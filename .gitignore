@@ -1,0 +1,7 @@
+build/
+build_verify/
+cmake-build-*/
+ept_nested_tests
+ept_audit_demo
+debug_ept
+*.o
