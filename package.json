@@ -2,7 +2,15 @@
   "name": "h26-9278e55de0",
   "private": true,
   "type": "module",
+  "description": "Offline, content-addressed JSON-LD context resolver with signed trust roots for credential hosts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./cache": "./src/cache/semantic-cache.ts",
+    "./acceptance": "./acceptance/run-acceptance.ts"
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test \"test/**/*.test.ts\"",
+    "acceptance": "node --experimental-strip-types acceptance/run-acceptance.ts",
+    "check": "node --experimental-strip-types scripts/typecheck-probe.ts"
   }
 }
