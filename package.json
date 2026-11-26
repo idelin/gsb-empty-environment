@@ -2,6 +2,12 @@
   "name": "h26-0a9244a63c",
   "private": true,
   "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./src/*": "./src/*"
+  },
   "scripts": {
     "test": "node --experimental-strip-types --test"
   }
