@@ -1,0 +1,20 @@
+{
+  "destination": 0,
+  "nodes": [0, 1, 2, 3, 4],
+  "edges": [
+    {"from": 1, "to": 0, "kind": "c2p"},
+    {"from": 2, "to": 0, "kind": "c2p"},
+    {"from": 3, "to": 1, "kind": "c2p"},
+    {"from": 4, "to": 2, "kind": "c2p"},
+    {"from": 4, "to": 3, "kind": "c2p"},
+    {"from": 1, "to": 2, "kind": "p2p"},
+    {"from": 2, "to": 1, "kind": "p2p"}
+  ],
+  "preferences": {
+    "0": [[0]],
+    "1": [[1, 0]],
+    "2": [[2, 0]],
+    "3": [[3, 1, 0]],
+    "4": [[4, 2, 0], [4, 3, 1, 0]]
+  }
+}
