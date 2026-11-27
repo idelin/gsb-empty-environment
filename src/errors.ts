@@ -1,0 +1,74 @@
+export type JweSecurityErrorCode =
+  | "JWE_TOKEN_TYPE"
+  | "JWE_TOKEN_TOO_LARGE"
+  | "JWE_SEGMENT_COUNT"
+  | "JWE_BASE64URL_INVALID"
+  | "JWE_BASE64URL_NON_CANONICAL"
+  | "JWE_HEADER_TOO_LARGE"
+  | "JWE_HEADER_UTF8_INVALID"
+  | "JWE_HEADER_JSON_INVALID"
+  | "JWE_HEADER_DUPLICATE_KEY"
+  | "JWE_HEADER_NOT_OBJECT"
+  | "JWE_HEADER_ALG_MISSING"
+  | "JWE_HEADER_ENC_MISSING"
+  | "JWE_ALGORITHM_NOT_ALLOWED"
+  | "JWE_ENCRYPTION_NOT_ALLOWED"
+  | "JWE_PBES2_P2C_MISSING"
+  | "JWE_PBES2_P2C_INVALID"
+  | "JWE_PBES2_P2S_MISSING"
+  | "JWE_PBES2_P2S_INVALID"
+  | "JWE_PBES2_SALT_TOO_SHORT"
+  | "JWE_CRIT_INVALID"
+  | "JWE_CRIT_STANDARD_HEADER"
+  | "JWE_CRIT_UNREGISTERED"
+  | "JWE_CRIT_EXTENSION_MISSING"
+  | "JWE_CRIT_DUPLICATE"
+  | "JWE_ECDH_EPK_MISSING"
+  | "JWE_ECDH_EPK_INVALID"
+  | "JWE_ECDH_EPK_KTY"
+  | "JWE_ECDH_EPK_CRV"
+  | "JWE_ECDH_EPK_COORDINATE"
+  | "JWE_ECDH_EPK_RANGE"
+  | "JWE_ECDH_EPK_CURVE"
+  | "JWE_ECDH_EPK_INFINITY"
+  | "JWE_ECDH_EPK_PRIVATE_MATERIAL"
+  | "JWE_ECDH_APU_INVALID"
+  | "JWE_ECDH_APV_INVALID"
+  | "JWE_ZIP_UNSUPPORTED"
+  | "JWE_IV_INVALID"
+  | "JWE_TAG_INVALID"
+  | "JWE_CIPHERTEXT_INVALID"
+  | "JWE_ENCRYPTED_KEY_INVALID"
+  | "JWE_POLICY_INVALID"
+  | "JWE_KEY_MATERIAL_MISSING"
+  | "JWE_KEY_LENGTH_INVALID"
+  | "JWE_KEY_UNWRAP_FAILED"
+  | "JWE_KEY_MANAGEMENT_UNSUPPORTED"
+  | "JWE_DECRYPTION_FAILED"
+  | "JWE_AUTH_TAG_INVALID"
+  | "JWE_PLAINTEXT_TOO_LARGE"
+  | "JWE_DECOMPRESSION_LIMIT"
+  | "JWE_DECOMPRESSION_RATIO_LIMIT"
+  | "JWE_DECOMPRESSION_FAILED";
+
+export interface JweSecurityErrorDetails {
+  [key: string]: unknown;
+}
+
+export class JweSecurityError extends Error {
+  readonly code: JweSecurityErrorCode;
+  readonly details?: JweSecurityErrorDetails;
+
+  constructor(
+    code: JweSecurityErrorCode,
+    message: string,
+    details?: JweSecurityErrorDetails,
+  ) {
+    super(message);
+    this.name = "JweSecurityError";
+    this.code = code;
+    this.details = details;
+  }
+}
+
+export { JweSecurityError as JweValidationError };
