@@ -1,0 +1,10 @@
+{
+  "destination": 4,
+  "nodes": [1, 2, 3, 4],
+  "links": [
+    {"a": 1, "b": 4, "relation": "customer-provider"},
+    {"a": 2, "b": 4, "relation": "customer-provider"},
+    {"a": 3, "b": 1, "relation": "customer-provider"}
+  ],
+  "strict_gr": true
+}
