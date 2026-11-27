@@ -1,1 +1,56 @@
-金融与企业身份服务在核验 WebAuthn Level 2/3 注册响应的硬件证明（Attestation）时，若未严格解析 `authenticatorData` 二进制结构、漏检 `UP`/`UV`/`AT` 标志位、未核对 `rpIdHash == SHA256(rpId)` 与 `clientDataJSON` 中 `type`/`challenge`/`origin` 精确一致，或未校验 `packed` 证明证书的 `AAGUID` 扩展（OID `1.3.6.1.4.1.45724.1.1.4`）与基本约束（`CA=false`），攻击者可用自签软件密钥冒充企业认证硬件安全密钥注册高权限账号。为 Go 认证宿主实现可导入的 WebAuthn 注册证明验证包，严禁联网（仅用标准库 `crypto/x509`/`crypto/ecdsa`/`crypto/sha256`/`encoding/asn1` 与内置确定性 CBOR 子集解析）。组件严格实现：（1）解析原始 `authenticatorData` 字节流：提取 32 字节 `rpIdHash`、1 字节 `flags`（强制校验 `UP=1`、`AT=1`，策略开启时强制 `UV=1`，且当 `BE=0` 时拒绝 `BS=1` 非法备份状态组合）、4 字节大端 `signCount`、16 字节 `aaguid`、2 字节 `credentialIdLength`、凭据 ID 及 COSE 公钥；（2）校验 `clientDataJSON` 必须为 `type="webauthn.create"`、精确匹配一次性 `challenge` 与预期 `origin`（拒绝 `crossOrigin=true`）；（3）完整实现 `packed`（Full 与 Self 两种模式）及 `none`（策略禁止时硬拒）证明校验：验证 `attStmt.sig` 覆盖 `authData || SHA256(clientDataJSON)`；Full 模式下强制校验证书 `Version==3`、`IsCA==false`、`Subject.OU=="Authenticator Attestation"`、证书内 `id-fido-gen-ce-aaguid` ASN.1 OCTET STRING 扩展精确等于 `authData.aaguid`，并通过注入的信任根链与白名单 `AAGUID` 列表验真。附非法标志组合、AAGUID 扩展错配、跨源注册与自签冒充 Full Attestation 对抗测试。
+# WebAuthn 注册证明验证包
+
+为 Go 认证宿主实现可导入的 WebAuthn Level 2/3 注册证明（Attestation）验证包。纯标准库实现，
+无任何网络访问或第三方依赖：仅使用 `crypto/x509`、`crypto/ecdsa`、`crypto/sha256`、
+`crypto/sha512`、`encoding/asn1`、`encoding/json` 与内置确定性 CBOR 子集解析器。
+
+## 入口
+
+```go
+result, err := webauthn.VerifyRegistration(attestationObject, clientDataJSON, challenge, policy)
+```
+
+## 文件结构
+
+- `webauthn/cbor.go`：确定性 CBOR 子集解析器。仅接受最小编码、定长容器；拒绝不定长、浮点、Tag、非规范 map 键序与尾随字节。
+- `webauthn/authenticator.go`：`authenticatorData` 二进制严格解析与 EC2 COSE 公钥（ES256/ES384/ES512，P-256/P-384/P-521）解析，含曲线点校验与坐标长度校验。
+- `webauthn/clientdata.go`：`CollectedClientData` 校验，重复 JSON 键检测、`type`/`challenge`/`origin` 精确匹配、`crossOrigin=true` 硬拒。
+- `webauthn/packed.go`：`packed` Full/Self 与证书元数据、AAGUID 扩展、信任链校验。
+- `webauthn/attestation.go`：`Policy`、结果类型、`none` 策略与顶层编排（`rpIdHash`、UP/AT/UV 策略、签名载荷 `authData || SHA256(clientDataJSON)`）。
+- `webauthn/signature.go`：仅接受 ASN.1 DER 的 ECDSA 验签（拒绝 IEEE P1363 裸 `r||s` 形式）。
+- `webauthn/errors.go`：可 `errors.Is` 分类的哨兵错误。
+
+## 用法
+
+```go
+import "formal.local/w28-fb65666288/webauthn"
+
+roots := x509.NewCertPool()
+roots.AddCert(enterpriseFIDORoot)
+
+policy := &webauthn.Policy{
+    RPID:                    "login.example.com",
+    Origin:                  "https://login.example.com",
+    RequireUserVerification: true,
+    AllowNoneAttestation:    false, // 企业硬件证明流程硬拒 none
+    TrustAnchors:            roots,
+    AllowedAAGUIDs:          []webauthn.AAGUID{approvedModelAAGUID},
+}
+
+result, err := webauthn.VerifyRegistration(attestationObject, clientDataJSON, issuedChallenge, policy)
+```
+
+## 安全校验要点
+
+- 标志位：强制 `UP=1`、`AT=1`；`UV` 由策略开关强制；`BE=0 && BS=1` 直接拒绝；保留位（bit 1/7）拒绝。
+- Full 证明证书：`Version==3`、`IsCA==false`、`Subject.OU` 精确含 `Authenticator Attestation`、
+  OID `1.3.6.1.4.1.45724.1.1.4` 扩展为 OCTET STRING 且 16 字节内容精确等于 `authData.aaguid`；
+  必须链到注入的信任根，且 AAGUID 命中白名单，否则失败即关闭（fail-closed）。
+- 签名算法以 `attStmt.alg` 为准，并要求与凭据 COSE 算法一致；证书 `SignatureAlgorithm`
+  仅描述 CA 如何签发该证书，不作为证明签名算法依据。
+
+## 测试
+
+`go test ./...` 覆盖正向流程与对抗用例：非法标志组合、AAGUID 扩展错配、跨源注册、
+自签证书冒充 Full Attestation、证书版本/基本约束/OU 违规、信任链与白名单缺失、
+签名篡改与非 DER 编码、CBOR 非规范编码等。
