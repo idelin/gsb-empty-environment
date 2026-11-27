@@ -1,8 +1,46 @@
 {
   "name": "w27-2881ba4423",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "test": "node --experimental-strip-types --test test/safe-template.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./safe-template": {
+      "types": "./src/safe-template.ts",
+      "default": "./src/safe-template.ts"
+    },
+    "./parser": {
+      "types": "./src/parser.ts",
+      "default": "./src/parser.ts"
+    },
+    "./lexer": {
+      "types": "./src/lexer.ts",
+      "default": "./src/lexer.ts"
+    },
+    "./evaluator": {
+      "types": "./src/evaluator.ts",
+      "default": "./src/evaluator.ts"
+    },
+    "./template-engine": {
+      "types": "./src/template-engine.ts",
+      "default": "./src/template-engine.ts"
+    },
+    "./template": {
+      "types": "./src/template.ts",
+      "default": "./src/template.ts"
+    },
+    "./sandbox": {
+      "types": "./src/sandbox.ts",
+      "default": "./src/sandbox.ts"
+    }
   }
 }
