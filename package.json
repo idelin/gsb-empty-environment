@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "build": "tsc",
+    "test": "tsc && node --test dist/test/*.test.js"
   }
 }
