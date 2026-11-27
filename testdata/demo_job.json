@@ -1,0 +1,88 @@
+{
+  "platforms": ["linux", "darwin"],
+  "feature_flags": ["experimental"],
+  "stages": ["fetch", "build", "publish"],
+  "sensitive_stage": "publish",
+  "old": {
+    "label": "lock-v1",
+    "nodes": [
+      {"id": "root", "name": "app", "digest": "sha256:root"},
+      {"id": "libA", "name": "liba", "digest": "sha256:libA"},
+      {"id": "libB", "name": "libb", "digest": "sha256:libB"},
+      {"id": "pub", "name": "publisher", "digest": "sha256:pub-v1"}
+    ],
+    "edges": [
+      {
+        "from": "root", "to": "libA", "stage": "fetch",
+        "platform_conditions": [{"platform": "linux", "on": true}],
+        "transport_digest": "td:root-libA"
+      },
+      {
+        "from": "root", "to": "libB", "stage": "fetch",
+        "platform_conditions": [{"platform": "darwin", "on": true}],
+        "transport_digest": "td:root-libB"
+      },
+      {
+        "from": "libA", "to": "pub", "stage": "publish",
+        "platform_conditions": [{"platform": "linux", "on": true}],
+        "transport_digest": "td:libA-pub",
+        "half": {"txn_id": "T-OLD", "digest": "sha256:pub-v1", "half_index": 0, "stage": "publish", "transport": "attested-registry"}
+      }
+    ],
+    "leak_attempts": [
+      {"from_stage": "build", "to_stage": "publish", "node": "pub", "digest": "sha256:pub-v1", "txn_id": "T-OLD", "channel": "env", "description": "PUBLISH_TOKEN exported from build"}
+    ]
+  },
+  "new": {
+    "label": "lock-v2",
+    "nodes": [
+      {"id": "root", "name": "app", "digest": "sha256:root"},
+      {"id": "libA", "name": "liba", "digest": "sha256:libA"},
+      {"id": "libB", "name": "libb", "digest": "sha256:libB"},
+      {"id": "opt", "name": "optional-publisher", "digest": "sha256:opt"},
+      {"id": "pub", "name": "publisher", "digest": "sha256:pub-v2"},
+      {"id": "pubctl", "name": "publisher", "host": true, "digest": "sha256:pub-host"}
+    ],
+    "edges": [
+      {
+        "from": "root", "to": "libA", "stage": "fetch",
+        "platform_conditions": [{"platform": "linux", "on": true}],
+        "transport_digest": "td:root-libA"
+      },
+      {
+        "from": "root", "to": "libB", "stage": "fetch",
+        "platform_conditions": [{"platform": "darwin", "on": true}],
+        "transport_digest": "td:root-libB"
+      },
+      {
+        "from": "libA", "to": "pub", "stage": "publish",
+        "platform_conditions": [{"platform": "linux", "on": true}],
+        "transport_digest": "td:libA-pub0",
+        "half": {"txn_id": "T-NEW", "digest": "sha256:pub-v2", "half_index": 0, "stage": "publish", "transport": "attested-registry"}
+      },
+      {
+        "from": "libB", "to": "pub", "stage": "publish",
+        "platform_conditions": [{"platform": "linux", "on": true}],
+        "transport_digest": "td:libB-pub1",
+        "half": {"txn_id": "T-NEW", "digest": "sha256:pub-v2", "half_index": 1, "stage": "publish", "transport": "attested-registry"}
+      },
+      {
+        "from": "root", "to": "opt", "stage": "publish", "optional": true,
+        "gate_flag": "experimental", "gate_on": true,
+        "platform_conditions": [{"platform": "linux", "on": true}],
+        "transport_digest": "td:root-opt0",
+        "half": {"txn_id": "T-OPT", "digest": "sha256:opt", "half_index": 0, "stage": "publish", "transport": "side-channel"}
+      },
+      {
+        "from": "libA", "to": "opt", "stage": "publish",
+        "gate_flag": "experimental", "gate_on": true,
+        "platform_conditions": [{"platform": "linux", "on": true}],
+        "transport_digest": "td:libA-opt1",
+        "half": {"txn_id": "T-OPT", "digest": "sha256:opt", "half_index": 1, "stage": "publish", "transport": "side-channel"}
+      }
+    ],
+    "leak_attempts": [
+      {"from_stage": "build", "to_stage": "publish", "node": "pub", "digest": "sha256:pub-v2", "txn_id": "T-NEW", "channel": "writable_cache", "description": "token cached under GOCACHE"}
+    ]
+  }
+}
