@@ -1,1 +1,72 @@
-电子合同与公文验签网关在核验带数字签名的 PDF 文档时，若仅验证签名字典 `/Contents` 的密码学签名有效而忽略 `/ByteRange` 覆盖完整性与后续增量更新（Incremental Update）对对象树的覆写，攻击者可利用 PDF Shadow Attack（Hide / Replace / Hide-and-Replace）在签名之后追加增量交叉引用表（`xref`）替换 `/Pages`/`/Contents`/`/Annots` 或根 `/Catalog`，使验签器报告“签名有效”而阅读器展示完全不同的篡改合同内容。为 TypeScript 文档安全宿主实现可导入的零外部依赖原始字节级 PDF 结构与签名防阴影攻击验证组件。组件直接从原始 `Uint8Array` 解析全量增量版本链（每个 `startxref` → `xref` 表与 `trailer /Prev` 指针、对象编号/代数与字节偏移）：（1）定位全部签名域字典，强制校验 `/ByteRange [off1 len1 off2 len2]` 满足 `off1 == 0`、`off1 + len1 < off2`、间隙精确对应 `/Contents <hex>` 字节范围且不得存在夹带隐藏对象或未覆盖的尾部垃圾，同时校验签名后文档快照的真实对象集合；（2）对签名覆盖结束偏移之后出现的全部增量更新执行严格白名单差异审计：精确追踪每个被新 `xref` 重定义的对象号及其引用可达图，硬拦截任何修改 `/Root`（`/Catalog`）、`/Pages`、`/Kids`、`/Contents`、`/Resources`、`/Font`、`/Annots`（除后续合法新增签名域外）或通过新对象替换原页面内容的 Shadow Attack，仅放行不改变原签视觉与语义内容的合法增量（如文档时间戳 `/DocTimeStamp` 或 `/DSS` 吊销信息）。附手工构造的合法带增量时间戳 PDF 与 Hide/Replace 阴影攻击、`/ByteRange` 留洞篡改对抗测试。
+# PDF Shadow-Attack Structural Verifier
+
+Zero-dependency, raw-byte TypeScript component that verifies the **structural**
+integrity of digitally signed PDF documents. It defends against the PDF Shadow
+Attack family (Hide / Replace / Hide-and-Replace), where an attacker appends an
+incremental update after signing so that the cryptographic signature still
+verifies while the viewer renders different content.
+
+Cryptographic PKCS#7/CMS validation is intentionally out of scope. This library
+guarantees that the byte ranges handed to a crypto layer are exactly the bytes
+that were signed and that no later incremental update can override the signed
+object tree.
+
+## What it checks
+
+1. **Full revision chain** - parses every `startxref` -> `xref` table or
+   cross-reference stream, following each trailer `/Prev` pointer, recording
+   object numbers, generations and absolute byte offsets.
+2. **Signature discovery** - locates every `/Sig` and `/DocTimeStamp`
+   dictionary, including signatures reached through a field's `/V` reference.
+3. **`/ByteRange` coverage** - enforces `off1 === 0`, a non-empty gap, an
+   in-bounds suffix, a gap that contains only `/ByteRange [...]` and
+   `/Contents <hex>` (no smuggled objects), and coverage through the signing
+   revision's `%%EOF` with no uncovered tail garbage.
+4. **Default-deny incremental audit** - tracks every object redefined by a
+   later xref and walks its reachability graph. Modifications to `/Root`
+   (`/Catalog`), `/Pages`, `/Kids`, page `/Contents`, `/Resources`, `/Font` or
+   `/Annots` are hard-blocked, as are unreachable/orphan objects and trailer
+   root swaps. Only whitelisted, non-visual increments are allowed:
+   new signature/timestamp fields and `/DSS` revocation data.
+
+## Usage
+
+```ts
+import { verifyPdf } from './src/index.ts';
+
+const report = verifyPdf(pdfBytes); // Uint8Array
+if (!report.valid) {
+  for (const finding of report.findings) {
+    console.error(finding.code, finding.message);
+  }
+}
+// report.signatures[].signedDataRanges / contentsHex feed your crypto layer.
+```
+
+Lower-level building blocks are also exported:
+
+- `PdfDocument` / `ByteReader` - byte-level parser and revision chain.
+- `findSignatures`, `validateByteRange` - signature location and coverage.
+- `auditIncremental`, `buildRoleGraph` - the shadow-attack diff engine.
+
+## Finding codes
+
+| Prefix | Meaning |
+| --- | --- |
+| `STRUCTURE_PARSE_ERROR`, `HEADER_INVALID`, `NO_SIGNATURE` | Malformed input. |
+| `BYTERANGE_*` | `/ByteRange`, gap, snapshot or tail coverage violation. |
+| `TAIL_GARBAGE` | Non-whitespace bytes after the last `%%EOF`. |
+| `SHADOW_ROOT_SWAP`, `SHADOW_*_MODIFIED`, `SHADOW_OBJECT_FREED` | Protected signed object overridden. |
+| `UNAPPROVED_NEW_REACHABLE`, `UNAPPROVED_NEW_OBJECT` | New object outside the signature/DSS whitelist. |
+| `SHADOW_NEW_REFERENCE`, `DSS_INVALID_SHAPE` | Illegal reference or shape inside an allowed subtree. |
+
+## Tests
+
+Hand-crafted PDFs (no external PDF tooling) cover a legal timestamp increment,
+`/DSS` revocation updates, Hide/Replace/Hide-and-Replace shadow attacks,
+annotation and font tampering, orphan objects, tail garbage, cross-reference
+streams, and `/ByteRange` hole/truncation/smuggling tampering.
+
+```sh
+npm test
+```
