@@ -1,1 +1,149 @@
-PostgreSQL 实现 SQL:2016 `jsonpath` 引擎时，`lax` 与 `strict` 双模式在数组自动解包、缺键与过滤谓词三值错误处理上存在极多微妙差异：在 `lax` 模式下，对数组执行成员访问 `.a` 会自动把数组展开为每个元素再取 `.a`（甚至多层嵌套数组会逐层扁平化！），数组越界或访问非对象字段静默返回空序列而非报错；而在 `strict` 模式下不自动解包数组、缺键与类型错立即抛结构化错误——但一旦该错误发生在过滤谓词 `? (...)` 内部，则会被捕获并转为三值 `UNKNOWN`（注意：`!(UNKNOWN)` 仍是 `UNKNOWN` 而非 `TRUE`！）而绝不中止整个路径求值！同时，为了加速海量 JSONB 文档检索，引擎还要从 `jsonpath` 表达式提取可下推到倒排路径索引（GIN `jsonb_path_ops` 风格）的必含键值路径合取项，一旦对含 `||`、`!`、`lax` 数组自动解包或多态类型比较的分支误做过度下推就会产生致命假阴性漏行！为数据库 JSONB 查询层交付可导入的 TypeScript `SQL/JSON Path` 解析求值与索引下推裁剪库。规则：1）解析并求值 `strict`/`lax` 模式声明、`$` 根、`@` 当前项、`.key`、`.*`、`[i, j to k]`（含 `last` 与 `last - 1` 算术索引）、`[*]`、`.**` 递归后代、过滤器 `? (expr)`（支持 `&&`/`||`/`!`、`==`/`!=`/`<`/`<=`/`>`/`>=`、`exists(...)`、算术与 `like_regex`）及 `.type()`/`.size()`/`.double()` 方法；2）严格实现双模式数组解包/非解包语义及过滤谓词内部 `TRUE`/`FALSE`/`UNKNOWN` 三值传播（含存在量化比较：数组/序列比较中只要存在一对元素满足即 `TRUE`，空序列比较返回 `FALSE` 而非 `UNKNOWN`！）；3）实现 GIN 路径索引下推提取器，对任意 `jsonpath` 生成无假阴性的索引筛选计划（支持 `AND` 合并、`OR` 析取并集或安全退回全扫描），保证凡是求值器返回非空/为真的文档 100% 通过索引预筛。验收覆盖 `lax` 多层数组自动解包 vs `strict` 报错、过滤内错误转 `UNKNOWN` 与取反保持 `UNKNOWN`、`last` 切片与存在量化比较，以及在随机嵌套 JSON 文档库上对照全量扫描验证索引下推零假阴性。
+# sql-jsonpath-ts
+
+Zero-dependency TypeScript implementation of a SQL/JSON Path (SQL:2016
+`jsonpath`) engine with PostgreSQL-compatible `lax`/`strict` semantics and a
+GIN `jsonb_path_ops`-style index pushdown planner.
+
+The library ships three layers that can be used independently:
+
+1. **Parser** — text `jsonpath` to a typed AST.
+2. **Evaluator** — sequence-based path evaluation with Kleene three-valued
+   filter logic.
+3. **Pushdown planner + in-memory GIN index** — sound pre-filter plans that
+   guarantee zero false negatives against full evaluation.
+
+## Quick start
+
+```ts
+import {
+  parseJsonPath,
+  queryJsonPath,
+  matchJsonPath,
+  extractIndexPlan,
+  GinPathIndex,
+} from './src/index.ts';
+
+const doc = { users: [{ name: 'alice', age: 30 }, { name: 'bob' }] };
+
+queryJsonPath(doc, 'lax $.users[*].name');
+// ['alice', 'bob']
+
+matchJsonPath(doc, 'strict $.users[*] ? (@.age >= 18)');
+// true
+
+const index = new GinPathIndex();
+index.addDocument(0, doc);
+const candidates = index.preFilter(parseJsonPath('lax $.users[*] ? (@.age == 30)'));
+// [0] — every document the evaluator would match is guaranteed to be included
+```
+
+Build the emitted ESM package with `npm run build`; tests run against the
+compiled output via `npm test` and type checking is `npm run typecheck`.
+
+## Supported grammar
+
+- Mode declaration: `lax` (default) / `strict`.
+- Roots and current item: `$`, `@`, named variables `$name` (supplied via
+  `EvalOptions.vars`).
+- Member access: `.key`, `"quoted key"`, wildcard `.*`.
+- Array access: `[*]`, comma lists `[i, j]`, slices `[start to end]`,
+  negative literals `[-1]`, `last` and `last - 1` arithmetic bounds.
+- Recursive descendant: `.**` (depth-first, item first).
+- Filters `? ( ... )` with `&&`, `||`, `!`, comparisons `==`, `!=`, `<`,
+  `<=`, `>`, `>=`, `exists(...)`, arithmetic `+ - * / %`, and
+  `like_regex "pattern" flag "flags"` (`i`, `s`, `m`, `x`).
+- Methods: `.type()`, `.size()`, `.double()`.
+
+## Dual-mode semantics
+
+### Lax
+
+- Every accessor step first recursively flattens all nested arrays, so
+  `$.a.x` on `{ a: [[{ x: 1 }], { x: 2 }] }` returns `[1, 2]`.
+- Missing members, non-object member access, non-array subscripts and
+  out-of-bounds integer indices suppress the structural error and produce an
+  empty sequence instead of throwing.
+- Non-array scalars are treated as one-element arrays inside subscripts.
+- Array slices always clamp their bounds (in both modes) and never raise.
+
+### Strict
+
+- Arrays are never auto-unwrapped. Member access on an array, a missing key,
+  a subscript on a non-array, or an out-of-bounds index throws a structured
+  `JsonPathError` carrying a stable symbolic `code` and source `position`.
+
+### Filters and three-valued logic
+
+Any error raised while evaluating a `? ( ... )` predicate is caught and
+mapped to `UNKNOWN`; the surrounding path keeps evaluating. Kleene truth
+tables apply:
+
+| A | B | A && B | A \|\| B | !A |
+| --- | --- | --- | --- | --- |
+| TRUE | UNKNOWN | UNKNOWN | TRUE | FALSE |
+| FALSE | UNKNOWN | FALSE | UNKNOWN | TRUE |
+| UNKNOWN | UNKNOWN | UNKNOWN | UNKNOWN | UNKNOWN |
+
+Crucially `!(UNKNOWN) === UNKNOWN`, never `TRUE`.
+
+Comparisons are existential over sequences: a pair of items satisfying the
+operator yields `TRUE`; if every pair raises or is type-incompatible the
+result is `UNKNOWN`; an empty sequence on either side is defined `FALSE`
+(so its negation is `TRUE`, not `UNKNOWN`). Ordering is only defined between
+two numbers or two strings; other combinations give `UNKNOWN`.
+
+## Index pushdown
+
+`extractIndexPlan(ast)` returns an `IndexPlan`:
+
+- `fullScan: true` — no safe constraint; the index must return every document.
+- Otherwise a DNF of `Conjunction` groups, each combining:
+  - `exact` facts (member existence or scalar leaf on a fixed key path),
+  - `suffixKeyPaths` / `anchoredSuffixes` for wildcard/recursive paths,
+  - `anchoredLeaves` for value matches behind a wildcard barrier.
+
+Soundness rules deliberately err on the side of returning more candidates:
+
+- Outer `!`, `!=`, `like_regex`, arithmetic-only predicates, or named
+  variables force `FULL_SCAN`.
+- An `||` with any unselective branch forces `FULL_SCAN`; safe branches are
+  unioned as separate DNF groups.
+- `&&` intersects groups.
+- `.*` / `.**` destroy positional certainty, so subsequent requirements are
+  anchored to the subtree at the barrier and matched as suffixes.
+- Array positions never appear in facts: arrays are transparent, matching
+  GIN `jsonb_path_ops` hashing.
+
+The property tests in `tests/pushdown.test.ts` and
+`tests/adversarial.test.ts` build random nested document corpora and assert,
+for hundreds of generated expressions in both modes, that every evaluator
+match survives the index pre-filter.
+
+## Error model
+
+`JsonPathError` exposes:
+
+- `code` — stable symbolic identifier (e.g.
+  `JSON_PATH_INDEX_OUT_OF_BOUNDS`, `JSON_PATH_MEMBER_NOT_FOUND`,
+  `JSON_PATH_DIVISION_BY_ZERO`),
+- `sqlstate` — best-effort SQLSTATE string (default `22023`),
+- `position` — byte offset into the source expression when available.
+
+Structural error codes are exported through `isStructuralError` and are the
+only errors lax mode suppresses; arithmetic, regex and type errors still
+surface outside a filter.
+
+## Project layout
+
+```
+src/
+  ast.ts         AST node types
+  errors.ts      structured JsonPathError + structural-code table
+  lexer.ts       tokenizer
+  parser.ts      recursive-descent parser
+  evaluator.ts   dual-mode evaluation + three-valued predicates
+  index-plan.ts  sound pushdown constraint extraction
+  gin-index.ts   in-memory inverted index and plan evaluation
+  index.ts       public entry point
+tests/           acceptance, pushdown, adversarial and soundness suites
+```
