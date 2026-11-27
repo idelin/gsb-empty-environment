@@ -1,8 +1,22 @@
 {
   "name": "ps-0d8fc459bf",
+  "version": "1.0.0",
+  "description": "SQL MERGE execution and unique-constraint validation for TypeScript",
   "private": true,
   "type": "module",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js",
+      "default": "./dist/src/index.js"
+    }
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "build": "tsc -p tsconfig.build.json",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "typecheck": "tsc --noEmit",
+    "prepare": "npm run build"
   }
 }
