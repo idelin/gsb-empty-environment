@@ -1,0 +1,8 @@
+{
+  "name": "w27-d3020fba04",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
