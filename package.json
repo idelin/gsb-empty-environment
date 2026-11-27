@@ -1,0 +1,8 @@
+{
+  "name": "w28-be5494833d",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test"
+  }
+}
