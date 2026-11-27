@@ -1,1 +1,57 @@
-操作系统内核在部署页表隔离（KPTI）、SMEP/SMAP 与 L1 终端故障（L1TF / Foreshadow）缓解措施时，若用户态 CR3 影子页表残留了未剥离的内核映射、`P=0` 非存在/交换页表项（Swap PTE）未对物理页帧号（PFN）执行按位取反以指向不存在的物理地址，或保留了全局位 `G=1` 导致 PCID 切换后 TLB 跨态残留，非特权进程可通过推测执行直接读出宿主机或内核物理内存。为 C++17 内核安全审计宿主实现可嵌入、零外部依赖、`-Wall -Wextra -Wconversion -Werror` 编译通过的 4 级 x86-64 页表（PML4/PDPT/PD/PT，覆盖 48 位规范虚拟地址与 52 位物理地址，严禁逐页循环）精确符号隔离验证库。输入为成对的内核态/用户态 CR3 根页表、合法用户物理内存范围 `[0, maxRAM)`、内核敏感物理区间集合与入口跳板白名单（Trampoline）。验证器精确遍历各级稀疏页表树并判定：（1）用户态 CR3 下除显式白名单跳板页外，严禁任何指向内核敏感物理区的有效映射（含 2MB/1GB 大页部分重叠），且白名单外内核映射不得带 `U/S=1` 或 `G=1`；（2）针对全部 `P=0`（Present=0）或 `PROT_NONE` 叶子表项，解码其硬件可能用于 L1 推测加载的 PFN 字段——若该 PFN 落入 `[0, maxRAM)` 合法物理内存范围内即判定为 L1TF 漏洞；（3）检出任意同时满足 `U/S=1` 且 `NX=0` 却映射内核代码的 SMEP 违例或 `W=1 & NX=0` 内核写执行冲突，并输出最低违例虚拟地址与完整 4 级表项见证。附 16 位缩微地址空间全枚举交叉验证零误差。
+# KPTI / SMEP / L1TF 页表符号隔离验证库
+
+Header-only、零外部依赖的 C++17 库，对成对的内核态 / 用户态 CR3 四级页表
+（PML4 → PDPT → PD → PT）做精确符号隔离审计。仅依赖 C++ 标准库，可直接
+`#include "kpti/audit.hpp"` 嵌入内核安全审计宿主、快照解析器或崩溃转储工具。
+
+## 设计要点
+
+- 不逐页遍历：只递归稀疏页表树（每表 512 项、固定 4 层），以符号
+  `[VA, PA, span]` 区间为单位推理，1 GiB / 2 MiB 大页在单步内完成判定，
+  正确处理大页与敏感区间的部分重叠。
+- 几何参数运行时可配置：`Geometry::x86_64()` 覆盖 48 位规范虚拟地址与
+  52 位物理地址（40 位 PFN 窗口，位 12..51）；`Geometry::mini16()` 驱动
+  16 位缩微地址空间，复用同一套引擎做全枚举交叉验证。
+- 物理内存通过 `IPhysicalMemory` 抽象注入，自带 `FlatPhysicalMemory`
+  快照实现，宿主任意后端（EPT/VMCB、转储格式）只需实现一个读取接口。
+- 共享子表（多父节点指向同一表）合法；仅当前根到节点路径上的回边才
+  判定为页表环并截断，附带 `structuralErrors` 报告。
+
+## 判定规则
+
+1. KPTI 映射隔离：用户态 CR3 下，除 `TrampolinePage` 白名单（要求 VA/PA
+   同时精确匹配）外，任何叶子（含 1G/2M 大页的部分重叠）指向敏感物理区
+   即报 `FIND_USER_SENSITIVE`；白名单外内核映射带 `U/S=1` 报
+   `FIND_USER_BIT`，带 `G=1` 报 `FIND_GLOBAL_BIT`。用户影子根表若仍存在
+   上半区（内核半）Present 槽位，报 `FIND_KERNEL_HALF_PRESENT`。
+2. L1TF / Foreshadow：对所有 `P=0` 终端表项（任意层级）以及 Present 但
+   `PROT_NONE`（R/W=0、U/S=0、NX=1）叶子，解码 PFN 窗口字段；落在
+   `[0, maxRAM)` 内即报 `FIND_L1TF`。NX 位于 PFN 窗口之外，不参与解码。
+3. SMEP 与 W^X：`U/S=1 且 NX=0` 且命中内核代码区间报 `FIND_SMEP`；
+   `W=1 且 NX=0` 且命中敏感区间报 `FIND_WXORX`。
+
+每条 `EntryWitness` 保存最低违例虚拟地址、叶子基准 VA、物理基址、跨度、
+层级以及 PML4/PDPT/PD/PT 四级原始表项。`AuditReport::lowest(mask, ...)`
+返回任意违例类别的最低虚拟地址与完整见证。
+
+## 构建与测试
+
+```sh
+clang++ -std=c++17 -Wall -Wextra -Wconversion -Werror -Iinclude \
+  tests/x86_64_tests.cpp -o x86_64_tests
+clang++ -std=c++17 -Wall -Wextra -Wconversion -Werror -Iinclude \
+  tests/mini16_crosscheck.cpp -o mini16_crosscheck
+```
+
+或使用 CMake / CTest：
+
+```sh
+cmake -S . -B build && cmake --build build && ctest --test-dir build
+```
+
+- `tests/x86_64_tests.cpp`：干净树、敏感泄漏、2 MiB 大页部分重叠、跳板
+  白名单（含 PA 不匹配拒绝）、Swap PTE / PFN 取反 / PROT_NONE 的 L1TF、
+  SMEP、W^X、全局位、内核半残留、CR3 对齐校验与几何原语。
+- `tests/mini16_crosscheck.cpp`：16 位缩微空间（4096 页全枚举），独立
+  oracle 逐页分类与符号审计结果逐页比对，并校验各类违例最低 VA；60 个
+  随机稀疏树场景零误差，且全部 7 类违例均被覆盖。
