@@ -1,0 +1,20 @@
+export type { ArrayIndexSelector, BooleanExpression, ContainmentQuery, EvaluateOptions, EvaluationFailure, EvaluationResult, EvaluationSuccess, ExistsExpression, Expression, IndexExpression, IndexExtractionOptions, IndexPathSegment, IndexPlan, IndexTerm, JsonPath, JsonPathErrorCode, JsonPathEvaluationErrorLike, JsonPathMode, JsonPrimitive, JsonValue, LikeRegexExpression, LiteralExpression, PathExpression, PathExpressionOrigin, PathInput, PathStep, ParseOptions, TruthValue, } from "./types.js";
+export { JsonPathEvaluationError, JsonPathParseError, isJsonPathError, } from "./errors.js";
+export { parseJsonPath, JsonPathParser } from "./parser.js";
+export { evaluateJsonPath, tryEvaluateJsonPath, jsonEqual, jsonType, isJsonArray, isJsonObject, truthValueToJson, } from "./evaluator.js";
+export { extractIndexPlan, extractJsonPathIndexPlan, extractIndexTerms, indexPlan, indexPlanMatchesDocument, matchesIndexPlan, matchesPlan, toContainmentQuery, toJsonbContainment, } from "./index-plan.js";
+import { evaluateJsonPath } from "./evaluator.js";
+import { parseJsonPath } from "./parser.js";
+import type { EvaluateOptions, EvaluationResult, IndexPlan, JsonPathMode, JsonValue, PathInput } from "./types.js";
+export declare const parse: typeof parseJsonPath;
+export declare const compile: typeof parseJsonPath;
+export declare const evaluate: typeof evaluateJsonPath;
+export declare const query: typeof evaluateJsonPath;
+export declare const jsonPathQuery: typeof evaluateJsonPath;
+export declare function evaluateJsonPathResult(document: JsonValue, path: PathInput, options?: EvaluateOptions): EvaluationResult;
+export declare function jsonPathExists(path: string, document: JsonValue, options?: EvaluateOptions): boolean;
+export declare function jsonbPathQuery(document: JsonValue, path: string, options?: EvaluateOptions): JsonValue[];
+export declare function jsonbPathExists(document: JsonValue, path: string, options?: EvaluateOptions): boolean;
+export declare function evaluateJsonPathSafe(document: JsonValue, path: PathInput, options?: EvaluateOptions): EvaluationResult;
+export declare function indexPlanFor(path: PathInput, mode?: JsonPathMode): IndexPlan;
+//# sourceMappingURL=index.d.ts.map
