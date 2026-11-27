@@ -1,1 +1,143 @@
-OpenTelemetry Collector 在对接不同监控后端（Prometheus 要求 `Cumulative`，StatsD/Datadog 要求 `Delta`）时，必须通过有状态处理器完成 `Cumulative <-> Delta` 双向时间性（Temporality）转换，但在进程重启、乱序迟到点、直方图桶变更与高基数 LRU 驱逐下极易产生负尖刺或虚增流量：1）`Cumulative -> Delta` 处理单调 Counter 或 Histogram 时，首点默认仅建立基线（或仅当 `startTime < timestamp` 且开启 `initialPointAsDelta` 时输出首段增量！）；后续点若检测到 `startTime` 变更**或**任意桶/总值出现下降（`curr < prev`），即判定采集端发生重启——此时不得输出负值，而是把新点视为自新 `startTime` 起的新增全量（若 `startTime` 未变但值回落，则以旧点时间戳作为新起点并记录重启标记！）；对 `timestamp <= lastTimestamp` 的乱序迟到点必须拒绝覆写基线并给出明确丢弃统计，绝不可把迟到点当成重启！2）`Delta -> Cumulative` 累加必须处理单调 Counter、非单调 UpDownCounter（允许负增量！）及显式桶 Histogram（累加各桶计数、`sum`/`count`/`min`/`max` 时严格校验桶边界 `explicitBounds` 逐项一致，边界变更须重置序列新 `startTime` 而非错位累加！）；3）当活跃指标序列数达到内存上限 `maxSeries` 时，必须按 LRU 驱逐最久未更新的序列——被驱逐的序列随后若再次收到新点，在 `Cumulative -> Delta` 下重新建基线不误发全量尖刺，在 `Delta -> Cumulative` 下须以新到达窗口起点开启新的 `startTime` 避免后端误把归零当成无重启继续累加！为可观测采集管线交付可导入的 TypeScript OpenTelemetry 指标时间性双向转换与状态管理库。验收覆盖单调 Counter/Histogram 重启检测（含 `startTime` 变更 vs 数值回落）、乱序迟到点免疫、UpDownCounter 负增量、Histogram 桶边界变更重置以及 `maxSeries` LRU 驱逐后重入无尖刺守恒校验。
+# OTel Metrics Temporality Converter
+
+Zero-dependency, importable TypeScript library implementing stateful
+OpenTelemetry metric temporality conversion between **Cumulative** and
+**Delta** aggregation, with the restart / late-point / bucket-change /
+high-cardinality protections that a collector-side stateful processor needs.
+
+- `CumulativeToDeltaProcessor` — Cumulative input, Delta output (Prometheus-style
+  cumulative streams into StatsD/Datadog-style delta pipelines).
+- `DeltaToCumulativeProcessor` — Delta input, Cumulative output.
+- Bounded LRU series store (`maxSeries`) with explicit eviction/reentry handling.
+- Bigint nanosecond timestamps; no external runtime dependencies.
+
+## Build and test
+
+```bash
+npm run build      # tsc -> dist/ (JS + .d.ts + source maps)
+npm run typecheck  # strict type check, no emit
+npm test           # builds, then runs the node:test suite under dist/test
+```
+
+The environment has no network access, so the package deliberately ships
+without npm dependencies; it uses the system TypeScript compiler and the
+built-in `node:test` runner.
+
+## Data model
+
+Points mirror the OpenTelemetry metric data point structure:
+
+```ts
+import type { Metric } from './dist/src/index.js';
+
+const cumulativeMetric: Metric = {
+  name: 'http_requests',
+  instrumentType: 'COUNTER', // COUNTER | UP_DOWN_COUNTER | HISTOGRAM | GAUGE
+  temporality: 'CUMULATIVE',
+  dataPoints: [
+    { timestamp: 100n, startTime: 0n, value: 10, attributes: { host: 'a' } },
+  ],
+};
+```
+
+Histogram points use explicit buckets:
+
+```ts
+{
+  timestamp: 200n,
+  startTime: 0n,
+  explicitBounds: [10, 100],
+  bucketCounts: [1, 2, 3], // length = bounds.length + 1 (overflow last)
+  count: 6,                // must equal the bucket count sum
+  sum: 320,
+  min: 2,
+  max: 95,
+}
+```
+
+## Usage
+
+```ts
+import {
+  CumulativeToDeltaProcessor,
+  DeltaToCumulativeProcessor,
+  createTemporalityProcessor,
+} from 'otel-temporality';
+
+const toDelta = new CumulativeToDeltaProcessor({
+  maxSeries: 10_000,
+  initialPointAsDelta: false,
+  onDrop: (info) => console.warn('dropped late point', info),
+});
+
+const deltaMetric = toDelta.process(cumulativeMetric);
+
+const toCumulative = createTemporalityProcessor('CUMULATIVE', { maxSeries: 10_000 });
+const backToCumulative = toCumulative.process(deltaMetric);
+```
+
+Every emitted point carries conversion metadata: `restart: boolean` and, when
+`restart` is true, `resetReason` (`first_point`, `restart_start_time`,
+`restart_value_decrease`, `histogram_bounds_change`, `eviction_reentry`).
+`processor.getStats()` returns lifecycle counters and `resetStats()` snapshots
+and zeroes them; `clearState()` drops all series while keeping stats.
+
+## Conversion semantics
+
+### Cumulative -> Delta
+
+- **First point** establishes a baseline and emits nothing by default. With
+  `initialPointAsDelta: true` it is emitted as the initial segment only when
+  `startTime < timestamp`; an equal/missing start time stays a baseline.
+- **Monotonic instruments** (`COUNTER`, `HISTOGRAM`) detect a restart when the
+  `startTime` changes *or* any value/bucket/count/sum decreases
+  (`curr < prev`). A restart never emits a negative number: the new point is
+  emitted as the full value since the new `startTime`. When only the value
+  fell while `startTime` stayed the same, the previous point timestamp becomes
+  the new segment start and the point is flagged `restart_value_decrease`.
+- **`UP_DOWN_COUNTER`** is non-monotonic: points are plain algebraic
+  differences, so decreases produce legitimate negative deltas, never restarts.
+- **Late/out-of-order points** (`timestamp <= lastTimestamp` for the same
+  series) are rejected without touching the baseline; they increment
+  `droppedOutOfOrder` and fire `onDrop`. A late point can never look like a
+  restart because the check runs before any state transition.
+- **Histogram bucket changes** (any difference in `explicitBounds`, checked
+  element by element) reset the series with the new point as a full segment,
+  flagged `histogram_bounds_change`, instead of subtracting misaligned buckets.
+
+### Delta -> Cumulative
+
+- `COUNTER` deltas accumulate monotonically; `UP_DOWN_COUNTER` deltas are
+  summed algebraically and may be negative.
+- Histograms accumulate each bucket count plus `count`/`sum`; `min`/`max`
+  combine via min/max over the lifecycle.
+- `explicitBounds` must match element by element. A boundary change restarts
+  the series with a fresh `startTime` (the arriving window start) instead of
+  adding counts into misaligned buckets, flagged `histogram_bounds_change`.
+- Late points are rejected with the same stats/callback as the reverse path.
+
+### LRU eviction and reentry
+
+When the tracked series count reaches `maxSeries`, the least-recently-updated
+series is evicted (insertion-order `Map`, refreshed on every touch). The
+processor remembers recently evicted series identities so a returning series
+is handled deliberately:
+
+- **Cumulative -> Delta:** the returning first point rebuilds a baseline and
+  emits nothing, so a large cumulative reading cannot become a full-value
+  spike; the next point produces a normal delta.
+- **Delta -> Cumulative:** the returning point starts a new lifecycle at the
+  arriving window's `startTime` and is flagged `eviction_reentry`, so a backend
+  never interprets the implicit zero as a no-restart continuation.
+
+## Layout
+
+- `src/types.ts` — data model, stats and option types
+- `src/lru.ts` — bounded LRU cache
+- `src/series.ts` — deterministic attribute-based series keys
+- `src/validate.ts` — point/histogram invariants and structural cloning
+- `src/base-processor.ts` — shared LRU, eviction marker and stats scaffolding
+- `src/cumulative-to-delta.ts`, `src/delta-to-cumulative.ts` — state machines
+- `test/` — node:test acceptance suite (32 cases) covering both restart kinds,
+  late-point immunity, negative UpDownCounter deltas, bucket-boundary resets,
+  LRU reentry spike protection and round-trip conservation

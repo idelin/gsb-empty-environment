@@ -2,7 +2,23 @@
   "name": "ps-97fd71587c",
   "private": true,
   "type": "module",
+  "description": "Stateful OpenTelemetry metric temporality conversion (Cumulative <-> Delta) with restart detection and LRU series management",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    }
+  },
+  "files": [
+    "dist/src",
+    "src"
+  ],
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "pretest": "tsc -p tsconfig.json",
+    "test": "node --test 'dist/test/**/*.test.js'"
   }
 }
