@@ -1,0 +1,35 @@
+Start testing: Nov 28 10:30 CST
+----------------------------------------------------------
+1/2 Testing: webp_audit_tests
+1/2 Test: webp_audit_tests
+Command: "/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/artifacts/reczz28eVK3OMt86/workspace/build_verify/test_webp_audit"
+Directory: /Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/artifacts/reczz28eVK3OMt86/workspace/build_verify
+"webp_audit_tests" start time: Nov 28 10:30 CST
+Output:
+----------------------------------------------------------
+34 checks, 0 failures
+<end of output>
+Test time =   0.36 sec
+----------------------------------------------------------
+Test Passed.
+"webp_audit_tests" end time: Nov 28 10:30 CST
+"webp_audit_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: webp_audit_fuzz
+2/2 Test: webp_audit_fuzz
+Command: "/Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/artifacts/reczz28eVK3OMt86/workspace/build_verify/fuzz_webp_audit"
+Directory: /Users/delin/git/Pair-wise-GSB/workbench/data/season-20261109/artifacts/reczz28eVK3OMt86/workspace/build_verify
+"webp_audit_fuzz" start time: Nov 28 10:30 CST
+Output:
+----------------------------------------------------------
+fuzz: 20000 iterations completed safely
+<end of output>
+Test time =   0.52 sec
+----------------------------------------------------------
+Test Passed.
+"webp_audit_fuzz" end time: Nov 28 10:30 CST
+"webp_audit_fuzz" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 28 10:30 CST
