@@ -1,1 +1,123 @@
-视频转码网关与内容安全服务在将用户上传的 MP4 / ISO BMFF 文件送入解码器前，若未做原始字节级 Box（Atom）树审计，攻击者可构造 64 位 `largesize` 整数回绕、容器盒（`moov`/`trak`/`mdia`/`minf`/`stbl`）子盒越出父盒边界、超深嵌套盒触发栈溢出、`stco`/`co64` 样本块偏移指向 `mdat` 外部元数据区实现信息泄漏，或在 `ftyp` 前/末尾夹带 Polyglot 恶意载荷绕过文件类型检测。为 C++17 媒体安全宿主实现可嵌入、零外部依赖、`-Wall -Wextra -Wconversion -Werror` 编译通过的原始字节级 ISO BMFF / MP4 结构安全审计库。库从偏移 0 起严格递归解析全部顶层与容器盒：（1）强制首盒必须为合法 `ftyp`（硬拦截前置 Polyglot 字节），正确处理 `size == 1`（64 位 `largesize`）与 `size == 0`（延伸至文件末尾，仅允许顶层末盒），硬拒绝 `size < 8`、64 位 `offset + size` 回绕、子盒越出父盒范围、递归深度超过上限（如 16 层）以及重复 `moov` 盒；（2）解析 `stco`（32 位块偏移）、`co64`（64 位块偏移）与 `stsz`（样本大小表），校验所有表项计数与字节长度严格匹配盒体，确保每个样本块偏移及累计大小均落入合法 `mdat` 载荷区间内且绝不回指 `moov`/头元数据区；（3）检出非法重叠区间、未覆盖间隙与超大总样本数/单帧尺寸 DoS 炸弹。附手工构造的合法 MP4 样本与前置 Polyglot、64 位 `largesize` 回绕、子盒越界、`stco` 指向 `moov` 泄漏及超深嵌套测试。
+# BMFF / MP4 结构安全审计库
+
+面向视频转码网关和内容安全服务的 C++17、零外部依赖、可嵌入 ISO BMFF /
+MP4 原始字节审计库。审计发生在解码器之前，不依赖容器库或媒体框架。
+
+## 能力
+
+- 从文件偏移 `0` 严格解析顶层 Box，首盒必须是结构合法的 `ftyp`。
+- 支持标准 32 位 `size`、`size == 1` 的 64 位 `largesize`，以及
+  `size == 0` 的顶层末盒延伸语义。
+- 严格拒绝 `size < 8`、64 位加法回绕、子盒越过父盒、容器内 `size == 0`、
+  超出递归深度、重复或非顶层 `moov`。
+- 递归审计 `moov`、`trak`、`mdia`、`minf`、`stbl`、`moof`、`traf`
+  等容器，以及 `meta` 的 FullBox 前导。
+- 精确解析 `stco`、`co64`、`stsc`、`stsz`，要求表项计数与盒体长度严格相等。
+- 将 sample-to-chunk 映射展开为实际字节区间，验证每个 chunk 完整落在某个
+  `mdat` 载荷内，绝不允许指向 `mdat` 头、`moov` 或其它元数据区。
+- 检测跨轨/跨 chunk 重叠、`mdat` 未覆盖间隙、尾部附加数据、样本数、
+  单帧尺寸及累计样本字节 DoS 炸弹。
+
+## 构建
+
+```sh
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --parallel
+ctest --test-dir build --output-on-failure
+```
+
+库目标为 `bmff_audit`，CLI 目标为 `bmff_audit_cli`。所有目标默认使用：
+
+```text
+-Wall -Wextra -Wconversion -Werror
+```
+
+## 嵌入
+
+```cpp
+#include "bmff/audit.hpp"
+
+#include <cstdint>
+#include <vector>
+
+std::vector<std::uint8_t> bytes = load_uploaded_file();
+
+bmff::AuditOptions options;
+options.max_depth = 16;
+options.require_mdat_coverage = true;
+
+const bmff::AuditResult result = bmff::audit(bytes, options);
+if (!result.ok()) {
+    const bmff::AuditError& error = result.errors.front();
+    // error.code、error.offset、error.message 可用于策略决策和审计日志。
+    reject_upload(error.code, error.offset);
+}
+```
+
+也可以直接审计内存指针：
+
+```cpp
+const bmff::AuditResult result =
+    bmff::audit(data, size, bmff::AuditOptions{});
+```
+
+`AuditResult` 同时返回：
+
+- `errors`：全部已发现错误，首项可通过 `first_error()` 获取。
+- `boxes`：已审计 Box 的偏移、大小、头大小、深度和父 Box 索引。
+- `mdats`：每个 `mdat` 的 Box 区间与载荷区间。
+- `stats`：Box、`mdat`、chunk、sample、样本字节等统计。
+
+## 默认限制
+
+| 选项 | 默认值 |
+| --- | --- |
+| `max_depth` | 16 |
+| `max_boxes` | 1,000,000 |
+| `max_sample_count` | 10,000,000 |
+| `max_chunk_count` | 10,000,000 |
+| `max_single_sample_size` | 256 MiB |
+| `max_total_sample_bytes` | 8 GiB |
+| `require_mdat_coverage` | `true` |
+
+阈值均可由宿主按业务档位覆盖。`require_mdat_coverage` 为 `true` 时，
+每个 `mdat` 载荷都应由 sample chunk 无间隙、无重叠地完整覆盖；这也会拦截
+追加在媒体数据之后的 Polyglot 尾载荷。若业务允许容器填充字节，可显式关闭，
+但重叠与越界检查仍会执行。
+
+## 样本表语义
+
+- `stco` 与 `co64` 互斥；表项数必须精确匹配盒体长度。
+- `stsz` 的 `sample_size != 0` 时只允许 12 字节固定头；为 `0` 时样本大小
+  表必须精确包含 `sample_count` 项。
+- 存在 `stsc` 时按 ISO BMFF 规则展开每个 chunk 的样本数，并要求覆盖
+  `stsz` 的全部样本。
+- 缺少 `stsc` 的简化输入仅在映射无歧义时接受：chunk 数等于 sample 数
+  （一 chunk 一样本），或仅有一个 chunk（全部样本在该 chunk）。
+- 区块偏移是文件绝对偏移，且必须满足
+  `mdat.payload_offset <= offset`、`offset + chunk_size <= mdat.payload_end`。
+
+## CLI
+
+```sh
+./build/bmff_audit_cli input.mp4
+```
+
+合法文件返回 `0`，结构拒绝返回 `1`，参数或 I/O 错误返回 `2`。
+
+## 测试
+
+测试不依赖外部 MP4 文件，全部由字节构造器手工生成，覆盖：
+
+- 合法 `ftyp + moov/trak/mdia/minf/stbl + mdat` 样本，以及 `co64`、
+  多 `stsc` 条目和跨 chunk 累加样本大小变体。
+- 前置 Polyglot、非 ASCII `ftyp` 品牌、尾随垃圾、`size == 0` 顶层末盒。
+- `largesize` 64 位加法回绕、`size < 8`、子盒越过父盒。
+- `stco` 回指 `moov` 元数据区。
+- 超过 16 层的嵌套容器。
+- 重复 `moov`、`stsz`/`stco` 表长度不匹配、chunk 重叠、`mdat` 覆盖间隙。
+- 超大单帧尺寸和跨轨总样本数 DoS 限制。
+
+```sh
+ctest --test-dir build --output-on-failure
+```
