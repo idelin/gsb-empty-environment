@@ -1,1 +1,91 @@
-多租户容器运行时在配置 Linux `user_namespaces`（`/proc/<pid>/uid_map`、`/proc/<pid>/gid_map`、`setgroups`）与进程能力集（`CapPrm`/`CapEff`/`CapInh`/`CapBnd`/`CapAmb`）时，若允许非特权子命名空间将容器内 UID 0 映射到宿主机 `root`（UID 0）、映射表存在重叠或越出父命名空间授权范围、`setgroups` 未写 `deny` 就允许非特权进程改写 `gid_map`（绕过基于附加组的拒绝访问控制 CVE-2014-8989），或缺失 `PR_SET_NO_NEW_PRIVS` 导致可通过宿主机共享挂载中的 SUID 二进制提权，恶意容器可直接逃逸至宿主机 root。为 C++17 容器安全宿主实现可嵌入、零外部依赖、`-Wall -Wextra -Wconversion -Werror` 编译通过的 User Namespace 嵌套映射与能力集安全验证库。库建模多层嵌套 User Namespace 树、每层 `uid_map`/`gid_map` 区间映射数组（`(ns_id, lower_id, count)`，上限 340 行）、`setgroups` 状态、进程凭据与能力位图（64 位 Linux Capability）：（1）校验每层 `uid_map`/`gid_map` 无 32 位整数回绕、容器内/父级区间均互不重叠、全部 `lower_id` 区间严格落入父命名空间已映射范围，且沿祖先链递归翻译至初始命名空间（`init_user_ns`）后严禁任意租户容器 ID 映射到宿主机 UID 0 或受保护系统 UID 段；（2）强制校验非特权创建 `gid_map` 前必须已置 `setgroups=deny`（否则判定为 CVE-2014-8989 附加组剥离提权漏洞）；（3）审计进程在进入子命名空间及 `execve` 时的能力集转换规则（验证 `CapEff ⊆ CapPrm`、`CapAmb ⊆ CapPrm ∩ CapInh`、非特权容器严禁保留 `CAP_SYS_ADMIN` 于 `init_user_ns` 或遗漏 `no_new_privs`）。附映射重叠/回绕、间接映射到宿主机 UID 0、`setgroups=allow` 提权与能力集越权测试。
+# User Namespace & Capability Security Audit Library
+
+Embeddable, zero-dependency C++17 library that validates nested Linux
+user-namespace ID maps and process capability sets for a multi-tenant
+container host. It rejects the configurations that let an unprivileged
+container escalate to host root:
+
+- tenant IDs (including transitively nested ones) mapping to host UID/GID 0
+  or a protected system ID range in `init_user_ns`;
+- 32-bit wrap-around, overlapping, or out-of-parent-scope `uid_map` /
+  `gid_map` entries;
+- unprivileged `gid_map` writes without `setgroups=deny` (CVE-2014-8989
+  supplementary-group stripping);
+- capability-set invariant violations, `CAP_SYS_ADMIN` retained in
+  `init_user_ns`, missing `PR_SET_NO_NEW_PRIVS`, and illegal `execve`
+  capability transitions (SUID / file-capability escalation).
+
+## Layout
+
+- `include/userns_security.hpp` — public API, zero includes beyond the
+  standard library.
+- `src/userns_security.cpp` — audit engine (can be compiled directly into a
+  host binary; a static library target is also provided).
+- `tests/test_userns_security.cpp` — 17 self-contained test groups, 54
+  assertions, no test framework dependency.
+- `examples/embed_demo.cpp` — minimal embedding example.
+
+## Build & Test
+
+Strict flags are always on: `-Wall -Wextra -Wconversion -Werror` (the build
+also adds `-Wpedantic -Wshadow -Wsign-conversion`).
+
+```sh
+make test      # build and run the test suite
+make           # static object + embedding demo in build/
+```
+
+Or with CMake:
+
+```sh
+cmake -S . -B build
+cmake --build build
+ctest --test-dir build --output-on-failure
+```
+
+## Model
+
+- `UserNsAuditor` owns a tree of `UserNsNode`; node `0` is the implicit
+  `init_user_ns`. Each node stores its parent, whether it was created by an
+  unprivileged `clone(CLONE_NEWUSER)`, its `setgroups` state, and its
+  `uid_map` / `gid_map` entries `(ns_id, lower_id, count)` (max 340 lines).
+- All interval arithmetic is 64-bit half-open (`IdRange{first, last}`), so a
+  range ending exactly at `UINT32_MAX + 1` is representable and true
+  wrap-around is detected precisely.
+- `translate_to_parent` / `translate_to_init` walk the ancestor chain and
+  map a tenant ID level by level into `init_user_ns`.
+
+## Audit rules
+
+1. **Maps (`audit_maps`)** — per `uid_map`/`gid_map`:
+   - reject more than 340 entries and any `count == 0`;
+   - reject 32-bit wrap-around of either the `ns_id` or `lower_id` range;
+   - reject overlap among in-namespace (`ns_id`) ranges and among parent
+     (`lower_id`) ranges independently;
+   - every `lower_id` range must be fully contained in the parent
+     namespace's already-mapped ranges (any range is valid under
+     `init_user_ns`);
+   - every mapped tenant ID is translated up the full ancestor chain and
+     rejected if its host ID hits `0` or any configured protected range
+     (`SecurityPolicy::protected_uid_ranges` / `protected_gid_ranges`,
+     default `[0, 1000)`).
+2. **setgroups gate (`audit_setgroups`)** — an unprivileged, non-init
+   namespace that wrote a `gid_map` while `setgroups != deny` is reported as
+   `SetgroupsRequired` (CVE-2014-8989). Privileged creators and empty maps
+   are exempt, matching the kernel rule.
+3. **Credentials & transitions**
+   - `audit_credentials` / `audit_enter_namespace` check
+     `CapEff ⊆ CapPrm`, `CapPrm ⊆ CapBnd`, `CapAmb ⊆ CapPrm ∩ CapInh`,
+     reject unknown capability bits, and for unprivileged tenants reject
+     `CAP_SYS_ADMIN` in `cap_eff_in_init` and missing `no_new_privs`.
+     An unprivileged ancestor taints every nested descendant.
+   - `audit_execve` enforces that the bounding set never grows, that
+     ambient/inheritable/file caps stay inside `CapBnd`, and recomputes the
+     post-`execve` permitted/effective sets from the
+     `(P_inh & X_inh) | (X_perm & P_bnd) | P_amb` rule (or, without file
+     capabilities, `CapPrm == CapEff == CapAmb`), flagging any SUID-style
+     privilege gain as `ExecResultMismatch`.
+
+Every check returns an `AuditResult` containing typed `Violation` codes with
+human-readable details; `audit_all()` runs the map and setgroups checks over
+the whole tree. See `examples/embed_demo.cpp` for end-to-end usage.
