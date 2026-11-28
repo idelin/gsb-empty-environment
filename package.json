@@ -1,8 +1,27 @@
 {
   "name": "ps-7ecc92cbbf",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./src": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js",
+      "default": "./dist/src/index.js"
+    },
+    "./src/*.js": "./dist/src/*.js",
+    "./src/*.ts": "./src/*.ts"
+  },
   "scripts": {
-    "test": "node --experimental-strip-types --test"
+    "build": "tsc -p tsconfig.build.json && node scripts/fix-declarations.mjs",
+    "test": "npm run build && node --test $(find test -type f \\( -name '*.test.js' -o -name '*.test.mjs' -o -name '*.test.cjs' \\) -print)",
+    "typecheck": "tsc --noEmit"
   }
 }

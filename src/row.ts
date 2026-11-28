@@ -1,0 +1,15 @@
+export {
+  emptyRow,
+  extendRow,
+  flattenRow,
+  freshRow,
+  freshRowVariable,
+  recordType,
+  recordTypeFromRow,
+  requireRowLacks,
+  rowExtend,
+  rowFields,
+  rowFromFields,
+  rowVar,
+  unifyRows,
+} from "./types.ts";
