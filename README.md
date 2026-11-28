@@ -1,1 +1,86 @@
-跨平台取证与磁盘镜像安全扫描器在离线解析 NTFS 卷的 `$MFT`（主文件表）记录时，若仅解析默认无名 `$DATA` 属性而忽略命名备用数据流（ADS）、未校验 `Update Sequence Array`（USA Fixup）与属性长度边界、或放过指向卷外路径的 `$REPARSE_POINT`（`IO_REPARSE_TAG_SYMLINK` / `IO_REPARSE_TAG_MOUNT_POINT`）及重叠 Non-Resident Data Run，攻击者可在镜像中隐藏恶意载荷、伪造目录遍历逃逸或触发解析器越界读。为 C++17 磁盘安全宿主实现可嵌入、零外部依赖、`-Wall -Wextra -Wconversion -Werror` 编译通过的原始字节级 NTFS `$MFT` 记录安全审计库。库严格解析 1024 字节（或自定义大小）`FILE` 记录：（1）校验 `FILE` 魔数、USA Fixup 偏移与每 512 字节扇区末尾 2 字节校验序列匹配并执行 Fixup 还原，硬拒绝越界属性偏移、非 8 字节对齐或零长度属性死循环；（2）完整解析 `$STANDARD_INFORMATION`、`$FILE_NAME`、`$DATA`（Resident 与 Non-Resident Data Run 有符号 LCN 差分编码）及 `$REPARSE_POINT`：硬拦截 Data Run 解码溢出、负 LCN 越界与不同流间物理簇区间重叠，同时显式检出所有非默认命名 ADS 隐藏流与超长流名；（3）解码 `$REPARSE_POINT` 中的 UTF-16LE `SubstituteName`/`PrintName`，拦截绝对盘符/UNC 路径、设备前缀（`\??\`、`\\.\`）与 `..` 穿越逃逸目标。附手工构造的合法 MFT 记录与 Fixup 篡改、隐藏 ADS、重叠 Data Run 及恶意挂载点 Reparse Point 测试。
+# ntfs_audit
+
+An embeddable, zero-dependency C++17 library for offline, byte-level security
+auditing of raw NTFS `$MFT` `FILE` records. It is built for forensic and disk
+image scanning hosts that parse untrusted images: every access is
+bounds-checked, the public entry point is `noexcept`, and hostile records
+produce structured findings rather than out-of-bounds reads or crashes.
+
+## Layout
+
+- `include/ntfs_audit/ntfs_audit.h` — single public header, data model and API.
+- `src/ntfs_audit.cpp` — self-contained implementation (no third-party code).
+- `tests/mft_builder.h` — test-only serializer that hand-crafts `FILE` records.
+- `tests/test_ntfs_audit.cpp` — adversarial and positive test suite.
+
+## Integration
+
+The library is a single translation unit plus one header. Add the header path
+and compile `src/ntfs_audit.cpp` with the host, or link the `ntfs_audit`
+static library target from `CMakeLists.txt`.
+
+```cpp
+#include "ntfs_audit/ntfs_audit.h"
+
+ntfs_audit::AuditOptions options;
+options.expectedRecordSize = 1024;   // custom record sizes are supported
+options.volumeClusterCount = clusters; // enables run volume-bound checks
+
+ntfs_audit::AuditResult result =
+    ntfs_audit::AuditRecord(rawBytes, rawSize, options);
+
+if (!result.ok()) {
+    for (const auto& finding : result.findings) {
+        // finding.severity / ntfs_audit::ToString(finding.code) / .offset
+    }
+}
+for (const auto& stream : result.dataStreams) {
+    if (stream.named) { /* alternate data stream */ }
+}
+```
+
+## Security guarantees
+
+1. **Record framing and USA fixup**
+   - Requires the `FILE` magic and an exact, 512-multiple record size.
+   - Validates the Update Sequence Array offset/count, matches the sequence
+     number at the end of every 512-byte sector, and restores the real
+     sector-end bytes on a private copy before parsing.
+   - Rejects out-of-bounds or misaligned first-attribute offsets, zero-length
+     attributes (infinite-loop vectors), and attributes that cross the record.
+
+2. **Attribute and data-run parsing**
+   - Parses `$STANDARD_INFORMATION`, `$FILE_NAME`, resident and non-resident
+     `$DATA`, and `$REPARSE_POINT`.
+   - Decodes non-resident runs with signed LCN difference encoding, including
+     sign extension, signed-overflow checks, truncated/malformed headers,
+     negative-LCN rejection, and optional volume-bound enforcement.
+   - Detects overlapping physical cluster intervals across all streams.
+   - Reports every named `$DATA` as a hidden alternate data stream (warning by
+     default, hard error with `treatAdsAsError`) and rejects overlong names.
+
+3. **Reparse point path analysis**
+   - Decodes UTF-16LE `SubstituteName`/`PrintName` for
+     `IO_REPARSE_TAG_SYMLINK` and `IO_REPARSE_TAG_MOUNT_POINT`.
+   - Hard-flags drive-absolute targets, UNC paths, device prefixes
+     (`\??\`, `\\?\`, `\\.\`) and `..` traversal components.
+
+## Build and test
+
+The codebase compiles cleanly with:
+
+```
+-std=c++17 -Wall -Wextra -Wconversion -Werror
+```
+
+```sh
+cmake -S . -B build
+cmake --build build
+ctest --test-dir build --output-on-failure
+```
+
+The suite hand-crafts a valid record and dedicated fixtures for fixup
+tampering, hidden ADS (resident and non-resident), overlapping data runs,
+negative LCNs, volume-bound violations, malformed/truncated runs, and a
+malicious mount-point/symlink reparse point. It also runs cleanly under
+AddressSanitizer and UndefinedBehaviorSanitizer.
