@@ -3,6 +3,12 @@
     "strict": true,
     "target": "ES2022",
     "module": "NodeNext",
-    "moduleResolution": "NodeNext"
+    "moduleResolution": "NodeNext",
+    "outDir": "dist",
+    "rootDir": ".",
+    "types": [],
+    "declaration": true,
+    "sourceMap": false,
+    "noEmit": false
   }
 }
