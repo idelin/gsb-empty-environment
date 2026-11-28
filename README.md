@@ -1,1 +1,129 @@
-企业级邮件传输代理（MTA）在入口网关联合执行 SPF（RFC 7208）、DKIM（RFC 6376）与 DMARC（RFC 7489）验证时，每一层都存在极易被攻击者绕过或导致正常邮件误拒的规范陷阱：1）**SPF 严格求值**：按左到右匹配机制，只有引发 DNS 查询的机制（`include`/`a`/`mx`/`ptr`/`exists`/`redirect`）计入全局 **10 次 DNS 查找上限**（`ip4`/`ip6`/`all` 不计入！），同时单独统计返回空结果/NXDOMAIN 的 `void lookups`（超过 2 次立刻返回 `permerror`！）；`include:dom` 返回 `PASS` 才应用其前缀限定符（默认 `+`，也可为 `-`/`~`/`?`！），而 `include` 返回 `FAIL`/`SOFTFAIL`/`NEUTRAL` 时绝不终止，继续求值后续机制，只有 `include` 返回 `temperror`/`permerror` 才传播对应错误！`redirect=` 仅在记录不含 `all` 且前面全未命中时跳转；2）**DKIM 头/体规范化与防重复头注入**：支持 `simple` 与 `relaxed` 双规范化模式（`relaxed/relaxed` 折叠头内连续空白、去冒号两侧空白、头名小写、去体末尾空行），最关键的是按签名 `h=` 字段列出头名顺序**从邮件底部向上逆序消费每个头实例**（若 `h=from:from` 出现两次而邮件仅有一个 `From` 头，第二次消费空值以封堵攻击者在顶部追加第二个伪造 `From` 头的经典绕过！），同时支持校验 `l=` 截断正文长度与过期时间戳 `x=`；3）**DMARC 组织域对齐（PSL）**：内置公共后缀列表（PSL，支持通配规则如 `*.ck` 与例外规则如 `!www.ck`！）推导任意域名的组织域（Organizational Domain），根据策略 `adkim`/`aspf` 的 `s`（严格完全相等）或 `r`（组织域相等）核对 `SPF MailFrom`/`DKIM d=` 与 `Header From` 的对齐性——仅当至少一项**通过且对齐**时 DMARC 为 `PASS`；失败时依据主域 `p=` / 子域 `sp=` 与抽样比例 `pct` 输出最终处置（`none`/`quarantine`/`reject`）。为邮件安全传输网关交付可导入的 Go SPF/DKIM/DMARC 联合验证引擎。验收覆盖 SPF 10 次查询与 2 次空查询 `permerror`、`include` 失败继续求值、DKIM 底部逆序消费 `h=` 封堵重复 `From` 注入、PSL 通配与例外组织域推导及 DMARC 严/松对齐与 `sp` 子域覆盖。
+# mailauth
+
+`mailauth` is a standard-library-only Go authentication engine for SMTP ingress
+gateways. It implements SPF (RFC 7208), DKIM (RFC 6376), and DMARC (RFC 7489),
+including a bundled Public Suffix List for organizational-domain alignment.
+
+## Packages
+
+- `prescreen.local/ps-517b39ba66/spf` — SPF record evaluation.
+- `prescreen.local/ps-517b39ba66/dkim` — DKIM signing and verification.
+- `prescreen.local/ps-517b39ba66/dmarc` — DMARC discovery, alignment, and policy.
+- `prescreen.local/ps-517b39ba66/psl` — Public Suffix List parsing and
+  organizational-domain derivation.
+- `prescreen.local/ps-517b39ba66` — combined SPF + DKIM + DMARC report.
+- `cmd/mailauth` — JSON command-line verifier.
+
+DNS is injected through small resolver interfaces, so the engine can run against
+`*net.Resolver` in production and deterministic fakes in tests. `DefaultResolver`
+is `net.DefaultResolver`.
+
+## Combined Verification
+
+```go
+report, err := mailauth.Verify(ctx, rawMessage, mailauth.Options{
+	IP:       net.ParseIP("203.0.113.10"),
+	MailFrom: "alice@example.com",
+	Helo:     "mx.example.net",
+})
+if err != nil {
+	log.Fatal(err)
+}
+
+fmt.Println(report.SPF.Result)        // pass / fail / softfail / ...
+fmt.Println(len(report.DKIM))         // one result per DKIM-Signature
+fmt.Println(report.DMARC.Status)      // pass / fail / none / ...
+fmt.Println(report.DMARC.Disposition) // none / quarantine / reject
+```
+
+The CLI reads a message file (or stdin) and prints the report as JSON:
+
+```sh
+go run ./cmd/mailauth -ip 203.0.113.10 -mail-from alice@example.com message.eml
+```
+
+## SPF Semantics
+
+- Mechanisms are evaluated left to right. `ip4`, `ip6`, and `all` never consume
+  the DNS-term budget.
+- `include`, `a`, `mx`, `ptr`, `exists`, and `redirect` share one recursive
+  budget of 10 terms. A request for term 11 returns `permerror`.
+- Void DNS answers (NXDOMAIN or no records) share one recursive budget of 2.
+  The third void answer returns `permerror`.
+- `include` applies its prefix qualifier only when the included record returns
+  `pass`. `fail`, `softfail`, and `neutral` continue to the next mechanism.
+  `temperror` and `permerror` propagate.
+- `redirect` is considered only when the record contains no `all` mechanism and
+  no earlier term matched.
+
+```go
+evaluation, _ := spf.Evaluate(ctx, spf.Options{
+	IP:       net.ParseIP("203.0.113.10"),
+	Domain:   "example.com",
+	Resolver: resolver,
+})
+if evaluation.Result == spf.PermError {
+	log.Printf("bad SPF: %s", evaluation.Explanation)
+}
+```
+
+## DKIM Semantics
+
+- Supports `simple` and `relaxed` header/body canonicalization independently.
+- Header names listed in `h=` are consumed from the bottom of the header block
+  upward, one instance per occurrence. If `h=from:from` appears with only one
+  `From` field, the second occurrence is the empty value. Appending a forged
+  `From` at the top therefore changes the signed input and fails verification.
+- Supports SHA-1/SHA-256 RSA signatures, Ed25519 signatures, `l=` body-length
+  truncation, and `x=` expiration checks.
+- `dkim.Sign` is provided for tests and for gateways that add signatures.
+
+```go
+results, _ := dkim.Verify(rawMessage, resolver)
+for _, result := range results {
+	if result.Status == dkim.Pass {
+		fmt.Println("valid signature from", result.Domain)
+	}
+}
+```
+
+## DMARC Semantics
+
+- DMARC records are discovered at `_dmarc.<From domain>` and then at the
+  organizational domain when different.
+- The embedded PSL supports exact, wildcard (`*.ck`), and exception
+  (`!www.ck`) rules, including private-section entries.
+- `adkim`/`aspf` accept `r` (relaxed organizational-domain alignment) and `s`
+  (strict exact-domain alignment).
+- DMARC passes only when at least one of SPF or DKIM passes **and** aligns with
+  the header From domain.
+- On failure, `p`, `sp`, and `pct` select the final `none`, `quarantine`, or
+  `reject` disposition. `sp` applies when the record is inherited from a parent
+  and the From domain is a subdomain.
+
+```go
+result, _ := dmarc.Evaluate(ctx, dmarc.Options{
+	FromDomain: "sub.example.com",
+	SPF:        dmarc.SPFResult{Status: "pass", Domain: "mail.example.com"},
+	DKIM:       []dmarc.DKIMResult{{Status: "pass", Domain: "example.com"}},
+	Resolver:   resolver,
+})
+```
+
+`pct` sampling is deterministic and keyed by `Options.PctSeed` (default: the
+From domain) so gateway decisions are reproducible and unit-testable.
+
+## Tests
+
+```sh
+go test ./...
+go test -race ./...
+```
+
+The tests cover the 10-term limit, the two-void limit, `include` continuation,
+DKIM bottom-up duplicate-header consumption, relaxed/simple canonicalization,
+`l=` and `x=`, PSL wildcard/exception behavior, strict/relaxed DMARC alignment,
+`sp` overrides, and PSL-derived organizational domains.
+
+The bundled `psl/public_suffix_list.dat` is the Public Suffix List from
+<https://publicsuffix.org/>.
