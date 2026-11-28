@@ -3,6 +3,12 @@
     "strict": true,
     "target": "ES2022",
     "module": "NodeNext",
-    "moduleResolution": "NodeNext"
-  }
+    "moduleResolution": "NodeNext",
+    "rootDir": "src",
+    "outDir": "dist",
+    "declaration": true,
+    "sourceMap": true,
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts"]
 }
